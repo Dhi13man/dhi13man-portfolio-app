@@ -8,11 +8,16 @@
       name="description"
       content="Dhiman Seal's professional portfolio showcasing skills, experience, and projects in software engineering."
     />
+    <meta name="keywords" content="Dhiman Seal, Software Engineer, Portfolio, Java, Spring Boot, Flutter, Python, Open-Source" />
+    <meta property="og:title" content="Dhiman Seal - Professional Portfolio" />
+    <meta property="og:description" content="Showcasing skills, experience, and projects in software engineering." />
+    <meta property="og:image" content="assets/portfolio-thumbnail.png" />
+    <meta property="og:url" content="https://your-portfolio-site.com" />
     <link rel="stylesheet" href="css/styles.css" />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
-    />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" />
+    <link rel="icon" href="assets/favicon.ico" type="image/x-icon" />
+    <script type="application/ld+json" src="scripts/ld.json">
+    </script>
   </head>
   <body>
     <header>
@@ -23,7 +28,7 @@
           <a href="mailto:dhiman.seal@hotmail.com">dhiman.seal@hotmail.com</a> |
           +91 7577861821
         </p>
-        <nav>
+        <nav aria-label="Main Navigation">
           <ul>
             <li><a href="#about">About</a></li>
             <li><a href="#summary">Summary</a></li>
@@ -35,13 +40,13 @@
           </ul>
         </nav>
         <div class="social-buttons">
-          <a href="https://linkedin.com/in/dhi13man/" class="btn">
+          <a href="https://linkedin.com/in/dhi13man/" class="btn" target="_blank" rel="noopener noreferrer">
             <img src="assets/linkedin.svg" alt="LinkedIn" />
           </a>
-          <a href="https://github.com/Dhi13man" class="btn">
+          <a href="https://github.com/Dhi13man" class="btn" target="_blank" rel="noopener noreferrer">
             <img src="assets/github.svg" alt="GitHub" />
           </a>
-          <a href="https://medium.com/@dhi13man" class="btn">
+          <a href="https://medium.com/@dhi13man" class="btn" target="_blank" rel="noopener noreferrer">
             <img src="assets/medium.svg" alt="Medium" />
           </a>
         </div>
@@ -62,7 +67,7 @@
 
       <section id="experience" class="container">
         <h2>Experience</h2>
-        <div class="job">
+        <article class="job">
           <h3>Software Development Engineer - II (SDE 2) | Groww</h3>
           <p><em>Bangalore, India | January 2022 - Present</em></p>
           <ul>
@@ -93,8 +98,8 @@
               Conversion, etc. in specialized ways for different user segments.
             </li>
           </ul>
-        </div>
-        <div class="job">
+        </article>
+        <article class="job">
           <h3>Cloud & Application Development Freelancer | Cashtic</h3>
           <p><em>Budapest, Hungary | May 2021 - November 2021</em></p>
           <ul>
@@ -114,20 +119,18 @@
               Nordigen.
             </li>
           </ul>
-        </div>
+        </article>
       </section>
 
       <section id="projects" class="container">
         <h2>Projects</h2>
-        <div class="project">
+        <article class="project">
           <h3>spring-multi-data-source</h3>
           <p><em>Java | Spring Boot | Databases | June 2023 - Present</em></p>
           <p>
             Makes the management of 2 or more data storage connections easy in
             Java Spring Boot Applications, when modeled as JPA Datasources:
-            <a href="https://github.com/Dhi13man/spring-multi-data-source/"
-              >GitHub</a
-            >.
+            <a href="https://github.com/Dhi13man/spring-multi-data-source/" target="_blank" rel="noopener noreferrer">GitHub</a>.
           </p>
           <ul>
             <li>
@@ -141,8 +144,8 @@
               such as CQRS.
             </li>
           </ul>
-        </div>
-        <div class="project">
+        </article>
+        <article class="project">
           <h3>open_route_service</h3>
           <p>
             <em
@@ -154,8 +157,7 @@
             Built an encapsulation around openrouteservice API, for easy
             integration in Dart and Flutter projects, along with relevant data
             models and 100% Test Coverage:
-            <a href="https://github.com/dhi13man/open_route_service/">GitHub</a
-            >.
+            <a href="https://github.com/dhi13man/open_route_service/" target="_blank" rel="noopener noreferrer">GitHub</a>.
           </p>
           <ul>
             <li>
@@ -166,21 +168,16 @@
               Received commendation and support from the openrouteservice team
               for building this integration for the ecosystem, becoming a
               "Flutter Gem":
-              <a href="https://fluttergems.dev/packages/open_route_service/"
-                >Flutter Gems</a
-              >.
+              <a href="https://fluttergems.dev/packages/open_route_service/" target="_blank" rel="noopener noreferrer">Flutter Gems</a>.
             </li>
             <li>
               Received over 100 Github Stars from this and various other
               Open-Source Flutter libraries and POCs:
-              <a href="https://pub.dev/packages/nordigen_integration"
-                >Nordigen Integration</a
-              >,
-              <a href="https://github.com/Dhi13man/speed_ometer">Speed Ometer</a
-              >, etc.
+              <a href="https://pub.dev/packages/nordigen_integration" target="_blank" rel="noopener noreferrer">Nordigen Integration</a>,
+              <a href="https://github.com/Dhi13man/speed_ometer" target="_blank" rel="noopener noreferrer">Speed Ometer</a>, etc.
             </li>
           </ul>
-        </div>
+        </article>
       </section>
 
       <section id="skills" class="container">
@@ -204,10 +201,15 @@
 
       <section id="contact" class="container">
         <h2>Contact</h2>
-        <p>
+        <address>
           If you would like to get in touch, feel free to reach out via
           <a href="mailto:dhiman.seal@hotmail.com">email</a> or connect with me
-          on <a href="https://linkedin.com/in/dhi13man/">LinkedIn</a>.
+          on <a href="https://linkedin.com/in/dhi13man/" target="_blank" rel="noopener noreferrer">LinkedIn</a>.
+        </address>
+        <p>
+          <strong>Call to Action:</strong> Looking forward to have interesting
+          discussions on tech and business. Please
+          <a href="mailto:dhiman.seal@hotmail.com">get in touch</a>.
         </p>
       </section>
     </main>
@@ -216,9 +218,9 @@
       <div class="container">
         <p>
           Connect with me on
-          <a href="https://linkedin.com/in/dhi13man/">LinkedIn</a> |
-          <a href="https://github.com/Dhi13man">GitHub</a> |
-          <a href="https://medium.com/@dhi13man">Medium</a>
+          <a href="https://linkedin.com/in/dhi13man/" target="_blank" rel="noopener noreferrer">LinkedIn</a> |
+          <a href="https://github.com/Dhi13man" target="_blank" rel="noopener noreferrer">GitHub</a> |
+          <a href="https://medium.com/@dhi13man" target="_blank" rel="noopener noreferrer">Medium</a>
         </p>
       </div>
     </footer>

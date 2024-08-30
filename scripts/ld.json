@@ -1,0 +1,18 @@
+{
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Dhiman Seal",
+    "jobTitle": "Software Engineer",
+    "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Bengaluru",
+        "addressCountry": "India"
+    },
+    "email": "mailto:dhiman.seal@hotmail.com",
+    "url": "https://your-portfolio-site.com",
+    "sameAs": [
+        "https://linkedin.com/in/dhi13man/",
+        "https://github.com/Dhi13man",
+        "https://medium.com/@dhi13man"
+    ]
+}
