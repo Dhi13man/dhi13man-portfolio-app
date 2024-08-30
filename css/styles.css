@@ -11,8 +11,44 @@ body {
 .container {
   width: 90%;
   max-width: 1200px;
-  margin: auto;
+  margin: 20px auto;
   overflow: hidden;
+}
+
+/* Container Styles */
+header .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* Social Buttons Styles */
+header .container .social-buttons {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+header .container .social-buttons .btn {
+  display: inline-block;
+  margin: 0 7.5px;
+  padding: 5px 7.5px;
+  border-radius: 50%;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+header .container .social-buttons .btn:hover {
+  background-color: #ffdd57;
+  transform: scale(1.1);
+}
+
+header .container .social-buttons .btn img {
+  width: 18px; /* Adjusted width */
+  height: 18px; /* Adjusted height */
+  vertical-align: middle;
 }
 
 /* Header Styles */
@@ -75,7 +111,7 @@ header li a:hover {
 
 /* Main Content Styles */
 main {
-  padding: 240px 0 40px;
+  padding: 250px 0 40px;
 }
 
 section {
