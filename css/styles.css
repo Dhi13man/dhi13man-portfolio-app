@@ -14,18 +14,22 @@ html {
 
 /* CSS Variables */
 :root {
-  --primary-color: #6e8efb;
-  --secondary-color: #a777e3;
-  --accent-color: #ffdd57;
-  --background-color: #f4f4f4;
-  --text-color: #333;
-  --font-family: "Roboto", sans-serif;
+  --primary-color: #1a1a2e;
+  --secondary-color: #16213e;
+  --accent-color: #00ff99;
+  --background-color: #0f3460;
+  --text-color: #1b0752; 
+  --font-family: "Nunito", sans-serif;
+  --font-size-base: 16px;
+  --line-height-base: 1.6;
+  --transition-duration: 0.3s;
 }
 
 /* General Styles */
 body {
   font-family: var(--font-family);
-  line-height: 1.6;
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-base);
   background-color: var(--background-color);
   color: var(--text-color);
 }
@@ -45,21 +49,47 @@ header .container {
   text-align: center;
 }
 
+/* Navigation Styles */
+.nav-list {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  padding: 0;
+  margin: 10px 0 0;
+}
+
+.nav-list li {
+  margin: 0 15px;
+}
+
+.nav-list li a {
+  font-size: 1.1em;
+  padding: 10px 15px;
+  border-radius: 5px;
+  transition: background-color var(--transition-duration), color var(--transition-duration), box-shadow var(--transition-duration);
+}
+
+.nav-list li a:hover {
+  color: var(--accent-color);
+  background-color: var(--secondary-color);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
 /* Social Buttons Styles */
 header .container .social-buttons {
   display: flex;
   justify-content: center;
-  margin-top: 10px;
+  margin: 10px;
 }
 
 header .container .social-buttons .btn {
   display: inline-block;
   margin: 0 7.5px;
-  padding: 5px 7.5px;
+  padding: 5px 9px;
   border-radius: 50%;
   background-color: #fff;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: background-color 0.3s, transform 0.3s;
+  transition: background-color var(--transition-duration), transform var(--transition-duration);
 }
 
 header .container .social-buttons .btn:hover {
@@ -80,11 +110,11 @@ header {
   padding: 20px 0;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   text-align: center;
-  position: fixed;
+  position: sticky;
   top: 0;
   width: 100%;
   z-index: 1000;
-  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  transition: transform var(--transition-duration) ease-in-out, opacity var(--transition-duration) ease-in-out;
 }
 
 header.hidden {
@@ -95,7 +125,7 @@ header.hidden {
 header h1 {
   margin: 0;
   font-size: 2.5em;
-  animation: fadeInDown 1s ease-in-out;
+  animation: fadeInDown var(--transition-duration) ease-in-out;
 }
 
 header p {
@@ -106,7 +136,7 @@ header a {
   color: #fff;
   text-decoration: none;
   font-weight: bold;
-  transition: color 0.3s;
+  transition: color var(--transition-duration);
 }
 
 header a:hover {
@@ -129,7 +159,7 @@ header li {
 
 header li a {
   font-size: 1.1em;
-  transition: color 0.3s;
+  transition: color var(--transition-duration);
 }
 
 header li a:hover {
@@ -138,7 +168,7 @@ header li a:hover {
 
 /* Main Content Styles */
 main {
-  padding: 250px 0 40px;
+  padding: 0 40px;
 }
 
 section {
@@ -147,9 +177,9 @@ section {
   padding: 30px;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  animation: fadeInUp 1s ease-in-out;
+  animation: fadeInUp var(--transition-duration) ease-in-out;
   scroll-margin-top: 80px;
-  transition: transform 0.3s, box-shadow 0.3s;
+  transition: transform var(--transition-duration), box-shadow var(--transition-duration);
 }
 
 section:hover {
@@ -192,7 +222,7 @@ footer a {
   color: var(--accent-color);
   text-decoration: none;
   font-weight: bold;
-  transition: color 0.3s;
+  transition: color var(--transition-duration);
 }
 
 footer a:hover {
