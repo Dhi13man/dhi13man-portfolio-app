@@ -14,8 +14,9 @@
   
   /* Surface Colors */
   --background: #FFFFFF;     /* Page background */
+  --background-hover: #F1F5F9;
   --surface: #F8FAFC;        /* Card background */
-  --surface-hover: #F1F5F9;  /* Card hover state */
+  --surface-hover: #E9EEF2;  /* Card hover state - Lighter than surface */
   
   /* Text Colors */
   --text: #1E293B;          /* Primary text */
@@ -36,8 +37,6 @@
   --text-shadow-header: 0 2px 4px rgba(0, 0, 0, 0.1);
   --text-shadow-nav-hover: 0 0 10px rgba(255, 255, 255, 0.3);
   --header-overlay-gradient: linear-gradient(90deg, transparent 0%, var(--overlay-light) 50%, transparent 100%);
-  --company-bg: rgba(102,126,234,0.1);
-  --company-bg-hover: rgba(102,126,234,0.2);
   --project-border-custom: rgba(91,95,239,0.1);
   --primary-glow: var(--primary-light);
 
@@ -258,6 +257,7 @@ section h2 {
   text-shadow: none; /* Remove text shadow */
   background: none;
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: initial;
   color: var(--text);
 }
@@ -283,7 +283,6 @@ section .content {
   margin-bottom: 1.5em;
   padding: 1em;
   border-left: 4px solid var(--primary);
-  background: var(--company-bg);
   border-radius: 6px;
   box-shadow: none; /* Remove box shadow */
   -webkit-backdrop-filter: blur(5px);
@@ -293,7 +292,7 @@ section .content {
 }
 
 #experience .company:hover {
-  background: var(--company-bg-hover);
+  background: var(--surface-hover);
   border-color: var(--primary);
   transform: translateY(-2px);
   box-shadow: 0 4px 12px var(--shadow);
@@ -330,7 +329,7 @@ section .content {
 }
 
 #education .school:hover {
-  background: var(--company-bg);
+  background: var(--surface-hover);
   border-color: var(--primary);
   transform: translateY(-2px);
   box-shadow: 0 4px 12px var(--shadow);
@@ -354,7 +353,7 @@ section .content {
 #achievements .cert:hover,
 #achievements .award:hover,
 #testScores .score:hover {
-  background: var(--company-bg-hover);
+  background: var(--surface-hover);
   border-color: var(--primary);
 }
 
@@ -458,7 +457,7 @@ section .content {
 #achievements .cert:hover,
 #achievements .score:hover,
 #achievements .award:hover {
-  background: var(--company-bg-hover);
+  background: var(--background-hover);
 }
 
 #achievements .cert h4,
@@ -532,13 +531,12 @@ section .content {
 #experience .company {
   padding: 1.5em;
   border-left: 4px solid var(--primary);
-  background: var(--company-bg);
   border-radius: 8px;
   transition: background 0.3s ease;
 }
 
 #experience .company:hover {
-  background: var(--company-bg-hover);
+  background: var(--surface-hover);
 }
 
 #experience .company h2 {
@@ -589,10 +587,6 @@ section .content {
   transition: background 0.3s ease;
 }
 
-#education .school:hover {
-  background: var(--company-bg-hover)
-}
-
 #education .school h3 {
   color: var(--highlight);
   margin-bottom: 0.5em;
@@ -628,6 +622,7 @@ section .content {
 }
 
 #projects .project:hover {
+  background: var(--background-hover);
   transform: translateY(-3px);
   box-shadow: 0 6px 12px var(--shadow);
 }
@@ -835,6 +830,16 @@ section:hover *,
 .project:hover *,
 .recommendation:hover * {
   color: inherit;
+}
+
+/* Card Hover States */
+.company:hover, .school:hover, .project:hover, .recommendation:hover,
+#experience .role:hover, #achievements .cert:hover,
+#achievements .award:hover, #achievements .score:hover {
+  background: var(--surface-hover);
+  border-color: var(--primary);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px var(--shadow);
 }
 
 /* (Optional) Dark theme variant */
