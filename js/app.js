@@ -16,10 +16,10 @@ document.addEventListener('DOMContentLoaded', () => {
   renderAbout(data.about);
   renderExperience(data.experience);
   renderEducation(data.education);
-  renderCertsAndAwards(data.licensesAndCertifications);
+  renderCerts(data.licensesAndCertifications);
   renderAwards(data.honorsAndAwards);
-  renderProjects(data.projects);
   renderTestScores(data.testScores);
+  renderProjects(data.projects);
   renderRecommendations(data.recommendationsReceived);
 });
 
@@ -40,19 +40,19 @@ function renderExperience(experiences) {
   container.innerHTML = experiences.map(exp => {
     let roles = exp.roles ? exp.roles.map(role => {
       return `<div class="role">
-                <h3>${role.title}</h3>
+                <h4>${role.title}</h4>
                 <p><em>${role.dates} &ndash; ${role.location}</em></p>
                 <ul class="description">${role.details.map(item => `<li>${item}</li>`).join('')}</ul>
               </div>`;
     }).join('') : `<div class="role">
-        <h3>${exp.title}</h3>
+        <h4>${exp.title}</h4>
         <p><em>${exp.dates} &ndash; ${exp.location}</em></p>
         <ul class="description">${exp.details.map(item => `<li>${item}</li>`).join('')}</ul>
       </div>`;
     return `<div class="company">
-              <h2>${exp.links?.primary ? 
+              <h3>${exp.links?.primary ? 
                 `<a href="${exp.links.primary}" target="_blank">${exp.company}</a>` : 
-                exp.company}</h2>
+                exp.company}</h3>
               ${roles}
               ${renderLinks(exp.links, 'company-links')}
             </div>`;
@@ -76,7 +76,7 @@ function renderEducation(education) {
   `).join('');
 }
 
-function renderCertsAndAwards(certs) {
+function renderCerts(certs) {
   const certsContainer = document.querySelector('#certifications .certifications-content');
   let certsHtml = certs.map(cert => `
     <div class="cert">
