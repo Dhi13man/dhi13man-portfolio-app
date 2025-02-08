@@ -112,18 +112,6 @@ html {
   padding: 1em;
   text-align: center;
   font-size: 0.9em;
-  border-top: 1px solid var(--overlay-light);
-  background: var(--overlay-light);
-}
-
-.sidebar-footer p {
-  margin: 0;
-  opacity: 0.8;
-  transition: opacity 0.3s ease;
-}
-
-.sidebar-footer:hover p {
-  opacity: 1;
 }
 
 .sidebar-toggle {
@@ -156,11 +144,49 @@ html {
   border-radius: 2px;
 }
 
+/* Fix for sidebar toggle button states */
+.sidebar-toggle span:first-child {
+  transform: translateY(0);
+  transition: transform 0.3s ease;
+}
+
+.sidebar-toggle span:nth-child(2) {
+  opacity: 1;
+  transform: translateX(0);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.sidebar-toggle span:last-child {
+  transform: translateY(0);
+  transition: transform 0.3s ease;
+}
+
+/* Change default state to dashes */
+body.sidebar-collapsed .sidebar-toggle span {
+  transform: none;
+}
+
+/* Change to X when sidebar is open */
+body:not(.sidebar-collapsed) .sidebar-toggle span:first-child {
+  transform: translateY(8px) rotate(45deg);
+}
+
+body:not(.sidebar-collapsed) .sidebar-toggle span:nth-child(2) {
+  opacity: 0;
+  transform: translateX(-10px);
+}
+
+body:not(.sidebar-collapsed) .sidebar-toggle span:last-child {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
 /* Main Content Adjustment */
 .main-content {
   margin-left: 250px;
   padding: 2em;
-  transition: margin-left 0.3s ease;
+  transition: margin-left 0.3s ease, width 0.3s ease;
+  width: calc(100% - 250px);
+  max-width: none;
 }
 
 /* Collapsed Sidebar State */
@@ -170,6 +196,7 @@ body.sidebar-collapsed .sidebar {
 
 body.sidebar-collapsed .main-content {
   margin-left: 0;
+  width: 100%;
 }
 
 body.sidebar-collapsed .sidebar-toggle {
@@ -177,16 +204,20 @@ body.sidebar-collapsed .sidebar-toggle {
 }
 
 body.sidebar-collapsed .sidebar-toggle span:first-child {
-  transform: translateY(8px) rotate(45deg);
+  transform: translateY(0) rotate(0);
 }
 
 body.sidebar-collapsed .sidebar-toggle span:nth-child(2) {
-  opacity: 0;
-  transform: translateX(-10px);
+  opacity: 1;
+  transform: translateX(0);
 }
 
 body.sidebar-collapsed .sidebar-toggle span:last-child {
-  transform: translateY(-8px) rotate(-45deg);
+  transform: translateY(0) rotate(0);
+}
+
+body.sidebar-collapsed main {
+  max-width: 1400px; /* Slightly larger when sidebar is collapsed */
 }
 
 /* Responsive Adjustments */
@@ -197,6 +228,7 @@ body.sidebar-collapsed .sidebar-toggle span:last-child {
 
   .main-content {
     margin-left: 0;
+    width: 100%;
   }
 
   body.sidebar-collapsed .sidebar {
@@ -216,6 +248,10 @@ body.sidebar-collapsed .sidebar-toggle span:last-child {
   .sidebar-footer {
     padding: 0.8em;
     font-size: 0.8em;
+  }
+
+  main {
+    padding: 0 1em;
   }
 }
 
@@ -528,10 +564,10 @@ nav a:hover:before {
 
 /* Main Styles */
 main {
-  max-width: 1200px;
+  width: 100%;
   margin: 3em auto;
   padding: 0 2em;
-  padding: 0 40px;
+  max-width: 1200px;
 }
 
 section {
