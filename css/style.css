@@ -1,50 +1,54 @@
+/* Root variables */
 :root {
-  /* Harmonized Colors */
-  --primary: #0066FF;         /* Primary blue */
+  /* Primary Colors */
+  --primary: #0066FF;
   --primary-light: #4D94FF;
   --primary-dark: #0047B3;
-  
-  --secondary: #0055cc;       /* Derived from primary */
+
+  /* Secondary Colors */
+  --secondary: #0055cc;
   --secondary-light: #337acc;
   --secondary-dark: #003d99;
-  
-  /* Accent */
-  --accent: #6600ff;         /* Call to action */
-  --accent-light: #9e00fa;   /* Light variant */
-  
+
+  /* Accent Colors */
+  --accent: #6600ff;
+  --accent-light: #9e00fa;
+
   /* Surface Colors */
-  --background: #FFFFFF;     /* Page background */
+  --background: #FFFFFF;
   --background-hover: #F1F5F9;
-  --surface: #F8FAFC;        /* Card background */
-  --surface-hover: #E9EEF2;  /* Card hover state - Lighter than surface */
-  
+  --surface: #F8FAFC;
+  --surface-hover: #E9EEF2;
+
   /* Text Colors */
-  --text: #1E293B;          /* Primary text */
-  --text-secondary: #64748B; /* Secondary text */
-  --text-light: #FFFFFF;     /* Light text */
-  
+  --text: #1E293B;
+  --text-secondary: #64748B;
+  --text-light: #FFFFFF;
+
   /* Borders & Shadows */
   --border: #E2E8F0;
   --shadow: rgba(0, 102, 255, 0.1);
-  
+
   /* Overlays */
   --overlay-light: rgba(255, 255, 255, 0.1);
   --overlay-light-hover: rgba(255, 255, 255, 0.2);
 
-  /* New variables to replace direct rgba values and gradients */
+  /* Shadows and Effects */
   --box-shadow-light: rgba(0, 0, 0, 0.05);
   --box-shadow-hover: rgba(0, 0, 0, 0.1);
   --text-shadow-header: 0 2px 4px rgba(0, 0, 0, 0.1);
   --text-shadow-nav-hover: 0 0 10px rgba(255, 255, 255, 0.3);
+  --box-shadow-strong: rgba(0, 0, 0, 0.2);
+
+  /* Gradients */
   --header-overlay-gradient: linear-gradient(90deg, transparent 0%, var(--overlay-light) 50%, transparent 100%);
+  --body-gradient: linear-gradient(135deg, var(--background) 0%, var(--surface) 100%);
+
+  /* Other */
   --project-border-custom: rgba(91,95,239,0.1);
   --primary-glow: var(--primary-light);
-
-  /* NEW variables for rogue colors */
   --white: #FFFFFF;
-  --body-gradient: linear-gradient(135deg, var(--background) 0%, var(--surface) 100%);
   --placeholder-bg: #495057;
-  --box-shadow-strong: rgba(0, 0, 0, 0.2);
 }
 
 /* General Styles */
@@ -55,74 +59,31 @@
 }
 
 body {
-  font-family: 'Nunito', sans-serif; /* Modern Font */
+  font-family: 'Nunito', sans-serif;
   background: var(--body-gradient);
   color: var(--text);
   line-height: 1.7;
-  padding: 0;
-  overflow-x: hidden; /* Prevent horizontal scroll */
+  overflow-x: hidden;
   position: relative;
 }
 
-/* Remove background pattern */
 body::before {
   content: none;
-}
-
-/* Social Buttons Styles */
-.social-buttons {
-  display: flex;
-  justify-content: flex-end; /* Align to the right */
-  gap: 0.75em;
-  margin-top: 0; /* Remove top margin */
-  position: relative;
-  z-index: 2;
-}
-
-.social-buttons .btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 38px;
-  height: 38px;
-  border-radius: 50%;
-  background: var(--overlay-light);
-  border: 1px solid var(--overlay-light);
-  transition: all 0.3s ease;
-  box-shadow: 0 1px 2px var(--box-shadow-light);
-}
-
-.social-buttons .btn img {
-  width: 20px;
-  height: 20px;
-  opacity: 0.9;
-  transition: opacity 0.3s ease;
-}
-
-social-buttons .btn:hover {
-  transform: translateY(-2px);
-  background: var(--overlay-light-hover);
-  border-color: var(--text-light);
-  box-shadow: 0 4px 8px var(--box-shadow-hover);
-}
-
-.social-buttons .btn:hover img {
-  opacity: 1;
 }
 
 /* Header Styles */
 header {
   background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
   color: var(--text);
-  padding: 1.5em 6%; /* Reduced vertical padding */
+  padding: 1.5em 6%;
   box-shadow: 0 2px 4px var(--box-shadow-light);
   position: relative;
   overflow: hidden;
   border: none;
   z-index: 1;
-  display: flex; /* Use flexbox */
-  align-items: center; /* Vertically align items */
-  justify-content: space-between; /* Distribute space between items */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 header::before {
@@ -132,15 +93,9 @@ header::before {
   left: 0;
   right: 0;
   height: 1px;
-  background: linear-gradient(
-    90deg,
-    transparent 0%,
-    var(--primary) 50%,
-    transparent 100%
-  );
+  background: linear-gradient(90deg, transparent 0%, var(--primary) 50%, transparent 100%);
 }
 
-/* Add subtle animated gradient overlay to header */
 header::after {
   content: '';
   position: absolute;
@@ -150,8 +105,8 @@ header::after {
   height: 100%;
   background: var(--header-overlay-gradient);
   animation: shine 8s infinite linear;
-  z-index: 0; /* Place the gradient behind the content */
-  pointer-events: none; /* Prevent interference with clicks */
+  z-index: 0;
+  pointer-events: none;
 }
 
 @keyframes shine {
@@ -160,11 +115,11 @@ header::after {
 }
 
 header h1 {
-  font-family: 'Montserrat', sans-serif; /* Bold Heading Font */
-  font-size: 2.5em; /* Adjusted font size */
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2.5em;
   font-weight: 700;
   letter-spacing: -1.5px;
-  margin-bottom: 0; /* Removed bottom margin */
+  margin-bottom: 0;
   color: var(--text-light);
   position: relative;
   z-index: 1;
@@ -173,9 +128,9 @@ header h1 {
 
 /* Navigation Styles */
 nav {
-  margin-top: 0; /* Remove top margin */
+  margin-top: 0;
   position: relative;
-  z-index: 2; /* Place navigation above the gradient */
+  z-index: 2;
 }
 
 nav a {
@@ -256,7 +211,7 @@ section h2 {
   padding-bottom: 0.5em;
   border-bottom: 2px solid var(--primary);
   font-weight: 700;
-  text-shadow: none; /* Remove text shadow */
+  text-shadow: none;
   background: none;
   -webkit-background-clip: text;
   background-clip: text;
@@ -269,39 +224,33 @@ section .content {
   z-index: 1;
 }
 
-/* Specific Section Adjustments */
+/* About Section Styles */
 #about .content {
   font-size: 1.2em;
-  color: var (--text);
-  text-shadow: none; /* Remove text shadow */
+  color: var(--text);
+  text-shadow: none;
   padding: 1em;
   border: 1px solid var(--border);
   border-left: 4px solid var(--primary);
   border-radius: 6px;
   transition: all 0.3s ease;
-  display: flex; /* Add flex container */
-  align-items: center; /* Vertically center items */
+  display: flex;
+  align-items: center;
 }
 
 .profile-image {
-  width: 200px; /* Adjust as needed */
+  width: 200px;
   height: auto;
-  border-radius: 50%; /* Make it circular */
-  margin-right: 2em; /* Add some space between the image and the text */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+  border-radius: 50%;
+  margin-right: 2em;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-@media (max-width: 768px) {
-  #about .content {
-    flex-direction: column; /* Stack image and text on smaller screens */
-    text-align: center; /* Center text */
-  }
-
-  .profile-image {
-    width: 150px; /* Smaller image on smaller screens */
-    margin-right: 0; /* Remove right margin */
-    margin-bottom: 1em; /* Add bottom margin to separate image and text */
-  }
+/* Experience Section Styles */
+#experience .content {
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
 }
 
 #experience .company {
@@ -309,7 +258,7 @@ section .content {
   padding: 1em;
   border-left: 4px solid var(--primary);
   border-radius: 6px;
-  box-shadow: none; /* Remove box shadow */
+  box-shadow: none;
   -webkit-backdrop-filter: blur(5px);
   backdrop-filter: blur(5px);
   border: 1px solid var(--border);
@@ -321,6 +270,13 @@ section .content {
   border-color: var(--primary);
   transform: translateY(-2px);
   box-shadow: 0 4px 12px var(--shadow);
+}
+
+#experience .company h2 {
+  color: var(--highlight);
+  margin-bottom: 0.5em;
+  font-size: 2em;
+  text-shadow: none;
 }
 
 #experience .role {
@@ -337,7 +293,27 @@ section .content {
 #experience .role h3 {
   color: var(--primary-dark);
   margin-bottom: 0.3em;
-  text-shadow: none; /* Remove text shadow */
+  text-shadow: none;
+}
+
+#experience .role p {
+  font-style: italic;
+  color: var(--secondary);
+  margin-bottom: 0.5em;
+  text-shadow: none;
+}
+
+#experience .role ul {
+  list-style-type: disc;
+  margin-left: 20px;
+  color: var(--text);
+}
+
+/* Education Section Styles */
+#education .content {
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
 }
 
 #education .school {
@@ -346,7 +322,7 @@ section .content {
   border-left: 4px solid var(--primary);
   background: var(--surface);
   border-radius: 6px;
-  box-shadow: none; /* Remove box shadow */
+  box-shadow: none;
   -webkit-backdrop-filter: blur(5px);
   backdrop-filter: blur(5px);
   border: 1px solid var(--border);
@@ -360,103 +336,43 @@ section .content {
   box-shadow: 0 4px 12px var(--shadow);
 }
 
-#achievements .cert,
-#achievements .award,
-#testScores .score {
-  margin-bottom: 1em;
-  padding: 1em;
-  background: var(--surface);
-  box-shadow: 0 2px 4px var(--shadow);
-  border-radius: 6px;
-  -webkit-backdrop-filter: blur(5px);
-  backdrop-filter: blur(5px);
-  border: 1px solid var(--border);
-  border-left: 4px solid var(--primary);
-  box-shadow: none;
+#education .school h3 {
+  color: var(--highlight);
+  margin-bottom: 0.5em;
+  font-size: 2em;
+  text-shadow: none;
 }
 
-#achievements .cert:hover,
-#achievements .award:hover,
-#testScores .score:hover {
-  background: var(--surface-hover);
-  border-color: var(--primary);
+#education .school p {
+  margin-bottom: 0.5em;
+  color: var(--text);
+  text-shadow: none;
 }
 
-#projects .project {
-  margin-bottom: 2em;
-  padding: 1.2em;
-  background: var(--surface);
-  box-shadow: 0 3px 6px var(--shadow);
-  border-radius: 8px;
-  border: 1px solid var(--border);
-  border-left: 4px solid var(--primary);
-  -webkit-backdrop-filter: blur(5px);
-  backdrop-filter: blur(5px);
-  transition: all 0.3s ease;
-}
-
-#projects .project:hover {
-  background: var(--surface-hover);
-  border-color: var(--primary);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px var(--shadow);
-}
-
-#recommendations .recommendation {
-  margin-bottom: 2em;
-  padding: 1.2em;
-  background: var(--surface);
-  box-shadow: 0 3px 6px var(--shadow);
-  border-radius: 10px;
-  border: 1px solid var(--border);
-  border-left: 4px solid var(--primary);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-#recommendations .recommendation:hover {
-  background: var(--surface-hover);
-  border-color: var(--primary);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px var(--shadow);
+#education .school em {
+  font-style: italic;
+  color: var(--secondary);
+  text-shadow: none;
 }
 
 /* Achievements Section Styles */
 #achievements .content {
   display: grid;
-  grid-template-columns: 1fr; /* Awards take full width */
-  grid-template-rows: auto auto; /* Awards row and then the rest */
+  grid-template-columns: 1fr;
+  grid-template-rows: auto auto;
   gap: 20px;
 }
 
 #achievements #awards {
-  grid-column: 1; /* Awards span the full width */
+  grid-column: 1;
 }
 
 #achievements #testScores {
-  grid-column: 1; /* Test Scores on the left */
+  grid-column: 1;
 }
 
 #achievements #certifications {
-  grid-column: 1; /* Certifications on the right */
-}
-
-@media (min-width: 768px) {
-    #achievements .content {
-        grid-template-columns: 1fr 1fr; /* Two columns for Test Scores and Certifications */
-        grid-template-rows: auto auto; /* Awards row and then the rest */
-    }
-
-    #achievements #awards {
-        grid-column: 1 / span 2; /* Awards span the full width */
-    }
-
-    #achievements #testScores {
-        grid-column: 1; /* Test Scores on the left */
-    }
-
-    #achievements #certifications {
-        grid-column: 2; /* Certifications on the right */
-    }
+  grid-column: 1;
 }
 
 #achievements h3 {
@@ -465,7 +381,7 @@ section .content {
   margin-bottom: 0.8em;
   border-bottom: 2px solid var(--highlight);
   padding-bottom: 0.3em;
-  text-shadow: none; /* Remove text shadow */
+  text-shadow: none;
 }
 
 #achievements .cert,
@@ -491,7 +407,7 @@ section .content {
   font-size: 1.2em;
   color: var(--highlight);
   margin-bottom: 0.3em;
-  text-shadow: none; /* Remove text shadow */
+  text-shadow: none;
 }
 
 #achievements .score strong {
@@ -502,133 +418,7 @@ section .content {
   border-radius: 6px;
   font-weight: 600;
   margin-top: 0.3em;
-  text-shadow: none; /* Remove text shadow */
-}
-
-/* Image Placeholder Styles */
-.image-placeholder {
-  width: 100%;
-  height: 200px; /* Adjust as needed */
-  background-color: var(--placeholder-bg);
-  border-radius: 8px;
-  margin-bottom: 1em;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden; /* Hide any overflowing content */
-}
-
-.image-placeholder img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover; /* Ensure the image covers the area */
-  opacity: 0.7; /* Slightly dim the image */
-}
-
-/* Achievements Section Grid */
-.achievements-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Creates responsive columns */
-  gap: 20px; /* Space between grid items */
-}
-
-.achievements-grid > div {
-  padding: 20px;
-  border: 1px solid var(--primary); /* Professional Blue Border */
-  border-radius: 8px;
-}
-
-#awards h3,
-#testScores h3,
-#certifications h3 {
-  margin-bottom: 15px;
-  color: var(--highlight);
-  text-shadow: none; /* Remove text shadow */
-}
-
-/* Experience Section Styles */
-#experience .content {
-  display: flex;
-  flex-direction: column;
-  gap: 2em;
-}
-
-#experience .company {
-  padding: 1.5em;
-  border-left: 4px solid var(--primary);
-  border-radius: 8px;
-  transition: background 0.3s ease;
-}
-
-#experience .company:hover {
-  background: var(--surface-hover);
-}
-
-#experience .company h2 {
-  color: var(--highlight);
-  margin-bottom: 0.5em;
-  font-size: 2em;
-  text-shadow: none; /* Remove text shadow */
-}
-
-#experience .role {
-  margin-top: 1em;
-  padding: 1em;
-  background: var(--surface);
-  box-shadow: 0 2px 4px var(--shadow);
-  border-radius: 6px;
-}
-
-#experience .role h3 {
-  color: var(--primary-dark);
-  margin-bottom: 0.3em;
-  text-shadow: none; /* Remove text shadow */
-}
-
-#experience .role p {
-  font-style: italic;
-  color: var(--secondary);
-  margin-bottom: 0.5em;
-  text-shadow: none; /* Remove text shadow */
-}
-
-#experience .role ul {
-  list-style-type: disc;
-  margin-left: 20px;
-  color: var (--text);
-}
-
-/* Education Section Styles */
-#education .content {
-  display: flex;
-  flex-direction: column;
-  gap: 2em;
-}
-
-#education .school {
-  padding: 1.5em;
-  border-left: 4px solid var(--secondary);
-  border-radius: 8px;
-  transition: background 0.3s ease;
-}
-
-#education .school h3 {
-  color: var(--highlight);
-  margin-bottom: 0.5em;
-  font-size: 2em;
-  text-shadow: none; /* Remove text shadow */
-}
-
-#education .school p {
-  margin-bottom: 0.5em;
-  color: var (--text);
-  text-shadow: none; /* Remove text shadow */
-}
-
-#education .school em {
-  font-style: italic;
-  color: var(--secondary);
-  text-shadow: none; /* Remove text shadow */
+  text-shadow: none;
 }
 
 /* Projects Section Styles */
@@ -639,6 +429,7 @@ section .content {
 }
 
 #projects .project {
+  margin-bottom: 2em;
   padding: 1.5em;
   background: var(--surface);
   box-shadow: 0 3px 6px var(--shadow);
@@ -656,7 +447,7 @@ section .content {
   color: var(--highlight);
   margin-bottom: 0.5em;
   font-size: 1.8em;
-  text-shadow: none; /* Remove text shadow */
+  text-shadow: none;
 }
 
 #projects .project em {
@@ -664,25 +455,25 @@ section .content {
   color: var(--secondary);
   margin-bottom: 1em;
   display: block;
-  text-shadow: none; /* Remove text shadow */
+  text-shadow: none;
 }
 
 #projects .project p {
   margin-bottom: 1em;
   color: var(--text);
-  text-shadow: none; /* Remove text shadow */
+  text-shadow: none;
 }
 
 #projects .project a {
   color: var(--accent);
   text-decoration: none;
   transition: color 0.3s ease;
-  text-shadow: none; /* Remove text shadow */
+  text-shadow: none;
 }
 
 #projects .project a:hover {
   color: var(--highlight);
-  text-shadow: none; /* Remove text shadow */
+  text-shadow: none;
 }
 
 /* Recommendations Section Styles */
@@ -693,6 +484,7 @@ section .content {
 }
 
 #recommendations .recommendation {
+  margin-bottom: 2em;
   padding: 1.5em;
   background: var(--surface);
   box-shadow: 0 3px 6px var(--shadow);
@@ -708,19 +500,101 @@ section .content {
 #recommendations .recommendation p {
   margin-bottom: 0.5em;
   color: var(--text);
-  text-shadow: none; /* Remove text shadow */
+  text-shadow: none;
 }
 
 #recommendations .recommendation p:first-child {
   font-size: 1.2em;
   font-style: italic;
   color: var(--text);
-  text-shadow: none; /* Remove text shadow */
+  text-shadow: none;
 }
 
 #recommendations .recommendation strong {
   color: var(--secondary);
-  text-shadow: none; /* Remove text shadow */
+  text-shadow: none;
+}
+
+/* Image Placeholder Styles */
+.image-placeholder {
+  width: 100%;
+  height: 200px;
+  background-color: var(--placeholder-bg);
+  border-radius: 8px;
+  margin-bottom: 1em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.image-placeholder img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.7;
+}
+
+/* Achievements Section Grid */
+.achievements-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.achievements-grid > div {
+  padding: 20px;
+  border: 1px solid var(--primary);
+  border-radius: 8px;
+}
+
+#awards h3,
+#testScores h3,
+#certifications h3 {
+  margin-bottom: 15px;
+  color: var(--highlight);
+  text-shadow: none;
+}
+
+/* Social Buttons Styles */
+.social-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.75em;
+  margin-top: 0;
+  position: relative;
+  z-index: 2;
+}
+
+.social-buttons .btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: var(--overlay-light);
+  border: 1px solid var(--overlay-light);
+  transition: all 0.3s ease;
+  box-shadow: 0 1px 2px var(--box-shadow-light);
+}
+
+.social-buttons .btn img {
+  width: 20px;
+  height: 20px;
+  opacity: 0.9;
+  transition: opacity 0.3s ease;
+}
+
+.social-buttons .btn:hover {
+  transform: translateY(-2px);
+  background: var(--overlay-light-hover);
+  border-color: var(--text-light);
+  box-shadow: 0 4px 8px var(--box-shadow-hover);
+}
+
+.social-buttons .btn:hover img {
+  opacity: 1;
 }
 
 /* Footer Styles */
@@ -742,8 +616,8 @@ footer {
 /* Responsive Adjustments */
 @media (max-width: 768px) {
   header {
-    flex-direction: column; /* Stack on smaller screens */
-    align-items: flex-start; /* Align to the left */
+    flex-direction: column;
+    align-items: flex-start;
   }
 
   header {
@@ -755,7 +629,7 @@ footer {
   }
 
   nav {
-    margin-top: 1em; /* Add margin for stacked nav */
+    margin-top: 1em;
   }
 
   nav a {
@@ -777,22 +651,22 @@ footer {
   }
 
   #achievements .content {
-    grid-template-columns: 1fr; /* Stack the columns on smaller screens */
+    grid-template-columns: 1fr;
   }
 
   #projects .content {
-    grid-template-columns: 1fr; /* Stack projects on smaller screens */
+    grid-template-columns: 1fr;
   }
 
   .social-buttons {
-    margin-top: 1em; /* Add margin for stacked social buttons */
-    justify-content: center; /* Center on smaller screens */
+    margin-top: 1em;
+    justify-content: center;
   }
 
   .social-buttons {
     margin-top: 1.2em;
     gap: 1em;
-    justify-content: center; /* Center on mobile for better balance */
+    justify-content: center;
     margin-left: 0;
   }
 
@@ -821,11 +695,17 @@ footer {
 }
 
 /* Add subtle animations to cards */
-.project, .company, .school, .recommendation {
+.project,
+.company,
+.school,
+.recommendation {
   transition: all 0.3s ease-out;
 }
 
-.project:hover, .company:hover, .school:hover, .recommendation:hover {
+.project:hover,
+.company:hover,
+.school:hover,
+.recommendation:hover {
   transform: translateY(-5px);
   box-shadow: 0 10px 20px var(--box-shadow-strong);
 }
@@ -841,11 +721,15 @@ a:hover {
 }
 
 /* Add subtle glow effects to important elements */
-.company h2, .school h3, .project h3 {
+.company h2,
+.school h3,
+.project h3 {
   position: relative;
 }
 
-.company h2::after, .school h3::after, .project h3::after {
+.company h2::after,
+.school h3::after,
+.project h3::after {
   content: '';
   position: absolute;
   top: -10px;
@@ -858,7 +742,9 @@ a:hover {
   transition: opacity 0.3s ease;
 }
 
-.company:hover h2::after, .school:hover h3::after, .project:hover h3::after {
+.company:hover h2::after,
+.school:hover h3::after,
+.project:hover h3::after {
   opacity: 0.2;
 }
 
@@ -872,9 +758,14 @@ section:hover *,
 }
 
 /* Card Hover States */
-.company:hover, .school:hover, .project:hover, .recommendation:hover,
-#experience .role:hover, #achievements .cert:hover,
-#achievements .award:hover, #achievements .score:hover {
+.company:hover,
+.school:hover,
+.project:hover,
+.recommendation:hover,
+#experience .role:hover,
+#achievements .cert:hover,
+#achievements .award:hover,
+#achievements .score:hover {
   background: var(--surface-hover);
   border-color: var(--primary);
   transform: translateY(-2px);
@@ -898,5 +789,24 @@ section:hover *,
   --text-secondary: #A0A0A0;
   --text-light: #FFFFFF;
   --border: #333333;
-  /* Adjust other variables as needed */
+}
+
+/* Media Queries for Achievements Section */
+@media (min-width: 768px) {
+  #achievements .content {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+  }
+
+  #achievements #awards {
+    grid-column: 1 / span 2;
+  }
+
+  #achievements #testScores {
+    grid-column: 1;
+  }
+
+  #achievements #certifications {
+    grid-column: 2;
+  }
 }
