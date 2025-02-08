@@ -6,50 +6,50 @@ const portfolioData = {
     "education": [
         {
             "about": "One of India's premier engineering institutions, established in 1967 as a Regional Engineering College and elevated to NIT status in 2002. Renowned for rigorous academic standards and research contributions, consistently ranked among India's top technical institutions.",
-            "institution": "National Institute of Technology (NIT), Silchar",
-            "links": {
-                "others": [
-                    "https://linkedin.com/school/national-institute-of-technology-silchar/"
-                ],
-                "primary": "http://nits.ac.in"
-            },
             "courses": [
                 {
                     "degree": "Bachelor of Technology - BTech",
-                    "field": "Electrical, Electronics and Communications Engineering",
                     "description": "Pursued an unconventional academic path filled with accolades, solving real-world problems through technology while leading multiple startups and organizations.",
                     "details": [
                         "Specialized in Electronics and Communications Engineering",
                         "Won national-level accolades in Robotics, IoT, and business plan competitions",
                         "Founded and led multiple early-stage ventures including Eminence Robotics and TechEngio"
                     ],
+                    "field": "Electrical, Electronics and Communications Engineering",
                     "gpa": "8.43",
                     "yearRange": "2018 - 2022"
                 }
-            ]
+            ],
+            "institution": "National Institute of Technology (NIT), Silchar",
+            "links": {
+                "others": [
+                    "https://linkedin.com/school/national-institute-of-technology-silchar/"
+                ],
+                "primary": "http://nits.ac.in"
+            }
         },
         {
             "about": "Prestigious CBSE-affiliated institution known for academic excellence and holistic development. Consistently produces top performers in board examinations and competitive tests.",
-            "institution": "Gurukul Grammar Senior Secondary School",
-            "links": {
-                "primary": "https://gurukulgrammarschool.in/"
-            },
             "courses": [
                 {
                     "degree": "High School",
-                    "field": "Science",
                     "description": "Completed Higher Secondary education with distinction in Science (Physics, Chemistry, Mathematics). Ranked among institution's top performers consistently.",
+                    "field": "Science",
                     "percent": "95%",
                     "yearRange": "2016 - 2018"
                 },
                 {
                     "degree": "Early-Middle School",
-                    "field": "Science",
                     "description": "Maintained perfect 10.0 GPA throughout middle school, demonstrating academic excellence across all subjects.",
+                    "field": "General Studies",
                     "gpa": "10.0",
                     "yearRange": "2006 - 2016"
                 }
-            ]
+            ],
+            "institution": "Gurukul Grammar Senior Secondary School",
+            "links": {
+                "primary": "https://gurukulgrammarschool.in/"
+            }
         }
     ],
     "experience": [
@@ -159,25 +159,6 @@ const portfolioData = {
             ]
         },
         {
-            "about": "Student-led organization developing innovative robotics/IoT solutions, participating in national competitions and automation projects.",
-            "company": "Eminence Robotics",
-            "links": {
-                "primary": "https://eminencerobotics.org"
-            },
-            "roles": [
-                {
-                    "dates": "Oct 2018 - Sep 2021",
-                    "description": "Co-founded organization and led IoT/robotics innovation initiatives.",
-                    "details": [
-                        "Developed terrain vehicles, combat robots, and autonomous smart systems",
-                        "Competed in national tech festivals focusing on product prototyping"
-                    ],
-                    "location": "India",
-                    "title": "IoT and Application Developer | Co-Founder"
-                }
-            ]
-        },
-        {
             "about": "Sustainable technology company developing IoT-integrated systems for environmental monitoring and smart agriculture.",
             "company": "GreenLine World",
             "roles": [
@@ -211,15 +192,28 @@ const portfolioData = {
                     "title": "Co-Founder"
                 }
             ]
+        },
+        {
+            "about": "Student-led organization developing innovative robotics/IoT solutions, participating in national competitions and automation projects.",
+            "company": "Eminence Robotics",
+            "links": {
+                "primary": "https://eminencerobotics.org"
+            },
+            "roles": [
+                {
+                    "dates": "Oct 2018 - Sep 2021",
+                    "description": "Co-founded organization and led IoT/robotics innovation initiatives.",
+                    "details": [
+                        "Developed terrain vehicles, combat robots, and autonomous smart systems",
+                        "Competed in national tech festivals focusing on product prototyping"
+                    ],
+                    "location": "India",
+                    "title": "IoT and Application Developer | Co-Founder"
+                }
+            ]
         }
     ],
     "honorsAndAwards": [
-        {
-            "date": "2018",
-            "description": "Secured Zonal Rank 1 and International Rank 136 in International English Olympiad.",
-            "issuer": "Science Olympiad Foundation - India",
-            "title": "International English Olympiad 2018"
-        },
         {
             "date": "Nov 2021",
             "description": "Recognized for exceptional product management and growth strategy skills among 450,000+ participants.",
@@ -297,6 +291,12 @@ const portfolioData = {
             ],
             "issuer": "K-SAC, KIIT University",
             "title": "1st Position, Innovation Challenge, KIIT-Fest 2019, KIIT University"
+        },
+        {
+            "date": "2018",
+            "description": "Secured Zonal Rank 1 and International Rank 136 in International English Olympiad.",
+            "issuer": "Science Olympiad Foundation - India",
+            "title": "International English Olympiad 2018"
         },
         {
             "description": "Achieved highest proficiency ranking in database management.",
@@ -527,6 +527,27 @@ const portfolioData = {
             ]
         },
         {
+            "date": "Dec 2020 - Jan 2021",
+            "description": "Real-time Hacker News viewer with Firebase/Hive integration.",
+            "details": [
+                "Multiple stars on GitHub",
+                "Can switch between Firebase Cloud Features or Local Hive Database"
+            ],
+            "links": {
+                "primary": "https://github.com/Dhi13man/ycombinator_news_client"
+            },
+            "name": "Hacker News Forum Client",
+            "skills": [
+                "Flutter",
+                "Firebase",
+                "Firestore",
+                "Hive",
+                "BLoC",
+                "Real-Time",
+                "Local Database"
+            ]
+        },
+        {
             "date": "Nov 2020 - Apr 2021",
             "description": "Built a full-fledged Employee Management and IoT-driven Contact-Tracing solution.",
             "details": [
@@ -547,27 +568,6 @@ const portfolioData = {
                 "Cross-Platform",
                 "Wi-Fi",
                 "Mesh Communication"
-            ]
-        },
-        {
-            "date": "Dec 2020 - Jan 2021",
-            "description": "Real-time Hacker News viewer with Firebase/Hive integration.",
-            "details": [
-                "Multiple stars on GitHub",
-                "Can switch between Firebase Cloud Features or Local Hive Database"
-            ],
-            "links": {
-                "primary": "https://github.com/Dhi13man/ycombinator_news_client"
-            },
-            "name": "Hacker News Forum Client",
-            "skills": [
-                "Flutter",
-                "Firebase",
-                "Firestore",
-                "Hive",
-                "BLoC",
-                "Real-Time",
-                "Local Database"
             ]
         },
         {
@@ -652,24 +652,24 @@ const portfolioData = {
     "recommendations": [
         {
             "from": "György Chityil (Cashtic)",
-            "text": "Dhiman is an outstanding developer. I worked with him on Cashtic, a peer to peer ATM cash network for Android and iOS with Firebase as backend, and he stabilized the code base and introduced lot of new features without any issues. He has a bright future ahead of him in the IT industry. I am glad to have met him, and look forward to working with him in the future.",
             "links": {
                 "primary": "https://www.linkedin.com/in/dhi13man"
-            }
+            },
+            "text": "Dhiman is an outstanding developer. I worked with him on Cashtic, a peer to peer ATM cash network for Android and iOS with Firebase as backend, and he stabilized the code base and introduced lot of new features without any issues. He has a bright future ahead of him in the IT industry. I am glad to have met him, and look forward to working with him in the future."
         },
         {
             "from": "Rajkram (Fiverr Client)",
-            "text": "dhiman13 was very confident right from the start and I was effortlessly able to communicate the tasks to him. It was really a pleasure working with him. I will definitely use him for my upcoming projects.",
             "links": {
                 "primary": "https://www.fiverr.com/dhiman13/reviews"
-            }
+            },
+            "text": "dhiman13 was very confident right from the start and I was effortlessly able to communicate the tasks to him. It was really a pleasure working with him. I will definitely use him for my upcoming projects."
         },
         {
             "from": "stuffynose (Fiverr Client)",
-            "text": "Great experience working with dhiman13, good communication and quick delivery.",
             "links": {
                 "primary": "https://www.fiverr.com/dhiman13/reviews"
-            }
+            },
+            "text": "Great experience working with dhiman13, good communication and quick delivery."
         }
     ],
     "testScores": [
@@ -725,8 +725,3 @@ const portfolioData = {
         }
     ]
 };
-
-// Sort the arrays by date descending
-portfolioData.licensesAndCertifications.sort((a, b) => new Date(b.issuedDate) - new Date(a.issuedDate));
-portfolioData.honorsAndAwards.sort((a, b) => new Date(b.date) - new Date(a.date));
-portfolioData.testScores.sort((a, b) => new Date(b.date) - new Date(a.date));
