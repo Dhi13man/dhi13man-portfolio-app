@@ -723,6 +723,24 @@ section .content {
   box-shadow: 0 4px 12px var(--shadow);
 }
 
+#education .course {
+  margin-top: 1em;
+  padding: 0.8em;
+  background: var(--surface);
+  box-shadow: 0 2px 4px var(--shadow);
+  border-radius: 6px;
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
+  border: 1px solid var(--border);
+  transition: all 0.3s ease;
+}
+
+#education .course:hover {
+  background: var(--surface-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px var(--shadow);
+}
+
 #achievements .cert,
 #achievements .award,
 #testScores .score {

@@ -85,13 +85,17 @@ function renderEducation(education) {
         `<a href="${school.links.primary}" target="_blank" rel="noopener noreferrer">${school.institution}</a>` : 
         school.institution}</h3>
       ${school.about ? `<p class="about-org">${school.about}</p>` : ''}
-      <div class="school-info">
-        <p class="degree">${school.degree || ''} ${school.field ? `in ${school.field}` : ''}; <em>${school.yearRange}</em></p>
-        <p class="grade"><strong>${school.gpa ? `GPA: ${school.gpa}` : school.percent ? `Grade: ${school.percent}` : ''}</strong></p>
-        ${school.description ? `<p class="description">${school.description}</p>` : ''}
-        ${school.details ? `<ul class="details">${school.details.map(item => `<li>${item}</li>`).join('')}</ul>` : ''}
-        ${renderLinks(school.links)}
+      <div class="courses">
+        ${school.courses.map(course => `
+          <div class="course">
+            <p class="degree">${course.degree || ''} ${course.field ? `in ${course.field}` : ''}; <em>${course.yearRange}</em></p>
+            <p class="grade"><strong>${course.gpa ? `GPA: ${course.gpa}` : course.percent ? `Grade: ${course.percent}` : ''}</strong></p>
+            ${course.description ? `<p class="description">${course.description}</p>` : ''}
+            ${course.details ? `<ul class="details">${course.details.map(item => `<li>${item}</li>`).join('')}</ul>` : ''}
+          </div>
+        `).join('')}
       </div>
+      ${renderLinks(school.links)}
     </div>
   `).join('');
 }

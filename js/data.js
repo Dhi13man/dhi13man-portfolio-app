@@ -6,15 +6,6 @@ const portfolioData = {
     "education": [
         {
             "about": "One of India's premier engineering institutions, established in 1967 as a Regional Engineering College and elevated to NIT status in 2002. Renowned for rigorous academic standards and research contributions, consistently ranked among India's top technical institutions.",
-            "degree": "Bachelor of Technology - BTech",
-            "description": "Pursued an unconventional academic path filled with accolades, solving real-world problems through technology while leading multiple startups and organizations.",
-            "details": [
-                "Specialized in Electronics and Communications Engineering",
-                "Won national-level accolades in Robotics, IoT, and business plan competitions",
-                "Founded and led multiple early-stage ventures including Eminence Robotics and TechEngio"
-            ],
-            "field": "Electrical, Electronics and Communications Engineering",
-            "gpa": "8.43",
             "institution": "National Institute of Technology (NIT), Silchar",
             "links": {
                 "others": [
@@ -22,32 +13,43 @@ const portfolioData = {
                 ],
                 "primary": "http://nits.ac.in"
             },
-            "yearRange": "2018 - 2022"
+            "courses": [
+                {
+                    "degree": "Bachelor of Technology - BTech",
+                    "field": "Electrical, Electronics and Communications Engineering",
+                    "description": "Pursued an unconventional academic path filled with accolades, solving real-world problems through technology while leading multiple startups and organizations.",
+                    "details": [
+                        "Specialized in Electronics and Communications Engineering",
+                        "Won national-level accolades in Robotics, IoT, and business plan competitions",
+                        "Founded and led multiple early-stage ventures including Eminence Robotics and TechEngio"
+                    ],
+                    "gpa": "8.43",
+                    "yearRange": "2018 - 2022"
+                }
+            ]
         },
         {
             "about": "Prestigious CBSE-affiliated institution known for academic excellence and holistic development. Consistently produces top performers in board examinations and competitive tests.",
-            "degree": "High School",
-            "description": "Completed Higher Secondary education with distinction in Science (Physics, Chemistry, Mathematics). Ranked among institution's top performers consistently.",
-            "details": [],
-            "field": "Science",
             "institution": "Gurukul Grammar Senior Secondary School",
             "links": {
                 "primary": "https://gurukulgrammarschool.in/"
             },
-            "percent": "95%",
-            "yearRange": "2016 - 2018"
-        },
-        {
-            "about": "Middle school program emphasizing foundational knowledge and critical thinking. Combines academic rigor with extracurricular activities in an integrated curriculum.",
-            "degree": "Early-Middle School",
-            "description": "Maintained perfect 10.0 GPA throughout middle school, demonstrating academic excellence across all subjects.",
-            "field": "Science",
-            "gpa": "10.0",
-            "institution": "Gurukul Grammar Senior Secondary School",
-            "links": {
-                "primary": "https://gurukulgrammarschool.in/"
-            },
-            "yearRange": "2006 - 2016"
+            "courses": [
+                {
+                    "degree": "High School",
+                    "field": "Science",
+                    "description": "Completed Higher Secondary education with distinction in Science (Physics, Chemistry, Mathematics). Ranked among institution's top performers consistently.",
+                    "percent": "95%",
+                    "yearRange": "2016 - 2018"
+                },
+                {
+                    "degree": "Early-Middle School",
+                    "field": "Science",
+                    "description": "Maintained perfect 10.0 GPA throughout middle school, demonstrating academic excellence across all subjects.",
+                    "gpa": "10.0",
+                    "yearRange": "2006 - 2016"
+                }
+            ]
         }
     ],
     "experience": [
