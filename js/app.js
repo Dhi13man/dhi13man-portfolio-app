@@ -13,7 +13,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
 function renderAbout(about) {
   const container = document.querySelector('#about .content');
-  container.innerHTML = `<p>${about.description.replace(/\n/g, '<br>')}</p>`;
+  // Find the existing p element or create a new one if it doesn't exist
+  let p = container.querySelector('p');
+  if (!p) {
+    p = document.createElement('p');
+    container.appendChild(p);
+  }
+  p.innerHTML = about.description.replace(/\n/g, '<br>');
 }
 
 function renderExperience(experiences) {
