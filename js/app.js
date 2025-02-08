@@ -37,10 +37,23 @@ function renderExperience(experiences) {
         <ul>${exp.details.map(item => `<li>${item}</li>`).join('')}</ul>
       </div>`;
     return `<div class="company">
-              <h2>${exp.company}</h2>
+              <h2>${exp.links?.primary ? 
+                `<a href="${exp.links.primary}" target="_blank">${exp.company}</a>` : 
+                exp.company}</h2>
               ${roles}
+              ${renderExperienceLinks(exp.links)}
             </div>`;
   }).join('');
+}
+
+function renderExperienceLinks(links) {
+  if (!links?.others?.length) return '';
+  
+  const otherLinks = links.others.map(url => 
+    `<a href="${url}" target="_blank">${new URL(url).hostname}</a>`
+  );
+  
+  return `<p class="company-links">More at: ${otherLinks.join(' | ')}</p>`;
 }
 
 function renderEducation(education) {
