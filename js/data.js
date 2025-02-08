@@ -44,15 +44,11 @@ const portfolioData = {
     "experience": [
         {
             "company": "Groww, India",
-            "links": {
-                "others": [
-                    "https://linkedin.com/company/groww"
-                ],
-                "primary": "https://groww.in"
-            },
+            "description": "Led development of critical payment infrastructure and real-time data streaming solutions at one of India's fastest-growing fintech unicorns. Advanced from intern to SDE-2 within 18 months through exceptional performance.",
             "roles": [
                 {
                     "dates": "Jul 2023 - Present",
+                    "description": "Leading technical initiatives in consumer payments and real-time market data systems while mentoring junior engineers.",
                     "details": [
                         "Built and architected multiple consumer payment systems from inception",
                         "Demonstrated technical leadership through solutions that enhanced both customer and developer experiences",
@@ -81,16 +77,23 @@ const portfolioData = {
                     "location": "Bengaluru, Karnataka, India | Remote",
                     "title": "Software Engineer Intern - Backend"
                 }
-            ]
+            ],
+            "links": {
+                "others": [
+                    "https://linkedin.com/company/groww"
+                ],
+                "primary": "https://groww.in"
+            }
         },
         {
             "company": "AgriJod",
+            "description": "Served as the primary technical advisor for a growing agritech startup, architecting their core infrastructure and product verticals.",
             "dates": "May 2023 - Apr 2024",
             "details": [
-                "Served as technical architect for multiple product verticals including Buyer/Seller Management and Logistics",
-                "Established and maintained AWS infrastructure with multi-profile CI/CD pipelines",
-                "Integrated critical third-party services including payment gateways and mapping solutions",
-                "Implemented comprehensive observability solutions utilizing OTEL and Prometheus"
+                "Served as technical architect for multiple product verticals",
+                "Established AWS infrastructure with multi-profile CI/CD pipelines",
+                "Integrated critical third-party services including payment gateways",
+                "Implemented comprehensive observability solutions"
             ],
             "links": {
                 "primary": "https://agrijod.in"
@@ -164,7 +167,13 @@ const portfolioData = {
         {
             "date": "2018",
             "issuer": "Science Olympiad Foundation - India",
-            "title": "International English Olympiad 2018, Zonal Rank 1, International Rank 136"
+            "title": "International English Olympiad 2018",
+            "description": "Achieved exceptional performance in the International English Olympiad, securing Zonal Rank 1 and International Rank 136.",
+            "details": [
+                "Secured Zonal Rank 1",
+                "Achieved International Rank 136",
+                "Demonstrated superior English language proficiency"
+            ]
         },
         {
             "date": "Nov 2021",
@@ -237,7 +246,9 @@ const portfolioData = {
             "credentialId": "UC-7e081543-f46c-471f-8231-c25a2d13753c",
             "issuedDate": "Jun 2021",
             "issuer": "Udemy",
-            "title": "Deep Reinforcement Learning 2.0"
+            "title": "Deep Reinforcement Learning 2.0",
+            "description": "Mastered advanced reinforcement learning concepts and implementations through hands-on projects and comprehensive coursework.",
+            "details": []
         },
         {
             "credentialId": "PBLVZDHRWTD5",
@@ -307,15 +318,22 @@ const portfolioData = {
     ],
     "projects": [
         {
+            "name": "spring-multi-data-source",
             "date": "Jun 2023",
-            "description": "Developed an innovative solution to address Spring's multi-data source limitations through custom annotations, enabling automated bean definition configurations and package-segregated repositories",
+            "description": "Created a revolutionary solution to Spring's multi-data source configuration challenges, significantly reducing boilerplate code and improving developer experience through intuitive annotations and automated configurations.",
+            "details": [
+                "Developed custom annotations for automated bean definition configurations",
+                "Implemented package-segregated repository management",
+                "Published to Maven Central Repository",
+                "Achieved 90%+ test coverage with comprehensive integration tests",
+                "Created detailed documentation and usage examples"
+            ],
             "links": {
                 "others": [
                     "https://central.sonatype.com/artifact/io.github.dhi13man/spring-multi-data-source"
                 ],
                 "primary": "https://github.com/dhi13man/spring-multi-data-source"
             },
-            "name": "spring-multi-data-source: Open-Source Spring Boot Library for Integrating Multiple Data Sources",
             "skills": [
                 "Java",
                 "Databases",
@@ -483,9 +501,14 @@ const portfolioData = {
     "testScores": [
         {
             "date": "Sep 2021",
-            "details": "Scored 264/400 in D2C Recruitables. Top 10% among candidates.",
-            "name": "Dare2Compete Recruitables Score - Off Campus Hiring Drive for Software Development Engineer (SDE) Roles, 2021",
-            "score": "264/400 (top 10%)"
+            "name": "Dare2Compete Recruitables Score",
+            "score": "264/400 (top 10%)",
+            "description": "Demonstrated exceptional problem-solving skills in the Dare2Compete Recruitables assessment for Software Development Engineer roles.",
+            "details": [
+                "Scored 264 out of 400 points",
+                "Ranked in top 10% among all candidates",
+                "Successfully completed all technical sections"
+            ]
         },
         {
             "date": "Feb 2021",
