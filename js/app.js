@@ -29,12 +29,12 @@ function renderExperience(experiences) {
       return `<div class="role">
                 <h3>${role.title}</h3>
                 <p><em>${role.dates} &ndash; ${role.location}</em></p>
-                <ul>${role.details.map(item => `<li>${item}</li>`).join('')}</ul>
+                <ul class="description">${role.details.map(item => `<li>${item}</li>`).join('')}</ul>
               </div>`;
     }).join('') : `<div class="role">
         <h3>${exp.title}</h3>
         <p><em>${exp.dates} &ndash; ${exp.location}</em></p>
-        <ul>${exp.details.map(item => `<li>${item}</li>`).join('')}</ul>
+        <ul class="description">${exp.details.map(item => `<li>${item}</li>`).join('')}</ul>
       </div>`;
     return `<div class="company">
               <h2>${exp.links?.primary ? 
@@ -50,9 +50,15 @@ function renderEducation(education) {
   const container = document.querySelector('#education .content');
   container.innerHTML = education.map(school => `
     <div class="school">
-      <h3>${school.institution}</h3>
-      <p>${school.degree || ''} ${school.field || ''} ${school.gpa ? '- GPA: ' + school.gpa : ''}</p>
-      <p><em>${school.yearRange}</em></p>
+      <h3>${school.links?.primary ? 
+        `<a href="${school.links.primary}" target="_blank" rel="noopener noreferrer">${school.institution}</a>` : 
+        school.institution}</h3>
+      <div class="school-info">
+        <p class="degree">${school.degree || ''} ${school.field ? `in ${school.field}` : ''}; <em>${school.yearRange}</em></p>
+        <p class="grade"><strong>${school.gpa ? `GPA: ${school.gpa}` : school.percent ? `Grade: ${school.percent}` : ''}</strong></p>
+        ${school.description ? `<p class="description">${school.description}</p>` : ''}
+        ${renderLinks(school.links, 'school-links')}
+      </div>
     </div>
   `).join('');
 }
@@ -78,8 +84,8 @@ function renderProjects(projects) {
         `<h3>${proj.name}</h3>`
       }
       <p><em>${proj.date}</em></p>
-      <p>${proj.description}</p>
-      ${proj.skills ? `<p><strong>Skills:</strong> ${proj.skills.join(', ')}</p>` : ''}
+      <p class="description">${proj.description}</p>
+      ${proj.skills ? `<p class="skills"><strong>Skills:</strong> ${proj.skills.join(', ')}</p>` : ''}
       ${renderLinks(proj.links, 'project-links')}
     </div>
   `).join('');

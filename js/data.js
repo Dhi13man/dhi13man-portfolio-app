@@ -22,10 +22,10 @@ const portfolioData = {
             "field": "Science",
             "institution": "Gurukul Grammar Senior Secondary School",
             "percent": "95%",
-            "yearRange": "2006 - 2018",
+            "yearRange": "2016 - 2018",
             "description": "Completed Higher Secondary with distinction in Science stream (Physics, Chemistry, Mathematics). Consistently ranked among top performers throughout academic career.",
             "links": {
-                "primary": "https://gurukulgrammar.com"
+                "primary": "https://gurukulgrammarschool.in/"
             }
         },
         {
@@ -33,10 +33,10 @@ const portfolioData = {
             "field": "Science",
             "institution": "Gurukul Grammar Senior Secondary School",
             "gpa": "10.0",
-            "yearRange": "2006 - 2018",
+            "yearRange": "2006 - 2016",
             "description": "Maintained a perfect 10.0 GPA through Middle School, excelling in all subjects.",
             "links": {
-                "primary": "https://gurukulgrammar.com"
+                "primary": "https://gurukulgrammarschool.in/"
             }
         }
     ],
@@ -51,7 +51,7 @@ const portfolioData = {
             },
             "roles": [
                 {
-                    "dates": "Jul 2023 - Present 1 year 8 months",
+                    "dates": "Jul 2023 - Present",
                     "details": [
                         "Building multiple elements of Consumer Payments from scratch and scaling them.",
                         "Pitching, designing and building various tech solutions that improve customer experience, AND developer experience.",
@@ -62,7 +62,7 @@ const portfolioData = {
                     "title": "Software Engineer 2 - Backend"
                 },
                 {
-                    "dates": "Jul 2022 - Jun 2023 1 year",
+                    "dates": "Jul 2022 - Jun 2023",
                     "details": [
                         "Working as a backend Software Engineer at Groww on the Payments team, with technologies like Java Spring Boot, Apache Kafka, Redis.",
                         "Owning various services across Payments and building multiple internal SDKs, services from scratch while following Scalable Design Patterns."
@@ -71,7 +71,7 @@ const portfolioData = {
                     "title": "Software Engineer - Backend"
                 },
                 {
-                    "dates": "Jan 2022 - Jun 2022 6 months",
+                    "dates": "Jan 2022 - Jun 2022",
                     "details": [
                         "Achieved \"outstanding performance\", to become one of the first interns to earn the Pre-Placement Offer, while building and maintaining High Scale Micro-services in the Payments team.",
                         "Influenced almost every merchant and consumer payments service from ideation to development, maintenance, load testing, etc.",
@@ -80,12 +80,11 @@ const portfolioData = {
                     "location": "Bengaluru, Karnataka, India | Remote",
                     "title": "Software Engineer Intern - Backend"
                 }
-            ],
-            "totalDuration": "3 years 2 months"
+            ]
         },
         {
             "company": "AgriJod",
-            "dates": "May 2023 - Apr 2024 1 year",
+            "dates": "May 2023 - Apr 2024",
             "details": [
                 "Architected and helped develop multiple products in verticals like Buyer and Seller Management, Transporter Management, Warehouse Management, etc.",
                 "Set up and helped maintain the AWS infrastructure and multi-profile CI/CD pipelines deploying to EC2 instances.",
@@ -100,7 +99,7 @@ const portfolioData = {
         },
         {
             "company": "Fiverr",
-            "dates": "Jan 2021 - Dec 2021 1 year",
+            "dates": "Jan 2021 - Dec 2021",
             "details": [
                 "Working as a freelancer on sites like Fiverr, Upwork for various National and International clients. 5-Star ratings from every single client."
             ],
@@ -112,7 +111,7 @@ const portfolioData = {
         },
         {
             "company": "Cashtic",
-            "dates": "May 2021 - Nov 2021 7 months",
+            "dates": "May 2021 - Nov 2021",
             "details": [
                 "Designed and Built entire systems from scratch: Dynamic Link-based User Referral System, Secure User Rating system, CRON scheduled Data processing pipeline handling over 300,000 records per day, etc.",
                 "Brainstormed, developed, and created server-less cloud function models with authentication."
@@ -125,7 +124,7 @@ const portfolioData = {
         },
         {
             "company": "Eminence Robotics",
-            "dates": "Oct 2018 - Sep 2021 3 years",
+            "dates": "Oct 2018 - Sep 2021",
             "details": [
                 "Multiple Mechanical and Electronics projects including self-designed vehicles for Terrain traversal, Combat Robotics, Autonomous Smart robots, Environment manipulation robots, as well as IoT-based technology.",
                 "Traveling to tech fests across the country participating in Robotics events and Innovation Challenges, focusing on product prototyping and development."
@@ -138,7 +137,7 @@ const portfolioData = {
         },
         {
             "company": "GreenLine World",
-            "dates": "Apr 2021 - Jul 2021 4 months",
+            "dates": "Apr 2021 - Jul 2021",
             "details": [
                 "Developed the System Design, Back-End, and Cross-Platform application for Interfacing their custom IoT machine and also worked on the hardware microcontroller unit.",
                 "Successfully handed off the project to the next team upon completion of the internship period."
@@ -148,7 +147,7 @@ const portfolioData = {
         },
         {
             "company": "TechEngio",
-            "dates": "Nov 2018 - Mar 2020 1 year 5 months",
+            "dates": "Nov 2018 - Mar 2020",
             "details": [
                 "Conducting workshops teaching robotics, electronics, software, etc.",
                 "Making electronics-based projects and uploading informative videos, while earning through affiliate marketing."

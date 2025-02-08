@@ -27,7 +27,7 @@ html {
   --surface: #F8FAFC;
   --surface-hover: #E9EEF2;
   --text: #1b0752;
-  --text-secondary: #64748B;
+  --text-secondary: #1b07529d;
   --text-light: #FFFFFF;
   --border: #E2E8F0;
   --shadow: rgba(0, 102, 255, 0.1);
@@ -63,7 +63,6 @@ body {
   font-size: var(--font-size-base);
   line-height: var(--line-height-base);
   background-color: var(--background);
-  color: var(--text);
 }
 
 /* Remove background pattern */
@@ -188,7 +187,6 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  color: #fff;
   padding: 20px 0;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   text-align: center;
@@ -876,16 +874,7 @@ a:hover {
   opacity: 0.2;
 }
 
-/* Remove any conflicting hover states */
-section:hover *,
-.company:hover *,
-.school:hover *,
-.project:hover *,
-.recommendation:hover * {
-  color: inherit;
-}
-
-/* Card Hover States */
+/* Replace hover states with simpler version */
 .company:hover,
 .school:hover,
 .project:hover,
@@ -984,4 +973,12 @@ a:focus,
 button:focus {
   outline: 2px dashed var(--accent);
   outline-offset: 4px;
+}
+
+/* Common description style for all sections */
+.description {
+  color: var(--text-secondary);
+  font-style: italic;
+  margin-top: 1em;
+  line-height: var(--line-height-base);
 }
