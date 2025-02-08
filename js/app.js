@@ -105,7 +105,7 @@ function renderCerts(certs) {
   let certsHtml = certs.map(cert => `
     <div class="cert">
       <h4>${cert.title}</h4>
-      <p><em>${cert.issuer} ${cert.issuedDate ? ' - ' + cert.issuedDate : ''}</em></p>
+      <p><em>${cert.issuer} ${cert.date ? ' - ' + cert.date : ''}</em></p>
       ${cert.credentialId ? `<p class="credential">Credential: ${cert.credentialId}</p>` : ''}
       ${cert.description ? `<p class="description">${cert.description}</p>` : ''}
       ${cert.details ? `<ul class="details">${cert.details.map(item => `<li>${item}</li>`).join('')}</ul>` : ''}
@@ -122,7 +122,7 @@ function renderProjects(projects) {
         `<h3><a href="${proj.links.primary}" target="_blank">${proj.name}</a></h3>` :
         `<h3>${proj.name}</h3>`
       }
-      <p><em>${proj.date}</em></p>
+      <p><em>${proj.dates}</em></p>
       ${proj.description ? `<p class="description">${proj.description}</p>` : ''}
       ${proj.details ? `<ul class="details">${proj.details.map(item => `<li>${item}</li>`).join('')}</ul>` : ''}
       ${proj.skills ? `<p class="skills"><strong>Skills:</strong> ${proj.skills.join(', ')}</p>` : ''}

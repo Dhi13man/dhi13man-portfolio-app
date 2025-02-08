@@ -309,7 +309,7 @@ const portfolioData = {
         {
             "credentialId": "UC-7e081543-f46c-471f-8231-c25a2d13753c",
             "description": "Mastered advanced reinforcement learning concepts through hands-on projects.",
-            "issuedDate": "Jun 2021",
+            "date": "Jun 2021",
             "issuer": "Udemy",
             "title": "Deep Reinforcement Learning 2.0"
         },
@@ -321,7 +321,7 @@ const portfolioData = {
                 "Implemented image generation models",
                 "Developed conditional GANs"
             ],
-            "issuedDate": "Nov 2020",
+            "date": "Nov 2020",
             "issuer": "deeplearning.ai, Coursera",
             "title": "Generative Adversarial Networks (GANs) Specialization"
         },
@@ -332,7 +332,7 @@ const portfolioData = {
                 "Deployed models on AWS infrastructure",
                 "Created end-to-end computer vision pipelines"
             ],
-            "issuedDate": "Sep 2020",
+            "date": "Sep 2020",
             "issuer": "Coursera",
             "title": "AWS Computer Vision: Getting Started with GluonCV"
         },
@@ -343,7 +343,7 @@ const portfolioData = {
                 "Implemented classic CNN architectures",
                 "Developed object detection systems"
             ],
-            "issuedDate": "Aug 2020",
+            "date": "Aug 2020",
             "issuer": "deeplearning.ai, Coursera",
             "title": "Convolutional Neural Networks"
         },
@@ -354,7 +354,7 @@ const portfolioData = {
                 "Built various neural network architectures from scratch",
                 "Applied deep learning to real-world problems"
             ],
-            "issuedDate": "Aug 2020",
+            "date": "Aug 2020",
             "issuer": "Kirill Eremenko, Hadelin de Ponteves, SuperDataScience Team, Udemy",
             "title": "Deep Learning A-Z™: Hands-On Artificial Neural Networks"
         },
@@ -368,7 +368,7 @@ const portfolioData = {
                 "Convolutional Neural Networks",
                 "Sequence Models"
             ],
-            "issuedDate": "Aug 2020",
+            "date": "Aug 2020",
             "issuer": "deeplearning.ai",
             "title": "Deep Learning Specialization (5 in-depth Courses by deeplearning.ai)"
         },
@@ -380,7 +380,7 @@ const portfolioData = {
                 "Implemented attention mechanisms",
                 "Developed natural language processing applications"
             ],
-            "issuedDate": "Aug 2020",
+            "date": "Aug 2020",
             "issuer": "Coursera, deeplearning.ai",
             "title": "Sequence Models"
         },
@@ -391,7 +391,7 @@ const portfolioData = {
                 "Implemented real-time tracking systems",
                 "Utilized OpenCV tracking APIs"
             ],
-            "issuedDate": "Jun 2020",
+            "date": "Jun 2020",
             "issuer": "Coursera",
             "title": "Computer Vision - Object Tracking with OpenCV and Python"
         },
@@ -402,7 +402,7 @@ const portfolioData = {
                 "Applied ML techniques to real datasets",
                 "Mastered model evaluation techniques"
             ],
-            "issuedDate": "Jun 2020",
+            "date": "Jun 2020",
             "issuer": "SuperDataScience, Udemy",
             "title": "Machine Learning A-Z™: Hands-On Python & R In Data Science"
         },
@@ -413,7 +413,7 @@ const portfolioData = {
                 "Implemented backpropagation algorithms",
                 "Built networks from scratch in practical problems"
             ],
-            "issuedDate": "Jun 2020",
+            "date": "Jun 2020",
             "issuer": "deeplearning.ai",
             "title": "Neural Networks and Deep Learning"
         },
@@ -424,7 +424,7 @@ const portfolioData = {
                 "Mastered advanced Python concepts",
                 "Built practical applications"
             ],
-            "issuedDate": "Mar 2020",
+            "date": "Mar 2020",
             "issuer": "Udemy",
             "title": "Introduction To Python Programming"
         },
@@ -434,14 +434,14 @@ const portfolioData = {
                 "Studied core ML algorithms and the mathematics behind them",
                 "Applied ML to real-world problems"
             ],
-            "issuedDate": "Sep 2018",
+            "date": "Sep 2018",
             "issuer": "Indian Institute of Technology, Guwahati",
             "title": "Machine Learning"
         }
     ],
     "projects": [
         {
-            "date": "Jun 2023 - Current",
+            "dates": "Jun 2023 - Current",
             "description": "Revolutionary Spring framework solution simplifying multi-data source configuration through intuitive annotations.",
             "details": [
                 "Published on Maven Central Repository",
@@ -463,7 +463,7 @@ const portfolioData = {
             ]
         },
         {
-            "date": "Nov 2021 - Feb 2022",
+            "dates": "Nov 2021 - Feb 2022",
             "description": "Automated Windows solution for dynamic proxy configuration across WiFi networks.",
             "details": [
                 "Auto-configures proxies based on network SSID",
@@ -481,7 +481,7 @@ const portfolioData = {
             ]
         },
         {
-            "date": "Sep 2021 - Current",
+            "dates": "Sep 2021 - Current",
             "description": "Built and maintaining Open-source Dart/Flutter library for openrouteservice API integration.",
             "details": [
                 "Used by 1.4K+ development teams across the world, with 80 likes and 160/160 pub.dev points",
@@ -504,7 +504,7 @@ const portfolioData = {
             ]
         },
         {
-            "date": "May 2021 - Current",
+            "dates": "May 2021 - Current",
             "description": "Created a null-safe Dart/Flutter package for Nordigen EU PSD2 AISP Banking API Integration.",
             "details": [
                 "Officially recognized by Nordigen as their premier Dart/Flutter community package",
@@ -528,7 +528,7 @@ const portfolioData = {
             ]
         },
         {
-            "date": "Dec 2020 - Jan 2021",
+            "dates": "Dec 2020 - Jan 2021",
             "description": "Real-time Hacker News viewer with Firebase/Hive integration.",
             "details": [
                 "Multiple stars on GitHub",
@@ -549,7 +549,7 @@ const portfolioData = {
             ]
         },
         {
-            "date": "Nov 2020 - Apr 2021",
+            "dates": "Nov 2020 - Apr 2021",
             "description": "Built a full-fledged Employee Management and IoT-driven Contact-Tracing solution.",
             "details": [
                 "Cross-platform IoT Flutter application for Employee Management and Contact-Tracing",
@@ -572,7 +572,7 @@ const portfolioData = {
             ]
         },
         {
-            "date": "Nov 2020 - Current",
+            "dates": "Nov 2020 - Current",
             "description": "Open-source package for moor database to CSV conversion.",
             "details": [
                 "Over 100 downloads and 13 likes, with 160/160 pub.dev points",
@@ -592,7 +592,7 @@ const portfolioData = {
             ]
         },
         {
-            "date": "Apr 2020 - May 2020",
+            "dates": "Apr 2020 - May 2020",
             "description": "Python-based real-time hand gesture PC control system using OpenCV and ML.",
             "details": [
                 "Trained multiple ML models for real-time hand shape detection",
@@ -610,7 +610,7 @@ const portfolioData = {
             ]
         },
         {
-            "date": "Apr 2020",
+            "dates": "Apr 2020",
             "description": "Custom Open-Source keyboard shortcut system using Num Lock/Caps Lock key states.",
             "details": [
                 "Integrated with Electron for cross-platform compatibility",
@@ -629,7 +629,7 @@ const portfolioData = {
             ]
         },
         {
-            "date": "Oct 2019 - Dec 2019",
+            "dates": "Oct 2019 - Dec 2019",
             "description": "IoT-based driver safety system with drowsiness detection by monitoring eyes and other driver cues.",
             "details": [
                 "1st Prize Winner at KIIT-Fest, 2019 in KIIT University and MeiTY TIDE 2020's NIT Silchar Chapter",
