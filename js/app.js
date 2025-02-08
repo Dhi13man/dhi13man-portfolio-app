@@ -11,6 +11,23 @@ console.log(`
 `);
 
 document.addEventListener('DOMContentLoaded', () => {
+  // Sidebar toggle functionality
+  const toggleButton = document.querySelector('.sidebar-toggle');
+  const body = document.body;
+  
+  toggleButton.addEventListener('click', () => {
+    body.classList.toggle('sidebar-collapsed');
+  });
+
+  // Close sidebar when clicking nav links (especially on mobile)
+  document.querySelectorAll('.sidebar nav a').forEach(link => {
+    link.addEventListener('click', () => {
+      if (window.innerWidth <= 768) {
+        body.classList.remove('sidebar-collapsed');
+      }
+    });
+  });
+
   // Use the global portfolioData variable instead of fetching
   const data = portfolioData;
   renderAbout(data.about);

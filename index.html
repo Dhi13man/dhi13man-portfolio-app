@@ -37,9 +37,11 @@
     <script type="application/ld+json" src="scripts/ld.json"></script>
   </head>
   <body>
-    <!-- Inline header with internal navigation -->
-    <header>
-      <h1>Dhiman Seal</h1>
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <div class="sidebar-header">
+        <h1>Dhiman Seal</h1>
+      </div>
       <nav>
         <a href="#about">About</a>
         <a href="#experience">Work Experience</a>
@@ -59,9 +61,17 @@
           <img src="assets/logos/medium.svg" alt="Medium" />
         </a>
       </div>
-    </header>
+    </div>
 
-    <main>
+    <!-- Toggle Button -->
+    <button class="sidebar-toggle" title="Toggle Sidebar" type="button">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <!-- Main Content -->
+    <main class="main-content">
       <!-- About Section -->
       <section id="about">
         <h2 id="about-tagline"></h2>

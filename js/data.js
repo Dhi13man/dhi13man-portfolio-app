@@ -1,6 +1,6 @@
 const portfolioData = {
     "about": {
-        "description": "Dhiman Seal is a distinguished tech-obsessed Engineer trying to make people's lives easier. He has proven expertise in scalable systems and innovative solutions.\n\nAs a recognized authority in Open Source development, IoT, and AI implementations, his work is guided by three core principles:\n1. Architecting scalable, elegant solutions to complex engineering challenges\n2. Advancing the technology landscape through strategic open-source contributions\n3. Leading high-performance teams in developing industry-transforming systems.",
+        "description": "Dhiman Seal is a distinguished, tech-obsessed Engineer trying to make people's lives easier. He has proven expertise in scalable systems and innovative solutions.\n\nAs a recognized authority in Open Source development, IoT, and AI implementations, his work is guided by three core principles:\n1. Architecting scalable, elegant solutions to complex engineering challenges\n2. Advancing the technology landscape through strategic open-source contributions\n3. Leading high-performance teams in developing industry-transforming systems.",
         "tagline": "Entrepreneur • Open-Source Creator • Software Wizard"
     },
     "education": [
