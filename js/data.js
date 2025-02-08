@@ -6,10 +6,10 @@ const portfolioData = {
     "education": [
         {
             "degree": "Bachelor of Technology - BTech",
-            "description": "Specializeing in Electronics and Communications Engineering, won multiple accolades across the country in Robotics and IoT while maintaining a high GPA.",
+            "description": "Had an experience and accolade-filled academic life, solving day-to-day problems with technology and innovation.",
             "details": [
                 "Specialized in Electronics and Communications Engineering",
-                "Won multiple accolades across the country in Robotics and IoT",
+                "Won multiple accolades across the country in Robotics and IoT"
             ],
             "field": "Electrical, Electronics and Communications Engineering",
             "gpa": "8.43",
