@@ -192,58 +192,98 @@ const portfolioData = {
     ],
     "projects": [
         {
-            "name": "spring-multi-data-source (Java | Spring Boot | Databases)",
+            "name": "spring-multi-data-source: Open-Source Spring Boot Library for Integrating Multiple Data Sources",
             "date": "Jun 2023",
-            "description": "To counter Spring's limitations with multiple data sources in a single service, this library provides two custom annotations in Java that automatically generate all the required bean definition configurations and package-segregated repositories, for each data source. Deployed at Maven Central and on GitHub.",
-            "links": [
-                "https://central.sonatype.com/artifact/io.github.dhi13man/spring-multi-data-source",
-                "https://github.com/dhi13man/spring-multi-data-source"
-            ]
+            "description": "To counter Spring's limitations with multiple data sources in a single service, this library provides two custom annotations in Java that automatically generate all the required bean definition configurations and package-segregated repositories, for each data source.",
+            "links": {
+                "primary": "https://github.com/dhi13man/spring-multi-data-source",
+                "others": [
+                    "https://central.sonatype.com/artifact/io.github.dhi13man/spring-multi-data-source"
+                ]
+            },
+            "skills": ["Java", "Databases", "Spring Boot"]
         },
         {
-            "name": "auto_proxy_wifi (Python | Windows | System | CLI | Automation | Event scheduler)",
+            "name": "auto_proxy_wifi: Automatically configure a proxy servers on Wi-Fi networks",
             "date": "Nov 2021 - Feb 2022",
-            "description": "An Automation Script for Windows devices to automatically configure a proxy server on wifi networks based on their SSID. Uses Windows environment variables, registry, and CLI tools. Utilizes Windows schtasks CLI for event scheduling on Wi-Fi network changes."
+            "description": "An Automation Script for Windows devices to automatically configure a proxy server on Wi-Fi networks based on their SSID.",
+            "links": {
+                "primary": "https://github.com/Dhi13man/auto_proxy_wifi"
+            },
+            "skills": ["Python", "Windows", "System", "CLI", "Automation", "Event scheduler"]
         },
         {
-            "name": "open_route_service (Flutter | Dart | Package Development | Open Source | HTTP | API Integration | OOP | Test Driven Development)",
+            "name": "open_route_service: Open-Source Dart/Flutter library for encapsulating openrouteservice API",
             "date": "Sep 2021",
-            "description": "An encapsulation for openrouteservice API in Dart/Flutter. Used by 1.4K+ development teams. Features creation of routes, directions, isochrones, time-distance matrices, geocoding, POIs, and more."
+            "description": "An encapsulation for openrouteservice API in Dart/Flutter. Used by 1.4K+ development teams. The package enables the easy integration of the openrouteservice API with relevant data models, for generation of Routes and Directions on Maps, Isochrones, Time-Distance Matrix, Pelias Geocoding, POIs, Elevation, routing Optimizations etc, using their amazing API.",
+            "links": {
+                "primary": "https://pub.dev/packages/open_route_service",
+                "others": [
+                    "http://github.com/Dhi13man/open_route_service"
+                ]
+            },
+            "skills": ["Flutter", "Dart", "REST APIs", "API Integration", "OOP", "Test Driven Development"]
         },
         {
-            "name": "nordigen_integration (Flutter | Dart | Package Development | Open Source | HTTP | API Integration | OOP)",
-            "date": "May 2021",
-            "description": "A null-safe Dart/Flutter package for Nordigen EU PSD2 AISP Banking API Integration. Officially recognized by Nordigen as the premier Dart/Flutter community package for their API."
+            "name": "nordigen_integration: Open-Source Dart/Flutter library for Nordigen EU PSD2 AISP Banking API Integration",
+            "date": "May 2021", 
+            "description": "A null-safe Dart/Flutter package for Nordigen EU PSD2 AISP Banking API Integration. Officially recognized by Nordigen as their premier Dart/Flutter community package.",
+            "links": {
+                "primary": "https://pub.dev/packages/nordigen_integration",
+                "others": [
+                    "https://github.com/Dhi13man/nordigen_integration",
+                    "https://nordigen.com/en/account_information_documenation/integration/libraries/"
+                ]
+            },
+            "skills": ["Flutter", "Dart", "REST APIs", "API Integration", "OOP", "Test Driven Development"]
         },
         {
-            "name": "SafeSync IoT (Flutter/Dart | ESP32/IoT | Wi-Fi Server-Client Communication | BLE-RSSI Mesh Communication | Cross-Platform Development)",
+            "name": "SafeSync IoT: Employee Management and IoT-driven Contact-Tracing Solution",
             "date": "Nov 2020 - Apr 2021",
-            "description": "Full-fledged Employee Management and IoT-driven Contact-Tracing solution, with a cross-platform Dashboard (Flutter), local SQL database, and client-server IoT communication. Won multiple awards including E-Hackathon by ASTEC and Startup Assam, 2021."
+            "description": "Full-fledged Employee Management and IoT-driven Contact-Tracing solution.",
+            "links": {
+                "primary": "https://github.com/Dhi13man/SafeSyncIoT"
+            },
+            "skills": ["Flutter", "ESP32", "IoT", "BLE-RSSI", "Cross-Platform", "Wi-Fi", "Mesh Communication"]
         },
         {
-            "name": "News Forum Application (Flutter | Firebase | Firestore | Hive | BLoC)",
+            "name": "News Forum Application: Real-Time Hacker News Viewer",
             "date": "Dec 2020 - Jan 2021",
-            "description": "A Flutter-based real-time Hacker News forum viewer. Can switch between Firebase Cloud Features or Local Hive Database."
+            "description": "A Flutter-based real-time Hacker News forum viewer. Can switch between Firebase Cloud Features or Local Hive Database.",
+            "links": {
+                "primary": "https://github.com/Dhi13man/SafeSyncIoT"
+            },
+            "skills": ["Flutter", "Firebase", "Firestore", "Hive", "BLoC", "Real-Time", "Local Database"]
         },
         {
-            "name": "moor2csv (Dart | SQL | Open Source)",
+            "name": "moor2csv: Open-Source Dart/Flutter package for exporting moor databases to CSV",
             "date": "Nov 2020 - Nov 2020",
-            "description": "A Flutter/Dart supporting package for SQL/Moor that allows easy exporting of Moor databases to CSV."
+            "description": "A Flutter/Dart supporting package for SQL/Moor that allows easy exporting of Moor databases to CSV.",
+            "links": {
+                "primary": "https://pub.dev/packages/moor2csv",
+                "others": [
+                    "https://github.com/Dhi13man/moor2csv"
+                ]
+            },
+            "skills": ["Flutter", "Dart", "moor", "CSV"]
         },
         {
-            "name": "Computer Vision: Hand Gesture-based Control (ML | OpenCV | Python | KNN | Random Forest)",
+            "name": "Computer Vision: Hand Gesture-based Control",
             "date": "Apr 2020 - May 2020",
-            "description": "A Python-based project with OpenCV, scikit-learn to train multiple ML models for real-time hand shape detection, controlling the PC via gestures."
+            "description": "A Python-based project with OpenCV, scikit-learn to train multiple ML models for real-time hand shape detection, controlling the PC via gestures.",
+            "skills": ["Python", "OpenCV", "Machine Learning", "KNN", "Random Forest"]
         },
         {
-            "name": "NumCuts (C++ | Batch | HTML/CSS/JS | Electron + NodeJS)",
+            "name": "NumCuts: Custom Shortcut Keys using Num Lock/Caps Lock states",
             "date": "Apr 2020 - Apr 2020",
-            "description": "C++-based tool for custom shortcut keys using Num Lock/Caps Lock states. Accompanied by a full HTML/CSS/JS GUI built with Electron. GPLv3.0 license. GitHub: https://github.com/Dhi13man/NumCuts"
+            "description": "C++-based tool for custom shortcut keys using Num Lock/Caps Lock states. Accompanied by a full HTML/CSS/JS GUI built with Electron. GPLv3.0 license. GitHub: https://github.com/Dhi13man/NumCuts",
+            "skills": ["C++", "Electron", "NodeJS", "HTML/CSS/JS"]
         },
         {
-            "name": "InfrAwake (IoT | ESP8266/NodeMCU | Server-Client WiFi | RF Tx-Rx | Google Apps Scripting)",
+            "name": "InfrAwake: IoT-based Smart Home Automation System",
             "date": "Oct 2019 - Dec 2019",
-            "description": "A driver-drowsiness detection prototype to reduce roadside accidents by monitoring eyes and other driver cues. Works with IoT modules (ESP8266/NodeMCU), WiFi, RF Tx-Rx, and Google Apps Scripting."
+            "description": "A driver-drowsiness detection prototype to reduce roadside accidents by monitoring eyes and other driver cues. Works with IoT modules (ESP8266/NodeMCU), WiFi, RF Tx-Rx, and Google Apps Scripting.",
+            "skills": ["IoT", "ESP8266", "NodeMCU", "WiFi", "RF Tx-Rx", "Google Apps Scripting"]
         }
     ],
     "honorsAndAwards": [

@@ -70,12 +70,26 @@ function renderProjects(projects) {
   const container = document.querySelector('#projects .content');
   container.innerHTML = projects.map(proj => `
     <div class="project">
-      <h3>${proj.name}</h3>
+      ${proj.links?.primary ? 
+        `<h3><a href="${proj.links.primary}" target="_blank">${proj.name}</a></h3>` :
+        `<h3>${proj.name}</h3>`
+      }
       <p><em>${proj.date}</em></p>
       <p>${proj.description}</p>
-      ${proj.links ? `<p>Links: ${proj.links.map(link => `<a href="${link}" target="_blank">${link}</a>`).join(', ')}</p>` : ''}
+      ${proj.skills ? `<p><strong>Skills:</strong> ${proj.skills.join(', ')}</p>` : ''}
+      ${renderProjectLinks(proj.links)}
     </div>
   `).join('');
+}
+
+function renderProjectLinks(links) {
+  if (!links?.others?.length) return '';
+  
+  const otherLinks = links.others.map(url => 
+    `<a href="${url}" target="_blank">${new URL(url).hostname}</a>`
+  );
+  
+  return `<p class="project-links">More at: ${otherLinks.join(' | ')}</p>`;
 }
 
 function renderTestScores(scores) {
