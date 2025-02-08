@@ -1,17 +1,17 @@
 const portfolioData = {
     "about": {
-        "description": "Dhiman Seal is a distinguished, tech-obsessed Engineer trying to make people's lives easier. He has proven expertise in scalable systems and innovative solutions.\n\nAs a recognized authority in Open Source development and diverse expertise in Engineering and Entrpreneurship, his work is guided by three core principles:\n1. Architecting scalable, elegant solutions to complex engineering challenges\n2. Advancing the technology landscape through strategic open-source contributions\n3. Leading high-performance teams in developing industry-transforming systems.",
+        "description": "Dhiman Seal is a distinguished tech-obsessed engineer dedicated to simplifying lives through technology. With proven expertise in scalable systems and innovative solutions, he stands at the intersection of technical excellence and visionary leadership.\n\nAs a recognized authority in open source development with diverse expertise in engineering and entrepreneurship, his work is guided by three core principles:\n1. Architecting scalable, elegant solutions to complex engineering challenges\n2. Advancing the technology landscape through strategic open-source contributions\n3. Leading high-performance teams in developing industry-transforming systems",
         "tagline": "Entrepreneur • Open-Source Creator • Software Wizard"
     },
     "education": [
         {
+            "about": "One of India's premier engineering institutions, established in 1967 as a Regional Engineering College and elevated to NIT status in 2002. Renowned for rigorous academic standards and research contributions, consistently ranked among India's top technical institutions.",
             "degree": "Bachelor of Technology - BTech",
-            "about": "One of India's premier engineering institutions, established in 1967 as a Regional Engineering College and elevated to NIT in 2002. Known for its rigorous academic standards and research contributions, it consistently ranks among the top technical institutions in India.",
-            "description": "Had an out-of-the-box accolade-filled academic life, solving day-to-day problems with technology and innovation, leading multiple startups and organisations.",
+            "description": "Pursued an unconventional academic path filled with accolades, solving real-world problems through technology while leading multiple startups and organizations.",
             "details": [
                 "Specialized in Electronics and Communications Engineering",
-                "Won multiple accolades across the country in the domains of Robotics, IoT, and B-Plan competitions",
-                "Built and led multiple low to moderately successful startups and organisations: Eminence Robotics, TechEngio, etc."
+                "Won national-level accolades in Robotics, IoT, and business plan competitions",
+                "Founded and led multiple early-stage ventures including Eminence Robotics and TechEngio"
             ],
             "field": "Electrical, Electronics and Communications Engineering",
             "gpa": "8.43",
@@ -25,9 +25,9 @@ const portfolioData = {
             "yearRange": "2018 - 2022"
         },
         {
+            "about": "Prestigious CBSE-affiliated institution known for academic excellence and holistic development. Consistently produces top performers in board examinations and competitive tests.",
             "degree": "High School",
-            "about": "A prestigious CBSE-affiliated institution known for its academic excellence and holistic development approach. The school has consistently produced top performers in board examinations and competitive tests.",
-            "description": "Completed Higher Secondary with distinction in Science stream (Physics, Chemistry, Mathematics). Consistently ranked among top performers throughout academic career.",
+            "description": "Completed Higher Secondary education with distinction in Science (Physics, Chemistry, Mathematics). Ranked among institution's top performers consistently.",
             "details": [],
             "field": "Science",
             "institution": "Gurukul Grammar Senior Secondary School",
@@ -38,9 +38,9 @@ const portfolioData = {
             "yearRange": "2016 - 2018"
         },
         {
+            "about": "Middle school program emphasizing foundational knowledge and critical thinking. Combines academic rigor with extracurricular activities in an integrated curriculum.",
             "degree": "Early-Middle School",
-            "about": "The middle school program focuses on building strong foundational knowledge and critical thinking skills. The school's integrated curriculum combines academic excellence with extracurricular activities.",
-            "description": "Maintained a perfect 10.0 GPA through Middle School, excelling in all subjects.",
+            "description": "Maintained perfect 10.0 GPA throughout middle school, demonstrating academic excellence across all subjects.",
             "field": "Science",
             "gpa": "10.0",
             "institution": "Gurukul Grammar Senior Secondary School",
@@ -52,8 +52,8 @@ const portfolioData = {
     ],
     "experience": [
         {
+            "about": "India's leading investment platform serving millions of users with a mission to democratize financial services. Offers seamless digital access to stocks, mutual funds, and financial products.",
             "company": "Groww, India",
-            "about": "One of India's leading investment platforms, it serves millions of users with a mission to make financial services accessible and simple for everyone. It offers a seamless digital platform for stocks, mutual funds, and other financial products.",
             "links": {
                 "others": [
                     "https://linkedin.com/company/groww"
@@ -63,33 +63,33 @@ const portfolioData = {
             "roles": [
                 {
                     "dates": "Jul 2023 - Present",
-                    "description": "Leading technical initiatives in Consumer Payments, and Live Data systems while mentoring junior engineers.",
+                    "description": "Lead technical initiatives in Consumer Payments and Live Data systems while mentoring junior engineers.",
                     "details": [
-                        "Built and architected multiple consumer payment systems from inception",
-                        "Demonstrated technical leadership through solutions that enhanced both customer and developer experiences",
-                        "Engineered solutions for Live Data streaming challenges in Equity and Derivatives teams",
-                        "Led the observability initiative through implementation of comprehensive monitoring systems"
+                        "Architected multiple consumer payment systems from inception",
+                        "Enhanced customer/developer experiences through technical leadership",
+                        "Solved critical live data streaming challenges for Equity and Derivatives teams",
+                        "Spearheaded observability initiatives via comprehensive monitoring systems"
                     ],
                     "location": "Bengaluru, Karnataka, India",
                     "title": "Software Engineer 2 - Backend"
                 },
                 {
                     "dates": "Jul 2022 - Jun 2023",
-                    "description": "Built scalable backend solutions for the Payments team, owning multiple internal SDKs and services.",
+                    "description": "Developed scalable backend solutions for Payments team, owning internal SDKs and services.",
                     "details": [
-                        "Delivered robust backend solutions within the Payments team utilizing Java Spring Boot, Apache Kafka, and Redis",
-                        "Successfully owned and developed multiple internal SDKs and services while implementing scalable design patterns"
+                        "Delivered robust solutions using Java Spring Boot, Apache Kafka, and Redis",
+                        "Implemented scalable design patterns across internal SDKs and services"
                     ],
                     "location": "Bengaluru, Karnataka, India",
                     "title": "Software Engineer - Backend"
                 },
                 {
                     "dates": "Jan 2022 - Jun 2022",
-                    "description": "Maintained high-performance backend systems for the Payments team, focusing on merchant and consumer payment services.",
+                    "description": "Optimized high-performance backend systems for Payments team, focusing on merchant/consumer services.",
                     "details": [
-                        "Achieved outstanding performance recognition, resulting in a Pre-Placement Offer through exceptional contributions to high-scale microservices",
-                        "Demonstrated significant impact across merchant and consumer payment services throughout their complete lifecycle",
-                        "Established comprehensive documentation standards that enhanced team knowledge transfer"
+                        "Earned pre-placement offer through exceptional contributions to high-scale microservices",
+                        "Impacted full lifecycle of payment services from development to deployment",
+                        "Pioneered documentation standards enhancing team knowledge transfer"
                     ],
                     "location": "Bengaluru, Karnataka, India | Remote",
                     "title": "Software Engineer Intern - Backend"
@@ -97,20 +97,20 @@ const portfolioData = {
             ]
         },
         {
+            "about": "Agritech startup revolutionizing Northeast India's agricultural practices through technology-driven solutions and market access platforms.",
             "company": "AgriJod",
-            "about": "An agritech startup transforming agricultural practices in Northeast India. The platform connects farmers with modern agricultural solutions, providing technology-driven support for improved farming practices and market access.",
             "links": {
                 "primary": "https://agrijod.in"
             },
             "roles": [
                 {
                     "dates": "May 2023 - Apr 2024",
-                    "description": "Served as the primary technical advisor for a growing agritech startup, architecting their core infrastructure and product verticals.",
+                    "description": "Served as principal technical advisor, architecting core infrastructure and product verticals.",
                     "details": [
-                        "Served as technical architect for multiple product verticals",
+                        "Designed technical architecture for multiple product verticals",
                         "Established AWS infrastructure with multi-profile CI/CD pipelines",
                         "Integrated critical third-party services including payment gateways",
-                        "Implemented comprehensive observability solutions"
+                        "Implemented full-stack observability solutions"
                     ],
                     "location": "Guwahati, Assam, India | Remote",
                     "title": "Technical Advisor"
@@ -118,18 +118,18 @@ const portfolioData = {
             ]
         },
         {
+            "about": "Global freelance services marketplace connecting businesses with skilled professionals across industries.",
             "company": "Fiverr",
-            "about": "A global online marketplace for freelance services, connecting businesses with skilled professionals across various domains.",
             "links": {
                 "primary": "https://fiverr.com/dhiman13"
             },
             "roles": [
                 {
                     "dates": "Jan 2021 - Dec 2021",
-                    "description": "Provided top-tier software development services to clients across the globe.",
+                    "description": "Delivered premium software development services to international clients.",
                     "details": [
-                        "Received 5-Star ratings from every single client.",
-                        "Developed custom software solutions for a variety of industries."
+                        "Maintained perfect 5-star rating across all client engagements",
+                        "Developed custom solutions spanning multiple industries"
                     ],
                     "location": "Remote",
                     "title": "Software Development Freelancer"
@@ -137,18 +137,19 @@ const portfolioData = {
             ]
         },
         {
+            "about": "Pioneered peer-to-peer ATM cash network solution in Hungary through innovative mobile application connecting cash seekers with providers.",
             "company": "Cashtic",
-            "about": "Pioneer of a unique peer-to-peer ATM cash network solution in Hungary, aiming to revolutionize cash accessibility. The platform connected cash seekers with providers through an innovative mobile application.",
             "links": {
                 "primary": "https://cashtic.com"
             },
             "roles": [
                 {
                     "dates": "May 2021 - Nov 2021",
-                    "description": "Developed and maintained a peer-to-peer ATM cash network for Android and iOS with Firebase as backend.",
+                    "description": "Developed/maintained cross-platform peer-to-peer cash network with Firebase backend.",
                     "details": [
-                        "Designed and Built entire systems from scratch: Dynamic Link-based User Referral System, Secure User Rating system, CRON scheduled Data processing pipeline handling over 300,000 records per day, etc.",
-                        "Brainstormed, developed, and created server-less cloud function models with authentication."
+                        "Implemented dynamic user referral system using Firebase Dynamic Links",
+                        "Created secure rating system and CRON-based data pipelines handling 300k+ daily records",
+                        "Developed serverless cloud function models with authentication"
                     ],
                     "location": "Budapest, Hungary | Remote",
                     "title": "Cloud Engineer and Application Developer"
@@ -156,18 +157,18 @@ const portfolioData = {
             ]
         },
         {
+            "about": "Student-led organization developing innovative robotics/IoT solutions, participating in national competitions and automation projects.",
             "company": "Eminence Robotics",
-            "about": "A student-led organization focused on developing innovative robotics and IoT solutions. The organization participated in numerous technical competitions and worked on cutting-edge projects in automation and robotics.",
             "links": {
                 "primary": "https://eminencerobotics.org"
             },
             "roles": [
                 {
                     "dates": "Oct 2018 - Sep 2021",
-                    "description": "Led the development of innovative IoT and robotics solutions while co-founding the organization.",
+                    "description": "Co-founded organization and led IoT/robotics innovation initiatives.",
                     "details": [
-                        "Multiple Mechanical and Electronics projects including self-designed vehicles for Terrain traversal, Combat Robotics, Autonomous Smart robots, Environment manipulation robots, as well as IoT-based technology.",
-                        "Traveling to tech fests across the country participating in Robotics events and Innovation Challenges, focusing on product prototyping and development."
+                        "Developed terrain vehicles, combat robots, and autonomous smart systems",
+                        "Competed in national tech festivals focusing on product prototyping"
                     ],
                     "location": "India",
                     "title": "IoT and Application Developer | Co-Founder"
@@ -175,15 +176,15 @@ const portfolioData = {
             ]
         },
         {
+            "about": "Sustainable technology company developing IoT-integrated systems for environmental monitoring and smart agriculture.",
             "company": "GreenLine World",
-            "about": "Specialized in sustainable technology solutions, focusing on IoT-integrated systems for environmental monitoring and control. The company develops innovative solutions for smart agriculture and environmental conservation.",
             "roles": [
                 {
                     "dates": "Apr 2021 - Jul 2021",
-                    "description": "Led the development of IoT-integrated cross-platform applications.",
+                    "description": "Led IoT-integrated cross-platform application development.",
                     "details": [
-                        "Developed the System Design, Back-End, and Cross-Platform application for Interfacing their custom IoT machine and also worked on the hardware microcontroller unit.",
-                        "Successfully handed off the project to the next team upon completion of the internship period."
+                        "Designed system architecture and microcontroller units",
+                        "Developed backend and cross-platform interface for custom IoT devices"
                     ],
                     "location": "Remote",
                     "title": "System Design and Cross-Platform Application Development"
@@ -191,18 +192,18 @@ const portfolioData = {
             ]
         },
         {
+            "about": "Edtech initiative providing hands-on technical education in robotics, electronics, and software development for Northeast Indian students.",
             "company": "TechEngio",
-            "about": "An educational technology initiative aimed at making technical education accessible to students in Northeast India. The platform provided hands-on training in robotics, electronics, and software development.",
             "links": {
                 "primary": "https://facebook.com/TechEngio/"
             },
             "roles": [
                 {
                     "dates": "Nov 2018 - Mar 2020",
-                    "description": "Co-founded and led technical education initiatives.",
+                    "description": "Co-founded and led technical education programs.",
                     "details": [
-                        "Conducting workshops teaching robotics, electronics, software, etc.",
-                        "Making electronics-based projects and uploading informative videos, while earning through affiliate marketing."
+                        "Conducted workshops on robotics, electronics, and software development",
+                        "Created educational content and monetized through affiliate marketing"
                     ],
                     "location": "Assam",
                     "title": "Co-Founder"
@@ -213,34 +214,33 @@ const portfolioData = {
     "honorsAndAwards": [
         {
             "date": "2018",
-            "description": "Achieved exceptional performance in the International English Olympiad, securing Zonal Rank 1 and International Rank 136.",
+            "description": "Secured Zonal Rank 1 and International Rank 136 in International English Olympiad.",
             "issuer": "Science Olympiad Foundation - India",
             "title": "International English Olympiad 2018"
         },
         {
             "date": "Nov 2021",
-            "description": "Recognized for exceptional performance in product management and growth strategies.",
+            "description": "Recognized for exceptional product management and growth strategy skills among 450,000+ participants.",
             "details": [
-                "Scored better than top 2% of over 4.5 lakh participants",
-                "Demonstrated expertise in product strategy",
+                "Outperformed 98% of participants in product strategy",
                 "Excelled in growth-oriented problem solving"
             ],
             "issuer": "Upraised Embark Program",
-            "title": "Embark Fellow (Top 2% performer in Product and Growth Track)"
+            "title": "Embark Fellow (Top 2% in Product and Growth Track)"
         },
         {
             "date": "Jul 2021",
-            "description": "Developed innovative IoT solution for COVID-19 contact tracing and workspace safety.",
+            "description": "Developed IoT-based COVID-19 contact tracing solution for workplace safety.",
             "details": [
-                "Won prize money of 25,000 INR",
-                "Created end-to-end IoT-based tracking solution"
+                "Awarded 25,000 INR prize money",
+                "Created end-to-end tracking solution"
             ],
             "issuer": "ASTEC, Startup Assam",
             "title": "1st Prize, E-Hackathon by ASTEC, Startup Assam, 2021"
         },
         {
             "date": "May 2021",
-            "description": "Showcased Project SafeSync IoT and won 1st prize.",
+            "description": "Won top prize for SafeSync IoT project demonstration.",
             "issuer": "National Institute of Technology, Silchar",
             "title": "1st Position, Robomania, NIT Silchar"
         },
@@ -252,24 +252,24 @@ const portfolioData = {
         },
         {
             "date": "Jan 2021",
-            "description": "Presented SafeSync IoT for a post COVID workspace to win 1st Prize",
+            "description": "Won top prize for post-COVID workspace safety innovation.",
             "issuer": "St Vincent Palotti College of Engineering and Technology, Pune",
             "title": "1st Prize, Technex, Projectomania (Innovation Challenge)"
         },
         {
             "date": "Jan 2021",
-            "description": "Presented SafeSync IoT for a safer post COVID workspace.",
+            "description": "Earned third place for SafeSync IoT innovation.",
             "details": [
-                "Implemented real-time monitoring and alerts"
+                "Showcased real-time employee-monitoring and contact-tracing system"
             ],
             "issuer": "Sri Sivasubramaniya Nadar College of Engineering, Chennai",
             "title": "2nd Runners Up, IDEATE (Innovation Challenge)"
         },
         {
             "date": "Aug 2020",
-            "description": "Achieved 5 stars in C language on HackerRank.",
-            "issuer": "Hackerrank",
-            "title": "5 Stars (GOLD) in C"
+            "description": "Achieved highest proficiency ranking in C programming.",
+            "issuer": "HackerRank",
+            "title": "5-Star Gold (C Language)"
         },
         {
             "date": "Jun 2020",
@@ -279,45 +279,44 @@ const portfolioData = {
         },
         {
             "date": "Feb 2020",
-            "description": "Presented InfrAwake and won 1st Position.",
+            "description": "Won national innovation challenge for driver safety prototype.",
             "details": [
-                "Developed driver-drowsiness detection prototype",
-                "Presented a winning B-Plan for the prototype"
+                "Developed drowsiness detection system prototype",
+                "Presented winning business plan"
             ],
             "issuer": "MeiTY TIDE",
             "title": "1st Position, Innovation Challenge, MeiTY TIDE 2020, NIT Silchar Chapter"
         },
         {
             "date": "Dec 2019",
-            "description": "Presented InfrAwake, won total prize money of more than 1 Lakh.",
+            "description": "Secured top position with 1 Lakh+ INR prize money.",
             "details": [
-                "Developed driver-drowsiness detection prototype",
-                "Implemented real-time monitoring and alerts"
+                "Developed real-time driver monitoring system"
             ],
             "issuer": "K-SAC, KIIT University",
             "title": "1st Position, Innovation Challenge, KIIT-Fest 2019, KIIT University"
         },
         {
-            "description": "Achieved 5 stars in SQL on HackerRank.",
-            "issuer": "Hackerrank",
-            "title": "5 Stars (GOLD) in SQL"
+            "description": "Achieved highest proficiency ranking in database management.",
+            "issuer": "HackerRank",
+            "title": "5-Star Gold (SQL)"
         }
     ],
     "licensesAndCertifications": [
         {
             "credentialId": "UC-7e081543-f46c-471f-8231-c25a2d13753c",
-            "description": "Mastered advanced reinforcement learning concepts and implementations through hands-on projects and comprehensive coursework.",
+            "description": "Mastered advanced reinforcement learning concepts through hands-on projects.",
             "issuedDate": "Jun 2021",
             "issuer": "Udemy",
             "title": "Deep Reinforcement Learning 2.0"
         },
         {
             "credentialId": "PBLVZDHRWTD5",
-            "description": "Completed comprehensive specialization in Generative Adversarial Networks and their applications.",
+            "description": "Completed specialization in Generative Adversarial Networks applications.",
             "details": [
-                "Built and trained various GAN architectures",
-                "Implemented image generation and manipulation models",
-                "Developed conditional GANs for specific applications"
+                "Built various GAN architectures",
+                "Implemented image generation models",
+                "Developed conditional GANs"
             ],
             "issuedDate": "Nov 2020",
             "issuer": "deeplearning.ai, Coursera",
@@ -325,9 +324,8 @@ const portfolioData = {
         },
         {
             "credentialId": "KCG9WQ6V2PAF",
-            "description": "Mastered AWS computer vision technologies and GluonCV framework through hands-on projects and practical implementations.",
+            "description": "Mastered AWS computer vision technologies and GluonCV framework.",
             "details": [
-                "Implemented computer vision models using GluonCV",
                 "Deployed models on AWS infrastructure",
                 "Created end-to-end computer vision pipelines"
             ],
@@ -337,11 +335,10 @@ const portfolioData = {
         },
         {
             "credentialId": "YJANLKSKFJHM",
-            "description": "Mastered CNN architectures and their implementations for computer vision applications.",
+            "description": "Mastered CNN architectures for computer vision applications.",
             "details": [
                 "Implemented classic CNN architectures",
-                "Built image recognition systems",
-                "Developed object detection models"
+                "Developed object detection systems"
             ],
             "issuedDate": "Aug 2020",
             "issuer": "deeplearning.ai, Coursera",
@@ -349,10 +346,9 @@ const portfolioData = {
         },
         {
             "credentialId": "UC-81f8c30e-aacc-4ab7-8d77-5e64cf4fbdff",
-            "description": "Comprehensive course covering various aspects of deep learning and neural networks implementation.",
+            "description": "Comprehensive deep learning course covering neural network implementations.",
             "details": [
-                "Built various neural network architectures",
-                "Implemented deep learning models from scratch",
+                "Built various neural network architectures from scratch",
                 "Applied deep learning to real-world problems"
             ],
             "issuedDate": "Aug 2020",
@@ -361,7 +357,7 @@ const portfolioData = {
         },
         {
             "credentialId": "A2GFE2HVF9CY",
-            "description": "Completed comprehensive specialization covering all aspects of deep learning from theory to implementation.",
+            "description": "Completed comprehensive specialization covering deep learning fundamentals.",
             "details": [
                 "Neural Networks and Deep Learning",
                 "Improving Deep Neural Networks",
@@ -375,7 +371,7 @@ const portfolioData = {
         },
         {
             "credentialId": "PD8PNBQW3WL9",
-            "description": "Advanced course focused on sequence modeling and natural language processing applications.",
+            "description": "Advanced course in sequence modeling and NLP applications.",
             "details": [
                 "Built and trained RNN, LSTM, and GRU models",
                 "Implemented attention mechanisms",
@@ -387,11 +383,10 @@ const portfolioData = {
         },
         {
             "credentialId": "HE47Y3JR9GZG",
-            "description": "Comprehensive training in object tracking techniques using OpenCV and Python.",
+            "description": "Mastered object tracking using OpenCV and Python.",
             "details": [
-                "Implemented various object tracking algorithms",
-                "Built real-time tracking applications",
-                "Mastered OpenCV's tracking APIs"
+                "Implemented real-time tracking systems",
+                "Utilized OpenCV tracking APIs"
             ],
             "issuedDate": "Jun 2020",
             "issuer": "Coursera",
@@ -399,11 +394,10 @@ const portfolioData = {
         },
         {
             "credentialId": "UC-ccd08b67-4179-406c-8f31-1c363a714200",
-            "description": "Complete machine learning course covering both Python and R implementations.",
+            "description": "Comprehensive machine learning course with Python/R implementations.",
             "details": [
-                "Implemented various ML algorithms from scratch",
-                "Applied ML techniques to real-world datasets",
-                "Mastered data preprocessing and model evaluation"
+                "Applied ML techniques to real datasets",
+                "Mastered model evaluation techniques"
             ],
             "issuedDate": "Jun 2020",
             "issuer": "SuperDataScience, Udemy",
@@ -411,11 +405,10 @@ const portfolioData = {
         },
         {
             "credentialId": "QLJ5X4RUQNHR",
-            "description": "Foundational course in neural network architecture and implementation.",
+            "description": "Foundational course in neural network architecture.",
             "details": [
-                "Built neural networks from scratch",
                 "Implemented backpropagation algorithms",
-                "Applied deep learning to practical problems"
+                "Built networks from scratch in practical problems"
             ],
             "issuedDate": "Jun 2020",
             "issuer": "deeplearning.ai",
@@ -423,21 +416,19 @@ const portfolioData = {
         },
         {
             "credentialId": "UC-b9ccdcc6-f367-4f42-9c96-a7c67ad372f3",
-            "description": "Comprehensive introduction to Python programming fundamentals.",
+            "description": "Comprehensive introduction to Python programming.",
             "details": [
-                "Mastered Python basics and advanced concepts",
-                "Built practical applications",
-                "Learned best practices in Python development"
+                "Mastered advanced Python concepts",
+                "Built practical applications"
             ],
             "issuedDate": "Mar 2020",
             "issuer": "Udemy",
             "title": "Introduction To Python Programming"
         },
         {
-            "description": "Intensive machine learning course from one of India's premier technical institutions.",
+            "description": "Intensive machine learning course from premier technical institution.",
             "details": [
-                "Studied core ML algorithms and mathematics",
-                "Implemented various ML models",
+                "Studied core ML algorithms and the mathematics behind them",
                 "Applied ML to real-world problems"
             ],
             "issuedDate": "Sep 2018",
@@ -447,13 +438,13 @@ const portfolioData = {
     ],
     "projects": [
         {
-            "date": "Jun 2023",
-            "description": "Created a revolutionary solution to Spring's multi-data source configuration challenges, significantly reducing boilerplate code and improving developer experience through intuitive annotations and automated configurations.",
+            "date": "Jun 2023 - Current",
+            "description": "Revolutionary Spring framework solution simplifying multi-data source configuration through intuitive annotations.",
             "details": [
-                "Published to Maven Central Repository",
-                "Developed custom annotations for automated bean definition configurations",
-                "Supports boilerplate-free repository management that can be easily integrated and moved away from if needed",
-                "Created detailed documentation and usage examples"
+                "Published on Maven Central Repository",
+                "Automated bean definition configurations",
+                "Enabled boilerplate-free repository management",
+                "Comprehensive documentation and examples"
             ],
             "links": {
                 "others": [
@@ -470,28 +461,25 @@ const portfolioData = {
         },
         {
             "date": "Nov 2021 - Feb 2022",
-            "description": "Engineered an automated Windows-based solution for dynamic proxy server configuration across different WiFi networks",
+            "description": "Automated Windows solution for dynamic proxy configuration across WiFi networks.",
             "details": [
-                "Automatically detects and configures proxy servers based on network SSID",
-                "Configurable and Automatable through CLI",
-                "Integrated with Windows Event Scheduler for automatic execution"
+                "Auto-configures proxies based on network SSID",
+                "CLI-configurable automation",
+                "Integrated with Windows Event Scheduler"
             ],
             "links": {
                 "primary": "https://github.com/Dhi13man/auto_proxy_wifi"
             },
-            "name": "auto_proxy_wifi: Automatically configure a proxy servers on Wi-Fi networks",
+            "name": "auto_proxy_wifi: Automated Proxy Configuration",
             "skills": [
                 "Python",
-                "Windows",
-                "System",
-                "CLI",
-                "Automation",
-                "Event scheduler"
+                "Windows System",
+                "CLI Automation"
             ]
         },
         {
-            "date": "Sep 2021",
-            "description": "Built and maintaining an encapsulation library for openrouteservice API in Dart/Flutter.",
+            "date": "Sep 2021 - Current",
+            "description": "Built and maintaining Open-source Dart/Flutter library for openrouteservice API integration.",
             "details": [
                 "Used by 1.4K+ development teams across the world, with 80 likes and 160/160 pub.dev points",
                 "Enables the easy integration of the openrouteservice API with relevant data models",
@@ -503,18 +491,17 @@ const portfolioData = {
                 ],
                 "primary": "https://pub.dev/packages/open_route_service"
             },
-            "name": "open_route_service: Open-Source Dart/Flutter library for encapsulating openrouteservice API",
+            "name": "open_route_service: OpenRouteService API Library",
             "skills": [
                 "Flutter",
                 "Dart",
                 "REST APIs",
-                "API Integration",
                 "OOP",
                 "Test Driven Development"
             ]
         },
         {
-            "date": "May 2021",
+            "date": "May 2021 - Current",
             "description": "Created a null-safe Dart/Flutter package for Nordigen EU PSD2 AISP Banking API Integration.",
             "details": [
                 "Officially recognized by Nordigen as their premier Dart/Flutter community package",
@@ -533,7 +520,6 @@ const portfolioData = {
                 "Flutter",
                 "Dart",
                 "REST APIs",
-                "API Integration",
                 "OOP",
                 "Test Driven Development"
             ]
@@ -550,7 +536,7 @@ const portfolioData = {
             "links": {
                 "primary": "https://github.com/Dhi13man/SafeSyncIoT"
             },
-            "name": "SafeSync IoT: Employee Management and IoT-driven Contact-Tracing Solution",
+            "name": "SafeSync IoT: Employee Management and Contact Tracing Solution",
             "skills": [
                 "Flutter",
                 "ESP32",
@@ -563,15 +549,15 @@ const portfolioData = {
         },
         {
             "date": "Dec 2020 - Jan 2021",
-            "description": "Prototyped a Flutter-based real-time Hacker News forum viewer.",
+            "description": "Real-time Hacker News viewer with Firebase/Hive integration.",
             "details": [
                 "Multiple stars on GitHub",
-                "Can switch between Firebase Cloud Features or Local Hive Database",
+                "Can switch between Firebase Cloud Features or Local Hive Database"
             ],
             "links": {
                 "primary": "https://github.com/Dhi13man/ycombinator_news_client"
             },
-            "name": "News Forum Application: Real-Time Hacker News Viewer",
+            "name": "Hacker News Forum Client",
             "skills": [
                 "Flutter",
                 "Firebase",
@@ -583,8 +569,8 @@ const portfolioData = {
             ]
         },
         {
-            "date": "Nov 2020 - Nov 2020",
-            "description": "Open-Sourced his first Flutter/Dart supporting package for SQL/Moor",
+            "date": "Nov 2020 - Current",
+            "description": "Open-source package for moor database to CSV conversion.",
             "details": [
                 "Over 100 downloads and 13 likes, with 160/160 pub.dev points",
                 "Allows easy exporting of Moor databases to CSV"
@@ -595,55 +581,62 @@ const portfolioData = {
                 ],
                 "primary": "https://pub.dev/packages/moor2csv"
             },
-            "name": "moor2csv: Open-Source Dart/Flutter package for exporting moor databases to CSV",
+            "name": "moor2csv: Database Exporting Tool",
             "skills": [
                 "Flutter",
                 "Dart",
-                "moor",
                 "CSV"
             ]
         },
         {
             "date": "Apr 2020 - May 2020",
-            "description": "A Python-based project with OpenCV, scikit-learn to train multiple ML models for real-time hand shape detection, controlling the PC via gestures.",
+            "description": "Python-based real-time hand gesture PC control system using OpenCV and ML.",
+            "details": [
+                "Trained multiple ML models for real-time hand shape detection",
+                "Integrated with OpenCV for pre-processing and faster analysis"
+            ],
             "links": {
                 "primary": "https://github.com/Dhi13man/CV-HandGestureControl"
             },
-            "name": "Computer Vision: Hand Gesture-based Control",
+            "name": "Hand Gesture Control System",
             "skills": [
                 "Python",
                 "OpenCV",
                 "Machine Learning",
-                "KNN",
-                "Random Forest"
+                "scikit-learn"
             ]
         },
         {
-            "date": "Apr 2020 - Apr 2020",
-            "description": "C++-based tool for custom shortcut keys using Num Lock/Caps Lock states. Accompanied by a full HTML/CSS/JS GUI built with Electron. GPLv3.0 license",
+            "date": "Apr 2020",
+            "description": "Custom Open-Source keyboard shortcut system using Num Lock/Caps Lock key states.",
+            "details": [
+                "Integrated with Electron for cross-platform compatibility",
+                "Accompanied by a full HTML/CSS/JS GUI"
+            ],
             "links": {
                 "primary": "https://github.com/Dhi13man/NumCuts"
             },
-            "name": "NumCuts: Custom Shortcut Keys using Num Lock/Caps Lock states",
+            "name": "NumCuts: Keyboard Shortcut System",
             "skills": [
                 "C++",
                 "Electron",
+                "System Programming",
                 "NodeJS",
                 "HTML/CSS/JS"
             ]
         },
         {
             "date": "Oct 2019 - Dec 2019",
-            "description": "A driver-drowsiness detection prototype to reduce roadside accidents by monitoring eyes and other driver cues. Works with IoT modules (ESP8266/NodeMCU), WiFi, RF Tx-Rx, and Google Apps Scripting.",
+            "description": "IoT-based driver safety system with drowsiness detection by monitoring eyes and other driver cues.",
             "details": [
-                "1st Prize Winner at KIIT-Fest, 2019; KIIT University",
-                "1st Prize Winner at MeiTY TIDE 2020, NIT Silchar Chapter",
-                "Developed a B-Plan for the prototype and pitched it across the country"
+                "1st Prize Winner at KIIT-Fest, 2019 in KIIT University and MeiTY TIDE 2020's NIT Silchar Chapter",
+                "Developed a B-Plan for the prototype and pitched it across the country",
+                "Works with IoT modules (ESP8266/NodeMCU), WiFi, RF Tx-Rx, and Google Apps Scripting."
             ],
             "links": {
                 "primary": "https://youtube.com/watch?v=hqWcnQ520LQ"
             },
-            "name": "InfrAwake: IoT-based Smart Home Automation System",
+            "name": "InfrAwake: Driver Safety System",
             "skills": [
                 "IoT",
                 "ESP8266",
@@ -658,25 +651,31 @@ const portfolioData = {
         {
             "from": "György Chityil (Cashtic)",
             "text": "“Dhiman is an outstanding developer. I worked with him on Cashtic, a peer to peer ATM cash network for Android and iOS with Firebase as backend, and he stabilized the code base and introduced lot of new features without any issues. He has a bright future ahead of him in the IT industry. I am glad to have met him, and look forward to working with him in the future.”"
+        },
+        {
+            "from": "Rajkram (Fiverr Client)",
+            "text": "dhiman13 was very confident right from the start and I was effortlessly able to communicate the tasks to him. It was really a pleasure working with him. I will definitely use him for my upcoming projects."
+        },
+        {
+            "from": "stuffynose (Fiverr Client)",
+            "text": "Great experience working with dhiman13, good communication and quick delivery."
         }
     ],
     "testScores": [
         {
             "date": "Sep 2021",
-            "description": "Demonstrated exceptional problem-solving capabilities in a comprehensive technical assessment for Software Development Engineer roles.",
+            "description": "Top 10% performance in national technical assessment for software roles.",
             "details": [
-                "Achieved top 10% ranking among all participants",
-                "Excelled in algorithm design and system architecture sections",
-                "Demonstrated proficiency in multiple programming paradigms"
+                "Excelled in algorithm design and system architecture",
+                "Demonstrated multi-paradigm programming mastery"
             ],
             "name": "Dare2Compete Recruitables Score",
-            "score": "264/400 (top 10%)"
+            "score": "264/400 (Top 10%)"
         },
         {
             "date": "Feb 2021",
-            "description": "Demonstrated mastery in advanced C++ programming concepts and implementations.",
+            "description": "Advanced C++ programming mastery certification.",
             "details": [
-                "Achieved 95% score in comprehensive evaluation",
                 "Mastered advanced C++ features and patterns",
                 "Completed practical programming assignments"
             ],
@@ -685,9 +684,8 @@ const portfolioData = {
         },
         {
             "date": "Feb 2021",
-            "description": "Showcased expertise in Arduino programming and hardware interfacing.",
+            "description": "Arduino hardware interfacing and programming certification.",
             "details": [
-                "Scored 35/40 in practical assessment",
                 "Implemented various Arduino projects",
                 "Mastered sensor integration and control systems"
             ],
@@ -696,9 +694,8 @@ const portfolioData = {
         },
         {
             "date": "Feb 2021",
-            "description": "Demonstrated proficiency in PHP and MySQL development through comprehensive assessment.",
+            "description": "PHP/MySQL development certification.",
             "details": [
-                "Scored 16.33 out of 24 points",
                 "Completed practical database implementations",
                 "Built full-stack web applications"
             ],
@@ -707,9 +704,8 @@ const portfolioData = {
         },
         {
             "date": "Feb 2018",
-            "description": "Completed higher secondary education with outstanding performance in science stream.",
+            "description": "Higher Secondary education with science specialization.",
             "details": [
-                "Achieved 95% aggregate score",
                 "Excelled in Physics, Chemistry, and Mathematics",
                 "Ranked among top performers in school"
             ],
