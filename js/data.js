@@ -9,7 +9,8 @@ const portfolioData = {
             "description": "Had an experience and accolade-filled academic life, solving day-to-day problems with technology and innovation.",
             "details": [
                 "Specialized in Electronics and Communications Engineering",
-                "Won multiple accolades across the country in Robotics and IoT"
+                "Won multiple accolades across the country in the domains of Robotics, IoT, and B-Plan competitions",
+                "Built and led multiple low to moderately successful startups and organisations: Eminence Robotics, TechEngio, etc."
             ],
             "field": "Electrical, Electronics and Communications Engineering",
             "gpa": "8.43",
@@ -221,9 +222,8 @@ const portfolioData = {
             "date": "Jul 2021",
             "description": "Developed innovative IoT solution for COVID-19 contact tracing and workspace safety.",
             "details": [
-                "Won prize money of 25000 INR",
-                "Created end-to-end IoT-based tracking solution",
-                "Implemented real-time monitoring and alerts"
+                "Won prize money of 25,000 INR",
+                "Created end-to-end IoT-based tracking solution"
             ],
             "issuer": "ASTEC, Startup Assam",
             "title": "1st Prize, E-Hackathon by ASTEC, Startup Assam, 2021"
@@ -272,7 +272,7 @@ const portfolioData = {
             "description": "Presented InfrAwake and won 1st Position.",
             "details": [
                 "Developed driver-drowsiness detection prototype",
-                "Implemented real-time monitoring and alerts"
+                "Presented a winning B-Plan for the prototype"
             ],
             "issuer": "MeiTY TIDE",
             "title": "1st Position, Innovation Challenge, MeiTY TIDE 2020, NIT Silchar Chapter"
@@ -440,10 +440,9 @@ const portfolioData = {
             "date": "Jun 2023",
             "description": "Created a revolutionary solution to Spring's multi-data source configuration challenges, significantly reducing boilerplate code and improving developer experience through intuitive annotations and automated configurations.",
             "details": [
-                "Developed custom annotations for automated bean definition configurations",
-                "Implemented package-segregated repository management",
                 "Published to Maven Central Repository",
-                "Achieved 90%+ test coverage with comprehensive integration tests",
+                "Developed custom annotations for automated bean definition configurations",
+                "Supports boilerplate-free repository management that can be easily integrated and moved away from if needed",
                 "Created detailed documentation and usage examples"
             ],
             "links": {
@@ -462,6 +461,11 @@ const portfolioData = {
         {
             "date": "Nov 2021 - Feb 2022",
             "description": "Engineered an automated Windows-based solution for dynamic proxy server configuration across different WiFi networks",
+            "details": [
+                "Automatically detects and configures proxy servers based on network SSID",
+                "Configurable and Automatable through CLI",
+                "Integrated with Windows Event Scheduler for automatic execution"
+            ],
             "links": {
                 "primary": "https://github.com/Dhi13man/auto_proxy_wifi"
             },
@@ -477,7 +481,12 @@ const portfolioData = {
         },
         {
             "date": "Sep 2021",
-            "description": "An encapsulation for openrouteservice API in Dart/Flutter. Used by 1.4K+ development teams. The package enables the easy integration of the openrouteservice API with relevant data models, for generation of Routes and Directions on Maps, Isochrones, Time-Distance Matrix, Pelias Geocoding, POIs, Elevation, routing Optimizations etc, using their amazing API.",
+            "description": "Built and maintaining an encapsulation library for openrouteservice API in Dart/Flutter.",
+            "details": [
+                "Used by 1.4K+ development teams across the world, with 80 likes and 160/160 pub.dev points",
+                "Enables the easy integration of the openrouteservice API with relevant data models",
+                "Supports generation of Routes and Directions on Maps, Isochrones, Time-Distance Matrix, Pelias Geocoding, POIs, Elevation, routing Optimizations etc"
+            ],
             "links": {
                 "others": [
                     "http://github.com/Dhi13man/open_route_service"
@@ -496,7 +505,12 @@ const portfolioData = {
         },
         {
             "date": "May 2021",
-            "description": "A null-safe Dart/Flutter package for Nordigen EU PSD2 AISP Banking API Integration. Officially recognized by Nordigen as their premier Dart/Flutter community package.",
+            "description": "Created a null-safe Dart/Flutter package for Nordigen EU PSD2 AISP Banking API Integration.",
+            "details": [
+                "Officially recognized by Nordigen as their premier Dart/Flutter community package",
+                "The account information API has been completely encapsulated",
+                "50+ downloads and 10 likes with 160/160 pub.dev points"
+            ],
             "links": {
                 "others": [
                     "https://github.com/Dhi13man/nordigen_integration",
@@ -516,7 +530,13 @@ const portfolioData = {
         },
         {
             "date": "Nov 2020 - Apr 2021",
-            "description": "Full-fledged Employee Management and IoT-driven Contact-Tracing solution.",
+            "description": "Built a full-fledged Employee Management and IoT-driven Contact-Tracing solution.",
+            "details": [
+                "Cross-platform IoT Flutter application for Employee Management and Contact-Tracing",
+                "BLE-RSSI based proximity detection",
+                "1st Prize Winner at Robomania, NIT Silchar, 2021; Projectomania, Technex, Pune, 2021",
+                "2nd Runners Up at IDEATE, Chennai, 2021"
+            ],
             "links": {
                 "primary": "https://github.com/Dhi13man/SafeSyncIoT"
             },
@@ -533,7 +553,11 @@ const portfolioData = {
         },
         {
             "date": "Dec 2020 - Jan 2021",
-            "description": "A Flutter-based real-time Hacker News forum viewer. Can switch between Firebase Cloud Features or Local Hive Database.",
+            "description": "Prototyped a Flutter-based real-time Hacker News forum viewer.",
+            "details": [
+                "Multiple stars on GitHub",
+                "Can switch between Firebase Cloud Features or Local Hive Database",
+            ],
             "links": {
                 "primary": "https://github.com/Dhi13man/ycombinator_news_client"
             },
@@ -550,7 +574,11 @@ const portfolioData = {
         },
         {
             "date": "Nov 2020 - Nov 2020",
-            "description": "A Flutter/Dart supporting package for SQL/Moor that allows easy exporting of Moor databases to CSV.",
+            "description": "Open-Sourced his first Flutter/Dart supporting package for SQL/Moor",
+            "details": [
+                "Over 100 downloads and 13 likes, with 160/160 pub.dev points",
+                "Allows easy exporting of Moor databases to CSV"
+            ],
             "links": {
                 "others": [
                     "https://github.com/Dhi13man/moor2csv"
@@ -597,6 +625,11 @@ const portfolioData = {
         {
             "date": "Oct 2019 - Dec 2019",
             "description": "A driver-drowsiness detection prototype to reduce roadside accidents by monitoring eyes and other driver cues. Works with IoT modules (ESP8266/NodeMCU), WiFi, RF Tx-Rx, and Google Apps Scripting.",
+            "details": [
+                "1st Prize Winner at KIIT-Fest, 2019; KIIT University",
+                "1st Prize Winner at MeiTY TIDE 2020, NIT Silchar Chapter",
+                "Developed a B-Plan for the prototype and pitched it across the country"
+            ],
             "links": {
                 "primary": "https://youtube.com/watch?v=hqWcnQ520LQ"
             },
@@ -611,7 +644,7 @@ const portfolioData = {
             ]
         }
     ],
-    "recommendationsReceived": [
+    "recommendations": [
         {
             "from": "György Chityil (Cashtic)",
             "text": "“Dhiman is an outstanding developer. I worked with him on Cashtic, a peer to peer ATM cash network for Android and iOS with Firebase as backend, and he stabilized the code base and introduced lot of new features without any issues. He has a bright future ahead of him in the IT industry. I am glad to have met him, and look forward to working with him in the future.”"

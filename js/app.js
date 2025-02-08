@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
   renderAwards(data.honorsAndAwards);
   renderTestScores(data.testScores);
   renderProjects(data.projects);
-  renderRecommendations(data.recommendationsReceived);
+  renderRecommendations(data.recommendations);
 });
 
 function renderAbout(about) {
