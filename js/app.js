@@ -59,6 +59,7 @@ function renderExperience(experiences) {
       <h3>${exp.links?.primary ? 
         `<a href="${exp.links.primary}" target="_blank">${exp.company}</a>` : 
         exp.company}</h3>
+      ${exp.about ? `<p class="about-org">${exp.about}</p>` : ''}
       <div class="roles">
         ${exp.roles.map(role => `
           <div class="role">
@@ -83,6 +84,7 @@ function renderEducation(education) {
       <h3>${school.links?.primary ? 
         `<a href="${school.links.primary}" target="_blank" rel="noopener noreferrer">${school.institution}</a>` : 
         school.institution}</h3>
+      ${school.about ? `<p class="about-org">${school.about}</p>` : ''}
       <div class="school-info">
         <p class="degree">${school.degree || ''} ${school.field ? `in ${school.field}` : ''}; <em>${school.yearRange}</em></p>
         <p class="grade"><strong>${school.gpa ? `GPA: ${school.gpa}` : school.percent ? `Grade: ${school.percent}` : ''}</strong></p>

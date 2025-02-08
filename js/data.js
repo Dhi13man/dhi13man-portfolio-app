@@ -1,12 +1,13 @@
 const portfolioData = {
     "about": {
-        "description": "Dhiman Seal is a distinguished, tech-obsessed Engineer trying to make people's lives easier. He has proven expertise in scalable systems and innovative solutions.\n\nAs a recognized authority in Open Source development, IoT, and AI implementations, his work is guided by three core principles:\n1. Architecting scalable, elegant solutions to complex engineering challenges\n2. Advancing the technology landscape through strategic open-source contributions\n3. Leading high-performance teams in developing industry-transforming systems.",
+        "description": "Dhiman Seal is a distinguished, tech-obsessed Engineer trying to make people's lives easier. He has proven expertise in scalable systems and innovative solutions.\n\nAs a recognized authority in Open Source development and diverse expertise in Engineering and Entrpreneurship, his work is guided by three core principles:\n1. Architecting scalable, elegant solutions to complex engineering challenges\n2. Advancing the technology landscape through strategic open-source contributions\n3. Leading high-performance teams in developing industry-transforming systems.",
         "tagline": "Entrepreneur • Open-Source Creator • Software Wizard"
     },
     "education": [
         {
             "degree": "Bachelor of Technology - BTech",
-            "description": "Had an experience and accolade-filled academic life, solving day-to-day problems with technology and innovation.",
+            "about": "One of India's premier engineering institutions, established in 1967 as a Regional Engineering College and elevated to NIT in 2002. Known for its rigorous academic standards and research contributions, it consistently ranks among the top technical institutions in India.",
+            "description": "Had an out-of-the-box accolade-filled academic life, solving day-to-day problems with technology and innovation, leading multiple startups and organisations.",
             "details": [
                 "Specialized in Electronics and Communications Engineering",
                 "Won multiple accolades across the country in the domains of Robotics, IoT, and B-Plan competitions",
@@ -14,7 +15,7 @@ const portfolioData = {
             ],
             "field": "Electrical, Electronics and Communications Engineering",
             "gpa": "8.43",
-            "institution": "National Institute of Technology Silchar",
+            "institution": "National Institute of Technology (NIT), Silchar",
             "links": {
                 "others": [
                     "https://linkedin.com/school/national-institute-of-technology-silchar/"
@@ -25,6 +26,7 @@ const portfolioData = {
         },
         {
             "degree": "High School",
+            "about": "A prestigious CBSE-affiliated institution known for its academic excellence and holistic development approach. The school has consistently produced top performers in board examinations and competitive tests.",
             "description": "Completed Higher Secondary with distinction in Science stream (Physics, Chemistry, Mathematics). Consistently ranked among top performers throughout academic career.",
             "details": [],
             "field": "Science",
@@ -37,6 +39,7 @@ const portfolioData = {
         },
         {
             "degree": "Early-Middle School",
+            "about": "The middle school program focuses on building strong foundational knowledge and critical thinking skills. The school's integrated curriculum combines academic excellence with extracurricular activities.",
             "description": "Maintained a perfect 10.0 GPA through Middle School, excelling in all subjects.",
             "field": "Science",
             "gpa": "10.0",
@@ -50,6 +53,7 @@ const portfolioData = {
     "experience": [
         {
             "company": "Groww, India",
+            "about": "One of India's leading investment platforms, it serves millions of users with a mission to make financial services accessible and simple for everyone. It offers a seamless digital platform for stocks, mutual funds, and other financial products.",
             "links": {
                 "others": [
                     "https://linkedin.com/company/groww"
@@ -94,6 +98,7 @@ const portfolioData = {
         },
         {
             "company": "AgriJod",
+            "about": "An agritech startup transforming agricultural practices in Northeast India. The platform connects farmers with modern agricultural solutions, providing technology-driven support for improved farming practices and market access.",
             "links": {
                 "primary": "https://agrijod.in"
             },
@@ -114,6 +119,7 @@ const portfolioData = {
         },
         {
             "company": "Fiverr",
+            "about": "A global online marketplace for freelance services, connecting businesses with skilled professionals across various domains.",
             "links": {
                 "primary": "https://fiverr.com/dhiman13"
             },
@@ -132,6 +138,7 @@ const portfolioData = {
         },
         {
             "company": "Cashtic",
+            "about": "Pioneer of a unique peer-to-peer ATM cash network solution in Hungary, aiming to revolutionize cash accessibility. The platform connected cash seekers with providers through an innovative mobile application.",
             "links": {
                 "primary": "https://cashtic.com"
             },
@@ -150,6 +157,7 @@ const portfolioData = {
         },
         {
             "company": "Eminence Robotics",
+            "about": "A student-led organization focused on developing innovative robotics and IoT solutions. The organization participated in numerous technical competitions and worked on cutting-edge projects in automation and robotics.",
             "links": {
                 "primary": "https://eminencerobotics.org"
             },
@@ -168,6 +176,7 @@ const portfolioData = {
         },
         {
             "company": "GreenLine World",
+            "about": "Specialized in sustainable technology solutions, focusing on IoT-integrated systems for environmental monitoring and control. The company develops innovative solutions for smart agriculture and environmental conservation.",
             "roles": [
                 {
                     "dates": "Apr 2021 - Jul 2021",
@@ -183,6 +192,7 @@ const portfolioData = {
         },
         {
             "company": "TechEngio",
+            "about": "An educational technology initiative aimed at making technical education accessible to students in Northeast India. The platform provided hands-on training in robotics, electronics, and software development.",
             "links": {
                 "primary": "https://facebook.com/TechEngio/"
             },

@@ -1159,3 +1159,16 @@ button:focus {
   line-height: var(--line-height-base);
   list-style: decimal;
 }
+
+.about-org {
+  border-left-color: var(--accent);
+  color: var(--text-secondary);
+  font-style: italic;
+  margin: 0.5em 0 1em;
+  padding: 0.5em 1em;
+  border-left: 3px solid var(--primary-light);
+  background: var(--surface);
+  border-radius: 4px;
+  font-size: 0.95em;
+  line-height: 1.5;
+}
