@@ -8,14 +8,36 @@ const portfolioData = {
             "field": "Electrical, Electronics and Communications Engineering",
             "gpa": "8.43",
             "institution": "National Institute of Technology Silchar",
-            "yearRange": "2018 - 2022"
+            "yearRange": "2018 - 2022",
+            "description": "One of India's premier engineering institutions (NIT). Graduated with First Class Distinction in Electronics and Communication Engineering, with a focus on Signal Processing and Communication Systems.",
+            "links": {
+                "primary": "http://nits.ac.in",
+                "others": [
+                    "https://linkedin.com/school/national-institute-of-technology-silchar/"
+                ]
+            }
         },
         {
             "degree": "High School",
             "field": "Science",
             "institution": "Gurukul Grammar Senior Secondary School",
             "percent": "95%",
-            "yearRange": "2008 - 2018"
+            "yearRange": "2006 - 2018",
+            "description": "Completed Higher Secondary with distinction in Science stream (Physics, Chemistry, Mathematics). Consistently ranked among top performers throughout academic career.",
+            "links": {
+                "primary": "https://gurukulgrammar.com"
+            }
+        },
+        {
+            "degree": "Early-Middle School",
+            "field": "Science",
+            "institution": "Gurukul Grammar Senior Secondary School",
+            "gpa": "10.0",
+            "yearRange": "2006 - 2018",
+            "description": "Maintained a perfect 10.0 GPA through Middle School, excelling in all subjects.",
+            "links": {
+                "primary": "https://gurukulgrammar.com"
+            }
         }
     ],
     "experience": [
@@ -83,7 +105,7 @@ const portfolioData = {
                 "Working as a freelancer on sites like Fiverr, Upwork for various National and International clients. 5-Star ratings from every single client."
             ],
             "links": {
-                "primary": "https://www.fiverr.com/dhiman13"
+                "primary": "https://fiverr.com/dhiman13"
             },
             "location": "Remote",
             "title": "Software Development Freelancer"
@@ -132,7 +154,7 @@ const portfolioData = {
                 "Making electronics-based projects and uploading informative videos, while earning through affiliate marketing."
             ],
             "links": {
-                "primary": "https://www.facebook.com/TechEngio/"
+                "primary": "https://facebook.com/TechEngio/"
             },
             "location": "Assam",
             "title": "Co-Founder"
@@ -439,7 +461,7 @@ const portfolioData = {
             "date": "Oct 2019 - Dec 2019",
             "description": "A driver-drowsiness detection prototype to reduce roadside accidents by monitoring eyes and other driver cues. Works with IoT modules (ESP8266/NodeMCU), WiFi, RF Tx-Rx, and Google Apps Scripting.",
             "links": {
-                "primary": "https://www.youtube.com/watch?v=hqWcnQ520LQ"
+                "primary": "https://youtube.com/watch?v=hqWcnQ520LQ"
             },
             "name": "InfrAwake: IoT-based Smart Home Automation System",
             "skills": [

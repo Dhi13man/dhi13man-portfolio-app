@@ -41,19 +41,9 @@ function renderExperience(experiences) {
                 `<a href="${exp.links.primary}" target="_blank">${exp.company}</a>` : 
                 exp.company}</h2>
               ${roles}
-              ${renderExperienceLinks(exp.links)}
+              ${renderLinks(exp.links, 'company-links')}
             </div>`;
   }).join('');
-}
-
-function renderExperienceLinks(links) {
-  if (!links?.others?.length) return '';
-  
-  const otherLinks = links.others.map(url => 
-    `<a href="${url}" target="_blank">${new URL(url).hostname}</a>`
-  );
-  
-  return `<p class="company-links">More at: ${otherLinks.join(' | ')}</p>`;
 }
 
 function renderEducation(education) {
@@ -90,19 +80,9 @@ function renderProjects(projects) {
       <p><em>${proj.date}</em></p>
       <p>${proj.description}</p>
       ${proj.skills ? `<p><strong>Skills:</strong> ${proj.skills.join(', ')}</p>` : ''}
-      ${renderProjectLinks(proj.links)}
+      ${renderLinks(proj.links, 'project-links')}
     </div>
   `).join('');
-}
-
-function renderProjectLinks(links) {
-  if (!links?.others?.length) return '';
-  
-  const otherLinks = links.others.map(url => 
-    `<a href="${url}" target="_blank">${new URL(url).hostname}</a>`
-  );
-  
-  return `<p class="project-links">More at: ${otherLinks.join(' | ')}</p>`;
 }
 
 function renderTestScores(scores) {
@@ -136,4 +116,32 @@ function renderAwards(awards) {
     </div>
   `).join('');
   awardsContainer.innerHTML = awardsHtml;
+}
+
+function renderLinks(links, className = '') {
+  if (!links) return '';
+  
+  const allLinks = [];
+  if (links.primary) allLinks.push(links.primary);
+  if (links.others?.length) allLinks.push(...links.others);
+  
+  if (!allLinks.length) return '';
+  
+  const allLinksHtml = allLinks
+    .filter(url => url && typeof url === 'string')
+    .map(url => {
+      try {
+        const urlObj = new URL(url);
+        const displayText = urlObj.hostname.replace(/^www\./, '');
+        return `<a href="${url}" target="_blank" rel="noopener noreferrer">${displayText}</a>`;
+      } catch {
+        console.warn(`Invalid URL: ${url}`);
+        return '';
+      }
+    })
+    .filter(html => html);
+
+  return allLinksHtml.length ? 
+    `<p class="${className || 'additional-links'}">Find out more: ${allLinksHtml.join(' | ')}</p>` : 
+    '';
 }
