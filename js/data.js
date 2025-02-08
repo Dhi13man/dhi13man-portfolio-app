@@ -735,14 +735,16 @@ const portfolioData = {
             "links": {
                 "primary": "https://eminencerobotics.org"
             },
-            "name": "Eminence Robotics",
+            "name": "Eminence Robotics - The Ideal Answer To Your Technical Desire",
             "roles": [
                 {
                     "dates": "Oct 2018 - Sep 2021",
                     "description": "Co-founded organization and led IoT/robotics innovation initiatives.",
                     "details": [
                         "Developed terrain vehicles, combat robots, and autonomous smart systems",
-                        "Competed in national tech festivals focusing on product prototyping"
+                        "Competed in national tech festivals focusing on product prototyping",
+                        "Led technical event organization and management",
+                        "Coordinated industrial training and internship programs"
                     ],
                     "location": "India",
                     "title": "IoT and Application Developer | Co-Founder"
@@ -754,14 +756,16 @@ const portfolioData = {
             "links": {
                 "primary": "https://facebook.com/TechEngio/"
             },
-            "name": "TechEngio",
+            "name": "TechEngio - Empowering Northeast India Through Technology",
             "roles": [
                 {
                     "dates": "Nov 2018 - Mar 2020",
                     "description": "Co-founded and led technical education programs.",
                     "details": [
-                        "Conducted workshops on robotics, electronics, and software development",
-                        "Created educational content and monetized through affiliate marketing"
+                        "Conducted on-site workshops at local institutions",
+                        "Created and managed educational content and videos",
+                        "Developed electronics-based demonstration projects",
+                        "Set-up affiliate marketing revenue streams"
                     ],
                     "location": "Assam",
                     "title": "Instructor | Co-Founder"
@@ -769,4 +773,4 @@ const portfolioData = {
             ]
         }
     ]
-}; 
+};
