@@ -1,3 +1,15 @@
+console.log(`
+╔══════════════════════════════════════════════════════════════╗
+║                                                              ║
+║     You have entered the realm of the legendary              ║
+║                  DHIMAN SEAL                                 ║
+║    Digital Architect • Code Mystic • Entrepreneur            ║
+║                                                              ║
+║   "Where technology meets divine craftsmanship"              ║
+║                                                              ║
+╚══════════════════════════════════════════════════════════════╝
+`);
+
 document.addEventListener('DOMContentLoaded', () => {
   // Use the global portfolioData variable instead of fetching
   const data = portfolioData;
@@ -12,8 +24,9 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function renderAbout(about) {
-  const container = document.querySelector('#about .content');
-  // Find the existing p element or create a new one if it doesn't exist
+  const section = document.getElementById('about');
+  section.querySelector('h2').innerText = about.tagline;
+  const container = section.querySelector('.content');
   let p = container.querySelector('p');
   if (!p) {
     p = document.createElement('p');

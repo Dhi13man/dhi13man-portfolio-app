@@ -1,6 +1,7 @@
 const portfolioData = {
     "about": {
-        "description": "I am a tech-obsessed Engineer trying to make people's lives easier. I am traveling the country learning, teaching, creating, finding solutions, and winning.\nI am enthusiastic about Open source, IoT, AI, and innovation. I aim to:\n1. Come up with Scalable solutions to problems faced by my team.\n2. Make people’s lives easier with various open-source contributions.\n3. Work with teams that build industry-changing technology."
+        "description": "Dhiman Seal is a distinguished tech-obsessed Engineer trying to make people's lives easier. He has proven expertise in scalable systems and innovative solutions.\n\nAs a recognized authority in Open Source development, IoT, and AI implementations, his work is guided by three core principles:\n1. Architecting scalable, elegant solutions to complex engineering challenges\n2. Advancing the technology landscape through strategic open-source contributions\n3. Leading high-performance teams in developing industry-transforming systems.",
+        "tagline": "Entrepreneur • Advocate for Open-Source • Software Wizard"
     },
     "education": [
         {
@@ -53,10 +54,10 @@ const portfolioData = {
                 {
                     "dates": "Jul 2023 - Present",
                     "details": [
-                        "Building multiple elements of Consumer Payments from scratch and scaling them.",
-                        "Pitching, designing and building various tech solutions that improve customer experience, AND developer experience.",
-                        "Solving real-time Live Data streaming problems for Equity and Derivatives teams.",
-                        "Owning Observability piece, by teaching myself PromQL, Grafana, Golang Templating, to create in-depth dashboards and alerts that track each useful metric in the system."
+                        "Built and architected multiple consumer payment systems from inception",
+                        "Demonstrated technical leadership through solutions that enhanced both customer and developer experiences",
+                        "Engineered solutions for real-time data streaming challenges in Equity and Derivatives teams",
+                        "Led the observability initiative through implementation of comprehensive monitoring systems"
                     ],
                     "location": "Bengaluru, Karnataka, India",
                     "title": "Software Engineer 2 - Backend"
@@ -64,8 +65,8 @@ const portfolioData = {
                 {
                     "dates": "Jul 2022 - Jun 2023",
                     "details": [
-                        "Working as a backend Software Engineer at Groww on the Payments team, with technologies like Java Spring Boot, Apache Kafka, Redis.",
-                        "Owning various services across Payments and building multiple internal SDKs, services from scratch while following Scalable Design Patterns."
+                        "Delivered robust backend solutions within the Payments team utilizing Java Spring Boot, Apache Kafka, and Redis",
+                        "Successfully owned and developed multiple internal SDKs and services while implementing scalable design patterns"
                     ],
                     "location": "Bengaluru, Karnataka, India",
                     "title": "Software Engineer - Backend"
@@ -73,9 +74,9 @@ const portfolioData = {
                 {
                     "dates": "Jan 2022 - Jun 2022",
                     "details": [
-                        "Achieved \"outstanding performance\", to become one of the first interns to earn the Pre-Placement Offer, while building and maintaining High Scale Micro-services in the Payments team.",
-                        "Influenced almost every merchant and consumer payments service from ideation to development, maintenance, load testing, etc.",
-                        "Added comprehensive documentation of every milestone, issue, and resolution, which others in my team can follow."
+                        "Achieved outstanding performance recognition, resulting in a Pre-Placement Offer through exceptional contributions to high-scale microservices",
+                        "Demonstrated significant impact across merchant and consumer payment services throughout their complete lifecycle",
+                        "Established comprehensive documentation standards that enhanced team knowledge transfer"
                     ],
                     "location": "Bengaluru, Karnataka, India | Remote",
                     "title": "Software Engineer Intern - Backend"
@@ -86,10 +87,10 @@ const portfolioData = {
             "company": "AgriJod",
             "dates": "May 2023 - Apr 2024",
             "details": [
-                "Architected and helped develop multiple products in verticals like Buyer and Seller Management, Transporter Management, Warehouse Management, etc.",
-                "Set up and helped maintain the AWS infrastructure and multi-profile CI/CD pipelines deploying to EC2 instances.",
-                "Aided in multiple third-party integrations like PhonePe Payment Gateway, Google Maps, etc.",
-                "Built OTEL and Prometheus-based observability for quicker issue detection and recovery."
+                "Served as technical architect for multiple product verticals including Buyer/Seller Management and Logistics",
+                "Established and maintained AWS infrastructure with multi-profile CI/CD pipelines",
+                "Integrated critical third-party services including payment gateways and mapping solutions",
+                "Implemented comprehensive observability solutions utilizing OTEL and Prometheus"
             ],
             "links": {
                 "primary": "https://agrijod.in"
@@ -307,7 +308,7 @@ const portfolioData = {
     "projects": [
         {
             "date": "Jun 2023",
-            "description": "To counter Spring's limitations with multiple data sources in a single service, this library provides two custom annotations in Java that automatically generate all the required bean definition configurations and package-segregated repositories, for each data source.",
+            "description": "Developed an innovative solution to address Spring's multi-data source limitations through custom annotations, enabling automated bean definition configurations and package-segregated repositories",
             "links": {
                 "others": [
                     "https://central.sonatype.com/artifact/io.github.dhi13man/spring-multi-data-source"
@@ -323,7 +324,7 @@ const portfolioData = {
         },
         {
             "date": "Nov 2021 - Feb 2022",
-            "description": "An Automation Script for Windows devices to automatically configure a proxy server on Wi-Fi networks based on their SSID.",
+            "description": "Engineered an automated Windows-based solution for dynamic proxy server configuration across different WiFi networks",
             "links": {
                 "primary": "https://github.com/Dhi13man/auto_proxy_wifi"
             },
