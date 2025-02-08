@@ -147,7 +147,7 @@ function renderRecommendations(recommendations) {
   const container = document.querySelector('#recommendations .content');
   container.innerHTML = recommendations.map(rec => `
     <div class="recommendation">
-      <p>"${rec.text}"</p>
+      <p>"${rec.text}"</p><br>
       <p><strong>— ${rec.from}</strong></p>
       ${renderLinks(rec.links)}
     </div>
@@ -191,6 +191,6 @@ function renderLinks(links) {
     .filter(html => html);
 
   return allLinksHtml.length ? 
-    `<p class="links">See source: ${allLinksHtml.join(' | ')}</p>` : 
+    `<p class="links">See sources: ${allLinksHtml.join(' | ')}</p>` : 
     '';
 }
