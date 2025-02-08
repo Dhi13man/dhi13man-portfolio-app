@@ -37,29 +37,26 @@ function renderAbout(about) {
 
 function renderExperience(experiences) {
   const container = document.querySelector('#experience .content');
-  container.innerHTML = experiences.map(exp => {
-    let roles = exp.roles ? exp.roles.map(role => {
-      return `<div class="role">
-                <h4>${role.title}</h4>
-                <p><em>${role.dates} &ndash; ${role.location}</em></p>
-                ${role.description ? `<p class="description">${role.description}</p>` : ''}
-                <ul class="description">${role.details.map(item => `<li>${item}</li>`).join('')}</ul>
-              </div>`;
-    }).join('') : `<div class="role">
-        <h3>${exp.title}</h3>
-        <p><em>${exp.dates} &ndash; ${exp.location}</em></p>
-        ${exp.description ? `<p class="description">${exp.description}</p>` : ''}
-        <ul class="description">${exp.details.map(item => `<li>${item}</li>`).join('')}</ul>
-      </div>`;
-    return `<div class="company">
-              <h3>${exp.links?.primary ? 
-                `<a href="${exp.links.primary}" target="_blank">${exp.company}</a>` : 
-                exp.company}</h3>
-              ${exp.description ? `<p class="description">${exp.description}</p>` : ''}
-              ${roles}
-              ${renderLinks(exp.links, 'company-links')}
-            </div>`;
-  }).join('');
+  container.innerHTML = experiences.map(exp => `
+    <div class="company">
+      <h3>${exp.links?.primary ? 
+        `<a href="${exp.links.primary}" target="_blank">${exp.company}</a>` : 
+        exp.company}</h3>
+      <div class="roles">
+        ${exp.roles.map(role => `
+          <div class="role">
+            <h4>${role.title}</h4>
+            <p><em>${role.dates} &ndash; ${role.location}</em></p>
+            ${role.description ? `<p class="description">${role.description}</p>` : ''}
+            <ul class="details">
+              ${role.details.map(item => `<li>${item}</li>`).join('')}
+            </ul>
+          </div>
+        `).join('')}
+      </div>
+      ${renderLinks(exp.links, 'company-links')}
+    </div>
+  `).join('');
 }
 
 function renderEducation(education) {
@@ -73,7 +70,7 @@ function renderEducation(education) {
         <p class="degree">${school.degree || ''} ${school.field ? `in ${school.field}` : ''}; <em>${school.yearRange}</em></p>
         <p class="grade"><strong>${school.gpa ? `GPA: ${school.gpa}` : school.percent ? `Grade: ${school.percent}` : ''}</strong></p>
         ${school.description ? `<p class="description">${school.description}</p>` : ''}
-        ${school.details ? `<ul class="description">${school.details.map(item => `<li>${item}</li>`).join('')}</ul>` : ''}
+        ${school.details ? `<ul class="details">${school.details.map(item => `<li>${item}</li>`).join('')}</ul>` : ''}
         ${renderLinks(school.links, 'school-links')}
       </div>
     </div>
@@ -85,8 +82,10 @@ function renderCerts(certs) {
   let certsHtml = certs.map(cert => `
     <div class="cert">
       <h4>${cert.title}</h4>
-      <p>${cert.issuer} ${cert.issuedDate ? ' - ' + cert.issuedDate : ''}</p>
-      ${cert.credentialId ? `<p>Credential: ${cert.credentialId}</p>` : ''}
+      <p><em>${cert.issuer} ${cert.issuedDate ? ' - ' + cert.issuedDate : ''}</em></p>
+      ${cert.credentialId ? `<p class="credential">Credential: ${cert.credentialId}</p>` : ''}
+      ${cert.description ? `<p class="description">${cert.description}</p>` : ''}
+      ${cert.details ? `<ul class="details">${cert.details.map(item => `<li>${item}</li>`).join('')}</ul>` : ''}
     </div>
   `).join('');
   certsContainer.innerHTML = certsHtml;
@@ -102,7 +101,7 @@ function renderProjects(projects) {
       }
       <p><em>${proj.date}</em></p>
       ${proj.description ? `<p class="description">${proj.description}</p>` : ''}
-      ${proj.details ? `<ul class="description">${proj.details.map(item => `<li>${item}</li>`).join('')}</ul>` : ''}
+      ${proj.details ? `<ul class="details">${proj.details.map(item => `<li>${item}</li>`).join('')}</ul>` : ''}
       ${proj.skills ? `<p class="skills"><strong>Skills:</strong> ${proj.skills.join(', ')}</p>` : ''}
       ${renderLinks(proj.links, 'project-links')}
     </div>
@@ -115,7 +114,8 @@ function renderTestScores(scores) {
     <div class="score">
       <h4>${score.name}</h4>
       <p><strong>${score.score}</strong> ${score.date ? `<em>(${score.date})</em>` : ''}</p>
-      <p>${score.details || ''}</p>
+      ${score.description ? `<p class="description">${score.description}</p>` : ''}
+      ${score.details ? `<ul class="details">${score.details.map(item => `<li>${item}</li>`).join('')}</ul>` : ''}
     </div>
   `).join('');
 }
@@ -135,8 +135,9 @@ function renderAwards(awards) {
   let awardsHtml = awards.map(award => `
     <div class="award">
       <h4>${award.title}</h4>
-      <p>${award.issuer} ${award.date ? ' - ' + award.date : ''}</p>
-      <p>${award.details || ''}</p>
+      <p><em>${award.issuer} ${award.date ? ' - ' + award.date : ''}</em></p>
+      ${award.description ? `<p class="description">${award.description}</p>` : ''}
+      ${award.details ? `<ul class="details">${award.details.map(item => `<li>${item}</li>`).join('')}</ul>` : ''}
     </div>
   `).join('');
   awardsContainer.innerHTML = awardsHtml;

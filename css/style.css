@@ -967,9 +967,18 @@ button:focus {
   outline-offset: 4px;
 }
 
-/* Common description style for all sections */
+/* Common styles for all sections */
 .description {
   color: var(--text-secondary);
+  font-style: italic;
+  margin-top: 1em;
+  padding: 0.5em 1em;
+  line-height: var(--line-height-base);
+  list-style: decimal;
+}
+
+.details {
+  color: var(--text);
   font-style: italic;
   margin-top: 1em;
   padding: 0.5em 1em;

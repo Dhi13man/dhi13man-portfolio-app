@@ -6,53 +6,63 @@ const portfolioData = {
     "education": [
         {
             "degree": "Bachelor of Technology - BTech",
+            "description": "Specializeing in Electronics and Communications Engineering, won multiple accolades across the country in Robotics and IoT while maintaining a high GPA.",
+            "details": [
+                "Specialized in Electronics and Communications Engineering",
+                "Won multiple accolades across the country in Robotics and IoT",
+            ],
             "field": "Electrical, Electronics and Communications Engineering",
             "gpa": "8.43",
             "institution": "National Institute of Technology Silchar",
-            "yearRange": "2018 - 2022",
-            "description": "One of India's premier engineering institutions (NIT). Graduated with First Class Distinction in Electronics and Communication Engineering, with a focus on Signal Processing and Communication Systems.",
             "links": {
-                "primary": "http://nits.ac.in",
                 "others": [
                     "https://linkedin.com/school/national-institute-of-technology-silchar/"
-                ]
-            }
+                ],
+                "primary": "http://nits.ac.in"
+            },
+            "yearRange": "2018 - 2022"
         },
         {
             "degree": "High School",
+            "description": "Completed Higher Secondary with distinction in Science stream (Physics, Chemistry, Mathematics). Consistently ranked among top performers throughout academic career.",
+            "details": [],
             "field": "Science",
             "institution": "Gurukul Grammar Senior Secondary School",
-            "percent": "95%",
-            "yearRange": "2016 - 2018",
-            "description": "Completed Higher Secondary with distinction in Science stream (Physics, Chemistry, Mathematics). Consistently ranked among top performers throughout academic career.",
             "links": {
                 "primary": "https://gurukulgrammarschool.in/"
-            }
+            },
+            "percent": "95%",
+            "yearRange": "2016 - 2018"
         },
         {
             "degree": "Early-Middle School",
-            "field": "Science",
-            "institution": "Gurukul Grammar Senior Secondary School",
-            "gpa": "10.0",
-            "yearRange": "2006 - 2016",
             "description": "Maintained a perfect 10.0 GPA through Middle School, excelling in all subjects.",
+            "field": "Science",
+            "gpa": "10.0",
+            "institution": "Gurukul Grammar Senior Secondary School",
             "links": {
                 "primary": "https://gurukulgrammarschool.in/"
-            }
+            },
+            "yearRange": "2006 - 2016"
         }
     ],
     "experience": [
         {
             "company": "Groww, India",
-            "description": "Led development of critical payment infrastructure and real-time data streaming solutions at one of India's fastest-growing fintech unicorns. Advanced from intern to SDE-2 within 18 months through exceptional performance.",
+            "links": {
+                "others": [
+                    "https://linkedin.com/company/groww"
+                ],
+                "primary": "https://groww.in"
+            },
             "roles": [
                 {
                     "dates": "Jul 2023 - Present",
-                    "description": "Leading technical initiatives in consumer payments and real-time market data systems while mentoring junior engineers.",
+                    "description": "Leading technical initiatives in Consumer Payments, and Live Data systems while mentoring junior engineers.",
                     "details": [
                         "Built and architected multiple consumer payment systems from inception",
                         "Demonstrated technical leadership through solutions that enhanced both customer and developer experiences",
-                        "Engineered solutions for real-time data streaming challenges in Equity and Derivatives teams",
+                        "Engineered solutions for Live Data streaming challenges in Equity and Derivatives teams",
                         "Led the observability initiative through implementation of comprehensive monitoring systems"
                     ],
                     "location": "Bengaluru, Karnataka, India",
@@ -60,6 +70,7 @@ const portfolioData = {
                 },
                 {
                     "dates": "Jul 2022 - Jun 2023",
+                    "description": "Built scalable backend solutions for the Payments team, owning multiple internal SDKs and services.",
                     "details": [
                         "Delivered robust backend solutions within the Payments team utilizing Java Spring Boot, Apache Kafka, and Redis",
                         "Successfully owned and developed multiple internal SDKs and services while implementing scalable design patterns"
@@ -69,6 +80,7 @@ const portfolioData = {
                 },
                 {
                     "dates": "Jan 2022 - Jun 2022",
+                    "description": "Maintained high-performance backend systems for the Payments team, focusing on merchant and consumer payment services.",
                     "details": [
                         "Achieved outstanding performance recognition, resulting in a Pre-Placement Offer through exceptional contributions to high-scale microservices",
                         "Demonstrated significant impact across merchant and consumer payment services throughout their complete lifecycle",
@@ -77,166 +89,206 @@ const portfolioData = {
                     "location": "Bengaluru, Karnataka, India | Remote",
                     "title": "Software Engineer Intern - Backend"
                 }
-            ],
-            "links": {
-                "others": [
-                    "https://linkedin.com/company/groww"
-                ],
-                "primary": "https://groww.in"
-            }
+            ]
         },
         {
             "company": "AgriJod",
-            "description": "Served as the primary technical advisor for a growing agritech startup, architecting their core infrastructure and product verticals.",
-            "dates": "May 2023 - Apr 2024",
-            "details": [
-                "Served as technical architect for multiple product verticals",
-                "Established AWS infrastructure with multi-profile CI/CD pipelines",
-                "Integrated critical third-party services including payment gateways",
-                "Implemented comprehensive observability solutions"
-            ],
             "links": {
                 "primary": "https://agrijod.in"
             },
-            "location": "Guwahati, Assam, India",
-            "title": "Technical Advisor"
+            "roles": [
+                {
+                    "dates": "May 2023 - Apr 2024",
+                    "description": "Served as the primary technical advisor for a growing agritech startup, architecting their core infrastructure and product verticals.",
+                    "details": [
+                        "Served as technical architect for multiple product verticals",
+                        "Established AWS infrastructure with multi-profile CI/CD pipelines",
+                        "Integrated critical third-party services including payment gateways",
+                        "Implemented comprehensive observability solutions"
+                    ],
+                    "location": "Guwahati, Assam, India | Remote",
+                    "title": "Technical Advisor"
+                }
+            ]
         },
         {
             "company": "Fiverr",
-            "dates": "Jan 2021 - Dec 2021",
-            "details": [
-                "Working as a freelancer on sites like Fiverr, Upwork for various National and International clients. 5-Star ratings from every single client."
-            ],
             "links": {
                 "primary": "https://fiverr.com/dhiman13"
             },
-            "location": "Remote",
-            "title": "Software Development Freelancer"
+            "roles": [
+                {
+                    "dates": "Jan 2021 - Dec 2021",
+                    "description": "Provided top-tier software development services to clients across the globe.",
+                    "details": [
+                        "Received 5-Star ratings from every single client.",
+                        "Developed custom software solutions for a variety of industries."
+                    ],
+                    "location": "Remote",
+                    "title": "Software Development Freelancer"
+                }
+            ]
         },
         {
             "company": "Cashtic",
-            "dates": "May 2021 - Nov 2021",
-            "details": [
-                "Designed and Built entire systems from scratch: Dynamic Link-based User Referral System, Secure User Rating system, CRON scheduled Data processing pipeline handling over 300,000 records per day, etc.",
-                "Brainstormed, developed, and created server-less cloud function models with authentication."
-            ],
             "links": {
                 "primary": "https://cashtic.com"
             },
-            "location": "Budapest, Hungary",
-            "title": "Cloud Engineer and Application Developer"
+            "roles": [
+                {
+                    "dates": "May 2021 - Nov 2021",
+                    "description": "Developed and maintained a peer-to-peer ATM cash network for Android and iOS with Firebase as backend.",
+                    "details": [
+                        "Designed and Built entire systems from scratch: Dynamic Link-based User Referral System, Secure User Rating system, CRON scheduled Data processing pipeline handling over 300,000 records per day, etc.",
+                        "Brainstormed, developed, and created server-less cloud function models with authentication."
+                    ],
+                    "location": "Budapest, Hungary | Remote",
+                    "title": "Cloud Engineer and Application Developer"
+                }
+            ]
         },
         {
             "company": "Eminence Robotics",
-            "dates": "Oct 2018 - Sep 2021",
-            "details": [
-                "Multiple Mechanical and Electronics projects including self-designed vehicles for Terrain traversal, Combat Robotics, Autonomous Smart robots, Environment manipulation robots, as well as IoT-based technology.",
-                "Traveling to tech fests across the country participating in Robotics events and Innovation Challenges, focusing on product prototyping and development."
-            ],
             "links": {
                 "primary": "https://eminencerobotics.org"
             },
-            "location": "India",
-            "title": "IoT and Application Developer | Co-Founder"
+            "roles": [
+                {
+                    "dates": "Oct 2018 - Sep 2021",
+                    "description": "Led the development of innovative IoT and robotics solutions while co-founding the organization.",
+                    "details": [
+                        "Multiple Mechanical and Electronics projects including self-designed vehicles for Terrain traversal, Combat Robotics, Autonomous Smart robots, Environment manipulation robots, as well as IoT-based technology.",
+                        "Traveling to tech fests across the country participating in Robotics events and Innovation Challenges, focusing on product prototyping and development."
+                    ],
+                    "location": "India",
+                    "title": "IoT and Application Developer | Co-Founder"
+                }
+            ]
         },
         {
             "company": "GreenLine World",
-            "dates": "Apr 2021 - Jul 2021",
-            "details": [
-                "Developed the System Design, Back-End, and Cross-Platform application for Interfacing their custom IoT machine and also worked on the hardware microcontroller unit.",
-                "Successfully handed off the project to the next team upon completion of the internship period."
-            ],
-            "location": "Remote",
-            "title": "System Design and Cross-Platform Application Development"
+            "roles": [
+                {
+                    "dates": "Apr 2021 - Jul 2021",
+                    "description": "Led the development of IoT-integrated cross-platform applications.",
+                    "details": [
+                        "Developed the System Design, Back-End, and Cross-Platform application for Interfacing their custom IoT machine and also worked on the hardware microcontroller unit.",
+                        "Successfully handed off the project to the next team upon completion of the internship period."
+                    ],
+                    "location": "Remote",
+                    "title": "System Design and Cross-Platform Application Development"
+                }
+            ]
         },
         {
             "company": "TechEngio",
-            "dates": "Nov 2018 - Mar 2020",
-            "details": [
-                "Conducting workshops teaching robotics, electronics, software, etc.",
-                "Making electronics-based projects and uploading informative videos, while earning through affiliate marketing."
-            ],
             "links": {
                 "primary": "https://facebook.com/TechEngio/"
             },
-            "location": "Assam",
-            "title": "Co-Founder"
+            "roles": [
+                {
+                    "dates": "Nov 2018 - Mar 2020",
+                    "description": "Co-founded and led technical education initiatives.",
+                    "details": [
+                        "Conducting workshops teaching robotics, electronics, software, etc.",
+                        "Making electronics-based projects and uploading informative videos, while earning through affiliate marketing."
+                    ],
+                    "location": "Assam",
+                    "title": "Co-Founder"
+                }
+            ]
         }
     ],
     "honorsAndAwards": [
         {
             "date": "2018",
-            "issuer": "Science Olympiad Foundation - India",
-            "title": "International English Olympiad 2018",
             "description": "Achieved exceptional performance in the International English Olympiad, securing Zonal Rank 1 and International Rank 136.",
-            "details": [
-                "Secured Zonal Rank 1",
-                "Achieved International Rank 136",
-                "Demonstrated superior English language proficiency"
-            ]
+            "issuer": "Science Olympiad Foundation - India",
+            "title": "International English Olympiad 2018"
         },
         {
             "date": "Nov 2021",
-            "details": "Scored better than top 2% of over 4.5 lakh participants.",
+            "description": "Recognized for exceptional performance in product management and growth strategies.",
+            "details": [
+                "Scored better than top 2% of over 4.5 lakh participants",
+                "Demonstrated expertise in product strategy",
+                "Excelled in growth-oriented problem solving"
+            ],
             "issuer": "Upraised Embark Program",
             "title": "Embark Fellow (Top 2% performer in Product and Growth Track)"
         },
         {
             "date": "Jul 2021",
-            "details": "Won 25000 INR for the SafeSync COVID-tracking IoT-based solution.",
-            "issuer": "Mr. Pankaj Gogoi, Ms. Arundhati Bora, ASTEC, Startup Assam",
+            "description": "Developed innovative IoT solution for COVID-19 contact tracing and workspace safety.",
+            "details": [
+                "Won prize money of 25000 INR",
+                "Created end-to-end IoT-based tracking solution",
+                "Implemented real-time monitoring and alerts"
+            ],
+            "issuer": "ASTEC, Startup Assam",
             "title": "1st Prize, E-Hackathon by ASTEC, Startup Assam, 2021"
         },
         {
             "date": "May 2021",
-            "details": "Showcased Project SafeSync IoT and won 1st prize.",
+            "description": "Showcased Project SafeSync IoT and won 1st prize.",
             "issuer": "National Institute of Technology, Silchar",
             "title": "1st Position, Robomania, NIT Silchar"
         },
         {
             "date": "Mar 2021",
-            "details": "Developed AISMV (Automated Irrigation System using Machine Vision).",
+            "description": "Developed AISMV (Automated Irrigation System using Machine Vision).",
             "issuer": "Poornima Institute of Engineering Technology / RTU, Kota",
             "title": "1st Prize, RTU TEQIP-III Sponsored Poornima Hackathon, 2021"
         },
         {
             "date": "Jan 2021",
-            "details": "Presented SafeSync IoT for a post COVID workspace.",
+            "description": "Presented SafeSync IoT for a post COVID workspace to win 1st Prize",
             "issuer": "St Vincent Palotti College of Engineering and Technology, Pune",
             "title": "1st Prize, Technex, Projectomania (Innovation Challenge)"
         },
         {
             "date": "Jan 2021",
-            "details": "Presented SafeSync IoT for a safer post COVID workspace.",
+            "description": "Presented SafeSync IoT for a safer post COVID workspace.",
+            "details": [
+                "Implemented real-time monitoring and alerts"
+            ],
             "issuer": "Sri Sivasubramaniya Nadar College of Engineering, Chennai",
             "title": "2nd Runners Up, IDEATE (Innovation Challenge)"
         },
         {
             "date": "Aug 2020",
-            "details": "Achieved 5 stars in C language on HackerRank.",
+            "description": "Achieved 5 stars in C language on HackerRank.",
             "issuer": "Hackerrank",
             "title": "5 Stars (GOLD) in C"
         },
         {
             "date": "Jun 2020",
-            "details": "Presented AISMV, an automated irrigation system using Machine Vision.",
+            "description": "Presented AISMV, an automated irrigation system using Machine Vision.",
             "issuer": "Jorhat Engineering College",
             "title": "1st Position, AgriHacks e-Ideathon"
         },
         {
             "date": "Feb 2020",
-            "details": "Presented InfrAwake and won 1st Position.",
+            "description": "Presented InfrAwake and won 1st Position.",
+            "details": [
+                "Developed driver-drowsiness detection prototype",
+                "Implemented real-time monitoring and alerts"
+            ],
             "issuer": "MeiTY TIDE",
             "title": "1st Position, Innovation Challenge, MeiTY TIDE 2020, NIT Silchar Chapter"
         },
         {
             "date": "Dec 2019",
-            "details": "Presented InfrAwake, won total prize money of more than 1 Lakh.",
+            "description": "Presented InfrAwake, won total prize money of more than 1 Lakh.",
+            "details": [
+                "Developed driver-drowsiness detection prototype",
+                "Implemented real-time monitoring and alerts"
+            ],
             "issuer": "K-SAC, KIIT University",
             "title": "1st Position, Innovation Challenge, KIIT-Fest 2019, KIIT University"
         },
         {
-            "details": "Achieved 5 stars in SQL on HackerRank.",
+            "description": "Achieved 5 stars in SQL on HackerRank.",
             "issuer": "Hackerrank",
             "title": "5 Stars (GOLD) in SQL"
         }
@@ -244,73 +296,140 @@ const portfolioData = {
     "licensesAndCertifications": [
         {
             "credentialId": "UC-7e081543-f46c-471f-8231-c25a2d13753c",
+            "description": "Mastered advanced reinforcement learning concepts and implementations through hands-on projects and comprehensive coursework.",
             "issuedDate": "Jun 2021",
             "issuer": "Udemy",
-            "title": "Deep Reinforcement Learning 2.0",
-            "description": "Mastered advanced reinforcement learning concepts and implementations through hands-on projects and comprehensive coursework.",
-            "details": []
+            "title": "Deep Reinforcement Learning 2.0"
         },
         {
             "credentialId": "PBLVZDHRWTD5",
+            "description": "Completed comprehensive specialization in Generative Adversarial Networks and their applications.",
+            "details": [
+                "Built and trained various GAN architectures",
+                "Implemented image generation and manipulation models",
+                "Developed conditional GANs for specific applications"
+            ],
             "issuedDate": "Nov 2020",
             "issuer": "deeplearning.ai, Coursera",
-            "title": "Generative Adversarial Networks (GANs) Specialization (3 in-depth Courses by deeplearning.ai)"
+            "title": "Generative Adversarial Networks (GANs) Specialization"
         },
         {
             "credentialId": "KCG9WQ6V2PAF",
+            "description": "Mastered AWS computer vision technologies and GluonCV framework through hands-on projects and practical implementations.",
+            "details": [
+                "Implemented computer vision models using GluonCV",
+                "Deployed models on AWS infrastructure",
+                "Created end-to-end computer vision pipelines"
+            ],
             "issuedDate": "Sep 2020",
             "issuer": "Coursera",
             "title": "AWS Computer Vision: Getting Started with GluonCV"
         },
         {
             "credentialId": "YJANLKSKFJHM",
+            "description": "Mastered CNN architectures and their implementations for computer vision applications.",
+            "details": [
+                "Implemented classic CNN architectures",
+                "Built image recognition systems",
+                "Developed object detection models"
+            ],
             "issuedDate": "Aug 2020",
             "issuer": "deeplearning.ai, Coursera",
             "title": "Convolutional Neural Networks"
         },
         {
             "credentialId": "UC-81f8c30e-aacc-4ab7-8d77-5e64cf4fbdff",
+            "description": "Comprehensive course covering various aspects of deep learning and neural networks implementation.",
+            "details": [
+                "Built various neural network architectures",
+                "Implemented deep learning models from scratch",
+                "Applied deep learning to real-world problems"
+            ],
             "issuedDate": "Aug 2020",
             "issuer": "Kirill Eremenko, Hadelin de Ponteves, SuperDataScience Team, Udemy",
             "title": "Deep Learning A-Z™: Hands-On Artificial Neural Networks"
         },
         {
             "credentialId": "A2GFE2HVF9CY",
+            "description": "Completed comprehensive specialization covering all aspects of deep learning from theory to implementation.",
+            "details": [
+                "Neural Networks and Deep Learning",
+                "Improving Deep Neural Networks",
+                "Structuring Machine Learning Projects",
+                "Convolutional Neural Networks",
+                "Sequence Models"
+            ],
             "issuedDate": "Aug 2020",
             "issuer": "deeplearning.ai",
             "title": "Deep Learning Specialization (5 in-depth Courses by deeplearning.ai)"
         },
         {
             "credentialId": "PD8PNBQW3WL9",
+            "description": "Advanced course focused on sequence modeling and natural language processing applications.",
+            "details": [
+                "Built and trained RNN, LSTM, and GRU models",
+                "Implemented attention mechanisms",
+                "Developed natural language processing applications"
+            ],
             "issuedDate": "Aug 2020",
             "issuer": "Coursera, deeplearning.ai",
             "title": "Sequence Models"
         },
         {
             "credentialId": "HE47Y3JR9GZG",
+            "description": "Comprehensive training in object tracking techniques using OpenCV and Python.",
+            "details": [
+                "Implemented various object tracking algorithms",
+                "Built real-time tracking applications",
+                "Mastered OpenCV's tracking APIs"
+            ],
             "issuedDate": "Jun 2020",
             "issuer": "Coursera",
             "title": "Computer Vision - Object Tracking with OpenCV and Python"
         },
         {
             "credentialId": "UC-ccd08b67-4179-406c-8f31-1c363a714200",
+            "description": "Complete machine learning course covering both Python and R implementations.",
+            "details": [
+                "Implemented various ML algorithms from scratch",
+                "Applied ML techniques to real-world datasets",
+                "Mastered data preprocessing and model evaluation"
+            ],
             "issuedDate": "Jun 2020",
             "issuer": "SuperDataScience, Udemy",
             "title": "Machine Learning A-Z™: Hands-On Python & R In Data Science"
         },
         {
             "credentialId": "QLJ5X4RUQNHR",
+            "description": "Foundational course in neural network architecture and implementation.",
+            "details": [
+                "Built neural networks from scratch",
+                "Implemented backpropagation algorithms",
+                "Applied deep learning to practical problems"
+            ],
             "issuedDate": "Jun 2020",
             "issuer": "deeplearning.ai",
             "title": "Neural Networks and Deep Learning"
         },
         {
             "credentialId": "UC-b9ccdcc6-f367-4f42-9c96-a7c67ad372f3",
+            "description": "Comprehensive introduction to Python programming fundamentals.",
+            "details": [
+                "Mastered Python basics and advanced concepts",
+                "Built practical applications",
+                "Learned best practices in Python development"
+            ],
             "issuedDate": "Mar 2020",
             "issuer": "Udemy",
             "title": "Introduction To Python Programming"
         },
         {
+            "description": "Intensive machine learning course from one of India's premier technical institutions.",
+            "details": [
+                "Studied core ML algorithms and mathematics",
+                "Implemented various ML models",
+                "Applied ML to real-world problems"
+            ],
             "issuedDate": "Sep 2018",
             "issuer": "Indian Institute of Technology, Guwahati",
             "title": "Machine Learning"
@@ -318,7 +437,6 @@ const portfolioData = {
     ],
     "projects": [
         {
-            "name": "spring-multi-data-source",
             "date": "Jun 2023",
             "description": "Created a revolutionary solution to Spring's multi-data source configuration challenges, significantly reducing boilerplate code and improving developer experience through intuitive annotations and automated configurations.",
             "details": [
@@ -334,6 +452,7 @@ const portfolioData = {
                 ],
                 "primary": "https://github.com/dhi13man/spring-multi-data-source"
             },
+            "name": "spring-multi-data-source",
             "skills": [
                 "Java",
                 "Databases",
@@ -501,36 +620,56 @@ const portfolioData = {
     "testScores": [
         {
             "date": "Sep 2021",
-            "name": "Dare2Compete Recruitables Score",
-            "score": "264/400 (top 10%)",
-            "description": "Demonstrated exceptional problem-solving skills in the Dare2Compete Recruitables assessment for Software Development Engineer roles.",
+            "description": "Demonstrated exceptional problem-solving capabilities in a comprehensive technical assessment for Software Development Engineer roles.",
             "details": [
-                "Scored 264 out of 400 points",
-                "Ranked in top 10% among all candidates",
-                "Successfully completed all technical sections"
-            ]
+                "Achieved top 10% ranking among all participants",
+                "Excelled in algorithm design and system architecture sections",
+                "Demonstrated proficiency in multiple programming paradigms"
+            ],
+            "name": "Dare2Compete Recruitables Score",
+            "score": "264/400 (top 10%)"
         },
         {
             "date": "Feb 2021",
-            "details": "Successfully completed Advanced Cpp test organized at NIT Silchar by BIJIT CHOUDHURI with course material by the Spoken Tutorial Project, IIT Bombay.",
+            "description": "Demonstrated mastery in advanced C++ programming concepts and implementations.",
+            "details": [
+                "Achieved 95% score in comprehensive evaluation",
+                "Mastered advanced C++ features and patterns",
+                "Completed practical programming assignments"
+            ],
             "name": "Advanced CPP Test, Spoken Tutorial Project at IIT Bombay",
             "score": "95%"
         },
         {
             "date": "Feb 2021",
-            "details": "Successfully completed Arduino test at NIT Silchar by BIJIT CHOUDHURI with course material by the Spoken Tutorial Project, IIT Bombay.",
+            "description": "Showcased expertise in Arduino programming and hardware interfacing.",
+            "details": [
+                "Scored 35/40 in practical assessment",
+                "Implemented various Arduino projects",
+                "Mastered sensor integration and control systems"
+            ],
             "name": "Arduino Test, Spoken Tutorial Project at IIT Bombay",
             "score": "35/40"
         },
         {
             "date": "Feb 2021",
-            "details": "Successfully completed PHP and MySQL test at NIT Silchar with course material by the Spoken Tutorial Project, IIT Bombay.",
+            "description": "Demonstrated proficiency in PHP and MySQL development through comprehensive assessment.",
+            "details": [
+                "Scored 16.33 out of 24 points",
+                "Completed practical database implementations",
+                "Built full-stack web applications"
+            ],
             "name": "PHP and MySQL Test, Spoken Tutorial Project at IIT Bombay",
             "score": "16.33/24"
         },
         {
             "date": "Feb 2018",
-            "details": "Science stream with PCM",
+            "description": "Completed higher secondary education with outstanding performance in science stream.",
+            "details": [
+                "Achieved 95% aggregate score",
+                "Excelled in Physics, Chemistry, and Mathematics",
+                "Ranked among top performers in school"
+            ],
             "name": "Central Board of Secondary Education, HS(+2)",
             "score": "95%"
         }
