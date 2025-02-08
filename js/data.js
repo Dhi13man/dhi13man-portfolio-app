@@ -111,8 +111,8 @@ const portfolioData = {
                     "details": [
                         "Designed technical architecture for multiple product verticals",
                         "Established AWS infrastructure with multi-profile CI/CD pipelines",
-                        "Integrated critical third-party services including payment gateways",
-                        "Implemented full-stack observability solutions"
+                        "Integrated critical third-party services like payment gateways, and built observability",
+                        "Enabled partnerships with Startup India, IIT Guwahati Technology Innovation Hub, Indigram Labs, NEEDP, etc",
                     ],
                     "location": "Guwahati, Assam, India | Remote",
                     "title": "Technical Advisor"
@@ -285,9 +285,10 @@ const portfolioData = {
         },
         {
             "date": "Dec 2019",
-            "description": "Secured top position with 1 Lakh+ INR prize money.",
+            "description": "Secured top position for InfrAwake driver safety system.",
             "details": [
-                "Developed real-time driver monitoring system"
+                "Awarded 1 Lakh INR prize money",
+                "Developed and pitched real-time driver monitoring system"
             ],
             "issuer": "K-SAC, KIIT University",
             "title": "1st Position, Innovation Challenge, KIIT-Fest 2019, KIIT University"
