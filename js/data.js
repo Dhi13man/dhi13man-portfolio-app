@@ -1,6 +1,6 @@
 const portfolioData = {
     "about": {
-        "description": "Dhiman Seal is a distinguished tech-obsessed engineer dedicated to simplifying lives through technology. With proven expertise in scalable systems and innovative solutions, he stands at the intersection of technical excellence and visionary leadership.\n\nAs a recognized authority in open source development with diverse expertise in engineering and entrepreneurship, his work is guided by three core principles:\n1. Architecting scalable, elegant solutions to complex engineering challenges\n2. Advancing the technology landscape through strategic open-source contributions\n3. Leading high-performance teams in developing industry-transforming systems",
+        "description": "Dhiman Seal is a tech-obsessed engineer dedicated to simplifying lives through technology. With proven expertise in scalable systems and innovative solutions, he stands at the intersection of technical excellence and visionary leadership.\n\nAs a recognized authority in open source development with diverse expertise in engineering and entrepreneurship, his work is guided by three core principles:\n&nbsp;1. Architecting scalable, elegant solutions to complex societal challenges\n&nbsp;2. Advancing the technology landscape through strategic open-source contributions\n&nbsp;3. Leading high-performance teams in developing industry-transforming systems",
         "tagline": "Open-Source Creator • Entrepreneur • Software Wizard"
     },
     "education": [
@@ -693,16 +693,16 @@ const portfolioData = {
             "links": {
                 "primary": "https://onlyforms.org"
             },
-            "name": "Onlyforms",
+            "name": "Onlyforms - Redefining MBA Surveys",
             "roles": [
                 {
                     "dates": "Dec 2023 - Current",
                     "description": "Founded and developed a platform connecting MBA students with research opportunities.",
                     "details": [
-                        "121 MBA Students surveyed via OnlyForms",
-                        "8 min Average Response Time (per 50 responses)",
-                        "Built end-to-end survey management system",
-                        "Implemented instant reward distribution mechanism"
+                        "MBA Students surveyed via OnlyForms: 121",
+                        "Average Response Time per 50 responses: 8-mins",
+                        "End-to-end survey management system built on a in-house server",
+                        "Running as a low-effort passive income source" 
                     ],
                     "location": "India",
                     "title": "Tech Lead | Co-Founder"
@@ -714,16 +714,16 @@ const portfolioData = {
             "links": {
                 "primary": "https://www.eminencerobotics.org/banalo"
             },
-            "name": "Banalo",
+            "name": "Banalo - Cook Better, Eat Better, Live Better",
             "roles": [
                 {
                     "dates": "Aug 2022 - Mar 2023",
-                    "description": "Led development of food subscription service inspired by Blue Apron.",
+                    "description": "Brainstormed a food subscription service inspired by Blue Apron, for India.",
                     "details": [
-                        "Developed business model with VC mentor guidance",
-                        "Created end-to-end delivery system",
-                        "Designed chef collaboration platform",
-                        "Implemented ingredient portioning system"
+                        "Developed business plan and design mockups",
+                        "Pitched in multiple startup competitions",
+                        "Gained interest and regular mentorship from a Venture Capitalist",
+                        "Closed due to inability to make unit economics work"
                     ],
                     "location": "India",
                     "title": "Founder"
