@@ -670,7 +670,7 @@ section .content {
   }
 }
 
-#experience .company {
+#ventures .venture {
   margin-bottom: 1.5em;
   padding: 1em;
   border-left: 4px solid var(--primary);
@@ -681,14 +681,14 @@ section .content {
   transition: all 0.3s ease;
 }
 
-#experience .company:hover {
+#ventures .venture:hover {
   background: var(--surface-hover);
   border-color: var(--primary);
   transform: translateY(-2px);
   box-shadow: 0 4px 12px var(--shadow);
 }
 
-#experience .role {
+#ventures .role {
   margin-top: 1em;
   padding: 0.8em;
   background: var(--surface);
@@ -699,7 +699,41 @@ section .content {
   border: 1px solid var(--border);
 }
 
-#experience .role h3 {
+#venture .role h3 {
+  color: var(--primary-dark);
+  text-shadow: none;
+}
+
+#experiences .company {
+  margin-bottom: 1.5em;
+  padding: 1em;
+  border-left: 4px solid var(--primary);
+  border-radius: 6px;
+  box-shadow: none;
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
+  transition: all 0.3s ease;
+}
+
+#experiences .company:hover {
+  background: var(--surface-hover);
+  border-color: var(--primary);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px var(--shadow);
+}
+
+#experiences .role {
+  margin-top: 1em;
+  padding: 0.8em;
+  background: var(--surface);
+  box-shadow: 0 2px 4px var(--shadow);
+  border-radius: 6px;
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
+  border: 1px solid var(--border);
+}
+
+#experiences .role h3 {
   color: var(--primary-dark);
   text-shadow: none;
 }
@@ -1063,7 +1097,8 @@ a:hover {
 .school:hover,
 .project:hover,
 .recommendation:hover,
-#experience .role:hover,
+#ventures .role:hover,
+#experiences .role:hover,
 #achievements .cert:hover,
 #achievements .award:hover,
 #achievements .score:hover {

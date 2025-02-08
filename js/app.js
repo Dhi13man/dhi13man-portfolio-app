@@ -32,6 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const data = portfolioData;
   renderAbout(data.about);
   renderExperience(data.experience);
+  renderVentures(data.ventures);
   renderEducation(data.education);
   renderCerts(data.licensesAndCertifications);
   renderAwards(data.honorsAndAwards);
@@ -53,7 +54,7 @@ function renderAbout(about) {
 }
 
 function renderExperience(experiences) {
-  const container = document.querySelector('#experience .content');
+  const container = document.querySelector('#experiences .content');
   container.innerHTML = experiences.map(exp => `
     <div class="company">
       <h3>${exp.links?.primary ? 
@@ -73,6 +74,31 @@ function renderExperience(experiences) {
         `).join('')}
       </div>
       ${renderLinks(exp.links)}
+    </div>
+  `).join('');
+}
+
+function renderVentures(ventures) {
+  const container = document.querySelector('#ventures .content');
+  container.innerHTML = ventures.map(venture => `
+    <div class="company venture">
+      <h3>${venture.links?.primary ? 
+        `<a href="${venture.links.primary}" target="_blank">${venture.name}</a>` : 
+        venture.name}</h3>
+      ${venture.about ? `<p class="about-org">${venture.about}</p>` : ''}
+      <div class="roles">
+        ${venture.roles.map(role => `
+          <div class="role">
+            <h4>${role.title}</h4>
+            <p><em>${role.dates} &ndash; ${role.location}</em></p>
+            ${role.description ? `<p class="description">${role.description}</p>` : ''}
+            <ul class="details">
+              ${role.details.map(item => `<li>${item}</li>`).join('')}
+            </ul>
+          </div>
+        `).join('')}
+      </div>
+      ${renderLinks(venture.links)}
     </div>
   `).join('');
 }

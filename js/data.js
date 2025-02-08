@@ -1,7 +1,7 @@
 const portfolioData = {
     "about": {
         "description": "Dhiman Seal is a distinguished tech-obsessed engineer dedicated to simplifying lives through technology. With proven expertise in scalable systems and innovative solutions, he stands at the intersection of technical excellence and visionary leadership.\n\nAs a recognized authority in open source development with diverse expertise in engineering and entrepreneurship, his work is guided by three core principles:\n1. Architecting scalable, elegant solutions to complex engineering challenges\n2. Advancing the technology landscape through strategic open-source contributions\n3. Leading high-performance teams in developing industry-transforming systems",
-        "tagline": "Entrepreneur • Open-Source Creator • Software Wizard"
+        "tagline": "Open-Source Creator • Entrepreneur • Software Wizard"
     },
     "education": [
         {
@@ -112,7 +112,7 @@ const portfolioData = {
                         "Designed technical architecture for multiple product verticals",
                         "Established AWS infrastructure with multi-profile CI/CD pipelines",
                         "Integrated critical third-party services like payment gateways, and built observability",
-                        "Enabled partnerships with Startup India, IIT Guwahati Technology Innovation Hub, Indigram Labs, NEEDP, etc",
+                        "Enabled partnerships with Startup India, IIT Guwahati Technology Innovation Hub, Indigram Labs, NEEDP, etc"
                     ],
                     "location": "Guwahati, Assam, India | Remote",
                     "title": "Technical Advisor"
@@ -171,44 +171,6 @@ const portfolioData = {
                     ],
                     "location": "Remote",
                     "title": "System Design and Cross-Platform Application Development"
-                }
-            ]
-        },
-        {
-            "about": "Edtech initiative providing hands-on technical education in robotics, electronics, and software development for Northeast Indian students.",
-            "links": {
-                "primary": "https://facebook.com/TechEngio/"
-            },
-            "name": "TechEngio",
-            "roles": [
-                {
-                    "dates": "Nov 2018 - Mar 2020",
-                    "description": "Co-founded and led technical education programs.",
-                    "details": [
-                        "Conducted workshops on robotics, electronics, and software development",
-                        "Created educational content and monetized through affiliate marketing"
-                    ],
-                    "location": "Assam",
-                    "title": "Co-Founder"
-                }
-            ]
-        },
-        {
-            "about": "Student-led organization developing innovative robotics/IoT solutions, participating in national competitions and automation projects.",
-            "links": {
-                "primary": "https://eminencerobotics.org"
-            },
-            "name": "Eminence Robotics",
-            "roles": [
-                {
-                    "dates": "Oct 2018 - Sep 2021",
-                    "description": "Co-founded organization and led IoT/robotics innovation initiatives.",
-                    "details": [
-                        "Developed terrain vehicles, combat robots, and autonomous smart systems",
-                        "Competed in national tech festivals focusing on product prototyping"
-                    ],
-                    "location": "India",
-                    "title": "IoT and Application Developer | Co-Founder"
                 }
             ]
         }
@@ -308,58 +270,59 @@ const portfolioData = {
     "licensesAndCertifications": [
         {
             "credentialId": "UC-7e081543-f46c-471f-8231-c25a2d13753c",
-            "description": "Mastered advanced reinforcement learning concepts through hands-on projects.",
             "date": "Jun 2021",
+            "description": "Mastered advanced reinforcement learning concepts through hands-on projects.",
             "issuer": "Udemy",
             "title": "Deep Reinforcement Learning 2.0"
         },
         {
             "credentialId": "PBLVZDHRWTD5",
+            "date": "Nov 2020",
             "description": "Completed specialization in Generative Adversarial Networks applications.",
             "details": [
                 "Built various GAN architectures",
                 "Implemented image generation models",
                 "Developed conditional GANs"
             ],
-            "date": "Nov 2020",
             "issuer": "deeplearning.ai, Coursera",
             "title": "Generative Adversarial Networks (GANs) Specialization"
         },
         {
             "credentialId": "KCG9WQ6V2PAF",
+            "date": "Sep 2020",
             "description": "Mastered AWS computer vision technologies and GluonCV framework.",
             "details": [
                 "Deployed models on AWS infrastructure",
                 "Created end-to-end computer vision pipelines"
             ],
-            "date": "Sep 2020",
             "issuer": "Coursera",
             "title": "AWS Computer Vision: Getting Started with GluonCV"
         },
         {
             "credentialId": "YJANLKSKFJHM",
+            "date": "Aug 2020",
             "description": "Mastered CNN architectures for computer vision applications.",
             "details": [
                 "Implemented classic CNN architectures",
                 "Developed object detection systems"
             ],
-            "date": "Aug 2020",
             "issuer": "deeplearning.ai, Coursera",
             "title": "Convolutional Neural Networks"
         },
         {
             "credentialId": "UC-81f8c30e-aacc-4ab7-8d77-5e64cf4fbdff",
+            "date": "Aug 2020",
             "description": "Comprehensive deep learning course covering neural network implementations.",
             "details": [
                 "Built various neural network architectures from scratch",
                 "Applied deep learning to real-world problems"
             ],
-            "date": "Aug 2020",
             "issuer": "Kirill Eremenko, Hadelin de Ponteves, SuperDataScience Team, Udemy",
             "title": "Deep Learning A-Z™: Hands-On Artificial Neural Networks"
         },
         {
             "credentialId": "A2GFE2HVF9CY",
+            "date": "Aug 2020",
             "description": "Completed comprehensive specialization covering deep learning fundamentals.",
             "details": [
                 "Neural Networks and Deep Learning",
@@ -368,73 +331,72 @@ const portfolioData = {
                 "Convolutional Neural Networks",
                 "Sequence Models"
             ],
-            "date": "Aug 2020",
             "issuer": "deeplearning.ai",
             "title": "Deep Learning Specialization (5 in-depth Courses by deeplearning.ai)"
         },
         {
             "credentialId": "PD8PNBQW3WL9",
+            "date": "Aug 2020",
             "description": "Advanced course in sequence modeling and NLP applications.",
             "details": [
                 "Built and trained RNN, LSTM, and GRU models",
                 "Implemented attention mechanisms",
                 "Developed natural language processing applications"
             ],
-            "date": "Aug 2020",
             "issuer": "Coursera, deeplearning.ai",
             "title": "Sequence Models"
         },
         {
             "credentialId": "HE47Y3JR9GZG",
+            "date": "Jun 2020",
             "description": "Mastered object tracking using OpenCV and Python.",
             "details": [
                 "Implemented real-time tracking systems",
                 "Utilized OpenCV tracking APIs"
             ],
-            "date": "Jun 2020",
             "issuer": "Coursera",
             "title": "Computer Vision - Object Tracking with OpenCV and Python"
         },
         {
             "credentialId": "UC-ccd08b67-4179-406c-8f31-1c363a714200",
+            "date": "Jun 2020",
             "description": "Comprehensive machine learning course with Python/R implementations.",
             "details": [
                 "Applied ML techniques to real datasets",
                 "Mastered model evaluation techniques"
             ],
-            "date": "Jun 2020",
             "issuer": "SuperDataScience, Udemy",
             "title": "Machine Learning A-Z™: Hands-On Python & R In Data Science"
         },
         {
             "credentialId": "QLJ5X4RUQNHR",
+            "date": "Jun 2020",
             "description": "Foundational course in neural network architecture.",
             "details": [
                 "Implemented backpropagation algorithms",
                 "Built networks from scratch in practical problems"
             ],
-            "date": "Jun 2020",
             "issuer": "deeplearning.ai",
             "title": "Neural Networks and Deep Learning"
         },
         {
             "credentialId": "UC-b9ccdcc6-f367-4f42-9c96-a7c67ad372f3",
+            "date": "Mar 2020",
             "description": "Comprehensive introduction to Python programming.",
             "details": [
                 "Mastered advanced Python concepts",
                 "Built practical applications"
             ],
-            "date": "Mar 2020",
             "issuer": "Udemy",
             "title": "Introduction To Python Programming"
         },
         {
+            "date": "Sep 2018",
             "description": "Intensive machine learning course from premier technical institution.",
             "details": [
                 "Studied core ML algorithms and the mathematics behind them",
                 "Applied ML to real-world problems"
             ],
-            "date": "Sep 2018",
             "issuer": "Indian Institute of Technology, Guwahati",
             "title": "Machine Learning"
         }
@@ -724,5 +686,87 @@ const portfolioData = {
             "name": "Central Board of Secondary Education, HS(+2)",
             "score": "95%"
         }
+    ],
+    "ventures": [
+        {
+            "about": "Revolutionizing MBA research with instant survey rewards. Seamlessly connecting MBA students with their peers' research needs through paid survey participation.",
+            "links": {
+                "primary": "https://onlyforms.org"
+            },
+            "name": "Onlyforms",
+            "roles": [
+                {
+                    "dates": "Dec 2023 - Current",
+                    "description": "Founded and developed a platform connecting MBA students with research opportunities.",
+                    "details": [
+                        "121 MBA Students surveyed via OnlyForms",
+                        "8 min Average Response Time (per 50 responses)",
+                        "Built end-to-end survey management system",
+                        "Implemented instant reward distribution mechanism"
+                    ],
+                    "location": "India",
+                    "title": "Tech Lead | Co-Founder"
+                }
+            ]
+        },
+        {
+            "about": "Food subscription company delivering chef-designed recipes with pre-portioned fresh ingredients daily to customers' doorstep.",
+            "links": {
+                "primary": "https://www.eminencerobotics.org/banalo"
+            },
+            "name": "Banalo",
+            "roles": [
+                {
+                    "dates": "Aug 2022 - Mar 2023",
+                    "description": "Led development of food subscription service inspired by Blue Apron.",
+                    "details": [
+                        "Developed business model with VC mentor guidance",
+                        "Created end-to-end delivery system",
+                        "Designed chef collaboration platform",
+                        "Implemented ingredient portioning system"
+                    ],
+                    "location": "India",
+                    "title": "Founder"
+                }
+            ]
+        },
+        {
+            "about": "Student-led organization developing innovative robotics/IoT solutions, participating in national competitions and automation projects.",
+            "links": {
+                "primary": "https://eminencerobotics.org"
+            },
+            "name": "Eminence Robotics",
+            "roles": [
+                {
+                    "dates": "Oct 2018 - Sep 2021",
+                    "description": "Co-founded organization and led IoT/robotics innovation initiatives.",
+                    "details": [
+                        "Developed terrain vehicles, combat robots, and autonomous smart systems",
+                        "Competed in national tech festivals focusing on product prototyping"
+                    ],
+                    "location": "India",
+                    "title": "IoT and Application Developer | Co-Founder"
+                }
+            ]
+        },
+        {
+            "about": "Edtech initiative providing hands-on technical education in robotics, electronics, and software development for Northeast Indian students.",
+            "links": {
+                "primary": "https://facebook.com/TechEngio/"
+            },
+            "name": "TechEngio",
+            "roles": [
+                {
+                    "dates": "Nov 2018 - Mar 2020",
+                    "description": "Co-founded and led technical education programs.",
+                    "details": [
+                        "Conducted workshops on robotics, electronics, and software development",
+                        "Created educational content and monetized through affiliate marketing"
+                    ],
+                    "location": "Assam",
+                    "title": "Instructor | Co-Founder"
+                }
+            ]
+        }
     ]
-};
+}; 
