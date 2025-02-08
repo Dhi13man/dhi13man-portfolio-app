@@ -59,7 +59,7 @@ html {
   width: 250px;
   background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
   color: var(--text-light);
-  padding: 2em 0 0; /* Remove bottom padding to accommodate footer */
+  padding: 2em 0 0;
   box-shadow: 2px 0 5px var(--shadow);
   transform: translateX(0);
   transition: transform 0.3s ease;
@@ -108,7 +108,7 @@ html {
 }
 
 .sidebar-footer {
-  margin-top: auto; /* Push footer to bottom of sidebar */
+  margin-top: auto;
   padding: 1em;
   text-align: center;
   font-size: 0.9em;
