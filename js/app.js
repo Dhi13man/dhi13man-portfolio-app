@@ -57,8 +57,8 @@ function renderExperience(experiences) {
   container.innerHTML = experiences.map(exp => `
     <div class="company">
       <h3>${exp.links?.primary ? 
-        `<a href="${exp.links.primary}" target="_blank">${exp.company}</a>` : 
-        exp.company}</h3>
+        `<a href="${exp.links.primary}" target="_blank">${exp.name}</a>` : 
+        exp.name}</h3>
       ${exp.about ? `<p class="about-org">${exp.about}</p>` : ''}
       <div class="roles">
         ${exp.roles.map(role => `
@@ -82,8 +82,8 @@ function renderEducation(education) {
   container.innerHTML = education.map(school => `
     <div class="school">
       <h3>${school.links?.primary ? 
-        `<a href="${school.links.primary}" target="_blank" rel="noopener noreferrer">${school.institution}</a>` : 
-        school.institution}</h3>
+        `<a href="${school.links.primary}" target="_blank" rel="noopener noreferrer">${school.name}</a>` : 
+        school.name}</h3>
       ${school.about ? `<p class="about-org">${school.about}</p>` : ''}
       <div class="courses">
         ${school.courses.map(course => `

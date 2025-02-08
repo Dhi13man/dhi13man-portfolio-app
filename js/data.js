@@ -20,13 +20,13 @@ const portfolioData = {
                     "yearRange": "2018 - 2022"
                 }
             ],
-            "institution": "National Institute of Technology (NIT), Silchar",
             "links": {
                 "others": [
                     "https://linkedin.com/school/national-institute-of-technology-silchar/"
                 ],
                 "primary": "http://nits.ac.in"
-            }
+            },
+            "name": "National Institute of Technology (NIT), Silchar"
         },
         {
             "about": "Prestigious CBSE-affiliated institution known for academic excellence and holistic development. Consistently produces top performers in board examinations and competitive tests.",
@@ -46,22 +46,22 @@ const portfolioData = {
                     "yearRange": "2006 - 2016"
                 }
             ],
-            "institution": "Gurukul Grammar Senior Secondary School",
             "links": {
                 "primary": "https://gurukulgrammarschool.in/"
-            }
+            },
+            "name": "Gurukul Grammar Senior Secondary School"
         }
     ],
     "experience": [
         {
             "about": "India's leading investment platform serving millions of users with a mission to democratize financial services. Offers seamless digital access to stocks, mutual funds, and financial products.",
-            "company": "Groww, India",
             "links": {
                 "others": [
                     "https://linkedin.com/company/groww"
                 ],
                 "primary": "https://groww.in"
             },
+            "name": "Groww, India",
             "roles": [
                 {
                     "dates": "Jul 2023 - Present",
@@ -100,10 +100,10 @@ const portfolioData = {
         },
         {
             "about": "Agritech startup revolutionizing Northeast India's agricultural practices through technology-driven solutions and market access platforms.",
-            "company": "AgriJod",
             "links": {
                 "primary": "https://agrijod.in"
             },
+            "name": "AgriJod",
             "roles": [
                 {
                     "dates": "May 2023 - Apr 2024",
@@ -121,10 +121,10 @@ const portfolioData = {
         },
         {
             "about": "Global freelance services marketplace connecting businesses with skilled professionals across industries.",
-            "company": "Fiverr",
             "links": {
                 "primary": "https://fiverr.com/dhiman13"
             },
+            "name": "Fiverr",
             "roles": [
                 {
                     "dates": "Jan 2021 - Dec 2021",
@@ -140,10 +140,10 @@ const portfolioData = {
         },
         {
             "about": "Pioneered peer-to-peer ATM cash network solution in Hungary through innovative mobile application connecting cash seekers with providers.",
-            "company": "Cashtic",
             "links": {
                 "primary": "https://cashtic.com"
             },
+            "name": "Cashtic",
             "roles": [
                 {
                     "dates": "May 2021 - Nov 2021",
@@ -160,7 +160,7 @@ const portfolioData = {
         },
         {
             "about": "Sustainable technology company developing IoT-integrated systems for environmental monitoring and smart agriculture.",
-            "company": "GreenLine World",
+            "name": "GreenLine World",
             "roles": [
                 {
                     "dates": "Apr 2021 - Jul 2021",
@@ -176,10 +176,10 @@ const portfolioData = {
         },
         {
             "about": "Edtech initiative providing hands-on technical education in robotics, electronics, and software development for Northeast Indian students.",
-            "company": "TechEngio",
             "links": {
                 "primary": "https://facebook.com/TechEngio/"
             },
+            "name": "TechEngio",
             "roles": [
                 {
                     "dates": "Nov 2018 - Mar 2020",
@@ -195,10 +195,10 @@ const portfolioData = {
         },
         {
             "about": "Student-led organization developing innovative robotics/IoT solutions, participating in national competitions and automation projects.",
-            "company": "Eminence Robotics",
             "links": {
                 "primary": "https://eminencerobotics.org"
             },
+            "name": "Eminence Robotics",
             "roles": [
                 {
                     "dates": "Oct 2018 - Sep 2021",
