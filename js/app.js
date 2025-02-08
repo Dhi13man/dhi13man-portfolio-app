@@ -72,7 +72,7 @@ function renderExperience(experiences) {
           </div>
         `).join('')}
       </div>
-      ${renderLinks(exp.links, 'company-links')}
+      ${renderLinks(exp.links)}
     </div>
   `).join('');
 }
@@ -90,7 +90,7 @@ function renderEducation(education) {
         <p class="grade"><strong>${school.gpa ? `GPA: ${school.gpa}` : school.percent ? `Grade: ${school.percent}` : ''}</strong></p>
         ${school.description ? `<p class="description">${school.description}</p>` : ''}
         ${school.details ? `<ul class="details">${school.details.map(item => `<li>${item}</li>`).join('')}</ul>` : ''}
-        ${renderLinks(school.links, 'school-links')}
+        ${renderLinks(school.links)}
       </div>
     </div>
   `).join('');
@@ -122,7 +122,7 @@ function renderProjects(projects) {
       ${proj.description ? `<p class="description">${proj.description}</p>` : ''}
       ${proj.details ? `<ul class="details">${proj.details.map(item => `<li>${item}</li>`).join('')}</ul>` : ''}
       ${proj.skills ? `<p class="skills"><strong>Skills:</strong> ${proj.skills.join(', ')}</p>` : ''}
-      ${renderLinks(proj.links, 'project-links')}
+      ${renderLinks(proj.links)}
     </div>
   `).join('');
 }
@@ -145,6 +145,7 @@ function renderRecommendations(recommendations) {
     <div class="recommendation">
       <p>"${rec.text}"</p>
       <p><strong>— ${rec.from}</strong></p>
+      ${renderLinks(rec.links)}
     </div>
   `).join('');
 }
@@ -162,7 +163,7 @@ function renderAwards(awards) {
   awardsContainer.innerHTML = awardsHtml;
 }
 
-function renderLinks(links, className = '') {
+function renderLinks(links) {
   if (!links) return '';
   
   const allLinks = [];
@@ -186,6 +187,6 @@ function renderLinks(links, className = '') {
     .filter(html => html);
 
   return allLinksHtml.length ? 
-    `<p class="${className || 'additional-links'}">Find out more: ${allLinksHtml.join(' | ')}</p>` : 
+    `<p class="links">See source: ${allLinksHtml.join(' | ')}</p>` : 
     '';
 }
