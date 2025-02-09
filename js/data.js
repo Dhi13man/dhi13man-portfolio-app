@@ -267,11 +267,6 @@ const portfolioData = {
             "description": "Secured Zonal Rank 1 and International Rank 136 in International English Olympiad.",
             "issuer": "Science Olympiad Foundation - India",
             "title": "International English Olympiad 2018"
-        },
-        {
-            "description": "Achieved highest proficiency ranking in database management.",
-            "issuer": "HackerRank",
-            "title": "5-Star Gold (SQL)"
         }
     ],
     "licensesAndCertifications": [
@@ -411,7 +406,7 @@ const portfolioData = {
     "projects": [
         {
             "startDate": "Jun 2023",
-            "endDate": "Current",
+            "endDate": "Present",
             "description": "Revolutionary Spring framework solution simplifying multi-data source configuration through intuitive annotations.",
             "details": [
                 "Published on Maven Central Repository",
@@ -453,7 +448,7 @@ const portfolioData = {
         },
         {
             "startDate": "Sep 2021",
-            "endDate": "Current",
+            "endDate": "Present",
             "description": "Built and maintaining Open-source Dart/Flutter library for openrouteservice API integration.",
             "details": [
                 "Used by 1.4K+ development teams across the world, with 80 likes and 160/160 pub.dev points",
@@ -477,7 +472,7 @@ const portfolioData = {
         },
         {
             "startDate": "May 2021",
-            "endDate": "Current",
+            "endDate": "Present",
             "description": "Created a null-safe Dart/Flutter package for Nordigen EU PSD2 AISP Banking API Integration.",
             "details": [
                 "Officially recognized by Nordigen as their premier Dart/Flutter community package",
@@ -548,7 +543,7 @@ const portfolioData = {
         },
         {
             "startDate": "Nov 2020",
-            "endDate": "Current",
+            "endDate": "Present",
             "description": "Open-source package for moor database to CSV conversion.",
             "details": [
                 "Over 100 downloads and 13 likes, with 160/160 pub.dev points",
@@ -713,7 +708,7 @@ const portfolioData = {
             "roles": [
                 {
                     "startDate": "Dec 2023",
-                    "endDate": "Current",
+                    "endDate": "Present",
                     "description": "Founded and developed a platform connecting MBA students with research opportunities.",
                     "details": [
                         "MBA Students surveyed via OnlyForms: 121",
