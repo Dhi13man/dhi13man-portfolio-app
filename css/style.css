@@ -182,7 +182,7 @@ body:not(.sidebar-collapsed) .sidebar-toggle span:last-child {
 
 /* Main Content Adjustment */
 .main-content {
-  margin-left: 250px;
+  margin: 0 0 0 250px;
   padding: 2em;
   transition: margin-left 0.3s ease, width 0.3s ease;
   width: calc(100% - 250px);
