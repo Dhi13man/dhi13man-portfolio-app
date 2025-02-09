@@ -293,12 +293,9 @@ header .container {
 /* Social Buttons Styles */
 .social-buttons {
   display: flex;
-  justify-content: flex-end;
   gap: 0.75em;
-  margin-top: 0;
   position: relative;
   z-index: 2;
-  display: flex;
   justify-content: center;
   margin: 10px;
 }
@@ -616,9 +613,31 @@ h2 {
 }
 
 h3 {
-  color: var(--primary-dark);
-  color: var(--primary);
+  color: var(--highlight);
+  text-shadow: none;
   margin-bottom: 10px;
+  position: relative;
+  font-size: 1.5em;
+}
+
+h3::after {
+  content: '';
+  position: absolute;
+  top: -10px;
+  left: -20px;
+  right: -20px;
+  bottom: -10px;
+  background: radial-gradient(circle at center, var(--primary-glow) 0%, transparent 70%);
+  opacity: 0.1;
+  z-index: -1;
+  transition: opacity 0.3s ease;
+}
+
+h4 {
+  font-size: 1.2em;
+  color: var(--highlight);
+  margin-bottom: 0.3em;
+  text-shadow: none;
 }
 
 ul {
@@ -635,7 +654,7 @@ section .content {
   z-index: 1;
 }
 
-/* Specific Section Adjustments */
+/* About Section Styles */
 #about .content {
   font-size: 1.2em;
   color: var(--text);
@@ -645,6 +664,7 @@ section .content {
   border-left: 4px solid var(--primary);
   border-radius: 6px;
   transition: all 0.3s ease;
+  margin: 0 0 2em;
   display: flex;
   align-items: center;
 }
@@ -655,6 +675,23 @@ section .content {
   border-radius: 50%;
   margin-right: 2em;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#about .current-initiatives .content {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+#about .current-initiatives .content .initiative {
+  margin-top: 1em;
+  padding: 0.8em;
+  background: var(--surface);
+  box-shadow: 0 2px 4px var(--shadow);
+  border-radius: 6px;
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
+  border: 1px solid var(--border);
 }
 
 @media (max-width: 768px) {
@@ -699,11 +736,6 @@ section .content {
   border: 1px solid var(--border);
 }
 
-#venture .role h3 {
-  color: var(--primary-dark);
-  text-shadow: none;
-}
-
 #experiences .company {
   margin-bottom: 1.5em;
   padding: 1em;
@@ -731,11 +763,6 @@ section .content {
   -webkit-backdrop-filter: blur(5px);
   backdrop-filter: blur(5px);
   border: 1px solid var(--border);
-}
-
-#experiences .role h3 {
-  color: var(--primary-dark);
-  text-shadow: none;
 }
 
 #education .school {
@@ -871,15 +898,6 @@ section .content {
     }
 }
 
-#achievements h3 {
-  font-size: 1.6em;
-  color: var(--accent);
-  margin-bottom: 0.8em;
-  border-bottom: 2px solid var(--highlight);
-  padding-bottom: 0.3em;
-  text-shadow: none;
-}
-
 #achievements .cert,
 #achievements .score,
 #achievements .award {
@@ -895,15 +913,6 @@ section .content {
 #achievements .score:hover,
 #achievements .award:hover {
   background: var(--background-hover);
-}
-
-#achievements .cert h4,
-#achievements .score h4,
-#achievements .award h4 {
-  font-size: 1.2em;
-  color: var(--highlight);
-  margin-bottom: 0.3em;
-  text-shadow: none;
 }
 
 #achievements .score strong {
@@ -949,15 +958,6 @@ section .content {
   border: 1px solid var(--primary);
   border-radius: 8px;
 }
-
-#awards h3,
-#testScores h3,
-#certifications h3 {
-  margin-bottom: 15px;
-  color: var(--highlight);
-  text-shadow: none;
-}
-
 
 /* Hidden Class */
 .hidden {
@@ -1062,34 +1062,6 @@ a {
 
 a:hover {
   color: var(--primary-light);
-}
-
-/* Add subtle glow effects to important elements */
-.company h2,
-.school h3,
-.project h3 {
-  position: relative;
-}
-
-.company h2::after,
-.school h3::after,
-.project h3::after {
-  content: '';
-  position: absolute;
-  top: -10px;
-  left: -20px;
-  right: -20px;
-  bottom: -10px;
-  background: radial-gradient(circle at center, var(--primary-glow) 0%, transparent 70%);
-  opacity: 0.1;
-  z-index: -1;
-  transition: opacity 0.3s ease;
-}
-
-.company:hover h2::after,
-.school:hover h3::after,
-.project:hover h3::after {
-  opacity: 0.2;
 }
 
 /* Replace hover states with simpler version */

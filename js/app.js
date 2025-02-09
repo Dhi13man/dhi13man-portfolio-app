@@ -31,6 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Use the global portfolioData variable instead of fetching
   const data = portfolioData;
   renderAbout(data.about);
+  renderCurrentInitiatives(data);
   renderExperience(data.experience);
   renderVentures(data.ventures);
   renderEducation(data.education);
@@ -226,4 +227,50 @@ function formatDateRange(startDate, endDate) {
     return `${startDate} - ${endDate}`;
   }
   return startDate || endDate || '';
+}
+
+// Add this function
+function renderCurrentInitiatives(data) {
+  const container = document.querySelector('#about .current-initiatives .content');
+  if (!container) return;
+  
+  // Get current ventures
+  const currentVentures = data.ventures
+    .filter(venture => venture.roles.some(role => role.endDate === 'Present'))
+    .map(venture => ({
+      name: venture.name,
+      description: venture.about,
+      links: venture.links,
+      type: 'Venture'
+    }));
+
+  // Get current projects
+  const currentProjects = data.projects
+    .filter(project => project.endDate === 'Present')
+    .map(project => ({
+      name: project.name,
+      description: project.description,
+      links: project.links,
+      type: 'Project'
+    }));
+
+  const currentInitiatives = [...currentVentures, ...currentProjects];
+  if (currentInitiatives.length === 0) {
+    container.innerHTML = '<p>No current initiatives to display.</p>';
+    return;
+  }
+
+  container.innerHTML = currentInitiatives
+    .map(initiative => `
+      <div class="initiative">
+        ${initiative.links?.primary ? 
+          `<h4><a href="${initiative.links.primary}" target="_blank">${initiative.name}</a>` :
+          `<h4>${initiative.name}`
+        }
+        | <strong>${initiative.type}</strong></h4>
+        ${initiative.description ? `<p class="description">${initiative.description}</p>` : ''}
+        ${renderLinks(initiative.links)}
+      </div>
+    `)
+    .join('');
 }
