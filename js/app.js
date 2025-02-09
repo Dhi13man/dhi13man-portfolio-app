@@ -263,11 +263,13 @@ function renderCurrentInitiatives(data) {
   container.innerHTML = currentInitiatives
     .map(initiative => `
       <div class="initiative">
-        ${initiative.links?.primary ? 
-          `<h4><a href="${initiative.links.primary}" target="_blank">${initiative.name}</a>` :
-          `<h4>${initiative.name}`
-        }
-        | <strong>${initiative.type}</strong></h4>
+        <div class="initiative-header">
+            ${initiative.links?.primary ? 
+              `<a href="${initiative.links.primary}" target="_blank">${initiative.name}</a>` :
+              initiative.name
+            }
+          <span class="type-badge ${initiative.type.toLowerCase()}">${initiative.type}</span>
+        </div>
         ${initiative.description ? `<p class="description">${initiative.description}</p>` : ''}
         ${renderLinks(initiative.links)}
       </div>
