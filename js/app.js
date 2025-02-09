@@ -58,6 +58,7 @@ function renderExperience(experiences) {
   const container = document.querySelector('#experiences .content');
   container.innerHTML = experiences.map(exp => `
     <div class="company">
+      ${renderImages(exp.images)}
       <h3>${exp.links?.primary ? 
         `<a href="${exp.links.primary}" target="_blank">${exp.name}</a>` : 
         exp.name}</h3>
@@ -83,6 +84,7 @@ function renderVentures(ventures) {
   const container = document.querySelector('#ventures .content');
   container.innerHTML = ventures.map(venture => `
     <div class="company venture">
+      ${renderImages(venture.images)}
       <h3>${venture.links?.primary ? 
         `<a href="${venture.links.primary}" target="_blank">${venture.name}</a>` : 
         venture.name}</h3>
@@ -108,6 +110,7 @@ function renderEducation(education) {
   const container = document.querySelector('#education .content');
   container.innerHTML = education.map(school => `
     <div class="school">
+      ${renderImages(school.images)}
       <h3>${school.links?.primary ? 
         `<a href="${school.links.primary}" target="_blank" rel="noopener noreferrer">${school.name}</a>` : 
         school.name}</h3>
@@ -132,9 +135,6 @@ function renderCerts(certs) {
   let certsHtml = certs.map(cert => `
     <div class="cert">
       <h4>${cert.title}</h4>
-      <p><em>${cert.issuer}, ${formatDateRange(cert.startDate, cert.endDate)}</em></p>
-      ${cert.credentialId ? `<p class="credential">Credential: ${cert.credentialId}</p>` : ''}
-      ${cert.description ? `<p class="description">${cert.description}</p>` : ''}
       ${cert.details ? `<ul class="details">${cert.details.map(item => `<li>${item}</li>`).join('')}</ul>` : ''}
     </div>
   `).join('');
@@ -229,7 +229,6 @@ function formatDateRange(startDate, endDate) {
   return startDate || endDate || '';
 }
 
-// Add this function
 function renderCurrentInitiatives(data) {
   const container = document.querySelector('#about .current-initiatives .content');
   if (!container) return;
@@ -275,4 +274,13 @@ function renderCurrentInitiatives(data) {
       </div>
     `)
     .join('');
+}
+
+function renderImages(images) {
+  if (!images) return '';
+  
+  if (images.primary) {
+    return `<div class="background-image" style="background-image: url('${images.primary}')"></div>`;
+  }
+  return '';
 }

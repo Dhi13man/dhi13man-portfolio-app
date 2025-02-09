@@ -24,8 +24,8 @@ html {
   --accent-light: #8503d0;
   --background: #FFFFFF;
   --background-hover: #F1F5F9;
-  --surface: #F8FAFC;
-  --surface-hover: #E9EEF2;
+  --surface: #f8fafc8e;
+  --surface-hover: #e9eef2cf;
   --text: #1b0752;
   --text-secondary: #1b07529d;
   --text-light: #FFFFFF;
@@ -538,6 +538,7 @@ nav a:hover:before {
 /* Main Styles */
 main {
   width: 100%;
+  margin: 3em auto;
   padding: 0 2em;
   max-width: 1200px;
 }
@@ -1214,4 +1215,42 @@ button:focus {
   justify-content: space-between;
   align-items: center;
   margin-bottom: 0.5em;
+}
+
+/* Background Image Styles */
+.company, .venture, .school, .project {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.background-image {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  height: 90%;
+  background-size: cover;
+  background-position: center;
+  opacity: 0.15;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  z-index: -1;
+}
+
+.company:hover .background-image,
+.venture:hover .background-image,
+.school:hover .background-image,
+.project:hover .background-image {
+  opacity: 0.3;
+  transform: translate(-50%, -50%) scale(1.02);
+}
+
+/* Ensure content remains readable */
+.company > *:not(.background-image),
+.venture > *:not(.background-image),
+.school > *:not(.background-image),
+.project > *:not(.background-image) {
+  position: relative;
+  z-index: 1;
 }

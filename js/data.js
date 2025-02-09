@@ -20,6 +20,12 @@ const portfolioData = {
                     "yearRange": "2018 - 2022"
                 }
             ],
+            "images": {
+                "primary": "/assets/education/nits.png",
+                "others": [
+                    "/assets/education/nits-campus.png"
+                ]
+            },
             "links": {
                 "others": [
                     "https://linkedin.com/school/national-institute-of-technology-silchar/"
@@ -55,6 +61,10 @@ const portfolioData = {
     "experience": [
         {
             "about": "India's leading investment platform serving millions of users with a mission to democratize financial services. Offers seamless digital access to stocks, mutual funds, and financial products.",
+            "images": {
+                "primary": "assets/work_experiences/growwin_logo.png",
+                "others": []
+            },
             "links": {
                 "others": [
                     "https://linkedin.com/company/groww"
@@ -103,6 +113,10 @@ const portfolioData = {
         },
         {
             "about": "Agritech startup revolutionizing Northeast India's agricultural practices through technology-driven solutions and market access platforms.",
+            "images": {
+                "primary": "assets/work_experiences/agrijod_cover.png",
+                "others": []
+            },
             "links": {
                 "primary": "https://agrijod.in"
             },
@@ -125,6 +139,10 @@ const portfolioData = {
         },
         {
             "about": "Global freelance services marketplace connecting businesses with skilled professionals across industries.",
+            "images": {
+                "primary": "assets/work_experiences/fiverr_profile.png",
+                "others": []
+            },
             "links": {
                 "primary": "https://fiverr.com/dhiman13"
             },
@@ -145,6 +163,10 @@ const portfolioData = {
         },
         {
             "about": "Pioneered peer-to-peer ATM cash network solution in Hungary through innovative mobile application connecting cash seekers with providers.",
+            "images": {
+                "primary": "assets/work_experiences/cashtic.png",
+                "others": []
+            },
             "links": {
                 "primary": "https://cashtic.com"
             },
@@ -414,6 +436,10 @@ const portfolioData = {
                 "Enabled boilerplate-free repository management",
                 "Comprehensive documentation and examples"
             ],
+            "images": {
+                "primary": "assets/projects/spring-multi-data-source.jpeg",
+                "others": []
+            },
             "links": {
                 "others": [
                     "https://central.sonatype.com/artifact/io.github.dhi13man/spring-multi-data-source"
@@ -455,6 +481,10 @@ const portfolioData = {
                 "Enables the easy integration of the openrouteservice API with relevant data models",
                 "Supports generation of Routes and Directions on Maps, Isochrones, Time-Distance Matrix, Pelias Geocoding, POIs, Elevation, routing Optimizations etc"
             ],
+            "images": {
+                "primary": "assets/projects/open-route-service.jpeg",
+                "others": []
+            },
             "links": {
                 "others": [
                     "http://github.com/Dhi13man/open_route_service"
@@ -701,6 +731,12 @@ const portfolioData = {
     "ventures": [
         {
             "about": "Revolutionizing MBA research with instant survey rewards. Seamlessly connecting MBA students with their peers' research needs through paid survey participation.",
+            "images": {
+                "primary": "/assets/ventures/onlyforms.png",
+                "others": [
+                    "/assets/ventures/onlyforms-stats.png"
+                ]
+            },
             "links": {
                 "primary": "https://onlyforms.org"
             },
