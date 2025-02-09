@@ -330,15 +330,6 @@ header .container {
   vertical-align: middle;
 }
 
-social-buttons .btn:hover {
-  transform: translateY(-2px);
-  background: var(--overlay-light-hover);
-  border-color: var(--text-light);
-  box-shadow: 0 4px 8px var(--box-shadow-hover);
-  background-color: var(--accent);
-  transform: scale(1.1);
-}
-
 .social-buttons .btn:hover img {
   opacity: 1;
 }
