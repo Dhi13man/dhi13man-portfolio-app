@@ -263,23 +263,25 @@ function renderCurrentInitiatives(data) {
   const container = document.querySelector('#about .current-initiatives .content');
   if (!container) return;
   
-  // Get current ventures
+  // Get current ventures with images
   const currentVentures = data.ventures
     .filter(venture => venture.roles.some(role => role.endDate === 'Present'))
     .map(venture => ({
       name: venture.name,
       description: venture.about,
       links: venture.links,
+      images: venture.images,
       type: 'Venture'
     }));
 
-  // Get current projects
+  // Get current projects with images
   const currentProjects = data.projects
     .filter(project => project.endDate === 'Present')
     .map(project => ({
       name: project.name,
       description: project.description,
       links: project.links,
+      images: project.images,
       type: 'Project'
     }));
 
@@ -292,6 +294,7 @@ function renderCurrentInitiatives(data) {
   container.innerHTML = currentInitiatives
     .map(initiative => `
       <div class="initiative">
+        ${renderImages(initiative.images)}
         <div class="initiative-header">
             ${initiative.links?.primary ? 
               `<a href="${initiative.links.primary}" target="_blank">${initiative.name}</a>` :
@@ -300,7 +303,7 @@ function renderCurrentInitiatives(data) {
           <span class="type-badge ${initiative.type.toLowerCase()}">${initiative.type}</span>
         </div>
         ${initiative.description ? `<p class="description">${initiative.description}</p>` : ''}
-        ${renderLinks(initiative.links)}
+        ${renderLinks(initiative.links, initiative.images)}
       </div>
     `)
     .join('');

@@ -38,7 +38,6 @@ html {
   --text-shadow-header: 0 2px 4px rgba(0, 0, 0, 0.1);
   --text-shadow-nav-hover: 0 0 10px rgba(255, 255, 255, 0.3);
   --header-overlay-gradient: linear-gradient(90deg, transparent 0%, var(--overlay-light) 50%, transparent 100%);
-  --project-border-custom: rgba(91,95,239,0.1);
   --primary-glow: var(--primary-light);
   --white: #FFFFFF;
   --body-gradient: linear-gradient(135deg, var(--background) 0%, var(--surface) 100%);
@@ -1242,43 +1241,8 @@ button:focus {
 .venture:hover .background-image,
 .school:hover .background-image,
 .project:hover .background-image {
-  opacity: 0.3;
+  opacity: 0.25;
   transform: translate(-50%, -50%) scale(1.02);
-}
-
-/* Metadata section containing links and photos */
-.metadata {
-  margin-top: 1em;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding-top: 0.5em;
-  border-top: 1px solid var(--border);
-}
-
-.metadata .links {
-  font-size: 0.9em;
-  color: var(--text-secondary);
-}
-
-.photos {
-  display: flex;
-  gap: 0.5em;
-  margin-left: auto; /* Push photos to the right */
-}
-
-.photos a {
-  display: flex;
-  align-items: center;
-}
-
-.photos img {
-  width: 40px;
-  height: 40px;
-  border-radius: 4px;
-  object-fit: cover;
-  transition: transform var(--transition-duration) ease, opacity var(--transition-duration) ease;
-  vertical-align: middle;
 }
 
 /* Metadata section containing links and photos */
