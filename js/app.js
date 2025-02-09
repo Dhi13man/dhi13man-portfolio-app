@@ -65,7 +65,7 @@ function renderExperience(experiences) {
         ${exp.roles.map(role => `
           <div class="role">
             <h4>${role.title}</h4>
-            <p><em>${role.dates} &ndash; ${role.location}</em></p>
+            <p><em>${formatDateRange(role.startDate, role.endDate)} &ndash; ${role.location}</em></p>
             ${role.description ? `<p class="description">${role.description}</p>` : ''}
             <ul class="details">
               ${role.details.map(item => `<li>${item}</li>`).join('')}
@@ -90,7 +90,7 @@ function renderVentures(ventures) {
         ${venture.roles.map(role => `
           <div class="role">
             <h4>${role.title}</h4>
-            <p><em>${role.dates} &ndash; ${role.location}</em></p>
+            <p><em>${formatDateRange(role.startDate, role.endDate)} &ndash; ${role.location}</em></p>
             ${role.description ? `<p class="description">${role.description}</p>` : ''}
             <ul class="details">
               ${role.details.map(item => `<li>${item}</li>`).join('')}
@@ -131,7 +131,7 @@ function renderCerts(certs) {
   let certsHtml = certs.map(cert => `
     <div class="cert">
       <h4>${cert.title}</h4>
-      <p><em>${cert.issuer} ${cert.date ? ' - ' + cert.date : ''}</em></p>
+      <p><em>${cert.issuer}, ${formatDateRange(cert.startDate, cert.endDate)}</em></p>
       ${cert.credentialId ? `<p class="credential">Credential: ${cert.credentialId}</p>` : ''}
       ${cert.description ? `<p class="description">${cert.description}</p>` : ''}
       ${cert.details ? `<ul class="details">${cert.details.map(item => `<li>${item}</li>`).join('')}</ul>` : ''}
@@ -148,7 +148,7 @@ function renderProjects(projects) {
         `<h3><a href="${proj.links.primary}" target="_blank">${proj.name}</a></h3>` :
         `<h3>${proj.name}</h3>`
       }
-      <p><em>${proj.dates}</em></p>
+      <p><em>${formatDateRange(proj.startDate, proj.endDate)}</em></p>
       ${proj.description ? `<p class="description">${proj.description}</p>` : ''}
       ${proj.details ? `<ul class="details">${proj.details.map(item => `<li>${item}</li>`).join('')}</ul>` : ''}
       ${proj.skills ? `<p class="skills"><strong>Skills:</strong> ${proj.skills.join(', ')}</p>` : ''}
@@ -162,7 +162,7 @@ function renderTestScores(scores) {
   container.innerHTML = scores.map(score => `
     <div class="score">
       <h4>${score.name}</h4>
-      <p><strong>${score.score}</strong> ${score.date ? `<em>(${score.date})</em>` : ''}</p>
+      <p><strong>${score.score}</strong> ${score.startDate ? `<em>(${score.startDate})</em>` : ''}</p>
       ${score.description ? `<p class="description">${score.description}</p>` : ''}
       ${score.details ? `<ul class="details">${score.details.map(item => `<li>${item}</li>`).join('')}</ul>` : ''}
     </div>
@@ -185,7 +185,7 @@ function renderAwards(awards) {
   let awardsHtml = awards.map(award => `
     <div class="award">
       <h4>${award.title}</h4>
-      <p><em>${award.issuer} ${award.date ? ' - ' + award.date : ''}</em></p>
+      <p><em>${award.issuer}, ${formatDateRange(award.startDate, award.endDate)}</em></p>
       ${award.description ? `<p class="description">${award.description}</p>` : ''}
       ${award.details ? `<ul class="details">${award.details.map(item => `<li>${item}</li>`).join('')}</ul>` : ''}
     </div>
@@ -219,4 +219,11 @@ function renderLinks(links) {
   return allLinksHtml.length ? 
     `<p class="links">See sources: ${allLinksHtml.join(' | ')}</p>` : 
     '';
+}
+
+function formatDateRange(startDate, endDate) {
+  if (startDate && endDate) {
+    return `${startDate} - ${endDate}`;
+  }
+  return startDate || endDate || '';
 }

@@ -64,7 +64,8 @@ const portfolioData = {
             "name": "Groww, India",
             "roles": [
                 {
-                    "dates": "Jul 2023 - Present",
+                    "startDate": "Jul 2023",
+                    "endDate": "Present",
                     "description": "Lead technical initiatives in Consumer Payments and Live Data systems while mentoring junior engineers.",
                     "details": [
                         "Architected multiple consumer payment systems from inception",
@@ -76,7 +77,8 @@ const portfolioData = {
                     "title": "Software Engineer 2 - Backend"
                 },
                 {
-                    "dates": "Jul 2022 - Jun 2023",
+                    "startDate": "Jul 2022",
+                    "endDate": "Jun 2023",
                     "description": "Developed scalable backend solutions for Payments team, owning internal SDKs and services.",
                     "details": [
                         "Delivered robust solutions using Java Spring Boot, Apache Kafka, and Redis",
@@ -86,7 +88,8 @@ const portfolioData = {
                     "title": "Software Engineer - Backend"
                 },
                 {
-                    "dates": "Jan 2022 - Jun 2022",
+                    "startDate": "Jan 2022",
+                    "endDate": "Jun 2022",
                     "description": "Optimized high-performance backend systems for Payments team, focusing on merchant/consumer services.",
                     "details": [
                         "Earned pre-placement offer through exceptional contributions to high-scale microservices",
@@ -106,7 +109,8 @@ const portfolioData = {
             "name": "AgriJod",
             "roles": [
                 {
-                    "dates": "May 2023 - Apr 2024",
+                    "startDate": "May 2023",
+                    "endDate": "Apr 2024",
                     "description": "Served as principal technical advisor, architecting core infrastructure and product verticals.",
                     "details": [
                         "Designed technical architecture for multiple product verticals",
@@ -127,7 +131,8 @@ const portfolioData = {
             "name": "Fiverr",
             "roles": [
                 {
-                    "dates": "Jan 2021 - Dec 2021",
+                    "startDate": "Jan 2021",
+                    "endDate": "Dec 2021",
                     "description": "Delivered premium software development services to international clients.",
                     "details": [
                         "Maintained perfect 5-star rating across all client engagements",
@@ -146,7 +151,8 @@ const portfolioData = {
             "name": "Cashtic",
             "roles": [
                 {
-                    "dates": "May 2021 - Nov 2021",
+                    "startDate": "May 2021",
+                    "endDate": "Nov 2021",
                     "description": "Developed/maintained cross-platform peer-to-peer cash network with Firebase backend.",
                     "details": [
                         "Implemented dynamic user referral system using Firebase Dynamic Links",
@@ -163,7 +169,8 @@ const portfolioData = {
             "name": "GreenLine World",
             "roles": [
                 {
-                    "dates": "Apr 2021 - Jul 2021",
+                    "startDate": "Apr 2021",
+                    "endDate": "Jul 2021",
                     "description": "Led IoT-integrated cross-platform application development.",
                     "details": [
                         "Designed system architecture and microcontroller units",
@@ -177,7 +184,7 @@ const portfolioData = {
     ],
     "honorsAndAwards": [
         {
-            "date": "Nov 2021",
+            "startDate": "Nov 2021",
             "description": "Recognized for exceptional product management and growth strategy skills among 450,000+ participants.",
             "details": [
                 "Outperformed 98% of participants in product strategy",
@@ -187,7 +194,7 @@ const portfolioData = {
             "title": "Embark Fellow (Top 2% in Product and Growth Track)"
         },
         {
-            "date": "Jul 2021",
+            "startDate": "Jul 2021",
             "description": "Developed IoT-based COVID-19 contact tracing solution for workplace safety.",
             "details": [
                 "Awarded 25,000 INR prize money",
@@ -197,25 +204,25 @@ const portfolioData = {
             "title": "1st Prize, E-Hackathon by ASTEC, Startup Assam, 2021"
         },
         {
-            "date": "May 2021",
+            "startDate": "May 2021",
             "description": "Won top prize for SafeSync IoT project demonstration.",
             "issuer": "National Institute of Technology, Silchar",
             "title": "1st Position, Robomania, NIT Silchar"
         },
         {
-            "date": "Mar 2021",
+            "startDate": "Mar 2021",
             "description": "Developed AISMV (Automated Irrigation System using Machine Vision).",
             "issuer": "Poornima Institute of Engineering Technology / RTU, Kota",
             "title": "1st Prize, RTU TEQIP-III Sponsored Poornima Hackathon, 2021"
         },
         {
-            "date": "Jan 2021",
+            "startDate": "Jan 2021",
             "description": "Won top prize for post-COVID workspace safety innovation.",
             "issuer": "St Vincent Palotti College of Engineering and Technology, Pune",
             "title": "1st Prize, Technex, Projectomania (Innovation Challenge)"
         },
         {
-            "date": "Jan 2021",
+            "startDate": "Jan 2021",
             "description": "Earned third place for SafeSync IoT innovation.",
             "details": [
                 "Showcased real-time employee-monitoring and contact-tracing system"
@@ -224,19 +231,19 @@ const portfolioData = {
             "title": "2nd Runners Up, IDEATE (Innovation Challenge)"
         },
         {
-            "date": "Aug 2020",
+            "startDate": "Aug 2020",
             "description": "Achieved highest proficiency ranking in C programming.",
             "issuer": "HackerRank",
             "title": "5-Star Gold (C Language)"
         },
         {
-            "date": "Jun 2020",
+            "startDate": "Jun 2020",
             "description": "Presented AISMV, an automated irrigation system using Machine Vision.",
             "issuer": "Jorhat Engineering College",
             "title": "1st Position, AgriHacks e-Ideathon"
         },
         {
-            "date": "Feb 2020",
+            "startDate": "Feb 2020",
             "description": "Won national innovation challenge for driver safety prototype.",
             "details": [
                 "Developed drowsiness detection system prototype",
@@ -246,7 +253,7 @@ const portfolioData = {
             "title": "1st Position, Innovation Challenge, MeiTY TIDE 2020, NIT Silchar Chapter"
         },
         {
-            "date": "Dec 2019",
+            "startDate": "Dec 2019",
             "description": "Secured top position for InfrAwake driver safety system.",
             "details": [
                 "Awarded 1 Lakh INR prize money",
@@ -256,7 +263,7 @@ const portfolioData = {
             "title": "1st Position, Innovation Challenge, KIIT-Fest 2019, KIIT University"
         },
         {
-            "date": "2018",
+            "startDate": "2018",
             "description": "Secured Zonal Rank 1 and International Rank 136 in International English Olympiad.",
             "issuer": "Science Olympiad Foundation - India",
             "title": "International English Olympiad 2018"
@@ -270,14 +277,14 @@ const portfolioData = {
     "licensesAndCertifications": [
         {
             "credentialId": "UC-7e081543-f46c-471f-8231-c25a2d13753c",
-            "date": "Jun 2021",
+            "startDate": "Jun 2021",
             "description": "Mastered advanced reinforcement learning concepts through hands-on projects.",
             "issuer": "Udemy",
             "title": "Deep Reinforcement Learning 2.0"
         },
         {
             "credentialId": "PBLVZDHRWTD5",
-            "date": "Nov 2020",
+            "startDate": "Nov 2020",
             "description": "Completed specialization in Generative Adversarial Networks applications.",
             "details": [
                 "Built various GAN architectures",
@@ -289,7 +296,7 @@ const portfolioData = {
         },
         {
             "credentialId": "KCG9WQ6V2PAF",
-            "date": "Sep 2020",
+            "startDate": "Sep 2020",
             "description": "Mastered AWS computer vision technologies and GluonCV framework.",
             "details": [
                 "Deployed models on AWS infrastructure",
@@ -300,7 +307,7 @@ const portfolioData = {
         },
         {
             "credentialId": "YJANLKSKFJHM",
-            "date": "Aug 2020",
+            "startDate": "Aug 2020",
             "description": "Mastered CNN architectures for computer vision applications.",
             "details": [
                 "Implemented classic CNN architectures",
@@ -311,7 +318,7 @@ const portfolioData = {
         },
         {
             "credentialId": "UC-81f8c30e-aacc-4ab7-8d77-5e64cf4fbdff",
-            "date": "Aug 2020",
+            "startDate": "Aug 2020",
             "description": "Comprehensive deep learning course covering neural network implementations.",
             "details": [
                 "Built various neural network architectures from scratch",
@@ -322,7 +329,7 @@ const portfolioData = {
         },
         {
             "credentialId": "A2GFE2HVF9CY",
-            "date": "Aug 2020",
+            "startDate": "Aug 2020",
             "description": "Completed comprehensive specialization covering deep learning fundamentals.",
             "details": [
                 "Neural Networks and Deep Learning",
@@ -336,7 +343,7 @@ const portfolioData = {
         },
         {
             "credentialId": "PD8PNBQW3WL9",
-            "date": "Aug 2020",
+            "startDate": "Aug 2020",
             "description": "Advanced course in sequence modeling and NLP applications.",
             "details": [
                 "Built and trained RNN, LSTM, and GRU models",
@@ -348,7 +355,7 @@ const portfolioData = {
         },
         {
             "credentialId": "HE47Y3JR9GZG",
-            "date": "Jun 2020",
+            "startDate": "Jun 2020",
             "description": "Mastered object tracking using OpenCV and Python.",
             "details": [
                 "Implemented real-time tracking systems",
@@ -359,7 +366,7 @@ const portfolioData = {
         },
         {
             "credentialId": "UC-ccd08b67-4179-406c-8f31-1c363a714200",
-            "date": "Jun 2020",
+            "startDate": "Jun 2020",
             "description": "Comprehensive machine learning course with Python/R implementations.",
             "details": [
                 "Applied ML techniques to real datasets",
@@ -370,7 +377,7 @@ const portfolioData = {
         },
         {
             "credentialId": "QLJ5X4RUQNHR",
-            "date": "Jun 2020",
+            "startDate": "Jun 2020",
             "description": "Foundational course in neural network architecture.",
             "details": [
                 "Implemented backpropagation algorithms",
@@ -381,7 +388,7 @@ const portfolioData = {
         },
         {
             "credentialId": "UC-b9ccdcc6-f367-4f42-9c96-a7c67ad372f3",
-            "date": "Mar 2020",
+            "startDate": "Mar 2020",
             "description": "Comprehensive introduction to Python programming.",
             "details": [
                 "Mastered advanced Python concepts",
@@ -391,7 +398,7 @@ const portfolioData = {
             "title": "Introduction To Python Programming"
         },
         {
-            "date": "Sep 2018",
+            "startDate": "Sep 2018",
             "description": "Intensive machine learning course from premier technical institution.",
             "details": [
                 "Studied core ML algorithms and the mathematics behind them",
@@ -403,7 +410,8 @@ const portfolioData = {
     ],
     "projects": [
         {
-            "dates": "Jun 2023 - Current",
+            "startDate": "Jun 2023",
+            "endDate": "Current",
             "description": "Revolutionary Spring framework solution simplifying multi-data source configuration through intuitive annotations.",
             "details": [
                 "Published on Maven Central Repository",
@@ -425,7 +433,8 @@ const portfolioData = {
             ]
         },
         {
-            "dates": "Nov 2021 - Feb 2022",
+            "startDate": "Nov 2021",
+            "endDate": "Feb 2022",
             "description": "Automated Windows solution for dynamic proxy configuration across WiFi networks.",
             "details": [
                 "Auto-configures proxies based on network SSID",
@@ -443,7 +452,8 @@ const portfolioData = {
             ]
         },
         {
-            "dates": "Sep 2021 - Current",
+            "startDate": "Sep 2021",
+            "endDate": "Current",
             "description": "Built and maintaining Open-source Dart/Flutter library for openrouteservice API integration.",
             "details": [
                 "Used by 1.4K+ development teams across the world, with 80 likes and 160/160 pub.dev points",
@@ -466,7 +476,8 @@ const portfolioData = {
             ]
         },
         {
-            "dates": "May 2021 - Current",
+            "startDate": "May 2021",
+            "endDate": "Current",
             "description": "Created a null-safe Dart/Flutter package for Nordigen EU PSD2 AISP Banking API Integration.",
             "details": [
                 "Officially recognized by Nordigen as their premier Dart/Flutter community package",
@@ -490,7 +501,8 @@ const portfolioData = {
             ]
         },
         {
-            "dates": "Dec 2020 - Jan 2021",
+            "startDate": "Dec 2020",
+            "endDate": "Jan 2021",
             "description": "Real-time Hacker News viewer with Firebase/Hive integration.",
             "details": [
                 "Multiple stars on GitHub",
@@ -511,7 +523,8 @@ const portfolioData = {
             ]
         },
         {
-            "dates": "Nov 2020 - Apr 2021",
+            "startDate": "Nov 2020",
+            "endDate": "Apr 2021",
             "description": "Built a full-fledged Employee Management and IoT-driven Contact-Tracing solution.",
             "details": [
                 "Cross-platform IoT Flutter application for Employee Management and Contact-Tracing",
@@ -534,7 +547,8 @@ const portfolioData = {
             ]
         },
         {
-            "dates": "Nov 2020 - Current",
+            "startDate": "Nov 2020",
+            "endDate": "Current",
             "description": "Open-source package for moor database to CSV conversion.",
             "details": [
                 "Over 100 downloads and 13 likes, with 160/160 pub.dev points",
@@ -554,7 +568,8 @@ const portfolioData = {
             ]
         },
         {
-            "dates": "Apr 2020 - May 2020",
+            "startDate": "Apr 2020",
+            "endDate": "May 2020",
             "description": "Python-based real-time hand gesture PC control system using OpenCV and ML.",
             "details": [
                 "Trained multiple ML models for real-time hand shape detection",
@@ -572,7 +587,7 @@ const portfolioData = {
             ]
         },
         {
-            "dates": "Apr 2020",
+            "startDate": "Apr 2020",
             "description": "Custom Open-Source keyboard shortcut system using Num Lock/Caps Lock key states.",
             "details": [
                 "Integrated with Electron for cross-platform compatibility",
@@ -591,7 +606,8 @@ const portfolioData = {
             ]
         },
         {
-            "dates": "Oct 2019 - Dec 2019",
+            "startDate": "Oct 2019",
+            "endDate": "Dec 2019",
             "description": "IoT-based driver safety system with drowsiness detection by monitoring eyes and other driver cues.",
             "details": [
                 "1st Prize Winner at KIIT-Fest, 2019 in KIIT University and MeiTY TIDE 2020's NIT Silchar Chapter",
@@ -637,7 +653,7 @@ const portfolioData = {
     ],
     "testScores": [
         {
-            "date": "Sep 2021",
+            "startDate": "Sep 2021",
             "description": "Top 10% performance in national technical assessment for software roles.",
             "details": [
                 "Excelled in algorithm design and system architecture",
@@ -647,7 +663,7 @@ const portfolioData = {
             "score": "264/400 (Top 10%)"
         },
         {
-            "date": "Feb 2021",
+            "startDate": "Feb 2021",
             "description": "Advanced C++ programming mastery certification.",
             "details": [
                 "Mastered advanced C++ features and patterns",
@@ -657,7 +673,7 @@ const portfolioData = {
             "score": "95%"
         },
         {
-            "date": "Feb 2021",
+            "startDate": "Feb 2021",
             "description": "Arduino hardware interfacing and programming certification.",
             "details": [
                 "Implemented various Arduino projects",
@@ -667,7 +683,7 @@ const portfolioData = {
             "score": "35/40"
         },
         {
-            "date": "Feb 2021",
+            "startDate": "Feb 2021",
             "description": "PHP/MySQL development certification.",
             "details": [
                 "Completed practical database implementations",
@@ -677,7 +693,7 @@ const portfolioData = {
             "score": "16.33/24"
         },
         {
-            "date": "Feb 2018",
+            "startDate": "Feb 2018",
             "description": "Higher Secondary education with science specialization.",
             "details": [
                 "Excelled in Physics, Chemistry, and Mathematics",
@@ -696,7 +712,8 @@ const portfolioData = {
             "name": "Onlyforms - Redefining MBA Surveys",
             "roles": [
                 {
-                    "dates": "Dec 2023 - Current",
+                    "startDate": "Dec 2023",
+                    "endDate": "Current",
                     "description": "Founded and developed a platform connecting MBA students with research opportunities.",
                     "details": [
                         "MBA Students surveyed via OnlyForms: 121",
@@ -717,7 +734,8 @@ const portfolioData = {
             "name": "Banalo - Cook Better, Eat Better, Live Better",
             "roles": [
                 {
-                    "dates": "Aug 2022 - Mar 2023",
+                    "startDate": "Aug 2022",
+                    "endDate": "Mar 2023",
                     "description": "Brainstormed a food subscription service inspired by Blue Apron, for India.",
                     "details": [
                         "Developed business plan and design mockups",
@@ -738,7 +756,8 @@ const portfolioData = {
             "name": "Eminence Robotics - The Ideal Answer To Your Technical Desire",
             "roles": [
                 {
-                    "dates": "Oct 2018 - Sep 2021",
+                    "startDate": "Oct 2018",
+                    "endDate": "Sep 2021",
                     "description": "Co-founded organization and led IoT/robotics innovation initiatives.",
                     "details": [
                         "Developed terrain vehicles, combat robots, and autonomous smart systems",
@@ -759,7 +778,8 @@ const portfolioData = {
             "name": "TechEngio - Empowering Northeast India Through Technology",
             "roles": [
                 {
-                    "dates": "Nov 2018 - Mar 2020",
+                    "startDate": "Nov 2018",
+                    "endDate": "Mar 2020",
                     "description": "Co-founded and led technical education programs.",
                     "details": [
                         "Conducted on-site workshops at local institutions",
