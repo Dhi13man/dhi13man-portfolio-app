@@ -257,16 +257,14 @@ body.sidebar-collapsed main {
 
 /* General Styles */
 body {
-  font-family: 'Nunito', sans-serif;
-  background: var(--body-gradient);
-  color: var(--text);
-  line-height: 1.7;
-  padding: 0;
-  overflow-x: hidden;
-  position: relative;
   font-family: var(--font-family);
   font-size: var(--font-size-base);
   line-height: var(--line-height-base);
+  background: var(--body-gradient);
+  color: var(--text);
+  padding: 0;
+  overflow-x: hidden;
+  position: relative;
   background-color: var(--background);
 }
 
@@ -301,7 +299,7 @@ header .container {
 }
 
 .social-buttons .btn {
-  display: flex;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
   width: 38px;
