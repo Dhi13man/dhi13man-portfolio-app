@@ -62,7 +62,7 @@ const portfolioData = {
         {
             "about": "India's leading investment platform serving millions of users with a mission to democratize financial services. Offers seamless digital access to stocks, mutual funds, and financial products.",
             "images": {
-                "primary": "assets/work_experiences/growwin_logo.png",
+                "primary": "assets/work_experiences/growwin-logo.png",
                 "others": []
             },
             "links": {
@@ -114,7 +114,7 @@ const portfolioData = {
         {
             "about": "Agritech startup revolutionizing Northeast India's agricultural practices through technology-driven solutions and market access platforms.",
             "images": {
-                "primary": "assets/work_experiences/agrijod_cover.png",
+                "primary": "assets/work_experiences/agrijod-cover.png",
                 "others": []
             },
             "links": {
@@ -140,7 +140,7 @@ const portfolioData = {
         {
             "about": "Global freelance services marketplace connecting businesses with skilled professionals across industries.",
             "images": {
-                "primary": "assets/work_experiences/fiverr_profile.png",
+                "primary": "assets/work_experiences/fiverr-profile.png",
                 "others": []
             },
             "links": {
@@ -437,7 +437,7 @@ const portfolioData = {
                 "Comprehensive documentation and examples"
             ],
             "images": {
-                "primary": "assets/projects/spring-multi-data-source.jpeg",
+                "primary": "assets/projects/spring_multi_data_source.jpeg",
                 "others": []
             },
             "links": {
@@ -482,7 +482,7 @@ const portfolioData = {
                 "Supports generation of Routes and Directions on Maps, Isochrones, Time-Distance Matrix, Pelias Geocoding, POIs, Elevation, routing Optimizations etc"
             ],
             "images": {
-                "primary": "assets/projects/open-route-service.jpeg",
+                "primary": "assets/projects/open_route_service.jpeg",
                 "others": []
             },
             "links": {
@@ -509,6 +509,10 @@ const portfolioData = {
                 "The account information API has been completely encapsulated",
                 "50+ downloads and 10 likes with 160/160 pub.dev points"
             ],
+            "images": {
+                "primary": "assets/projects/nordigen_integration.png",
+                "others": []
+            },
             "links": {
                 "others": [
                     "https://github.com/Dhi13man/nordigen_integration",
@@ -557,6 +561,10 @@ const portfolioData = {
                 "1st Prize Winner at Robomania, NIT Silchar, 2021; Projectomania, Technex, Pune, 2021",
                 "2nd Runners Up at IDEATE, Chennai, 2021"
             ],
+            "images": {
+                "primary": "assets/projects/safesync-dashboard.jpeg",
+                "others": []
+            },
             "links": {
                 "primary": "https://github.com/Dhi13man/SafeSyncIoT"
             },
@@ -618,6 +626,10 @@ const portfolioData = {
                 "Integrated with Electron for cross-platform compatibility",
                 "Accompanied by a full HTML/CSS/JS GUI"
             ],
+            "images": {
+                "primary": "assets/projects/numcuts-dashboard.jpeg",
+                "others": []
+            },
             "links": {
                 "primary": "https://github.com/Dhi13man/NumCuts"
             },
@@ -639,6 +651,10 @@ const portfolioData = {
                 "Developed a B-Plan for the prototype and pitched it across the country",
                 "Works with IoT modules (ESP8266/NodeMCU), WiFi, RF Tx-Rx, and Google Apps Scripting."
             ],
+            "images": {
+                "primary": "assets/projects/infrawake.jpeg",
+                "others": []
+            },
             "links": {
                 "primary": "https://youtube.com/watch?v=hqWcnQ520LQ"
             },
@@ -781,6 +797,12 @@ const portfolioData = {
         },
         {
             "about": "Student-led organization developing innovative robotics/IoT solutions, participating in national competitions and automation projects.",
+            "images": {
+                "primary": "assets/projects/eminence_robotics-accolades.jpeg",
+                "others": [
+                    "assets/projects/eminence_robotics-products.jpeg"
+                ]
+            },
             "links": {
                 "primary": "https://eminencerobotics.org"
             },

@@ -83,7 +83,7 @@ function renderExperience(experiences) {
 function renderVentures(ventures) {
   const container = document.querySelector('#ventures .content');
   container.innerHTML = ventures.map(venture => `
-    <div class="company venture">
+    <div class="venture">
       ${renderImages(venture.images)}
       <h3>${venture.links?.primary ? 
         `<a href="${venture.links.primary}" target="_blank">${venture.name}</a>` : 
@@ -145,6 +145,7 @@ function renderProjects(projects) {
   const container = document.querySelector('#projects .content');
   container.innerHTML = projects.map(proj => `
     <div class="project">
+      ${renderImages(proj.images)}
       ${proj.links?.primary ? 
         `<h3><a href="${proj.links.primary}" target="_blank">${proj.name}</a></h3>` :
         `<h3>${proj.name}</h3>`

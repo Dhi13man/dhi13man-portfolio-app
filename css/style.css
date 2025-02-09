@@ -25,7 +25,7 @@ html {
   --background: #FFFFFF;
   --background-hover: #F1F5F9;
   --surface: #f8fafc8e;
-  --surface-hover: #e9eef2cf;
+  --surface-hover: #e9eef2b9;
   --text: #1b0752;
   --text-secondary: #1b07529d;
   --text-light: #FFFFFF;
@@ -1229,11 +1229,11 @@ button:focus {
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  width: 90%;
-  height: 90%;
+  width: 95%;
+  height: 95%;
   background-size: cover;
   background-position: center;
-  opacity: 0.15;
+  opacity: 0.075;
   transition: opacity 0.3s ease, transform 0.3s ease;
   z-index: -1;
 }
@@ -1242,15 +1242,6 @@ button:focus {
 .venture:hover .background-image,
 .school:hover .background-image,
 .project:hover .background-image {
-  opacity: 0.3;
+  opacity: 0.15;
   transform: translate(-50%, -50%) scale(1.02);
-}
-
-/* Ensure content remains readable */
-.company > *:not(.background-image),
-.venture > *:not(.background-image),
-.school > *:not(.background-image),
-.project > *:not(.background-image) {
-  position: relative;
-  z-index: 1;
 }
