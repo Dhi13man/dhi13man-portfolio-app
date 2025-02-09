@@ -748,9 +748,9 @@ const portfolioData = {
         {
             "about": "Revolutionizing MBA research with instant survey rewards. Seamlessly connecting MBA students with their peers' research needs through paid survey participation.",
             "images": {
-                "primary": "/assets/ventures/onlyforms.png",
+                "primary": "assets/ventures/onlyforms-delight.png",
                 "others": [
-                    "/assets/ventures/onlyforms-stats.png"
+                    "assets/ventures/onlyforms-value_proposition.png"
                 ]
             },
             "links": {
@@ -775,6 +775,12 @@ const portfolioData = {
         },
         {
             "about": "Food subscription company delivering chef-designed recipes with pre-portioned fresh ingredients daily to customers' doorstep.",
+            "images": {
+                "primary": "assets/ventures/banalo-value_proposition.png",
+                "others": [
+                    "assets/ventures/banalo-ui_mockup.png"
+                ]
+            },
             "links": {
                 "primary": "https://www.eminencerobotics.org/banalo"
             },
@@ -798,9 +804,9 @@ const portfolioData = {
         {
             "about": "Student-led organization developing innovative robotics/IoT solutions, participating in national competitions and automation projects.",
             "images": {
-                "primary": "assets/projects/eminence_robotics-accolades.jpeg",
+                "primary": "assets/ventures/eminence_robotics-accolades.jpeg",
                 "others": [
-                    "assets/projects/eminence_robotics-products.jpeg"
+                    "assets/ventures/eminence_robotics-products.jpeg"
                 ]
             },
             "links": {
@@ -825,6 +831,12 @@ const portfolioData = {
         },
         {
             "about": "Edtech initiative providing hands-on technical education in robotics, electronics, and software development for Northeast Indian students.",
+            "images": {
+                "primary": "assets/ventures/techengio-workshop.jpeg",
+                "others": [
+                    "assets/ventures/techengio-demo.jpeg"
+                ]
+            },
             "links": {
                 "primary": "https://facebook.com/TechEngio/"
             },
