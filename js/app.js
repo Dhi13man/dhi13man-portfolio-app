@@ -75,7 +75,7 @@ function renderExperience(experiences) {
           </div>
         `).join('')}
       </div>
-      ${renderLinks(exp.links)}
+      ${renderLinks(exp.links, exp.images)}
     </div>
   `).join('');
 }
@@ -101,7 +101,7 @@ function renderVentures(ventures) {
           </div>
         `).join('')}
       </div>
-      ${renderLinks(venture.links)}
+      ${renderLinks(venture.links, venture.images)}
     </div>
   `).join('');
 }
@@ -125,7 +125,7 @@ function renderEducation(education) {
           </div>
         `).join('')}
       </div>
-      ${renderLinks(school.links)}
+      ${renderLinks(school.links, school.images)}
     </div>
   `).join('');
 }
@@ -154,7 +154,7 @@ function renderProjects(projects) {
       ${proj.description ? `<p class="description">${proj.description}</p>` : ''}
       ${proj.details ? `<ul class="details">${proj.details.map(item => `<li>${item}</li>`).join('')}</ul>` : ''}
       ${proj.skills ? `<p class="skills"><strong>Skills:</strong> ${proj.skills.join(', ')}</p>` : ''}
-      ${renderLinks(proj.links)}
+      ${renderLinks(proj.links, proj.images)}
     </div>
   `).join('');
 }
@@ -195,7 +195,36 @@ function renderAwards(awards) {
   awardsContainer.innerHTML = awardsHtml;
 }
 
-function renderLinks(links) {
+function renderLinks(links, images) {
+  const photosHtml = renderPhotos(images);
+  const linksHtml = renderSourceLinks(links);
+  
+  if (!linksHtml && !photosHtml) return '';
+  
+  return `<div class="metadata">
+    ${linksHtml}
+    ${photosHtml}
+  </div>`;
+}
+
+function renderPhotos(images) {
+  if (!images) return '';
+  
+  const allImages = [];
+  if (images.primary) allImages.push(images.primary);
+  if (images.others?.length) allImages.push(...images.others);
+  
+  if (!allImages.length) return '';
+
+  const allLinksHtml = allImages
+    .map(url => `<a href="${url}" target="_blank" rel="noopener noreferrer">
+      <img src="${url}" alt="Project Photo" loading="lazy" />
+    </a>`).join('');
+
+  return `<div class="photos">${allLinksHtml}</div>`;
+}
+
+function renderSourceLinks(links) {
   if (!links) return '';
   
   const allLinks = [];
@@ -219,7 +248,7 @@ function renderLinks(links) {
     .filter(html => html);
 
   return allLinksHtml.length ? 
-    `<p class="links">See sources: ${allLinksHtml.join(' | ')}</p>` : 
+    `<div class="links">See sources: ${allLinksHtml.join(' | ')}</div>` : 
     '';
 }
 

@@ -778,7 +778,7 @@ const portfolioData = {
             "images": {
                 "primary": "assets/ventures/banalo-value_proposition.png",
                 "others": [
-                    "assets/ventures/banalo-ui_mockup.png"
+                    "assets/ventures/banalo-ui_mockup.webp"
                 ]
             },
             "links": {
