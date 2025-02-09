@@ -176,6 +176,7 @@
             const targetSection = document.getElementById(targetId);
             if (targetSection) {
               targetSection.classList.remove("hidden");
+              window.scrollTo({ top: 0, behavior: 'smooth' });
             }
           });
         });
