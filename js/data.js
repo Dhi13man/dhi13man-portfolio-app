@@ -1,7 +1,7 @@
 const portfolioData = {
     "about": {
         "description": "Dhiman Seal is a tech-obsessed engineer dedicated to simplifying lives through technology. With proven expertise in scalable systems and innovative solutions, he stands at the intersection of technical excellence and visionary leadership.\n\nAs a recognized authority in open source development with diverse expertise in engineering and entrepreneurship, his work is guided by three core principles:\n&nbsp;1. Architecting scalable, elegant solutions to complex societal challenges\n&nbsp;2. Advancing the technology landscape through strategic open-source contributions\n&nbsp;3. Leading high-performance teams in developing industry-transforming systems",
-        "tagline": "Open-Source Creator • Entrepreneur • Software Wizard"
+        "tagline": "Open-Source Creator \u2022 Entrepreneur \u2022 Software Wizard"
     },
     "education": [
         {
@@ -345,7 +345,7 @@ const portfolioData = {
             ],
             "issuer": "Kirill Eremenko, Hadelin de Ponteves, SuperDataScience Team, Udemy",
             "startDate": "Aug 2020",
-            "title": "Deep Learning A-Z™: Hands-On Artificial Neural Networks"
+            "title": "Deep Learning A-Z\u2122: Hands-On Artificial Neural Networks"
         },
         {
             "credentialId": "A2GFE2HVF9CY",
@@ -393,7 +393,7 @@ const portfolioData = {
             ],
             "issuer": "SuperDataScience, Udemy",
             "startDate": "Jun 2020",
-            "title": "Machine Learning A-Z™: Hands-On Python & R In Data Science"
+            "title": "Machine Learning A-Z\u2122: Hands-On Python & R In Data Science"
         },
         {
             "credentialId": "QLJ5X4RUQNHR",
@@ -558,6 +558,30 @@ const portfolioData = {
             "startDate": "Dec 2020"
         },
         {
+            "description": "Open-source package for moor database to CSV conversion.",
+            "details": [
+                "Over 100 downloads and 13 likes, with 160/160 pub.dev points",
+                "Allows easy exporting of Moor databases to CSV"
+            ],
+            "endDate": "Present",
+            "images": {
+                "primary": "assets/projects/moor2csv.png"
+            },
+            "links": {
+                "others": [
+                    "https://github.com/Dhi13man/moor2csv"
+                ],
+                "primary": "https://pub.dev/packages/moor2csv"
+            },
+            "name": "moor2csv: Database Exporting Tool",
+            "skills": [
+                "Flutter",
+                "Dart",
+                "CSV"
+            ],
+            "startDate": "Nov 2020"
+        },
+        {
             "description": "Built a full-fledged Employee Management and IoT-driven Contact-Tracing solution.",
             "details": [
                 "Cross-platform IoT Flutter application for Employee Management and Contact-Tracing",
@@ -586,30 +610,6 @@ const portfolioData = {
             "startDate": "Nov 2020"
         },
         {
-            "description": "Open-source package for moor database to CSV conversion.",
-            "details": [
-                "Over 100 downloads and 13 likes, with 160/160 pub.dev points",
-                "Allows easy exporting of Moor databases to CSV"
-            ],
-            "endDate": "Present",
-            "images": {
-                "primary": "assets/projects/moor2csv.png"
-            },
-            "links": {
-                "others": [
-                    "https://github.com/Dhi13man/moor2csv"
-                ],
-                "primary": "https://pub.dev/packages/moor2csv"
-            },
-            "name": "moor2csv: Database Exporting Tool",
-            "skills": [
-                "Flutter",
-                "Dart",
-                "CSV"
-            ],
-            "startDate": "Nov 2020"
-        },
-        {
             "description": "Python-based real-time hand gesture PC control system using OpenCV and ML.",
             "details": [
                 "Trained multiple ML models for real-time hand shape detection",
@@ -634,6 +634,7 @@ const portfolioData = {
                 "Integrated with Electron for cross-platform compatibility",
                 "Accompanied by a full HTML/CSS/JS GUI"
             ],
+            "endDate": "Apr 2020",
             "images": {
                 "others": [],
                 "primary": "assets/projects/numcuts-dashboard.jpeg"
@@ -680,7 +681,7 @@ const portfolioData = {
     ],
     "recommendations": [
         {
-            "from": "György Chityil (Cashtic)",
+            "from": "Gy\u00f6rgy Chityil (Cashtic)",
             "links": {
                 "primary": "https://www.linkedin.com/in/dhi13man"
             },
