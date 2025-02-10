@@ -1,0 +1,16 @@
+{
+  "@context": "https://schema.org/",
+  "@type": "Person",
+  "name": "Dhiman Seal",
+  "additionalName": "Dhi13man",
+  "url": "https://dhimanseal.com",
+  "image": "https://dhimanseal.com/assets/me.jpg",
+  "jobTitle": "Distinguished Engineer",
+  "description": "Dhiman Seal - Distinguished Engineer pioneering open-source tech and building innovative enterprises.",
+  "sameAs": [
+    "https://www.linkedin.com/in/dhi13man/",
+    "https://github.com/Dhi13man",
+    "https://medium.com/@dhi13man"
+  ],
+  "alumniOf": "National Institute of Technology (NIT), Silchar"
+}
