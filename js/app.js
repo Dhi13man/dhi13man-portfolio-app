@@ -118,7 +118,7 @@ function renderEducation(education) {
       <div class="courses">
         ${school.courses.map(course => `
           <div class="course">
-            <p class="degree">${course.degree || ''} ${course.field ? `in ${course.field}` : ''}; <em>${course.yearRange}</em></p>
+            <p class="degree">${course.degree || ''} ${course.field ? `in ${course.field}` : ''}, <em>${formatDateRange(course.startDate, course.endDate)}</em></p>
             <p class="grade"><strong>${course.gpa ? `GPA: ${course.gpa}` : course.percent ? `Grade: ${course.percent}` : ''}</strong></p>
             ${course.description ? `<p class="description">${course.description}</p>` : ''}
             ${course.details ? `<ul class="details">${course.details.map(item => `<li>${item}</li>`).join('')}</ul>` : ''}

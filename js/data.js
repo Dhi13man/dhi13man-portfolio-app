@@ -15,9 +15,10 @@ const portfolioData = {
                         "Won national-level accolades in Robotics, IoT, and business plan competitions",
                         "Founded and led multiple early-stage ventures including Eminence Robotics and TechEngio"
                     ],
+                    "endDate": "2022",
                     "field": "Electrical, Electronics and Communications Engineering",
                     "gpa": "8.43",
-                    "yearRange": "2018 - 2022"
+                    "startDate": "2018"
                 }
             ],
             "images": {
@@ -40,16 +41,18 @@ const portfolioData = {
                 {
                     "degree": "High School",
                     "description": "Completed Higher Secondary education with distinction in Science (Physics, Chemistry, Mathematics). Ranked among institution's top performers consistently.",
+                    "endDate": "2018",
                     "field": "Science",
                     "percent": "95%",
-                    "yearRange": "2016 - 2018"
+                    "startDate": "2016"
                 },
                 {
                     "degree": "Early-Middle School",
                     "description": "Maintained perfect 10.0 GPA throughout middle school, demonstrating academic excellence across all subjects.",
+                    "endDate": "2016",
                     "field": "General Studies",
                     "gpa": "10.0",
-                    "yearRange": "2006 - 2016"
+                    "startDate": "2006"
                 }
             ],
             "links": {
@@ -461,6 +464,9 @@ const portfolioData = {
                 "Integrated with Windows Event Scheduler"
             ],
             "endDate": "Feb 2022",
+            "images": {
+                "primary": "assets/projects/auto_proxy_wifi.png"
+            },
             "links": {
                 "primary": "https://github.com/Dhi13man/auto_proxy_wifi"
             },
@@ -587,7 +593,7 @@ const portfolioData = {
             ],
             "endDate": "Present",
             "images": {
-                "primary": "assets/projects/moor2csv.png",
+                "primary": "assets/projects/moor2csv.png"
             },
             "links": {
                 "others": [
