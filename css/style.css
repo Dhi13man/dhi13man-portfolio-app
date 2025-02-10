@@ -30,19 +30,16 @@ html {
   --text-secondary: #1b07529d;
   --text-light: #FFFFFF;
   --border: #E2E8F0;
-  --shadow: rgba(0, 102, 255, 0.1);
   --overlay-light: rgba(255, 255, 255, 0.1);
   --overlay-light-hover: rgba(255, 255, 255, 0.2);
   --box-shadow-light: rgba(0, 0, 0, 0.05);
   --box-shadow-hover: rgba(0, 0, 0, 0.1);
+  --box-shadow-strong: rgba(0, 0, 0, 0.2);
   --text-shadow-header: 0 2px 4px rgba(0, 0, 0, 0.1);
   --text-shadow-nav-hover: 0 0 10px rgba(255, 255, 255, 0.3);
   --header-overlay-gradient: linear-gradient(90deg, transparent 0%, var(--overlay-light) 50%, transparent 100%);
-  --primary-glow: var(--primary-light);
-  --white: #FFFFFF;
   --body-gradient: linear-gradient(135deg, var(--background) 0%, var(--surface) 100%);
   --placeholder-bg: #495057;
-  --box-shadow-strong: rgba(0, 0, 0, 0.2);
   --font-family: "Nunito", sans-serif;
   --font-size-base: 16px;
   --line-height-base: 1.6;
@@ -59,9 +56,9 @@ html {
   background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
   color: var(--text-light);
   padding: 2em 0 0;
-  box-shadow: 2px 0 5px var(--shadow);
+  box-shadow: 2px 0 5px var(--box-shadow-light);
   transform: translateX(0);
-  transition: transform 0.3s ease;
+  transition: transform var(--transition-duration) ease;
   z-index: 1000;
   display: flex;
   flex-direction: column;
@@ -92,7 +89,7 @@ html {
   padding: 0.8em 1em;
   margin: 0.2em 0;
   border-radius: 6px;
-  transition: all 0.3s ease;
+  transition: all var(--transition-duration) ease;
   background: var(--overlay-light);
 }
 
@@ -130,8 +127,8 @@ html {
   align-items: center;
   gap: 6px;
   padding: 4px;
-  transition: background-color 0.3s ease, transform 0.3s ease;
-  box-shadow: 0 2px 8px var(--shadow);
+  transition: background-color var(--transition-duration) ease, transform var(--transition-duration) ease;
+  box-shadow: 0 2px 8px var(--box-shadow-light);
 }
 
 .sidebar-toggle span {
@@ -139,25 +136,25 @@ html {
   width: 24px;
   height: 2px;
   background: var(--text-light);
-  transition: transform 0.3s ease, opacity 0.3s ease;
+  transition: transform var(--transition-duration) ease, opacity var(--transition-duration) ease;
   border-radius: 2px;
 }
 
 /* Fix for sidebar toggle button states */
 .sidebar-toggle span:first-child {
   transform: translateY(0);
-  transition: transform 0.3s ease;
+  transition: transform var(--transition-duration) ease;
 }
 
 .sidebar-toggle span:nth-child(2) {
   opacity: 1;
   transform: translateX(0);
-  transition: opacity 0.3s ease, transform 0.3s ease;
+  transition: opacity var(--transition-duration) ease, transform var(--transition-duration) ease;
 }
 
 .sidebar-toggle span:last-child {
   transform: translateY(0);
-  transition: transform 0.3s ease;
+  transition: transform var(--transition-duration) ease;
 }
 
 /* Change default state to dashes */
@@ -183,7 +180,7 @@ body:not(.sidebar-collapsed) .sidebar-toggle span:last-child {
 .main-content {
   margin: 0 0 0 250px;
   padding: 2em;
-  transition: margin-left 0.3s ease, width 0.3s ease;
+  transition: margin-left var(--transition-duration) ease, width var(--transition-duration) ease;
   width: calc(100% - 250px);
   max-width: none;
 }
@@ -304,7 +301,7 @@ header .container {
   border-radius: 50%;
   background-color: #fff;
   border: 1px solid var(--border);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 8px var(--box-shadow-light);
   transition: background-color var(--transition-duration), transform var(--transition-duration);
   position: relative;
   overflow: hidden;
@@ -316,7 +313,7 @@ header .container {
   width: 18px;
   height: 18px;
   opacity: 0.9;
-  transition: opacity 0.3s ease;
+  transition: opacity var(--transition-duration) ease;
   vertical-align: middle;
 }
 
@@ -334,7 +331,7 @@ header .container {
   border-radius: 50%;
   transform: translate(-50%, -50%);
   opacity: 0;
-  transition: width 0.3s ease, height 0.3s ease;
+  transition: width var(--transition-duration) ease, height var(--transition-duration) ease;
 }
 
 .social-buttons .btn:hover::before {
@@ -346,7 +343,7 @@ header .container {
 .social-buttons .btn:hover {
   transform: scale(1.1);
   border-color: var(--accent);
-  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  transition: transform var(--transition-duration) ease, box-shadow var(--transition-duration) ease, border-color var(--transition-duration) ease;
 }
 
 /* Header Styles */
@@ -354,7 +351,6 @@ header {
   background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
   color: var(--text);
   padding: 1.5em 6%;
-  box-shadow: 0 2px 4px var(--box-shadow-light);
   position: relative;
   overflow: hidden;
   z-index: 1;
@@ -362,7 +358,7 @@ header {
   align-items: center;
   justify-content: space-between;
   padding: 20px 0;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 8px var(--box-shadow-light);
   text-align: center;
   position: sticky;
   top: 0;
@@ -487,7 +483,7 @@ nav {
 .nav-list li a:hover {
   color: var(--accent);
   background-color: var(--secondary);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 8px var(--box-shadow-hover);
 }
 
 nav a {
@@ -496,7 +492,7 @@ nav a {
   margin: 0.4em 0.4em;
   font-weight: 500;
   font-size: 1.1em;
-  transition: all 0.3s ease;
+  transition: all var(--transition-duration) ease;
   display: inline-block;
   position: relative;
   padding: 0.5em 1em;
@@ -512,10 +508,10 @@ nav a:before {
   height: 2px;
   bottom: 0;
   left: 0;
-  background: var(--white);
+  background: var(--background);
   transform: scaleX(0);
   transform-origin: right;
-  transition: transform 0.3s ease;
+  transition: transform var(--transition-duration) ease;
 }
 
 nav a:hover {
@@ -545,7 +541,7 @@ section {
   margin-bottom: 3em;
   padding: 30px;
   border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 8px var(--box-shadow-light);
   transition: transform var(--transition-duration), box-shadow var(--transition-duration);
   overflow: hidden;
   border: 1px solid var(--border);
@@ -557,11 +553,10 @@ section {
 
 section:hover {
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px var(--shadow);
   background: var(--surface);
   border-color: var(--primary-light);
   transform: translateY(-5px);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 12px var(--box-shadow-hover);
 }
 
 h2 {
@@ -594,10 +589,10 @@ h3::after {
   left: -20px;
   right: -20px;
   bottom: -10px;
-  background: radial-gradient(circle at center, var(--primary-glow) 0%, transparent 70%);
+  background: radial-gradient(circle at center, var(--primary-light) 0%, transparent 70%);
   opacity: 0.1;
   z-index: -1;
-  transition: opacity 0.3s ease;
+  transition: opacity var(--transition-duration) ease;
 }
 
 h4 {
@@ -630,7 +625,7 @@ section .content {
   border: 1px solid var(--border);
   border-left: 4px solid var(--primary);
   border-radius: 6px;
-  transition: all 0.3s ease;
+  transition: all var(--transition-duration) ease;
   margin: 0 0 2em;
   display: flex;
   align-items: center;
@@ -641,7 +636,7 @@ section .content {
   height: auto;
   border-radius: 50%;
   margin-right: 2em;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 8px var(--box-shadow-light);
 }
 
 #about .current-initiatives .content {
@@ -657,13 +652,13 @@ section .content {
   background: var(--surface);
   border-radius: 8px;
   padding: 1em;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform var(--transition-duration) ease, box-shadow var(--transition-duration) ease;
   border: 1px solid var(--border);
 }
 
 .initiative:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 16px var(--box-shadow-strong);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px var(--box-shadow-hover);
 }
 
 @media (max-width: 768px) {
@@ -687,21 +682,21 @@ section .content {
   box-shadow: none;
   -webkit-backdrop-filter: blur(5px);
   backdrop-filter: blur(5px);
-  transition: all 0.3s ease;
+  transition: all var(--transition-duration) ease;
 }
 
 #ventures .venture:hover {
   background: var(--surface-hover);
   border-color: var(--primary);
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px var(--shadow);
+  box-shadow: 0 4px 12px var(--box-shadow-hover);
 }
 
 #ventures .role {
   margin-top: 1em;
   padding: 0.8em;
   background: var(--surface);
-  box-shadow: 0 2px 4px var(--shadow);
+  box-shadow: 0 2px 4px var(--box-shadow-light);
   border-radius: 6px;
   -webkit-backdrop-filter: blur(5px);
   backdrop-filter: blur(5px);
@@ -716,21 +711,21 @@ section .content {
   box-shadow: none;
   -webkit-backdrop-filter: blur(5px);
   backdrop-filter: blur(5px);
-  transition: all 0.3s ease;
+  transition: all var(--transition-duration) ease;
 }
 
 #experiences .company:hover {
   background: var(--surface-hover);
   border-color: var(--primary);
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px var(--shadow);
+  box-shadow: 0 4px 12px var(--box-shadow-hover);
 }
 
 #experiences .role {
   margin-top: 1em;
   padding: 0.8em;
   background: var(--surface);
-  box-shadow: 0 2px 4px var(--shadow);
+  box-shadow: 0 2px 4px var(--box-shadow-light);
   border-radius: 6px;
   -webkit-backdrop-filter: blur(5px);
   backdrop-filter: blur(5px);
@@ -746,32 +741,32 @@ section .content {
   box-shadow: none;
   -webkit-backdrop-filter: blur(5px);
   backdrop-filter: blur(5px);
-  transition: all 0.3s ease;
+  transition: all var(--transition-duration) ease;
 }
 
 #education .school:hover {
   background: var(--surface-hover);
   border-color: var(--primary);
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px var(--shadow);
+  box-shadow: 0 4px 12px var(--box-shadow-hover);
 }
 
 #education .course {
   margin-top: 1em;
   padding: 0.8em;
   background: var(--surface);
-  box-shadow: 0 2px 4px var(--shadow);
+  box-shadow: 0 2px 4px var(--box-shadow-light);
   border-radius: 6px;
   -webkit-backdrop-filter: blur(5px);
   backdrop-filter: blur(5px);
   border: 1px solid var(--border);
-  transition: all 0.3s ease;
+  transition: all var(--transition-duration) ease;
 }
 
 #education .course:hover {
   background: var(--surface-hover);
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px var(--shadow);
+  box-shadow: 0 4px 12px var(--box-shadow-hover);
 }
 
 #achievements .cert,
@@ -780,12 +775,11 @@ section .content {
   margin-bottom: 1em;
   padding: 1em;
   background: var(--surface);
-  box-shadow: 0 2px 4px var(--shadow);
+  box-shadow: none;
   border-radius: 6px;
   -webkit-backdrop-filter: blur(5px);
   backdrop-filter: blur(5px);
   border-left: 4px solid var(--primary);
-  box-shadow: none;
 }
 
 #achievements .cert:hover,
@@ -799,36 +793,36 @@ section .content {
   margin-bottom: 2em;
   padding: 1.2em;
   background: var(--surface);
-  box-shadow: 0 3px 6px var(--shadow);
+  box-shadow: 0 3px 6px var(--box-shadow-light);
   border-radius: 8px;
   border-left: 4px solid var(--primary);
   -webkit-backdrop-filter: blur(5px);
   backdrop-filter: blur(5px);
-  transition: all 0.3s ease;
+  transition: all var(--transition-duration) ease;
 }
 
 #projects .project:hover {
   background: var(--surface-hover);
   border-color: var(--primary);
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px var(--shadow);
+  box-shadow: 0 4px 12px var(--box-shadow-hover);
 }
 
 #recommendations .recommendation {
   margin-bottom: 2em;
   padding: 1.2em;
   background: var(--surface);
-  box-shadow: 0 3px 6px var(--shadow);
+  box-shadow: 0 3px 6px var(--box-shadow-light);
   border-radius: 10px;
   border-left: 4px solid var(--primary);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform var(--transition-duration) ease, box-shadow var(--transition-duration) ease;
 }
 
 #recommendations .recommendation:hover {
   background: var(--surface-hover);
   border-color: var(--primary);
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px var(--shadow);
+  box-shadow: 0 4px 12px var(--box-shadow-hover);
 }
 
 /* Achievements Section Styles */
@@ -878,7 +872,7 @@ section .content {
   background: var(--surface);
   border-radius: 8px;
   margin-bottom: 1em;
-  transition: background 0.3s ease;
+  transition: background var(--transition-duration) ease;
 }
 
 #achievements .cert:hover,
@@ -1015,7 +1009,7 @@ section .content {
 .company,
 .school,
 .recommendation {
-  transition: all 0.3s ease-out;
+  transition: all var(--transition-duration) ease-out;
 }
 
 .project:hover,
@@ -1023,7 +1017,7 @@ section .content {
 .school:hover,
 .recommendation:hover {
   transform: translateY(-5px);
-  box-shadow: 0 10px 20px var(--box-shadow-strong);
+  box-shadow: 0 10px 20px var(--box-shadow-hover);
 }
 
 /* Make links more visible */
@@ -1049,7 +1043,7 @@ a:hover {
   background: var(--surface-hover);
   border-color: var(--primary);
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px var(--shadow);
+  box-shadow: 0 4px 12px var(--box-shadow-hover);
 }
 
 /* (Optional) Dark theme variant */
@@ -1101,7 +1095,7 @@ a:not(nav a):not(.social-buttons .btn) {
   padding: 0.2em 0.4em;
   margin: -0.2em -0.4em;
   border-radius: 4px;
-  transition: color 0.3s ease, background-color 0.3s ease, transform 0.2s ease;
+  transition: color var(--transition-duration) ease, background-color var(--transition-duration) ease, transform 0.2s ease;
 }
 
 a:not(nav a):not(.social-buttons .btn):hover {
@@ -1205,6 +1199,18 @@ button:focus {
   letter-spacing: 0.5px;
   white-space: nowrap;
   flex-shrink: 0;
+  cursor: pointer;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.type-badge:hover {
+  opacity: 0.8;
+  transform: translateY(-1px);
+}
+
+.type-badge:focus {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
 }
 
 .type-badge.venture {
@@ -1251,7 +1257,7 @@ button:focus {
   background-size: cover;
   background-position: center;
   opacity: 0.1;
-  transition: opacity 0.3s ease, transform 0.3s ease;
+  transition: opacity var(--transition-duration) ease, transform var(--transition-duration) ease;
   z-index: -1;
 }
 

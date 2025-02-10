@@ -300,13 +300,41 @@ function renderCurrentInitiatives(data) {
               `<a href="${initiative.links.primary}" target="_blank">${initiative.name}</a>` :
               initiative.name
             }
-          <span class="type-badge ${initiative.type.toLowerCase()}">${initiative.type}</span>
+          <span class="type-badge ${initiative.type.toLowerCase()}" role="button" tabindex="0">${initiative.type}</span>
         </div>
         ${initiative.description ? `<p class="description">${initiative.description}</p>` : ''}
         ${renderLinks(initiative.links, initiative.images)}
       </div>
     `)
     .join('');
+
+  // Add click handlers to type badges
+  container.querySelectorAll('.type-badge').forEach(badge => {
+    badge.addEventListener('click', (e) => {
+      e.preventDefault();
+      const type = badge.textContent.toLowerCase();
+      const sections = document.querySelectorAll('main section');
+      const targetId = type === 'venture' ? 'ventures' : 'projects';
+      
+      // Hide all sections
+      sections.forEach(sec => sec.classList.add('hidden'));
+      
+      // Show target section
+      const targetSection = document.getElementById(targetId);
+      if (targetSection) {
+        targetSection.classList.remove('hidden');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    });
+
+    // Add keyboard accessibility
+    badge.addEventListener('keypress', (e) => {
+      if (e.key === 'Enter') {
+        e.preventDefault();
+        badge.click();
+      }
+    });
+  });
 }
 
 function renderImages(images) {
