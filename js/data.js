@@ -209,6 +209,12 @@ const portfolioData = {
     ],
     "honorsAndAwards": [
         {
+            "description": "Showcased Dostana.AI, an AI-powered kirana store management system.",
+            "issuer": "ONDC, Google, Antler, Protean and PayTM",
+            "startDate": "May, 2024",
+            "title": "National Runner-up, Build for Bharat, Next-gen Ventures Category by ONDC, 2024"
+        },
+        {
             "description": "Recognized for exceptional product management and growth strategy skills among 450,000+ participants.",
             "details": [
                 "Outperformed 98% of participants in product strategy",
@@ -428,7 +434,37 @@ const portfolioData = {
             "title": "Machine Learning"
         }
     ],
-    "projects": [
+    "projects": [,
+        {
+            "description": "AI-powered WhatsApp bot revolutionizing operations for Kirana stores and MSMEs through vernacular language support.",
+            "details": [
+                "National Winner of Tata Imagination Challenge, 2024",
+                "National Runner-up of Build for Bharat, Next-gen Ventures Category by ONDC, 2024",
+                "Enables inventory management, order generation, and receipt issuance via text/voice/image",
+                "Synchronizes inventory across online marketplaces like Shopify, Amazon, with demand insights"
+            ],
+            "endDate": "Jun 2024",
+            "images": {
+                "primary": "assets/projects/dostana_ai.png",
+                "others": [
+                    "assets/projects/dostana_ai-win.jpeg"
+                ]
+            },
+            "links": {
+                "primary": "https://www.youtube.com/watch?v=WUNkzE9AdW0",
+                "others": [
+                    "https://www.linkedin.com/feed/update/urn:li:activity:7272536422304112640"
+                ]
+            },
+            "name": "Dostana.AI: Multi-modal Omni-channel Kirana Store Agent",
+            "skills": [
+                "Artificial Intelligence",
+                "Chatbot Development",
+                "B2B Ideation",
+                "SaaS Development"
+            ],
+            "startDate": "Jan 2024"
+        }, 
         {
             "description": "Game-changing Spring Boot library simplifying setup of multiple data sources using simple annotations.",
             "details": [
