@@ -430,7 +430,7 @@ const portfolioData = {
     ],
     "projects": [
         {
-            "description": "Revolutionary Spring framework solution simplifying multi-data source configuration through intuitive annotations.",
+            "description": "Game-changing Spring Boot library simplifying setup of multiple data sources using simple annotations.",
             "details": [
                 "Published on Maven Central Repository",
                 "Automated bean definition configurations",
@@ -479,9 +479,9 @@ const portfolioData = {
             "startDate": "Nov 2021"
         },
         {
-            "description": "Built and maintaining Open-source Dart/Flutter library for openrouteservice API integration.",
+            "description": "A leading Dart/Flutter package, for openrouteservice API integration.",
             "details": [
-                "Used by 1.4K+ development teams across the world, with 80 likes and 160/160 pub.dev points",
+                "Used by 1.5K+ development teams across the world, with 80 likes and 160/160 pub.dev points",
                 "Enables the easy integration of the openrouteservice API with relevant data models",
                 "Supports generation of Routes and Directions on Maps, Isochrones, Time-Distance Matrix, Pelias Geocoding, POIs, Elevation, routing Optimizations etc"
             ],
@@ -507,7 +507,7 @@ const portfolioData = {
             "startDate": "Sep 2021"
         },
         {
-            "description": "Created a null-safe Dart/Flutter package for Nordigen EU PSD2 AISP Banking API Integration.",
+            "description": "A null-safe Dart/Flutter package for Nordigen EU PSD2 AISP Banking API Integration.",
             "details": [
                 "Officially recognized by Nordigen as their premier Dart/Flutter community package",
                 "The account information API has been completely encapsulated",
