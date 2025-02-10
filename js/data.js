@@ -22,9 +22,9 @@ const portfolioData = {
             ],
             "images": {
                 "others": [
-                    "assets/education/nits-banner.jpeg"
+                    "assets/education/nits-achievements.png"
                 ],
-                "primary": "assets/education/nits-achievements.png"
+                "primary": "assets/education/nits-banner.jpeg"
             },
             "links": {
                 "others": [
@@ -586,6 +586,9 @@ const portfolioData = {
                 "Allows easy exporting of Moor databases to CSV"
             ],
             "endDate": "Present",
+            "images": {
+                "primary": "assets/projects/moor2csv.png",
+            },
             "links": {
                 "others": [
                     "https://github.com/Dhi13man/moor2csv"
