@@ -22,15 +22,15 @@ const portfolioData = {
             ],
             "images": {
                 "others": [
-                    "/assets/education/nits-campus.png"
+                    "assets/education/nits-banner.jpeg"
                 ],
-                "primary": "/assets/education/nits.png"
+                "primary": "assets/education/nits-achievements.png"
             },
             "links": {
                 "others": [
                     "https://linkedin.com/school/national-institute-of-technology-silchar/"
                 ],
-                "primary": "http://nits.ac.in"
+                "primary": "http://www.nits.ac.in/achievements/cultural.php"
             },
             "name": "National Institute of Technology (NIT), Silchar"
         },

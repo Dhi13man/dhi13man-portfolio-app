@@ -634,6 +634,7 @@ section .content {
 .profile-image {
   width: 200px;
   height: auto;
+  object-fit: contain;
   border-radius: 50%;
   margin-right: 2em;
   box-shadow: 0 4px 8px var(--box-shadow-light);
@@ -1252,10 +1253,11 @@ button:focus {
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  width: 95%;
-  height: 95%;
+  width: 100%;
+  height: 100%;
   background-size: cover;
   background-position: center;
+  background-repeat: no-repeat;
   opacity: 0.1;
   transition: opacity var(--transition-duration) ease, transform var(--transition-duration) ease;
   z-index: -1;
@@ -1350,12 +1352,14 @@ button:focus {
   width: 40px;
   height: 40px;
   border-radius: 4px;
-  object-fit: cover;
+  object-fit: contain;
   transition: transform var(--transition-duration) ease, opacity var(--transition-duration) ease;
   vertical-align: middle; /* Added to ensure vertical alignment */
+  background: var(--surface);
 }
 
 .photos img:hover {
   transform: scale(1.1);
   opacity: 0.8;
 }
+
