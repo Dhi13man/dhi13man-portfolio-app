@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Dhiman Seal | Engineer & Entrepreneur - dhimanseal.com</title>
-    <!-- Modern Fonts -->
+    <link rel="canonical" href="https://dhimanseal.com" />
     <link
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Nunito:wght@300;400;600&display=swap"
       rel="stylesheet"
@@ -14,19 +14,19 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
     />
     <link rel="stylesheet" href="css/style.css" />
-    <meta name="title" content="Dhiman Seal - Professional Portfolio" />
+    <meta name="title" content="Dhiman Seal - Engineering & Entrepreneurship Portfolio" />
     <meta
       name="description"
-      content="Dhiman Seal - Distinguished Engineer pioneering open-source tech and building innovative enterprises. Explore open-source contributions and innovative ventures."
+      content="Dhiman Seal - Distinguished Engineer pioneering open-source tech and building innovative enterprises. Check out the amazing stuff that's been worked on!"
     />
     <meta
       name="keywords"
-      content="Dhiman Seal, Software Engineer, Portfolio, Java, Spring Boot, Flutter, Python, Open-Source, Entrepreneur, Ventures, Achievements, Projects"
+      content="dhiman seal, open-source, engineer, entrepreneur, portfolio, ventures, projects, work, achievements, technical, solutions, github, project sources, api integration, java, spring boot, flutter, python, entrepreneur, ventures, achievements, see, sources, pubdev "
     />
-    <meta property="og:title" content="Dhiman Seal - Professional Portfolio" />
+    <meta property="og:title" content="Dhiman Seal - Engineering & Entrepreneurship Portfolio" />
     <meta
       property="og:description"
-      content="Dhiman Seal - Distinguished Engineer pioneering open-source tech and building innovative enterprises."
+      content="Dhiman Seal - Distinguished Engineer pioneering open-source tech and building innovative enterprises. Check out the amazing stuff that's been worked on!"
     />
     <meta property="og:image" content="assets/me.jpg" />
     <meta property="og:url" content="https://dhimanseal.com" />
@@ -42,7 +42,6 @@
     <script type="application/ld+json" src="scripts/ld.json"></script>
   </head>
   <body>
-    <!-- Sidebar -->
     <div class="sidebar">
       <div class="sidebar-header">
         <h1>Dhiman Seal</h1>
@@ -72,16 +71,13 @@
       </footer>
     </div>
 
-    <!-- Toggle Button -->
     <button class="sidebar-toggle" title="Toggle Sidebar" type="button">
       <span></span>
       <span></span>
       <span></span>
     </button>
 
-    <!-- Main Content -->
     <main class="main-content">
-      <!-- About Section -->
       <section id="about">
         <h2 id="about-tagline"></h2>
         <div class="content">
@@ -89,32 +85,27 @@
           <p></p>
         </div>
         
-        <!-- Current Initiatives as separate subsection -->
         <div class="current-initiatives">
           <h3>Current Initiatives</h3>
           <div class="content"></div>
         </div>
       </section>
 
-      <!-- Experience Section -->
       <section id="experiences">
         <h2>Work Experiences</h2>
         <div class="content"></div>
       </section>
 
-      <!-- Ventures Section -->
       <section id="ventures">
         <h2>Ventures</h2>
         <div class="content"></div>
       </section>
 
-      <!-- Education Section -->
       <section id="education">
         <h2>Education</h2>
         <div class="content"></div>
       </section>
 
-      <!-- Achievements Section -->
       <section id="achievements">
         <h2>Achievements</h2>
         <div class="content achievements-grid">
@@ -133,13 +124,11 @@
         </div>
       </section>
 
-      <!-- Projects Section -->
       <section id="projects">
         <h2>Projects</h2>
         <div class="content"></div>
       </section>
 
-      <!-- Recommendations Section -->
       <section id="recommendations">
         <h2>Recommendations</h2>
         <div class="content"></div>
@@ -147,14 +136,12 @@
     </main>
 
     <script src="js/data.js"></script>
+
     <script src="js/app.js"></script>
 
-    <!-- Multi-screen navigation script -->
     <script>
-      // filepath: /Users/dhiman.seal/Desktop/projects/dhi13man/index.html
       document.addEventListener("DOMContentLoaded", () => {
         const sections = document.querySelectorAll("main section");
-        // Hide every section initially and show default "about" section.
         sections.forEach((sec) => sec.classList.add("hidden"));
         document.getElementById("about").classList.remove("hidden");
 
