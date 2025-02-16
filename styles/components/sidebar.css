@@ -244,7 +244,7 @@ body.sidebar-collapsed main {
   }
 
   body:not(.sidebar-collapsed) .sidebar-toggle {
-    left: 260px;
+    left: 1em;
   }
 
   .main-content {
