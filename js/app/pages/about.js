@@ -22,31 +22,34 @@ function renderAbout(about) {
     p.innerHTML = about.description.replace(/\n/g, '<br>');
 }
 
-function renderCurrentInitiatives(data) {
+function renderCurrentInitiatives(ventures, projects) {
     const container = document.querySelector('#about .current-initiatives .content');
     if (!container) return;
 
     // Get current ventures with images
-    const currentVentures = data.ventures
-        .filter(venture => venture.roles.some(role => role.endDate === 'Present'))
-        .map(venture => ({
-            name: venture.name,
-            description: venture.about,
-            links: venture.links,
-            images: venture.images,
-            type: 'Venture'
-        }));
+    const currentVentures = ventures
+        .filter(v => v.roles.some(r => isDatePresent(r.endDate)))
+        .map(
+            venture => ({
+                name: venture.name,
+                description: venture.about,
+                links: venture.links,
+                images: venture.images,
+                type: 'Venture'
+            })
+        );
 
     // Get current projects with images
-    const currentProjects = data.projects
-        .filter(project => project.endDate === 'Present')
-        .map(project => ({
-            name: project.name,
-            description: project.description,
-            links: project.links,
-            images: project.images,
-            type: 'Project'
-        }));
+    const currentProjects = projects.filter(p => isDatePresent(p.endDate))
+        .map(
+            project => ({
+                name: project.name,
+                description: project.description,
+                links: project.links,
+                images: project.images,
+                type: 'Project'
+            })
+        );
 
     const currentInitiatives = [...currentVentures, ...currentProjects];
     if (currentInitiatives.length === 0) {
@@ -104,6 +107,9 @@ document.addEventListener(
     'DOMContentLoaded',
     () => {
         renderAbout(portfolioData.about);
-        renderCurrentInitiatives(portfolioData);
+        renderCurrentInitiatives(
+            portfolioData.ventures, 
+            portfolioData.projects
+        );
     }
 );
