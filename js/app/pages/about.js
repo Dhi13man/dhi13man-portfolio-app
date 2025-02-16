@@ -5,7 +5,7 @@ console.log(`
     ║                  DHIMAN SEAL                                 ║
     ║    Digital Architect • Code Mystic • Entrepreneur            ║
     ║                                                              ║
-    ║   "Where technology meets divine craftsmanship"              ║
+    ║    "Where technology meets divine craftsmanship!"            ║
     ║                                                              ║
     ╚══════════════════════════════════════════════════════════════╝
 `);
@@ -58,58 +58,29 @@ function renderCurrentInitiatives(ventures, projects) {
     }
 
     container.innerHTML = currentInitiatives
-        .map(initiative => `
-        <div class="initiative">
-          ${renderBackground(initiative.images)}
-          <div class="initiative-header">
-              ${initiative.links?.primary ?
-                `<a href="${initiative.links.primary}" target="_blank">${initiative.name}</a>` :
-                initiative.name
+        .map(
+            initiative => {
+                const type = initiative.type.toLowerCase();
+                return `<div class="initiative">
+                ${renderBackground(initiative.images)}
+                <div class="initiative-header">
+                    ${initiative.links?.primary ? `<a href="${initiative.links.primary}" target="_blank">${initiative.name}</a>` : initiative.name}
+                    <span class="type-badge ${type}" role="button" tabindex="0" onclick="window.location.href='${type}s.html'">${initiative.type}</span>
+                </div>
+                ${initiative.description ? `<p class="description">${initiative.description}</p>` : ''}
+                ${renderSectionMetadata(initiative.links, initiative.images)}
+                </div>`
             }
-            <span class="type-badge ${initiative.type.toLowerCase()}" role="button" tabindex="0">${initiative.type}</span>
-          </div>
-          ${initiative.description ? `<p class="description">${initiative.description}</p>` : ''}
-          ${renderSectionMetadata(initiative.links, initiative.images)}
-        </div>
-      `)
-        .join('');
-
-    // Add click handlers to type badges
-    container.querySelectorAll('.type-badge').forEach(badge => {
-        badge.addEventListener('click', (e) => {
-            e.preventDefault();
-            const type = badge.textContent.toLowerCase();
-            const sections = document.querySelectorAll('main section');
-            const targetId = type === 'venture' ? 'ventures' : 'projects';
-
-            // Hide all sections
-            sections.forEach(sec => sec.classList.add('hidden'));
-
-            // Show target section
-            const targetSection = document.getElementById(targetId);
-            if (targetSection) {
-                targetSection.classList.remove('hidden');
-                window.scrollTo({ top: 0, behavior: 'smooth' });
-            }
-        });
-
-        // Add keyboard accessibility
-        badge.addEventListener('keypress', (e) => {
-            if (e.key === 'Enter') {
-                e.preventDefault();
-                badge.click();
-            }
-        });
-    });
+        ).join('');
 }
 
 document.addEventListener(
     'DOMContentLoaded',
     () => {
-        renderAbout(portfolioData.about);
-        renderCurrentInitiatives(
-            portfolioData.ventures, 
-            portfolioData.projects
-        );
+        const about = getAboutData();
+        const ventures = getVenturesData();
+        const projects = getProjectsData();
+        renderAbout(about);
+        renderCurrentInitiatives(ventures, projects);
     }
 );

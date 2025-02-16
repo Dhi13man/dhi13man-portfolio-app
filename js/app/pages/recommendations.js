@@ -11,5 +11,8 @@ function renderRecommendations(recommendations) {
 
 document.addEventListener(
     'DOMContentLoaded',
-    () => renderRecommendations(portfolioData.recommendations),
+    () => {
+      const recommendations = getRecommendationsData();
+      renderRecommendations(recommendations);
+    },
 );

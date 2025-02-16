@@ -24,5 +24,8 @@ function renderEducation(education) {
 
 document.addEventListener(
   'DOMContentLoaded',
-  () => renderEducation(portfolioData.education),
+  () => {
+    const education = getEducationData();
+    renderEducation(education);
+  },
 );

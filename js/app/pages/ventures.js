@@ -28,5 +28,8 @@ function renderVentures(ventures) {
 
 document.addEventListener(
   'DOMContentLoaded',
-  () => renderVentures(portfolioData.ventures),
+  () => {
+    const ventures = getVenturesData();
+    renderVentures(ventures);
+  },
 );

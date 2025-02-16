@@ -37,8 +37,9 @@ function renderTestScores(scores) {
 document.addEventListener(
   'DOMContentLoaded',
   () => {
-    renderAwards(portfolioData.honorsAndAwards);
-    renderCerts(portfolioData.licensesAndCertifications);
-    renderTestScores(portfolioData.testScores);
+    const achievements = getAchievementsData();
+    renderAwards(achievements.honorsAndAwards);
+    renderCerts(achievements.licensesAndCertifications);
+    renderTestScores(achievements.testScores);
   }
 );

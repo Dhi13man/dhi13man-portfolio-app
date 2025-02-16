@@ -17,5 +17,8 @@ function renderProjects(projects) {
 
 document.addEventListener(
   'DOMContentLoaded',
-  () => renderProjects(portfolioData.projects),
+  () => {
+    const projects = getProjectsData();
+    renderProjects(projects);
+  },
 );

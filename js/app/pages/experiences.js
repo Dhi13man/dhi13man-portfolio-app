@@ -26,5 +26,8 @@ function renderExperience(experiences) {
 
 document.addEventListener(
   'DOMContentLoaded',
-  () => renderExperience(portfolioData.experience),
+  () => {
+    const experiences = getExperiencesData();
+    renderExperience(experiences);
+  },
 );
