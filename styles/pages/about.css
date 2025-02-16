@@ -42,6 +42,69 @@
 .initiative:hover {
   transform: translateY(-2px);
   box-shadow: 0 4px 8px var(--box-shadow-hover);
+
+  .background-image {
+    opacity: 0.25;
+    transform: translate(-50%, -50%) scale(1.02);
+  }
+}
+
+/* Type Badge Styles */
+.type-badge {
+  display: inline-block;
+  padding: 0.2em 0.8em;
+  border-radius: 12px;
+  font-size: 0.75em;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+  flex-shrink: 0;
+  cursor: pointer;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.type-badge:hover {
+  opacity: 0.8;
+  transform: translateY(-1px);
+}
+
+.type-badge:focus {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.type-badge.venture {
+  background: var(--accent);
+  color: var(--text-light);
+}
+
+.type-badge.project {
+  background: var(--primary);
+  color: var(--text-light);
+}
+
+.initiative-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 0.5em;
+  gap: 0.5em;
+}
+
+.initiative-header a {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin-right: 0.5em;
+}
+
+@media (min-width: 768px) {
+  #about .current-initiatives .content {
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  }
 }
 
 @media (max-width: 768px) {

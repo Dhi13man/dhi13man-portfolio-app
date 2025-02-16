@@ -1,0 +1,39 @@
+#education .school {
+  margin-bottom: 1.5em;
+  padding: 1em;
+  border-left: 4px solid var(--primary);
+  background: var(--surface);
+  border-radius: 6px;
+  box-shadow: none;
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
+  transition: all var(--transition-duration) ease;
+}
+
+#education .school:hover {
+  background: var(--surface-hover);
+  border-color: var(--primary);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px var(--box-shadow-hover);
+
+  .background-image {
+    opacity: 0.25;
+    transform: translate(-50%, -50%) scale(1.02);
+  }
+}
+
+#education .course {
+  margin-top: 1em;
+  padding: 0.8em;
+  box-shadow: 0 2px 4px var(--box-shadow-light);
+  border-radius: 6px;
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
+  border: 1px solid var(--border);
+  transition: all var(--transition-duration) ease;
+}
+
+#education .course:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px var(--box-shadow-hover);
+}
