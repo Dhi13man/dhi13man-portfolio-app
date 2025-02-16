@@ -234,35 +234,21 @@ body.sidebar-collapsed main {
     transform: translateX(-250px);
   }
 
+  .sidebar-toggle {
+    left: 1em;
+    transition: left var(--transition-duration) ease;
+  }
+
+  body:not(.sidebar-collapsed) .sidebar {
+    transform: translateX(0);
+  }
+
+  body:not(.sidebar-collapsed) .sidebar-toggle {
+    left: 260px;
+  }
+
   .main-content {
     margin-left: 0;
     width: 100%;
-    max-width: 100%;
-  }
-
-  .sidebar-footer {
-    padding: 0.8em;
-    font-size: 0.8em;
-  }
-
-  main {
-    padding: 0 1em;
-  }
-
-  .social-buttons {
-    margin-top: 1.2em;
-    gap: 1em;
-    justify-content: center;
-    margin-left: 0;
-  }
-
-  .social-buttons .btn {
-    width: 36px;
-    height: 36px;
-  }
-
-  .social-buttons .btn img {
-    width: 18px;
-    height: 18px;
   }
 }

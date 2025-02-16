@@ -43,15 +43,31 @@ document.addEventListener('DOMContentLoaded', () => {
   if (sidebarContainer) {
     sidebarContainer.innerHTML = renderSidebar();
   }
-  // Sidebar toggle functionality
+  
   const toggleButton = document.querySelector('.sidebar-toggle');
   const body = document.body;
+
+  // Set initial state for mobile
+  if (window.innerWidth <= 768) {
+    body.classList.add('sidebar-collapsed');
+  }
 
   if (toggleButton) {
     toggleButton.addEventListener('click', () => {
       body.classList.toggle('sidebar-collapsed');
     });
   }
+
+  // Close sidebar when clicking outside on mobile
+  document.addEventListener('click', (e) => {
+    if (window.innerWidth <= 768 && 
+        !e.target.closest('.sidebar') && 
+        !e.target.closest('.sidebar-toggle') &&
+        !body.classList.contains('sidebar-collapsed')) {
+      body.classList.add('sidebar-collapsed');
+    }
+  });
+
   // Close sidebar when clicking nav links (especially on mobile)
   document.querySelectorAll('.sidebar nav a').forEach(link => {
     link.addEventListener('click', () => {
