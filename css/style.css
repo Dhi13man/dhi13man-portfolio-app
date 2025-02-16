@@ -1271,8 +1271,8 @@ button:focus {
   transform: translate(-50%, -50%) scale(1.02);
 }
 
-/* Metadata section containing links and photos */
-.metadata {
+/* Section footer containing links and photos */
+.section-footer {
   margin-top: 1em;
   display: flex;
   flex-wrap: wrap;
@@ -1282,8 +1282,8 @@ button:focus {
   border-top: 1px solid var(--border);
 }
 
-.metadata .links,
-.metadata .photos {
+.section-footer .links,
+.section-footer .photos {
   font-size: small;
   flex-wrap: wrap;
   justify-content: flex-start;
@@ -1295,14 +1295,14 @@ button:focus {
 }
 
 @media (min-width: 768px) {
-  .metadata {
+  .section-footer {
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
   }
 
-  .metadata .links,
-  .metadata .photos {
+  .section-footer .links,
+  .section-footer .photos {
     justify-content: flex-end;
   }
   
@@ -1317,7 +1317,7 @@ button:focus {
     font-size: 0.9em;
   }
   
-  .metadata .photos img {
+  .section-footer .photos img {
     width: 35px;
     height: 35px;
   }
