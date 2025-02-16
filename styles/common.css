@@ -229,25 +229,6 @@ section .content {
   z-index: 1;
 }
 
-#projects .project {
-  margin-bottom: 2em;
-  padding: 1.2em;
-  background: var(--surface);
-  box-shadow: 0 3px 6px var(--box-shadow-light);
-  border-radius: 8px;
-  border-left: 4px solid var(--primary);
-  -webkit-backdrop-filter: blur(5px);
-  backdrop-filter: blur(5px);
-  transition: all var(--transition-duration) ease;
-}
-
-#projects .project:hover {
-  background: var(--surface-hover);
-  border-color: var(--primary);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px var(--box-shadow-hover);
-}
-
 #recommendations .recommendation {
   margin-bottom: 2em;
   padding: 1.2em;
@@ -288,10 +269,6 @@ section .content {
 
   section h2 {
     font-size: 2em;
-  }
-
-  #projects .content {
-    grid-template-columns: 1fr;
   }
 }
 
@@ -446,11 +423,6 @@ button:focus {
   transition: opacity var(--transition-duration) ease,
     transform var(--transition-duration) ease;
   z-index: -1;
-}
-
-.project:hover .background-image {
-  opacity: 0.25;
-  transform: translate(-50%, -50%) scale(1.02);
 }
 
 /* Section footer containing links and photos */

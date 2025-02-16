@@ -1,0 +1,28 @@
+#projects .project {
+  margin-bottom: 2em;
+  padding: 1.2em;
+  border-radius: 8px;
+  border-left: 4px solid var(--primary);
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
+  transition: transform var(--transition-duration) ease,
+    box-shadow var(--transition-duration) ease;
+}
+
+#projects .project:hover {
+  background: var(--surface-hover);
+  border-color: var(--primary);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px var(--box-shadow-hover);
+
+  .background-image {
+    opacity: 0.25;
+    transform: translate(-50%, -50%) scale(1.02);
+  }
+}
+
+@media (max-width: 768px) {
+  #projects .content {
+    grid-template-columns: 1fr;
+  }
+}
