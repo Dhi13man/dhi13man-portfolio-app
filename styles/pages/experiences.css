@@ -1,40 +1,42 @@
-#experiences .company {
-  margin-bottom: 1.5em;
-  padding: 1em;
-  border-left: 4px solid var(--primary);
-  border-radius: 6px;
-  box-shadow: none;
-  -webkit-backdrop-filter: blur(5px);
-  backdrop-filter: blur(5px);
-  transition: all var(--transition-duration) ease;
+#experiences {
+  .company {
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+    border-left: 4px solid var(--primary);
+    border-radius: 6px;
+    box-shadow: none;
+    margin-bottom: 1.5em;
+    padding: 1em;
+    transition: all var(--transition-duration) ease;
 
-  .background-image {
-    opacity: 0.25;
-    transform: translate(-50%, -50%) scale(1.02);
+    .background-image {
+      opacity: 0.25;
+      transform: translate(-50%, -50%) scale(1.02);
+    }
+
+    .role {
+      -webkit-backdrop-filter: blur(5px);
+      backdrop-filter: blur(5px);
+      background: var(--surface);
+      border-radius: 6px;
+      border: 1px solid var(--border);
+      box-shadow: 0 2px 4px var(--box-shadow-light);
+      margin-top: 1em;
+      padding: 0.8em;
+    }
+
+    .role:hover {
+      background: var(--surface-hover);
+      border-color: var(--primary);
+      box-shadow: 0 4px 12px var(--box-shadow-hover);
+      transform: translateY(-2px);
+    }
   }
-}
 
-#experiences .company:hover {
-  background: var(--surface-hover);
-  border-color: var(--primary);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px var(--box-shadow-hover);
-}
-
-#experiences .role {
-  margin-top: 1em;
-  padding: 0.8em;
-  background: var(--surface);
-  box-shadow: 0 2px 4px var(--box-shadow-light);
-  border-radius: 6px;
-  -webkit-backdrop-filter: blur(5px);
-  backdrop-filter: blur(5px);
-  border: 1px solid var(--border);
-}
-
-#experiences .role:hover {
-  background: var(--surface-hover);
-  border-color: var(--primary);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px var(--box-shadow-hover);
+  .company:hover {
+    background: var(--surface-hover);
+    border-color: var(--primary);
+    box-shadow: 0 4px 12px var(--box-shadow-hover);
+    transform: translateY(-2px);
+  }
 }

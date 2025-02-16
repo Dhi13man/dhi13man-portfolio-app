@@ -1,44 +1,46 @@
-#about .content {
-  font-size: 1.2em;
-  padding: 1em;
-  border: 1px solid var(--border);
-  border-left: 4px solid var(--primary);
-  border-radius: 6px;
-  margin: 0 0 2em;
-  display: flex;
-  align-items: center;
+#about {
+  .content {
+    align-items: center;
+    border-left: 4px solid var(--primary);
+    border-radius: 6px;
+    border: 1px solid var(--border);
+    display: flex;
+    font-size: 1.2em;
+    margin: 0 0 2em;
+    padding: 1em;
+  }
+
+  .current-initiatives .content {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  }
 }
 
 .profile-image {
-  width: 200px;
-  height: auto;
-  object-fit: contain;
   border-radius: 50%;
-  margin-right: 2em;
   box-shadow: 0 4px 8px var(--box-shadow-light);
-}
-
-#about .current-initiatives .content {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 20px;
+  height: auto;
+  margin-right: 2em;
+  object-fit: contain;
+  width: 200px;
 }
 
 .initiative {
+  background: var(--surface);
+  border-radius: 8px;
+  border: 1px solid var(--border);
   display: flex;
   flex-direction: column;
   height: 100%;
-  background: var(--surface);
-  border-radius: 8px;
   padding: 1em;
   transition: transform var(--transition-duration) ease,
     box-shadow var(--transition-duration) ease;
-  border: 1px solid var(--border);
 }
 
 .initiative:hover {
-  transform: translateY(-2px);
   box-shadow: 0 4px 8px var(--box-shadow-hover);
+  transform: translateY(-2px);
 
   .background-image {
     opacity: 0.25;
@@ -47,17 +49,28 @@
 }
 
 .type-badge {
-  display: inline-block;
-  padding: 0.2em 0.8em;
   border-radius: 12px;
+  cursor: pointer;
+  display: inline-block;
+  flex-shrink: 0;
   font-size: 0.75em;
   font-weight: 600;
-  text-transform: uppercase;
   letter-spacing: 0.5px;
+  padding: 0.2em 0.8em;
+  text-transform: uppercase;
+  transition: transform var(--transition-duration) ease,
+    opacity var(--transition-duration) ease;
   white-space: nowrap;
-  flex-shrink: 0;
-  cursor: pointer;
-  transition: transform 0.2s ease, opacity 0.2s ease;
+
+  .venture {
+    background: var(--accent);
+    color: var(--text-light);
+  }
+
+  .project {
+    background: var(--primary);
+    color: var(--text-light);
+  }
 }
 
 .type-badge:hover {
@@ -66,40 +79,24 @@
 }
 
 .type-badge:focus {
-  outline: 2px solid var(--accent);
   outline-offset: 2px;
-}
-
-.type-badge.venture {
-  background: var(--accent);
-  color: var(--text-light);
-}
-
-.type-badge.project {
-  background: var(--primary);
-  color: var(--text-light);
+  outline: 2px solid var(--accent);
 }
 
 .initiative-header {
-  display: flex;
-  justify-content: space-between;
   align-items: flex-start;
-  margin-bottom: 0.5em;
+  display: flex;
   gap: 0.5em;
-}
+  justify-content: space-between;
+  margin-bottom: 0.5em;
 
-.initiative-header a {
-  flex: 1;
-  min-width: 0;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  margin-right: 0.5em;
-}
-
-@media (min-width: 768px) {
-  #about .current-initiatives .content {
-    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  a {
+    flex: 1;
+    margin-right: 0.5em;
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
 }
 
@@ -110,8 +107,25 @@
   }
 
   .profile-image {
-    width: 150px;
-    margin-right: 0;
     margin-bottom: 1em;
+    margin-right: 0;
+    width: 150px;
+  }
+}
+
+@media (max-width: 480px) {
+  .initiative-header {
+    gap: 0.3em;
+
+    a {
+      font-size: 0.9em;
+      min-width: 0;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  #about .current-initiatives .content {
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
   }
 }

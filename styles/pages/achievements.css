@@ -1,68 +1,70 @@
-#achievements .cert,
-#achievements .award,
-#testScores .score {
-  margin-bottom: 1em;
-  padding: 1em;
-  background: var(--surface);
-  box-shadow: none;
-  border-radius: 8px;
-  -webkit-backdrop-filter: blur(5px);
-  backdrop-filter: blur(5px);
-  border-left: 4px solid var(--primary);
-  position: relative;
-  transition: background var(--transition-duration) ease;
+#achievements {
+  .content {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: 1fr;
+  }
+
+  .cert,
+  .award,
+  .score {
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+    background: var(--surface);
+    border-left: 4px solid var(--primary);
+    border-radius: 8px;
+    box-shadow: none;
+    margin-bottom: 1em;
+    padding: 1em;
+    position: relative;
+    transition: background var(--transition-duration) ease;
+  }
+
+  .cert:hover,
+  .award:hover,
+  .score:hover {
+    background: var(--surface-hover);
+    border-color: var(--primary);
+    box-shadow: 0 4px 12px var(--box-shadow-hover);
+    transform: translateY(-2px);
+  }
 }
 
-#achievements .cert:hover,
-#achievements .award:hover,
-#testScores .score:hover {
-  background: var(--surface-hover);
-  border-color: var(--primary);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px var(--box-shadow-hover);
-}
-
-/* Achievements Section Styles */
-#achievements .content {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 20px;
-}
-
-/* Achievements Section Grid */
 .achievements-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 
-  >div {
-    padding: 20px;
-    border: 1px solid var(--primary);
+  > div {
     border-radius: 8px;
-  }
-}
-
-@media (min-width: 768px) {
-  #achievements .content {
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto auto;
-  }
-
-  #achievements #awards {
-    grid-column: 1 / span 2;
-  }
-
-  #achievements #certifications {
-    grid-column: 1;
-  }
-
-  #achievements #testScores {
-    grid-column: 2;
+    border: 1px solid var(--primary);
+    padding: 20px;
   }
 }
 
 @media (max-width: 768px) {
   #achievements .content {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (min-width: 768px) {
+  #achievements {
+    .content {
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: auto auto;
+    }
+
+    #awards {
+      grid-column: 1 / span 2;
+    }
+
+    #certifications {
+      grid-column: 1;
+    }
+
+    #testScores {
+      grid-column: 2;
+    }
   }
 }
