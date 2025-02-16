@@ -1,0 +1,197 @@
+/* Sidebar Styles */
+.sidebar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100vh;
+  width: 250px;
+  background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+  color: var(--text-light);
+  padding: 2em 0 0;
+  box-shadow: 2px 0 5px var(--box-shadow-light);
+  transform: translateX(0);
+  transition: transform var(--transition-duration) ease;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar-header {
+  padding: 0 1.5em 1em;
+  border-bottom: 1px solid var(--overlay-light);
+}
+
+.sidebar h1 {
+  font-size: 1.8em;
+  margin: 0;
+  color: var(--text-light);
+  text-align: center;
+}
+
+.sidebar nav {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 1.5em;
+}
+
+.sidebar nav a {
+  color: var(--text-light);
+  text-decoration: none;
+  padding: 0.8em 1em;
+  margin: 0.2em 0;
+  border-radius: 6px;
+  transition: all var(--transition-duration) ease;
+  background: var(--overlay-light);
+}
+
+.sidebar nav a:hover {
+  background: var(--overlay-light-hover);
+  transform: translateX(5px);
+}
+
+.sidebar .social-buttons {
+  padding: 1.5em;
+  border-top: 1px solid var(--overlay-light);
+}
+
+.sidebar-footer {
+  margin-top: auto;
+  padding: 1em;
+  text-align: center;
+  font-size: 0.9em;
+}
+
+.sidebar-toggle {
+  position: fixed;
+  top: 1em;
+  left: 1em;
+  z-index: 1001;
+  background: var(--primary);
+  border: none;
+  width: 30px;
+  height: 30px;
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  padding: 4px;
+  transition: background-color var(--transition-duration) ease,
+    transform var(--transition-duration) ease;
+  box-shadow: 0 2px 8px var(--box-shadow-light);
+}
+
+.sidebar-toggle span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--text-light);
+  transition: transform var(--transition-duration) ease,
+    opacity var(--transition-duration) ease;
+  border-radius: 2px;
+}
+
+.sidebar-toggle span:first-child {
+  transform: translateY(0);
+  transition: transform var(--transition-duration) ease;
+}
+
+.sidebar-toggle span:nth-child(2) {
+  opacity: 1;
+  transform: translateX(0);
+  transition: opacity var(--transition-duration) ease,
+    transform var(--transition-duration) ease;
+}
+
+.sidebar-toggle span:last-child {
+  transform: translateY(0);
+  transition: transform var(--transition-duration) ease;
+}
+
+/* Change default state to dashes */
+body.sidebar-collapsed .sidebar-toggle span {
+  transform: none;
+}
+
+/* Change to X when sidebar is open */
+body:not(.sidebar-collapsed) .sidebar-toggle span:first-child {
+  transform: translateY(8px) rotate(45deg);
+}
+
+body:not(.sidebar-collapsed) .sidebar-toggle span:nth-child(2) {
+  opacity: 0;
+  transform: translateX(-10px);
+}
+
+body:not(.sidebar-collapsed) .sidebar-toggle span:last-child {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+/* Collapsed Sidebar State */
+body.sidebar-collapsed .sidebar {
+  transform: translateX(-250px);
+}
+
+body.sidebar-collapsed .main-content {
+  margin-left: 0;
+  width: 100%;
+  max-width: 100%;
+}
+
+body.sidebar-collapsed .sidebar-toggle {
+  left: 1em; /* Always stay at the same position */
+}
+
+body.sidebar-collapsed .sidebar-toggle span:first-child {
+  transform: translateY(0) rotate(0);
+}
+
+body.sidebar-collapsed .sidebar-toggle span:nth-child(2) {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+body.sidebar-collapsed .sidebar-toggle span:last-child {
+  transform: translateY(0) rotate(0);
+}
+
+body.sidebar-collapsed main {
+  max-width: 1400px; /* Slightly larger when sidebar is collapsed */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .sidebar {
+    transform: translateX(-250px);
+  }
+
+  .main-content {
+    margin-left: 0;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  body.sidebar-collapsed .sidebar {
+    transform: translateX(0);
+  }
+
+  .sidebar-toggle {
+    left: 1em; /* Always stay at the same position */
+  }
+
+  body.sidebar-collapsed .sidebar-toggle {
+    left: 1em; /* Ensure it stays put */
+  }
+
+  .sidebar-footer {
+    padding: 0.8em;
+    font-size: 0.8em;
+  }
+
+  main {
+    padding: 0 1em;
+  }
+}

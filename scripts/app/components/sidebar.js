@@ -1,5 +1,6 @@
 function renderSidebar() {
   return `
+      <link rel="stylesheet" href="styles/components/sidebar.css" />
       <div class="sidebar">
         <div class="sidebar-header">
           <h1>Dhiman Seal</h1>
