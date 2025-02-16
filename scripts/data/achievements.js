@@ -3,6 +3,10 @@ function getAchievementsData() {
         "honorsAndAwards": [
             {
                 "description": "Showcased Dostana.AI, an AI-powered kirana store management system.",
+                "details": [
+                    "Part of the top 2 finalists in the Next-gen Ventures category",
+                    "Presented business plan in front of industry leaders like Google, Antler, and ONDC"
+                ],
                 "issuer": "ONDC, Google, Antler, Protean and PayTM",
                 "startDate": "May, 2024",
                 "title": "National Runner-up, Build for Bharat, Next-gen Ventures Category by ONDC, 2024"

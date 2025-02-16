@@ -16,6 +16,8 @@ function renderCerts(certs) {
   let certsHtml = certs.map(cert => `
     <div class="cert">
       <h4>${cert.title}</h4>
+      <p><em>${cert.issuer}, ${formatDateRange(cert.startDate, cert.endDate)}</em></p>
+      ${cert.description ? `<p class="description">${cert.description}</p>` : ''}
       ${cert.details ? `<ul class="details">${cert.details.map(item => `<li>${item}</li>`).join('')}</ul>` : ''}
     </div>
   `).join('');
@@ -27,7 +29,7 @@ function renderTestScores(scores) {
   container.innerHTML = scores.map(score => `
     <div class="score">
       <h4>${score.name}</h4>
-      <p><strong>${score.score}</strong> ${score.startDate ? `<em>(${score.startDate})</em>` : ''}</p>
+      <p><strong>${score.score}</strong>, ${formatDateRange(score.startDate, score.endDate)}</p>
       ${score.description ? `<p class="description">${score.description}</p>` : ''}
       ${score.details ? `<ul class="details">${score.details.map(item => `<li>${item}</li>`).join('')}</ul>` : ''}
     </div>

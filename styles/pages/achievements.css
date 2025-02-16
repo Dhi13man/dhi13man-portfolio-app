@@ -53,11 +53,11 @@
     grid-column: 1 / span 2;
   }
 
-  #achievements #testScores {
+  #achievements #certifications {
     grid-column: 1;
   }
 
-  #achievements #certifications {
+  #achievements #testScores {
     grid-column: 2;
   }
 }
