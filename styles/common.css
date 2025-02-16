@@ -37,22 +37,12 @@ html {
   --box-shadow-strong: rgba(0, 0, 0, 0.2);
   --text-shadow-header: 0 2px 4px rgba(0, 0, 0, 0.1);
   --text-shadow-nav-hover: 0 0 10px rgba(255, 255, 255, 0.3);
-  --header-overlay-gradient: linear-gradient(90deg, transparent 0%, var(--overlay-light) 50%, transparent 100%);
   --body-gradient: linear-gradient(135deg, var(--background) 0%, var(--surface) 100%);
   --placeholder-bg: #495057;
   --font-family: "Nunito", sans-serif;
   --font-size-base: 16px;
   --line-height-base: 1.6;
   --transition-duration: 0.3s;
-}
-
-/* Main Content Adjustment */
-.main-content {
-  margin: 0 0 0 250px;
-  padding: 2em;
-  transition: margin-left var(--transition-duration) ease, width var(--transition-duration) ease;
-  width: calc(100% - 250px);
-  max-width: none;
 }
 
 /* General Styles */
@@ -68,195 +58,9 @@ body {
   background-color: var(--background);
 }
 
-/* Remove background pattern */
-body::before {
-  content: none;
-}
-
-.container {
-  width: 90%;
-  max-width: 1200px;
-  margin: 20px auto;
-  overflow: hidden;
-}
-
-/* Container Styles */
-header .container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-}
-
-/* Social Buttons Styles */
-.social-buttons {
-  display: flex;
-  gap: 0.75em;
-  position: relative;
-  z-index: 2;
-  justify-content: center;
-  margin: 10px;
-}
-
-.social-buttons .btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 38px;
-  height: 38px;
-  border-radius: 50%;
-  background-color: #fff;
-  border: 1px solid var(--border);
-  box-shadow: 0 4px 8px var(--box-shadow-light);
-  transition: background-color var(--transition-duration), transform var(--transition-duration);
-  position: relative;
-  overflow: hidden;
-  padding: 5px 9px;
-  margin: 0 7.5px;
-}
-
-.social-buttons .btn img {
-  width: 18px;
-  height: 18px;
-  opacity: 0.9;
-  transition: opacity var(--transition-duration) ease;
-  vertical-align: middle;
-}
-
-.social-buttons .btn:hover img {
-  opacity: 1;
-}
-
-.social-buttons .btn::before {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 0;
-  height: 0;
-  border-radius: 50%;
-  transform: translate(-50%, -50%);
-  opacity: 0;
-  transition: width var(--transition-duration) ease, height var(--transition-duration) ease;
-}
-
-.social-buttons .btn:hover::before {
-  width: 120%;
-  height: 120%;
-  opacity: 0.2;
-}
-
-.social-buttons .btn:hover {
-  transform: scale(1.1);
-  border-color: var(--accent);
-  transition: transform var(--transition-duration) ease, box-shadow var(--transition-duration) ease, border-color var(--transition-duration) ease;
-}
-
-/* Header Styles */
-header {
-  background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
-  color: var(--text);
-  padding: 1.5em 6%;
-  position: relative;
-  overflow: hidden;
-  z-index: 1;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 20px 0;
-  box-shadow: 0 4px 8px var(--box-shadow-light);
-  text-align: center;
-  position: sticky;
-  top: 0;
-  width: 100%;
-  z-index: 1000;
-  transition: transform var(--transition-duration) ease-in-out, opacity var(--transition-duration) ease-in-out;
-}
-
-header::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 1px;
-  background: linear-gradient(
-    90deg,
-    transparent 0%,
-    var(--primary) 50%,
-    transparent 100%
-  );
-}
-
-/* Add subtle animated gradient overlay to header */
-header::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 200%;
-  height: 100%;
-  background: var(--header-overlay-gradient);
-  animation: shine 8s infinite linear;
-  z-index: 0;
-  pointer-events: none;
-}
-
 @keyframes shine {
   from { transform: translateX(-100%); }
   to { transform: translateX(50%); }
-}
-
-header h1 {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 2.8em;
-  font-weight: 700;
-  letter-spacing: -0.5px;
-  margin-bottom: 0;
-  color: var(--text-light);
-  position: relative;
-  z-index: 1;
-  text-shadow: var(--text-shadow-header);
-  margin: 0;
-  animation: fadeInDown var(--transition-duration) ease-in-out;
-}
-
-header p {
-  margin: 5px 0;
-}
-
-header a {
-  color: #fff;
-  text-decoration: none;
-  font-weight: bold;
-  transition: color var(--transition-duration);
-}
-
-header a:hover {
-  color: var(--accent);
-}
-
-header nav {
-  margin-top: 10px;
-}
-
-header ul {
-  padding: 0;
-  list-style: none;
-}
-
-header li {
-  display: inline;
-  margin: 0 15px;
-}
-
-header li a {
-  font-size: 1.1em;
-  transition: color var(--transition-duration);
-}
-
-header li a:hover {
-  color: var(--accent);
 }
 
 /* Navigation Styles */
@@ -739,12 +543,6 @@ section .content {
 
 /* Responsive Adjustments */
 @media (max-width: 768px) {
-  header {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 2em 5% 1.5em;
-  }
-
   nav {
     margin-top: 1em;
   }
@@ -937,20 +735,12 @@ a:not(nav a):not(.social-buttons .btn):hover {
 
 /* Responsive Design */
 @media (max-width: 1024px) {
-  header h1 {
-    font-size: 2.2em;
-  }
-
   section {
     padding: 25px;
   }
 }
 
 @media (max-width: 480px) {
-  header h1 {
-    font-size: 1.8em;
-  }
-
   section {
     padding: 15px;
   }
