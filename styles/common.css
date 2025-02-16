@@ -229,26 +229,6 @@ section .content {
   z-index: 1;
 }
 
-#achievements .cert,
-#achievements .award,
-#testScores .score {
-  margin-bottom: 1em;
-  padding: 1em;
-  background: var(--surface);
-  box-shadow: none;
-  border-radius: 6px;
-  -webkit-backdrop-filter: blur(5px);
-  backdrop-filter: blur(5px);
-  border-left: 4px solid var(--primary);
-}
-
-#achievements .cert:hover,
-#achievements .award:hover,
-#testScores .score:hover {
-  background: var(--surface-hover);
-  border-color: var(--primary);
-}
-
 #projects .project {
   margin-bottom: 2em;
   padding: 1.2em;
@@ -286,111 +266,6 @@ section .content {
   box-shadow: 0 4px 12px var(--box-shadow-hover);
 }
 
-/* Achievements Section Styles */
-#achievements .content {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: auto auto;
-  gap: 20px;
-}
-
-#achievements #awards {
-  grid-column: 1;
-}
-
-#achievements #testScores {
-  grid-column: 1;
-}
-
-#achievements #certifications {
-  grid-column: 1;
-}
-
-@media (min-width: 768px) {
-  #achievements .content {
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto auto;
-  }
-
-  #achievements #awards {
-    grid-column: 1 / span 2;
-  }
-
-  #achievements #testScores {
-    grid-column: 1;
-  }
-
-  #achievements #certifications {
-    grid-column: 2;
-  }
-}
-
-#achievements .cert,
-#achievements .score,
-#achievements .award {
-  position: relative;
-  padding: 1em;
-  background: var(--surface);
-  border-radius: 8px;
-  margin-bottom: 1em;
-  transition: background var(--transition-duration) ease;
-}
-
-#achievements .cert:hover,
-#achievements .score:hover,
-#achievements .award:hover {
-  background: var(--background-hover);
-}
-
-#achievements .score strong {
-  display: inline-block;
-  padding: 0.4em 0.8em;
-  background: var(--highlight);
-  color: var(--primary);
-  border-radius: 6px;
-  font-weight: 600;
-  margin-top: 0.3em;
-  text-shadow: none;
-}
-
-/* Image Placeholder Styles */
-.image-placeholder {
-  width: 100%;
-  height: 200px;
-  background-color: var(--placeholder-bg);
-  border-radius: 8px;
-  margin-bottom: 1em;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-}
-
-.image-placeholder img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  opacity: 0.7;
-}
-
-/* Achievements Section Grid */
-.achievements-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 20px;
-}
-
-.achievements-grid > div {
-  padding: 20px;
-  border: 1px solid var(--primary);
-  border-radius: 8px;
-}
-
-/* Hidden Class */
-.hidden {
-  display: none;
-}
-
 /* Responsive Adjustments */
 @media (max-width: 768px) {
   nav {
@@ -415,29 +290,8 @@ section .content {
     font-size: 2em;
   }
 
-  #achievements .content {
-    grid-template-columns: 1fr;
-  }
-
   #projects .content {
     grid-template-columns: 1fr;
-  }
-
-  .social-buttons {
-    margin-top: 1.2em;
-    gap: 1em;
-    justify-content: center;
-    margin-left: 0;
-  }
-
-  .social-buttons .btn {
-    width: 36px;
-    height: 36px;
-  }
-
-  .social-buttons .btn img {
-    width: 18px;
-    height: 18px;
   }
 }
 
@@ -464,18 +318,6 @@ a:hover {
   color: var(--primary-light);
 }
 
-/* Replace hover states with simpler version */
-.project:hover,
-.recommendation:hover,
-#achievements .cert:hover,
-#achievements .award:hover,
-#achievements .score:hover {
-  background: var(--surface-hover);
-  border-color: var(--primary);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px var(--box-shadow-hover);
-}
-
 /* (Optional) Dark theme variant */
 .dark-theme {
   --primary: #3385ff;
@@ -496,28 +338,6 @@ a:hover {
   /* Adjust other variables as needed */
 }
 
-/* Animations */
-@keyframes fadeInDown {
-  from {
-    opacity: 0;
-    transform: translateY(-20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
 
 /* Enhanced Link and Button Hover Effects */
 a:not(nav a):not(.social-buttons .btn) {

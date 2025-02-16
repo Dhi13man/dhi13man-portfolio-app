@@ -165,28 +165,6 @@ body.sidebar-collapsed main {
   max-width: 1400px; /* Slightly larger when sidebar is collapsed */
 }
 
-/* Responsive Adjustments */
-@media (max-width: 768px) {
-  .sidebar {
-    transform: translateX(-250px);
-  }
-
-  .main-content {
-    margin-left: 0;
-    width: 100%;
-    max-width: 100%;
-  }
-
-  .sidebar-footer {
-    padding: 0.8em;
-    font-size: 0.8em;
-  }
-
-  main {
-    padding: 0 1em;
-  }
-}
-
 /* Social Buttons Styles */
 .social-buttons {
   display: flex;
@@ -249,4 +227,42 @@ body.sidebar-collapsed main {
   transform: scale(1.1);
   border-color: var(--accent);
   transition: transform var(--transition-duration) ease, box-shadow var(--transition-duration) ease, border-color var(--transition-duration) ease;
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    transform: translateX(-250px);
+  }
+
+  .main-content {
+    margin-left: 0;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .sidebar-footer {
+    padding: 0.8em;
+    font-size: 0.8em;
+  }
+
+  main {
+    padding: 0 1em;
+  }
+
+  .social-buttons {
+    margin-top: 1.2em;
+    gap: 1em;
+    justify-content: center;
+    margin-left: 0;
+  }
+
+  .social-buttons .btn {
+    width: 36px;
+    height: 36px;
+  }
+
+  .social-buttons .btn img {
+    width: 18px;
+    height: 18px;
+  }
 }
