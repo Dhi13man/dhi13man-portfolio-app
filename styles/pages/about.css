@@ -43,7 +43,7 @@
   transform: translateY(-2px);
 
   .background-image {
-    opacity: 0.25;
+    opacity: 0.18;
     transform: translate(-50%, -50%) scale(1.02);
   }
 }
@@ -61,16 +61,16 @@
   transition: transform var(--transition-duration) ease,
     opacity var(--transition-duration) ease;
   white-space: nowrap;
+}
 
-  .venture {
-    background: var(--accent);
-    color: var(--text-light);
-  }
+.type-badge.venture {
+  background: var(--accent);
+  color: var(--text-light);
+}
 
-  .project {
-    background: var(--primary);
-    color: var(--text-light);
-  }
+.type-badge.project {
+  background: var(--primary);
+  color: var(--text-light);
 }
 
 .type-badge:hover {
