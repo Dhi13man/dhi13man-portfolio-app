@@ -22,9 +22,9 @@ function getVenturesData() {
             "about": "Revolutionizing MBA research with instant survey rewards. Seamlessly connecting MBA students with their peers' research needs through paid survey participation.",
             "images": {
                 "others": [
-                    "assets/ventures/onlyforms-value_proposition.png"
+                    "assets/ventures/onlyforms-value_proposition.webp"
                 ],
-                "primary": "assets/ventures/onlyforms-delight.png"
+                "primary": "assets/ventures/onlyforms-delight.webp"
             },
             "links": {
                 "primary": "https://onlyforms.org"

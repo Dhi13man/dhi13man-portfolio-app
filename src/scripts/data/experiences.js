@@ -56,7 +56,7 @@ function getExperiencesData() {
             "about": "Agritech startup revolutionizing Northeast India's agricultural practices through technology-driven solutions and market access platforms.",
             "images": {
                 "others": [],
-                "primary": "assets/work_experiences/agrijod-cover.png"
+                "primary": "assets/work_experiences/agrijod-cover.webp"
             },
             "links": {
                 "primary": "https://agrijod.in"
@@ -106,7 +106,7 @@ function getExperiencesData() {
             "about": "Pioneered peer-to-peer ATM cash network solution in Hungary through innovative mobile application connecting cash seekers with providers.",
             "images": {
                 "others": [],
-                "primary": "assets/work_experiences/cashtic.png"
+                "primary": "assets/work_experiences/cashtic.webp"
             },
             "links": {
                 "primary": "https://cashtic.com"
