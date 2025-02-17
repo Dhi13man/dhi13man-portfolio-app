@@ -6,16 +6,6 @@ The website is built using HTML, CSS, and JavaScript. It is designed to be respo
 
 It is deployed on <https://dhimanseal.com>.
 
-## Screenshots
-
-| About Page - Desktop  |
-| --------------------- |
-| [![About Page - Desktop](screenshots/desktop-about.png)](https://www.dhimanseal.com/) |
-
-| Ventures Page - Mobile | Menu Open - Mobile |
-|------------------------|--------------------|
-| [![Ventures Page - Mobile](screenshots/mobile-ventures.png)](https://www.dhimanseal.com/ventures) | [![Menu Open - Mobile](screenshots/mobile-menu.png)](https://www.dhimanseal.com/achievements)
-
 ## Structure
 
 - assets – Images and icons.  
@@ -27,6 +17,16 @@ It is deployed on <https://dhimanseal.com>.
 
 1. Open index.html in a browser or serve the folder using any local server.  
 2. Explore additional pages like projects.html to view detailed projects.
+
+## Screenshots
+
+| About Page - Desktop  |
+| --------------------- |
+| [![About Page - Desktop](screenshots/desktop-about.png)](https://www.dhimanseal.com/) |
+
+| Ventures Page - Mobile | Menu Open - Mobile |
+|------------------------|--------------------|
+| [![Ventures Page - Mobile](screenshots/mobile-ventures.png)](https://www.dhimanseal.com/ventures) | [![Menu Open - Mobile](screenshots/mobile-menu.png)](https://www.dhimanseal.com/achievements) |
 
 ## Contributing
 
