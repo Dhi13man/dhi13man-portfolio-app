@@ -56,7 +56,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const body = document.body;
 
   // Set initial state for mobile
-  if (window.innerWidth <= 768) {
+  const isMobile = window.innerWidth <= 768;
+  if (isMobile) {
     body.classList.add('sidebar-collapsed');
   }
 
@@ -68,10 +69,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Close sidebar when clicking outside on mobile
   document.addEventListener('click', (e) => {
-    if (window.innerWidth <= 768 && 
+    if (isMobile && 
         !e.target.closest('.sidebar') && 
-        !e.target.closest('.sidebar-toggle') &&
-        !body.classList.contains('sidebar-collapsed')) {
+        !e.target.closest('.sidebar-toggle')) {
       body.classList.add('sidebar-collapsed');
     }
   });
@@ -79,8 +79,8 @@ document.addEventListener('DOMContentLoaded', () => {
   // Close sidebar when clicking nav links (especially on mobile)
   document.querySelectorAll('.sidebar nav a').forEach(link => {
     link.addEventListener('click', () => {
-      if (window.innerWidth <= 768) {
-        body.classList.remove('sidebar-collapsed');
+      if (isMobile) {
+        body.classList.add('sidebar-collapsed');
       }
     });
   });

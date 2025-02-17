@@ -235,20 +235,47 @@ body.sidebar-collapsed main {
 
 @media (max-width: 768px) {
   .sidebar {
-    transform: translateX(-250px);
+    transform: translateX(-100vw);
+    width: 100%;
+    background: var(--primary);
+    opacity: 0.97;
   }
 
-  .sidebar-toggle {
-    left: 1em;
-    transition: left var(--transition-duration) ease;
+  .main-content {
+    margin-left: 0;
+    width: 100%;
   }
 
+  /* Reset transforms for non-collapsed state */
   body:not(.sidebar-collapsed) .sidebar {
     transform: translateX(0);
   }
 
+  /* Ensure collapsed state properly hides sidebar */
+  body.sidebar-collapsed .sidebar {
+    transform: translateX(-100vw);  /* Match initial transform */
+  }
+
+  /* Overlay and toggle button styles remain the same */
+  body:not(.sidebar-collapsed)::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+  }
+
+  .sidebar-toggle {
+    left: 1em;
+  }
+
   body:not(.sidebar-collapsed) .sidebar-toggle {
     left: 1em;
+    position: fixed;
+    z-index: 1001;
   }
 
   .main-content {
