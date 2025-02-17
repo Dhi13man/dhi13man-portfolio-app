@@ -3,7 +3,7 @@ function renderSidebar() {
       <link rel="stylesheet" href="styles/components/sidebar.css" />
       <div class="sidebar">
         <div class="sidebar-header">
-          <h1>Dhiman Seal</h1>
+          <h2>Dhiman Seal</h2>
         </div>
         <nav>
           <a href="index.html">About</a>
