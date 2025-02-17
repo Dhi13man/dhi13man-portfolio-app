@@ -37,11 +37,19 @@ function renderSidebar() {
     `;
 }
 
-// After DOM is ready, inject sidebar into the container
 document.addEventListener('DOMContentLoaded', () => {
   const sidebarContainer = document.getElementById('sidebar-container');
   if (sidebarContainer) {
     sidebarContainer.innerHTML = renderSidebar();
+    
+    // Set active nav item
+    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+    const navLinks = document.querySelectorAll('.sidebar nav a');
+    navLinks.forEach(link => {
+      if (link.getAttribute('href') === currentPage) {
+        link.classList.add('nav-active');
+      }
+    });
   }
   
   const toggleButton = document.querySelector('.sidebar-toggle');

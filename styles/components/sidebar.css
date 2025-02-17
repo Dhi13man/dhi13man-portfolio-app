@@ -44,6 +44,12 @@
   background: var(--overlay-light);
 }
 
+.sidebar nav a.nav-active {
+  background: var(--overlay-light-hover);
+  border: 1px solid var(--text-light);
+  transform: translateX(5px);
+}
+
 .sidebar nav a:hover {
   background: var(--overlay-light-hover);
   transform: translateX(5px);
