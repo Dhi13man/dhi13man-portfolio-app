@@ -84,8 +84,6 @@
   align-items: center;
   gap: 6px;
   padding: 4px;
-  transition: background-color var(--transition-duration) ease,
-    transform var(--transition-duration) ease;
   box-shadow: 0 2px 8px var(--box-shadow-light);
 }
 
