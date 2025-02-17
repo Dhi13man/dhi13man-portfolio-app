@@ -61,6 +61,10 @@
   transition: transform var(--transition-duration) ease,
     opacity var(--transition-duration) ease;
   white-space: nowrap;
+
+  .type-badge {
+    padding: 0.15em 0.6em;
+  }
 }
 
 .type-badge.venture {
