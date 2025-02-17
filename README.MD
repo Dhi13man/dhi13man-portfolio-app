@@ -10,11 +10,11 @@ It is deployed on <https://dhimanseal.com>.
 
 | About Page - Desktop  |
 | --------------------- |
-| [<img src="screenshots/desktop-about.png" alt="About Page - Desktop">](https://www.dhimanseal.com/) |
+| [![About Page - Desktop](screenshots/desktop-about.png)](https://www.dhimanseal.com/) |
 
 | Ventures Page - Mobile | Menu Open - Mobile |
 |------------------------|--------------------|
-| [<img height="450" width="350" src="screenshots/mobile-ventures.png" alt="Ventures Page - Mobile">](https://www.dhimanseal.com/ventures) | [<img height="450" width="350" src="screenshots/mobile-menu.png" alt="Menu Open - Mobile">](https://www.dhimanseal.com/achievements)
+| [![Ventures Page - Mobile](screenshots/mobile-ventures.png)](https://www.dhimanseal.com/ventures) | [![Menu Open - Mobile](screenshots/mobile-menu.png)](https://www.dhimanseal.com/achievements)
 
 ## Structure
 
