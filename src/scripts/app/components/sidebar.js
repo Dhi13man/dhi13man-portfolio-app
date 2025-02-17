@@ -43,12 +43,10 @@ document.addEventListener('DOMContentLoaded', () => {
     sidebarContainer.innerHTML = renderSidebar();
     
     // Set active nav item
-    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-    currentPage.replace('.html', '');
-
+    const currentPage = window.location.pathname?.split('/')?.pop()?.replace('.html', '') || 'index';
     const navLinks = document.querySelectorAll('.sidebar nav a');
     navLinks.forEach(link => {
-      const navPage = link.getAttribute('href').replace('.html', '');
+      const navPage = link.getAttribute('href')?.replace('.html', '');
       if (navPage === currentPage) {
         link.classList.add('nav-active');
       }
