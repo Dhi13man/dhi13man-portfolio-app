@@ -44,9 +44,12 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Set active nav item
     const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+    currentPage.replace('.html', '');
+
     const navLinks = document.querySelectorAll('.sidebar nav a');
     navLinks.forEach(link => {
-      if (link.getAttribute('href') === currentPage) {
+      const navPage = link.getAttribute('href').replace('.html', '');
+      if (navPage === currentPage) {
         link.classList.add('nav-active');
       }
     });
