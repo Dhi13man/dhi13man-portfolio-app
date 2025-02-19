@@ -10,7 +10,7 @@
     transition: all var(--transition-duration) ease;
 
     .background-image {
-      opacity: 0.18;
+      opacity: 0.15;
       transform: translate(-50%, -50%) scale(1.02);
     }
 
