@@ -1,37 +1,91 @@
 # dhi13man-portfolio
 
-A personal portfolio website showcasing achievements, ventures, work experiences and projects of Dhiman Seal.
+A personal portfolio website showcasing the achievements, ventures, work experiences, and projects of Dhiman Seal.
 
-The website is built using HTML, CSS, and JavaScript. It is designed to be responsive and mobile-friendly.
+Live demo: [dhimanseal.com](https://dhimanseal.com)
 
-It is deployed on <https://dhimanseal.com>.
+## Table of Contents
 
-## Structure
+- [Overview](#overview)
+- [Features](#features)
+- [Technologies](#technologies)
+- [Pages](#pages)
+- [Getting Started](#getting-started)
+- [Development](#development)
+- [Deployment](#deployment)
+- [Contributing](#contributing)
+- [License](#license)
 
-- assets – Images and icons.  
-- scripts – Front-end functionality.  
-- styles – CSS files.  
-- data – Public JSON for structured data.  
+## Overview
 
-## Usage
+This static website serves as an online portfolio for Dhiman Seal, highlighting professional achievements, educational background, work experiences, technical projects, recommendations, and entrepreneurial ventures.
 
-1. Open index.html in a browser or serve the folder using any local server.  
-2. Explore additional pages like projects.html to view detailed projects.
+## Features
 
-## Screenshots
+- Responsive design for desktop and mobile devices
+- Sidebar navigation with active state indication
+- Dynamic content loaded from JSON data files
+- SEO-friendly markup with structured data (JSON-LD)
+- Image optimization and lazy loading for performance
+- Accessible and keyboard navigable
 
-| About Page - Desktop  |
-| --------------------- |
-| [![About Page - Desktop](screenshots/desktop-about.png)](https://www.dhimanseal.com/) |
+## Technologies
 
-| Ventures Page - Mobile | Menu Open - Mobile |
-|------------------------|--------------------|
-| [![Ventures Page - Mobile](screenshots/mobile-ventures.png)](https://www.dhimanseal.com/ventures) | [![Menu Open - Mobile](screenshots/mobile-menu.png)](https://www.dhimanseal.com/achievements) |
+- HTML5 & CSS3 (Flexbox, Grid)
+- JavaScript (ES6 Modules)
+- JSON-LD for structured data (`src/assets/data/ld.json`)
+- No external JS frameworks (vanilla JS)
+- Organized CSS with global, component, and page-level styles
+
+## Pages
+
+- **Home** (`index.html`): Introduction and quick navigation.
+- **About** (`about.html`): Personal bio and mission.
+- **Achievements**: Awards, certifications, and milestones.
+- **Education**: Academic background and honors.
+- **Experiences**: Professional roles and responsibilities.
+- **Projects**: Technical projects with details and links.
+- **Recommendations**: Testimonials and endorsements.
+- **Ventures**: Entrepreneurial initiatives and startup work.
+
+## Getting Started
+
+Clone the repository:
+
+```bash
+git clone https://github.com/dhimanseal/dhi13man-portfolio.git
+cd dhi13man-portfolio
+```
+
+Serve locally:
+
+```bash
+# Python 3
+python3 -m http.server 8000
+
+# Or with npm
+npm install -g serve
+serve .
+```
+
+Open `src/index.html` in your browser or navigate to `http://localhost:8000`.
+
+## Development
+
+- Edit HTML pages in `src/`.
+- Update styles in `styles/`.
+- Modify or add JavaScript in `scripts/`.
+- Manage assets under `src/assets/`.
+- For JSON data changes, edit files in `scripts/data/` and run `private/data_sorter.py`.
+
+## Deployment
+
+Use GitHub Pages, Netlify, or any static hosting. Pushing to `main` branch triggers deployment if configured.
 
 ## Contributing
 
-Fork or clone the repository, then modify HTML, CSS, or JS files as needed. Pull requests are welcome.
+Contributions welcome! Fork the repo, create a branch, and submit a pull request. Please open an issue for major changes.
 
 ## License
 
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License. See [LICENSE](LICENSE) for details.
