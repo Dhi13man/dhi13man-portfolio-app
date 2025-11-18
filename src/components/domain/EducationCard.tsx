@@ -17,7 +17,7 @@ export function EducationCard({ education }: EducationCardProps) {
       {education.images?.primary && (
         <div className="relative w-full h-48 overflow-hidden rounded-t-2xl">
           <Image
-            src={`/${education.images.primary}`}
+            src={education.images.primary}
             alt={`${education.name} banner`}
             fill
             className="object-cover transition-transform duration-500 group-hover:scale-105"

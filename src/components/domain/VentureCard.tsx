@@ -16,7 +16,7 @@ export function VentureCard({ venture }: VentureCardProps) {
       {venture.images?.primary && (
         <div className="relative w-full h-48 overflow-hidden rounded-t-2xl">
           <Image
-            src={`/${venture.images.primary}`}
+            src={venture.images.primary}
             alt={`${venture.name} banner`}
             fill
             className="object-cover transition-transform duration-500 group-hover:scale-105"

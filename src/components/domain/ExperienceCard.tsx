@@ -16,7 +16,7 @@ export function ExperienceCard({ experience }: ExperienceCardProps) {
       {experience.images?.primary && (
         <div className="relative w-full h-48 overflow-hidden rounded-t-2xl">
           <Image
-            src={`/${experience.images.primary}`}
+            src={experience.images.primary}
             alt={`${experience.name} logo`}
             fill
             className="object-cover transition-transform duration-500 group-hover:scale-105"
