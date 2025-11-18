@@ -16,7 +16,7 @@ export default function ExperiencePage() {
           <div className="text-center max-w-2xl mx-auto">
             <h1 className="text-4xl md:text-5xl font-bold mb-4">Experience</h1>
             <p className="text-lg text-muted-foreground">
-              A journey through my professional career, showcasing the companies I've worked with and the impact I've made.
+              A journey through my professional career, showcasing the companies I&apos;ve worked with and the impact I&apos;ve made.
             </p>
           </div>
 

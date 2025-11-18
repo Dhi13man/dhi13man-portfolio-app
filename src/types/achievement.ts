@@ -12,6 +12,7 @@ export interface Certification extends DateRange {
   issuer: string
   description: string
   details?: string[]
+  credentialId?: string
 }
 
 export interface TestScore extends DateRange {

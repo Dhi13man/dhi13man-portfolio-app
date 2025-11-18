@@ -255,7 +255,7 @@ export const achievements: Achievements = {
       title: 'Machine Learning',
       endDate: 'Sep 2018',
     },
-  ] as any,
+  ],
   testScores: [
     {
       description: 'Top 10% performance in national technical assessment for software roles.',

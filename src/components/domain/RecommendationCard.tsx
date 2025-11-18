@@ -17,7 +17,7 @@ export function RecommendationCard({ recommendation }: RecommendationCardProps) 
 
       <CardContent className="space-y-4">
         <blockquote className="text-base leading-relaxed text-muted-foreground italic">
-          "{recommendation.text}"
+          &ldquo;{recommendation.text}&rdquo;
         </blockquote>
 
         <div className="flex items-center gap-2">
