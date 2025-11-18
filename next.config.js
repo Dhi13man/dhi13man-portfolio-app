@@ -8,7 +8,7 @@ const nextConfig = {
   trailingSlash: true,
   // Optimize for static export
   reactStrictMode: true,
-  swcMinify: true,
+  // swcMinify is now always enabled by default in Next.js 15+
 }
 
 module.exports = nextConfig
