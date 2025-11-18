@@ -72,8 +72,12 @@ npm-shrinkwrap.json
 .vscode/
 .idea/
 
-# Ignore build artifacts
-public/
+# Next.js build artifacts
+/.next/
+/out/
+
+# Old source (backup)
+/src-old
 
 # Ignore temporary folders
 tmp/
