@@ -22,8 +22,8 @@ export const ventures: Venture[] = [
   {
     about: "Revolutionizing MBA research with instant survey rewards. Seamlessly connecting MBA students with their peers' research needs through paid survey participation.",
     images: {
-      others: ['assets/ventures/onlyforms-value_proposition.webp'],
-      primary: 'assets/ventures/onlyforms-delight.webp',
+      others: ['/assets/ventures/onlyforms-value_proposition.webp'],
+      primary: '/assets/ventures/onlyforms-delight.webp',
     },
     links: {
       primary: 'https://onlyforms.org',
@@ -48,8 +48,8 @@ export const ventures: Venture[] = [
   {
     about: "Food subscription company delivering chef-designed recipes with pre-portioned fresh ingredients daily to customers' doorstep.",
     images: {
-      others: ['assets/ventures/banalo-ui_mockup.webp'],
-      primary: 'assets/ventures/banalo-value_proposition.png',
+      others: ['/assets/ventures/banalo-ui_mockup.webp'],
+      primary: '/assets/ventures/banalo-value_proposition.png',
     },
     links: {
       primary: 'https://www.eminencerobotics.org/banalo',
@@ -74,8 +74,8 @@ export const ventures: Venture[] = [
   {
     about: 'Student-led organization developing innovative robotics/IoT solutions, participating in national competitions and automation projects.',
     images: {
-      others: ['assets/ventures/eminence_robotics-products.jpeg'],
-      primary: 'assets/ventures/eminence_robotics-accolades.jpeg',
+      others: ['/assets/ventures/eminence_robotics-products.jpeg'],
+      primary: '/assets/ventures/eminence_robotics-accolades.jpeg',
     },
     links: {
       primary: 'https://eminencerobotics.org',
@@ -100,8 +100,8 @@ export const ventures: Venture[] = [
   {
     about: 'Edtech initiative providing hands-on technical education in robotics, electronics, and software development for Northeast Indian students.',
     images: {
-      others: ['assets/ventures/techengio-demo.jpeg'],
-      primary: 'assets/ventures/techengio-workshop.jpeg',
+      others: ['/assets/ventures/techengio-demo.jpeg'],
+      primary: '/assets/ventures/techengio-workshop.jpeg',
     },
     links: {
       primary: 'https://facebook.com/TechEngio/',

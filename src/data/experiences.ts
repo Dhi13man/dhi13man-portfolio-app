@@ -5,7 +5,7 @@ export const experiences: Experience[] = [
     about: "India's leading investment platform serving millions of users with a mission to democratize financial services. Offers seamless digital access to stocks, mutual funds, and financial products.",
     images: {
       others: [],
-      primary: 'assets/work_experiences/growwin-logo.png',
+      primary: '/assets/work_experiences/growwin-logo.png',
     },
     links: {
       others: ['https://linkedin.com/company/groww'],
@@ -55,7 +55,7 @@ export const experiences: Experience[] = [
     about: "Agritech startup revolutionizing Northeast India's agricultural practices through technology-driven solutions and market access platforms.",
     images: {
       others: [],
-      primary: 'assets/work_experiences/agrijod-cover.webp',
+      primary: '/assets/work_experiences/agrijod-cover.webp',
     },
     links: {
       primary: 'https://agrijod.in',
@@ -81,7 +81,7 @@ export const experiences: Experience[] = [
     about: 'Global freelance services marketplace connecting businesses with skilled professionals across industries.',
     images: {
       others: [],
-      primary: 'assets/work_experiences/fiverr-profile.png',
+      primary: '/assets/work_experiences/fiverr-profile.png',
     },
     links: {
       primary: 'https://fiverr.com/dhiman13',
@@ -105,7 +105,7 @@ export const experiences: Experience[] = [
     about: 'Pioneered peer-to-peer ATM cash network solution in Hungary through innovative mobile application connecting cash seekers with providers.',
     images: {
       others: [],
-      primary: 'assets/work_experiences/cashtic.webp',
+      primary: '/assets/work_experiences/cashtic.webp',
     },
     links: {
       primary: 'https://cashtic.com',

@@ -1,4 +1,5 @@
 import * as React from 'react'
+import { Slot } from '@radix-ui/react-slot'
 import { cn } from '@/lib/utils'
 
 export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
@@ -8,7 +9,9 @@ export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElemen
 }
 
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ className, variant = 'primary', size = 'md', children, ...props }, ref) => {
+  ({ className, variant = 'primary', size = 'md', asChild = false, children, ...props }, ref) => {
+    const Comp = asChild ? Slot : 'button'
+
     const baseStyles =
       'inline-flex items-center justify-center whitespace-nowrap rounded-lg font-semibold transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 relative overflow-hidden group'
 
@@ -27,8 +30,20 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       lg: 'h-14 px-8 py-3 text-lg',
     }
 
+    if (asChild) {
+      return (
+        <Comp
+          className={cn(baseStyles, variants[variant], sizes[size], className)}
+          ref={ref}
+          {...props}
+        >
+          {children}
+        </Comp>
+      )
+    }
+
     return (
-      <button
+      <Comp
         className={cn(baseStyles, variants[variant], sizes[size], className)}
         ref={ref}
         {...props}
@@ -37,7 +52,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
           <span className="absolute inset-0 bg-primary-600 translate-y-full group-hover:translate-y-0 transition-transform duration-735 ease-pylon -z-10" />
         )}
         <span className="relative z-10">{children}</span>
-      </button>
+      </Comp>
     )
   }
 )

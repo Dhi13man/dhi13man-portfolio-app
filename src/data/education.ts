@@ -19,8 +19,8 @@ export const education: Education[] = [
       },
     ],
     images: {
-      others: ['assets/education/nits-achievements.png'],
-      primary: 'assets/education/nits-banner.jpeg',
+      others: ['/assets/education/nits-achievements.png'],
+      primary: '/assets/education/nits-banner.jpeg',
     },
     links: {
       others: [

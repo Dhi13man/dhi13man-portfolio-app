@@ -11,8 +11,8 @@ export const projects: Project[] = [
     ],
     endDate: 'Jun 2024',
     images: {
-      primary: 'assets/projects/dostana_ai.png',
-      others: ['assets/projects/dostana_ai-win.jpeg'],
+      primary: '/assets/projects/dostana_ai.png',
+      others: ['/assets/projects/dostana_ai-win.jpeg'],
     },
     links: {
       primary: 'https://www.youtube.com/watch?v=WUNkzE9AdW0',
@@ -40,7 +40,7 @@ export const projects: Project[] = [
     endDate: 'Present',
     images: {
       others: [],
-      primary: 'assets/projects/spring_multi_data_source.jpeg',
+      primary: '/assets/projects/spring_multi_data_source.jpeg',
     },
     links: {
       others: [
@@ -61,7 +61,7 @@ export const projects: Project[] = [
     ],
     endDate: 'Feb 2022',
     images: {
-      primary: 'assets/projects/auto_proxy_wifi.png',
+      primary: '/assets/projects/auto_proxy_wifi.png',
     },
     links: {
       primary: 'https://github.com/Dhi13man/auto_proxy_wifi',
@@ -80,7 +80,7 @@ export const projects: Project[] = [
     endDate: 'Present',
     images: {
       others: [],
-      primary: 'assets/projects/open_route_service.jpeg',
+      primary: '/assets/projects/open_route_service.jpeg',
     },
     links: {
       others: ['http://github.com/Dhi13man/open_route_service'],
@@ -106,7 +106,7 @@ export const projects: Project[] = [
     endDate: 'Present',
     images: {
       others: [],
-      primary: 'assets/projects/nordigen_integration.png',
+      primary: '/assets/projects/nordigen_integration.png',
     },
     links: {
       others: [
@@ -155,7 +155,7 @@ export const projects: Project[] = [
     ],
     endDate: 'Present',
     images: {
-      primary: 'assets/projects/moor2csv.png',
+      primary: '/assets/projects/moor2csv.png',
     },
     links: {
       others: ['https://github.com/Dhi13man/moor2csv'],
@@ -176,7 +176,7 @@ export const projects: Project[] = [
     endDate: 'Apr 2021',
     images: {
       others: [],
-      primary: 'assets/projects/safesync-dashboard.jpeg',
+      primary: '/assets/projects/safesync-dashboard.jpeg',
     },
     links: {
       primary: 'https://github.com/Dhi13man/SafeSyncIoT',
@@ -216,7 +216,7 @@ export const projects: Project[] = [
     endDate: 'Apr 2020',
     images: {
       others: [],
-      primary: 'assets/projects/numcuts-dashboard.jpeg',
+      primary: '/assets/projects/numcuts-dashboard.jpeg',
     },
     links: {
       primary: 'https://github.com/Dhi13man/NumCuts',
@@ -235,7 +235,7 @@ export const projects: Project[] = [
     endDate: 'Dec 2019',
     images: {
       others: [],
-      primary: 'assets/projects/infrawake.jpeg',
+      primary: '/assets/projects/infrawake.jpeg',
     },
     links: {
       primary: 'https://youtube.com/watch?v=hqWcnQ520LQ',
