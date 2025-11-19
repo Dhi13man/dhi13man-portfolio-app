@@ -3,21 +3,50 @@ import type { Venture } from "@/types";
 export const ventures: Venture[] = [
   {
     about:
-      "Building a B2B EdTech SaaS targeting top-tier institutions in India",
-    name: "EdTech Startup - Stealth Mode",
+      "Building a B2B MedTech SaaS targeting top-tier homeopathic institutions in India",
+    name: "Med-Tech Startup - Stealth Mode",
     roles: [
       {
         description:
-          "Developing a Ed-Tech platform for top-tier institutions in India. More details to be revealed soon.",
+          "Developing a Med-Tech platform for top-tier homeopathic institutions in India. More details to be revealed soon.",
         details: [
-          "Performed analysis of major competitors in the market",
-          "Interviewed multiple stakeholders from top-tier IIMs",
+          "Discussed requirements of multiple stakeholders from top-tier institutions",
+          "Researched industry tools and workflows to identify gaps",
           "Developing value proposition and business model",
         ],
         endDate: "Present",
         location: "India",
-        startDate: "January 2025",
+        startDate: "Nov 2025",
         title: "Co-Founder",
+      },
+    ],
+  },
+  {
+    about:
+      "Agritech startup revolutionizing Northeast India's agricultural practices. Architected comprehensive technical infrastructure and deep business logic that led to acquisition by KhetiOx with complete tech transfer in September 2025.",
+    images: {
+      others: [],
+      primary: "/assets/work_experiences/agrijod-cover.webp",
+    },
+    links: {
+      primary: "https://agrijod.in",
+    },
+    name: "AgriJod",
+    roles: [
+      {
+        description:
+          "Architected and delivered entire technical infrastructure as principal technical advisor, creating the core value proposition that led to successful acquisition by KhetiOx.",
+        details: [
+          "Built comprehensive technical architecture and deep business logic across multiple product verticals",
+          "Established scalable AWS infrastructure with multi-profile CI/CD pipelines",
+          "Integrated critical third-party services including payment gateways and observability systems",
+          "Enabled strategic partnerships with Startup India, IIT Guwahati Technology Innovation Hub, Indigram Labs, NEEDP",
+          "Successfully executed complete tech transfer to KhetiOx in September 2025",
+        ],
+        endDate: "Apr 2024",
+        location: "Guwahati, Assam, India | Remote",
+        startDate: "May 2023",
+        title: "Technical Advisor | Chief Architect",
       },
     ],
   },

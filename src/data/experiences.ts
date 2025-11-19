@@ -5,7 +5,7 @@ export const experiences: Experience[] = [
     about:
       "India's leading investment platform serving millions of users with a mission to democratize financial services. Offers seamless digital access to stocks, mutual funds, and financial products.",
     images: {
-      others: [],
+      others: ["/assets/work_experiences/growwin-cert.jpg"],
       primary: "/assets/work_experiences/growwin-logo.png",
     },
     links: {
@@ -52,34 +52,6 @@ export const experiences: Experience[] = [
         location: "Bengaluru, Karnataka, India | Remote",
         startDate: "Jan 2022",
         title: "Software Engineer Intern - Backend",
-      },
-    ],
-  },
-  {
-    about:
-      "Agritech startup revolutionizing Northeast India's agricultural practices through technology-driven solutions and market access platforms.",
-    images: {
-      others: [],
-      primary: "/assets/work_experiences/agrijod-cover.webp",
-    },
-    links: {
-      primary: "https://agrijod.in",
-    },
-    name: "AgriJod",
-    roles: [
-      {
-        description:
-          "Served as principal technical advisor, architecting core infrastructure and product verticals.",
-        details: [
-          "Designed technical architecture for multiple product verticals",
-          "Established AWS infrastructure with multi-profile CI/CD pipelines",
-          "Integrated critical third-party services like payment gateways, and built observability",
-          "Enabled partnerships with Startup India, IIT Guwahati Technology Innovation Hub, Indigram Labs, NEEDP, etc",
-        ],
-        endDate: "Apr 2024",
-        location: "Guwahati, Assam, India | Remote",
-        startDate: "May 2023",
-        title: "Technical Advisor",
       },
     ],
   },

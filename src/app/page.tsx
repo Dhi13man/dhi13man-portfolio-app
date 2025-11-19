@@ -38,20 +38,8 @@ export default function Home() {
             <h1 className="text-64 font-display font-bold text-text-primary">
               Dhiman Seal
             </h1>
-            <p className="text-20 text-text-secondary font-medium">
-              {aboutData.tagline}
-            </p>
             {/* Social Links */}
             <div className="flex items-center justify-center gap-4 pt-2">
-              <a
-                href="https://github.com/Dhi13man"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-text-tertiary hover:text-accent transition-colors duration-fast"
-                aria-label="GitHub Profile"
-              >
-                <Github className="w-6 h-6" />
-              </a>
               <a
                 href="https://www.linkedin.com/in/dhi13man/"
                 target="_blank"
@@ -60,6 +48,15 @@ export default function Home() {
                 aria-label="LinkedIn Profile"
               >
                 <Linkedin className="w-6 h-6" />
+              </a>
+              <a
+                href="https://github.com/Dhi13man"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-text-tertiary hover:text-accent transition-colors duration-fast"
+                aria-label="GitHub Profile"
+              >
+                <Github className="w-6 h-6" />
               </a>
               <a
                 href="https://medium.com/@dhi13man"
@@ -78,6 +75,9 @@ export default function Home() {
                 </svg>
               </a>
             </div>
+            <p className="text-20 text-text-secondary font-medium">
+              {aboutData.tagline}
+            </p>
           </div>
         </div>
       </Section>
