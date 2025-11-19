@@ -3,7 +3,6 @@
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { cn } from '@/lib/utils'
-import { Container } from './Container'
 import { useState } from 'react'
 import { Menu, X } from 'lucide-react'
 
@@ -23,12 +22,12 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-50 bg-background/80 backdrop-blur-sm border-b border-border">
-      <Container>
+      <div className="max-w-[1200px] mx-auto px-8">
         <nav className="flex items-center justify-between py-4">
           {/* Logo */}
           <Link
             href="/"
-            className="text-xl font-bold text-foreground hover:text-primary transition-colors"
+            className="font-display text-20 font-bold text-text-primary hover:text-accent transition-colors duration-fast"
           >
             DS
           </Link>
@@ -42,15 +41,15 @@ export function Header() {
                   key={item.name}
                   href={item.href}
                   className={cn(
-                    'px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 relative',
+                    'px-3 py-2 rounded text-14 font-medium transition-all duration-fast relative',
                     isActive
-                      ? 'text-primary'
-                      : 'text-muted-foreground hover:text-foreground hover:bg-accent'
+                      ? 'text-accent'
+                      : 'text-text-tertiary hover:text-text-primary hover:bg-hover-bg'
                   )}
                 >
                   {item.name}
                   {isActive && (
-                    <span className="absolute bottom-1 left-1/2 -translate-x-1/2 w-1 h-1 rounded-full bg-primary" />
+                    <span className="absolute bottom-1 left-1/2 -translate-x-1/2 w-1 h-1 rounded-full bg-accent" />
                   )}
                 </Link>
               )
@@ -60,18 +59,18 @@ export function Header() {
           {/* Mobile menu button */}
           <button
             type="button"
-            className="md:hidden p-2 text-muted-foreground hover:text-foreground transition-colors"
+            className="md:hidden p-2 text-text-tertiary hover:text-text-primary transition-colors duration-fast"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label="Toggle menu"
           >
-            {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
           </button>
         </nav>
 
         {/* Mobile Navigation */}
         {mobileMenuOpen && (
           <div className="md:hidden pb-4 border-t border-border mt-4 pt-4">
-            <div className="flex flex-col gap-2">
+            <div className="flex flex-col gap-1">
               {navigation.map((item) => {
                 const isActive = pathname === item.href
                 return (
@@ -79,10 +78,10 @@ export function Header() {
                     key={item.name}
                     href={item.href}
                     className={cn(
-                      'px-4 py-3 rounded-lg text-sm font-medium transition-all',
+                      'px-3 py-2 rounded text-14 font-medium transition-all duration-fast',
                       isActive
-                        ? 'text-primary bg-accent'
-                        : 'text-muted-foreground hover:text-foreground hover:bg-accent'
+                        ? 'text-accent bg-hover-bg'
+                        : 'text-text-tertiary hover:text-text-primary hover:bg-hover-bg'
                     )}
                     onClick={() => setMobileMenuOpen(false)}
                   >
@@ -93,7 +92,7 @@ export function Header() {
             </div>
           </div>
         )}
-      </Container>
+      </div>
     </header>
   )
 }

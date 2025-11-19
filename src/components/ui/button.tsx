@@ -13,33 +13,23 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     const Comp = asChild ? Slot : 'button'
 
     const baseStyles =
-      'inline-flex items-center justify-center whitespace-nowrap rounded-lg font-semibold transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 relative overflow-hidden group'
+      'inline-flex items-center justify-center whitespace-nowrap rounded font-medium transition-all duration-fast focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background disabled:pointer-events-none disabled:opacity-50'
 
     const variants = {
       primary:
-        'bg-primary text-primary-foreground hover:-translate-y-0.5 hover:shadow-glow',
+        'bg-accent text-text-primary hover:bg-accent-hover',
       secondary:
-        'bg-secondary text-secondary-foreground hover:bg-secondary/80 border border-border',
-      ghost: 'hover:bg-accent hover:text-accent-foreground',
-      link: 'text-primary underline-offset-4 hover:underline',
+        'border border-border text-accent hover:border-border-hover hover:bg-hover-bg',
+      ghost:
+        'text-text-secondary hover:text-text-primary hover:bg-hover-bg',
+      link:
+        'text-accent hover:text-accent-hover underline-offset-4 hover:underline',
     }
 
     const sizes = {
-      sm: 'h-9 px-4 text-sm',
-      md: 'h-11 px-6 py-2',
-      lg: 'h-14 px-8 py-3 text-lg',
-    }
-
-    if (asChild) {
-      return (
-        <Comp
-          className={cn(baseStyles, variants[variant], sizes[size], className)}
-          ref={ref}
-          {...props}
-        >
-          {children}
-        </Comp>
-      )
+      sm: 'h-8 px-3 text-12',
+      md: 'h-10 px-4 text-14',
+      lg: 'h-12 px-6 text-16',
     }
 
     return (
@@ -48,10 +38,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         ref={ref}
         {...props}
       >
-        {variant === 'primary' && (
-          <span className="absolute inset-0 bg-primary-600 translate-y-full group-hover:translate-y-0 transition-transform duration-735 ease-pylon -z-10" />
-        )}
-        <span className="relative z-10">{children}</span>
+        {children}
       </Comp>
     )
   }

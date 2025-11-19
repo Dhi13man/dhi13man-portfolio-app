@@ -3,64 +3,49 @@
 @tailwind utilities;
 
 @layer base {
-  :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
-    --primary: 262.1 83.3% 57.8%;
-    --primary-foreground: 210 40% 98%;
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 262.1 83.3% 57.8%;
-    --radius: 1rem;
-  }
-
-  .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-    --primary: 262.1 83.3% 57.8%;
-    --primary-foreground: 210 40% 98%;
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 262.1 83.3% 57.8%;
-  }
-}
-
-@layer base {
   * {
     @apply border-border;
   }
 
-  body {
-    @apply bg-background text-foreground;
-    font-feature-settings: 'rlig' 1, 'calt' 1;
-  }
-
   html {
     scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-text-primary;
+    font-feature-settings: 'rlig' 1, 'calt' 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Linear typography hierarchy */
+  h1 {
+    @apply font-display text-48 font-bold text-text-primary;
+  }
+
+  h2 {
+    @apply font-display text-32 font-bold text-text-primary;
+  }
+
+  h3 {
+    @apply font-sans text-24 font-semibold text-text-primary;
+  }
+
+  h4 {
+    @apply font-sans text-20 font-semibold text-text-primary;
+  }
+
+  p {
+    @apply text-16 text-text-secondary;
+  }
+
+  a {
+    @apply text-accent hover:text-accent-hover transition-colors duration-fast;
+  }
+
+  /* Focus states - Linear style */
+  *:focus-visible {
+    @apply outline-none ring-2 ring-accent ring-offset-2 ring-offset-background;
   }
 }
 
@@ -77,8 +62,32 @@
     }
   }
 
-  /* Focus visible styles */
-  .focus-ring {
-    @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2;
+  /* Linear panel component */
+  .panel {
+    @apply bg-surface border border-border rounded p-4;
+  }
+
+  .panel-hover {
+    @apply bg-surface border border-border rounded p-4 transition-all duration-fast;
+    @apply hover:border-border-hover hover:bg-hover-bg;
+  }
+
+  /* Section divider */
+  .section-divider {
+    @apply border-t border-border w-full;
+  }
+
+  /* Linear-style list marker */
+  .list-linear {
+    @apply space-y-2;
+  }
+
+  .list-linear li {
+    @apply flex items-start gap-2 text-text-secondary;
+  }
+
+  .list-linear li::before {
+    content: '→';
+    @apply text-accent font-bold shrink-0;
   }
 }

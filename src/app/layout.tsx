@@ -46,12 +46,22 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth">
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+          rel="stylesheet"
+        />
+      </head>
       <body className="min-h-screen bg-background font-sans antialiased">
         <Header />
         <main className="min-h-[calc(100vh-4rem)]">{children}</main>
-        <footer className="border-t border-border py-8 mt-20">
-          <div className="container mx-auto px-4 text-center text-sm text-muted-foreground">
-            <p>&copy; {new Date().getFullYear()} Dhiman Seal. All rights reserved.</p>
+        <footer className="border-t border-border py-12 mt-16">
+          <div className="max-w-[1200px] mx-auto px-8 text-center">
+            <p className="text-14 text-text-quaternary" suppressHydrationWarning>
+              &copy; {new Date().getFullYear()} Dhiman Seal. All rights reserved.
+            </p>
           </div>
         </footer>
       </body>
