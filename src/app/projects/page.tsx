@@ -1,11 +1,17 @@
-import { Section, SectionHeader, SectionTitle, SectionDescription } from '@/components/ui/section'
-import { ProjectCard } from '@/components/domain/ProjectCard'
-import { projects } from '@/data/projects'
+import {
+  Section,
+  SectionHeader,
+  SectionTitle,
+  SectionDescription,
+} from "@/components/ui/section";
+import { ProjectCard } from "@/components/domain/ProjectCard";
+import { projects } from "@/data/projects";
 
 export const metadata = {
-  title: 'Projects - Dhiman Seal',
-  description: 'Explore my portfolio of open-source projects and technical work.',
-}
+  title: "Projects - Dhiman Seal",
+  description:
+    "Explore my portfolio of open-source projects and technical work.",
+};
 
 export default function ProjectsPage() {
   return (
@@ -13,8 +19,8 @@ export default function ProjectsPage() {
       <SectionHeader>
         <SectionTitle>Projects</SectionTitle>
         <SectionDescription>
-          A collection of open-source projects and technical work spanning various domains and
-          technologies.
+          A collection of open-source projects and technical work spanning
+          various domains and technologies.
         </SectionDescription>
       </SectionHeader>
 
@@ -24,5 +30,5 @@ export default function ProjectsPage() {
         ))}
       </div>
     </Section>
-  )
+  );
 }

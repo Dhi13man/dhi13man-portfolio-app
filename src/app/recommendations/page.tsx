@@ -1,11 +1,17 @@
-import { Section, SectionHeader, SectionTitle, SectionDescription } from '@/components/ui/section'
-import { RecommendationCard } from '@/components/domain/RecommendationCard'
-import { recommendations } from '@/data/recommendations'
+import {
+  Section,
+  SectionHeader,
+  SectionTitle,
+  SectionDescription,
+} from "@/components/ui/section";
+import { RecommendationCard } from "@/components/domain/RecommendationCard";
+import { recommendations } from "@/data/recommendations";
 
 export const metadata = {
-  title: 'Recommendations - Dhiman Seal',
-  description: 'Read testimonials and recommendations from clients, colleagues, and partners I have worked with.',
-}
+  title: "Recommendations - Dhiman Seal",
+  description:
+    "Read testimonials and recommendations from clients, colleagues, and partners I have worked with.",
+};
 
 export default function RecommendationsPage() {
   return (
@@ -13,8 +19,8 @@ export default function RecommendationsPage() {
       <SectionHeader>
         <SectionTitle>Recommendations</SectionTitle>
         <SectionDescription>
-          Testimonials and endorsements from clients, colleagues, and partners who have worked with
-          me.
+          Testimonials and endorsements from clients, colleagues, and partners
+          who have worked with me.
         </SectionDescription>
       </SectionHeader>
 
@@ -24,5 +30,5 @@ export default function RecommendationsPage() {
         ))}
       </div>
     </Section>
-  )
+  );
 }

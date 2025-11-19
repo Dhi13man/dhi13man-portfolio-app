@@ -1,19 +1,21 @@
-import * as React from 'react'
-import { Panel } from '@/components/ui/panel'
-import { ImageGallery } from '@/components/ui/image-gallery'
-import Link from 'next/link'
-import { ExternalLink } from 'lucide-react'
-import type { Venture } from '@/types/venture'
+import * as React from "react";
+import { Panel } from "@/components/ui/panel";
+import { ImageGallery } from "@/components/ui/image-gallery";
+import Link from "next/link";
+import { ExternalLink } from "lucide-react";
+import type { Venture } from "@/types/venture";
 
 export interface VentureCardProps {
-  venture: Venture
+  venture: Venture;
 }
 
 export function VentureCard({ venture }: VentureCardProps) {
   // Gather all images (primary + others)
   const allImages = venture.images
-    ? [venture.images.primary, ...(venture.images.others || [])].filter(Boolean) as string[]
-    : []
+    ? ([venture.images.primary, ...(venture.images.others || [])].filter(
+        Boolean,
+      ) as string[])
+    : [];
 
   return (
     <Panel hoverable>
@@ -49,5 +51,5 @@ export function VentureCard({ venture }: VentureCardProps) {
         )}
       </div>
     </Panel>
-  )
+  );
 }

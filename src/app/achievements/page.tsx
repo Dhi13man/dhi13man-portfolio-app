@@ -1,11 +1,21 @@
-import { Section, SectionHeader, SectionTitle, SectionDescription } from '@/components/ui/section'
-import { AwardCard, CertificationCard, TestScoreCard } from '@/components/domain/AchievementCard'
-import { achievements } from '@/data/achievements'
+import {
+  Section,
+  SectionHeader,
+  SectionTitle,
+  SectionDescription,
+} from "@/components/ui/section";
+import {
+  AwardCard,
+  CertificationCard,
+  TestScoreCard,
+} from "@/components/domain/AchievementCard";
+import { achievements } from "@/data/achievements";
 
 export const metadata = {
-  title: 'Achievements - Dhiman Seal',
-  description: 'Explore my achievements, awards, certifications, and test scores from various competitions and programs.',
-}
+  title: "Achievements - Dhiman Seal",
+  description:
+    "Explore my achievements, awards, certifications, and test scores from various competitions and programs.",
+};
 
 export default function AchievementsPage() {
   return (
@@ -14,8 +24,8 @@ export default function AchievementsPage() {
         <SectionHeader>
           <SectionTitle>Achievements</SectionTitle>
           <SectionDescription>
-            A collection of awards, certifications, and test scores showcasing my continuous learning
-            and excellence.
+            A collection of awards, certifications, and test scores showcasing
+            my continuous learning and excellence.
           </SectionDescription>
         </SectionHeader>
       </Section>
@@ -23,9 +33,12 @@ export default function AchievementsPage() {
       {/* Honors and Awards */}
       <Section>
         <div className="mb-6">
-          <h2 className="text-24 font-semibold text-text-primary mb-2">Honors & Awards</h2>
+          <h2 className="text-24 font-semibold text-text-primary mb-2">
+            Honors & Awards
+          </h2>
           <p className="text-14 text-text-tertiary">
-            Recognition for excellence in competitions, hackathons, and innovation challenges.
+            Recognition for excellence in competitions, hackathons, and
+            innovation challenges.
           </p>
         </div>
         <div className="space-y-3">
@@ -42,7 +55,8 @@ export default function AchievementsPage() {
             Licenses & Certifications
           </h2>
           <p className="text-14 text-text-tertiary">
-            Professional certifications and specialized training in various technologies.
+            Professional certifications and specialized training in various
+            technologies.
           </p>
         </div>
         <div className="space-y-3">
@@ -55,7 +69,9 @@ export default function AchievementsPage() {
       {/* Test Scores */}
       <Section>
         <div className="mb-6">
-          <h2 className="text-24 font-semibold text-text-primary mb-2">Test Scores</h2>
+          <h2 className="text-24 font-semibold text-text-primary mb-2">
+            Test Scores
+          </h2>
           <p className="text-14 text-text-tertiary">
             Performance in standardized tests and technical assessments.
           </p>
@@ -67,5 +83,5 @@ export default function AchievementsPage() {
         </div>
       </Section>
     </>
-  )
+  );
 }

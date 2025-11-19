@@ -13,7 +13,9 @@
 
   body {
     @apply bg-background text-text-primary;
-    font-feature-settings: 'rlig' 1, 'calt' 1;
+    font-feature-settings:
+      "rlig" 1,
+      "calt" 1;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
@@ -87,7 +89,7 @@
   }
 
   .list-linear li::before {
-    content: '→';
+    content: "→";
     @apply text-accent font-bold shrink-0;
   }
 

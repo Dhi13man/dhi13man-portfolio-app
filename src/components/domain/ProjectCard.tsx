@@ -1,25 +1,27 @@
-import * as React from 'react'
-import { Panel } from '@/components/ui/panel'
-import { Button } from '@/components/ui/button'
-import { ImageGallery } from '@/components/ui/image-gallery'
-import Link from 'next/link'
-import { formatDateRange } from '@/lib/date'
-import { ExternalLink } from 'lucide-react'
-import type { Project } from '@/types/project'
+import * as React from "react";
+import { Panel } from "@/components/ui/panel";
+import { Button } from "@/components/ui/button";
+import { ImageGallery } from "@/components/ui/image-gallery";
+import Link from "next/link";
+import { formatDateRange } from "@/lib/date";
+import { ExternalLink } from "lucide-react";
+import type { Project } from "@/types/project";
 
 export interface ProjectCardProps {
-  project: Project
+  project: Project;
   /**
    * Compact mode for home page - shows less detail
    */
-  compact?: boolean
+  compact?: boolean;
 }
 
 export function ProjectCard({ project, compact = false }: ProjectCardProps) {
   // Gather all images (primary + others)
   const allImages = project.images
-    ? [project.images.primary, ...(project.images.others || [])].filter(Boolean) as string[]
-    : []
+    ? ([project.images.primary, ...(project.images.others || [])].filter(
+        Boolean,
+      ) as string[])
+    : [];
 
   return (
     <Panel hoverable>
@@ -38,7 +40,13 @@ export function ProjectCard({ project, compact = false }: ProjectCardProps) {
       <div className="space-y-2">
         <div className="flex items-start justify-between gap-2">
           <div>
-            <h3 className={compact ? 'text-16 font-semibold text-text-primary' : 'text-20 font-semibold text-text-primary'}>
+            <h3
+              className={
+                compact
+                  ? "text-16 font-semibold text-text-primary"
+                  : "text-20 font-semibold text-text-primary"
+              }
+            >
               {project.name}
             </h3>
             <time className="text-12 font-mono text-text-quaternary">
@@ -75,5 +83,5 @@ export function ProjectCard({ project, compact = false }: ProjectCardProps) {
         )}
       </div>
     </Panel>
-  )
+  );
 }

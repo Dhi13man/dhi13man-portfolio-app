@@ -1,54 +1,58 @@
-import type { Metadata } from 'next'
-import '@/styles/globals.css'
-import { Header } from '@/components/layout/Header'
+import type { Metadata } from "next";
+import "@/styles/globals.css";
+import { Header } from "@/components/layout/Header";
 
 export const metadata: Metadata = {
-  title: 'Dhiman Seal - Software Engineer & Entrepreneur',
+  title: "Dhiman Seal - Software Engineer & Entrepreneur",
   description:
-    'Tech-obsessed engineer dedicated to simplifying lives through technology. Open-source creator, entrepreneur, and software wizard.',
+    "Tech-obsessed engineer dedicated to simplifying lives through technology. Open-source creator, entrepreneur, and software wizard.",
   keywords: [
-    'Dhiman Seal',
-    'Software Engineer',
-    'Open Source',
-    'Entrepreneur',
-    'Full Stack Developer',
-    'Flutter',
-    'React',
-    'Next.js',
+    "Dhiman Seal",
+    "Software Engineer",
+    "Open Source",
+    "Entrepreneur",
+    "Full Stack Developer",
+    "Flutter",
+    "React",
+    "Next.js",
   ],
-  authors: [{ name: 'Dhiman Seal' }],
-  creator: 'Dhiman Seal',
+  authors: [{ name: "Dhiman Seal" }],
+  creator: "Dhiman Seal",
   openGraph: {
-    type: 'website',
-    locale: 'en_US',
-    title: 'Dhiman Seal - Software Engineer & Entrepreneur',
+    type: "website",
+    locale: "en_US",
+    title: "Dhiman Seal - Software Engineer & Entrepreneur",
     description:
-      'Tech-obsessed engineer dedicated to simplifying lives through technology. Open-source creator, entrepreneur, and software wizard.',
-    siteName: 'Dhiman Seal Portfolio',
+      "Tech-obsessed engineer dedicated to simplifying lives through technology. Open-source creator, entrepreneur, and software wizard.",
+    siteName: "Dhiman Seal Portfolio",
   },
   twitter: {
-    card: 'summary_large_image',
-    title: 'Dhiman Seal - Software Engineer & Entrepreneur',
+    card: "summary_large_image",
+    title: "Dhiman Seal - Software Engineer & Entrepreneur",
     description:
-      'Tech-obsessed engineer dedicated to simplifying lives through technology.',
-    creator: '@Dhi13man',
+      "Tech-obsessed engineer dedicated to simplifying lives through technology.",
+    creator: "@Dhi13man",
   },
   robots: {
     index: true,
     follow: true,
   },
-}
+};
 
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode
+  children: React.ReactNode;
 }>) {
   return (
     <html lang="en" className="scroll-smooth">
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin="anonymous"
+        />
         <link
           href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
           rel="stylesheet"
@@ -63,15 +67,21 @@ export default function RootLayout({
           Skip to main content
         </a>
         <Header />
-        <main id="main-content" className="min-h-[calc(100vh-4rem)]">{children}</main>
+        <main id="main-content" className="min-h-[calc(100vh-4rem)]">
+          {children}
+        </main>
         <footer className="border-t border-border py-12 mt-16">
           <div className="max-w-[1200px] mx-auto px-8 text-center">
-            <p className="text-14 text-text-quaternary" suppressHydrationWarning>
-              &copy; {new Date().getFullYear()} Dhiman Seal. All rights reserved.
+            <p
+              className="text-14 text-text-quaternary"
+              suppressHydrationWarning
+            >
+              &copy; {new Date().getFullYear()} Dhiman Seal. All rights
+              reserved.
             </p>
           </div>
         </footer>
       </body>
     </html>
-  )
+  );
 }

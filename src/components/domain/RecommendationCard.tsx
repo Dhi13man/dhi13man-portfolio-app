@@ -1,15 +1,17 @@
-import * as React from 'react'
-import { Panel } from '@/components/ui/panel'
-import { Button } from '@/components/ui/button'
-import Link from 'next/link'
-import { ExternalLink } from 'lucide-react'
-import type { Recommendation } from '@/types/recommendation'
+import * as React from "react";
+import { Panel } from "@/components/ui/panel";
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
+import { ExternalLink } from "lucide-react";
+import type { Recommendation } from "@/types/recommendation";
 
 export interface RecommendationCardProps {
-  recommendation: Recommendation
+  recommendation: Recommendation;
 }
 
-export function RecommendationCard({ recommendation }: RecommendationCardProps) {
+export function RecommendationCard({
+  recommendation,
+}: RecommendationCardProps) {
   return (
     <Panel hoverable>
       <div className="space-y-3">
@@ -38,5 +40,5 @@ export function RecommendationCard({ recommendation }: RecommendationCardProps) 
         </div>
       </div>
     </Panel>
-  )
+  );
 }

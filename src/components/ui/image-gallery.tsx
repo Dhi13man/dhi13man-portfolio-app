@@ -1,73 +1,73 @@
-'use client'
+"use client";
 
-import { useState, useEffect } from 'react'
-import Image from 'next/image'
-import { motion, AnimatePresence } from 'framer-motion'
-import { X, ChevronLeft, ChevronRight } from 'lucide-react'
-import { Button } from './button'
+import { useState, useEffect } from "react";
+import Image from "next/image";
+import { motion, AnimatePresence } from "framer-motion";
+import { X, ChevronLeft, ChevronRight } from "lucide-react";
+import { Button } from "./button";
 
 export interface ImageGalleryProps {
-  images: string[]
-  alt: string
-  className?: string
-  imageClassName?: string
-  thumbnailSize?: 'sm' | 'md' | 'lg'
+  images: string[];
+  alt: string;
+  className?: string;
+  imageClassName?: string;
+  thumbnailSize?: "sm" | "md" | "lg";
 }
 
 const sizeClasses = {
-  sm: 'w-12 h-12',
-  md: 'w-24 h-24',
-  lg: 'w-32 h-32',
-}
+  sm: "w-12 h-12",
+  md: "w-24 h-24",
+  lg: "w-32 h-32",
+};
 
 export function ImageGallery({
   images,
   alt,
-  className = '',
-  imageClassName = '',
-  thumbnailSize = 'md',
+  className = "",
+  imageClassName = "",
+  thumbnailSize = "md",
 }: ImageGalleryProps) {
-  const [lightboxOpen, setLightboxOpen] = useState(false)
-  const [currentIndex, setCurrentIndex] = useState(0)
+  const [lightboxOpen, setLightboxOpen] = useState(false);
+  const [currentIndex, setCurrentIndex] = useState(0);
 
   // Prevent body scroll when lightbox is open
   useEffect(() => {
     if (lightboxOpen) {
-      document.body.style.overflow = 'hidden'
+      document.body.style.overflow = "hidden";
     } else {
-      document.body.style.overflow = 'unset'
+      document.body.style.overflow = "unset";
     }
 
     // Cleanup on unmount
     return () => {
-      document.body.style.overflow = 'unset'
-    }
-  }, [lightboxOpen])
+      document.body.style.overflow = "unset";
+    };
+  }, [lightboxOpen]);
 
-  if (!images || images.length === 0) return null
+  if (!images || images.length === 0) return null;
 
   const openLightbox = (index: number) => {
-    setCurrentIndex(index)
-    setLightboxOpen(true)
-  }
+    setCurrentIndex(index);
+    setLightboxOpen(true);
+  };
 
   const closeLightbox = () => {
-    setLightboxOpen(false)
-  }
+    setLightboxOpen(false);
+  };
 
   const goToPrevious = () => {
-    setCurrentIndex((prev) => (prev === 0 ? images.length - 1 : prev - 1))
-  }
+    setCurrentIndex((prev) => (prev === 0 ? images.length - 1 : prev - 1));
+  };
 
   const goToNext = () => {
-    setCurrentIndex((prev) => (prev === images.length - 1 ? 0 : prev + 1))
-  }
+    setCurrentIndex((prev) => (prev === images.length - 1 ? 0 : prev + 1));
+  };
 
   const handleKeyDown = (e: React.KeyboardEvent) => {
-    if (e.key === 'Escape') closeLightbox()
-    if (e.key === 'ArrowLeft') goToPrevious()
-    if (e.key === 'ArrowRight') goToNext()
-  }
+    if (e.key === "Escape") closeLightbox();
+    if (e.key === "ArrowLeft") goToPrevious();
+    if (e.key === "ArrowRight") goToNext();
+  };
 
   // Single image layout
   if (images.length === 1) {
@@ -79,7 +79,7 @@ export function ImageGallery({
             onClick={() => openLightbox(0)}
             role="button"
             tabIndex={0}
-            onKeyDown={(e) => e.key === 'Enter' && openLightbox(0)}
+            onKeyDown={(e) => e.key === "Enter" && openLightbox(0)}
             aria-label={`View ${alt}`}
           >
             <Image
@@ -87,7 +87,7 @@ export function ImageGallery({
               alt={alt}
               fill
               className="object-contain p-1"
-              sizes={`${sizeClasses[thumbnailSize].split(' ')[0].replace('w-', '')}px`}
+              sizes={`${sizeClasses[thumbnailSize].split(" ")[0].replace("w-", "")}px`}
             />
           </div>
         </div>
@@ -103,7 +103,7 @@ export function ImageGallery({
           alt={alt}
         />
       </>
-    )
+    );
   }
 
   // Multiple images layout
@@ -117,7 +117,7 @@ export function ImageGallery({
             onClick={() => openLightbox(index)}
             role="button"
             tabIndex={0}
-            onKeyDown={(e) => e.key === 'Enter' && openLightbox(index)}
+            onKeyDown={(e) => e.key === "Enter" && openLightbox(index)}
             aria-label={`View image ${index + 1} of ${images.length}`}
           >
             <Image
@@ -125,7 +125,7 @@ export function ImageGallery({
               alt={`${alt} - Image ${index + 1}`}
               fill
               className="object-cover"
-              sizes={`${sizeClasses[thumbnailSize].split(' ')[0].replace('w-', '')}px`}
+              sizes={`${sizeClasses[thumbnailSize].split(" ")[0].replace("w-", "")}px`}
             />
             {index === 0 && images.length > 1 && (
               <div className="absolute top-1 right-1 px-1.5 py-0.5 bg-background/80 backdrop-blur-sm text-12 font-mono text-text-tertiary rounded">
@@ -147,18 +147,18 @@ export function ImageGallery({
         alt={alt}
       />
     </>
-  )
+  );
 }
 
 interface LightboxProps {
-  isOpen: boolean
-  images: string[]
-  currentIndex: number
-  onClose: () => void
-  onPrevious: () => void
-  onNext: () => void
-  onKeyDown: (e: React.KeyboardEvent) => void
-  alt: string
+  isOpen: boolean;
+  images: string[];
+  currentIndex: number;
+  onClose: () => void;
+  onPrevious: () => void;
+  onNext: () => void;
+  onKeyDown: (e: React.KeyboardEvent) => void;
+  alt: string;
 }
 
 function Lightbox({
@@ -205,8 +205,8 @@ function Lightbox({
               size="sm"
               className="absolute left-4 z-10"
               onClick={(e) => {
-                e.stopPropagation()
-                onPrevious()
+                e.stopPropagation();
+                onPrevious();
               }}
               aria-label="Previous image"
             >
@@ -241,8 +241,8 @@ function Lightbox({
               size="sm"
               className="absolute right-4 z-10"
               onClick={(e) => {
-                e.stopPropagation()
-                onNext()
+                e.stopPropagation();
+                onNext();
               }}
               aria-label="Next image"
             >
@@ -259,5 +259,5 @@ function Lightbox({
         </motion.div>
       )}
     </AnimatePresence>
-  )
+  );
 }

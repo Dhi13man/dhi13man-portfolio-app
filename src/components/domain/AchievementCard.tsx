@@ -1,13 +1,13 @@
-import * as React from 'react'
-import { Panel } from '@/components/ui/panel'
-import { Button } from '@/components/ui/button'
-import Link from 'next/link'
-import { formatDateRange } from '@/lib/date'
-import { ExternalLink } from 'lucide-react'
-import type { Award, Certification, TestScore } from '@/types/achievement'
+import * as React from "react";
+import { Panel } from "@/components/ui/panel";
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
+import { formatDateRange } from "@/lib/date";
+import { ExternalLink } from "lucide-react";
+import type { Award, Certification, TestScore } from "@/types/achievement";
 
 export interface AwardCardProps {
-  award: Award
+  award: Award;
 }
 
 export function AwardCard({ award }: AwardCardProps) {
@@ -17,7 +17,9 @@ export function AwardCard({ award }: AwardCardProps) {
         <div className="flex items-start justify-between gap-2">
           <div className="flex-1 min-w-0">
             <div className="flex items-start justify-between gap-2">
-              <h3 className="text-16 font-semibold text-text-primary">{award.title}</h3>
+              <h3 className="text-16 font-semibold text-text-primary">
+                {award.title}
+              </h3>
               {award.links?.primary && (
                 <Button asChild variant="ghost" size="sm" className="shrink-0">
                   <Link
@@ -55,11 +57,11 @@ export function AwardCard({ award }: AwardCardProps) {
         )}
       </div>
     </Panel>
-  )
+  );
 }
 
 export interface CertificationCardProps {
-  certification: Certification
+  certification: Certification;
 }
 
 export function CertificationCard({ certification }: CertificationCardProps) {
@@ -69,7 +71,9 @@ export function CertificationCard({ certification }: CertificationCardProps) {
         <div className="flex items-start justify-between gap-2">
           <div className="flex-1 min-w-0">
             <div className="flex items-start justify-between gap-2">
-              <h3 className="text-16 font-semibold text-text-primary">{certification.title}</h3>
+              <h3 className="text-16 font-semibold text-text-primary">
+                {certification.title}
+              </h3>
               {certification.links?.primary && (
                 <Button asChild variant="ghost" size="sm" className="shrink-0">
                   <Link
@@ -89,8 +93,12 @@ export function CertificationCard({ certification }: CertificationCardProps) {
           </time>
         </div>
 
-        <p className="text-14 font-medium text-text-tertiary">{certification.issuer}</p>
-        <p className="text-14 text-text-secondary">{certification.description}</p>
+        <p className="text-14 font-medium text-text-tertiary">
+          {certification.issuer}
+        </p>
+        <p className="text-14 text-text-secondary">
+          {certification.description}
+        </p>
 
         {certification.credentialId && (
           <p className="text-12 font-mono text-text-quaternary">
@@ -113,11 +121,11 @@ export function CertificationCard({ certification }: CertificationCardProps) {
         )}
       </div>
     </Panel>
-  )
+  );
 }
 
 export interface TestScoreCardProps {
-  testScore: TestScore
+  testScore: TestScore;
 }
 
 export function TestScoreCard({ testScore }: TestScoreCardProps) {
@@ -127,7 +135,9 @@ export function TestScoreCard({ testScore }: TestScoreCardProps) {
         <div className="flex items-start justify-between gap-2">
           <div className="flex-1 min-w-0">
             <div className="flex items-start justify-between gap-2">
-              <h3 className="text-16 font-semibold text-text-primary">{testScore.name}</h3>
+              <h3 className="text-16 font-semibold text-text-primary">
+                {testScore.name}
+              </h3>
               {testScore.links?.primary && (
                 <Button asChild variant="ghost" size="sm" className="shrink-0">
                   <Link
@@ -148,7 +158,9 @@ export function TestScoreCard({ testScore }: TestScoreCardProps) {
         </div>
 
         <div>
-          <span className="text-20 font-bold text-accent">{testScore.score}</span>
+          <span className="text-20 font-bold text-accent">
+            {testScore.score}
+          </span>
         </div>
 
         <p className="text-14 text-text-secondary">{testScore.description}</p>
@@ -168,5 +180,5 @@ export function TestScoreCard({ testScore }: TestScoreCardProps) {
         )}
       </div>
     </Panel>
-  )
+  );
 }
