@@ -38,7 +38,7 @@ export const education: Education[] = [
         description: "Completed Higher Secondary education with distinction in Science (Physics, Chemistry, Mathematics). Ranked among institution's top performers consistently.",
         endDate: '2018',
         field: 'Science',
-        percentage: '95%',
+        percentage: '95',
         startDate: '2016',
       },
       {
