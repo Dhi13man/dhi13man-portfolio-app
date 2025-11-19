@@ -60,7 +60,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
         {project.skills && project.skills.length > 0 && (
           <div className="flex flex-wrap gap-2">
             {project.skills.map((skill) => (
-              <Badge key={skill} variant="projects" size="sm">
+              <Badge key={skill} variant="outline" size="sm">
                 {skill}
               </Badge>
             ))}

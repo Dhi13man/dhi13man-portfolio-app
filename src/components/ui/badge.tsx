@@ -2,32 +2,28 @@ import * as React from 'react'
 import { cn } from '@/lib/utils'
 
 export interface BadgeProps extends React.HTMLAttributes<HTMLSpanElement> {
-  variant?: 'default' | 'primary' | 'secondary' | 'success' | 'warning' | 'projects' | 'experience' | 'education' | 'achievements' | 'ventures' | 'recommendations'
+  variant?: 'default' | 'accent' | 'success' | 'warning' | 'error' | 'info' | 'outline'
   size?: 'sm' | 'md'
 }
 
 const Badge = React.forwardRef<HTMLSpanElement, BadgeProps>(
   ({ className, variant = 'default', size = 'md', ...props }, ref) => {
     const baseStyles =
-      'inline-flex items-center justify-center rounded-full font-medium whitespace-nowrap'
+      'inline-flex items-center justify-center rounded font-medium whitespace-nowrap transition-colors duration-fast'
 
     const variants = {
-      default: 'bg-muted text-muted-foreground',
-      primary: 'bg-primary-100 text-primary-700',
-      secondary: 'bg-secondary text-secondary-foreground',
-      success: 'bg-emerald-100 text-emerald-700',
-      warning: 'bg-amber-100 text-amber-700',
-      projects: 'bg-projects-light text-projects-dark',
-      experience: 'bg-experience-light text-experience-dark',
-      education: 'bg-education-light text-education-dark',
-      achievements: 'bg-achievements-light text-achievements-dark',
-      ventures: 'bg-ventures-light text-ventures-dark',
-      recommendations: 'bg-recommendations-light text-recommendations-dark',
+      default: 'bg-surface text-text-primary border border-border',
+      accent: 'bg-accent/10 text-accent border border-accent/20',
+      success: 'bg-status-success/10 text-status-success border border-status-success/20',
+      warning: 'bg-status-warning/10 text-status-warning border border-status-warning/20',
+      error: 'bg-status-error/10 text-status-error border border-status-error/20',
+      info: 'bg-status-info/10 text-status-info border border-status-info/20',
+      outline: 'bg-transparent text-text-secondary border border-border hover:border-border-hover',
     }
 
     const sizes = {
-      sm: 'px-2.5 py-0.5 text-xs',
-      md: 'px-3 py-1 text-sm',
+      sm: 'px-2 py-0.5 text-12',
+      md: 'px-3 py-1 text-14',
     }
 
     return (

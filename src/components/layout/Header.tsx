@@ -21,25 +21,27 @@ export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   return (
-    <header className="sticky top-0 z-50 bg-background/80 backdrop-blur-sm border-b border-border">
+    <header className="sticky top-0 z-sticky bg-background/80 backdrop-blur-sm border-b border-border">
       <div className="max-w-[1200px] mx-auto px-8">
-        <nav className="flex items-center justify-between py-4">
+        <nav className="flex items-center justify-between py-4" aria-label="Main navigation">
           {/* Logo */}
           <Link
             href="/"
             className="font-display text-20 font-bold text-text-primary hover:text-accent transition-colors duration-fast"
+            aria-label="Dhiman Seal - Home"
           >
             DS
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-1">
+          <div className="hidden md:flex items-center gap-1" role="navigation" aria-label="Primary">
             {navigation.map((item) => {
               const isActive = pathname === item.href
               return (
                 <Link
                   key={item.name}
                   href={item.href}
+                  aria-current={isActive ? 'page' : undefined}
                   className={cn(
                     'px-3 py-2 rounded text-14 font-medium transition-all duration-fast relative',
                     isActive
@@ -49,7 +51,7 @@ export function Header() {
                 >
                   {item.name}
                   {isActive && (
-                    <span className="absolute bottom-1 left-1/2 -translate-x-1/2 w-1 h-1 rounded-full bg-accent" />
+                    <span className="absolute bottom-1 left-1/2 -translate-x-1/2 w-1 h-1 rounded-full bg-accent" aria-hidden="true" />
                   )}
                 </Link>
               )
@@ -61,7 +63,9 @@ export function Header() {
             type="button"
             className="md:hidden p-2 text-text-tertiary hover:text-text-primary transition-colors duration-fast"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            aria-label="Toggle menu"
+            aria-label={mobileMenuOpen ? 'Close menu' : 'Open menu'}
+            aria-expanded={mobileMenuOpen}
+            aria-controls="mobile-menu"
           >
             {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
           </button>
@@ -69,7 +73,12 @@ export function Header() {
 
         {/* Mobile Navigation */}
         {mobileMenuOpen && (
-          <div className="md:hidden pb-4 border-t border-border mt-4 pt-4">
+          <div 
+            id="mobile-menu" 
+            className="md:hidden pb-4 border-t border-border mt-4 pt-4"
+            role="navigation"
+            aria-label="Mobile navigation"
+          >
             <div className="flex flex-col gap-1">
               {navigation.map((item) => {
                 const isActive = pathname === item.href
@@ -77,6 +86,7 @@ export function Header() {
                   <Link
                     key={item.name}
                     href={item.href}
+                    aria-current={isActive ? 'page' : undefined}
                     className={cn(
                       'px-3 py-2 rounded text-14 font-medium transition-all duration-fast',
                       isActive

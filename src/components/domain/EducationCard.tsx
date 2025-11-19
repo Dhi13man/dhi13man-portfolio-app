@@ -44,12 +44,12 @@ export function EducationCard({ education }: EducationCardProps) {
                   {formatDateRange(course.startDate, course.endDate)}
                 </time>
                 {course.gpa && (
-                  <Badge variant="education" size="sm">
+                  <Badge variant="success" size="sm">
                     GPA: {course.gpa}
                   </Badge>
                 )}
                 {course.percentage && (
-                  <Badge variant="education" size="sm">
+                  <Badge variant="info" size="sm">
                     {course.percentage}
                   </Badge>
                 )}

@@ -13,7 +13,7 @@ export function AwardCard({ award }: AwardCardProps) {
       <CardHeader>
         <CardTitle className="text-xl">{award.title}</CardTitle>
         <div className="flex flex-wrap items-center gap-3 mt-2">
-          <Badge variant="achievements" size="sm">
+          <Badge variant="accent" size="sm">
             {award.issuer}
           </Badge>
           <time className="text-sm text-muted-foreground">
@@ -55,7 +55,7 @@ export function CertificationCard({ certification }: CertificationCardProps) {
       <CardHeader>
         <CardTitle className="text-xl">{certification.title}</CardTitle>
         <div className="flex flex-wrap items-center gap-3 mt-2">
-          <Badge variant="achievements" size="sm">
+          <Badge variant="accent" size="sm">
             {certification.issuer}
           </Badge>
           <time className="text-sm text-muted-foreground">
@@ -102,7 +102,7 @@ export function TestScoreCard({ testScore }: TestScoreCardProps) {
       <CardHeader>
         <CardTitle className="text-xl">{testScore.name}</CardTitle>
         <div className="flex flex-wrap items-center gap-3 mt-2">
-          <Badge variant="achievements" size="sm">
+          <Badge variant="info" size="sm">
             Score: {testScore.score}
           </Badge>
           <time className="text-sm text-muted-foreground">
