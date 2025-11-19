@@ -1,12 +1,11 @@
 import { Section, SectionHeader, SectionTitle } from '@/components/ui/section'
-import { Panel } from '@/components/ui/panel'
-import Link from 'next/link'
+import { ProjectCard } from '@/components/domain/ProjectCard'
+import { VentureCard } from '@/components/domain/VentureCard'
 import Image from 'next/image'
 import { aboutData } from '@/data/about'
 import { projects } from '@/data/projects'
 import { ventures } from '@/data/ventures'
 import { isDatePresent } from '@/lib/date'
-import { ExternalLink } from 'lucide-react'
 
 export default function Home() {
   // Get current initiatives (ongoing projects and ventures)
@@ -57,7 +56,7 @@ export default function Home() {
         </div>
       </Section>
 
-      {/* Current Initiatives Section - Linear style: Flat list */}
+      {/* Current Initiatives Section - using domain components for consistency and images */}
       {(currentProjects.length > 0 || currentVentures.length > 0) && (
         <Section>
           <SectionHeader>
@@ -69,28 +68,7 @@ export default function Home() {
               <h3 className="text-20 font-semibold text-text-primary">Active Projects</h3>
               <div className="space-y-3">
                 {currentProjects.map((project) => (
-                  <Panel key={project.name} hoverable>
-                    <div className="flex items-start justify-between gap-4">
-                      <div className="flex-1 min-w-0">
-                        <h4 className="text-16 font-semibold text-text-primary mb-1">
-                          {project.name}
-                        </h4>
-                        <p className="text-14 text-text-secondary line-clamp-2">
-                          {project.description}
-                        </p>
-                      </div>
-                      {project.links?.primary && (
-                        <Link
-                          href={project.links.primary}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="shrink-0 text-accent hover:text-accent-hover transition-colors duration-fast"
-                        >
-                          <ExternalLink className="w-4 h-4" />
-                        </Link>
-                      )}
-                    </div>
-                  </Panel>
+                  <ProjectCard key={project.name} project={project} compact />
                 ))}
               </div>
             </div>
@@ -101,28 +79,7 @@ export default function Home() {
               <h3 className="text-20 font-semibold text-text-primary">Active Ventures</h3>
               <div className="space-y-3">
                 {currentVentures.map((venture) => (
-                  <Panel key={venture.name} hoverable>
-                    <div className="flex items-start justify-between gap-4">
-                      <div className="flex-1 min-w-0">
-                        <h4 className="text-16 font-semibold text-text-primary mb-1">
-                          {venture.name}
-                        </h4>
-                        <p className="text-14 text-text-secondary line-clamp-2">
-                          {venture.about}
-                        </p>
-                      </div>
-                      {venture.links?.primary && (
-                        <Link
-                          href={venture.links.primary}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="shrink-0 text-accent hover:text-accent-hover transition-colors duration-fast"
-                        >
-                          <ExternalLink className="w-4 h-4" />
-                        </Link>
-                      )}
-                    </div>
-                  </Panel>
+                  <VentureCard key={venture.name} venture={venture} />
                 ))}
               </div>
             </div>

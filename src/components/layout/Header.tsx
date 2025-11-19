@@ -8,12 +8,12 @@ import { Menu, X } from 'lucide-react'
 
 const navigation = [
   { name: 'About', href: '/' },
-  { name: 'Projects', href: '/projects' },
+  { name: 'Ventures', href: '/ventures' },
   { name: 'Experience', href: '/experience' },
-  { name: 'Education', href: '/education' },
+  { name: 'Projects', href: '/projects' },
   { name: 'Achievements', href: '/achievements' },
   { name: 'Recommendations', href: '/recommendations' },
-  { name: 'Ventures', href: '/ventures' },
+  { name: 'Education', href: '/education' },
 ]
 
 export function Header() {
