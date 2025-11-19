@@ -977,7 +977,7 @@ This portfolio intentionally avoids common UI library components that are design
 
 - ❌ **Dropdown Menus**: Portfolio navigation is intentionally flat (7 pages). Complex dropdowns add unnecessary interaction complexity.
 
-- ❌ **Loading Skeletons**: Only valuable for loads >1 second. Static HTML with 102-111 KB bundles loads in milliseconds.
+- ❌ **Loading Skeletons**: Only valuable for loads >1 second. Static HTML with 106-159 KB bundles loads in milliseconds.
 
 - ❌ **Tabs Component**: Current flat list and timeline patterns organize content effectively without adding state management complexity.
 
