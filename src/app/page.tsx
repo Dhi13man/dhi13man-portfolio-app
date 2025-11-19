@@ -50,7 +50,7 @@ export default function Home() {
         <SectionHeader>
           <SectionTitle>About</SectionTitle>
         </SectionHeader>
-        <div className="max-w-3xl">
+        <div className="max-w-3xl mx-auto text-center">
           <div className="space-y-4 text-16 text-text-secondary leading-relaxed">
             {aboutData.description.split('\n').map((paragraph, index) => (
               <p key={index}>{paragraph}</p>
