@@ -66,7 +66,7 @@ export default function Home() {
           {currentProjects.length > 0 && (
             <div className="space-y-4 mb-8">
               <h3 className="text-20 font-semibold text-text-primary">Active Projects</h3>
-              <div className="space-y-3">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                 {currentProjects.map((project) => (
                   <ProjectCard key={project.name} project={project} compact />
                 ))}
@@ -77,7 +77,7 @@ export default function Home() {
           {currentVentures.length > 0 && (
             <div className="space-y-4">
               <h3 className="text-20 font-semibold text-text-primary">Active Ventures</h3>
-              <div className="space-y-3">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                 {currentVentures.map((venture) => (
                   <VentureCard key={venture.name} venture={venture} />
                 ))}

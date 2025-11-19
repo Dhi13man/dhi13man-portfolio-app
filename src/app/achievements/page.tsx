@@ -1,10 +1,6 @@
 import { Section, SectionHeader, SectionTitle, SectionDescription } from '@/components/ui/section'
-import { Panel } from '@/components/ui/panel'
-import { Button } from '@/components/ui/button'
-import Link from 'next/link'
+import { AwardCard, CertificationCard, TestScoreCard } from '@/components/domain/AchievementCard'
 import { achievements } from '@/data/achievements'
-import { formatDateRange } from '@/lib/date'
-import { ExternalLink } from 'lucide-react'
 
 export const metadata = {
   title: 'Achievements - Dhiman Seal',
@@ -34,47 +30,7 @@ export default function AchievementsPage() {
         </div>
         <div className="space-y-3">
           {achievements.honorsAndAwards.map((award, index) => (
-            <Panel key={index} hoverable>
-              <div className="space-y-2">
-                <div className="flex items-start justify-between gap-2">
-                  <div className="flex-1 min-w-0">
-                    <div className="flex items-start justify-between gap-2">
-                      <h3 className="text-16 font-semibold text-text-primary">{award.title}</h3>
-                      {award.links?.primary && (
-                        <Button asChild variant="ghost" size="sm" className="shrink-0">
-                          <Link
-                            href={award.links.primary}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            aria-label={`View ${award.title}`}
-                          >
-                            <ExternalLink className="w-4 h-4" />
-                          </Link>
-                        </Button>
-                      )}
-                    </div>
-                  </div>
-                  <time className="text-12 font-mono text-text-quaternary shrink-0">
-                    {formatDateRange(award.startDate, award.endDate)}
-                  </time>
-                </div>
-                <p className="text-14 text-text-tertiary">{award.issuer}</p>
-                <p className="text-14 text-text-secondary">{award.description}</p>
-                {award.details && award.details.length > 0 && (
-                  <ul className="space-y-1 mt-2">
-                    {award.details.map((detail, detailIndex) => (
-                      <li
-                        key={detailIndex}
-                        className="flex items-start gap-2 text-12 text-text-tertiary"
-                      >
-                        <span className="text-accent font-bold shrink-0 mt-0.5">→</span>
-                        <span>{detail}</span>
-                      </li>
-                    ))}
-                  </ul>
-                )}
-              </div>
-            </Panel>
+            <AwardCard key={index} award={award} />
           ))}
         </div>
       </Section>
@@ -91,52 +47,7 @@ export default function AchievementsPage() {
         </div>
         <div className="space-y-3">
           {achievements.licensesAndCertifications.map((cert, index) => (
-            <Panel key={index} hoverable>
-              <div className="space-y-2">
-                <div className="flex items-start justify-between gap-2">
-                  <div className="flex-1 min-w-0">
-                    <div className="flex items-start justify-between gap-2">
-                      <h3 className="text-16 font-semibold text-text-primary">{cert.title}</h3>
-                      {cert.links?.primary && (
-                        <Button asChild variant="ghost" size="sm" className="shrink-0">
-                          <Link
-                            href={cert.links.primary}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            aria-label={`View ${cert.title}`}
-                          >
-                            <ExternalLink className="w-4 h-4" />
-                          </Link>
-                        </Button>
-                      )}
-                    </div>
-                  </div>
-                  <time className="text-12 font-mono text-text-quaternary shrink-0">
-                    {formatDateRange(cert.startDate, cert.endDate)}
-                  </time>
-                </div>
-                <p className="text-14 text-text-tertiary">{cert.issuer}</p>
-                {cert.credentialId && (
-                  <p className="text-12 font-mono text-text-quaternary">
-                    Credential ID: {cert.credentialId}
-                  </p>
-                )}
-                <p className="text-14 text-text-secondary">{cert.description}</p>
-                {cert.details && cert.details.length > 0 && (
-                  <ul className="space-y-1 mt-2">
-                    {cert.details.map((detail, detailIndex) => (
-                      <li
-                        key={detailIndex}
-                        className="flex items-start gap-2 text-12 text-text-tertiary"
-                      >
-                        <span className="text-accent font-bold shrink-0 mt-0.5">→</span>
-                        <span>{detail}</span>
-                      </li>
-                    ))}
-                  </ul>
-                )}
-              </div>
-            </Panel>
+            <CertificationCard key={index} certification={cert} />
           ))}
         </div>
       </Section>
@@ -151,51 +62,7 @@ export default function AchievementsPage() {
         </div>
         <div className="space-y-3">
           {achievements.testScores.map((testScore, index) => (
-            <Panel key={index} hoverable>
-              <div className="space-y-2">
-                <div className="flex items-start justify-between gap-2">
-                  <div className="flex-1 min-w-0">
-                    <div className="flex items-start justify-between gap-2">
-                      <div>
-                        <h3 className="text-16 font-semibold text-text-primary">{testScore.name}</h3>
-                        <p className="text-20 font-mono text-accent font-bold mt-1">
-                          {testScore.score}
-                        </p>
-                      </div>
-                      {testScore.links?.primary && (
-                        <Button asChild variant="ghost" size="sm" className="shrink-0">
-                          <Link
-                            href={testScore.links.primary}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            aria-label={`View ${testScore.name}`}
-                          >
-                            <ExternalLink className="w-4 h-4" />
-                          </Link>
-                        </Button>
-                      )}
-                    </div>
-                  </div>
-                  <time className="text-12 font-mono text-text-quaternary shrink-0">
-                    {formatDateRange(testScore.startDate, testScore.endDate)}
-                  </time>
-                </div>
-                <p className="text-14 text-text-secondary">{testScore.description}</p>
-                {testScore.details && testScore.details.length > 0 && (
-                  <ul className="space-y-1 mt-2">
-                    {testScore.details.map((detail, detailIndex) => (
-                      <li
-                        key={detailIndex}
-                        className="flex items-start gap-2 text-12 text-text-tertiary"
-                      >
-                        <span className="text-accent font-bold shrink-0 mt-0.5">→</span>
-                        <span>{detail}</span>
-                      </li>
-                    ))}
-                  </ul>
-                )}
-              </div>
-            </Panel>
+            <TestScoreCard key={index} testScore={testScore} />
           ))}
         </div>
       </Section>
