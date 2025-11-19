@@ -29,28 +29,6 @@ export const metadata = {
 };
 
 export default function ExperiencePage() {
-  // Flatten all roles with company info for timeline
-  const allRoles = experiences.flatMap((experience) =>
-    experience.roles.map((role, roleIndex) => {
-      // Gather all images (primary + others)
-      const allImages = experience.images
-        ? ([
-            experience.images.primary,
-            ...(experience.images.others || []),
-          ].filter(Boolean) as string[])
-        : [];
-
-      return {
-        ...role,
-        companyName: experience.name,
-        companyAbout: experience.about,
-        companyImages: allImages,
-        companyLink: experience.links?.primary,
-        isLastRole: roleIndex === experience.roles.length - 1,
-      };
-    }),
-  );
-
   return (
     <Section noDivider className="py-16">
       <SectionHeader>
@@ -62,85 +40,107 @@ export default function ExperiencePage() {
       </SectionHeader>
 
       <Timeline className="mt-8">
-        {allRoles.map((role, index) => {
-          const isLast = index === allRoles.length - 1;
+        {experiences.map((experience, expIndex) => {
+          const isLastExperience = expIndex === experiences.length - 1;
+
+          // Gather all images (primary + others)
+          const allImages = experience.images
+            ? ([
+                experience.images.primary,
+                ...(experience.images.others || []),
+              ].filter(Boolean) as string[])
+            : [];
+
+          // Calculate total tenure at company
+          const firstRole = experience.roles[0];
+          const lastRole = experience.roles[experience.roles.length - 1];
+          const totalTenure = formatDateRange(
+            lastRole.startDate,
+            firstRole.endDate,
+          );
 
           return (
             <TimelineItem
-              key={`${role.companyName}-${role.title}-${index}`}
-              isLast={isLast}
+              key={`${experience.name}-${expIndex}`}
+              isLast={isLastExperience}
             >
-              {/* Company header (only show on first role for each company) */}
-              {(index === 0 ||
-                role.companyName !== allRoles[index - 1].companyName) && (
-                <div className="mb-3">
-                  <div className="flex items-start gap-3 mb-3">
-                    <div className="flex-1 min-w-0">
-                      <div className="flex items-start justify-between gap-2">
-                        <div>
-                          <h3 className="text-20 font-semibold text-text-primary">
-                            {role.companyName}
-                          </h3>
-                          <p className="text-14 text-text-tertiary mt-1">
-                            {role.companyAbout}
-                          </p>
-                        </div>
-                        {role.companyLink && (
-                          <Button asChild variant="ghost" size="sm">
-                            <Link
-                              href={role.companyLink}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                            >
-                              <ExternalLink className="w-4 h-4" />
-                            </Link>
-                          </Button>
-                        )}
-                      </div>
-                    </div>
+              {/* Company Header */}
+              <div className="mb-4">
+                <div className="flex items-start justify-between gap-2 mb-2">
+                  <div className="flex-1 min-w-0">
+                    <h3 className="text-20 font-semibold text-text-primary">
+                      {experience.name}
+                    </h3>
+                    <p className="text-12 font-mono text-text-quaternary mt-1">
+                      {totalTenure}
+                    </p>
+                    <p className="text-14 text-text-tertiary mt-1">
+                      {experience.about}
+                    </p>
                   </div>
-                  {role.companyImages.length > 0 && (
-                    <ImageGallery
-                      images={role.companyImages}
-                      alt={role.companyName}
-                      thumbnailSize="lg"
-                    />
+                  {experience.links?.primary && (
+                    <Button asChild variant="ghost" size="sm">
+                      <Link
+                        href={experience.links.primary}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <ExternalLink className="w-4 h-4" />
+                      </Link>
+                    </Button>
                   )}
                 </div>
-              )}
-
-              {/* Role details */}
-              <TimelineHeader>
-                <TimelineTitle>{role.title}</TimelineTitle>
-                <TimelineMeta>
-                  <TimelineDate>
-                    {formatDateRange(role.startDate, role.endDate)}
-                  </TimelineDate>
-                  {role.location && (
-                    <TimelineLocation>{role.location}</TimelineLocation>
-                  )}
-                </TimelineMeta>
-              </TimelineHeader>
-
-              <TimelineContent>
-                <TimelineDescription>{role.description}</TimelineDescription>
-
-                {role.details && role.details.length > 0 && (
-                  <ul className="space-y-2 mt-2">
-                    {role.details.map((detail, detailIndex) => (
-                      <li
-                        key={detailIndex}
-                        className="flex items-start gap-2 text-14 text-text-secondary"
-                      >
-                        <span className="text-accent font-bold shrink-0 mt-0.5">
-                          →
-                        </span>
-                        <span>{detail}</span>
-                      </li>
-                    ))}
-                  </ul>
+                {allImages.length > 0 && (
+                  <ImageGallery
+                    images={allImages}
+                    alt={experience.name}
+                    thumbnailSize="lg"
+                  />
                 )}
-              </TimelineContent>
+              </div>
+
+              {/* Roles under this company */}
+              <div className="space-y-6 border-l-2 border-border pl-4 ml-1">
+                {experience.roles.map((role, roleIndex) => (
+                  <div key={`${experience.name}-${role.title}-${roleIndex}`}>
+                    {/* Role Header */}
+                    <TimelineHeader>
+                      <TimelineTitle>{role.title}</TimelineTitle>
+                      <TimelineMeta>
+                        <TimelineDate>
+                          {formatDateRange(role.startDate, role.endDate)}
+                        </TimelineDate>
+                        {role.location && (
+                          <TimelineLocation>{role.location}</TimelineLocation>
+                        )}
+                      </TimelineMeta>
+                    </TimelineHeader>
+
+                    {/* Role Content */}
+                    <TimelineContent>
+                      <TimelineDescription>
+                        {role.description}
+                      </TimelineDescription>
+
+                      {role.details && role.details.length > 0 && (
+                        <ul className="space-y-2 mt-2">
+                          {role.details.map((detail, detailIndex) => (
+                            <li
+                              key={detailIndex}
+                              className="flex items-start gap-2 text-14 text-text-secondary"
+                            >
+                              <span className="text-accent font-bold shrink-0 mt-0.5">
+                                →
+                              </span>
+                              <span>{detail}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      )}
+                    </TimelineContent>
+                  </div>
+                ))}
+              </div>
             </TimelineItem>
           );
         })}

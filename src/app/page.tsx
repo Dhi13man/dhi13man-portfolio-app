@@ -2,7 +2,6 @@ import { Section, SectionHeader, SectionTitle } from "@/components/ui/section";
 import { ProjectCard } from "@/components/domain/ProjectCard";
 import { VentureCard } from "@/components/domain/VentureCard";
 import Image from "next/image";
-import { Github, Linkedin } from "lucide-react";
 import { aboutData } from "@/data/about";
 import { projects } from "@/data/projects";
 import { ventures } from "@/data/ventures";
@@ -38,17 +37,11 @@ export default function Home() {
             <h1 className="text-64 font-display font-bold text-text-primary">
               Dhiman Seal
             </h1>
+            <p className="text-20 text-text-secondary font-medium">
+              {aboutData.tagline}
+            </p>
             {/* Social Links */}
             <div className="flex items-center justify-center gap-4 pt-2">
-              <a
-                href="https://www.linkedin.com/in/dhi13man/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-text-tertiary hover:text-accent transition-colors duration-fast"
-                aria-label="LinkedIn Profile"
-              >
-                <Linkedin className="w-6 h-6" />
-              </a>
               <a
                 href="https://github.com/Dhi13man"
                 target="_blank"
@@ -56,7 +49,28 @@ export default function Home() {
                 className="text-text-tertiary hover:text-accent transition-colors duration-fast"
                 aria-label="GitHub Profile"
               >
-                <Github className="w-6 h-6" />
+                <Image
+                  src="/assets/logos/github.svg"
+                  alt=""
+                  width={24}
+                  height={24}
+                  className="w-6 h-6"
+                />
+              </a>
+              <a
+                href="https://www.linkedin.com/in/dhi13man/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-text-tertiary hover:text-accent transition-colors duration-fast"
+                aria-label="LinkedIn Profile"
+              >
+                <Image
+                  src="/assets/logos/linkedin.svg"
+                  alt=""
+                  width={24}
+                  height={24}
+                  className="w-6 h-6"
+                />
               </a>
               <a
                 href="https://medium.com/@dhi13man"
@@ -65,19 +79,15 @@ export default function Home() {
                 className="text-text-tertiary hover:text-accent transition-colors duration-fast"
                 aria-label="Medium Profile"
               >
-                <svg
+                <Image
+                  src="/assets/logos/medium.svg"
+                  alt=""
+                  width={24}
+                  height={24}
                   className="w-6 h-6"
-                  viewBox="0 0 24 24"
-                  fill="currentColor"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path d="M13.54 12a6.8 6.8 0 01-6.77 6.82A6.8 6.8 0 010 12a6.8 6.8 0 016.77-6.82A6.8 6.8 0 0113.54 12zM20.96 12c0 3.54-1.51 6.42-3.38 6.42-1.87 0-3.39-2.88-3.39-6.42s1.52-6.42 3.39-6.42 3.38 2.88 3.38 6.42M24 12c0 3.17-.53 5.75-1.19 5.75-.66 0-1.19-2.58-1.19-5.75s.53-5.75 1.19-5.75C23.47 6.25 24 8.83 24 12z" />
-                </svg>
+                />
               </a>
             </div>
-            <p className="text-20 text-text-secondary font-medium">
-              {aboutData.tagline}
-            </p>
           </div>
         </div>
       </Section>
