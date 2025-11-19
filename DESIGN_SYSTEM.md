@@ -540,49 +540,6 @@ const Section = React.forwardRef<HTMLElement, SectionProps>(
 
 **Sizes**: `sm`, `md`, `lg`
 
-### Badge (Semantic Status Indicators)
-
-**Purpose**: Labels and status indicators with semantic meaning
-
-```tsx
-// src/components/ui/badge.tsx
-<Badge variant="accent">Featured</Badge>
-<Badge variant="success">Active</Badge>
-<Badge variant="warning">Pending</Badge>
-<Badge variant="error">Failed</Badge>
-<Badge variant="info">Information</Badge>
-<Badge variant="outline">Skill Tag</Badge>
-```
-
-**Semantic Variants**:
-- `default`: Neutral content with subtle styling
-- `accent`: Featured/highlighted items (purple accent)
-- `success`: Positive metrics, achievements (green)
-- `warning`: Attention items, pending status (amber)
-- `error`: Errors, failed items (red)
-- `info`: Informational badges, neutral data (blue)
-- `outline`: Secondary content like skill tags
-
-**Legacy Variants** (deprecated, maintained for backward compatibility):
-- `projects`, `experience`, `education`, `achievements`, `ventures`, `recommendations`
-
-**Sizes**: `sm`, `md`
-
-**Design Features**:
-- Rounded-full shape for pill appearance
-- Flat design with opacity-based backgrounds (e.g., `bg-accent/10`)
-- Subtle borders matching Linear aesthetic
-- Transition effects on hover (for `outline` variant)
-- Fully documented in TypeScript with JSDoc
-
-**Usage Guidelines**:
-- Use `success` for positive metrics (e.g., high GPA, achievements)
-- Use `info` for neutral informational badges
-- Use `warning` for attention-requiring items
-- Use `error` sparingly for failed/problematic items
-- Use `outline` for secondary content like skill tags
-- Use `accent` for featured/highlighted content
-
 ---
 
 ## Layout System
