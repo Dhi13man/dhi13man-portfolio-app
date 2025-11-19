@@ -24,9 +24,11 @@
 ## Overview
 
 ### Vision
+
 A modern, high-performance portfolio built with industry-standard technologies, embodying Linear's flat, minimal, information-dense design aesthetic.
 
 ### Core Principles
+
 1. **Performance First**: Core Web Vitals compliance (LCP < 2.5s, INP < 200ms, CLS < 0.1)
 2. **Accessibility Always**: WCAG 2.2 AA compliance minimum
 3. **Linear Aesthetic**: Flat, precise, minimal, no shadows, information-dense
@@ -40,13 +42,15 @@ A modern, high-performance portfolio built with industry-standard technologies, 
 ### Core Technologies
 
 #### Framework & Language
-```
+
+```plain
 - Next.js 15.5.6 (App Router, Static Export)
 - React 19.2.0
 - TypeScript 5.6.3 (strict mode)
 ```
 
 **Why Next.js?**
+
 - Industry standard for React applications
 - Built-in image optimization
 - File-based routing
@@ -54,19 +58,22 @@ A modern, high-performance portfolio built with industry-standard technologies, 
 - Zero-config TypeScript support
 
 #### Styling
-```
+
+```plain
 - Tailwind CSS 3.4.14 (utility-first)
 - Inter font family (from Google Fonts CDN)
 ```
 
 **Why Tailwind?**
+
 - Linear design tokens map perfectly to utilities
 - Rapid development with design consistency
 - Tree-shaking eliminates unused classes
 - Works seamlessly with Next.js
 
 #### Build & Deploy
-```
+
+```plain
 - Node.js 18+
 - npm for package management
 - Cloudflare Pages for static hosting
@@ -74,7 +81,7 @@ A modern, high-performance portfolio built with industry-standard technologies, 
 
 ### Project Structure
 
-```
+```text
 portfolio/
 ├── src/
 │   ├── app/                    # Next.js App Router
@@ -136,7 +143,8 @@ portfolio/
 
 ### Build Configuration
 
-**next.config.js**
+#### next.config.js
+
 ```javascript
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -151,7 +159,8 @@ const nextConfig = {
 module.exports = nextConfig
 ```
 
-**Build Commands**
+#### Build Commands
+
 ```bash
 npm run dev      # Development server
 npm run build    # Production build → /out directory
@@ -188,13 +197,15 @@ npm run lint     # ESLint check
 
 ### Colors (Tailwind Config)
 
-**Background & Surface**
+#### Background & Surface
+
 ```javascript
 background: '#0a0a0a',          // Near-black (NOT #000)
 surface: '#141414',             // Elevated panels
 ```
 
-**Borders**
+#### Borders
+
 ```javascript
 border: {
   DEFAULT: 'rgba(255, 255, 255, 0.08)',    // Subtle dividers
@@ -203,7 +214,8 @@ border: {
 }
 ```
 
-**Text Hierarchy (White + Opacity)**
+#### Text Hierarchy (White + Opacity)
+
 ```javascript
 text: {
   primary: 'rgba(255, 255, 255, 1.0)',      // 100% - Headings
@@ -213,7 +225,8 @@ text: {
 }
 ```
 
-**Accent Colors (Minimal Use)**
+#### Accent Colors (Minimal Use)
+
 ```javascript
 accent: {
   DEFAULT: '#8B5CF6',           // Purple - primary
@@ -234,19 +247,22 @@ hover: {
 
 ### Typography
 
-**Font Families**
+#### Font Families
+
 ```javascript
 sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
 display: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],  // Same font, bold weights
 mono: ['ui-monospace', 'SFMono-Regular', 'Menlo', 'monospace'],
 ```
 
-**Font Loading (Google Fonts CDN)**
+#### Font Loading (Google Fonts CDN)
+
 ```html
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
 ```
 
-**Font Sizes (Fixed, not fluid)**
+#### Font Sizes (Fixed, not fluid)
+
 ```javascript
 '12': ['12px', { lineHeight: '1.5' }],      // Captions, timestamps
 '14': ['14px', { lineHeight: '1.5' }],      // Small labels
@@ -295,7 +311,8 @@ transitionTimingFunction: {
 
 ### Global CSS
 
-**src/styles/globals.css**
+#### src/styles/globals.css
+
 ```css
 @tailwind base;
 @tailwind components;
@@ -419,6 +436,7 @@ const Panel = React.forwardRef<HTMLDivElement, PanelProps>(
 ```
 
 **Usage**:
+
 ```tsx
 <Panel hoverable>
   <PanelTitle>Title</PanelTitle>
@@ -454,6 +472,7 @@ const Section = React.forwardRef<HTMLElement, SectionProps>(
 ```
 
 **Usage**:
+
 ```tsx
 <Section noDivider>  {/* First section, no top border */}
   <SectionHeader>
@@ -491,6 +510,7 @@ const Section = React.forwardRef<HTMLElement, SectionProps>(
 ```
 
 **Visual**:
+
 - Vertical line connecting items
 - Dots for milestones
 - Precise alignment
@@ -512,6 +532,7 @@ const Section = React.forwardRef<HTMLElement, SectionProps>(
 ```
 
 **Variants**:
+
 - `primary`: Filled accent background
 - `secondary`: Border + accent text
 - `ghost`: Transparent, hover shows bg
@@ -524,7 +545,8 @@ const Section = React.forwardRef<HTMLElement, SectionProps>(
 ## Layout System
 
 ### Container Widths
-```
+
+```text
 Max width: 1200px (centered)
 Horizontal padding:
   - Mobile: 16px (px-4)
@@ -533,7 +555,8 @@ Horizontal padding:
 ```
 
 ### Section Spacing
-```
+
+```text
 Vertical padding: 48px (py-12)
 Between sections: Border-top divider (1px, opacity 0.08)
 ```
@@ -541,6 +564,7 @@ Between sections: Border-top divider (1px, opacity 0.08)
 ### Grid System
 
 **Projects/Lists**: Flat vertical list (NOT grid)
+
 ```tsx
 <div className="space-y-3">
   {items.map(item => (
@@ -552,6 +576,7 @@ Between sections: Border-top divider (1px, opacity 0.08)
 ```
 
 **Timelines**: Vertical with connecting line
+
 ```tsx
 <Timeline>
   {items.map((item, i) => (
@@ -569,6 +594,7 @@ Between sections: Border-top divider (1px, opacity 0.08)
 ### Home Page
 
 **Structure**:
+
 1. **Hero Section** (noDivider):
    - Profile photo (circular, 128px, border)
    - Name in text-64 font-display
@@ -587,6 +613,7 @@ Between sections: Border-top divider (1px, opacity 0.08)
    - Each in hoverable Panel
 
 **Example**:
+
 ```tsx
 <Section noDivider className="py-16">
   {/* Profile photo */}
@@ -747,7 +774,7 @@ Between sections: Border-top divider (1px, opacity 0.08)
 
 ### Current Performance
 
-```
+```text
 Build Output (Nov 2025):
 Route                    Size    First Load JS
 /                       162 B   106 kB
@@ -780,6 +807,7 @@ All pages statically exported ✅
 ### WCAG 2.2 AA Compliance
 
 **Implemented**:
+
 - ✅ Semantic HTML (h1-h6 hierarchy)
 - ✅ Focus indicators (ring-2 ring-accent)
 - ✅ Keyboard navigation (all interactive elements)
@@ -789,6 +817,7 @@ All pages statically exported ✅
 - ✅ Screen reader friendly (proper landmarks)
 
 **Testing Tools**:
+
 - axe DevTools
 - Lighthouse Accessibility audit
 - NVDA/VoiceOver screen readers
@@ -815,6 +844,7 @@ All pages statically exported ✅
 ### Styling Guidelines
 
 **DO**:
+
 - Use Tailwind utilities
 - Use design tokens from tailwind.config.ts
 - Keep layouts flat (no nested cards)
@@ -822,6 +852,7 @@ All pages statically exported ✅
 - Use 4px spacing scale
 
 **DON'T**:
+
 - Add shadows (except focus rings)
 - Use arbitrary values (stick to tokens)
 - Create complex grids (flat lists preferred)
@@ -831,6 +862,7 @@ All pages statically exported ✅
 ### Component Patterns
 
 **Hoverable Panel**:
+
 ```tsx
 <Panel hoverable>
   {/* Content */}
@@ -838,6 +870,7 @@ All pages statically exported ✅
 ```
 
 **Section with Header**:
+
 ```tsx
 <Section>
   <SectionHeader>
@@ -849,6 +882,7 @@ All pages statically exported ✅
 ```
 
 **List with Arrow Bullets**:
+
 ```tsx
 <ul className="space-y-2">
   {items.map(item => (
@@ -860,20 +894,23 @@ All pages statically exported ✅
 </ul>
 ```
 
-### Build & Deploy
+### Build & Deploy Workflow
 
 **Local Development**:
+
 ```bash
 npm run dev           # http://localhost:3000
 ```
 
 **Production Build**:
+
 ```bash
 npm run build         # Builds to /out directory
 ```
 
 **Cloudflare Pages Configuration**:
-```
+
+```text
 Build command: npm run build
 Build output directory: out
 Root directory: /
@@ -887,20 +924,24 @@ Environment variables:
 
 ### Common Issues
 
-**1. Hydration Warnings**
+#### 1. Hydration Warnings
+
 - Use `suppressHydrationWarning` on elements with dynamic content (like dates)
 - Example: `<p suppressHydrationWarning>{new Date().getFullYear()}</p>`
 
-**2. Image Paths**
+#### 2. Image Paths
+
 - Always use absolute paths: `/assets/image.webp`
 - Never prepend slash in components: `src={imagePath}` (NOT `src={`/${imagePath}`}`)
 
-**3. Type Errors**
+#### 3. Type Errors
+
 - Ensure all data matches TypeScript interfaces
 - Check optional fields with `?.` operator
 - Verify array methods return correct types
 
-**4. Build Failures**
+#### 4. Build Failures
+
 - Check ESLint errors: `npm run lint`
 - Verify all imports are correct
 - Ensure no TypeScript errors: `npx tsc --noEmit`
@@ -910,6 +951,7 @@ Environment variables:
 ## Future Enhancements
 
 ### Potential Additions
+
 - Dark mode toggle (currently always dark)
 - Animations on scroll (Intersection Observer)
 - Search/filter functionality
@@ -918,6 +960,7 @@ Environment variables:
 - Blog section
 
 ### Design System Extensions
+
 - Loading skeletons
 - Toast notifications
 - Modal dialogs
@@ -928,11 +971,11 @@ Environment variables:
 
 ## References
 
-- **Linear Design**: https://linear.app/
-- **Next.js Docs**: https://nextjs.org/docs
-- **Tailwind Docs**: https://tailwindcss.com/docs
-- **Inter Font**: https://rsms.me/inter/
-- **WCAG 2.2**: https://www.w3.org/TR/WCAG22/
+- **Linear Design**: <https://linear.app/>
+- **Next.js Docs**: <https://nextjs.org/docs>
+- **Tailwind Docs**: <https://tailwindcss.com/docs>
+- **Inter Font**: <https://rsms.me/inter/>
+- **WCAG 2.2**: <https://www.w3.org/TR/WCAG22/>
 
 ---
 
