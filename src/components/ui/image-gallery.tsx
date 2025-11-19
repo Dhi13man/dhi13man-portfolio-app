@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from "react";
 import Image from "next/image";
-import { motion, AnimatePresence } from "framer-motion";
 import { X, ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "./button";
 
@@ -171,93 +170,83 @@ function Lightbox({
   onKeyDown,
   alt,
 }: LightboxProps) {
+  if (!isOpen) return null;
+
   return (
-    <AnimatePresence>
-      {isOpen && (
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 0.2 }}
-          className="fixed inset-0 z-50 bg-background/95 backdrop-blur-sm flex items-center justify-center p-4"
-          onClick={onClose}
-          onKeyDown={onKeyDown}
-          tabIndex={0}
-          role="dialog"
-          aria-modal="true"
-          aria-label="Image viewer"
+    <div
+      className="fixed inset-0 z-50 bg-background/95 backdrop-blur-sm flex items-center justify-center p-4 animate-fade-in"
+      onClick={onClose}
+      onKeyDown={onKeyDown}
+      tabIndex={0}
+      role="dialog"
+      aria-modal="true"
+      aria-label="Image viewer"
+    >
+      {/* Close button */}
+      <Button
+        variant="ghost"
+        size="sm"
+        className="absolute top-4 right-4 z-10"
+        onClick={onClose}
+        aria-label="Close"
+      >
+        <X className="w-5 h-5" />
+      </Button>
+
+      {/* Previous button */}
+      {images.length > 1 && (
+        <Button
+          variant="ghost"
+          size="sm"
+          className="absolute left-4 z-10"
+          onClick={(e) => {
+            e.stopPropagation();
+            onPrevious();
+          }}
+          aria-label="Previous image"
         >
-          {/* Close button */}
-          <Button
-            variant="ghost"
-            size="sm"
-            className="absolute top-4 right-4 z-10"
-            onClick={onClose}
-            aria-label="Close"
-          >
-            <X className="w-5 h-5" />
-          </Button>
-
-          {/* Previous button */}
-          {images.length > 1 && (
-            <Button
-              variant="ghost"
-              size="sm"
-              className="absolute left-4 z-10"
-              onClick={(e) => {
-                e.stopPropagation();
-                onPrevious();
-              }}
-              aria-label="Previous image"
-            >
-              <ChevronLeft className="w-6 h-6" />
-            </Button>
-          )}
-
-          {/* Image */}
-          <motion.div
-            key={currentIndex}
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            exit={{ opacity: 0, scale: 0.9 }}
-            transition={{ duration: 0.2 }}
-            className="relative max-w-7xl max-h-[90vh] w-full h-full"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <Image
-              src={images[currentIndex]}
-              alt={`${alt} - Image ${currentIndex + 1}`}
-              fill
-              className="object-contain"
-              sizes="(max-width: 1280px) 100vw, 1280px"
-              priority
-            />
-          </motion.div>
-
-          {/* Next button */}
-          {images.length > 1 && (
-            <Button
-              variant="ghost"
-              size="sm"
-              className="absolute right-4 z-10"
-              onClick={(e) => {
-                e.stopPropagation();
-                onNext();
-              }}
-              aria-label="Next image"
-            >
-              <ChevronRight className="w-6 h-6" />
-            </Button>
-          )}
-
-          {/* Counter */}
-          {images.length > 1 && (
-            <div className="absolute bottom-4 left-1/2 -translate-x-1/2 px-3 py-1.5 bg-surface/80 backdrop-blur-sm border border-border rounded text-14 font-mono text-text-secondary">
-              {currentIndex + 1} / {images.length}
-            </div>
-          )}
-        </motion.div>
+          <ChevronLeft className="w-6 h-6" />
+        </Button>
       )}
-    </AnimatePresence>
+
+      {/* Image */}
+      <div
+        key={currentIndex}
+        className="relative max-w-7xl max-h-[90vh] w-full h-full animate-fade-in"
+        onClick={(e) => e.stopPropagation()}
+      >
+        <Image
+          src={images[currentIndex]}
+          alt={`${alt} - Image ${currentIndex + 1}`}
+          fill
+          className="object-contain"
+          sizes="(max-width: 1280px) 100vw, 1280px"
+          priority
+        />
+      </div>
+
+      {/* Next button */}
+      {images.length > 1 && (
+        <Button
+          variant="ghost"
+          size="sm"
+          className="absolute right-4 z-10"
+          onClick={(e) => {
+            e.stopPropagation();
+            onNext();
+          }}
+          aria-label="Next image"
+        >
+          <ChevronRight className="w-6 h-6" />
+        </Button>
+      )}
+
+      {/* Counter */}
+      {images.length > 1 && (
+        <div className="absolute bottom-4 left-1/2 -translate-x-1/2 px-3 py-1.5 bg-surface/80 backdrop-blur-sm border border-border rounded text-14 font-mono text-text-secondary">
+          {currentIndex + 1} / {images.length}
+        </div>
+      )}
+    </div>
   );
 }
