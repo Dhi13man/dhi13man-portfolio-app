@@ -1,6 +1,7 @@
 import { Section, SectionHeader, SectionTitle } from '@/components/ui/section'
 import { Panel } from '@/components/ui/panel'
 import Link from 'next/link'
+import Image from 'next/image'
 import { aboutData } from '@/data/about'
 import { projects } from '@/data/projects'
 import { ventures } from '@/data/ventures'
@@ -18,13 +19,29 @@ export default function Home() {
     <>
       {/* Hero Section - Linear style: Large display, minimal */}
       <Section noDivider className="py-16">
-        <div className="max-w-3xl mx-auto text-center space-y-4">
-          <h1 className="text-64 font-display font-bold text-text-primary">
-            Dhiman Seal
-          </h1>
-          <p className="text-20 text-text-secondary font-medium">
-            {aboutData.tagline}
-          </p>
+        <div className="max-w-3xl mx-auto text-center space-y-6">
+          {/* Profile Photo */}
+          <div className="flex justify-center">
+            <div className="relative w-32 h-32 rounded-full overflow-hidden border-2 border-border">
+              <Image
+                src="/assets/me.webp"
+                alt="Dhiman Seal"
+                fill
+                className="object-cover"
+                sizes="128px"
+                priority
+              />
+            </div>
+          </div>
+
+          <div className="space-y-4">
+            <h1 className="text-64 font-display font-bold text-text-primary">
+              Dhiman Seal
+            </h1>
+            <p className="text-20 text-text-secondary font-medium">
+              {aboutData.tagline}
+            </p>
+          </div>
         </div>
       </Section>
 
