@@ -1,0 +1,93 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-text-primary;
+    font-feature-settings: 'rlig' 1, 'calt' 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Linear typography hierarchy */
+  h1 {
+    @apply font-display text-48 font-bold text-text-primary;
+  }
+
+  h2 {
+    @apply font-display text-32 font-bold text-text-primary;
+  }
+
+  h3 {
+    @apply font-sans text-24 font-semibold text-text-primary;
+  }
+
+  h4 {
+    @apply font-sans text-20 font-semibold text-text-primary;
+  }
+
+  p {
+    @apply text-16 text-text-secondary;
+  }
+
+  a {
+    @apply text-accent hover:text-accent-hover transition-colors duration-fast;
+  }
+
+  /* Focus states - Linear style */
+  *:focus-visible {
+    @apply outline-none ring-2 ring-accent ring-offset-2 ring-offset-background;
+  }
+}
+
+@layer utilities {
+  /* Reduced motion support */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+
+  /* Linear panel component */
+  .panel {
+    @apply bg-surface border border-border rounded p-4;
+  }
+
+  .panel-hover {
+    @apply bg-surface border border-border rounded p-4 transition-all duration-fast;
+    @apply hover:border-border-hover hover:bg-hover-bg;
+  }
+
+  /* Section divider */
+  .section-divider {
+    @apply border-t border-border w-full;
+  }
+
+  /* Linear-style list marker */
+  .list-linear {
+    @apply space-y-2;
+  }
+
+  .list-linear li {
+    @apply flex items-start gap-2 text-text-secondary;
+  }
+
+  .list-linear li::before {
+    content: '→';
+    @apply text-accent font-bold shrink-0;
+  }
+}
