@@ -540,6 +540,49 @@ const Section = React.forwardRef<HTMLElement, SectionProps>(
 
 **Sizes**: `sm`, `md`, `lg`
 
+### Badge (Semantic Status Indicators)
+
+**Purpose**: Labels and status indicators with semantic meaning
+
+```tsx
+// src/components/ui/badge.tsx
+<Badge variant="accent">Featured</Badge>
+<Badge variant="success">Active</Badge>
+<Badge variant="warning">Pending</Badge>
+<Badge variant="error">Failed</Badge>
+<Badge variant="info">Information</Badge>
+<Badge variant="outline">Skill Tag</Badge>
+```
+
+**Semantic Variants**:
+- `default`: Neutral content with subtle styling
+- `accent`: Featured/highlighted items (purple accent)
+- `success`: Positive metrics, achievements (green)
+- `warning`: Attention items, pending status (amber)
+- `error`: Errors, failed items (red)
+- `info`: Informational badges, neutral data (blue)
+- `outline`: Secondary content like skill tags
+
+**Legacy Variants** (deprecated, maintained for backward compatibility):
+- `projects`, `experience`, `education`, `achievements`, `ventures`, `recommendations`
+
+**Sizes**: `sm`, `md`
+
+**Design Features**:
+- Rounded-full shape for pill appearance
+- Flat design with opacity-based backgrounds (e.g., `bg-accent/10`)
+- Subtle borders matching Linear aesthetic
+- Transition effects on hover (for `outline` variant)
+- Fully documented in TypeScript with JSDoc
+
+**Usage Guidelines**:
+- Use `success` for positive metrics (e.g., high GPA, achievements)
+- Use `info` for neutral informational badges
+- Use `warning` for attention-requiring items
+- Use `error` sparingly for failed/problematic items
+- Use `outline` for secondary content like skill tags
+- Use `accent` for featured/highlighted content
+
 ---
 
 ## Layout System
@@ -811,10 +854,14 @@ All pages statically exported ✅
 - ✅ Semantic HTML (h1-h6 hierarchy)
 - ✅ Focus indicators (ring-2 ring-accent)
 - ✅ Keyboard navigation (all interactive elements)
+- ✅ Skip-to-content link (WCAG 2.2 Level A requirement)
+- ✅ ARIA labels on navigation (aria-label, aria-current)
+- ✅ ARIA expanded/controls for mobile menu
+- ✅ SR-only utility class for screen reader content
 - ✅ Alt text on images
 - ✅ Color contrast (white on near-black = 18:1 ratio)
 - ✅ Reduced motion support
-- ✅ Screen reader friendly (proper landmarks)
+- ✅ Screen reader friendly (proper landmarks and ARIA attributes)
 
 **Testing Tools**:
 
@@ -959,13 +1006,35 @@ Environment variables:
 - Contact form
 - Blog section
 
-### Design System Extensions
+### Design System Philosophy: Intentional Minimalism
 
-- Loading skeletons
-- Toast notifications
-- Modal dialogs
-- Dropdown menus
-- Tabs component
+**Why We Don't Have These Components:**
+
+This portfolio intentionally avoids common UI library components that are designed for enterprise applications. Our design philosophy prioritizes **simplicity, performance, and content focus** over feature completeness.
+
+**Components NOT Implemented (And Why):**
+
+- ❌ **Modal Dialogs**: Static portfolios present content inline, not in overlays. Modals with backdrop blur violate Linear's "no refraction effects" principle and hurt GPU performance.
+
+- ❌ **Toast Notifications**: Only needed for async operations (API calls, form submissions). Static portfolios have no such operations.
+
+- ❌ **Dropdown Menus**: Portfolio navigation is intentionally flat (7 pages). Complex dropdowns add unnecessary interaction complexity.
+
+- ❌ **Loading Skeletons**: Only valuable for loads >1 second. Static HTML with 102-111 KB bundles loads in milliseconds.
+
+- ❌ **Tabs Component**: Current flat list and timeline patterns organize content effectively without adding state management complexity.
+
+- ❌ **Z-Index Layering System**: Only needed when multiple UI layers overlap (modals, dropdowns, tooltips). Our flat design has no overlapping elements.
+
+**Potential Future Components** (only if legitimate use cases emerge):
+
+- Form components (Input, Textarea, Select) - if adding contact form
+- Tooltip component - for additional context on hover
+- Accordion component - for FAQ section
+
+**Guiding Principle**: "Every component must justify its bundle cost with clear user value."
+
+**Reference**: Based on comprehensive industry research (2024-2025) showing portfolio best practices favor minimalism, with average hiring manager attention span of 30 seconds. Content quality > component quantity.
 
 ---
 
