@@ -309,6 +309,21 @@ transitionTimingFunction: {
 }
 ```
 
+### Z-Index Scale (Layering System)
+
+```javascript
+zIndex: {
+  base: '0',          // Default content layer
+  dropdown: '1000',   // Dropdown menus
+  sticky: '1100',     // Sticky headers/navigation
+  fixed: '1200',      // Fixed position elements
+  modalBackdrop: '1300',  // Modal backdrop overlay
+  modal: '1400',      // Modal dialogs
+  popover: '1500',    // Popovers and tooltips
+  tooltip: '1600',    // Tooltips (highest)
+}
+```
+
 ### Global CSS
 
 #### src/styles/globals.css
@@ -539,6 +554,195 @@ const Section = React.forwardRef<HTMLElement, SectionProps>(
 - `link`: Underline on hover
 
 **Sizes**: `sm`, `md`, `lg`
+
+---
+
+## Advanced UI Components
+
+### Toast Notifications
+
+**Purpose**: Non-intrusive notifications for user feedback
+
+```tsx
+// src/components/ui/toast.tsx
+import { Toast, ToastProvider, useToast } from '@/components/ui/toast'
+
+// Wrap your app with ToastProvider
+<ToastProvider>
+  <App />
+</ToastProvider>
+
+// Use toast in any component
+const { showToast } = useToast()
+
+showToast({
+  variant: 'success',
+  title: 'Success!',
+  description: 'Your changes have been saved.',
+  duration: 5000,
+})
+```
+
+**Variants**: `default`, `success`, `error`, `warning`, `info`
+
+**Features**:
+- Auto-dismiss with configurable duration
+- Manual close button
+- Accessible with ARIA live regions
+- Stacks multiple toasts
+- Flat Linear design with status icons
+
+### Modal/Dialog
+
+**Purpose**: Focus user attention on critical actions or information
+
+```tsx
+// src/components/ui/modal.tsx
+import { Modal, ModalHeader, ModalTitle, ModalDescription, ModalContent, ModalFooter, ModalCloseButton } from '@/components/ui/modal'
+
+const [open, setOpen] = useState(false)
+
+<Modal open={open} onOpenChange={setOpen} closeOnClickOutside>
+  <ModalHeader>
+    <ModalTitle>Dialog Title</ModalTitle>
+    <ModalCloseButton onClose={() => setOpen(false)} />
+  </ModalHeader>
+  <ModalDescription>
+    Optional description text
+  </ModalDescription>
+  <ModalContent>
+    <p>Modal content goes here</p>
+  </ModalContent>
+  <ModalFooter>
+    <Button variant="secondary" onClick={() => setOpen(false)}>Cancel</Button>
+    <Button variant="primary" onClick={handleSave}>Save</Button>
+  </ModalFooter>
+</Modal>
+```
+
+**Features**:
+- ESC key to close
+- Click outside to close (optional)
+- Focus trap for accessibility
+- Body scroll prevention when open
+- Backdrop blur effect
+- Flat Linear design
+
+### Skeleton Loading
+
+**Purpose**: Loading states that maintain layout and reduce perceived wait time
+
+```tsx
+// src/components/ui/skeleton.tsx
+import { Skeleton, SkeletonPanel, SkeletonCard, SkeletonAvatar } from '@/components/ui/skeleton'
+
+// Basic skeleton
+<Skeleton variant="text" width="60%" height={20} />
+<Skeleton variant="circular" width={128} height={128} />
+<Skeleton variant="rectangular" width="100%" height={200} />
+
+// Pre-built patterns
+<SkeletonPanel />
+<SkeletonCard />
+<SkeletonAvatar size={128} />
+<SkeletonTimelineItem />
+<SkeletonPageHeader />
+```
+
+**Variants**: `text`, `circular`, `rectangular`
+
+**Features**:
+- Subtle pulse animation
+- Accessible with aria-busy
+- Pre-built patterns for common layouts
+- Matches Linear's minimal aesthetic
+
+### Tabs
+
+**Purpose**: Organize content into separate views within the same context
+
+```tsx
+// src/components/ui/tabs.tsx
+import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs'
+
+<Tabs defaultValue="overview">
+  <TabsList>
+    <TabsTrigger value="overview">Overview</TabsTrigger>
+    <TabsTrigger value="details">Details</TabsTrigger>
+    <TabsTrigger value="activity">Activity</TabsTrigger>
+  </TabsList>
+  <TabsContent value="overview">
+    <p>Overview content</p>
+  </TabsContent>
+  <TabsContent value="details">
+    <p>Details content</p>
+  </TabsContent>
+  <TabsContent value="activity">
+    <p>Activity content</p>
+  </TabsContent>
+</Tabs>
+```
+
+**Features**:
+- Keyboard navigation (arrow keys)
+- Accessible with ARIA attributes
+- Border-bottom indicator (Linear style)
+- Controlled or uncontrolled
+- Smooth transitions
+
+### Dropdown Menu
+
+**Purpose**: Contextual actions and options
+
+```tsx
+// src/components/ui/dropdown.tsx
+import { Dropdown, DropdownTrigger, DropdownContent, DropdownItem, DropdownSeparator, DropdownLabel } from '@/components/ui/dropdown'
+
+<Dropdown>
+  <DropdownTrigger>
+    <Button variant="secondary">Options</Button>
+  </DropdownTrigger>
+  <DropdownContent align="right">
+    <DropdownLabel>Actions</DropdownLabel>
+    <DropdownItem onClick={handleEdit}>Edit</DropdownItem>
+    <DropdownItem onClick={handleDuplicate}>Duplicate</DropdownItem>
+    <DropdownSeparator />
+    <DropdownItem destructive onClick={handleDelete}>Delete</DropdownItem>
+  </DropdownContent>
+</Dropdown>
+```
+
+**Features**:
+- ESC key to close
+- Click outside to close
+- Keyboard navigation
+- Align left or right
+- Destructive variant for dangerous actions
+- Accessible with ARIA menu attributes
+
+### Badge (Enhanced)
+
+**Purpose**: Labels and status indicators
+
+```tsx
+// src/components/ui/badge.tsx - Updated for Linear design
+<Badge variant="accent">Featured</Badge>
+<Badge variant="success">Active</Badge>
+<Badge variant="warning">Pending</Badge>
+<Badge variant="error">Failed</Badge>
+<Badge variant="info">Beta</Badge>
+<Badge variant="outline">Tag</Badge>
+```
+
+**Variants**: `default`, `accent`, `success`, `warning`, `error`, `info`, `outline`
+
+**Sizes**: `sm`, `md`
+
+**Features**:
+- Flat design with opacity-based backgrounds
+- Consistent with status color system
+- Subtle borders matching Linear aesthetic
+- Smooth hover transitions
 
 ---
 
@@ -811,10 +1015,20 @@ All pages statically exported ✅
 - ✅ Semantic HTML (h1-h6 hierarchy)
 - ✅ Focus indicators (ring-2 ring-accent)
 - ✅ Keyboard navigation (all interactive elements)
+- ✅ Skip-to-content link for keyboard users
+- ✅ ARIA labels on all interactive components
+- ✅ ARIA current for active navigation items
+- ✅ ARIA expanded/controls for mobile menu
+- ✅ ARIA live regions for toast notifications
+- ✅ ARIA menu attributes for dropdowns
+- ✅ ARIA tab/tabpanel attributes for tabs
+- ✅ ARIA modal/dialog attributes for modals
 - ✅ Alt text on images
 - ✅ Color contrast (white on near-black = 18:1 ratio)
 - ✅ Reduced motion support
-- ✅ Screen reader friendly (proper landmarks)
+- ✅ Screen reader friendly (proper landmarks and SR-only utilities)
+- ✅ Focus trap in modals
+- ✅ ESC key support for dismissible components
 
 **Testing Tools**:
 
@@ -961,11 +1175,23 @@ Environment variables:
 
 ### Design System Extensions
 
-- Loading skeletons
-- Toast notifications
-- Modal dialogs
-- Dropdown menus
-- Tabs component
+**Implemented Components** ✅
+
+- ✅ Loading skeletons (Skeleton, SkeletonPanel, SkeletonTimelineItem, SkeletonAvatar, SkeletonCard, SkeletonPageHeader)
+- ✅ Toast notifications (Toast, ToastProvider, useToast hook)
+- ✅ Modal dialogs (Modal, ModalHeader, ModalTitle, ModalDescription, ModalContent, ModalFooter, ModalCloseButton)
+- ✅ Dropdown menus (Dropdown, DropdownTrigger, DropdownContent, DropdownItem, DropdownSeparator, DropdownLabel)
+- ✅ Tabs component (Tabs, TabsList, TabsTrigger, TabsContent)
+
+**Potential Future Components**
+
+- Form components (Input, Textarea, Select, Checkbox, Radio, Switch)
+- Progress indicators (ProgressBar, Spinner)
+- Tooltip component
+- Popover component
+- Accordion component
+- Breadcrumb navigation
+- Pagination component
 
 ---
 
