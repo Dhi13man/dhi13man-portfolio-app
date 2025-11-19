@@ -47,15 +47,13 @@ export default function Home() {
 
       {/* About Section - Linear style: Flat, single column */}
       <Section>
-        <div className="max-w-3xl mx-auto">
-          <SectionHeader>
-            <SectionTitle>About</SectionTitle>
-          </SectionHeader>
-          <div className="space-y-4 text-16 text-text-secondary leading-relaxed">
-            {aboutData.description.split('\n').map((paragraph, index) => (
-              <p key={index}>{paragraph}</p>
-            ))}
-          </div>
+        <SectionHeader>
+          <SectionTitle>About</SectionTitle>
+        </SectionHeader>
+        <div className="space-y-4 text-16 text-text-secondary leading-relaxed">
+          {aboutData.description.split('\n').map((paragraph, index) => (
+            <p key={index}>{paragraph}</p>
+          ))}
         </div>
       </Section>
 
