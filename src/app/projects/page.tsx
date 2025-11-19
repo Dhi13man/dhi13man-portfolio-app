@@ -32,19 +32,19 @@ export default function ProjectsPage() {
 
           return (
             <Panel key={project.name} hoverable>
-              <div className="flex flex-col sm:flex-row gap-4">
-                {/* Project images */}
-                {allImages.length > 0 && (
+              {/* Project images - always above content */}
+              {allImages.length > 0 && (
+                <div className="mb-3">
                   <ImageGallery
                     images={allImages}
                     alt={project.name}
-                    thumbnailSize="md"
-                    className="shrink-0"
+                    thumbnailSize="lg"
                   />
-                )}
+                </div>
+              )}
 
-                {/* Project details */}
-                <div className="flex-1 min-w-0 space-y-2">
+              {/* Project details - stable position */}
+              <div className="space-y-2">
                 <div className="flex items-start justify-between gap-2">
                   <div>
                     <h3 className="text-20 font-semibold text-text-primary">{project.name}</h3>
@@ -81,8 +81,7 @@ export default function ProjectsPage() {
                   </ul>
                 )}
               </div>
-            </div>
-          </Panel>
+            </Panel>
           )
         })}
       </div>

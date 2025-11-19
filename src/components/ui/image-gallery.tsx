@@ -109,7 +109,7 @@ export function ImageGallery({
   // Multiple images layout
   return (
     <>
-      <div className={`flex flex-wrap gap-2 ${className}`}>
+      <div className={`flex gap-2 ${className}`}>
         {images.map((image, index) => (
           <div
             key={index}
