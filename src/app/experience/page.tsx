@@ -11,8 +11,8 @@ import {
   TimelineDescription,
 } from '@/components/ui/timeline'
 import { Button } from '@/components/ui/button'
+import { ImageGallery } from '@/components/ui/image-gallery'
 import Link from 'next/link'
-import Image from 'next/image'
 import { experiences } from '@/data/experiences'
 import { formatDateRange } from '@/lib/date'
 import { ExternalLink } from 'lucide-react'
@@ -25,14 +25,21 @@ export const metadata = {
 export default function ExperiencePage() {
   // Flatten all roles with company info for timeline
   const allRoles = experiences.flatMap((experience) =>
-    experience.roles.map((role, roleIndex) => ({
-      ...role,
-      companyName: experience.name,
-      companyAbout: experience.about,
-      companyImage: experience.images?.primary,
-      companyLink: experience.links?.primary,
-      isLastRole: roleIndex === experience.roles.length - 1,
-    }))
+    experience.roles.map((role, roleIndex) => {
+      // Gather all images (primary + others)
+      const allImages = experience.images
+        ? [experience.images.primary, ...(experience.images.others || [])].filter(Boolean) as string[]
+        : []
+
+      return {
+        ...role,
+        companyName: experience.name,
+        companyAbout: experience.about,
+        companyImages: allImages,
+        companyLink: experience.links?.primary,
+        isLastRole: roleIndex === experience.roles.length - 1,
+      }
+    })
   )
 
   return (
@@ -53,35 +60,33 @@ export default function ExperiencePage() {
             <TimelineItem key={`${role.companyName}-${role.title}-${index}`} isLast={isLast}>
               {/* Company header (only show on first role for each company) */}
               {(index === 0 || role.companyName !== allRoles[index - 1].companyName) && (
-                <div className="mb-3 flex items-start gap-3">
-                  {role.companyImage && (
-                    <div className="relative w-12 h-12 shrink-0 rounded overflow-hidden border border-border bg-surface">
-                      <Image
-                        src={role.companyImage}
-                        alt={`${role.companyName} logo`}
-                        fill
-                        className="object-contain p-1"
-                        sizes="48px"
-                      />
-                    </div>
-                  )}
-                  <div className="flex-1 min-w-0">
-                    <div className="flex items-start justify-between gap-2">
-                      <div>
-                        <h3 className="text-20 font-semibold text-text-primary">
-                          {role.companyName}
-                        </h3>
-                        <p className="text-14 text-text-tertiary mt-1">{role.companyAbout}</p>
+                <div className="mb-3">
+                  <div className="flex items-start gap-3 mb-3">
+                    <div className="flex-1 min-w-0">
+                      <div className="flex items-start justify-between gap-2">
+                        <div>
+                          <h3 className="text-20 font-semibold text-text-primary">
+                            {role.companyName}
+                          </h3>
+                          <p className="text-14 text-text-tertiary mt-1">{role.companyAbout}</p>
+                        </div>
+                        {role.companyLink && (
+                          <Button asChild variant="ghost" size="sm">
+                            <Link href={role.companyLink} target="_blank" rel="noopener noreferrer">
+                              <ExternalLink className="w-4 h-4" />
+                            </Link>
+                          </Button>
+                        )}
                       </div>
-                      {role.companyLink && (
-                        <Button asChild variant="ghost" size="sm">
-                          <Link href={role.companyLink} target="_blank" rel="noopener noreferrer">
-                            <ExternalLink className="w-4 h-4" />
-                          </Link>
-                        </Button>
-                      )}
                     </div>
                   </div>
+                  {role.companyImages.length > 0 && (
+                    <ImageGallery
+                      images={role.companyImages}
+                      alt={role.companyName}
+                      thumbnailSize="lg"
+                    />
+                  )}
                 </div>
               )}
 

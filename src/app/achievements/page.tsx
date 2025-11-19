@@ -1,7 +1,10 @@
 import { Section, SectionHeader, SectionTitle, SectionDescription } from '@/components/ui/section'
 import { Panel } from '@/components/ui/panel'
+import { Button } from '@/components/ui/button'
+import Link from 'next/link'
 import { achievements } from '@/data/achievements'
 import { formatDateRange } from '@/lib/date'
+import { ExternalLink } from 'lucide-react'
 
 export const metadata = {
   title: 'Achievements - Dhiman Seal',
@@ -34,7 +37,23 @@ export default function AchievementsPage() {
             <Panel key={index} hoverable>
               <div className="space-y-2">
                 <div className="flex items-start justify-between gap-2">
-                  <h3 className="text-16 font-semibold text-text-primary">{award.title}</h3>
+                  <div className="flex-1 min-w-0">
+                    <div className="flex items-start justify-between gap-2">
+                      <h3 className="text-16 font-semibold text-text-primary">{award.title}</h3>
+                      {award.links?.primary && (
+                        <Button asChild variant="ghost" size="sm" className="shrink-0">
+                          <Link
+                            href={award.links.primary}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label={`View ${award.title}`}
+                          >
+                            <ExternalLink className="w-4 h-4" />
+                          </Link>
+                        </Button>
+                      )}
+                    </div>
+                  </div>
                   <time className="text-12 font-mono text-text-quaternary shrink-0">
                     {formatDateRange(award.startDate, award.endDate)}
                   </time>
@@ -75,7 +94,23 @@ export default function AchievementsPage() {
             <Panel key={index} hoverable>
               <div className="space-y-2">
                 <div className="flex items-start justify-between gap-2">
-                  <h3 className="text-16 font-semibold text-text-primary">{cert.title}</h3>
+                  <div className="flex-1 min-w-0">
+                    <div className="flex items-start justify-between gap-2">
+                      <h3 className="text-16 font-semibold text-text-primary">{cert.title}</h3>
+                      {cert.links?.primary && (
+                        <Button asChild variant="ghost" size="sm" className="shrink-0">
+                          <Link
+                            href={cert.links.primary}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label={`View ${cert.title}`}
+                          >
+                            <ExternalLink className="w-4 h-4" />
+                          </Link>
+                        </Button>
+                      )}
+                    </div>
+                  </div>
                   <time className="text-12 font-mono text-text-quaternary shrink-0">
                     {formatDateRange(cert.startDate, cert.endDate)}
                   </time>
@@ -119,11 +154,27 @@ export default function AchievementsPage() {
             <Panel key={index} hoverable>
               <div className="space-y-2">
                 <div className="flex items-start justify-between gap-2">
-                  <div>
-                    <h3 className="text-16 font-semibold text-text-primary">{testScore.name}</h3>
-                    <p className="text-20 font-mono text-accent font-bold mt-1">
-                      {testScore.score}
-                    </p>
+                  <div className="flex-1 min-w-0">
+                    <div className="flex items-start justify-between gap-2">
+                      <div>
+                        <h3 className="text-16 font-semibold text-text-primary">{testScore.name}</h3>
+                        <p className="text-20 font-mono text-accent font-bold mt-1">
+                          {testScore.score}
+                        </p>
+                      </div>
+                      {testScore.links?.primary && (
+                        <Button asChild variant="ghost" size="sm" className="shrink-0">
+                          <Link
+                            href={testScore.links.primary}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label={`View ${testScore.name}`}
+                          >
+                            <ExternalLink className="w-4 h-4" />
+                          </Link>
+                        </Button>
+                      )}
+                    </div>
                   </div>
                   <time className="text-12 font-mono text-text-quaternary shrink-0">
                     {formatDateRange(testScore.startDate, testScore.endDate)}

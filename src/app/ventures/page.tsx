@@ -11,8 +11,8 @@ import {
   TimelineDescription,
 } from '@/components/ui/timeline'
 import { Button } from '@/components/ui/button'
+import { ImageGallery } from '@/components/ui/image-gallery'
 import Link from 'next/link'
-import Image from 'next/image'
 import { ventures } from '@/data/ventures'
 import { formatDateRange } from '@/lib/date'
 import { ExternalLink } from 'lucide-react'
@@ -25,14 +25,21 @@ export const metadata = {
 export default function VenturesPage() {
   // Flatten all roles with venture info for timeline
   const allRoles = ventures.flatMap((venture) =>
-    venture.roles.map((role, roleIndex) => ({
-      ...role,
-      ventureName: venture.name,
-      ventureAbout: venture.about,
-      ventureImage: venture.images?.primary,
-      ventureLink: venture.links?.primary,
-      isLastRole: roleIndex === venture.roles.length - 1,
-    }))
+    venture.roles.map((role, roleIndex) => {
+      // Gather all images (primary + others)
+      const allImages = venture.images
+        ? [venture.images.primary, ...(venture.images.others || [])].filter(Boolean) as string[]
+        : []
+
+      return {
+        ...role,
+        ventureName: venture.name,
+        ventureAbout: venture.about,
+        ventureImages: allImages,
+        ventureLink: venture.links?.primary,
+        isLastRole: roleIndex === venture.roles.length - 1,
+      }
+    })
   )
 
   return (
@@ -53,35 +60,33 @@ export default function VenturesPage() {
             <TimelineItem key={`${role.ventureName}-${role.title}-${index}`} isLast={isLast}>
               {/* Venture header (only show on first role for each venture) */}
               {(index === 0 || role.ventureName !== allRoles[index - 1].ventureName) && (
-                <div className="mb-3 flex items-start gap-3">
-                  {role.ventureImage && (
-                    <div className="relative w-12 h-12 shrink-0 rounded overflow-hidden border border-border bg-surface">
-                      <Image
-                        src={role.ventureImage}
-                        alt={`${role.ventureName} logo`}
-                        fill
-                        className="object-contain p-1"
-                        sizes="48px"
-                      />
-                    </div>
-                  )}
-                  <div className="flex-1 min-w-0">
-                    <div className="flex items-start justify-between gap-2">
-                      <div>
-                        <h3 className="text-20 font-semibold text-text-primary">
-                          {role.ventureName}
-                        </h3>
-                        <p className="text-14 text-text-tertiary mt-1">{role.ventureAbout}</p>
+                <div className="mb-3">
+                  <div className="flex items-start gap-3 mb-3">
+                    <div className="flex-1 min-w-0">
+                      <div className="flex items-start justify-between gap-2">
+                        <div>
+                          <h3 className="text-20 font-semibold text-text-primary">
+                            {role.ventureName}
+                          </h3>
+                          <p className="text-14 text-text-tertiary mt-1">{role.ventureAbout}</p>
+                        </div>
+                        {role.ventureLink && (
+                          <Button asChild variant="ghost" size="sm">
+                            <Link href={role.ventureLink} target="_blank" rel="noopener noreferrer">
+                              <ExternalLink className="w-4 h-4" />
+                            </Link>
+                          </Button>
+                        )}
                       </div>
-                      {role.ventureLink && (
-                        <Button asChild variant="ghost" size="sm">
-                          <Link href={role.ventureLink} target="_blank" rel="noopener noreferrer">
-                            <ExternalLink className="w-4 h-4" />
-                          </Link>
-                        </Button>
-                      )}
                     </div>
                   </div>
+                  {role.ventureImages.length > 0 && (
+                    <ImageGallery
+                      images={role.ventureImages}
+                      alt={role.ventureName}
+                      thumbnailSize="lg"
+                    />
+                  )}
                 </div>
               )}
 

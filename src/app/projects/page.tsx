@@ -1,8 +1,8 @@
 import { Section, SectionHeader, SectionTitle, SectionDescription } from '@/components/ui/section'
 import { Panel } from '@/components/ui/panel'
 import { Button } from '@/components/ui/button'
+import { ImageGallery } from '@/components/ui/image-gallery'
 import Link from 'next/link'
-import Image from 'next/image'
 import { projects } from '@/data/projects'
 import { formatDateRange } from '@/lib/date'
 import { ExternalLink } from 'lucide-react'
@@ -24,24 +24,27 @@ export default function ProjectsPage() {
       </SectionHeader>
 
       <div className="space-y-3 mt-8">
-        {projects.map((project) => (
-          <Panel key={project.name} hoverable>
-            <div className="flex flex-col sm:flex-row gap-4">
-              {/* Project image */}
-              {project.images?.primary && (
-                <div className="relative w-full sm:w-24 h-24 shrink-0 rounded overflow-hidden border border-border bg-surface">
-                  <Image
-                    src={project.images.primary}
-                    alt={`${project.name} preview`}
-                    fill
-                    className="object-cover"
-                    sizes="(max-width: 640px) 100vw, 96px"
-                  />
-                </div>
-              )}
+        {projects.map((project) => {
+          // Gather all images (primary + others)
+          const allImages = project.images
+            ? [project.images.primary, ...(project.images.others || [])].filter(Boolean) as string[]
+            : []
 
-              {/* Project details */}
-              <div className="flex-1 min-w-0 space-y-2">
+          return (
+            <Panel key={project.name} hoverable>
+              <div className="flex flex-col sm:flex-row gap-4">
+                {/* Project images */}
+                {allImages.length > 0 && (
+                  <ImageGallery
+                    images={allImages}
+                    alt={project.name}
+                    thumbnailSize="md"
+                    className="shrink-0"
+                  />
+                )}
+
+                {/* Project details */}
+                <div className="flex-1 min-w-0 space-y-2">
                 <div className="flex items-start justify-between gap-2">
                   <div>
                     <h3 className="text-20 font-semibold text-text-primary">{project.name}</h3>
@@ -80,7 +83,8 @@ export default function ProjectsPage() {
               </div>
             </div>
           </Panel>
-        ))}
+          )
+        })}
       </div>
     </Section>
   )

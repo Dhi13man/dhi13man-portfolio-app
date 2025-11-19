@@ -1,10 +1,11 @@
-import type { DateRange } from './common'
+import type { DateRange, Links } from './common'
 
 export interface Award extends DateRange {
   title: string
   issuer: string
   description: string
   details?: string[]
+  links?: Links
 }
 
 export interface Certification extends DateRange {
@@ -13,6 +14,7 @@ export interface Certification extends DateRange {
   description: string
   details?: string[]
   credentialId?: string
+  links?: Links
 }
 
 export interface TestScore extends DateRange {
@@ -20,6 +22,7 @@ export interface TestScore extends DateRange {
   score: string
   description: string
   details?: string[]
+  links?: Links
 }
 
 export interface Achievements {
