@@ -113,12 +113,12 @@ export function AboutSection({ data }: AboutSectionProps) {
           Fun Facts
         </h4>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-          {data.funFacts.map((funFact, index) => (
+          {data.funFacts.map((funFact) => (
             <div
-              key={index}
+              key={`${funFact.emoji}-${funFact.fact}`}
               className="flex items-center gap-3 p-3 rounded-lg border border-border/50 text-14 text-text-secondary"
             >
-              <span className="text-20" role="img" aria-hidden="true">
+              <span className="text-20" aria-hidden="true">
                 {funFact.emoji}
               </span>
               <span>{funFact.fact}</span>
@@ -129,14 +129,14 @@ export function AboutSection({ data }: AboutSectionProps) {
 
       {/* Current Focus */}
       {data.currentFocus && (
-        <div className="p-4 rounded-lg border-l-2 border-accent bg-accent/5">
-          <div className="text-12 text-accent uppercase tracking-wide mb-2">
+        <section className="p-4 rounded-lg border-l-2 border-accent bg-accent/5">
+          <h4 className="text-12 text-accent uppercase tracking-wide mb-2">
             Current Focus
-          </div>
+          </h4>
           <p className="text-14 text-text-secondary leading-relaxed">
             {data.currentFocus}
           </p>
-        </div>
+        </section>
       )}
     </div>
   );

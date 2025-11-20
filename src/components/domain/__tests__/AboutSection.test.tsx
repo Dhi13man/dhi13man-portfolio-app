@@ -146,10 +146,12 @@ describe('AboutSection', () => {
       expect(screen.getByText('Debugs code and defeats bosses')).toBeInTheDocument()
     })
 
-    it('should render fun fact emojis with aria-hidden', () => {
+    it('should render fun fact emojis with aria-hidden for accessibility', () => {
       render(<AboutSection data={mockAboutData} />)
       const coffeeEmoji = screen.getByText('☕')
       expect(coffeeEmoji).toHaveAttribute('aria-hidden', 'true')
+      // Emojis are decorative, so they should not have role="img"
+      expect(coffeeEmoji).not.toHaveAttribute('role')
     })
   })
 
