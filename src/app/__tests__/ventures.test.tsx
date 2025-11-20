@@ -65,6 +65,21 @@ jest.mock('@/data/ventures', () => ({
         },
       ],
     },
+    {
+      name: 'Empty Others Venture',
+      about: 'Venture with empty others arrays',
+      roles: [
+        {
+          title: 'Advisor',
+          description: 'Advisory role',
+          startDate: 'Jan 2019',
+          endDate: 'Jun 2019',
+        },
+      ],
+      links: {
+        others: [],
+      },
+    },
   ],
 }))
 

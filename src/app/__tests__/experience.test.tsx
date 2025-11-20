@@ -65,6 +65,21 @@ jest.mock('@/data/experiences', () => ({
         },
       ],
     },
+    {
+      name: 'Empty Others',
+      about: 'Company with empty others arrays',
+      roles: [
+        {
+          title: 'Developer',
+          description: 'Development work',
+          startDate: 'Jan 2018',
+          endDate: 'Dec 2018',
+        },
+      ],
+      links: {
+        others: [],
+      },
+    },
   ],
 }))
 

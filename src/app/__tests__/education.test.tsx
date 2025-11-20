@@ -78,6 +78,21 @@ jest.mock('@/data/education', () => ({
         primary: '/only-primary.jpg',
       },
     },
+    {
+      name: 'Empty Others Arrays',
+      about: 'Institution with empty others arrays',
+      courses: [
+        {
+          degree: 'Workshop',
+          description: 'Workshop program',
+          startDate: '2021',
+          endDate: '2021',
+        },
+      ],
+      links: {
+        others: [],
+      },
+    },
   ],
 }))
 

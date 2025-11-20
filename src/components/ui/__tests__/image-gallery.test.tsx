@@ -345,6 +345,23 @@ describe('ImageGallery', () => {
       // Assert
       expect(document.body.style.overflow).toBe('unset')
     })
+
+    it('should restore body scroll when component unmounts with lightbox open', async () => {
+      // Arrange
+      const images = ['/image1.jpg']
+      const user = userEvent.setup()
+
+      // Act
+      const { unmount } = render(<ImageGallery images={images} alt="Test" />)
+      await user.click(screen.getByRole('button'))
+      expect(document.body.style.overflow).toBe('hidden')
+
+      // Unmount while lightbox is open
+      unmount()
+
+      // Assert - cleanup should restore scroll
+      expect(document.body.style.overflow).toBe('unset')
+    })
   })
 
   describe('ImageGallery_whenCustomClassName_thenAppliesClasses', () => {
