@@ -79,8 +79,7 @@ export default function EducationPage() {
                     </p>
                   </div>
                   {(edu.links?.primary ||
-                    (edu.links?.others &&
-                      edu.links.others.length > 0)) && (
+                    (edu.links?.others && edu.links.others.length > 0)) && (
                     <div className="flex items-center gap-1 shrink-0">
                       {edu.links?.primary && (
                         <Button asChild variant="ghost" size="sm">
