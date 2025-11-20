@@ -209,7 +209,7 @@ describe('Home Page - No Current Initiatives', () => {
     const { default: HomeNoInitiatives } = require('../page')
 
     // Act
-    const { container } = render(<HomeNoInitiatives />)
+    render(<HomeNoInitiatives />)
 
     // Assert
     expect(screen.queryByRole('heading', { level: 2, name: 'Current Initiatives' })).not.toBeInTheDocument()
