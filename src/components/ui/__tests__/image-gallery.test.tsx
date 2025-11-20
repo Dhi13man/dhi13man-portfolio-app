@@ -278,6 +278,44 @@ describe('ImageGallery', () => {
       // Assert - wraps to last image
       expect(screen.getByText('2 / 2')).toBeInTheDocument()
     })
+
+    it('should wrap from last to first image when clicking next', async () => {
+      // Arrange
+      const images = ['/image1.jpg', '/image2.jpg', '/image3.jpg']
+      const user = userEvent.setup()
+
+      // Act
+      render(<ImageGallery images={images} alt="Test" />)
+      await user.click(screen.getAllByRole('button')[0])
+
+      // Navigate to last image
+      await user.click(screen.getByLabelText('Next image'))
+      await user.click(screen.getByLabelText('Next image'))
+      expect(screen.getByText('3 / 3')).toBeInTheDocument()
+
+      // Click next again to wrap to first
+      await user.click(screen.getByLabelText('Next image'))
+
+      // Assert - should wrap to first image
+      expect(screen.getByText('1 / 3')).toBeInTheDocument()
+    })
+
+    it('should navigate normally when not at boundary', async () => {
+      // Arrange
+      const images = ['/image1.jpg', '/image2.jpg', '/image3.jpg']
+      const user = userEvent.setup()
+
+      // Act
+      render(<ImageGallery images={images} alt="Test" />)
+      await user.click(screen.getAllByRole('button')[0])
+      await user.click(screen.getByLabelText('Next image'))
+
+      // Now at image 2, go previous (should go to image 1, not wrap)
+      await user.click(screen.getByLabelText('Previous image'))
+
+      // Assert
+      expect(screen.getByText('1 / 3')).toBeInTheDocument()
+    })
   })
 
   describe('ImageGallery_whenBodyScroll_thenPreventsWhenOpen', () => {

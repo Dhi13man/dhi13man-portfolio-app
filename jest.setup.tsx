@@ -1,11 +1,17 @@
 import '@testing-library/jest-dom'
+import { toHaveNoViolations } from 'jest-axe'
 
-// Mock Next.js Image component
+// Extend Jest matchers with accessibility testing
+expect.extend(toHaveNoViolations)
+
+// Mock Next.js Image component - filter out Next.js specific props
 jest.mock('next/image', () => ({
   __esModule: true,
-  default: (props: React.ImgHTMLAttributes<HTMLImageElement>) => {
+  default: (props: Record<string, unknown>) => {
+    // Filter out Next.js specific props that cause warnings
+    const { fill, priority, sizes, quality, placeholder, blurDataURL, loader, ...imgProps } = props
     // eslint-disable-next-line @next/next/no-img-element
-    return <img {...props} alt={props.alt || ''} />
+    return <img {...imgProps} alt={(props.alt as string) || ''} data-fill={fill ? 'true' : undefined} data-priority={priority ? 'true' : undefined} />
   },
 }))
 

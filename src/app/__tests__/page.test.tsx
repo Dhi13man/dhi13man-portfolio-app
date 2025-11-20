@@ -171,14 +171,49 @@ describe('Home Page', () => {
 })
 
 describe('Home Page - No Current Initiatives', () => {
-  beforeEach(() => {
-    // Override the mocks for this test suite
+  it('should not render current initiatives section when all projects are past', () => {
+    // Arrange - reset mocks
     jest.resetModules()
-  })
+    jest.doMock('@/data/about', () => ({
+      aboutData: {
+        tagline: 'Test Tagline',
+        description: 'Test description.',
+      },
+    }))
+    jest.doMock('@/data/projects', () => ({
+      projects: [
+        {
+          name: 'Past Project Only',
+          description: 'A past project',
+          startDate: '2022-01-01',
+          endDate: '2022-12-31',
+        },
+      ],
+    }))
+    jest.doMock('@/data/ventures', () => ({
+      ventures: [
+        {
+          name: 'Past Venture Only',
+          about: 'A past venture',
+          roles: [{ endDate: '2022-12-31' }],
+        },
+      ],
+    }))
+    jest.doMock('@/components/ui/image-gallery', () => ({
+      ImageGallery: ({ alt }: { alt: string }) => (
+        <div data-testid="image-gallery" data-alt={alt} />
+      ),
+    }))
 
-  it('should not render current initiatives when none exist', () => {
-    // This test would require resetting mocks which is complex
-    // The main logic test coverage is handled above
-    expect(true).toBe(true)
+    // Re-import the component with new mocks
+    const { default: HomeNoInitiatives } = require('../page')
+
+    // Act
+    const { container } = render(<HomeNoInitiatives />)
+
+    // Assert
+    expect(screen.queryByRole('heading', { level: 2, name: 'Current Initiatives' })).not.toBeInTheDocument()
+    expect(screen.queryByRole('heading', { level: 3, name: 'Active Projects' })).not.toBeInTheDocument()
+    expect(screen.queryByRole('heading', { level: 3, name: 'Active Ventures' })).not.toBeInTheDocument()
   })
 })

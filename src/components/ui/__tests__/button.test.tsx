@@ -1,6 +1,7 @@
 import React from 'react'
 import { render, screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
+import { axe } from 'jest-axe'
 import { Button } from '../button'
 
 describe('Button', () => {
@@ -176,6 +177,37 @@ describe('Button', () => {
     it('should have displayName set to "Button"', () => {
       // Arrange & Act & Assert
       expect(Button.displayName).toBe('Button')
+    })
+  })
+
+  describe('Button_accessibility_thenHasNoViolations', () => {
+    it('should have no accessibility violations for primary button', async () => {
+      // Arrange & Act
+      const { container } = render(<Button>Accessible Button</Button>)
+
+      // Assert
+      const results = await axe(container)
+      expect(results).toHaveNoViolations()
+    })
+
+    it('should have no accessibility violations for disabled button', async () => {
+      // Arrange & Act
+      const { container } = render(<Button disabled>Disabled Button</Button>)
+
+      // Assert
+      const results = await axe(container)
+      expect(results).toHaveNoViolations()
+    })
+
+    it('should have no accessibility violations with aria-label', async () => {
+      // Arrange & Act
+      const { container } = render(
+        <Button aria-label="Close modal">X</Button>
+      )
+
+      // Assert
+      const results = await axe(container)
+      expect(results).toHaveNoViolations()
     })
   })
 })
