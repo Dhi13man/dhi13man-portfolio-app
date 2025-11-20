@@ -22,8 +22,7 @@ yarn-error.log*
 *.sublime-project
 *.sublime-workspace
 
-# Ignore package lock files (optional)
-package-lock.json
+# Ignore yarn lock file (using npm)
 yarn.lock
 
 # Ignore Sass/CSS cache
