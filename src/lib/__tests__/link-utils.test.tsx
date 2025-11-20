@@ -1,4 +1,5 @@
 import React from 'react'
+import { render } from '@testing-library/react'
 import { getLinkType, getLinkLabel, LinkIcon } from '../link-utils'
 
 describe('getLinkType', () => {
