@@ -171,9 +171,16 @@ describe('Home Page', () => {
 })
 
 describe('Home Page - No Current Initiatives', () => {
-  it('should not render current initiatives section when all projects are past', () => {
-    // Arrange - reset mocks
+  beforeEach(() => {
     jest.resetModules()
+  })
+
+  afterEach(() => {
+    jest.resetModules()
+  })
+
+  it('should not render current initiatives section when all projects are past', () => {
+    // Arrange - set up mocks for modules with no current items
     jest.doMock('@/data/about', () => ({
       aboutData: {
         tagline: 'Test Tagline',

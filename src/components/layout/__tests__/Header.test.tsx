@@ -218,9 +218,7 @@ describe('Header', () => {
       await user.click(screen.getByRole('button', { name: /open menu/i }))
 
       // Assert
-      const mobileMenu = screen.getByTestId ?
-        document.getElementById('mobile-menu') :
-        document.querySelector('#mobile-menu')
+      const mobileMenu = document.getElementById('mobile-menu')
 
       expect(mobileMenu).toBeInTheDocument()
       expect(mobileMenu).toHaveClass('border-t', 'border-border')
