@@ -1,18 +1,30 @@
 import React from "react";
 
+// Helper function to check if hostname matches a domain (including subdomains)
+function matchesDomain(hostname: string, domain: string): boolean {
+  return hostname === domain || hostname.endsWith(`.${domain}`);
+}
+
 // Detect link type from URL
 export function getLinkType(
   url: string,
 ): "github" | "linkedin" | "youtube" | "npm" | "pubdev" | "generic" {
-  const lowerUrl = url.toLowerCase();
-  if (lowerUrl.includes("github.com")) return "github";
-  if (lowerUrl.includes("linkedin.com")) return "linkedin";
-  if (lowerUrl.includes("youtube.com") || lowerUrl.includes("youtu.be"))
-    return "youtube";
-  if (lowerUrl.includes("npmjs.com") || lowerUrl.includes("npm.im"))
-    return "npm";
-  if (lowerUrl.includes("pub.dev")) return "pubdev";
-  return "generic";
+  try {
+    const parsedUrl = new URL(url);
+    const hostname = parsedUrl.hostname.toLowerCase();
+
+    if (matchesDomain(hostname, "github.com")) return "github";
+    if (matchesDomain(hostname, "linkedin.com")) return "linkedin";
+    if (matchesDomain(hostname, "youtube.com") || matchesDomain(hostname, "youtu.be"))
+      return "youtube";
+    if (matchesDomain(hostname, "npmjs.com") || matchesDomain(hostname, "npm.im"))
+      return "npm";
+    if (matchesDomain(hostname, "pub.dev")) return "pubdev";
+    return "generic";
+  } catch {
+    // If URL parsing fails, return generic
+    return "generic";
+  }
 }
 
 // Get display name for link type

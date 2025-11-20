@@ -106,6 +106,44 @@ describe('getLinkType', () => {
       expect(result).toBe('generic')
     })
   })
+
+  describe('getLinkType_whenInvalidUrl_thenReturnsGeneric', () => {
+    it.each([
+      ['not-a-url'],
+      [''],
+      ['just-text'],
+      ['github.com/no-protocol'],
+    ])('should return "generic" for invalid URL: %s', (url) => {
+      // Arrange
+      // URL provided via parameter
+
+      // Act
+      const result = getLinkType(url)
+
+      // Assert
+      expect(result).toBe('generic')
+    })
+  })
+
+  describe('getLinkType_whenMaliciousUrl_thenReturnsGeneric', () => {
+    it.each([
+      ['https://evil.com/github.com/fake'],
+      ['https://notgithub.com'],
+      ['https://github.com.evil.com'],
+      ['https://linkedin.com.attacker.net'],
+      ['https://fakeyoutube.com'],
+      ['https://evil.com?redirect=https://github.com'],
+    ])('should return "generic" for malicious URL: %s', (url) => {
+      // Arrange
+      // URL provided via parameter
+
+      // Act
+      const result = getLinkType(url)
+
+      // Assert
+      expect(result).toBe('generic')
+    })
+  })
 })
 
 describe('getLinkLabel', () => {

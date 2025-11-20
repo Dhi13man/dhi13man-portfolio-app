@@ -211,9 +211,16 @@ describe('Education Page', () => {
       render(<EducationPage />)
 
       // Assert
-      const linkedinLinks = screen.getAllByRole('link').filter(
-        link => link.getAttribute('href')?.includes('linkedin.com')
-      )
+      const linkedinLinks = screen.getAllByRole('link').filter(link => {
+        const href = link.getAttribute('href')
+        if (!href) return false
+        try {
+          const url = new URL(href)
+          return url.hostname === 'linkedin.com' || url.hostname.endsWith('.linkedin.com')
+        } catch {
+          return false
+        }
+      })
       expect(linkedinLinks.length).toBeGreaterThanOrEqual(1)
     })
   })
