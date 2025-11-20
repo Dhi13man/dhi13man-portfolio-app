@@ -16,12 +16,13 @@ export const experiences: Experience[] = [
     roles: [
       {
         description:
-          "Lead technical initiatives in Consumer Payments and Live Data systems while mentoring junior engineers.",
+          "Building payment systems processing 300K+ daily UPI transactions and real-time market data infrastructure serving 13M+ active users with <10ms latency.",
         details: [
-          "Architected multiple consumer payment systems from inception",
-          "Enhanced customer/developer experiences through technical leadership",
-          "Solved critical live data streaming challenges for Equity and Derivatives teams",
-          "Spearheaded observability initiatives via comprehensive monitoring systems",
+          "Architected UPI payment system from scratch, now handling 300,000+ successful transactions per day across Groww's 13M+ user base",
+          "Built real-time market data streaming using Kafka Streams and Redis with <10ms latency for price triggers and Option Greeks - critical for live trading",
+          "Created centralized response code management system handling 20,000+ error mappings, used across the team's microservices",
+          "Owned observability for the payments pod - learned PromQL and Grafana, built dashboards tracking every useful metric across services",
+          "Single-handedly built backend-driven home page serving personalized content to millions of users, enabling 3 product teams to run experiments",
         ],
         endDate: "Present",
         location: "Bengaluru, Karnataka, India",
@@ -30,10 +31,11 @@ export const experiences: Experience[] = [
       },
       {
         description:
-          "Developed scalable backend solutions for Payments team, owning internal SDKs and services.",
+          "Built payment backend infrastructure with Java Spring Boot, Apache Kafka, and Redis. Created custom annotations adopted across 95% of team's microservices.",
         details: [
-          "Delivered robust solutions using Java Spring Boot, Apache Kafka, and Redis",
-          "Implemented scalable design patterns across internal SDKs and services",
+          "Delivered payment processing solutions using Java Spring Boot, Apache Kafka, and Redis for consumer-facing features",
+          "Pitched and built custom Spring Boot annotations for multi-datasource management - now used across 95% of team's microservices, implementing patterns like CQRS",
+          "Owned development of internal SDKs and services, implementing scalable design patterns for distributed systems",
         ],
         endDate: "Jun 2023",
         location: "Bengaluru, Karnataka, India",
@@ -95,11 +97,11 @@ export const experiences: Experience[] = [
     roles: [
       {
         description:
-          "Developed/maintained cross-platform peer-to-peer cash network with Firebase backend.",
+          "Built peer-to-peer ATM cash network connecting cash seekers with providers through mobile app. Firebase backend with Flutter frontend.",
         details: [
-          "Implemented dynamic user referral system using Firebase Dynamic Links",
-          "Created secure rating system and CRON-based data pipelines handling 300k+ daily records",
-          "Developed serverless cloud function models with authentication",
+          "Designed and built complete systems from scratch: Dynamic-linking-based user referral system, dual-sided rating system, CRON-scheduled data processing pipeline handling 300,000+ daily records",
+          "Encapsulated Openrouteservice and Nordigen APIs with data models and unit tests, adding location-based cash matching and EU banking connectivity",
+          "Built serverless cloud function models for trigger-based database operations with authentication",
         ],
         endDate: "Nov 2021",
         location: "Budapest, Hungary | Remote",

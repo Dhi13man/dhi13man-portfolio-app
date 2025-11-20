@@ -16,7 +16,7 @@ export const education: Education[] = [
         ],
         endDate: "2022",
         field: "Electrical, Electronics and Communications Engineering",
-        gpa: "8.43",
+        gpa: "8.32",
         startDate: "2018",
       },
     ],

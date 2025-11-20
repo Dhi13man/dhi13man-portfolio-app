@@ -32,12 +32,12 @@ export const projects: Project[] = [
   },
   {
     description:
-      "Game-changing Spring Boot library simplifying setup of multiple data sources using simple annotations.",
+      "Spring Boot library simplifying multi-datasource management through custom annotations. Published on Maven Central.",
     details: [
-      "Published on Maven Central Repository",
-      "Automated bean definition configurations",
-      "Enabled boilerplate-free repository management",
-      "Comprehensive documentation and examples",
+      "Created 2 custom annotations that generate required Bean-providing configuration classes and repositories during build process",
+      "Published on Maven Central Repository - used by distributed computing teams implementing design patterns like CQRS",
+      "Reduces boilerplate for teams managing 2+ JPA datasources in Spring Boot applications",
+      "Comprehensive documentation with examples",
     ],
     endDate: "Present",
     images: {
@@ -75,11 +75,12 @@ export const projects: Project[] = [
   },
   {
     description:
-      "A leading Dart/Flutter package, for openrouteservice API integration.",
+      "Dart/Flutter package for openrouteservice API integration. Recognized as 'Flutter Gem' with 100+ GitHub stars.",
     details: [
-      "Used by 1.5K+ development teams across the world, with 80 likes and 160/160 pub.dev points",
-      "Enables the easy integration of the openrouteservice API with relevant data models",
-      "Supports generation of Routes and Directions on Maps, Isochrones, Time-Distance Matrix, Pelias Geocoding, POIs, Elevation, routing Optimizations etc",
+      "Used by 1.5K+ development teams worldwide, with 85+ likes and perfect 160/160 pub.dev points",
+      "Built with 100% test coverage - encapsulates openrouteservice API with relevant data models",
+      "Received commendation from the openrouteservice team, becoming a 'Flutter Gem'",
+      "Supports routing, directions, isochrones, time-distance matrices, Pelias geocoding, POIs, elevation, and route optimizations",
     ],
     endDate: "Present",
     images: {
