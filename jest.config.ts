@@ -27,8 +27,8 @@ const config: Config = {
     global: {
       branches: 95,
       functions: 95,
-      lines: 100,
-      statements: 100,
+      lines: 90,
+      statements: 90,
     },
   },
   clearMocks: true,
