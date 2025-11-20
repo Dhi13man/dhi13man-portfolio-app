@@ -6,7 +6,28 @@ import Home from '../page'
 jest.mock('@/data/about', () => ({
   aboutData: {
     tagline: 'Test Tagline',
-    description: 'Test description.',
+    headline: 'Test Headline',
+    introduction: 'Test introduction.',
+    highlights: [
+      { value: '5+', label: 'Years Experience' },
+    ],
+    expertise: [
+      {
+        area: 'Backend & Systems',
+        skills: ['Go', 'Python'],
+      },
+    ],
+    values: [
+      {
+        number: 1,
+        title: 'Test Value',
+        description: 'Test value description',
+        iconName: 'layers',
+      },
+    ],
+    funFacts: [
+      { emoji: '☕', fact: 'Test fun fact' },
+    ],
   },
 }))
 

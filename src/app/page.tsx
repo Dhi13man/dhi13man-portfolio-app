@@ -1,6 +1,7 @@
 import { Section, SectionHeader, SectionTitle } from "@/components/ui/section";
 import { ProjectCard } from "@/components/domain/ProjectCard";
 import { VentureCard } from "@/components/domain/VentureCard";
+import { AboutSection } from "@/components/domain/AboutSection";
 import Image from "next/image";
 import { aboutData } from "@/data/about";
 import { projects } from "@/data/projects";
@@ -109,16 +110,12 @@ export default function Home() {
         </div>
       </Section>
 
-      {/* About Section - Linear style: Flat, single column */}
+      {/* About Section - Enhanced with stats, skills, and values */}
       <Section>
         <SectionHeader>
           <SectionTitle>About</SectionTitle>
         </SectionHeader>
-        <div className="space-y-4 text-16 text-text-secondary leading-relaxed">
-          {aboutData.description.split("\n").map((paragraph, index) => (
-            <p key={index}>{paragraph}</p>
-          ))}
-        </div>
+        <AboutSection data={aboutData} />
       </Section>
 
       {/* Current Initiatives Section - using domain components for consistency and images */}

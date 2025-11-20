@@ -6,7 +6,30 @@ import Home from '../page'
 jest.mock('@/data/about', () => ({
   aboutData: {
     tagline: 'Test Tagline',
-    description: 'Test description paragraph 1.\nTest description paragraph 2.',
+    headline: 'Test Headline',
+    introduction: 'Test introduction paragraph.',
+    highlights: [
+      { value: '5+', label: 'Years Experience' },
+      { value: '10+', label: 'Open Source Packages' },
+    ],
+    expertise: [
+      {
+        area: 'Backend & Systems',
+        skills: ['Go', 'Python'],
+      },
+    ],
+    values: [
+      {
+        number: 1,
+        title: 'Test Value',
+        description: 'Test value description',
+        iconName: 'layers',
+      },
+    ],
+    funFacts: [
+      { emoji: '☕', fact: 'Test fun fact' },
+    ],
+    currentFocus: 'Test current focus',
   },
 }))
 
@@ -115,13 +138,59 @@ describe('Home Page', () => {
       expect(screen.getByRole('heading', { level: 2, name: 'About' })).toBeInTheDocument()
     })
 
-    it('should render about description paragraphs', () => {
+    it('should render about headline and introduction', () => {
       // Arrange & Act
       render(<Home />)
 
       // Assert
-      expect(screen.getByText('Test description paragraph 1.')).toBeInTheDocument()
-      expect(screen.getByText('Test description paragraph 2.')).toBeInTheDocument()
+      expect(screen.getByText('Test Headline')).toBeInTheDocument()
+      expect(screen.getByText('Test introduction paragraph.')).toBeInTheDocument()
+    })
+
+    it('should render highlights/stats', () => {
+      // Arrange & Act
+      render(<Home />)
+
+      // Assert
+      expect(screen.getByText('5+')).toBeInTheDocument()
+      expect(screen.getByText('Years Experience')).toBeInTheDocument()
+      expect(screen.getByText('10+')).toBeInTheDocument()
+      expect(screen.getByText('Open Source Packages')).toBeInTheDocument()
+    })
+
+    it('should render expertise areas and skills', () => {
+      // Arrange & Act
+      render(<Home />)
+
+      // Assert
+      expect(screen.getByText('Backend & Systems')).toBeInTheDocument()
+      expect(screen.getByText('Go')).toBeInTheDocument()
+      expect(screen.getByText('Python')).toBeInTheDocument()
+    })
+
+    it('should render core values', () => {
+      // Arrange & Act
+      render(<Home />)
+
+      // Assert
+      expect(screen.getByText('Test Value')).toBeInTheDocument()
+      expect(screen.getByText('Test value description')).toBeInTheDocument()
+    })
+
+    it('should render fun facts', () => {
+      // Arrange & Act
+      render(<Home />)
+
+      // Assert
+      expect(screen.getByText('Test fun fact')).toBeInTheDocument()
+    })
+
+    it('should render current focus', () => {
+      // Arrange & Act
+      render(<Home />)
+
+      // Assert
+      expect(screen.getByText('Test current focus')).toBeInTheDocument()
     })
   })
 
