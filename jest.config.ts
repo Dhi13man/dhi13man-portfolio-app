@@ -23,6 +23,7 @@ const config: Config = {
     '!src/data/**/*',
     '!src/app/layout.tsx',
   ],
+  coverageReporters: ['text', 'lcov', 'cobertura'],
   coverageThreshold: {
     global: {
       branches: 100,
