@@ -20,6 +20,7 @@ import { ImageGallery } from "@/components/ui/image-gallery";
 import Link from "next/link";
 import { experiences } from "@/data/experiences";
 import { formatDateRange } from "@/lib/date";
+import { getLinkType, getLinkLabel, LinkIcon } from "@/lib/link-utils";
 import { ExternalLink } from "lucide-react";
 
 export const metadata = {
@@ -78,16 +79,37 @@ export default function ExperiencePage() {
                       {experience.about}
                     </p>
                   </div>
-                  {experience.links?.primary && (
-                    <Button asChild variant="ghost" size="sm">
-                      <Link
-                        href={experience.links.primary}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        <ExternalLink className="w-4 h-4" />
-                      </Link>
-                    </Button>
+                  {(experience.links?.primary ||
+                    (experience.links?.others &&
+                      experience.links.others.length > 0)) && (
+                    <div className="flex items-center gap-1 shrink-0">
+                      {experience.links?.primary && (
+                        <Button asChild variant="ghost" size="sm">
+                          <Link
+                            href={experience.links.primary}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            <ExternalLink className="w-4 h-4" />
+                          </Link>
+                        </Button>
+                      )}
+                      {experience.links?.others?.map((link, linkIndex) => {
+                        const linkType = getLinkType(link);
+                        return (
+                          <Link
+                            key={linkIndex}
+                            href={link}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="p-2 text-text-tertiary hover:text-accent transition-colors duration-fast"
+                            aria-label={getLinkLabel(linkType)}
+                          >
+                            <LinkIcon type={linkType} />
+                          </Link>
+                        );
+                      })}
+                    </div>
                   )}
                 </div>
                 {allImages.length > 0 && (

@@ -20,6 +20,7 @@ import { ImageGallery } from "@/components/ui/image-gallery";
 import Link from "next/link";
 import { education } from "@/data/education";
 import { formatDateRange } from "@/lib/date";
+import { getLinkType, getLinkLabel, LinkIcon } from "@/lib/link-utils";
 import { ExternalLink } from "lucide-react";
 
 export const metadata = {
@@ -77,16 +78,37 @@ export default function EducationPage() {
                       {edu.about}
                     </p>
                   </div>
-                  {edu.links?.primary && (
-                    <Button asChild variant="ghost" size="sm">
-                      <Link
-                        href={edu.links.primary}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        <ExternalLink className="w-4 h-4" />
-                      </Link>
-                    </Button>
+                  {(edu.links?.primary ||
+                    (edu.links?.others &&
+                      edu.links.others.length > 0)) && (
+                    <div className="flex items-center gap-1 shrink-0">
+                      {edu.links?.primary && (
+                        <Button asChild variant="ghost" size="sm">
+                          <Link
+                            href={edu.links.primary}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            <ExternalLink className="w-4 h-4" />
+                          </Link>
+                        </Button>
+                      )}
+                      {edu.links?.others?.map((link, linkIndex) => {
+                        const linkType = getLinkType(link);
+                        return (
+                          <Link
+                            key={linkIndex}
+                            href={link}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="p-2 text-text-tertiary hover:text-accent transition-colors duration-fast"
+                            aria-label={getLinkLabel(linkType)}
+                          >
+                            <LinkIcon type={linkType} />
+                          </Link>
+                        );
+                      })}
+                    </div>
                   )}
                 </div>
                 {allImages.length > 0 && (

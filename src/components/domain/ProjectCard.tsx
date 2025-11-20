@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { ImageGallery } from "@/components/ui/image-gallery";
 import Link from "next/link";
 import { formatDateRange } from "@/lib/date";
+import { getLinkType, getLinkLabel, LinkIcon } from "@/lib/link-utils";
 import { ExternalLink } from "lucide-react";
 import type { Project } from "@/types/project";
 
@@ -53,16 +54,36 @@ export function ProjectCard({ project, compact = false }: ProjectCardProps) {
               {formatDateRange(project.startDate, project.endDate)}
             </time>
           </div>
-          {project.links?.primary && (
-            <Button asChild variant="ghost" size="sm" className="shrink-0">
-              <Link
-                href={project.links.primary}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <ExternalLink className="w-4 h-4" />
-              </Link>
-            </Button>
+          {(project.links?.primary ||
+            (project.links?.others && project.links.others.length > 0)) && (
+            <div className="flex items-center gap-1 shrink-0">
+              {project.links?.primary && (
+                <Button asChild variant="ghost" size="sm">
+                  <Link
+                    href={project.links.primary}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <ExternalLink className="w-4 h-4" />
+                  </Link>
+                </Button>
+              )}
+              {project.links?.others?.map((link, linkIndex) => {
+                const linkType = getLinkType(link);
+                return (
+                  <Link
+                    key={linkIndex}
+                    href={link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="p-2 text-text-tertiary hover:text-accent transition-colors duration-fast"
+                    aria-label={getLinkLabel(linkType)}
+                  >
+                    <LinkIcon type={linkType} />
+                  </Link>
+                );
+              })}
+            </div>
           )}
         </div>
 

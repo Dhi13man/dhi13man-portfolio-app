@@ -20,6 +20,7 @@ import { ImageGallery } from "@/components/ui/image-gallery";
 import Link from "next/link";
 import { ventures } from "@/data/ventures";
 import { formatDateRange } from "@/lib/date";
+import { getLinkType, getLinkLabel, LinkIcon } from "@/lib/link-utils";
 import { ExternalLink } from "lucide-react";
 
 export const metadata = {
@@ -45,6 +46,7 @@ export default function VenturesPage() {
         ventureAbout: venture.about,
         ventureImages: allImages,
         ventureLink: venture.links?.primary,
+        ventureOtherLinks: venture.links?.others,
         isLastRole: roleIndex === venture.roles.length - 1,
       };
     }),
@@ -84,16 +86,37 @@ export default function VenturesPage() {
                             {role.ventureAbout}
                           </p>
                         </div>
-                        {role.ventureLink && (
-                          <Button asChild variant="ghost" size="sm">
-                            <Link
-                              href={role.ventureLink}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                            >
-                              <ExternalLink className="w-4 h-4" />
-                            </Link>
-                          </Button>
+                        {(role.ventureLink ||
+                          (role.ventureOtherLinks &&
+                            role.ventureOtherLinks.length > 0)) && (
+                          <div className="flex items-center gap-1 shrink-0">
+                            {role.ventureLink && (
+                              <Button asChild variant="ghost" size="sm">
+                                <Link
+                                  href={role.ventureLink}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                >
+                                  <ExternalLink className="w-4 h-4" />
+                                </Link>
+                              </Button>
+                            )}
+                            {role.ventureOtherLinks?.map((link, linkIndex) => {
+                              const linkType = getLinkType(link);
+                              return (
+                                <Link
+                                  key={linkIndex}
+                                  href={link}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  className="p-2 text-text-tertiary hover:text-accent transition-colors duration-fast"
+                                  aria-label={getLinkLabel(linkType)}
+                                >
+                                  <LinkIcon type={linkType} />
+                                </Link>
+                              );
+                            })}
+                          </div>
                         )}
                       </div>
                     </div>
