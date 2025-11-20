@@ -1,92 +1,108 @@
-import Link from 'next/link'
-import Image from 'next/image'
-import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card'
-import { Badge } from '@/components/ui/badge'
-import { Button } from '@/components/ui/button'
-import { ExternalLink, Github } from 'lucide-react'
-import type { Project } from '@/types'
-import { formatDateRange } from '@/lib/date'
+import * as React from "react";
+import { Panel } from "@/components/ui/panel";
+import { Button } from "@/components/ui/button";
+import { ImageGallery } from "@/components/ui/image-gallery";
+import Link from "next/link";
+import { formatDateRange } from "@/lib/date";
+import { getLinkType, getLinkLabel, LinkIcon } from "@/lib/link-utils";
+import { ExternalLink } from "lucide-react";
+import type { Project } from "@/types/project";
 
-interface ProjectCardProps {
-  project: Project
+export interface ProjectCardProps {
+  project: Project;
+  /**
+   * Compact mode for home page - shows less detail
+   */
+  compact?: boolean;
 }
 
-export function ProjectCard({ project }: ProjectCardProps) {
-  const githubLink = project.links?.others?.find((link) => link.includes('github'))
+export function ProjectCard({ project, compact = false }: ProjectCardProps) {
+  // Gather all images (primary + others)
+  const allImages = project.images
+    ? ([project.images.primary, ...(project.images.others || [])].filter(
+        Boolean,
+      ) as string[])
+    : [];
 
   return (
-    <Card hoverable accentColor="projects">
-      {project.images?.primary && (
-        <div className="relative w-full h-48 overflow-hidden rounded-t-2xl">
-          <Image
-            src={project.images.primary}
-            alt={`${project.name} screenshot`}
-            fill
-            className="object-cover transition-transform duration-500 group-hover:scale-105"
-            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+    <Panel hoverable>
+      {/* Project images - always above content */}
+      {allImages.length > 0 && (
+        <div className="mb-3">
+          <ImageGallery
+            images={allImages}
+            alt={project.name}
+            thumbnailSize="lg"
           />
         </div>
       )}
 
-      <CardHeader>
-        <CardTitle>{project.name}</CardTitle>
-        <time className="text-sm text-muted-foreground">
-          {formatDateRange(project.startDate, project.endDate)}
-        </time>
-      </CardHeader>
+      {/* Project details */}
+      <div className="space-y-2">
+        <div className="flex items-start justify-between gap-2">
+          <div>
+            <h3
+              className={
+                compact
+                  ? "text-16 font-semibold text-text-primary"
+                  : "text-20 font-semibold text-text-primary"
+              }
+            >
+              {project.name}
+            </h3>
+            <time className="text-12 font-mono text-text-quaternary">
+              {formatDateRange(project.startDate, project.endDate)}
+            </time>
+          </div>
+          {(project.links?.primary ||
+            (project.links?.others && project.links.others.length > 0)) && (
+            <div className="flex items-center gap-1 shrink-0">
+              {project.links?.primary && (
+                <Button asChild variant="ghost" size="sm">
+                  <Link
+                    href={project.links.primary}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <ExternalLink className="w-4 h-4" />
+                  </Link>
+                </Button>
+              )}
+              {project.links?.others?.map((link, linkIndex) => {
+                const linkType = getLinkType(link);
+                return (
+                  <Link
+                    key={linkIndex}
+                    href={link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="p-2 text-text-tertiary hover:text-accent transition-colors duration-fast"
+                    aria-label={getLinkLabel(linkType)}
+                  >
+                    <LinkIcon type={linkType} />
+                  </Link>
+                );
+              })}
+            </div>
+          )}
+        </div>
 
-      <CardContent className="space-y-4">
-        <p className="text-base leading-relaxed text-muted-foreground">
-          {project.description}
-        </p>
+        <p className="text-14 text-text-secondary">{project.description}</p>
 
-        {project.details && project.details.length > 0 && (
-          <ul className="space-y-2">
+        {!compact && project.details && project.details.length > 0 && (
+          <ul className="space-y-1 mt-2">
             {project.details.map((detail, index) => (
               <li
                 key={index}
-                className="flex items-start gap-2 text-sm text-muted-foreground"
+                className="flex items-start gap-2 text-12 text-text-tertiary"
               >
-                <span className="text-projects font-bold mt-0.5 shrink-0">→</span>
+                <span className="text-accent font-bold shrink-0 mt-0.5">→</span>
                 <span>{detail}</span>
               </li>
             ))}
           </ul>
         )}
-      </CardContent>
-
-      <CardFooter className="flex-col items-start gap-4">
-        {/* Skills */}
-        {project.skills && project.skills.length > 0 && (
-          <div className="flex flex-wrap gap-2">
-            {project.skills.map((skill) => (
-              <Badge key={skill} variant="projects" size="sm">
-                {skill}
-              </Badge>
-            ))}
-          </div>
-        )}
-
-        {/* Links */}
-        <div className="flex gap-3 flex-wrap">
-          {project.links?.primary && (
-            <Button asChild size="sm">
-              <Link href={project.links.primary} target="_blank" rel="noopener noreferrer">
-                <ExternalLink className="w-4 h-4 mr-2" />
-                View Project
-              </Link>
-            </Button>
-          )}
-          {githubLink && (
-            <Button asChild size="sm" variant="secondary">
-              <Link href={githubLink} target="_blank" rel="noopener noreferrer">
-                <Github className="w-4 h-4 mr-2" />
-                GitHub
-              </Link>
-            </Button>
-          )}
-        </div>
-      </CardFooter>
-    </Card>
-  )
+      </div>
+    </Panel>
+  );
 }

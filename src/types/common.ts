@@ -1,14 +1,14 @@
 export interface Links {
-  primary?: string
-  others?: string[]
+  primary?: string;
+  others?: string[];
 }
 
 export interface Images {
-  primary?: string
-  others?: string[]
+  primary?: string;
+  others?: string[];
 }
 
 export interface DateRange {
-  startDate: string
-  endDate: string | 'Present'
+  startDate: string;
+  endDate: string | "Present";
 }

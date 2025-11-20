@@ -1,4 +1,4 @@
 export interface About {
-  tagline: string
-  description: string
+  tagline: string;
+  description: string;
 }

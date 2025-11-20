@@ -1,7 +1,7 @@
-import type { Links } from './common'
+import type { Links } from "./common";
 
 export interface Recommendation {
-  text: string
-  from: string
-  links?: Links
+  text: string;
+  from: string;
+  links?: Links;
 }

@@ -1,26 +1,29 @@
-import { format, parseISO } from 'date-fns'
+import { format, parseISO } from "date-fns";
 
 export function formatDate(date: string): string {
-  if (!date) return ''
-  if (date === 'Present') return 'Present'
+  if (!date) return "";
+  if (date === "Present") return "Present";
 
   try {
-    return format(parseISO(date), 'MMM yyyy')
+    return format(parseISO(date), "MMM yyyy");
   } catch {
-    return date
+    return date;
   }
 }
 
-export function formatDateRange(startDate: string, endDate: string | 'Present'): string {
-  const start = formatDate(startDate)
-  const end = formatDate(endDate)
+export function formatDateRange(
+  startDate: string,
+  endDate: string | "Present",
+): string {
+  const start = formatDate(startDate);
+  const end = formatDate(endDate);
 
-  if (!start) return end || ''
-  if (!end) return start
+  if (!start) return end || "";
+  if (!end) return start;
 
-  return `${start} - ${end}`
+  return `${start} - ${end}`;
 }
 
 export function isDatePresent(date: string): boolean {
-  return date === 'Present'
+  return date === "Present";
 }

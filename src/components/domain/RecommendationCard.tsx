@@ -1,44 +1,44 @@
-import Link from 'next/link'
-import { Card, CardContent, CardFooter, CardHeader } from '@/components/ui/card'
-import { Button } from '@/components/ui/button'
-import { ExternalLink, Quote } from 'lucide-react'
-import type { Recommendation } from '@/types'
+import * as React from "react";
+import { Panel } from "@/components/ui/panel";
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
+import { ExternalLink } from "lucide-react";
+import type { Recommendation } from "@/types/recommendation";
 
-interface RecommendationCardProps {
-  recommendation: Recommendation
+export interface RecommendationCardProps {
+  recommendation: Recommendation;
 }
 
-export function RecommendationCard({ recommendation }: RecommendationCardProps) {
+export function RecommendationCard({
+  recommendation,
+}: RecommendationCardProps) {
   return (
-    <Card hoverable accentColor="recommendations">
-      <CardHeader>
-        <Quote className="w-8 h-8 text-recommendations opacity-50" />
-      </CardHeader>
-
-      <CardContent className="space-y-4">
-        <blockquote className="text-base leading-relaxed text-muted-foreground italic">
-          &ldquo;{recommendation.text}&rdquo;
+    <Panel hoverable>
+      <div className="space-y-3">
+        {/* Quote */}
+        <blockquote className="text-16 text-text-secondary italic leading-relaxed border-l-2 border-accent pl-4">
+          {recommendation.text}
         </blockquote>
 
-        <div className="flex items-center gap-2">
-          <div className="h-px flex-1 bg-border" />
-          <cite className="text-sm font-semibold not-italic text-foreground">
+        {/* Author info with link */}
+        <div className="pt-2 flex items-center justify-between gap-2">
+          <p className="text-14 font-semibold text-text-primary">
             {recommendation.from}
-          </cite>
-          <div className="h-px flex-1 bg-border" />
+          </p>
+          {recommendation.links?.primary && (
+            <Button asChild variant="ghost" size="sm">
+              <Link
+                href={recommendation.links.primary}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`View ${recommendation.from}'s profile`}
+              >
+                <ExternalLink className="w-4 h-4" />
+              </Link>
+            </Button>
+          )}
         </div>
-      </CardContent>
-
-      {recommendation.links?.primary && (
-        <CardFooter>
-          <Button asChild size="sm" variant="secondary">
-            <Link href={recommendation.links.primary} target="_blank" rel="noopener noreferrer">
-              <ExternalLink className="w-4 h-4 mr-2" />
-              View Source
-            </Link>
-          </Button>
-        </CardFooter>
-      )}
-    </Card>
-  )
+      </div>
+    </Panel>
+  );
 }
