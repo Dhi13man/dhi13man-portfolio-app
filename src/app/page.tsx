@@ -190,24 +190,19 @@ export default async function Home() {
           {aboutData.values.map((value, index) => (
             <div
               key={`value-${index}-${value.number}`}
-              className="flex flex-col items-center text-center p-6 rounded-lg border border-border hover:border-border-hover transition-colors duration-fast"
+              className="p-4 rounded-lg border border-border hover:border-border-hover transition-colors duration-fast"
             >
-              <div className="w-12 h-12 rounded-lg flex items-center justify-center bg-accent/10 text-accent mb-4">
-                <ValueIcon iconName={value.iconName} />
-              </div>
-              <div className="space-y-2">
-                <div className="flex items-center justify-center gap-2">
-                  <span className="text-12 text-text-quaternary font-mono">
-                    {String(value.number).padStart(2, "0")}
-                  </span>
-                  <h3 className="text-16 font-semibold text-text-primary">
-                    {value.title}
-                  </h3>
+              <div className="flex items-center gap-3 mb-2">
+                <div className="w-8 h-8 rounded flex items-center justify-center bg-accent/10 text-accent">
+                  <ValueIcon iconName={value.iconName} />
                 </div>
-                <p className="text-14 text-text-tertiary leading-relaxed">
-                  {value.description}
-                </p>
+                <h3 className="text-14 font-semibold text-text-primary">
+                  {value.title}
+                </h3>
               </div>
+              <p className="text-14 text-text-tertiary leading-relaxed">
+                {value.description}
+              </p>
             </div>
           ))}
         </div>
