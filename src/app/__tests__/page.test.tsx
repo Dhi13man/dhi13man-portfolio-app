@@ -153,7 +153,13 @@ vi.mock('@/data/projects', () => ({
     {
       name: 'Current Project',
       description: 'A current project',
-      startDate: '2023-01-01',
+      startDate: 'Jan 2023',
+      endDate: 'Present',
+    },
+    {
+      name: 'Newer Current Project',
+      description: 'A newer current project',
+      startDate: 'Jun 2024',
       endDate: 'Present',
     },
     {
@@ -170,12 +176,17 @@ vi.mock('@/data/ventures', () => ({
     {
       name: 'Current Venture',
       about: 'A current venture',
-      roles: [{ startDate: '2023-01-01', endDate: 'Present', title: 'Founder' }],
+      roles: [{ startDate: 'Jan 2023', endDate: 'Present', title: 'Founder', description: 'Test' }],
+    },
+    {
+      name: 'Newer Current Venture',
+      about: 'A newer current venture',
+      roles: [{ startDate: 'Jun 2024', endDate: 'Present', title: 'CEO', description: 'Test' }],
     },
     {
       name: 'Past Venture',
       about: 'A past venture',
-      roles: [{ startDate: '2022-01-01', endDate: '2022-12-31', title: 'Former' }],
+      roles: [{ startDate: '2022-01-01', endDate: '2022-12-31', title: 'Former', description: 'Test' }],
     },
   ],
 }))
@@ -283,7 +294,7 @@ describe('Home Page - Component Tests', () => {
       expect(screen.getByText('Open Source Packages')).toBeInTheDocument()
       expect(screen.getByText('1.5K+')).toBeInTheDocument()
       expect(screen.getByText('GitHub Stars')).toBeInTheDocument()
-      expect(screen.getByText('2')).toBeInTheDocument() // 1 current project + 1 current venture
+      expect(screen.getByText('4')).toBeInTheDocument() // 2 current projects + 2 current ventures
       expect(screen.getByText('Active Initiatives')).toBeInTheDocument()
     })
 
@@ -376,6 +387,52 @@ describe('Home Page - Component Tests', () => {
 
       // Assert
       expect(screen.getAllByText('—').length).toBeGreaterThan(0)
+    })
+
+    it('should log warning in development mode when GitHub API fails', async () => {
+      // Arrange
+      vi.stubEnv('NODE_ENV', 'development')
+      const consoleSpy = vi.spyOn(console, 'warn').mockImplementation(() => {})
+      vi.mocked(fetchGitHubStats).mockResolvedValueOnce({
+        publicRepos: null,
+        totalStars: null,
+        isError: true,
+        errorMessage: 'Test error message',
+      })
+
+      // Act
+      await renderHome()
+
+      // Assert
+      expect(consoleSpy).toHaveBeenCalledWith(
+        'GitHub stats fetch failed: Test error message. Using fallback display.'
+      )
+
+      // Cleanup
+      consoleSpy.mockRestore()
+      vi.unstubAllEnvs()
+    })
+
+    it('should not log warning in production mode when GitHub API fails', async () => {
+      // Arrange
+      vi.stubEnv('NODE_ENV', 'production')
+      const consoleSpy = vi.spyOn(console, 'warn').mockImplementation(() => {})
+      vi.mocked(fetchGitHubStats).mockResolvedValueOnce({
+        publicRepos: null,
+        totalStars: null,
+        isError: true,
+        errorMessage: 'Test error message',
+      })
+
+      // Act
+      await renderHome()
+
+      // Assert
+      expect(consoleSpy).not.toHaveBeenCalled()
+
+      // Cleanup
+      consoleSpy.mockRestore()
+      vi.unstubAllEnvs()
     })
   })
 })
