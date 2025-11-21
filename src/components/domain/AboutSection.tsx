@@ -1,4 +1,5 @@
 import type { About } from "@/types/about";
+import { ValueIcon } from "./ValueIcon";
 
 interface AboutSectionProps {
   data: About;
@@ -21,6 +22,7 @@ export function AboutSection({ data }: AboutSectionProps) {
   // Safely access arrays with fallbacks
   const highlights = Array.isArray(data.highlights) ? data.highlights : [];
   const expertise = Array.isArray(data.expertise) ? data.expertise : [];
+  const values = Array.isArray(data.values) ? data.values : [];
 
   return (
     <article className="space-y-12">
@@ -84,6 +86,38 @@ export function AboutSection({ data }: AboutSectionProps) {
                     </span>
                   ))}
                 </div>
+              </div>
+            ))}
+          </div>
+        </section>
+      )}
+
+      {/* Core Principles */}
+      {values.length > 0 && (
+        <section className="space-y-6" aria-labelledby="principles-heading">
+          <h4
+            id="principles-heading"
+            className="text-16 font-semibold text-text-primary uppercase tracking-wide"
+          >
+            Core Principles
+          </h4>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            {values.map((value, index) => (
+              <div
+                key={`value-${index}-${value.number}`}
+                className="p-4 rounded-lg border border-border hover:border-border-hover transition-colors duration-fast"
+              >
+                <div className="flex items-center gap-3 mb-2">
+                  <div className="w-8 h-8 rounded flex items-center justify-center bg-accent/10 text-accent">
+                    <ValueIcon iconName={value.iconName} />
+                  </div>
+                  <h5 className="text-14 font-semibold text-text-primary">
+                    {value.title}
+                  </h5>
+                </div>
+                <p className="text-14 text-text-tertiary leading-relaxed">
+                  {value.description}
+                </p>
               </div>
             ))}
           </div>

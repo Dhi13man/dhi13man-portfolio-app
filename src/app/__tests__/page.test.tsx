@@ -195,8 +195,8 @@ describe('Home Page', () => {
       // Arrange & Act
       await renderHome()
 
-      // Assert
-      expect(screen.getByRole('heading', { level: 2, name: 'Core Principles' })).toBeInTheDocument()
+      // Assert - Core Principles is now h4 inside AboutSection
+      expect(screen.getByRole('heading', { level: 4, name: 'Core Principles' })).toBeInTheDocument()
     })
 
     it('should render core values', async () => {

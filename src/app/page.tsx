@@ -2,7 +2,6 @@ import { Section, SectionHeader, SectionTitle } from "@/components/ui/section";
 import { ProjectCard } from "@/components/domain/ProjectCard";
 import { VentureCard } from "@/components/domain/VentureCard";
 import { AboutSection } from "@/components/domain/AboutSection";
-import { ValueIcon } from "@/components/domain/ValueIcon";
 import Image from "next/image";
 import { Github, Linkedin, Mail } from "lucide-react";
 import { aboutData } from "@/data/about";
@@ -180,33 +179,6 @@ export default async function Home() {
           )}
         </Section>
       )}
-
-      {/* Core Principles Section */}
-      <Section>
-        <SectionHeader>
-          <SectionTitle>Core Principles</SectionTitle>
-        </SectionHeader>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-          {aboutData.values.map((value, index) => (
-            <div
-              key={`value-${index}-${value.number}`}
-              className="p-4 rounded-lg border border-border hover:border-border-hover transition-colors duration-fast"
-            >
-              <div className="flex items-center gap-3 mb-2">
-                <div className="w-8 h-8 rounded flex items-center justify-center bg-accent/10 text-accent">
-                  <ValueIcon iconName={value.iconName} />
-                </div>
-                <h3 className="text-14 font-semibold text-text-primary">
-                  {value.title}
-                </h3>
-              </div>
-              <p className="text-14 text-text-tertiary leading-relaxed">
-                {value.description}
-              </p>
-            </div>
-          ))}
-        </div>
-      </Section>
     </>
   );
 }
