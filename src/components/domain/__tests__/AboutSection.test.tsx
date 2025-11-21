@@ -97,6 +97,72 @@ describe('AboutSection', () => {
     })
   })
 
+  describe('AboutSection_whenLinksProvided_thenRendersAsLinks', () => {
+    it('should render highlights with internal links', () => {
+      const dataWithLinks = {
+        ...mockAboutData,
+        highlights: [
+          { value: '6+', label: 'Years Experience', link: '/experience' },
+        ],
+      }
+      render(<AboutSection data={dataWithLinks} />)
+      const link = screen.getByRole('link')
+      expect(link).toHaveAttribute('href', '/experience')
+    })
+
+    it('should render highlights with external links', () => {
+      const dataWithExternalLink = {
+        ...mockAboutData,
+        highlights: [
+          { value: '100+', label: 'GitHub Stars', link: 'https://github.com/test' },
+        ],
+      }
+      render(<AboutSection data={dataWithExternalLink} />)
+      const link = screen.getByRole('link')
+      expect(link).toHaveAttribute('href', 'https://github.com/test')
+      expect(link).toHaveAttribute('target', '_blank')
+      expect(link).toHaveAttribute('rel', 'noopener noreferrer')
+    })
+
+    it('should render values with links', () => {
+      const dataWithValueLinks = {
+        ...mockAboutData,
+        values: [
+          {
+            number: 1,
+            title: 'Test Value',
+            description: 'Test description',
+            iconName: 'layers' as const,
+            link: '/test',
+          },
+        ],
+      }
+      render(<AboutSection data={dataWithValueLinks} />)
+      const links = screen.getAllByRole('link')
+      const valueLink = links.find(link => link.getAttribute('href') === '/test')
+      expect(valueLink).toBeInTheDocument()
+    })
+
+    it('should render values without links as divs', () => {
+      const dataWithoutValueLinks = {
+        ...mockAboutData,
+        values: [
+          {
+            number: 1,
+            title: 'No Link Value',
+            description: 'Test description',
+            iconName: 'layers' as const,
+          },
+        ],
+      }
+      render(<AboutSection data={dataWithoutValueLinks} />)
+      expect(screen.getByText('No Link Value')).toBeInTheDocument()
+      // Should not have a link for this value
+      const valueText = screen.getByText('No Link Value')
+      expect(valueText.closest('a')).toBeNull()
+    })
+  })
+
   describe('AboutSection_whenEmptyData_thenHandlesGracefully', () => {
     it('should handle empty highlights array', () => {
       const dataWithEmptyHighlights = { ...mockAboutData, highlights: [] }
