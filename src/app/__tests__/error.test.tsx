@@ -57,8 +57,6 @@ describe('ErrorPage', () => {
   })
 
   describe('ErrorPage_whenInDevelopmentMode_thenLogsError', () => {
-    const originalEnv = process.env.NODE_ENV
-
     beforeEach(() => {
       vi.stubEnv('NODE_ENV', 'development')
     })
@@ -85,8 +83,6 @@ describe('ErrorPage', () => {
   })
 
   describe('ErrorPage_whenInProductionMode_thenDoesNotLogError', () => {
-    const originalEnv = process.env.NODE_ENV
-
     beforeEach(() => {
       vi.stubEnv('NODE_ENV', 'production')
     })

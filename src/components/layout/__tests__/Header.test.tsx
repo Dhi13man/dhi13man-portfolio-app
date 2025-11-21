@@ -5,7 +5,7 @@ import { usePathname } from 'next/navigation'
 import { Header } from '../Header'
 
 // Cast the mock function
-const mockUsePathname = usePathname as jest.MockedFunction<typeof usePathname>
+const mockUsePathname = usePathname as ReturnType<typeof vi.fn>
 
 describe('Header', () => {
   beforeEach(() => {
