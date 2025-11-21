@@ -44,14 +44,14 @@ export function AboutSection({ data }: AboutSectionProps) {
         <dl className="grid grid-cols-2 md:grid-cols-4 gap-4">
           {highlights.map((highlight, index) => {
             const cardContent = (
-              <>
-                <dd className="text-32 font-display font-bold text-accent">
-                  {highlight.value}
-                </dd>
+              <div className="flex flex-col-reverse">
                 <dt className="text-12 text-text-tertiary uppercase tracking-wide mt-1">
                   {highlight.label}
                 </dt>
-              </>
+                <dd className="text-32 font-display font-bold text-accent">
+                  {highlight.value}
+                </dd>
+              </div>
             );
 
             const cardClassName = "block p-4 rounded-lg border border-border bg-surface/50 hover:border-border-hover hover:bg-surface/80 transition-colors duration-fast";

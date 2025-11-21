@@ -11,7 +11,7 @@ function createError(message?: string, digest?: string): Error & { digest?: stri
 
 describe('ErrorPage', () => {
   describe('ErrorPage_whenRendered_thenDisplaysErrorMessage', () => {
-    it('should display the error message', () => {
+    it('should display generic message in production mode', () => {
       // Arrange
       const error = createError('Test error message')
       const reset = jest.fn()
@@ -19,9 +19,27 @@ describe('ErrorPage', () => {
       // Act
       render(<ErrorPage error={error} reset={reset} />)
 
-      // Assert
+      // Assert - In production/test mode, shows generic message for security
       expect(screen.getByText('Something went wrong')).toBeInTheDocument()
-      expect(screen.getByText('Test error message')).toBeInTheDocument()
+      expect(screen.getByText('An unexpected error occurred. Please try again.')).toBeInTheDocument()
+    })
+
+    it('should display error message in development mode', () => {
+      // Arrange
+      const originalEnv = process.env.NODE_ENV
+      process.env.NODE_ENV = 'development'
+      const error = createError('Development error message')
+      const reset = jest.fn()
+
+      // Act
+      render(<ErrorPage error={error} reset={reset} />)
+
+      // Assert - In development, shows actual error message
+      expect(screen.getByText('Something went wrong')).toBeInTheDocument()
+      expect(screen.getByText('Development error message')).toBeInTheDocument()
+
+      // Cleanup
+      process.env.NODE_ENV = originalEnv
     })
 
     it('should display default message when error has no message', () => {
@@ -61,8 +79,9 @@ describe('ErrorPage', () => {
       // Act
       render(<ErrorPage error={error} reset={reset} />)
 
-      // Assert
-      expect(screen.getByText('Digest error')).toBeInTheDocument()
+      // Assert - Renders without crashing, shows generic message in production
+      expect(screen.getByText('Something went wrong')).toBeInTheDocument()
+      expect(screen.getByText('An unexpected error occurred. Please try again.')).toBeInTheDocument()
     })
   })
 })
