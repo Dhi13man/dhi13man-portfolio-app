@@ -11,6 +11,8 @@ import { isDatePresent } from "@/lib/date";
 import {
   fetchGitHubStats,
   calculateYearsExperience,
+  formatStarCount,
+  formatRepoCount,
 } from "@/lib/github";
 import type { AboutHighlight } from "@/types/about";
 
@@ -18,11 +20,18 @@ export default async function Home() {
   // Get current initiatives (ongoing projects and ventures)
   const currentProjects = projects.filter((p) => isDatePresent(p.endDate));
   const currentVentures = ventures.filter((v) =>
-    v.roles.some((r) => isDatePresent(r.endDate)),
+    Array.isArray(v.roles) && v.roles.some((r) => isDatePresent(r?.endDate)),
   );
 
   // Fetch GitHub stats at build time
   const githubStats = await fetchGitHubStats("Dhi13man");
+
+  // Log error if GitHub fetch failed (visible in build logs)
+  if (githubStats.isError) {
+    console.warn(
+      `GitHub stats fetch failed: ${githubStats.errorMessage}. Using fallback display.`
+    );
+  }
 
   // Calculate dynamic highlights
   const yearsExperience = calculateYearsExperience(2019);
@@ -34,13 +43,11 @@ export default async function Home() {
       label: "Years Experience",
     },
     {
-      value: `${githubStats.publicRepos}+`,
+      value: formatRepoCount(githubStats.publicRepos),
       label: "Open Source Packages",
     },
     {
-      value: githubStats.totalStars >= 1000
-        ? `${(githubStats.totalStars / 1000).toFixed(1)}K+`
-        : `${githubStats.totalStars}+`,
+      value: formatStarCount(githubStats.totalStars),
       label: "GitHub Stars",
     },
     {
@@ -199,9 +206,9 @@ export default async function Home() {
           <SectionTitle>Core Principles</SectionTitle>
         </SectionHeader>
         <div className="space-y-4">
-          {aboutData.values.map((value) => (
+          {aboutData.values.map((value, index) => (
             <div
-              key={value.number}
+              key={`value-${index}-${value.number}`}
               className="flex items-start gap-4 p-4 rounded-lg border border-border hover:border-border-hover transition-colors duration-fast"
             >
               <div className="flex-shrink-0 w-8 h-8 rounded flex items-center justify-center bg-accent/10 text-accent">

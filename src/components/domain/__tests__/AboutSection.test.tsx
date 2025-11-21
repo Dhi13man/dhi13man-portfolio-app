@@ -102,12 +102,31 @@ describe('AboutSection', () => {
       const dataWithEmptyHighlights = { ...mockAboutData, highlights: [] }
       render(<AboutSection data={dataWithEmptyHighlights} />)
       expect(screen.getByText('Test Headline')).toBeInTheDocument()
+      expect(screen.getByText('No statistics available')).toBeInTheDocument()
     })
 
-    it('should handle empty expertise array', () => {
+    it('should hide expertise section when array is empty', () => {
       const dataWithEmptyExpertise = { ...mockAboutData, expertise: [] }
       render(<AboutSection data={dataWithEmptyExpertise} />)
-      expect(screen.getByText('Expertise')).toBeInTheDocument()
+      expect(screen.queryByText('Expertise')).not.toBeInTheDocument()
+    })
+
+    it('should show error message when data is null', () => {
+      // @ts-expect-error Testing null data handling
+      render(<AboutSection data={null} />)
+      expect(screen.getByRole('alert')).toHaveTextContent('Unable to load about section')
+    })
+
+    it('should use default headline when headline is empty', () => {
+      const dataWithEmptyHeadline = { ...mockAboutData, headline: '' }
+      render(<AboutSection data={dataWithEmptyHeadline} />)
+      expect(screen.getByText('About Me')).toBeInTheDocument()
+    })
+
+    it('should not render introduction when empty', () => {
+      const dataWithEmptyIntro = { ...mockAboutData, introduction: '' }
+      render(<AboutSection data={dataWithEmptyIntro} />)
+      expect(screen.queryByText('Test introduction text.')).not.toBeInTheDocument()
     })
   })
 })

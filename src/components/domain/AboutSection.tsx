@@ -4,59 +4,91 @@ interface AboutSectionProps {
   data: About;
 }
 
+/**
+ * AboutSection displays the headline, introduction, highlights grid, and expertise areas.
+ * Designed for programmatic integration with proper null safety and accessibility.
+ */
 export function AboutSection({ data }: AboutSectionProps) {
-  return (
-    <div className="space-y-12">
-      {/* Headline */}
-      <div className="space-y-4">
-        <h3 className="text-24 font-display font-semibold text-text-primary">
-          {data.headline}
-        </h3>
-        <p className="text-16 text-text-secondary leading-relaxed">
-          {data.introduction}
-        </p>
+  // Validate data structure
+  if (!data) {
+    return (
+      <div role="alert" className="text-text-tertiary p-4">
+        Unable to load about section
       </div>
+    );
+  }
+
+  // Safely access arrays with fallbacks
+  const highlights = Array.isArray(data.highlights) ? data.highlights : [];
+  const expertise = Array.isArray(data.expertise) ? data.expertise : [];
+
+  return (
+    <article className="space-y-12">
+      {/* Headline */}
+      <header className="space-y-4">
+        <h3 className="text-24 font-display font-semibold text-text-primary">
+          {data.headline || "About Me"}
+        </h3>
+        {data.introduction && (
+          <p className="text-16 text-text-secondary leading-relaxed">
+            {data.introduction}
+          </p>
+        )}
+      </header>
 
       {/* Highlights/Stats Grid */}
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-        {data.highlights.map((highlight) => (
-          <div
-            key={highlight.label}
-            className="p-4 rounded-lg border border-border bg-surface/50 hover:border-border-hover transition-colors duration-fast"
-          >
-            <div className="text-32 font-display font-bold text-accent">
-              {highlight.value}
-            </div>
-            <div className="text-12 text-text-tertiary uppercase tracking-wide mt-1">
-              {highlight.label}
-            </div>
-          </div>
-        ))}
-      </div>
-
-      {/* Expertise Areas - 2 column grid */}
-      <div className="space-y-6">
-        <h4 className="text-16 font-semibold text-text-primary uppercase tracking-wide">
-          Expertise
-        </h4>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {data.expertise.map((area) => (
-            <div key={area.area} className="space-y-2">
-              <div className="text-14 text-text-tertiary">{area.area}</div>
-              <div className="flex flex-wrap gap-2">
-                {area.skills.map((skill) => (
-                  <span
-                    key={skill}
-                    className="px-3 py-1 text-12 rounded border border-border bg-surface/30 text-text-secondary hover:border-border-hover hover:text-accent transition-colors duration-fast"
-                  >
-                    {skill}
-                  </span>
-                ))}
-              </div>
+      {highlights.length > 0 ? (
+        <dl className="grid grid-cols-2 md:grid-cols-4 gap-4">
+          {highlights.map((highlight, index) => (
+            <div
+              key={`highlight-${index}-${highlight.label}`}
+              className="p-4 rounded-lg border border-border bg-surface/50 hover:border-border-hover transition-colors duration-fast"
+            >
+              <dd className="text-32 font-display font-bold text-accent">
+                {highlight.value}
+              </dd>
+              <dt className="text-12 text-text-tertiary uppercase tracking-wide mt-1">
+                {highlight.label}
+              </dt>
             </div>
           ))}
+        </dl>
+      ) : (
+        <div className="text-text-tertiary text-14">
+          No statistics available
         </div>
-      </div>
-    </div>
+      )}
+
+      {/* Expertise Areas - 2 column grid */}
+      {expertise.length > 0 && (
+        <section className="space-y-6" aria-labelledby="expertise-heading">
+          <h4
+            id="expertise-heading"
+            className="text-16 font-semibold text-text-primary uppercase tracking-wide"
+          >
+            Expertise
+          </h4>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {expertise.map((area, areaIndex) => (
+              <div key={`expertise-${areaIndex}-${area.area}`} className="space-y-2">
+                <div className="text-14 text-text-tertiary">{area.area}</div>
+                <div className="flex flex-wrap gap-2" role="list" aria-label={`${area.area} skills`}>
+                  {Array.isArray(area.skills) && area.skills.map((skill, skillIndex) => (
+                    <span
+                      key={`skill-${areaIndex}-${skillIndex}`}
+                      role="listitem"
+                      className="px-3 py-1 text-12 rounded border border-border bg-surface/30 text-text-secondary hover:border-border-hover hover:text-accent transition-colors duration-fast"
+                      title={skill}
+                    >
+                      {skill}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+      )}
+    </article>
   );
 }

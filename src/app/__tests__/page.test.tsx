@@ -7,8 +7,17 @@ jest.mock('@/lib/github', () => ({
   fetchGitHubStats: jest.fn().mockResolvedValue({
     publicRepos: 25,
     totalStars: 1500,
+    isError: false,
   }),
   calculateYearsExperience: jest.fn().mockReturnValue(6),
+  formatStarCount: jest.fn().mockImplementation((stars: number | null) => {
+    if (stars === null) return '—';
+    return stars >= 1000 ? `${(stars / 1000).toFixed(1)}K+` : `${stars}+`;
+  }),
+  formatRepoCount: jest.fn().mockImplementation((repos: number | null) => {
+    if (repos === null) return '—';
+    return `${repos}+`;
+  }),
 }))
 
 // Mock the data modules
