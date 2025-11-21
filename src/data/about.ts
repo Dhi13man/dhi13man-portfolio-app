@@ -14,15 +14,15 @@ export const aboutData: About = {
   expertise: [
     {
       area: "Backend & Systems",
-      skills: ["Go", "Python", "Node.js", "Java", "PostgreSQL", "Redis"],
+      skills: ["Java", "Go", "Python", "Node.js", "PostgreSQL", "Redis"],
     },
     {
       area: "Frontend & Mobile",
-      skills: ["React", "Next.js", "Flutter", "TypeScript", "Tailwind CSS"],
+      skills: ["Flutter", "React", "Next.js", "TypeScript", "Tailwind CSS"],
     },
     {
       area: "Cloud & DevOps",
-      skills: ["AWS", "GCP", "Kubernetes", "Docker", "Terraform", "CI/CD"],
+      skills: ["Kubernetes", "GCP", "AWS", "Docker", "CI/CD"],
     },
     {
       area: "Specializations",
