@@ -8,24 +8,8 @@ export const aboutData: About = {
   introduction:
     "Tech-obsessed engineer dedicated to simplifying lives through technology. Standing at the intersection of technical excellence and visionary leadership, with proven expertise in scalable systems and innovative solutions.",
 
-  highlights: [
-    {
-      value: "6+",
-      label: "Years Experience",
-    },
-    {
-      value: "20+",
-      label: "Open Source Packages",
-    },
-    {
-      value: "1.5K+",
-      label: "GitHub Stars",
-    },
-    {
-      value: "50K+",
-      label: "Monthly Downloads",
-    },
-  ],
+  // Highlights are computed at build time from GitHub API and initiative counts
+  highlights: [],
 
   expertise: [
     {

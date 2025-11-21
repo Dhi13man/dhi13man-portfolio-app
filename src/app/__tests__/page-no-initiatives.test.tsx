@@ -2,15 +2,22 @@ import React from 'react'
 import { render, screen } from '@testing-library/react'
 import Home from '../page'
 
+// Mock the GitHub stats fetching
+jest.mock('@/lib/github', () => ({
+  fetchGitHubStats: jest.fn().mockResolvedValue({
+    publicRepos: 25,
+    totalStars: 1500,
+  }),
+  calculateYearsExperience: jest.fn().mockReturnValue(6),
+}))
+
 // Mock the data modules with no current initiatives
 jest.mock('@/data/about', () => ({
   aboutData: {
     tagline: 'Test Tagline',
     headline: 'Test Headline',
     introduction: 'Test introduction.',
-    highlights: [
-      { value: '5+', label: 'Years Experience' },
-    ],
+    highlights: [],
     expertise: [
       {
         area: 'Backend & Systems',
@@ -59,10 +66,16 @@ jest.mock('@/components/ui/image-gallery', () => ({
   ),
 }))
 
+// Helper to render async Server Component
+async function renderHome() {
+  const HomeComponent = await Home()
+  return render(HomeComponent)
+}
+
 describe('Home Page - No Current Initiatives', () => {
-  it('should not render current initiatives section when all projects are past', () => {
+  it('should not render current initiatives section when all projects are past', async () => {
     // Arrange & Act
-    render(<Home />)
+    await renderHome()
 
     // Assert
     expect(screen.queryByRole('heading', { level: 2, name: 'Current Initiatives' })).not.toBeInTheDocument()
@@ -70,12 +83,21 @@ describe('Home Page - No Current Initiatives', () => {
     expect(screen.queryByRole('heading', { level: 3, name: 'Active Ventures' })).not.toBeInTheDocument()
   })
 
-  it('should still render hero and about sections', () => {
+  it('should still render hero and about sections', async () => {
     // Arrange & Act
-    render(<Home />)
+    await renderHome()
 
     // Assert
     expect(screen.getByRole('heading', { level: 1, name: 'Dhiman Seal' })).toBeInTheDocument()
     expect(screen.getByRole('heading', { level: 2, name: 'About' })).toBeInTheDocument()
+  })
+
+  it('should show zero active initiatives in highlights', async () => {
+    // Arrange & Act
+    await renderHome()
+
+    // Assert
+    expect(screen.getByText('0')).toBeInTheDocument()
+    expect(screen.getByText('Active Initiatives')).toBeInTheDocument()
   })
 })

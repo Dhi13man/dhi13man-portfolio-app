@@ -8,7 +8,11 @@ import { aboutData } from "@/data/about";
 import { projects } from "@/data/projects";
 import { ventures } from "@/data/ventures";
 import { isDatePresent } from "@/lib/date";
-import type { AboutValue } from "@/types/about";
+import {
+  fetchGitHubStats,
+  calculateYearsExperience,
+} from "@/lib/github";
+import type { AboutValue, AboutHighlight } from "@/types/about";
 
 const iconMap = {
   layers: Layers,
@@ -24,12 +28,46 @@ function ValueIcon({ iconName }: { iconName: AboutValue["iconName"] }) {
   return <Icon className="w-5 h-5" />;
 }
 
-export default function Home() {
+export default async function Home() {
   // Get current initiatives (ongoing projects and ventures)
   const currentProjects = projects.filter((p) => isDatePresent(p.endDate));
   const currentVentures = ventures.filter((v) =>
     v.roles.some((r) => isDatePresent(r.endDate)),
   );
+
+  // Fetch GitHub stats at build time
+  const githubStats = await fetchGitHubStats("Dhi13man");
+
+  // Calculate dynamic highlights
+  const yearsExperience = calculateYearsExperience(2019);
+  const activeInitiatives = currentProjects.length + currentVentures.length;
+
+  const highlights: AboutHighlight[] = [
+    {
+      value: `${yearsExperience}+`,
+      label: "Years Experience",
+    },
+    {
+      value: `${githubStats.publicRepos}+`,
+      label: "Open Source Packages",
+    },
+    {
+      value: githubStats.totalStars >= 1000
+        ? `${(githubStats.totalStars / 1000).toFixed(1)}K+`
+        : `${githubStats.totalStars}+`,
+      label: "GitHub Stars",
+    },
+    {
+      value: `${activeInitiatives}`,
+      label: "Active Initiatives",
+    },
+  ];
+
+  // Merge computed highlights with static about data
+  const aboutDataWithHighlights = {
+    ...aboutData,
+    highlights,
+  };
 
   return (
     <>
@@ -131,7 +169,7 @@ export default function Home() {
         <SectionHeader>
           <SectionTitle>About</SectionTitle>
         </SectionHeader>
-        <AboutSection data={aboutData} />
+        <AboutSection data={aboutDataWithHighlights} />
       </Section>
 
       {/* Current Initiatives Section - using domain components for consistency and images */}

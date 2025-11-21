@@ -2,16 +2,22 @@ import React from 'react'
 import { render, screen } from '@testing-library/react'
 import Home from '../page'
 
+// Mock the GitHub stats fetching
+jest.mock('@/lib/github', () => ({
+  fetchGitHubStats: jest.fn().mockResolvedValue({
+    publicRepos: 25,
+    totalStars: 1500,
+  }),
+  calculateYearsExperience: jest.fn().mockReturnValue(6),
+}))
+
 // Mock the data modules
 jest.mock('@/data/about', () => ({
   aboutData: {
     tagline: 'Test Tagline',
     headline: 'Test Headline',
     introduction: 'Test introduction paragraph.',
-    highlights: [
-      { value: '5+', label: 'Years Experience' },
-      { value: '10+', label: 'Open Source Packages' },
-    ],
+    highlights: [], // Empty, will be computed
     expertise: [
       {
         area: 'Backend & Systems',
@@ -71,20 +77,26 @@ jest.mock('@/components/ui/image-gallery', () => ({
   ),
 }))
 
+// Helper to render async Server Component
+async function renderHome() {
+  const HomeComponent = await Home()
+  return render(HomeComponent)
+}
+
 describe('Home Page', () => {
   describe('HomePage_whenRendered_thenDisplaysHeroSection', () => {
-    it('should render name and tagline', () => {
+    it('should render name and tagline', async () => {
       // Arrange & Act
-      render(<Home />)
+      await renderHome()
 
       // Assert
       expect(screen.getByRole('heading', { level: 1, name: 'Dhiman Seal' })).toBeInTheDocument()
       expect(screen.getByText('Test Tagline')).toBeInTheDocument()
     })
 
-    it('should render profile image', () => {
+    it('should render profile image', async () => {
       // Arrange & Act
-      render(<Home />)
+      await renderHome()
 
       // Assert
       const profileImage = screen.getByAltText('Dhiman Seal')
@@ -94,9 +106,9 @@ describe('Home Page', () => {
   })
 
   describe('HomePage_whenRendered_thenDisplaysSocialLinks', () => {
-    it('should render social media links', () => {
+    it('should render social media links', async () => {
       // Arrange & Act
-      render(<Home />)
+      await renderHome()
 
       // Assert
       expect(screen.getByRole('link', { name: /github profile/i })).toHaveAttribute(
@@ -117,9 +129,9 @@ describe('Home Page', () => {
       )
     })
 
-    it('should have target="_blank" on external links', () => {
+    it('should have target="_blank" on external links', async () => {
       // Arrange & Act
-      render(<Home />)
+      await renderHome()
 
       // Assert
       const githubLink = screen.getByRole('link', { name: /github profile/i })
@@ -129,58 +141,61 @@ describe('Home Page', () => {
   })
 
   describe('HomePage_whenRendered_thenDisplaysAboutSection', () => {
-    it('should render about section title', () => {
+    it('should render about section title', async () => {
       // Arrange & Act
-      render(<Home />)
+      await renderHome()
 
       // Assert
       expect(screen.getByRole('heading', { level: 2, name: 'About' })).toBeInTheDocument()
     })
 
-    it('should render about headline and introduction', () => {
+    it('should render about headline and introduction', async () => {
       // Arrange & Act
-      render(<Home />)
+      await renderHome()
 
       // Assert
       expect(screen.getByText('Test Headline')).toBeInTheDocument()
       expect(screen.getByText('Test introduction paragraph.')).toBeInTheDocument()
     })
 
-    it('should render highlights/stats', () => {
+    it('should render highlights/stats from GitHub data', async () => {
       // Arrange & Act
-      render(<Home />)
+      await renderHome()
 
-      // Assert
-      expect(screen.getByText('5+')).toBeInTheDocument()
+      // Assert - values come from mocked GitHub stats and calculations
+      expect(screen.getByText('6+')).toBeInTheDocument()
       expect(screen.getByText('Years Experience')).toBeInTheDocument()
-      expect(screen.getByText('10+')).toBeInTheDocument()
+      expect(screen.getByText('25+')).toBeInTheDocument()
       expect(screen.getByText('Open Source Packages')).toBeInTheDocument()
+      expect(screen.getByText('1.5K+')).toBeInTheDocument()
+      expect(screen.getByText('GitHub Stars')).toBeInTheDocument()
+      expect(screen.getByText('2')).toBeInTheDocument() // 1 current project + 1 current venture
+      expect(screen.getByText('Active Initiatives')).toBeInTheDocument()
     })
 
-    it('should render expertise areas and skills', () => {
+    it('should render expertise areas and skills', async () => {
       // Arrange & Act
-      render(<Home />)
+      await renderHome()
 
       // Assert
       expect(screen.getByText('Backend & Systems')).toBeInTheDocument()
       expect(screen.getByText('Go')).toBeInTheDocument()
       expect(screen.getByText('Python')).toBeInTheDocument()
     })
-
   })
 
   describe('HomePage_whenRendered_thenDisplaysCorePrinciplesSection', () => {
-    it('should render core principles section title', () => {
+    it('should render core principles section title', async () => {
       // Arrange & Act
-      render(<Home />)
+      await renderHome()
 
       // Assert
       expect(screen.getByRole('heading', { level: 2, name: 'Core Principles' })).toBeInTheDocument()
     })
 
-    it('should render core values', () => {
+    it('should render core values', async () => {
       // Arrange & Act
-      render(<Home />)
+      await renderHome()
 
       // Assert
       expect(screen.getByText('Test Value')).toBeInTheDocument()
@@ -189,17 +204,17 @@ describe('Home Page', () => {
   })
 
   describe('HomePage_whenRendered_thenDisplaysFunFactsSection', () => {
-    it('should render fun facts section title', () => {
+    it('should render fun facts section title', async () => {
       // Arrange & Act
-      render(<Home />)
+      await renderHome()
 
       // Assert
       expect(screen.getByRole('heading', { level: 2, name: 'Fun Facts' })).toBeInTheDocument()
     })
 
-    it('should render fun facts', () => {
+    it('should render fun facts', async () => {
       // Arrange & Act
-      render(<Home />)
+      await renderHome()
 
       // Assert
       expect(screen.getByText('Test fun fact')).toBeInTheDocument()
@@ -207,42 +222,42 @@ describe('Home Page', () => {
   })
 
   describe('HomePage_whenCurrentProjects_thenDisplaysCurrentInitiatives', () => {
-    it('should render current initiatives section', () => {
+    it('should render current initiatives section', async () => {
       // Arrange & Act
-      render(<Home />)
+      await renderHome()
 
       // Assert
       expect(screen.getByRole('heading', { level: 2, name: 'Current Initiatives' })).toBeInTheDocument()
     })
 
-    it('should render active projects heading', () => {
+    it('should render active projects heading', async () => {
       // Arrange & Act
-      render(<Home />)
+      await renderHome()
 
       // Assert
       expect(screen.getByRole('heading', { level: 3, name: 'Active Projects' })).toBeInTheDocument()
     })
 
-    it('should render active ventures heading', () => {
+    it('should render active ventures heading', async () => {
       // Arrange & Act
-      render(<Home />)
+      await renderHome()
 
       // Assert
       expect(screen.getByRole('heading', { level: 3, name: 'Active Ventures' })).toBeInTheDocument()
     })
 
-    it('should only render current projects (endDate = Present)', () => {
+    it('should only render current projects (endDate = Present)', async () => {
       // Arrange & Act
-      render(<Home />)
+      await renderHome()
 
       // Assert
       expect(screen.getByText('Current Project')).toBeInTheDocument()
       expect(screen.queryByText('Past Project')).not.toBeInTheDocument()
     })
 
-    it('should only render current ventures (role endDate = Present)', () => {
+    it('should only render current ventures (role endDate = Present)', async () => {
       // Arrange & Act
-      render(<Home />)
+      await renderHome()
 
       // Assert
       expect(screen.getByText('Current Venture')).toBeInTheDocument()
