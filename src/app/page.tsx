@@ -186,17 +186,17 @@ export default async function Home() {
         <SectionHeader>
           <SectionTitle>Core Principles</SectionTitle>
         </SectionHeader>
-        <div className="space-y-4">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           {aboutData.values.map((value, index) => (
             <div
               key={`value-${index}-${value.number}`}
-              className="flex items-start gap-4 p-4 rounded-lg border border-border hover:border-border-hover transition-colors duration-fast"
+              className="flex flex-col items-center text-center p-6 rounded-lg border border-border hover:border-border-hover transition-colors duration-fast"
             >
-              <div className="flex-shrink-0 w-8 h-8 rounded flex items-center justify-center bg-accent/10 text-accent">
+              <div className="w-12 h-12 rounded-lg flex items-center justify-center bg-accent/10 text-accent mb-4">
                 <ValueIcon iconName={value.iconName} />
               </div>
-              <div className="space-y-1">
-                <div className="flex items-center gap-2">
+              <div className="space-y-2">
+                <div className="flex items-center justify-center gap-2">
                   <span className="text-12 text-text-quaternary font-mono">
                     {String(value.number).padStart(2, "0")}
                   </span>
