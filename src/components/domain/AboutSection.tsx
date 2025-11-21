@@ -29,7 +29,7 @@ export function AboutSection({ data }: AboutSectionProps) {
         <h3 className="text-24 font-display font-semibold text-text-primary">
           {data.headline}
         </h3>
-        <p className="text-16 text-text-secondary leading-relaxed max-w-2xl">
+        <p className="text-16 text-text-secondary leading-relaxed">
           {data.introduction}
         </p>
       </div>
