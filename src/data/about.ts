@@ -42,6 +42,7 @@ export const aboutData: About = {
       description:
         "Architecting elegant solutions to complex societal challenges that grow with demand",
       iconName: "layers",
+      link: "/experience",
     },
     {
       number: 2,
@@ -49,6 +50,7 @@ export const aboutData: About = {
       description:
         "Advancing the technology landscape through strategic open-source contributions",
       iconName: "git-branch",
+      link: "/projects",
     },
     {
       number: 3,
@@ -56,6 +58,7 @@ export const aboutData: About = {
       description:
         "Leading high-performance teams in developing industry-transforming systems",
       iconName: "users",
+      link: "/ventures",
     },
   ],
 };

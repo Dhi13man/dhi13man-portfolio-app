@@ -141,24 +141,46 @@ export function AboutSection({ data }: AboutSectionProps) {
             Core Principles
           </h4>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            {values.map((value, index) => (
-              <div
-                key={`value-${index}-${value.number}`}
-                className="p-4 rounded-lg border border-border hover:border-border-hover transition-colors duration-fast"
-              >
-                <div className="flex items-center gap-3 mb-2">
-                  <div className="w-8 h-8 rounded flex items-center justify-center bg-accent/10 text-accent">
-                    <ValueIcon iconName={value.iconName} />
+            {values.map((value, index) => {
+              const valueContent = (
+                <>
+                  <div className="flex items-center gap-3 mb-2">
+                    <div className="w-8 h-8 rounded flex items-center justify-center bg-accent/10 text-accent">
+                      <ValueIcon iconName={value.iconName} />
+                    </div>
+                    <h5 className="text-14 font-semibold text-text-primary">
+                      {value.title}
+                    </h5>
                   </div>
-                  <h5 className="text-14 font-semibold text-text-primary">
-                    {value.title}
-                  </h5>
+                  <p className="text-14 text-text-tertiary leading-relaxed">
+                    {value.description}
+                  </p>
+                </>
+              );
+
+              const valueClassName = "block p-4 rounded-lg border border-border hover:border-border-hover hover:bg-surface/50 transition-colors duration-fast";
+
+              if (value.link) {
+                return (
+                  <Link
+                    key={`value-${index}-${value.number}`}
+                    href={value.link}
+                    className={valueClassName}
+                  >
+                    {valueContent}
+                  </Link>
+                );
+              }
+
+              return (
+                <div
+                  key={`value-${index}-${value.number}`}
+                  className="p-4 rounded-lg border border-border hover:border-border-hover transition-colors duration-fast"
+                >
+                  {valueContent}
                 </div>
-                <p className="text-14 text-text-tertiary leading-relaxed">
-                  {value.description}
-                </p>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </section>
       )}

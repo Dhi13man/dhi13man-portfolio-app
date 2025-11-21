@@ -26,6 +26,8 @@ export interface AboutValue {
   title: string;
   description: string;
   iconName: ValueIconName;
+  /** Optional link - can be URL or internal path */
+  link?: string;
 }
 
 /**
