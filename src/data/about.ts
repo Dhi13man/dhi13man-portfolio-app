@@ -93,7 +93,4 @@ export const aboutData: About = {
       fact: "Building for a global community",
     },
   ],
-
-  currentFocus:
-    "Currently exploring AI-assisted development and building tools that amplify developer productivity.",
 };

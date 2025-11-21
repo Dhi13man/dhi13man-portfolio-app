@@ -2,11 +2,27 @@ import { Section, SectionHeader, SectionTitle } from "@/components/ui/section";
 import { ProjectCard } from "@/components/domain/ProjectCard";
 import { VentureCard } from "@/components/domain/VentureCard";
 import { AboutSection } from "@/components/domain/AboutSection";
+import { Layers, GitBranch, Users, Zap, Target, Code } from "lucide-react";
 import Image from "next/image";
 import { aboutData } from "@/data/about";
 import { projects } from "@/data/projects";
 import { ventures } from "@/data/ventures";
 import { isDatePresent } from "@/lib/date";
+import type { AboutValue } from "@/types/about";
+
+const iconMap = {
+  layers: Layers,
+  "git-branch": GitBranch,
+  users: Users,
+  zap: Zap,
+  target: Target,
+  code: Code,
+} as const;
+
+function ValueIcon({ iconName }: { iconName: AboutValue["iconName"] }) {
+  const Icon = iconMap[iconName];
+  return <Icon className="w-5 h-5" />;
+}
 
 export default function Home() {
   // Get current initiatives (ongoing projects and ventures)
@@ -152,6 +168,58 @@ export default function Home() {
           )}
         </Section>
       )}
+
+      {/* Core Principles Section */}
+      <Section>
+        <SectionHeader>
+          <SectionTitle>Core Principles</SectionTitle>
+        </SectionHeader>
+        <div className="space-y-4">
+          {aboutData.values.map((value) => (
+            <div
+              key={value.number}
+              className="flex items-start gap-4 p-4 rounded-lg border border-border hover:border-border-hover transition-colors duration-fast"
+            >
+              <div className="flex-shrink-0 w-8 h-8 rounded flex items-center justify-center bg-accent/10 text-accent">
+                <ValueIcon iconName={value.iconName} />
+              </div>
+              <div className="space-y-1">
+                <div className="flex items-center gap-2">
+                  <span className="text-12 text-text-quaternary font-mono">
+                    {String(value.number).padStart(2, "0")}
+                  </span>
+                  <h3 className="text-16 font-semibold text-text-primary">
+                    {value.title}
+                  </h3>
+                </div>
+                <p className="text-14 text-text-tertiary leading-relaxed">
+                  {value.description}
+                </p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </Section>
+
+      {/* Fun Facts Section */}
+      <Section>
+        <SectionHeader>
+          <SectionTitle>Fun Facts</SectionTitle>
+        </SectionHeader>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          {aboutData.funFacts.map((funFact) => (
+            <div
+              key={`${funFact.emoji}-${funFact.fact}`}
+              className="flex items-center gap-3 p-3 rounded-lg border border-border/50 text-14 text-text-secondary"
+            >
+              <span className="text-20" aria-hidden="true">
+                {funFact.emoji}
+              </span>
+              <span>{funFact.fact}</span>
+            </div>
+          ))}
+        </div>
+      </Section>
     </>
   );
 }

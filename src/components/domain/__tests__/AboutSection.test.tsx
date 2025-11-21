@@ -30,24 +30,10 @@ const mockAboutData: About = {
       description: 'Architecting elegant solutions',
       iconName: 'layers',
     },
-    {
-      number: 2,
-      title: 'Open Source Impact',
-      description: 'Advancing technology through open source',
-      iconName: 'git-branch',
-    },
-    {
-      number: 3,
-      title: 'Technical Leadership',
-      description: 'Leading high-performance teams',
-      iconName: 'users',
-    },
   ],
   funFacts: [
     { emoji: '☕', fact: 'Powered by coffee' },
-    { emoji: '🎮', fact: 'Debugs code and defeats bosses' },
   ],
-  currentFocus: 'Currently exploring AI-assisted development',
 }
 
 describe('AboutSection', () => {
@@ -106,79 +92,11 @@ describe('AboutSection', () => {
     })
   })
 
-  describe('AboutSection_whenRendered_thenDisplaysValues', () => {
-    it('should render values section heading', () => {
-      render(<AboutSection data={mockAboutData} />)
-      expect(screen.getByText('Core Principles')).toBeInTheDocument()
-    })
-
-    it('should render all value titles', () => {
-      render(<AboutSection data={mockAboutData} />)
-      expect(screen.getByText('Scalable Solutions')).toBeInTheDocument()
-      expect(screen.getByText('Open Source Impact')).toBeInTheDocument()
-      expect(screen.getByText('Technical Leadership')).toBeInTheDocument()
-    })
-
-    it('should render all value descriptions', () => {
-      render(<AboutSection data={mockAboutData} />)
-      expect(screen.getByText('Architecting elegant solutions')).toBeInTheDocument()
-      expect(screen.getByText('Advancing technology through open source')).toBeInTheDocument()
-      expect(screen.getByText('Leading high-performance teams')).toBeInTheDocument()
-    })
-
-    it('should render value numbers with zero-padding', () => {
-      render(<AboutSection data={mockAboutData} />)
-      expect(screen.getByText('01')).toBeInTheDocument()
-      expect(screen.getByText('02')).toBeInTheDocument()
-      expect(screen.getByText('03')).toBeInTheDocument()
-    })
-  })
-
-  describe('AboutSection_whenRendered_thenDisplaysFunFacts', () => {
-    it('should render fun facts section heading', () => {
-      render(<AboutSection data={mockAboutData} />)
-      expect(screen.getByText('Fun Facts')).toBeInTheDocument()
-    })
-
-    it('should render all fun facts', () => {
-      render(<AboutSection data={mockAboutData} />)
-      expect(screen.getByText('Powered by coffee')).toBeInTheDocument()
-      expect(screen.getByText('Debugs code and defeats bosses')).toBeInTheDocument()
-    })
-
-    it('should render fun fact emojis with aria-hidden for accessibility', () => {
-      render(<AboutSection data={mockAboutData} />)
-      const coffeeEmoji = screen.getByText('☕')
-      expect(coffeeEmoji).toHaveAttribute('aria-hidden', 'true')
-      // Emojis are decorative, so they should not have role="img"
-      expect(coffeeEmoji).not.toHaveAttribute('role')
-    })
-  })
-
-  describe('AboutSection_whenCurrentFocusProvided_thenDisplaysIt', () => {
-    it('should render current focus when provided', () => {
-      render(<AboutSection data={mockAboutData} />)
-      expect(screen.getByText('Current Focus')).toBeInTheDocument()
-      expect(screen.getByText('Currently exploring AI-assisted development')).toBeInTheDocument()
-    })
-
-    it('should not render current focus when not provided', () => {
-      const dataWithoutFocus = { ...mockAboutData, currentFocus: undefined }
-      render(<AboutSection data={dataWithoutFocus} />)
-      expect(screen.queryByText('Current Focus')).not.toBeInTheDocument()
-    })
-  })
-
   describe('AboutSection_whenRendered_thenHasProperAccessibility', () => {
     it('should have proper heading hierarchy', () => {
       render(<AboutSection data={mockAboutData} />)
       // h3 for headline
       expect(screen.getByRole('heading', { level: 3, name: 'Test Headline' })).toBeInTheDocument()
-    })
-
-    it('should render value titles as h5', () => {
-      render(<AboutSection data={mockAboutData} />)
-      expect(screen.getByRole('heading', { level: 5, name: 'Scalable Solutions' })).toBeInTheDocument()
     })
   })
 
@@ -193,18 +111,6 @@ describe('AboutSection', () => {
       const dataWithEmptyExpertise = { ...mockAboutData, expertise: [] }
       render(<AboutSection data={dataWithEmptyExpertise} />)
       expect(screen.getByText('Expertise')).toBeInTheDocument()
-    })
-
-    it('should handle empty values array', () => {
-      const dataWithEmptyValues = { ...mockAboutData, values: [] }
-      render(<AboutSection data={dataWithEmptyValues} />)
-      expect(screen.getByText('Core Principles')).toBeInTheDocument()
-    })
-
-    it('should handle empty funFacts array', () => {
-      const dataWithEmptyFunFacts = { ...mockAboutData, funFacts: [] }
-      render(<AboutSection data={dataWithEmptyFunFacts} />)
-      expect(screen.getByText('Fun Facts')).toBeInTheDocument()
     })
   })
 })

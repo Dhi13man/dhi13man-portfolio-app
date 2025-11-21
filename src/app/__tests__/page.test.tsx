@@ -29,7 +29,6 @@ jest.mock('@/data/about', () => ({
     funFacts: [
       { emoji: '☕', fact: 'Test fun fact' },
     ],
-    currentFocus: 'Test current focus',
   },
 }))
 
@@ -168,6 +167,17 @@ describe('Home Page', () => {
       expect(screen.getByText('Python')).toBeInTheDocument()
     })
 
+  })
+
+  describe('HomePage_whenRendered_thenDisplaysCorePrinciplesSection', () => {
+    it('should render core principles section title', () => {
+      // Arrange & Act
+      render(<Home />)
+
+      // Assert
+      expect(screen.getByRole('heading', { level: 2, name: 'Core Principles' })).toBeInTheDocument()
+    })
+
     it('should render core values', () => {
       // Arrange & Act
       render(<Home />)
@@ -176,6 +186,16 @@ describe('Home Page', () => {
       expect(screen.getByText('Test Value')).toBeInTheDocument()
       expect(screen.getByText('Test value description')).toBeInTheDocument()
     })
+  })
+
+  describe('HomePage_whenRendered_thenDisplaysFunFactsSection', () => {
+    it('should render fun facts section title', () => {
+      // Arrange & Act
+      render(<Home />)
+
+      // Assert
+      expect(screen.getByRole('heading', { level: 2, name: 'Fun Facts' })).toBeInTheDocument()
+    })
 
     it('should render fun facts', () => {
       // Arrange & Act
@@ -183,14 +203,6 @@ describe('Home Page', () => {
 
       // Assert
       expect(screen.getByText('Test fun fact')).toBeInTheDocument()
-    })
-
-    it('should render current focus', () => {
-      // Arrange & Act
-      render(<Home />)
-
-      // Assert
-      expect(screen.getByText('Test current focus')).toBeInTheDocument()
     })
   })
 
