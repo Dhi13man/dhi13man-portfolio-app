@@ -3,7 +3,7 @@ import { render, screen } from '@testing-library/react'
 import ProjectsPage from '../projects/page'
 
 // Mock the data module
-jest.mock('@/data/projects', () => ({
+vi.mock('@/data/projects', () => ({
   projects: [
     {
       name: 'Project One',
@@ -27,7 +27,7 @@ jest.mock('@/data/projects', () => ({
 }))
 
 // Mock ImageGallery to avoid complex state testing
-jest.mock('@/components/ui/image-gallery', () => ({
+vi.mock('@/components/ui/image-gallery', () => ({
   ImageGallery: ({ alt }: { alt: string }) => (
     <div data-testid="image-gallery" data-alt={alt} />
   ),

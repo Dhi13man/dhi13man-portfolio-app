@@ -1,7 +1,7 @@
 import React from 'react'
 import { render, screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
-import { axe } from 'jest-axe'
+import { axe } from 'vitest-axe'
 import { Button } from '../button'
 
 describe('Button', () => {
@@ -89,7 +89,7 @@ describe('Button', () => {
   describe('Button_whenClicked_thenCallsOnClick', () => {
     it('should call onClick handler when clicked', async () => {
       // Arrange
-      const mockOnClick = jest.fn()
+      const mockOnClick = vi.fn()
       const buttonText = 'Clickable Button'
       const user = userEvent.setup()
 

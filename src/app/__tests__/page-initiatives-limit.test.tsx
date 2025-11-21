@@ -3,25 +3,25 @@ import { render, screen } from '@testing-library/react'
 import Home from '../page'
 
 // Mock the GitHub stats fetching
-jest.mock('@/lib/github', () => ({
-  fetchGitHubStats: jest.fn().mockResolvedValue({
+vi.mock('@/lib/github', () => ({
+  fetchGitHubStats: vi.fn().mockResolvedValue({
     publicRepos: 25,
     totalStars: 1500,
     isError: false,
   }),
-  calculateYearsExperience: jest.fn().mockReturnValue(6),
-  formatStarCount: jest.fn().mockImplementation((stars: number | null) => {
+  calculateYearsExperience: vi.fn().mockReturnValue(6),
+  formatStarCount: vi.fn().mockImplementation((stars: number | null) => {
     if (stars === null) return '—';
     return stars >= 1000 ? `${(stars / 1000).toFixed(1)}K+` : `${stars}+`;
   }),
-  formatRepoCount: jest.fn().mockImplementation((repos: number | null) => {
+  formatRepoCount: vi.fn().mockImplementation((repos: number | null) => {
     if (repos === null) return '—';
     return `${repos}+`;
   }),
 }))
 
 // Mock the data modules with more than 4 current initiatives
-jest.mock('@/data/about', () => ({
+vi.mock('@/data/about', () => ({
   aboutData: {
     tagline: 'Test Tagline',
     headline: 'Test Headline',
@@ -45,7 +45,7 @@ jest.mock('@/data/about', () => ({
 }))
 
 // Create 6 current projects with different start dates
-jest.mock('@/data/projects', () => ({
+vi.mock('@/data/projects', () => ({
   projects: [
     {
       name: 'Project 3 - Sep 2021',
@@ -93,7 +93,7 @@ jest.mock('@/data/projects', () => ({
 }))
 
 // Create 6 current ventures with different start dates
-jest.mock('@/data/ventures', () => ({
+vi.mock('@/data/ventures', () => ({
   ventures: [
     {
       name: 'Venture 2 - Dec 2023',
@@ -134,7 +134,7 @@ jest.mock('@/data/ventures', () => ({
 }))
 
 // Mock ImageGallery
-jest.mock('@/components/ui/image-gallery', () => ({
+vi.mock('@/components/ui/image-gallery', () => ({
   ImageGallery: ({ alt }: { alt: string }) => (
     <div data-testid="image-gallery" data-alt={alt} />
   ),

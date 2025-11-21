@@ -3,7 +3,7 @@ import { render, screen } from '@testing-library/react'
 import AchievementsPage from '../achievements/page'
 
 // Mock the data module
-jest.mock('@/data/achievements', () => ({
+vi.mock('@/data/achievements', () => ({
   achievements: {
     honorsAndAwards: [
       {

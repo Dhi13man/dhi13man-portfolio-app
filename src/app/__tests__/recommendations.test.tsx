@@ -3,7 +3,7 @@ import { render, screen } from '@testing-library/react'
 import RecommendationsPage from '../recommendations/page'
 
 // Mock the data module
-jest.mock('@/data/recommendations', () => ({
+vi.mock('@/data/recommendations', () => ({
   recommendations: [
     {
       from: 'John Doe',

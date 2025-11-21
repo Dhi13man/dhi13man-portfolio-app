@@ -14,7 +14,7 @@ describe('ErrorPage', () => {
     it('should display generic error message', () => {
       // Arrange
       const error = createError('Test error message')
-      const reset = jest.fn()
+      const reset = vi.fn()
 
       // Act
       render(<ErrorPage error={error} reset={reset} />)
@@ -29,7 +29,7 @@ describe('ErrorPage', () => {
     it('should call reset function when button is clicked', () => {
       // Arrange
       const error = createError('Test error')
-      const reset = jest.fn()
+      const reset = vi.fn()
 
       // Act
       render(<ErrorPage error={error} reset={reset} />)
@@ -44,7 +44,7 @@ describe('ErrorPage', () => {
     it('should handle error with digest property', () => {
       // Arrange
       const error = createError('Digest error', 'abc123')
-      const reset = jest.fn()
+      const reset = vi.fn()
 
       // Act
       render(<ErrorPage error={error} reset={reset} />)

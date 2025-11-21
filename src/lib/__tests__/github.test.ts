@@ -10,7 +10,7 @@ import {
 } from "../github";
 
 // Mock fetch globally
-const mockFetch = jest.fn();
+const mockFetch = vi.fn();
 global.fetch = mockFetch;
 
 describe("fetchGitHubStats", () => {
@@ -215,7 +215,7 @@ describe("fetchGitHubStats", () => {
       const originalEnv = process.env.NODE_ENV;
       // @ts-expect-error - NODE_ENV is read-only
       process.env.NODE_ENV = "development";
-      const consoleSpy = jest.spyOn(console, "error").mockImplementation();
+      const consoleSpy = vi.spyOn(console, "error").mockImplementation();
       mockFetch.mockRejectedValueOnce(new Error("Dev network error"));
 
       // Act
