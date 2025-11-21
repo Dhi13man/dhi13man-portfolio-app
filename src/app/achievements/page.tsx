@@ -42,8 +42,8 @@ export default function AchievementsPage() {
           </p>
         </div>
         <div className="space-y-3">
-          {achievements.honorsAndAwards.map((award, index) => (
-            <AwardCard key={index} award={award} />
+          {achievements.honorsAndAwards.map((award) => (
+            <AwardCard key={award.title} award={award} />
           ))}
         </div>
       </Section>
@@ -60,8 +60,8 @@ export default function AchievementsPage() {
           </p>
         </div>
         <div className="space-y-3">
-          {achievements.licensesAndCertifications.map((cert, index) => (
-            <CertificationCard key={index} certification={cert} />
+          {achievements.licensesAndCertifications.map((cert) => (
+            <CertificationCard key={cert.credentialId ?? cert.title} certification={cert} />
           ))}
         </div>
       </Section>
@@ -77,8 +77,8 @@ export default function AchievementsPage() {
           </p>
         </div>
         <div className="space-y-3">
-          {achievements.testScores.map((testScore, index) => (
-            <TestScoreCard key={index} testScore={testScore} />
+          {achievements.testScores.map((testScore) => (
+            <TestScoreCard key={testScore.name} testScore={testScore} />
           ))}
         </div>
       </Section>

@@ -9,7 +9,8 @@ jest.mock('next/image', () => ({
   __esModule: true,
   default: (props: Record<string, unknown>) => {
     // Filter out Next.js specific props that cause warnings
-    const { fill, priority, sizes, quality, placeholder, blurDataURL, loader, ...imgProps } = props
+    // Using underscore prefix for intentionally unused variables
+    const { fill, priority, sizes: _sizes, quality: _quality, placeholder: _placeholder, blurDataURL: _blurDataURL, loader: _loader, ...imgProps } = props
     // eslint-disable-next-line @next/next/no-img-element
     return <img {...imgProps} alt={(props.alt as string) || ''} data-fill={fill ? 'true' : undefined} data-priority={priority ? 'true' : undefined} />
   },

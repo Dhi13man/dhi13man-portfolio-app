@@ -2,11 +2,45 @@ import React from 'react'
 import { render, screen } from '@testing-library/react'
 import Home from '../page'
 
+// Mock the GitHub stats fetching
+jest.mock('@/lib/github', () => ({
+  fetchGitHubStats: jest.fn().mockResolvedValue({
+    publicRepos: 25,
+    totalStars: 1500,
+    isError: false,
+  }),
+  calculateYearsExperience: jest.fn().mockReturnValue(6),
+  formatStarCount: jest.fn().mockImplementation((stars: number | null) => {
+    if (stars === null) return '—';
+    return stars >= 1000 ? `${(stars / 1000).toFixed(1)}K+` : `${stars}+`;
+  }),
+  formatRepoCount: jest.fn().mockImplementation((repos: number | null) => {
+    if (repos === null) return '—';
+    return `${repos}+`;
+  }),
+}))
+
 // Mock the data modules with no current initiatives
 jest.mock('@/data/about', () => ({
   aboutData: {
     tagline: 'Test Tagline',
-    description: 'Test description.',
+    headline: 'Test Headline',
+    introduction: 'Test introduction.',
+    highlights: [],
+    expertise: [
+      {
+        area: 'Backend & Systems',
+        skills: ['Go', 'Python'],
+      },
+    ],
+    values: [
+      {
+        number: 1,
+        title: 'Test Value',
+        description: 'Test value description',
+        iconName: 'layers',
+      },
+    ],
   },
 }))
 
@@ -38,10 +72,16 @@ jest.mock('@/components/ui/image-gallery', () => ({
   ),
 }))
 
+// Helper to render async Server Component
+async function renderHome() {
+  const HomeComponent = await Home()
+  return render(HomeComponent)
+}
+
 describe('Home Page - No Current Initiatives', () => {
-  it('should not render current initiatives section when all projects are past', () => {
+  it('should not render current initiatives section when all projects are past', async () => {
     // Arrange & Act
-    render(<Home />)
+    await renderHome()
 
     // Assert
     expect(screen.queryByRole('heading', { level: 2, name: 'Current Initiatives' })).not.toBeInTheDocument()
@@ -49,12 +89,21 @@ describe('Home Page - No Current Initiatives', () => {
     expect(screen.queryByRole('heading', { level: 3, name: 'Active Ventures' })).not.toBeInTheDocument()
   })
 
-  it('should still render hero and about sections', () => {
+  it('should still render hero and about sections', async () => {
     // Arrange & Act
-    render(<Home />)
+    await renderHome()
 
     // Assert
     expect(screen.getByRole('heading', { level: 1, name: 'Dhiman Seal' })).toBeInTheDocument()
     expect(screen.getByRole('heading', { level: 2, name: 'About' })).toBeInTheDocument()
+  })
+
+  it('should show zero active initiatives in highlights', async () => {
+    // Arrange & Act
+    await renderHome()
+
+    // Assert
+    expect(screen.getByText('0')).toBeInTheDocument()
+    expect(screen.getByText('Active Initiatives')).toBeInTheDocument()
   })
 })

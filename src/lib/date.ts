@@ -7,6 +7,10 @@ export function formatDate(date: string): string {
   try {
     return format(parseISO(date), "MMM yyyy");
   } catch {
+    // Log warning in development to help debug invalid date formats
+    if (process.env.NODE_ENV === "development") {
+      console.warn(`Invalid date format: "${date}". Expected ISO 8601 format.`);
+    }
     return date;
   }
 }

@@ -42,6 +42,9 @@ build/
 # Ignore transpiled code and sourcemaps
 *.map
 
+# TypeScript build info
+*.tsbuildinfo
+
 # Ignore coverage reports
 coverage/
 

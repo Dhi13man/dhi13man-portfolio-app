@@ -2,11 +2,45 @@ import React from 'react'
 import { render, screen } from '@testing-library/react'
 import Home from '../page'
 
+// Mock the GitHub stats fetching
+jest.mock('@/lib/github', () => ({
+  fetchGitHubStats: jest.fn().mockResolvedValue({
+    publicRepos: 25,
+    totalStars: 1500,
+    isError: false,
+  }),
+  calculateYearsExperience: jest.fn().mockReturnValue(6),
+  formatStarCount: jest.fn().mockImplementation((stars: number | null) => {
+    if (stars === null) return '—';
+    return stars >= 1000 ? `${(stars / 1000).toFixed(1)}K+` : `${stars}+`;
+  }),
+  formatRepoCount: jest.fn().mockImplementation((repos: number | null) => {
+    if (repos === null) return '—';
+    return `${repos}+`;
+  }),
+}))
+
 // Mock the data modules
 jest.mock('@/data/about', () => ({
   aboutData: {
     tagline: 'Test Tagline',
-    description: 'Test description paragraph 1.\nTest description paragraph 2.',
+    headline: 'Test Headline',
+    introduction: 'Test introduction paragraph.',
+    highlights: [], // Empty, will be computed
+    expertise: [
+      {
+        area: 'Backend & Systems',
+        skills: ['Go', 'Python'],
+      },
+    ],
+    values: [
+      {
+        number: 1,
+        title: 'Test Value',
+        description: 'Test value description',
+        iconName: 'layers',
+      },
+    ],
   },
 }))
 
@@ -49,20 +83,26 @@ jest.mock('@/components/ui/image-gallery', () => ({
   ),
 }))
 
+// Helper to render async Server Component
+async function renderHome() {
+  const HomeComponent = await Home()
+  return render(HomeComponent)
+}
+
 describe('Home Page', () => {
   describe('HomePage_whenRendered_thenDisplaysHeroSection', () => {
-    it('should render name and tagline', () => {
+    it('should render name and tagline', async () => {
       // Arrange & Act
-      render(<Home />)
+      await renderHome()
 
       // Assert
       expect(screen.getByRole('heading', { level: 1, name: 'Dhiman Seal' })).toBeInTheDocument()
       expect(screen.getByText('Test Tagline')).toBeInTheDocument()
     })
 
-    it('should render profile image', () => {
+    it('should render profile image', async () => {
       // Arrange & Act
-      render(<Home />)
+      await renderHome()
 
       // Assert
       const profileImage = screen.getByAltText('Dhiman Seal')
@@ -72,9 +112,9 @@ describe('Home Page', () => {
   })
 
   describe('HomePage_whenRendered_thenDisplaysSocialLinks', () => {
-    it('should render social media links', () => {
+    it('should render social media links', async () => {
       // Arrange & Act
-      render(<Home />)
+      await renderHome()
 
       // Assert
       expect(screen.getByRole('link', { name: /github profile/i })).toHaveAttribute(
@@ -95,9 +135,9 @@ describe('Home Page', () => {
       )
     })
 
-    it('should have target="_blank" on external links', () => {
+    it('should have target="_blank" on external links', async () => {
       // Arrange & Act
-      render(<Home />)
+      await renderHome()
 
       // Assert
       const githubLink = screen.getByRole('link', { name: /github profile/i })
@@ -107,65 +147,129 @@ describe('Home Page', () => {
   })
 
   describe('HomePage_whenRendered_thenDisplaysAboutSection', () => {
-    it('should render about section title', () => {
+    it('should render about section title', async () => {
       // Arrange & Act
-      render(<Home />)
+      await renderHome()
 
       // Assert
       expect(screen.getByRole('heading', { level: 2, name: 'About' })).toBeInTheDocument()
     })
 
-    it('should render about description paragraphs', () => {
+    it('should render about headline and introduction', async () => {
       // Arrange & Act
-      render(<Home />)
+      await renderHome()
 
       // Assert
-      expect(screen.getByText('Test description paragraph 1.')).toBeInTheDocument()
-      expect(screen.getByText('Test description paragraph 2.')).toBeInTheDocument()
+      expect(screen.getByText('Test Headline')).toBeInTheDocument()
+      expect(screen.getByText('Test introduction paragraph.')).toBeInTheDocument()
+    })
+
+    it('should render highlights/stats from GitHub data', async () => {
+      // Arrange & Act
+      await renderHome()
+
+      // Assert - values come from mocked GitHub stats and calculations
+      expect(screen.getByText('6+')).toBeInTheDocument()
+      expect(screen.getByText('Years Experience')).toBeInTheDocument()
+      expect(screen.getByText('25+')).toBeInTheDocument()
+      expect(screen.getByText('Open Source Packages')).toBeInTheDocument()
+      expect(screen.getByText('1.5K+')).toBeInTheDocument()
+      expect(screen.getByText('GitHub Stars')).toBeInTheDocument()
+      expect(screen.getByText('2')).toBeInTheDocument() // 1 current project + 1 current venture
+      expect(screen.getByText('Active Initiatives')).toBeInTheDocument()
+    })
+
+    it('should render expertise areas and skills', async () => {
+      // Arrange & Act
+      await renderHome()
+
+      // Assert
+      expect(screen.getByText('Backend & Systems')).toBeInTheDocument()
+      expect(screen.getByText('Go')).toBeInTheDocument()
+      expect(screen.getByText('Python')).toBeInTheDocument()
+    })
+  })
+
+  describe('HomePage_whenRendered_thenDisplaysCorePrinciplesSection', () => {
+    it('should render core principles section title', async () => {
+      // Arrange & Act
+      await renderHome()
+
+      // Assert - Core Principles is now h4 inside AboutSection
+      expect(screen.getByRole('heading', { level: 4, name: 'Core Principles' })).toBeInTheDocument()
+    })
+
+    it('should render core values', async () => {
+      // Arrange & Act
+      await renderHome()
+
+      // Assert
+      expect(screen.getByText('Test Value')).toBeInTheDocument()
+      expect(screen.getByText('Test value description')).toBeInTheDocument()
     })
   })
 
   describe('HomePage_whenCurrentProjects_thenDisplaysCurrentInitiatives', () => {
-    it('should render current initiatives section', () => {
+    it('should render current initiatives section', async () => {
       // Arrange & Act
-      render(<Home />)
+      await renderHome()
 
       // Assert
       expect(screen.getByRole('heading', { level: 2, name: 'Current Initiatives' })).toBeInTheDocument()
     })
 
-    it('should render active projects heading', () => {
+    it('should render active projects heading', async () => {
       // Arrange & Act
-      render(<Home />)
+      await renderHome()
 
       // Assert
       expect(screen.getByRole('heading', { level: 3, name: 'Active Projects' })).toBeInTheDocument()
     })
 
-    it('should render active ventures heading', () => {
+    it('should render active ventures heading', async () => {
       // Arrange & Act
-      render(<Home />)
+      await renderHome()
 
       // Assert
       expect(screen.getByRole('heading', { level: 3, name: 'Active Ventures' })).toBeInTheDocument()
     })
 
-    it('should only render current projects (endDate = Present)', () => {
+    it('should only render current projects (endDate = Present)', async () => {
       // Arrange & Act
-      render(<Home />)
+      await renderHome()
 
       // Assert
       expect(screen.getByText('Current Project')).toBeInTheDocument()
       expect(screen.queryByText('Past Project')).not.toBeInTheDocument()
     })
 
-    it('should only render current ventures (role endDate = Present)', () => {
+    it('should only render current ventures (role endDate = Present)', async () => {
       // Arrange & Act
-      render(<Home />)
+      await renderHome()
 
       // Assert
       expect(screen.getByText('Current Venture')).toBeInTheDocument()
       expect(screen.queryByText('Past Venture')).not.toBeInTheDocument()
+    })
+  })
+
+  describe('HomePage_whenGitHubApiFails_thenShowsFallbackDisplay', () => {
+    it('should show fallback values when GitHub API fails', async () => {
+      // Arrange - Mock the module with error state
+      const { fetchGitHubStats } = jest.requireMock('@/lib/github')
+      fetchGitHubStats.mockResolvedValueOnce({
+        publicRepos: null,
+        totalStars: null,
+        isError: true,
+        errorMessage: 'API rate limited',
+      })
+
+      // Act
+      await renderHome()
+
+      // Assert - Should show fallback "—" values (console.warn only fires in development mode)
+      // Both publicRepos and totalStars are null, so there are multiple "—" elements
+      expect(screen.getAllByText('—').length).toBeGreaterThan(0)
     })
   })
 })
