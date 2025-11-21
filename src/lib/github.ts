@@ -205,7 +205,9 @@ export async function fetchGitHubStats(
         };
       }
 
-      console.error("Error fetching GitHub stats:", error.message);
+      if (process.env.NODE_ENV === "development") {
+        console.error("Error fetching GitHub stats:", error.message);
+      }
       return {
         publicRepos: null,
         totalStars: null,

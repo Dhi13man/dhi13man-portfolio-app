@@ -25,8 +25,8 @@ export default function RecommendationsPage() {
       </SectionHeader>
 
       <div className="space-y-4 mt-8">
-        {recommendations.map((recommendation, index) => (
-          <RecommendationCard key={index} recommendation={recommendation} />
+        {recommendations.map((recommendation) => (
+          <RecommendationCard key={recommendation.from} recommendation={recommendation} />
         ))}
       </div>
     </Section>

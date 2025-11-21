@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef, useCallback, memo } from "react";
 import Image from "next/image";
 import { X, ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "./button";
@@ -19,7 +19,7 @@ const sizeClasses = {
   lg: "w-32 h-32",
 };
 
-export function ImageGallery({
+export const ImageGallery = memo(function ImageGallery({
   images,
   alt,
   className = "",
@@ -28,6 +28,7 @@ export function ImageGallery({
 }: ImageGalleryProps) {
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [imageErrors, setImageErrors] = useState<Set<number>>(new Set());
 
   // Prevent body scroll when lightbox is open
   useEffect(() => {
@@ -42,6 +43,10 @@ export function ImageGallery({
       document.body.style.overflow = "unset";
     };
   }, [lightboxOpen]);
+
+  const handleImageError = useCallback((index: number) => {
+    setImageErrors((prev) => new Set(prev).add(index));
+  }, []);
 
   if (!images || images.length === 0) return null;
 
@@ -68,27 +73,43 @@ export function ImageGallery({
     if (e.key === "ArrowRight") goToNext();
   };
 
+  const handleThumbnailKeyDown = (e: React.KeyboardEvent, index: number) => {
+    if (e.key === "Enter" || e.key === " ") {
+      e.preventDefault();
+      openLightbox(index);
+    }
+  };
+
   // Single image layout
   if (images.length === 1) {
     return (
       <>
         <div className={className}>
-          <div
-            className={`relative ${sizeClasses[thumbnailSize]} rounded overflow-hidden border border-border bg-surface cursor-pointer hover:border-accent transition-colors ${imageClassName}`}
-            onClick={() => openLightbox(0)}
-            role="button"
-            tabIndex={0}
-            onKeyDown={(e) => e.key === "Enter" && openLightbox(0)}
-            aria-label={`View ${alt}`}
-          >
-            <Image
-              src={images[0]}
-              alt={alt}
-              fill
-              className="object-contain p-1"
-              sizes={`${sizeClasses[thumbnailSize].split(" ")[0].replace("w-", "")}px`}
-            />
-          </div>
+          {imageErrors.has(0) ? (
+            <div
+              className={`${sizeClasses[thumbnailSize]} rounded border border-border bg-surface flex items-center justify-center ${imageClassName}`}
+            >
+              <span className="text-12 text-text-tertiary">Image unavailable</span>
+            </div>
+          ) : (
+            <div
+              className={`relative ${sizeClasses[thumbnailSize]} rounded overflow-hidden border border-border bg-surface cursor-pointer hover:border-accent focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent transition-colors ${imageClassName}`}
+              onClick={() => openLightbox(0)}
+              role="button"
+              tabIndex={0}
+              onKeyDown={(e) => handleThumbnailKeyDown(e, 0)}
+              aria-label={`View ${alt}`}
+            >
+              <Image
+                src={images[0]}
+                alt={alt}
+                fill
+                className="object-contain p-1"
+                sizes={`${sizeClasses[thumbnailSize].split(" ")[0].replace("w-", "")}px`}
+                onError={() => handleImageError(0)}
+              />
+            </div>
+          )}
         </div>
 
         <Lightbox
@@ -110,28 +131,38 @@ export function ImageGallery({
     <>
       <div className={`flex gap-2 ${className}`}>
         {images.map((image, index) => (
-          <div
-            key={index}
-            className={`relative ${sizeClasses[thumbnailSize]} rounded overflow-hidden border border-border bg-surface cursor-pointer hover:border-accent transition-colors ${imageClassName}`}
-            onClick={() => openLightbox(index)}
-            role="button"
-            tabIndex={0}
-            onKeyDown={(e) => e.key === "Enter" && openLightbox(index)}
-            aria-label={`View image ${index + 1} of ${images.length}`}
-          >
-            <Image
-              src={image}
-              alt={`${alt} - Image ${index + 1}`}
-              fill
-              className="object-cover"
-              sizes={`${sizeClasses[thumbnailSize].split(" ")[0].replace("w-", "")}px`}
-            />
-            {index === 0 && images.length > 1 && (
-              <div className="absolute top-1 right-1 px-1.5 py-0.5 bg-background/80 backdrop-blur-sm text-12 font-mono text-text-tertiary rounded">
-                +{images.length - 1}
-              </div>
-            )}
-          </div>
+          imageErrors.has(index) ? (
+            <div
+              key={`error-${index}`}
+              className={`${sizeClasses[thumbnailSize]} rounded border border-border bg-surface flex items-center justify-center ${imageClassName}`}
+            >
+              <span className="text-10 text-text-tertiary">N/A</span>
+            </div>
+          ) : (
+            <div
+              key={`image-${index}`}
+              className={`relative ${sizeClasses[thumbnailSize]} rounded overflow-hidden border border-border bg-surface cursor-pointer hover:border-accent focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent transition-colors ${imageClassName}`}
+              onClick={() => openLightbox(index)}
+              role="button"
+              tabIndex={0}
+              onKeyDown={(e) => handleThumbnailKeyDown(e, index)}
+              aria-label={`View image ${index + 1} of ${images.length}`}
+            >
+              <Image
+                src={image}
+                alt={`${alt} - Image ${index + 1}`}
+                fill
+                className="object-cover"
+                sizes={`${sizeClasses[thumbnailSize].split(" ")[0].replace("w-", "")}px`}
+                onError={() => handleImageError(index)}
+              />
+              {index === 0 && images.length > 1 && (
+                <div className="absolute top-1 right-1 px-1.5 py-0.5 bg-background/80 backdrop-blur-sm text-12 font-mono text-text-tertiary rounded">
+                  +{images.length - 1}
+                </div>
+              )}
+            </div>
+          )
         ))}
       </div>
 
@@ -147,7 +178,7 @@ export function ImageGallery({
       />
     </>
   );
-}
+});
 
 interface LightboxProps {
   isOpen: boolean;
@@ -170,20 +201,60 @@ function Lightbox({
   onKeyDown,
   alt,
 }: LightboxProps) {
+  const dialogRef = useRef<HTMLDivElement>(null);
+  const closeButtonRef = useRef<HTMLButtonElement>(null);
+
+  // Focus trap and initial focus
+  useEffect(() => {
+    if (!isOpen || !dialogRef.current) return;
+
+    // Focus the close button when lightbox opens
+    closeButtonRef.current?.focus();
+
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key !== "Tab") return;
+
+      const focusableElements = dialogRef.current?.querySelectorAll(
+        'button, [tabindex]:not([tabindex="-1"])'
+      );
+      if (!focusableElements?.length) return;
+
+      const firstElement = focusableElements[0] as HTMLElement;
+      const lastElement = focusableElements[focusableElements.length - 1] as HTMLElement;
+
+      if (e.shiftKey) {
+        if (document.activeElement === firstElement) {
+          e.preventDefault();
+          lastElement.focus();
+        }
+      } else {
+        if (document.activeElement === lastElement) {
+          e.preventDefault();
+          firstElement.focus();
+        }
+      }
+    };
+
+    document.addEventListener("keydown", handleKeyDown);
+    return () => document.removeEventListener("keydown", handleKeyDown);
+  }, [isOpen]);
+
   if (!isOpen) return null;
 
   return (
     <div
+      ref={dialogRef}
       className="fixed inset-0 z-50 bg-background/95 backdrop-blur-sm flex items-center justify-center p-4 animate-fade-in"
       onClick={onClose}
       onKeyDown={onKeyDown}
-      tabIndex={0}
+      tabIndex={-1}
       role="dialog"
       aria-modal="true"
       aria-label="Image viewer"
     >
       {/* Close button */}
       <Button
+        ref={closeButtonRef}
         variant="ghost"
         size="sm"
         className="absolute top-4 right-4 z-10"
@@ -221,7 +292,6 @@ function Lightbox({
           fill
           className="object-contain"
           sizes="(max-width: 1280px) 100vw, 1280px"
-          priority
         />
       </div>
 

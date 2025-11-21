@@ -60,6 +60,8 @@ export default function RootLayout({
         </main>
         <footer className="border-t border-border py-12 mt-16">
           <div className="max-w-[1200px] mx-auto px-8 text-center">
+            {/* suppressHydrationWarning: Year is calculated at runtime with new Date().getFullYear()
+                which may differ between server and client during year transitions */}
             <p
               className="text-14 text-text-quaternary"
               suppressHydrationWarning

@@ -265,14 +265,11 @@ describe('Home Page', () => {
       })
 
       // Act
-      const consoleSpy = jest.spyOn(console, 'warn').mockImplementation()
       await renderHome()
 
-      // Assert - Should show fallback "—" values
-      expect(consoleSpy).toHaveBeenCalledWith(
-        expect.stringContaining('GitHub stats fetch failed')
-      )
-      consoleSpy.mockRestore()
+      // Assert - Should show fallback "—" values (console.warn only fires in development mode)
+      // Both publicRepos and totalStars are null, so there are multiple "—" elements
+      expect(screen.getAllByText('—').length).toBeGreaterThan(0)
     })
   })
 })

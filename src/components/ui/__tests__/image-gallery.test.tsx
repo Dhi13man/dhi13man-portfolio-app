@@ -422,7 +422,8 @@ describe('ImageGallery', () => {
       expect(button).toHaveAttribute('tabIndex', '0')
 
       await user.click(button)
-      expect(screen.getByRole('dialog')).toHaveAttribute('tabIndex', '0')
+      // tabIndex -1 allows programmatic focus via ref
+      expect(screen.getByRole('dialog')).toHaveAttribute('tabIndex', '-1')
     })
   })
 
@@ -445,6 +446,102 @@ describe('ImageGallery', () => {
 
       // Assert - dialog should still be open
       expect(screen.getByRole('dialog')).toBeInTheDocument()
+    })
+  })
+
+  describe('ImageGallery_whenImageFails_thenShowsErrorState', () => {
+    it('should show error state when single image fails to load', () => {
+      // Arrange
+      const images = ['/image1.jpg']
+
+      // Act
+      render(<ImageGallery images={images} alt="Test" />)
+      const image = screen.getByAltText('Test')
+      fireEvent.error(image)
+
+      // Assert
+      expect(screen.getByText('Image unavailable')).toBeInTheDocument()
+    })
+
+    it('should show error state for specific image in gallery', () => {
+      // Arrange
+      const images = ['/image1.jpg', '/image2.jpg', '/image3.jpg']
+
+      // Act
+      render(<ImageGallery images={images} alt="Test" />)
+      const allImages = screen.getAllByRole('img')
+      fireEvent.error(allImages[1])
+
+      // Assert - Gallery uses "N/A" for error state
+      expect(screen.getByText('N/A')).toBeInTheDocument()
+    })
+  })
+
+  describe('ImageGallery_whenThumbnailKeyDown_thenOpensLightbox', () => {
+    it('should open lightbox when Enter key is pressed on thumbnail', async () => {
+      // Arrange
+      const images = ['/image1.jpg']
+      const user = userEvent.setup()
+
+      // Act
+      render(<ImageGallery images={images} alt="Test" />)
+      const button = screen.getByRole('button')
+      button.focus()
+      await user.keyboard('{Enter}')
+
+      // Assert
+      expect(screen.getByRole('dialog')).toBeInTheDocument()
+    })
+
+    it('should open lightbox when Space key is pressed on thumbnail', async () => {
+      // Arrange
+      const images = ['/image1.jpg']
+      const user = userEvent.setup()
+
+      // Act
+      render(<ImageGallery images={images} alt="Test" />)
+      const button = screen.getByRole('button')
+      button.focus()
+      await user.keyboard(' ')
+
+      // Assert
+      expect(screen.getByRole('dialog')).toBeInTheDocument()
+    })
+  })
+
+  describe('ImageGallery_whenFocusTrap_thenTrapsTabKey', () => {
+    it('should focus close button when lightbox opens', async () => {
+      // Arrange
+      const images = ['/image1.jpg', '/image2.jpg']
+      const user = userEvent.setup()
+
+      // Act
+      render(<ImageGallery images={images} alt="Test" />)
+      await user.click(screen.getAllByRole('button')[0])
+
+      // Assert - Focus should be on one of the dialog buttons
+      const dialog = screen.getByRole('dialog')
+      const buttons = dialog.querySelectorAll('button')
+      expect(buttons.length).toBeGreaterThan(0)
+      expect(dialog.contains(document.activeElement)).toBe(true)
+    })
+
+    it('should keep focus within lightbox when tabbing', async () => {
+      // Arrange
+      const images = ['/image1.jpg', '/image2.jpg']
+      const user = userEvent.setup()
+
+      // Act
+      render(<ImageGallery images={images} alt="Test" />)
+      await user.click(screen.getAllByRole('button')[0])
+      const dialog = screen.getByRole('dialog')
+
+      // Tab through all buttons
+      await user.tab()
+      expect(dialog.contains(document.activeElement)).toBe(true)
+
+      await user.tab()
+      expect(dialog.contains(document.activeElement)).toBe(true)
     })
   })
 })
