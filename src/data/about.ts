@@ -58,23 +58,4 @@ export const aboutData: About = {
       iconName: "users",
     },
   ],
-
-  funFacts: [
-    {
-      emoji: "☕",
-      fact: "Powered by mass caffeine injection",
-    },
-    {
-      emoji: "🎮",
-      fact: "Debugs code and defeats bosses",
-    },
-    {
-      emoji: "📚",
-      fact: "Believes documentation is a love language",
-    },
-    {
-      emoji: "🌍",
-      fact: "Building for a global community",
-    },
-  ],
 };

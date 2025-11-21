@@ -25,14 +25,6 @@ export interface AboutValue {
 }
 
 /**
- * Fun fact for personality
- */
-export interface AboutFunFact {
-  emoji: string;
-  fact: string;
-}
-
-/**
  * Enhanced About section data model
  */
 export interface About {
@@ -48,8 +40,4 @@ export interface About {
   expertise: AboutExpertise[];
   /** Core principles/values */
   values: AboutValue[];
-  /** Personal touches for personality */
-  funFacts: AboutFunFact[];
-  /** Optional current focus area */
-  currentFocus?: string;
 }

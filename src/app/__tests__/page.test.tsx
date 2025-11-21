@@ -32,9 +32,6 @@ jest.mock('@/data/about', () => ({
         iconName: 'layers',
       },
     ],
-    funFacts: [
-      { emoji: '☕', fact: 'Test fun fact' },
-    ],
   },
 }))
 
@@ -200,24 +197,6 @@ describe('Home Page', () => {
       // Assert
       expect(screen.getByText('Test Value')).toBeInTheDocument()
       expect(screen.getByText('Test value description')).toBeInTheDocument()
-    })
-  })
-
-  describe('HomePage_whenRendered_thenDisplaysFunFactsSection', () => {
-    it('should render fun facts section title', async () => {
-      // Arrange & Act
-      await renderHome()
-
-      // Assert
-      expect(screen.getByRole('heading', { level: 2, name: 'Fun Facts' })).toBeInTheDocument()
-    })
-
-    it('should render fun facts', async () => {
-      // Arrange & Act
-      await renderHome()
-
-      // Assert
-      expect(screen.getByText('Test fun fact')).toBeInTheDocument()
     })
   })
 

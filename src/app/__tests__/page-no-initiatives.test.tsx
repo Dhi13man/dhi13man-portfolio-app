@@ -32,9 +32,6 @@ jest.mock('@/data/about', () => ({
         iconName: 'layers',
       },
     ],
-    funFacts: [
-      { emoji: '☕', fact: 'Test fun fact' },
-    ],
   },
 }))
 

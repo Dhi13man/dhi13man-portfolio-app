@@ -31,9 +31,6 @@ const mockAboutData: About = {
       iconName: 'layers',
     },
   ],
-  funFacts: [
-    { emoji: '☕', fact: 'Powered by coffee' },
-  ],
 }
 
 describe('AboutSection', () => {
