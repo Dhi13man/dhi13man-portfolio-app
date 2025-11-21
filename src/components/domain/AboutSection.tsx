@@ -1,5 +1,3 @@
-"use client";
-
 import type { About } from "@/types/about";
 
 interface AboutSectionProps {
@@ -49,7 +47,7 @@ export function AboutSection({ data }: AboutSectionProps) {
                 {area.skills.map((skill) => (
                   <span
                     key={skill}
-                    className="px-3 py-1 text-12 rounded border border-border bg-surface/30 text-text-secondary hover:border-accent hover:text-accent transition-colors duration-fast"
+                    className="px-3 py-1 text-12 rounded border border-border bg-surface/30 text-text-secondary hover:border-border-hover hover:text-accent transition-colors duration-fast"
                   >
                     {skill}
                   </span>

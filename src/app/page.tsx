@@ -2,7 +2,7 @@ import { Section, SectionHeader, SectionTitle } from "@/components/ui/section";
 import { ProjectCard } from "@/components/domain/ProjectCard";
 import { VentureCard } from "@/components/domain/VentureCard";
 import { AboutSection } from "@/components/domain/AboutSection";
-import { Layers, GitBranch, Users, Zap, Target, Code } from "lucide-react";
+import { ValueIcon } from "@/components/domain/ValueIcon";
 import Image from "next/image";
 import { aboutData } from "@/data/about";
 import { projects } from "@/data/projects";
@@ -12,21 +12,7 @@ import {
   fetchGitHubStats,
   calculateYearsExperience,
 } from "@/lib/github";
-import type { AboutValue, AboutHighlight } from "@/types/about";
-
-const iconMap = {
-  layers: Layers,
-  "git-branch": GitBranch,
-  users: Users,
-  zap: Zap,
-  target: Target,
-  code: Code,
-} as const;
-
-function ValueIcon({ iconName }: { iconName: AboutValue["iconName"] }) {
-  const Icon = iconMap[iconName];
-  return <Icon className="w-5 h-5" />;
-}
+import type { AboutHighlight } from "@/types/about";
 
 export default async function Home() {
   // Get current initiatives (ongoing projects and ventures)
@@ -117,7 +103,7 @@ export default async function Home() {
                 href="https://www.linkedin.com/in/dhi13man/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-text-secondary hover:text-[#0A66C2] transition-colors duration-fast"
+                className="text-text-secondary hover:text-accent transition-colors duration-fast"
                 aria-label="LinkedIn Profile"
               >
                 <svg

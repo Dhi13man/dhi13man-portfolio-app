@@ -12,9 +12,13 @@ interface GitHubRepo {
   fork: boolean;
 }
 
+/** Cache duration: 24 hours in seconds */
+const CACHE_DURATION = 86400;
+
 /**
  * Fetches GitHub user statistics including public repos and total stars
  * Uses GitHub's public API (no authentication required for public data)
+ * Implements parallel pagination for faster builds
  */
 export async function fetchGitHubStats(
   username: string
@@ -24,7 +28,7 @@ export async function fetchGitHubStats(
     const userResponse = await fetch(
       `https://api.github.com/users/${username}`,
       {
-        next: { revalidate: 86400 }, // Cache for 24 hours
+        next: { revalidate: CACHE_DURATION },
         headers: {
           Accept: "application/vnd.github.v3+json",
         },
@@ -38,42 +42,35 @@ export async function fetchGitHubStats(
     const userData = await userResponse.json();
     const publicRepos = userData.public_repos;
 
-    // Fetch all repositories to calculate total stars
-    // GitHub API returns max 100 per page, so we need to paginate
-    let totalStars = 0;
-    let page = 1;
-    let hasMore = true;
+    // Calculate number of pages needed (100 repos per page)
+    const totalPages = Math.ceil(publicRepos / 100);
 
-    while (hasMore) {
-      const reposResponse = await fetch(
-        `https://api.github.com/users/${username}/repos?per_page=100&page=${page}&type=owner`,
+    // Fetch all pages in parallel for faster builds
+    const pagePromises = Array.from({ length: totalPages }, (_, i) =>
+      fetch(
+        `https://api.github.com/users/${username}/repos?per_page=100&page=${i + 1}&type=owner`,
         {
-          next: { revalidate: 86400 },
+          next: { revalidate: CACHE_DURATION },
           headers: {
             Accept: "application/vnd.github.v3+json",
           },
         }
-      );
+      ).then(async (response) => {
+        if (!response.ok) {
+          console.error(`Failed to fetch repos page ${i + 1}: ${response.status}`);
+          return [];
+        }
+        return response.json() as Promise<GitHubRepo[]>;
+      })
+    );
 
-      if (!reposResponse.ok) {
-        throw new Error(`Failed to fetch repos: ${reposResponse.status}`);
-      }
+    const allRepoPages = await Promise.all(pagePromises);
 
-      const repos: GitHubRepo[] = await reposResponse.json();
-
-      if (repos.length === 0) {
-        hasMore = false;
-      } else {
-        // Sum stars from non-forked repos only
-        totalStars += repos
-          .filter((repo) => !repo.fork)
-          .reduce((sum, repo) => sum + repo.stargazers_count, 0);
-        page++;
-
-        // Safety limit to prevent infinite loops
-        if (page > 10) hasMore = false;
-      }
-    }
+    // Sum stars from non-forked repos only
+    const totalStars = allRepoPages
+      .flat()
+      .filter((repo) => !repo.fork)
+      .reduce((sum, repo) => sum + repo.stargazers_count, 0);
 
     return {
       publicRepos,

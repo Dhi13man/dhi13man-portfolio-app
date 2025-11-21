@@ -1,3 +1,5 @@
+import type { ValueIconName } from "@/constants/icons";
+
 /**
  * Highlight statistic to showcase impressive numbers
  */
@@ -21,7 +23,7 @@ export interface AboutValue {
   number: number;
   title: string;
   description: string;
-  iconName: "layers" | "git-branch" | "users" | "zap" | "target" | "code";
+  iconName: ValueIconName;
 }
 
 /**
