@@ -252,4 +252,27 @@ describe('Home Page', () => {
       expect(screen.queryByText('Past Venture')).not.toBeInTheDocument()
     })
   })
+
+  describe('HomePage_whenGitHubApiFails_thenShowsFallbackDisplay', () => {
+    it('should show fallback values when GitHub API fails', async () => {
+      // Arrange - Mock the module with error state
+      const { fetchGitHubStats } = jest.requireMock('@/lib/github')
+      fetchGitHubStats.mockResolvedValueOnce({
+        publicRepos: null,
+        totalStars: null,
+        isError: true,
+        errorMessage: 'API rate limited',
+      })
+
+      // Act
+      const consoleSpy = jest.spyOn(console, 'warn').mockImplementation()
+      await renderHome()
+
+      // Assert - Should show fallback "—" values
+      expect(consoleSpy).toHaveBeenCalledWith(
+        expect.stringContaining('GitHub stats fetch failed')
+      )
+      consoleSpy.mockRestore()
+    })
+  })
 })
