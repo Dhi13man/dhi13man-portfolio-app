@@ -7,7 +7,7 @@ import { Github, Linkedin, Mail } from "lucide-react";
 import { aboutData } from "@/data/about";
 import { projects } from "@/data/projects";
 import { ventures } from "@/data/ventures";
-import { isDatePresent } from "@/lib/date";
+import { isDatePresent, parseStartDate } from "@/lib/date";
 import {
   fetchGitHubStats,
   calculateYearsExperience,
@@ -16,12 +16,30 @@ import {
 } from "@/lib/github";
 import type { AboutHighlight } from "@/types/about";
 
+// Maximum number of initiatives to display per category
+const MAX_INITIATIVES_PER_CATEGORY = 4;
+
 export default async function Home() {
   // Get current initiatives (ongoing projects and ventures)
-  const currentProjects = projects.filter((p) => isDatePresent(p.endDate));
-  const currentVentures = ventures.filter((v) =>
-    Array.isArray(v.roles) && v.roles.some((r) => isDatePresent(r?.endDate)),
-  );
+  // Filter for active, sort by descending start date, limit to max 4
+  const currentProjects = projects
+    .filter((p) => isDatePresent(p.endDate))
+    .sort((a, b) => parseStartDate(b.startDate).getTime() - parseStartDate(a.startDate).getTime())
+    .slice(0, MAX_INITIATIVES_PER_CATEGORY);
+
+  const currentVentures = ventures
+    .filter((v) =>
+      Array.isArray(v.roles) && v.roles.some((r) => isDatePresent(r?.endDate)),
+    )
+    .sort((a, b) => {
+      // Get the start date of the most recent active role for sorting
+      const getActiveRoleStartDate = (venture: typeof a) => {
+        const activeRole = venture.roles.find((r) => isDatePresent(r?.endDate));
+        return activeRole ? parseStartDate(activeRole.startDate) : new Date(0);
+      };
+      return getActiveRoleStartDate(b).getTime() - getActiveRoleStartDate(a).getTime();
+    })
+    .slice(0, MAX_INITIATIVES_PER_CATEGORY);
 
   // Fetch GitHub stats at build time
   const githubStats = await fetchGitHubStats("Dhi13man");

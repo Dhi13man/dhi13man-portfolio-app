@@ -1,4 +1,4 @@
-import { formatDate, formatDateRange, isDatePresent } from '../date'
+import { formatDate, formatDateRange, isDatePresent, parseStartDate } from '../date'
 
 describe('formatDate', () => {
   describe('formatDate_whenValidISODate_thenReturnsFormattedString', () => {
@@ -191,6 +191,95 @@ describe('isDatePresent', () => {
 
       // Assert
       expect(result).toBe(false)
+    })
+  })
+})
+
+describe('parseStartDate', () => {
+  describe('parseStartDate_whenISOFormat_thenReturnsValidDate', () => {
+    it.each([
+      ['2023-01-15', new Date(2023, 0, 15)],
+      ['2024-12-01', new Date(2024, 11, 1)],
+      ['2020-06-30', new Date(2020, 5, 30)],
+    ])('should parse ISO date %s correctly', (input, expected) => {
+      // Arrange
+      // Input provided via parameter
+
+      // Act
+      const result = parseStartDate(input)
+
+      // Assert
+      expect(result.getFullYear()).toBe(expected.getFullYear())
+      expect(result.getMonth()).toBe(expected.getMonth())
+      expect(result.getDate()).toBe(expected.getDate())
+    })
+  })
+
+  describe('parseStartDate_whenMMMyyyyFormat_thenReturnsValidDate', () => {
+    it.each([
+      ['Jun 2023', 2023, 5], // June is month 5 (0-indexed)
+      ['Nov 2025', 2025, 10], // November is month 10
+      ['Sep 2021', 2021, 8], // September is month 8
+      ['May 2022', 2022, 4], // May is month 4
+      ['Oct 2019', 2019, 9], // October is month 9
+      ['Dec 2023', 2023, 11], // December is month 11
+      ['Jan 2024', 2024, 0], // January is month 0
+    ])('should parse MMM yyyy date %s correctly', (input, expectedYear, expectedMonth) => {
+      // Arrange
+      // Input provided via parameter
+
+      // Act
+      const result = parseStartDate(input)
+
+      // Assert
+      expect(result.getFullYear()).toBe(expectedYear)
+      expect(result.getMonth()).toBe(expectedMonth)
+    })
+  })
+
+  describe('parseStartDate_whenEmptyOrInvalid_thenReturnsEpoch', () => {
+    it.each([
+      [''],
+      ['invalid-date'],
+      ['not-a-date'],
+    ])('should return epoch date for invalid input: %s', (input) => {
+      // Arrange
+      // Input provided via parameter
+
+      // Act
+      const result = parseStartDate(input)
+
+      // Assert
+      expect(result.getTime()).toBe(new Date(0).getTime())
+    })
+  })
+
+  describe('parseStartDate_sortingBehavior_thenSortsCorrectly', () => {
+    it('should enable correct descending sort order', () => {
+      // Arrange
+      const dates = ['Sep 2021', 'Jun 2023', 'Nov 2020', 'May 2022']
+
+      // Act
+      const sorted = dates.sort((a, b) =>
+        parseStartDate(b).getTime() - parseStartDate(a).getTime()
+      )
+
+      // Assert - Should be sorted descending (most recent first)
+      expect(sorted).toEqual(['Jun 2023', 'May 2022', 'Sep 2021', 'Nov 2020'])
+    })
+
+    it('should handle mixed ISO and MMM yyyy formats in sorting', () => {
+      // Arrange
+      const dates = ['2023-01-01', 'Jun 2023', '2022-06-15', 'May 2022']
+
+      // Act
+      const sorted = dates.sort((a, b) =>
+        parseStartDate(b).getTime() - parseStartDate(a).getTime()
+      )
+
+      // Assert - Should be sorted descending
+      // Jun 2023 > Jan 2023 > Jun 2022 > May 2022
+      expect(sorted).toEqual(['Jun 2023', '2023-01-01', '2022-06-15', 'May 2022'])
     })
   })
 })
