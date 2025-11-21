@@ -41,18 +41,22 @@ export default async function Home() {
     {
       value: `${yearsExperience}+`,
       label: "Years Experience",
+      link: "/experience",
     },
     {
       value: formatRepoCount(githubStats.publicRepos),
       label: "Open Source Packages",
+      link: "/projects",
     },
     {
       value: formatStarCount(githubStats.totalStars),
       label: "GitHub Stars",
+      link: "https://github.com/Dhi13man",
     },
     {
       value: `${activeInitiatives}`,
       label: "Active Initiatives",
+      link: "#current-initiatives",
     },
   ];
 
@@ -147,7 +151,7 @@ export default async function Home() {
 
       {/* Current Initiatives Section - using domain components for consistency and images */}
       {(currentProjects.length > 0 || currentVentures.length > 0) && (
-        <Section>
+        <Section id="current-initiatives">
           <SectionHeader>
             <SectionTitle>Current Initiatives</SectionTitle>
           </SectionHeader>

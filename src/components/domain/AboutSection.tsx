@@ -1,5 +1,6 @@
 import type { About } from "@/types/about";
 import { ValueIcon } from "./ValueIcon";
+import Link from "next/link";
 
 interface AboutSectionProps {
   data: About;
@@ -41,19 +42,57 @@ export function AboutSection({ data }: AboutSectionProps) {
       {/* Highlights/Stats Grid */}
       {highlights.length > 0 ? (
         <dl className="grid grid-cols-2 md:grid-cols-4 gap-4">
-          {highlights.map((highlight, index) => (
-            <div
-              key={`highlight-${index}-${highlight.label}`}
-              className="p-4 rounded-lg border border-border bg-surface/50 hover:border-border-hover transition-colors duration-fast"
-            >
-              <dd className="text-32 font-display font-bold text-accent">
-                {highlight.value}
-              </dd>
-              <dt className="text-12 text-text-tertiary uppercase tracking-wide mt-1">
-                {highlight.label}
-              </dt>
-            </div>
-          ))}
+          {highlights.map((highlight, index) => {
+            const cardContent = (
+              <>
+                <dd className="text-32 font-display font-bold text-accent">
+                  {highlight.value}
+                </dd>
+                <dt className="text-12 text-text-tertiary uppercase tracking-wide mt-1">
+                  {highlight.label}
+                </dt>
+              </>
+            );
+
+            const cardClassName = "block p-4 rounded-lg border border-border bg-surface/50 hover:border-border-hover hover:bg-surface/80 transition-colors duration-fast";
+
+            if (highlight.link) {
+              const isExternal = highlight.link.startsWith('http');
+
+              if (isExternal) {
+                return (
+                  <a
+                    key={`highlight-${index}-${highlight.label}`}
+                    href={highlight.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={cardClassName}
+                  >
+                    {cardContent}
+                  </a>
+                );
+              }
+
+              return (
+                <Link
+                  key={`highlight-${index}-${highlight.label}`}
+                  href={highlight.link}
+                  className={cardClassName}
+                >
+                  {cardContent}
+                </Link>
+              );
+            }
+
+            return (
+              <div
+                key={`highlight-${index}-${highlight.label}`}
+                className="p-4 rounded-lg border border-border bg-surface/50 hover:border-border-hover transition-colors duration-fast"
+              >
+                {cardContent}
+              </div>
+            );
+          })}
         </dl>
       ) : (
         <div className="text-text-tertiary text-14">

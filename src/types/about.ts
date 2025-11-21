@@ -6,6 +6,8 @@ import type { ValueIconName } from "@/constants/icons";
 export interface AboutHighlight {
   value: string;
   label: string;
+  /** Optional link - can be URL or anchor (e.g., "#section-id") */
+  link?: string;
 }
 
 /**
