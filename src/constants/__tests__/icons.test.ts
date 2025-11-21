@@ -3,7 +3,6 @@ import {
   VALID_ICON_NAMES,
   isValidIconName,
   getValueIcon,
-  type ValueIconName,
 } from '../icons'
 
 describe('icons', () => {

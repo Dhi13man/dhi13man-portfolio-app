@@ -285,6 +285,8 @@ function Lightbox({
         key={currentIndex}
         className="relative max-w-7xl max-h-[90vh] w-full h-full animate-fade-in"
         onClick={(e) => e.stopPropagation()}
+        role="img"
+        aria-label={`${alt} - Image ${currentIndex + 1} of ${images.length}`}
       >
         <Image
           src={images[currentIndex]}
@@ -313,7 +315,11 @@ function Lightbox({
 
       {/* Counter */}
       {images.length > 1 && (
-        <div className="absolute bottom-4 left-1/2 -translate-x-1/2 px-3 py-1.5 bg-surface/80 backdrop-blur-sm border border-border rounded text-14 font-mono text-text-secondary">
+        <div
+          className="absolute bottom-4 left-1/2 -translate-x-1/2 px-3 py-1.5 bg-surface/80 backdrop-blur-sm border border-border rounded text-14 font-mono text-text-secondary"
+          aria-live="polite"
+          aria-atomic="true"
+        >
           {currentIndex + 1} / {images.length}
         </div>
       )}
