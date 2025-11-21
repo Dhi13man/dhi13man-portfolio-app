@@ -69,5 +69,12 @@ describe('icons', () => {
         expect(() => getValueIcon(name)).not.toThrow()
       })
     })
+
+    it('should throw error for invalid icon name', () => {
+      // @ts-expect-error Testing invalid icon name error
+      expect(() => getValueIcon('invalid-icon')).toThrow(
+        'Invalid icon name: "invalid-icon"'
+      )
+    })
   })
 })

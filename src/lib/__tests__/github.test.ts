@@ -210,6 +210,29 @@ describe("fetchGitHubStats", () => {
       expect(result.errorMessage).toBe("Network error");
     });
 
+    it("should log error in development mode for network errors", async () => {
+      // Arrange
+      const originalEnv = process.env.NODE_ENV;
+      // @ts-expect-error - NODE_ENV is read-only
+      process.env.NODE_ENV = "development";
+      const consoleSpy = jest.spyOn(console, "error").mockImplementation();
+      mockFetch.mockRejectedValueOnce(new Error("Dev network error"));
+
+      // Act
+      await fetchGitHubStats("testuser");
+
+      // Assert
+      expect(consoleSpy).toHaveBeenCalledWith(
+        "Error fetching GitHub stats:",
+        "Dev network error"
+      );
+
+      // Cleanup
+      consoleSpy.mockRestore();
+      // @ts-expect-error - NODE_ENV is read-only
+      process.env.NODE_ENV = originalEnv;
+    });
+
     it("should handle timeout errors", async () => {
       const abortError = new Error("Aborted");
       abortError.name = "AbortError";

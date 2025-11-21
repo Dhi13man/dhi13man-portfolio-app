@@ -62,6 +62,27 @@ describe('formatDate', () => {
       // Assert
       expect(result).toBe(input)
     })
+
+    it('should warn in development mode for invalid date', () => {
+      // Arrange
+      const originalEnv = process.env.NODE_ENV
+      // @ts-expect-error - NODE_ENV is read-only
+      process.env.NODE_ENV = 'development'
+      const consoleSpy = jest.spyOn(console, 'warn').mockImplementation()
+
+      // Act
+      formatDate('invalid-date')
+
+      // Assert
+      expect(consoleSpy).toHaveBeenCalledWith(
+        expect.stringContaining('Invalid date format')
+      )
+
+      // Cleanup
+      consoleSpy.mockRestore()
+      // @ts-expect-error - NODE_ENV is read-only
+      process.env.NODE_ENV = originalEnv
+    })
   })
 })
 

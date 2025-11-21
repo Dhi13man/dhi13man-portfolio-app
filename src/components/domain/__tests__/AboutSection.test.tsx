@@ -128,5 +128,21 @@ describe('AboutSection', () => {
       render(<AboutSection data={dataWithEmptyIntro} />)
       expect(screen.queryByText('Test introduction text.')).not.toBeInTheDocument()
     })
+
+    it('should handle non-array highlights gracefully', () => {
+      // @ts-expect-error Testing non-array handling
+      const dataWithBadHighlights = { ...mockAboutData, highlights: 'not an array' }
+      render(<AboutSection data={dataWithBadHighlights} />)
+      expect(screen.getByText('Test Headline')).toBeInTheDocument()
+      expect(screen.getByText('No statistics available')).toBeInTheDocument()
+    })
+
+    it('should handle non-array expertise gracefully', () => {
+      // @ts-expect-error Testing non-array handling
+      const dataWithBadExpertise = { ...mockAboutData, expertise: 'not an array' }
+      render(<AboutSection data={dataWithBadExpertise} />)
+      expect(screen.getByText('Test Headline')).toBeInTheDocument()
+      expect(screen.queryByText('Expertise')).not.toBeInTheDocument()
+    })
   })
 })

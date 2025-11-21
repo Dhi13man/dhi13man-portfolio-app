@@ -543,5 +543,51 @@ describe('ImageGallery', () => {
       await user.tab()
       expect(dialog.contains(document.activeElement)).toBe(true)
     })
+
+    it('should wrap focus to first element when Tab on last element', async () => {
+      // Arrange
+      const images = ['/image1.jpg', '/image2.jpg']
+      const user = userEvent.setup()
+
+      // Act
+      render(<ImageGallery images={images} alt="Test" />)
+      await user.click(screen.getAllByRole('button')[0])
+
+      const dialog = screen.getByRole('dialog')
+      const buttons = dialog.querySelectorAll('button')
+      const lastButton = buttons[buttons.length - 1] as HTMLElement
+      const firstButton = buttons[0] as HTMLElement
+
+      // Focus the last button
+      lastButton.focus()
+      expect(document.activeElement).toBe(lastButton)
+
+      // Press Tab - should wrap to first
+      fireEvent.keyDown(document, { key: 'Tab' })
+      expect(document.activeElement).toBe(firstButton)
+    })
+
+    it('should wrap focus to last element when Shift+Tab on first element', async () => {
+      // Arrange
+      const images = ['/image1.jpg', '/image2.jpg']
+      const user = userEvent.setup()
+
+      // Act
+      render(<ImageGallery images={images} alt="Test" />)
+      await user.click(screen.getAllByRole('button')[0])
+
+      const dialog = screen.getByRole('dialog')
+      const buttons = dialog.querySelectorAll('button')
+      const lastButton = buttons[buttons.length - 1] as HTMLElement
+      const firstButton = buttons[0] as HTMLElement
+
+      // Focus the first button
+      firstButton.focus()
+      expect(document.activeElement).toBe(firstButton)
+
+      // Press Shift+Tab - should wrap to last
+      fireEvent.keyDown(document, { key: 'Tab', shiftKey: true })
+      expect(document.activeElement).toBe(lastButton)
+    })
   })
 })
