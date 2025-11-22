@@ -10,7 +10,7 @@ import {
 } from "../github";
 
 // Mock fetch globally
-const mockFetch = jest.fn();
+const mockFetch = vi.fn();
 global.fetch = mockFetch;
 
 describe("fetchGitHubStats", () => {
@@ -201,6 +201,54 @@ describe("fetchGitHubStats", () => {
       expect(result.errorMessage).toContain("rate limit");
     });
 
+    it("should handle rate limit exhaustion without reset time header", async () => {
+      // Arrange
+      mockFetch.mockResolvedValueOnce({
+        ok: true,
+        headers: new Map([
+          ["x-ratelimit-remaining", "2"],
+          // No x-ratelimit-reset header
+        ]),
+        json: async () => ({ public_repos: 10 }),
+      });
+
+      // Act
+      const result = await fetchGitHubStats("testuser");
+
+      // Assert
+      expect(result.isError).toBe(true);
+      expect(result.errorMessage).toContain("rate limit");
+      expect(result.errorMessage).toContain("unknown");
+    });
+
+    it("should default to 60 when x-ratelimit-remaining header is missing", async () => {
+      // Arrange - No rate limit header, defaults to 60 which is >= MIN_RATE_LIMIT (5)
+      mockFetch.mockResolvedValueOnce({
+        ok: true,
+        headers: new Map([
+          // No x-ratelimit-remaining header
+        ]),
+        json: async () => ({ public_repos: 2 }),
+      });
+
+      // Mock repos response
+      mockFetch.mockResolvedValueOnce({
+        ok: true,
+        json: async () => [
+          { stargazers_count: 10, fork: false },
+          { stargazers_count: 20, fork: false },
+        ],
+      });
+
+      // Act
+      const result = await fetchGitHubStats("testuser");
+
+      // Assert - Should succeed because default 60 >= MIN_RATE_LIMIT
+      expect(result.isError).toBe(false);
+      expect(result.publicRepos).toBe(2);
+      expect(result.totalStars).toBe(30);
+    });
+
     it("should handle network errors", async () => {
       mockFetch.mockRejectedValueOnce(new Error("Network error"));
 
@@ -215,7 +263,7 @@ describe("fetchGitHubStats", () => {
       const originalEnv = process.env.NODE_ENV;
       // @ts-expect-error - NODE_ENV is read-only
       process.env.NODE_ENV = "development";
-      const consoleSpy = jest.spyOn(console, "error").mockImplementation();
+      const consoleSpy = vi.spyOn(console, "error").mockImplementation(() => {});
       mockFetch.mockRejectedValueOnce(new Error("Dev network error"));
 
       // Act

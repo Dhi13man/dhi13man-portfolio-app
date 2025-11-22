@@ -575,6 +575,21 @@ Between sections: Border-top divider (1px, opacity 0.08)
 </div>
 ```
 
+**Exception - Compact Previews**: When displaying limited previews (e.g., Current Initiatives on Home page), a 2-column responsive grid is acceptable for information density:
+
+```tsx
+<div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+  {items.slice(0, 4).map(item => (
+    <Card key={item.id} compact />
+  ))}
+</div>
+```
+
+Use this pattern when:
+- Displaying max 4 items as a preview/summary
+- Items use compact card variants
+- Full list is available on dedicated page
+
 **Timelines**: Vertical with connecting line
 
 ```tsx
@@ -608,9 +623,10 @@ Between sections: Border-top divider (1px, opacity 0.08)
    - Generous line-height
 
 3. **Current Initiatives** (if any):
-   - Active Projects (flat list)
-   - Active Ventures (flat list)
-   - Each in hoverable Panel
+   - Active Projects (2-column grid, max 4, sorted by start date desc)
+   - Active Ventures (2-column grid, max 4, sorted by start date desc)
+   - Uses compact card variants
+   - Full lists available on /projects and /ventures pages
 
 **Example**:
 

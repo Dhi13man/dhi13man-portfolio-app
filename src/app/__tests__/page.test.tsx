@@ -1,32 +1,136 @@
 import React from 'react'
 import { render, screen } from '@testing-library/react'
+import { vi, describe, it, expect, beforeEach } from 'vitest'
 import Home from '../page'
+import { fetchGitHubStats } from '@/lib/github'
+import { isDatePresent, parseStartDate } from '@/lib/date'
+import type { Project } from '@/types/project'
+import type { Venture } from '@/types/venture'
+
+// =============================================================================
+// UNIT TESTS - Business Logic
+// =============================================================================
+
+describe('Home Page - Unit Tests', () => {
+  describe('Initiative Filtering Logic', () => {
+    it('should filter projects with endDate = Present', () => {
+      // Arrange
+      const projects: Project[] = [
+        { name: 'Current', description: '', startDate: '2023-01-01', endDate: 'Present' },
+        { name: 'Past', description: '', startDate: '2022-01-01', endDate: '2022-12-31' },
+      ]
+
+      // Act
+      const currentProjects = projects.filter((p) => isDatePresent(p.endDate))
+
+      // Assert
+      expect(currentProjects).toHaveLength(1)
+      expect(currentProjects[0].name).toBe('Current')
+    })
+
+    it('should filter ventures with active roles', () => {
+      // Arrange
+      const ventures: Venture[] = [
+        { name: 'Active', about: '', roles: [{ title: 'Founder', description: '', startDate: '2023-01-01', endDate: 'Present' }] },
+        { name: 'Inactive', about: '', roles: [{ title: 'Former', description: '', startDate: '2022-01-01', endDate: '2022-12-31' }] },
+      ]
+
+      // Act
+      const currentVentures = ventures.filter((v) =>
+        Array.isArray(v.roles) && v.roles.some((r) => isDatePresent(r?.endDate))
+      )
+
+      // Assert
+      expect(currentVentures).toHaveLength(1)
+      expect(currentVentures[0].name).toBe('Active')
+    })
+  })
+
+  describe('Initiative Sorting Logic', () => {
+    it('should sort projects by descending start date', () => {
+      // Arrange
+      const projects: Project[] = [
+        { name: 'Old', description: '', startDate: 'Jan 2020', endDate: 'Present' },
+        { name: 'New', description: '', startDate: 'Jun 2023', endDate: 'Present' },
+        { name: 'Mid', description: '', startDate: 'May 2022', endDate: 'Present' },
+      ]
+
+      // Act
+      const sorted = projects.sort((a, b) =>
+        parseStartDate(b.startDate).getTime() - parseStartDate(a.startDate).getTime()
+      )
+
+      // Assert
+      expect(sorted.map(p => p.name)).toEqual(['New', 'Mid', 'Old'])
+    })
+
+    it('should sort ventures by active role start date descending', () => {
+      // Arrange
+      const ventures: Venture[] = [
+        { name: 'Old', about: '', roles: [{ title: 'A', description: '', startDate: 'Oct 2018', endDate: 'Present' }] },
+        { name: 'New', about: '', roles: [{ title: 'B', description: '', startDate: 'Nov 2025', endDate: 'Present' }] },
+        { name: 'Mid', about: '', roles: [{ title: 'C', description: '', startDate: 'Dec 2023', endDate: 'Present' }] },
+      ]
+
+      // Act
+      const sorted = ventures.sort((a, b) => {
+        const getActiveRoleStartDate = (venture: Venture) => {
+          const activeRole = venture.roles.find((r) => isDatePresent(r?.endDate))
+          return activeRole ? parseStartDate(activeRole.startDate) : new Date(0)
+        }
+        return getActiveRoleStartDate(b).getTime() - getActiveRoleStartDate(a).getTime()
+      })
+
+      // Assert
+      expect(sorted.map(v => v.name)).toEqual(['New', 'Mid', 'Old'])
+    })
+  })
+
+  describe('Initiative Limiting Logic', () => {
+    it('should limit to max 4 items', () => {
+      // Arrange
+      const items = [1, 2, 3, 4, 5, 6]
+      const MAX_INITIATIVES = 4
+
+      // Act
+      const limited = items.slice(0, MAX_INITIATIVES)
+
+      // Assert
+      expect(limited).toHaveLength(4)
+      expect(limited).toEqual([1, 2, 3, 4])
+    })
+  })
+})
+
+// =============================================================================
+// COMPONENT TESTS - Rendering
+// =============================================================================
 
 // Mock the GitHub stats fetching
-jest.mock('@/lib/github', () => ({
-  fetchGitHubStats: jest.fn().mockResolvedValue({
+vi.mock('@/lib/github', () => ({
+  fetchGitHubStats: vi.fn().mockResolvedValue({
     publicRepos: 25,
     totalStars: 1500,
     isError: false,
   }),
-  calculateYearsExperience: jest.fn().mockReturnValue(6),
-  formatStarCount: jest.fn().mockImplementation((stars: number | null) => {
-    if (stars === null) return '—';
-    return stars >= 1000 ? `${(stars / 1000).toFixed(1)}K+` : `${stars}+`;
+  calculateYearsExperience: vi.fn().mockReturnValue(6),
+  formatStarCount: vi.fn().mockImplementation((stars: number | null) => {
+    if (stars === null) return '—'
+    return stars >= 1000 ? `${(stars / 1000).toFixed(1)}K+` : `${stars}+`
   }),
-  formatRepoCount: jest.fn().mockImplementation((repos: number | null) => {
-    if (repos === null) return '—';
-    return `${repos}+`;
+  formatRepoCount: vi.fn().mockImplementation((repos: number | null) => {
+    if (repos === null) return '—'
+    return `${repos}+`
   }),
 }))
 
 // Mock the data modules
-jest.mock('@/data/about', () => ({
+vi.mock('@/data/about', () => ({
   aboutData: {
     tagline: 'Test Tagline',
     headline: 'Test Headline',
     introduction: 'Test introduction paragraph.',
-    highlights: [], // Empty, will be computed
+    highlights: [],
     expertise: [
       {
         area: 'Backend & Systems',
@@ -44,12 +148,18 @@ jest.mock('@/data/about', () => ({
   },
 }))
 
-jest.mock('@/data/projects', () => ({
+vi.mock('@/data/projects', () => ({
   projects: [
     {
       name: 'Current Project',
       description: 'A current project',
-      startDate: '2023-01-01',
+      startDate: 'Jan 2023',
+      endDate: 'Present',
+    },
+    {
+      name: 'Newer Current Project',
+      description: 'A newer current project',
+      startDate: 'Jun 2024',
       endDate: 'Present',
     },
     {
@@ -61,23 +171,28 @@ jest.mock('@/data/projects', () => ({
   ],
 }))
 
-jest.mock('@/data/ventures', () => ({
+vi.mock('@/data/ventures', () => ({
   ventures: [
     {
       name: 'Current Venture',
       about: 'A current venture',
-      roles: [{ endDate: 'Present' }],
+      roles: [{ startDate: 'Jan 2023', endDate: 'Present', title: 'Founder', description: 'Test' }],
+    },
+    {
+      name: 'Newer Current Venture',
+      about: 'A newer current venture',
+      roles: [{ startDate: 'Jun 2024', endDate: 'Present', title: 'CEO', description: 'Test' }],
     },
     {
       name: 'Past Venture',
       about: 'A past venture',
-      roles: [{ endDate: '2022-12-31' }],
+      roles: [{ startDate: '2022-01-01', endDate: '2022-12-31', title: 'Former', description: 'Test' }],
     },
   ],
 }))
 
 // Mock ImageGallery to avoid complex state testing
-jest.mock('@/components/ui/image-gallery', () => ({
+vi.mock('@/components/ui/image-gallery', () => ({
   ImageGallery: ({ alt }: { alt: string }) => (
     <div data-testid="image-gallery" data-alt={alt} />
   ),
@@ -89,8 +204,12 @@ async function renderHome() {
   return render(HomeComponent)
 }
 
-describe('Home Page', () => {
-  describe('HomePage_whenRendered_thenDisplaysHeroSection', () => {
+describe('Home Page - Component Tests', () => {
+  beforeEach(() => {
+    vi.clearAllMocks()
+  })
+
+  describe('Hero Section', () => {
     it('should render name and tagline', async () => {
       // Arrange & Act
       await renderHome()
@@ -111,7 +230,7 @@ describe('Home Page', () => {
     })
   })
 
-  describe('HomePage_whenRendered_thenDisplaysSocialLinks', () => {
+  describe('Social Links', () => {
     it('should render social media links', async () => {
       // Arrange & Act
       await renderHome()
@@ -146,7 +265,7 @@ describe('Home Page', () => {
     })
   })
 
-  describe('HomePage_whenRendered_thenDisplaysAboutSection', () => {
+  describe('About Section', () => {
     it('should render about section title', async () => {
       // Arrange & Act
       await renderHome()
@@ -168,14 +287,14 @@ describe('Home Page', () => {
       // Arrange & Act
       await renderHome()
 
-      // Assert - values come from mocked GitHub stats and calculations
+      // Assert
       expect(screen.getByText('6+')).toBeInTheDocument()
       expect(screen.getByText('Years Experience')).toBeInTheDocument()
       expect(screen.getByText('25+')).toBeInTheDocument()
       expect(screen.getByText('Open Source Packages')).toBeInTheDocument()
       expect(screen.getByText('1.5K+')).toBeInTheDocument()
       expect(screen.getByText('GitHub Stars')).toBeInTheDocument()
-      expect(screen.getByText('2')).toBeInTheDocument() // 1 current project + 1 current venture
+      expect(screen.getByText('4')).toBeInTheDocument() // 2 current projects + 2 current ventures
       expect(screen.getByText('Active Initiatives')).toBeInTheDocument()
     })
 
@@ -190,12 +309,12 @@ describe('Home Page', () => {
     })
   })
 
-  describe('HomePage_whenRendered_thenDisplaysCorePrinciplesSection', () => {
+  describe('Core Principles', () => {
     it('should render core principles section title', async () => {
       // Arrange & Act
       await renderHome()
 
-      // Assert - Core Principles is now h4 inside AboutSection
+      // Assert
       expect(screen.getByRole('heading', { level: 4, name: 'Core Principles' })).toBeInTheDocument()
     })
 
@@ -209,7 +328,7 @@ describe('Home Page', () => {
     })
   })
 
-  describe('HomePage_whenCurrentProjects_thenDisplaysCurrentInitiatives', () => {
+  describe('Current Initiatives', () => {
     it('should render current initiatives section', async () => {
       // Arrange & Act
       await renderHome()
@@ -253,11 +372,10 @@ describe('Home Page', () => {
     })
   })
 
-  describe('HomePage_whenGitHubApiFails_thenShowsFallbackDisplay', () => {
+  describe('GitHub API Fallback', () => {
     it('should show fallback values when GitHub API fails', async () => {
-      // Arrange - Mock the module with error state
-      const { fetchGitHubStats } = jest.requireMock('@/lib/github')
-      fetchGitHubStats.mockResolvedValueOnce({
+      // Arrange
+      vi.mocked(fetchGitHubStats).mockResolvedValueOnce({
         publicRepos: null,
         totalStars: null,
         isError: true,
@@ -267,9 +385,54 @@ describe('Home Page', () => {
       // Act
       await renderHome()
 
-      // Assert - Should show fallback "—" values (console.warn only fires in development mode)
-      // Both publicRepos and totalStars are null, so there are multiple "—" elements
+      // Assert
       expect(screen.getAllByText('—').length).toBeGreaterThan(0)
+    })
+
+    it('should log warning in development mode when GitHub API fails', async () => {
+      // Arrange
+      vi.stubEnv('NODE_ENV', 'development')
+      const consoleSpy = vi.spyOn(console, 'warn').mockImplementation(() => {})
+      vi.mocked(fetchGitHubStats).mockResolvedValueOnce({
+        publicRepos: null,
+        totalStars: null,
+        isError: true,
+        errorMessage: 'Test error message',
+      })
+
+      // Act
+      await renderHome()
+
+      // Assert
+      expect(consoleSpy).toHaveBeenCalledWith(
+        'GitHub stats fetch failed: Test error message. Using fallback display.'
+      )
+
+      // Cleanup
+      consoleSpy.mockRestore()
+      vi.unstubAllEnvs()
+    })
+
+    it('should not log warning in production mode when GitHub API fails', async () => {
+      // Arrange
+      vi.stubEnv('NODE_ENV', 'production')
+      const consoleSpy = vi.spyOn(console, 'warn').mockImplementation(() => {})
+      vi.mocked(fetchGitHubStats).mockResolvedValueOnce({
+        publicRepos: null,
+        totalStars: null,
+        isError: true,
+        errorMessage: 'Test error message',
+      })
+
+      // Act
+      await renderHome()
+
+      // Assert
+      expect(consoleSpy).not.toHaveBeenCalled()
+
+      // Cleanup
+      consoleSpy.mockRestore()
+      vi.unstubAllEnvs()
     })
   })
 })

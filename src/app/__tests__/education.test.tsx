@@ -3,7 +3,7 @@ import { render, screen } from '@testing-library/react'
 import EducationPage from '../education/page'
 
 // Mock the data module with comprehensive test data
-jest.mock('@/data/education', () => ({
+vi.mock('@/data/education', () => ({
   education: [
     {
       name: 'Test University',
@@ -97,7 +97,7 @@ jest.mock('@/data/education', () => ({
 }))
 
 // Mock ImageGallery to avoid complex state testing
-jest.mock('@/components/ui/image-gallery', () => ({
+vi.mock('@/components/ui/image-gallery', () => ({
   ImageGallery: ({ alt }: { alt: string }) => (
     <div data-testid="image-gallery" data-alt={alt} />
   ),

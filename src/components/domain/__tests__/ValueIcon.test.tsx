@@ -38,7 +38,7 @@ describe('ValueIcon', () => {
 
   describe('ValueIcon_whenInvalidIconName_thenRendersFallback', () => {
     it('should render warning fallback for invalid icon name', () => {
-      const consoleSpy = jest.spyOn(console, 'warn').mockImplementation()
+      const consoleSpy = vi.spyOn(console, 'warn').mockImplementation(() => {})
 
       // @ts-expect-error Testing invalid icon name
       render(<ValueIcon iconName="invalid-icon" />)
@@ -55,7 +55,7 @@ describe('ValueIcon', () => {
     })
 
     it('should apply className to fallback span', () => {
-      const consoleSpy = jest.spyOn(console, 'warn').mockImplementation()
+      const consoleSpy = vi.spyOn(console, 'warn').mockImplementation(() => {})
 
       // @ts-expect-error Testing invalid icon name
       render(<ValueIcon iconName="unknown" className="custom-class" />)

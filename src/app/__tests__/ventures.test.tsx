@@ -3,7 +3,7 @@ import { render, screen } from '@testing-library/react'
 import VenturesPage from '../ventures/page'
 
 // Mock the data module with comprehensive test data
-jest.mock('@/data/ventures', () => ({
+vi.mock('@/data/ventures', () => ({
   ventures: [
     {
       name: 'Tech Startup',
@@ -84,7 +84,7 @@ jest.mock('@/data/ventures', () => ({
 }))
 
 // Mock ImageGallery
-jest.mock('@/components/ui/image-gallery', () => ({
+vi.mock('@/components/ui/image-gallery', () => ({
   ImageGallery: ({ alt }: { alt: string }) => (
     <div data-testid="image-gallery" data-alt={alt} />
   ),

@@ -4,7 +4,7 @@ import { ProjectCard } from '../ProjectCard'
 import type { Project } from '@/types/project'
 
 // Mock ImageGallery to avoid complex state testing
-jest.mock('@/components/ui/image-gallery', () => ({
+vi.mock('@/components/ui/image-gallery', () => ({
   ImageGallery: ({ images, alt }: { images: string[]; alt: string }) => (
     <div data-testid="image-gallery" data-images={images.length} data-alt={alt} />
   ),
