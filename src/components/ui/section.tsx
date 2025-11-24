@@ -11,12 +11,15 @@ const Section = React.forwardRef<HTMLElement, SectionProps>(
       <section
         ref={ref}
         className={cn(
-          "w-full py-12",
-          !noDivider && "border-t border-border",
+          "w-full py-16 relative",
+          !noDivider && "border-t border-border/50",
           className,
         )}
         {...props}
       >
+        {!noDivider && (
+          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-[1px] bg-gradient-to-r from-transparent via-accent/50 to-transparent" />
+        )}
         <div className="max-w-[1200px] mx-auto px-8">{children}</div>
       </section>
     );
@@ -39,7 +42,7 @@ const SectionTitle = React.forwardRef<
   <h2
     ref={ref}
     className={cn(
-      "text-32 font-display font-bold text-text-primary",
+      "text-32 font-display font-bold text-text-primary tracking-tight",
       className,
     )}
     {...props}
@@ -53,7 +56,7 @@ const SectionDescription = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <p
     ref={ref}
-    className={cn("text-16 text-text-secondary", className)}
+    className={cn("text-16 text-text-tertiary max-w-2xl", className)}
     {...props}
   />
 ));

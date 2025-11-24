@@ -53,7 +53,7 @@ export default function VenturesPage() {
   );
 
   return (
-    <Section noDivider className="py-16">
+    <Section noDivider className="py-20">
       <SectionHeader>
         <SectionTitle>Ventures</SectionTitle>
         <SectionDescription>
@@ -62,7 +62,7 @@ export default function VenturesPage() {
         </SectionDescription>
       </SectionHeader>
 
-      <Timeline className="mt-8">
+      <Timeline className="mt-10">
         {allRoles.map((role, index) => {
           const isLast = index === allRoles.length - 1;
 
@@ -109,7 +109,7 @@ export default function VenturesPage() {
                                   href={link}
                                   target="_blank"
                                   rel="noopener noreferrer"
-                                  className="p-2 text-text-tertiary hover:text-accent transition-colors duration-fast"
+                                  className="p-2 rounded-lg text-text-tertiary hover:text-secondary hover:bg-secondary-muted transition-all duration-150"
                                   aria-label={getLinkLabel(linkType)}
                                 >
                                   <LinkIcon type={linkType} />

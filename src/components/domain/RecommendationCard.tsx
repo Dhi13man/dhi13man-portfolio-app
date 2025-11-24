@@ -14,16 +14,16 @@ export function RecommendationCard({
 }: RecommendationCardProps) {
   return (
     <Panel hoverable>
-      <div className="space-y-3">
+      <div className="space-y-4">
         {/* Quote */}
-        <blockquote className="text-16 text-text-secondary italic leading-relaxed border-l-2 border-accent pl-4">
-          {recommendation.text}
+        <blockquote className="text-16 text-text-secondary italic leading-relaxed border-l-2 border-accent/50 pl-4 py-1">
+          &ldquo;{recommendation.text}&rdquo;
         </blockquote>
 
         {/* Author info with link */}
         <div className="pt-2 flex items-center justify-between gap-2">
-          <p className="text-14 font-semibold text-text-primary">
-            {recommendation.from}
+          <p className="text-14 font-semibold text-accent">
+            — {recommendation.from}
           </p>
           {recommendation.links?.primary && (
             <Button asChild variant="ghost" size="sm">

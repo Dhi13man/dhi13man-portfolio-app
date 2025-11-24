@@ -46,6 +46,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth">
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Syne:wght@400;500;600;700;800&display=swap"
+          rel="stylesheet"
+        />
+      </head>
       <body className="min-h-screen bg-background font-sans antialiased">
         {/* Skip to main content link for accessibility (WCAG 2.2 Level A) */}
         <a
@@ -58,16 +66,18 @@ export default function RootLayout({
         <main id="main-content" className="min-h-[calc(100vh-4rem)]">
           {children}
         </main>
-        <footer className="border-t border-border py-12 mt-16">
+        <footer className="border-t border-border/50 py-16 mt-16 relative">
+          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-48 h-[1px] bg-gradient-to-r from-transparent via-accent/30 to-transparent" />
           <div className="max-w-[1200px] mx-auto px-8 text-center">
             {/* suppressHydrationWarning: Year is calculated at runtime with new Date().getFullYear()
                 which may differ between server and client during year transitions */}
             <p
-              className="text-14 text-text-quaternary"
+              className="text-14 text-text-quaternary font-light tracking-wide"
               suppressHydrationWarning
             >
-              &copy; {new Date().getFullYear()} Dhiman Seal. All rights
-              reserved.
+              &copy; {new Date().getFullYear()}{" "}
+              <span className="text-text-tertiary">Dhiman Seal</span>. Built with{" "}
+              <span className="text-accent">care</span>.
             </p>
           </div>
         </footer>

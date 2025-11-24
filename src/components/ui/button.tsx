@@ -27,10 +27,10 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       "inline-flex items-center justify-center whitespace-nowrap rounded font-medium transition-all duration-fast focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background disabled:pointer-events-none disabled:opacity-50";
 
     const variants = {
-      primary: "bg-accent text-text-primary hover:bg-accent-hover",
+      primary: "bg-accent text-background font-semibold hover:bg-accent-hover hover:shadow-[0_0_20px_rgba(6,182,212,0.3)] active:scale-[0.98]",
       secondary:
-        "border border-border text-accent hover:border-border-hover hover:bg-hover-bg",
-      ghost: "text-text-secondary hover:text-text-primary hover:bg-hover-bg",
+        "border border-accent/30 text-accent hover:border-accent hover:bg-accent-muted active:scale-[0.98]",
+      ghost: "text-text-secondary hover:text-accent hover:bg-accent-muted/50 active:scale-[0.98]",
       link: "text-accent hover:text-accent-hover underline-offset-4 hover:underline",
     };
 

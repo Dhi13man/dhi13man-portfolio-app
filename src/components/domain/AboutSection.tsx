@@ -45,16 +45,16 @@ export function AboutSection({ data }: AboutSectionProps) {
           {highlights.map((highlight, index) => {
             const cardContent = (
               <div className="flex flex-col-reverse">
-                <dt className="text-12 text-text-tertiary uppercase tracking-wide mt-1">
+                <dt className="text-12 text-text-tertiary uppercase tracking-wider mt-2">
                   {highlight.label}
                 </dt>
-                <dd className="text-32 font-display font-bold text-accent">
+                <dd className="text-32 font-display font-bold text-gradient">
                   {highlight.value}
                 </dd>
               </div>
             );
 
-            const cardClassName = "block p-4 rounded-lg border border-border bg-surface/50 hover:border-border-hover hover:bg-surface/80 transition-colors duration-fast";
+            const cardClassName = "block p-5 rounded-lg border border-accent/20 bg-accent-muted/30 hover:border-accent/50 hover:bg-accent-muted/50 hover:shadow-[0_0_20px_rgba(6,182,212,0.1)] transition-all duration-150";
 
             if (highlight.link) {
               const isExternal = highlight.link.startsWith('http');
@@ -87,7 +87,7 @@ export function AboutSection({ data }: AboutSectionProps) {
             return (
               <div
                 key={`highlight-${index}-${highlight.label}`}
-                className="p-4 rounded-lg border border-border bg-surface/50 hover:border-border-hover transition-colors duration-fast"
+                className="p-5 rounded-lg border border-accent/20 bg-accent-muted/30 hover:border-accent/50 transition-all duration-150"
               >
                 {cardContent}
               </div>
@@ -105,20 +105,20 @@ export function AboutSection({ data }: AboutSectionProps) {
         <section className="space-y-6" aria-labelledby="expertise-heading">
           <h4
             id="expertise-heading"
-            className="text-16 font-semibold text-text-primary uppercase tracking-wide"
+            className="text-14 font-semibold text-accent uppercase tracking-widest"
           >
             Expertise
           </h4>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {expertise.map((area, areaIndex) => (
-              <div key={`expertise-${areaIndex}-${area.area}`} className="space-y-2">
-                <div className="text-14 text-text-tertiary">{area.area}</div>
+              <div key={`expertise-${areaIndex}-${area.area}`} className="space-y-3">
+                <div className="text-14 font-medium text-text-secondary">{area.area}</div>
                 <div className="flex flex-wrap gap-2" role="list" aria-label={`${area.area} skills`}>
                   {Array.isArray(area.skills) && area.skills.map((skill, skillIndex) => (
                     <span
                       key={`skill-${areaIndex}-${skillIndex}`}
                       role="listitem"
-                      className="px-3 py-1 text-12 rounded border border-border bg-surface/30 text-text-secondary hover:border-border-hover hover:text-accent transition-colors duration-fast"
+                      className="px-3 py-1.5 text-12 rounded-lg border border-border/50 bg-surface/50 text-text-tertiary hover:border-accent/50 hover:text-accent hover:bg-accent-muted/30 transition-all duration-150 cursor-default"
                       title={skill}
                     >
                       {skill}
@@ -136,7 +136,7 @@ export function AboutSection({ data }: AboutSectionProps) {
         <section className="space-y-6" aria-labelledby="principles-heading">
           <h4
             id="principles-heading"
-            className="text-16 font-semibold text-text-primary uppercase tracking-wide"
+            className="text-14 font-semibold text-secondary uppercase tracking-widest"
           >
             Core Principles
           </h4>
@@ -144,21 +144,21 @@ export function AboutSection({ data }: AboutSectionProps) {
             {values.map((value, index) => {
               const valueContent = (
                 <>
-                  <div className="flex items-center gap-3 mb-2">
-                    <div className="w-8 h-8 rounded flex items-center justify-center bg-accent/10 text-accent">
+                  <div className="flex items-center gap-3 mb-3">
+                    <div className="w-10 h-10 rounded-lg flex items-center justify-center bg-gradient-to-br from-accent/20 to-secondary/20 text-accent shadow-[0_0_15px_rgba(6,182,212,0.15)]">
                       <ValueIcon iconName={value.iconName} />
                     </div>
                     <h5 className="text-14 font-semibold text-text-primary">
                       {value.title}
                     </h5>
                   </div>
-                  <p className="text-14 text-text-tertiary leading-relaxed">
+                  <p className="text-14 text-text-tertiary leading-relaxed pl-[52px]">
                     {value.description}
                   </p>
                 </>
               );
 
-              const valueClassName = "block p-4 rounded-lg border border-border hover:border-border-hover hover:bg-surface/50 transition-colors duration-fast";
+              const valueClassName = "block p-5 rounded-lg border border-border/50 hover:border-accent/30 hover:bg-accent-muted/20 transition-all duration-150";
 
               if (value.link) {
                 return (
@@ -175,7 +175,7 @@ export function AboutSection({ data }: AboutSectionProps) {
               return (
                 <div
                   key={`value-${index}-${value.number}`}
-                  className="p-4 rounded-lg border border-border hover:border-border-hover transition-colors duration-fast"
+                  className="p-5 rounded-lg border border-border/50 hover:border-accent/30 transition-all duration-150"
                 >
                   {valueContent}
                 </div>

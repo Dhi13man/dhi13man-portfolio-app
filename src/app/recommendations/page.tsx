@@ -15,7 +15,7 @@ export const metadata = {
 
 export default function RecommendationsPage() {
   return (
-    <Section noDivider className="py-16">
+    <Section noDivider className="py-20">
       <SectionHeader>
         <SectionTitle>Recommendations</SectionTitle>
         <SectionDescription>
@@ -24,7 +24,7 @@ export default function RecommendationsPage() {
         </SectionDescription>
       </SectionHeader>
 
-      <div className="space-y-4 mt-8">
+      <div className="space-y-4 mt-10">
         {recommendations.map((recommendation) => (
           <RecommendationCard key={recommendation.from} recommendation={recommendation} />
         ))}

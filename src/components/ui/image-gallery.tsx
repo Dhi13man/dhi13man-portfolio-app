@@ -157,7 +157,7 @@ export const ImageGallery = memo(function ImageGallery({
                 onError={() => handleImageError(index)}
               />
               {index === 0 && images.length > 1 && (
-                <div className="absolute top-1 right-1 px-1.5 py-0.5 bg-background/80 backdrop-blur-sm text-12 font-mono text-text-tertiary rounded">
+                <div className="absolute top-1 right-1 px-1.5 py-0.5 bg-accent/80 backdrop-blur-sm text-12 font-mono text-background font-semibold rounded">
                   +{images.length - 1}
                 </div>
               )}
@@ -316,7 +316,7 @@ function Lightbox({
       {/* Counter */}
       {images.length > 1 && (
         <div
-          className="absolute bottom-4 left-1/2 -translate-x-1/2 px-3 py-1.5 bg-surface/80 backdrop-blur-sm border border-border rounded text-14 font-mono text-text-secondary"
+          className="absolute bottom-4 left-1/2 -translate-x-1/2 px-4 py-2 bg-surface/90 backdrop-blur-md border border-accent/30 rounded-lg text-14 font-mono text-accent"
           aria-live="polite"
           aria-atomic="true"
         >

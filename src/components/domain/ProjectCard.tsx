@@ -50,7 +50,7 @@ export function ProjectCard({ project, compact = false }: ProjectCardProps) {
             >
               {project.name}
             </h3>
-            <time className="text-12 font-mono text-text-quaternary">
+            <time className="text-12 font-mono text-accent/60">
               {formatDateRange(project.startDate, project.endDate)}
             </time>
           </div>
@@ -76,7 +76,7 @@ export function ProjectCard({ project, compact = false }: ProjectCardProps) {
                     href={link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="p-2 text-text-tertiary hover:text-accent transition-colors duration-fast"
+                    className="p-2 rounded-lg text-text-tertiary hover:text-accent hover:bg-accent-muted transition-all duration-150"
                     aria-label={getLinkLabel(linkType)}
                   >
                     <LinkIcon type={linkType} />

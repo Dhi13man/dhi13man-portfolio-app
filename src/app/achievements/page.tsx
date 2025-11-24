@@ -20,7 +20,7 @@ export const metadata = {
 export default function AchievementsPage() {
   return (
     <>
-      <Section noDivider className="py-16">
+      <Section noDivider className="py-20">
         <SectionHeader>
           <SectionTitle>Achievements</SectionTitle>
           <SectionDescription>
@@ -32,8 +32,8 @@ export default function AchievementsPage() {
 
       {/* Honors and Awards */}
       <Section>
-        <div className="mb-6">
-          <h2 className="text-24 font-semibold text-text-primary mb-2">
+        <div className="mb-8">
+          <h2 className="text-14 font-semibold text-accent uppercase tracking-widest mb-3">
             Honors & Awards
           </h2>
           <p className="text-14 text-text-tertiary">
@@ -50,8 +50,8 @@ export default function AchievementsPage() {
 
       {/* Licenses and Certifications */}
       <Section>
-        <div className="mb-6">
-          <h2 className="text-24 font-semibold text-text-primary mb-2">
+        <div className="mb-8">
+          <h2 className="text-14 font-semibold text-secondary uppercase tracking-widest mb-3">
             Licenses & Certifications
           </h2>
           <p className="text-14 text-text-tertiary">
@@ -68,8 +68,8 @@ export default function AchievementsPage() {
 
       {/* Test Scores */}
       <Section>
-        <div className="mb-6">
-          <h2 className="text-24 font-semibold text-text-primary mb-2">
+        <div className="mb-8">
+          <h2 className="text-14 font-semibold text-status-info uppercase tracking-widest mb-3">
             Test Scores
           </h2>
           <p className="text-14 text-text-tertiary">

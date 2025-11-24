@@ -34,7 +34,7 @@ export function AwardCard({ award }: AwardCardProps) {
               )}
             </div>
           </div>
-          <time className="text-12 font-mono text-text-quaternary shrink-0">
+          <time className="text-12 font-mono text-accent/60 shrink-0">
             {formatDateRange(award.startDate, award.endDate)}
           </time>
         </div>
@@ -88,7 +88,7 @@ export function CertificationCard({ certification }: CertificationCardProps) {
               )}
             </div>
           </div>
-          <time className="text-12 font-mono text-text-quaternary shrink-0">
+          <time className="text-12 font-mono text-secondary/60 shrink-0">
             {formatDateRange(certification.startDate, certification.endDate)}
           </time>
         </div>
@@ -157,8 +157,8 @@ export function TestScoreCard({ testScore }: TestScoreCardProps) {
           </time>
         </div>
 
-        <div>
-          <span className="text-20 font-bold text-accent">
+        <div className="inline-flex">
+          <span className="text-24 font-bold text-gradient px-3 py-1 bg-accent-muted rounded-lg">
             {testScore.score}
           </span>
         </div>

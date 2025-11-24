@@ -15,7 +15,7 @@ export const metadata = {
 
 export default function ProjectsPage() {
   return (
-    <Section noDivider className="py-16">
+    <Section noDivider className="py-20">
       <SectionHeader>
         <SectionTitle>Projects</SectionTitle>
         <SectionDescription>
@@ -24,7 +24,7 @@ export default function ProjectsPage() {
         </SectionDescription>
       </SectionHeader>
 
-      <div className="space-y-3 mt-8">
+      <div className="space-y-4 mt-10">
         {projects.map((project) => (
           <ProjectCard key={project.name} project={project} />
         ))}

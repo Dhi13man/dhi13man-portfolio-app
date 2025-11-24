@@ -44,7 +44,7 @@ export function VentureCard({ venture }: VentureCardProps) {
             href={venture.links.primary}
             target="_blank"
             rel="noopener noreferrer"
-            className="shrink-0 text-accent hover:text-accent-hover transition-colors duration-fast"
+            className="shrink-0 p-2 rounded-lg text-text-tertiary hover:text-secondary hover:bg-secondary-muted transition-all duration-150"
           >
             <ExternalLink className="w-4 h-4" />
           </Link>

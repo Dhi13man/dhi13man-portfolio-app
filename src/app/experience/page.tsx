@@ -31,7 +31,7 @@ export const metadata = {
 
 export default function ExperiencePage() {
   return (
-    <Section noDivider className="py-16">
+    <Section noDivider className="py-20">
       <SectionHeader>
         <SectionTitle>Experience</SectionTitle>
         <SectionDescription>
@@ -40,7 +40,7 @@ export default function ExperiencePage() {
         </SectionDescription>
       </SectionHeader>
 
-      <Timeline className="mt-8">
+      <Timeline className="mt-10">
         {experiences.map((experience, expIndex) => {
           const isLastExperience = expIndex === experiences.length - 1;
 
@@ -102,7 +102,7 @@ export default function ExperiencePage() {
                             href={link}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="p-2 text-text-tertiary hover:text-accent transition-colors duration-fast"
+                            className="p-2 rounded-lg text-text-tertiary hover:text-accent hover:bg-accent-muted transition-all duration-150"
                             aria-label={getLinkLabel(linkType)}
                           >
                             <LinkIcon type={linkType} />
@@ -122,7 +122,7 @@ export default function ExperiencePage() {
               </div>
 
               {/* Roles under this company */}
-              <div className="space-y-6 border-l-2 border-border pl-4 ml-1">
+              <div className="space-y-6 border-l-2 border-accent/30 pl-4 ml-1">
                 {experience.roles.map((role, roleIndex) => (
                   <div key={`${experience.name}-${role.title}-${roleIndex}`}>
                     {/* Role Header */}

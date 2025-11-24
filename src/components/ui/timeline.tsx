@@ -18,17 +18,17 @@ interface TimelineItemProps extends React.HTMLAttributes<HTMLDivElement> {
 const TimelineItem = React.forwardRef<HTMLDivElement, TimelineItemProps>(
   ({ className, isLast = false, children, ...props }, ref) => {
     return (
-      <div ref={ref} className={cn("relative pl-6", className)} {...props}>
-        {/* Timeline line */}
+      <div ref={ref} className={cn("relative pl-8", className)} {...props}>
+        {/* Timeline line with gradient */}
         {!isLast && (
-          <div className="absolute left-[7px] top-[12px] bottom-[-24px] w-[1px] bg-border" />
+          <div className="absolute left-[7px] top-[16px] bottom-[-24px] w-[2px] bg-gradient-to-b from-accent/50 to-border" />
         )}
 
-        {/* Timeline dot */}
-        <div className="absolute left-0 top-[6px] w-4 h-4 rounded-full border-2 border-accent bg-background" />
+        {/* Timeline dot with glow */}
+        <div className="absolute left-0 top-[6px] w-4 h-4 rounded-full border-2 border-accent bg-background shadow-[0_0_10px_rgba(6,182,212,0.4)]" />
 
         {/* Content */}
-        <div className="pb-6">{children}</div>
+        <div className="pb-8">{children}</div>
       </div>
     );
   },
