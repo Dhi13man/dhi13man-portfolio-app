@@ -76,7 +76,7 @@ export function ProjectCard({ project, compact = false }: ProjectCardProps) {
                     href={link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="p-2 rounded-lg text-text-tertiary hover:text-accent hover:bg-accent-muted transition-all duration-150"
+                    className="p-2 rounded-lg text-text-tertiary hover:text-accent transition-colors duration-150"
                     aria-label={getLinkLabel(linkType)}
                   >
                     <LinkIcon type={linkType} />

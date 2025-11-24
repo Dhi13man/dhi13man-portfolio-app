@@ -66,8 +66,7 @@ export default function RootLayout({
         <main id="main-content" className="min-h-[calc(100vh-4rem)]">
           {children}
         </main>
-        <footer className="border-t border-border/50 py-16 mt-16 relative">
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-48 h-[1px] bg-gradient-to-r from-transparent via-accent/30 to-transparent" />
+        <footer className="border-t border-border py-16 mt-16">
           <div className="max-w-[1200px] mx-auto px-8 text-center">
             {/* suppressHydrationWarning: Year is calculated at runtime with new Date().getFullYear()
                 which may differ between server and client during year transitions */}

@@ -48,13 +48,13 @@ export function AboutSection({ data }: AboutSectionProps) {
                 <dt className="text-12 text-text-tertiary uppercase tracking-wider mt-2">
                   {highlight.label}
                 </dt>
-                <dd className="text-32 font-display font-bold text-gradient">
+                <dd className="text-32 font-display font-bold text-accent">
                   {highlight.value}
                 </dd>
               </div>
             );
 
-            const cardClassName = "block p-5 rounded-lg border border-accent/20 bg-accent-muted/30 hover:border-accent/50 hover:bg-accent-muted/50 hover:shadow-[0_0_20px_rgba(6,182,212,0.1)] transition-all duration-150";
+            const cardClassName = "block p-5 rounded-lg border border-border bg-surface hover:border-accent/50 transition-colors duration-150";
 
             if (highlight.link) {
               const isExternal = highlight.link.startsWith('http');
@@ -87,7 +87,7 @@ export function AboutSection({ data }: AboutSectionProps) {
             return (
               <div
                 key={`highlight-${index}-${highlight.label}`}
-                className="p-5 rounded-lg border border-accent/20 bg-accent-muted/30 hover:border-accent/50 transition-all duration-150"
+                className="p-5 rounded-lg border border-border bg-surface"
               >
                 {cardContent}
               </div>
@@ -105,7 +105,7 @@ export function AboutSection({ data }: AboutSectionProps) {
         <section className="space-y-6" aria-labelledby="expertise-heading">
           <h4
             id="expertise-heading"
-            className="text-14 font-semibold text-accent uppercase tracking-widest"
+            className="text-14 font-semibold text-text-tertiary uppercase tracking-widest"
           >
             Expertise
           </h4>
@@ -118,7 +118,7 @@ export function AboutSection({ data }: AboutSectionProps) {
                     <span
                       key={`skill-${areaIndex}-${skillIndex}`}
                       role="listitem"
-                      className="px-3 py-1.5 text-12 rounded-lg border border-border/50 bg-surface/50 text-text-tertiary hover:border-accent/50 hover:text-accent hover:bg-accent-muted/30 transition-all duration-150 cursor-default"
+                      className="px-3 py-1.5 text-12 rounded-lg border border-border bg-surface text-text-tertiary hover:border-accent/50 hover:text-accent transition-colors duration-150 cursor-default"
                       title={skill}
                     >
                       {skill}
@@ -136,7 +136,7 @@ export function AboutSection({ data }: AboutSectionProps) {
         <section className="space-y-6" aria-labelledby="principles-heading">
           <h4
             id="principles-heading"
-            className="text-14 font-semibold text-secondary uppercase tracking-widest"
+            className="text-14 font-semibold text-text-tertiary uppercase tracking-widest"
           >
             Core Principles
           </h4>
@@ -145,7 +145,7 @@ export function AboutSection({ data }: AboutSectionProps) {
               const valueContent = (
                 <>
                   <div className="flex items-center gap-3 mb-3">
-                    <div className="w-10 h-10 rounded-lg flex items-center justify-center bg-gradient-to-br from-accent/20 to-secondary/20 text-accent shadow-[0_0_15px_rgba(6,182,212,0.15)]">
+                    <div className="w-10 h-10 rounded-lg flex items-center justify-center bg-surface border border-border text-accent">
                       <ValueIcon iconName={value.iconName} />
                     </div>
                     <h5 className="text-14 font-semibold text-text-primary">
@@ -158,7 +158,7 @@ export function AboutSection({ data }: AboutSectionProps) {
                 </>
               );
 
-              const valueClassName = "block p-5 rounded-lg border border-border/50 hover:border-accent/30 hover:bg-accent-muted/20 transition-all duration-150";
+              const valueClassName = "block p-5 rounded-lg border border-border hover:border-accent/50 transition-colors duration-150";
 
               if (value.link) {
                 return (
@@ -175,7 +175,7 @@ export function AboutSection({ data }: AboutSectionProps) {
               return (
                 <div
                   key={`value-${index}-${value.number}`}
-                  className="p-5 rounded-lg border border-border/50 hover:border-accent/30 transition-all duration-150"
+                  className="p-5 rounded-lg border border-border"
                 >
                   {valueContent}
                 </div>

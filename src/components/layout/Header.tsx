@@ -30,10 +30,10 @@ export function Header() {
           {/* Logo */}
           <Link
             href="/"
-            className="font-display text-20 font-bold text-text-primary hover:text-accent transition-all duration-150 hover:scale-105"
+            className="font-display text-20 font-bold text-text-primary hover:text-accent transition-colors duration-150"
             aria-label="Dhiman Seal - Home"
           >
-            <span className="bg-gradient-to-r from-accent to-secondary bg-clip-text text-transparent">DS</span>
+            DS
           </Link>
 
           {/* Desktop Navigation */}
@@ -46,19 +46,13 @@ export function Header() {
                   href={item.href}
                   aria-current={isActive ? "page" : undefined}
                   className={cn(
-                    "px-3 py-2 rounded-lg text-14 font-medium transition-all duration-150 relative",
+                    "px-3 py-2 rounded-lg text-14 font-medium transition-colors duration-150",
                     isActive
-                      ? "text-accent bg-accent-muted"
-                      : "text-text-tertiary hover:text-accent hover:bg-accent-muted/50",
+                      ? "text-accent"
+                      : "text-text-tertiary hover:text-accent",
                   )}
                 >
                   {item.name}
-                  {isActive && (
-                    <span
-                      className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-4 h-0.5 rounded-full bg-accent shadow-[0_0_8px_rgba(6,182,212,0.5)]"
-                      aria-hidden="true"
-                    />
-                  )}
                 </Link>
               );
             })}
@@ -85,7 +79,7 @@ export function Header() {
         {mobileMenuOpen && (
           <div
             id="mobile-menu"
-            className="md:hidden pb-4 border-t border-accent/20 mt-4 pt-4"
+            className="md:hidden pb-4 border-t border-border mt-4 pt-4"
           >
             <div className="flex flex-col gap-1">
               {navigation.map((item) => {
@@ -96,10 +90,10 @@ export function Header() {
                     href={item.href}
                     aria-current={isActive ? "page" : undefined}
                     className={cn(
-                      "px-4 py-3 rounded-lg text-14 font-medium transition-all duration-150",
+                      "px-4 py-3 rounded-lg text-14 font-medium transition-colors duration-150",
                       isActive
-                        ? "text-accent bg-accent-muted"
-                        : "text-text-tertiary hover:text-accent hover:bg-accent-muted/50",
+                        ? "text-accent"
+                        : "text-text-tertiary hover:text-accent",
                     )}
                     onClick={() => setMobileMenuOpen(false)}
                   >

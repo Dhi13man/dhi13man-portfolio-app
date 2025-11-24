@@ -90,35 +90,33 @@ export default async function Home() {
       <Section noDivider className="py-20">
         <div className="max-w-3xl mx-auto text-center space-y-8">
           {/* Profile Photo */}
-          <div className="flex justify-center animate-scale-in">
-            <div className="relative w-36 h-36 rounded-full overflow-hidden border-2 border-accent/30 shadow-[0_0_40px_rgba(6,182,212,0.2)] p-1 bg-gradient-to-br from-accent/20 to-transparent">
-              <div className="w-full h-full rounded-full overflow-hidden">
-                <Image
-                  src="/assets/me.webp"
-                  alt="Dhiman Seal"
-                  fill
-                  className="object-cover"
-                  sizes="144px"
-                  priority
-                />
-              </div>
+          <div className="flex justify-center">
+            <div className="relative w-36 h-36 rounded-full overflow-hidden border-2 border-border">
+              <Image
+                src="/assets/me.webp"
+                alt="Dhiman Seal"
+                fill
+                className="object-cover"
+                sizes="144px"
+                priority
+              />
             </div>
           </div>
 
           <div className="space-y-4">
-            <h1 className="text-64 font-display font-bold animate-slide-up stagger-1 animate-on-load">
-              <span className="text-gradient">Dhiman Seal</span>
+            <h1 className="text-64 font-display font-bold text-text-primary">
+              Dhiman Seal
             </h1>
-            <p className="text-20 text-text-secondary font-medium animate-slide-up stagger-2 animate-on-load">
+            <p className="text-20 text-text-secondary font-medium">
               {aboutData.tagline}
             </p>
             {/* Social Links */}
-            <div className="flex items-center justify-center gap-3 pt-4 animate-slide-up stagger-3 animate-on-load">
+            <div className="flex items-center justify-center gap-3 pt-4">
               <a
                 href="https://github.com/Dhi13man"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2 rounded-lg text-text-tertiary hover:text-accent hover:bg-accent-muted transition-all duration-150"
+                className="p-2 rounded-lg text-text-tertiary hover:text-accent transition-colors duration-150"
                 aria-label="GitHub Profile"
               >
                 <Github className="w-5 h-5" />
@@ -127,7 +125,7 @@ export default async function Home() {
                 href="https://www.linkedin.com/in/dhi13man/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2 rounded-lg text-text-tertiary hover:text-accent hover:bg-accent-muted transition-all duration-150"
+                className="p-2 rounded-lg text-text-tertiary hover:text-accent transition-colors duration-150"
                 aria-label="LinkedIn Profile"
               >
                 <Linkedin className="w-5 h-5" />
@@ -136,7 +134,7 @@ export default async function Home() {
                 href="https://medium.com/@dhi13man"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2 rounded-lg text-text-tertiary hover:text-accent hover:bg-accent-muted transition-all duration-150"
+                className="p-2 rounded-lg text-text-tertiary hover:text-accent transition-colors duration-150"
                 aria-label="Medium Profile"
               >
                 {/* Medium icon not available in lucide-react */}
@@ -151,7 +149,7 @@ export default async function Home() {
               </a>
               <a
                 href="mailto:dhiman.seal@hotmail.com"
-                className="p-2 rounded-lg text-text-tertiary hover:text-secondary hover:bg-secondary-muted transition-all duration-150"
+                className="p-2 rounded-lg text-text-tertiary hover:text-accent transition-colors duration-150"
                 aria-label="Email"
               >
                 <Mail className="w-5 h-5" />
@@ -178,7 +176,7 @@ export default async function Home() {
 
           {currentProjects.length > 0 && (
             <div className="space-y-4 mb-10">
-              <h3 className="text-14 font-semibold text-accent uppercase tracking-widest">
+              <h3 className="text-14 font-semibold text-text-tertiary uppercase tracking-widest">
                 Active Projects
               </h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -191,7 +189,7 @@ export default async function Home() {
 
           {currentVentures.length > 0 && (
             <div className="space-y-4">
-              <h3 className="text-14 font-semibold text-secondary uppercase tracking-widest">
+              <h3 className="text-14 font-semibold text-text-tertiary uppercase tracking-widest">
                 Active Ventures
               </h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">

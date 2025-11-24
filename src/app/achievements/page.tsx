@@ -33,7 +33,7 @@ export default function AchievementsPage() {
       {/* Honors and Awards */}
       <Section>
         <div className="mb-8">
-          <h2 className="text-14 font-semibold text-accent uppercase tracking-widest mb-3">
+          <h2 className="text-14 font-semibold text-text-tertiary uppercase tracking-widest mb-3">
             Honors & Awards
           </h2>
           <p className="text-14 text-text-tertiary">
@@ -51,7 +51,7 @@ export default function AchievementsPage() {
       {/* Licenses and Certifications */}
       <Section>
         <div className="mb-8">
-          <h2 className="text-14 font-semibold text-secondary uppercase tracking-widest mb-3">
+          <h2 className="text-14 font-semibold text-text-tertiary uppercase tracking-widest mb-3">
             Licenses & Certifications
           </h2>
           <p className="text-14 text-text-tertiary">
@@ -69,7 +69,7 @@ export default function AchievementsPage() {
       {/* Test Scores */}
       <Section>
         <div className="mb-8">
-          <h2 className="text-14 font-semibold text-status-info uppercase tracking-widest mb-3">
+          <h2 className="text-14 font-semibold text-text-tertiary uppercase tracking-widest mb-3">
             Test Scores
           </h2>
           <p className="text-14 text-text-tertiary">

@@ -19,13 +19,13 @@ const TimelineItem = React.forwardRef<HTMLDivElement, TimelineItemProps>(
   ({ className, isLast = false, children, ...props }, ref) => {
     return (
       <div ref={ref} className={cn("relative pl-8", className)} {...props}>
-        {/* Timeline line with gradient */}
+        {/* Timeline line */}
         {!isLast && (
-          <div className="absolute left-[7px] top-[16px] bottom-[-24px] w-[2px] bg-gradient-to-b from-accent/50 to-border" />
+          <div className="absolute left-[7px] top-[16px] bottom-[-24px] w-[2px] bg-border" />
         )}
 
-        {/* Timeline dot with glow */}
-        <div className="absolute left-0 top-[6px] w-4 h-4 rounded-full border-2 border-accent bg-background shadow-[0_0_10px_rgba(6,182,212,0.4)]" />
+        {/* Timeline dot */}
+        <div className="absolute left-0 top-[6px] w-4 h-4 rounded-full border-2 border-accent bg-background" />
 
         {/* Content */}
         <div className="pb-8">{children}</div>

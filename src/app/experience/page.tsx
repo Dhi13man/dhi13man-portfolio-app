@@ -102,7 +102,7 @@ export default function ExperiencePage() {
                             href={link}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="p-2 rounded-lg text-text-tertiary hover:text-accent hover:bg-accent-muted transition-all duration-150"
+                            className="p-2 rounded-lg text-text-tertiary hover:text-accent transition-colors duration-150"
                             aria-label={getLinkLabel(linkType)}
                           >
                             <LinkIcon type={linkType} />
@@ -122,7 +122,7 @@ export default function ExperiencePage() {
               </div>
 
               {/* Roles under this company */}
-              <div className="space-y-6 border-l-2 border-accent/30 pl-4 ml-1">
+              <div className="space-y-6 border-l-2 border-border pl-4 ml-1">
                 {experience.roles.map((role, roleIndex) => (
                   <div key={`${experience.name}-${role.title}-${roleIndex}`}>
                     {/* Role Header */}

@@ -158,7 +158,7 @@ export function TestScoreCard({ testScore }: TestScoreCardProps) {
         </div>
 
         <div className="inline-flex">
-          <span className="text-24 font-bold text-gradient px-3 py-1 bg-accent-muted rounded-lg">
+          <span className="text-24 font-bold text-accent px-3 py-1 bg-surface border border-border rounded-lg">
             {testScore.score}
           </span>
         </div>

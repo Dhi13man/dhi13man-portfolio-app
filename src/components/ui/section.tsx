@@ -11,15 +11,12 @@ const Section = React.forwardRef<HTMLElement, SectionProps>(
       <section
         ref={ref}
         className={cn(
-          "w-full py-16 relative",
-          !noDivider && "border-t border-border/50",
+          "w-full py-16",
+          !noDivider && "border-t border-border",
           className,
         )}
         {...props}
       >
-        {!noDivider && (
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-[1px] bg-gradient-to-r from-transparent via-accent/50 to-transparent" />
-        )}
         <div className="max-w-[1200px] mx-auto px-8">{children}</div>
       </section>
     );

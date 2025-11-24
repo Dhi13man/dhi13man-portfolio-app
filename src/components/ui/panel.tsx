@@ -4,11 +4,10 @@ import { cn } from "@/lib/utils";
 interface PanelProps extends React.HTMLAttributes<HTMLDivElement> {
   hoverable?: boolean;
   noBorder?: boolean;
-  featured?: boolean;
 }
 
 const Panel = React.forwardRef<HTMLDivElement, PanelProps>(
-  ({ className, hoverable = false, noBorder = false, featured = false, ...props }, ref) => {
+  ({ className, hoverable = false, noBorder = false, ...props }, ref) => {
     return (
       <div
         ref={ref}
@@ -16,8 +15,7 @@ const Panel = React.forwardRef<HTMLDivElement, PanelProps>(
           "bg-surface rounded-lg p-4",
           !noBorder && "border border-border",
           hoverable &&
-            "transition-all duration-150 hover:border-accent/30 hover:bg-accent-muted/30 hover:shadow-[0_0_30px_rgba(6,182,212,0.08)]",
-          featured && "border-accent/50 bg-accent-muted/20",
+            "transition-all duration-150 hover:border-accent/50",
           className,
         )}
         {...props}

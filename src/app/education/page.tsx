@@ -100,7 +100,7 @@ export default function EducationPage() {
                             href={link}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="p-2 rounded-lg text-text-tertiary hover:text-accent hover:bg-accent-muted transition-all duration-150"
+                            className="p-2 rounded-lg text-text-tertiary hover:text-accent transition-colors duration-150"
                             aria-label={getLinkLabel(linkType)}
                           >
                             <LinkIcon type={linkType} />
@@ -120,7 +120,7 @@ export default function EducationPage() {
               </div>
 
               {/* Courses under this institution */}
-              <div className="space-y-6 border-l-2 border-secondary/30 pl-4 ml-1">
+              <div className="space-y-6 border-l-2 border-border pl-4 ml-1">
                 {edu.courses.map((course, courseIndex) => (
                   <div key={`${edu.name}-${course.degree}-${courseIndex}`}>
                     {/* Course Header */}
