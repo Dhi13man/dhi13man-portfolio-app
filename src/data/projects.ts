@@ -3,6 +3,35 @@ import type { Project } from "@/types";
 export const projects: Project[] = [
   {
     description:
+      "Model Context Protocol server and client SDK providing AI assistants with seamless access to OOREP - a comprehensive homeopathic repertory and materia medica database.",
+    details: [
+      "Published on npm with TypeScript SDK and comprehensive documentation",
+      "Integrates 12+ classical and contemporary homeopathic repertories with 600+ remedies",
+      "Built with 94.6% test coverage (779+ tests) using Vitest, ensuring production-grade reliability",
+      "Provides structured responses with remedy weights, statistics, and guided symptom analysis workflows",
+      "Zero-dependency architecture with built-in caching, request deduplication, and input sanitization",
+      "Compatible with Claude, OpenAI, Vercel AI SDK, and LangChain through MCP protocol",
+    ],
+    endDate: "Present",
+    links: {
+      primary: "https://github.com/Dhi13man/oorep-mcp",
+      others: [
+        "https://www.npmjs.com/package/oorep-mcp",
+      ],
+    },
+    name: "oorep-mcp: AI-Powered Homeopathic Knowledge Integration",
+    skills: [
+      "TypeScript",
+      "Model Context Protocol",
+      "API Integration",
+      "Healthcare Technology",
+      "Test Driven Development",
+      "SDK Development",
+    ],
+    startDate: "Nov 2024",
+  },
+  {
+    description:
       "AI-powered WhatsApp bot revolutionizing operations for Kirana stores and MSMEs through vernacular language support.",
     details: [
       "National Winner of Tata Imagination Challenge, 2024",
