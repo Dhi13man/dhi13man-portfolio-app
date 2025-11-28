@@ -4,6 +4,7 @@ import { vi, describe, it, expect, beforeEach } from 'vitest'
 import Home from '../page'
 import { fetchGitHubStats } from '@/lib/github'
 import { isDatePresent, parseStartDate } from '@/lib/date'
+import { findEarliestWorkExperience } from '@/lib/experience'
 import type { Project } from '@/types/project'
 import type { Venture } from '@/types/venture'
 import type { Experience } from '@/types/experience'
@@ -42,16 +43,7 @@ describe('Home Page - Unit Tests', () => {
       ]
 
       // Act
-      const earliestWorkExperience = experiences.reduce((earliest, exp) => {
-        if (!exp.roles || exp.roles.length === 0) {
-          return earliest
-        }
-        const expEarliestRole = exp.roles.reduce((earliestRole, role) => {
-          const roleDate = parseStartDate(role.startDate)
-          return roleDate < earliestRole ? roleDate : earliestRole
-        }, parseStartDate(exp.roles[0].startDate))
-        return expEarliestRole < earliest ? expEarliestRole : earliest
-      }, new Date())
+      const earliestWorkExperience = findEarliestWorkExperience(experiences)
 
       // Assert
       expect(earliestWorkExperience.getFullYear()).toBe(2020)
@@ -63,16 +55,7 @@ describe('Home Page - Unit Tests', () => {
       const experiences: Experience[] = []
 
       // Act
-      const earliestWorkExperience = experiences.reduce((earliest, exp) => {
-        if (!exp.roles || exp.roles.length === 0) {
-          return earliest
-        }
-        const expEarliestRole = exp.roles.reduce((earliestRole, role) => {
-          const roleDate = parseStartDate(role.startDate)
-          return roleDate < earliestRole ? roleDate : earliestRole
-        }, parseStartDate(exp.roles[0].startDate))
-        return expEarliestRole < earliest ? expEarliestRole : earliest
-      }, new Date())
+      const earliestWorkExperience = findEarliestWorkExperience(experiences)
 
       // Assert - should return a date close to now (within last second)
       const now = new Date()
@@ -98,16 +81,7 @@ describe('Home Page - Unit Tests', () => {
       ]
 
       // Act
-      const earliestWorkExperience = experiences.reduce((earliest, exp) => {
-        if (!exp.roles || exp.roles.length === 0) {
-          return earliest
-        }
-        const expEarliestRole = exp.roles.reduce((earliestRole, role) => {
-          const roleDate = parseStartDate(role.startDate)
-          return roleDate < earliestRole ? roleDate : earliestRole
-        }, parseStartDate(exp.roles[0].startDate))
-        return expEarliestRole < earliest ? expEarliestRole : earliest
-      }, new Date())
+      const earliestWorkExperience = findEarliestWorkExperience(experiences)
 
       // Assert - should return Jan 2021, not epoch (1970)
       expect(earliestWorkExperience.getFullYear()).toBe(2021)
@@ -144,16 +118,7 @@ describe('Home Page - Unit Tests', () => {
       ]
 
       // Act
-      const earliestWorkExperience = experiences.reduce((earliest, exp) => {
-        if (!exp.roles || exp.roles.length === 0) {
-          return earliest
-        }
-        const expEarliestRole = exp.roles.reduce((earliestRole, role) => {
-          const roleDate = parseStartDate(role.startDate)
-          return roleDate < earliestRole ? roleDate : earliestRole
-        }, parseStartDate(exp.roles[0].startDate))
-        return expEarliestRole < earliest ? expEarliestRole : earliest
-      }, new Date())
+      const earliestWorkExperience = findEarliestWorkExperience(experiences)
 
       // Assert - should find Mar 2021
       expect(earliestWorkExperience.getFullYear()).toBe(2021)
@@ -175,16 +140,7 @@ describe('Home Page - Unit Tests', () => {
       ]
 
       // Act
-      const earliestWorkExperience = experiences.reduce((earliest, exp) => {
-        if (!exp.roles || exp.roles.length === 0) {
-          return earliest
-        }
-        const expEarliestRole = exp.roles.reduce((earliestRole, role) => {
-          const roleDate = parseStartDate(role.startDate)
-          return roleDate < earliestRole ? roleDate : earliestRole
-        }, parseStartDate(exp.roles[0].startDate))
-        return expEarliestRole < earliest ? expEarliestRole : earliest
-      }, new Date())
+      const earliestWorkExperience = findEarliestWorkExperience(experiences)
 
       // Assert - should find Apr 2021 (Junior role)
       expect(earliestWorkExperience.getFullYear()).toBe(2021)
