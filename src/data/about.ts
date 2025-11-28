@@ -42,7 +42,7 @@ export const aboutData: About = {
       description:
         "Architecting elegant solutions to complex societal challenges that grow with demand",
       iconName: "layers",
-      link: "/experiences",
+      link: "/experience",
     },
     {
       number: 2,

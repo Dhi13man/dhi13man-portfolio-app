@@ -63,7 +63,7 @@ export default async function Home() {
     {
       value: `${yearsExperience}+`,
       label: "Years Experience",
-      link: "/experiences",
+      link: "/experience",
     },
     {
       value: formatRepoCount(githubStats.publicRepos),

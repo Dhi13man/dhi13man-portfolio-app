@@ -6,7 +6,7 @@
       "url": [
         "http://localhost:3000/",
         "http://localhost:3000/projects/",
-        "http://localhost:3000/experiences/"
+        "http://localhost:3000/experience/"
       ],
       "numberOfRuns": 3,
       "settings": {

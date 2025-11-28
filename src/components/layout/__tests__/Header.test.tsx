@@ -38,7 +38,7 @@ describe('Header', () => {
       const expectedLinks = [
         { name: 'About', href: '/' },
         { name: 'Ventures', href: '/ventures/' },
-        { name: 'Experiences', href: '/experiences/' },
+        { name: 'Experience', href: '/experience/' },
         { name: 'Projects', href: '/projects/' },
         { name: 'Achievements', href: '/achievements/' },
         { name: 'Recommendations', href: '/recommendations/' },
@@ -62,7 +62,7 @@ describe('Header', () => {
     it.each([
       ['/', 'About'],
       ['/ventures/', 'Ventures'],
-      ['/experiences/', 'Experiences'],
+      ['/experience/', 'Experience'],
       ['/projects/', 'Projects'],
       ['/achievements/', 'Achievements'],
       ['/recommendations/', 'Recommendations'],
@@ -88,7 +88,7 @@ describe('Header', () => {
       render(<Header />)
 
       // Assert
-      const experienceLinks = screen.getAllByRole('link', { name: 'Experiences' })
+      const experienceLinks = screen.getAllByRole('link', { name: 'Experience' })
       expect(experienceLinks[0]).not.toHaveAttribute('aria-current')
     })
   })

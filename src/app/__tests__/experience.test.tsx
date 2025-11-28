@@ -1,6 +1,6 @@
 import React from 'react'
 import { render, screen } from '@testing-library/react'
-import ExperiencePage from '../experiences/page'
+import ExperiencePage from '../experience/page'
 
 // Mock the data module with comprehensive test data
 vi.mock('@/data/experiences', () => ({
