@@ -14,9 +14,9 @@ export const projects: Project[] = [
     ],
     endDate: "Present",
     links: {
-      primary: "https://github.com/Dhi13man/oorep-mcp",
+      primary: "https://www.npmjs.com/package/oorep-mcp",
       others: [
-        "https://www.npmjs.com/package/oorep-mcp",
+        "https://github.com/Dhi13man/oorep-mcp",
       ],
     },
     name: "oorep-mcp: AI-Powered Homeopathic Knowledge Integration",
