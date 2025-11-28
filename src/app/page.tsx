@@ -55,10 +55,16 @@ export default async function Home() {
   // Calculate dynamic highlights
   // Find the earliest work experience start date to calculate years of experience
   const earliestWorkExperience = experiences.reduce((earliest, exp) => {
+    // Skip experiences with no roles
+    if (!exp.roles || exp.roles.length === 0) {
+      return earliest;
+    }
+
     const expEarliestRole = exp.roles.reduce((earliestRole, role) => {
       const roleDate = parseStartDate(role.startDate);
       return roleDate < earliestRole ? roleDate : earliestRole;
-    }, parseStartDate(exp.roles[0]?.startDate ?? ""));
+    }, parseStartDate(exp.roles[0].startDate));
+
     return expEarliestRole < earliest ? expEarliestRole : earliest;
   }, new Date());
 

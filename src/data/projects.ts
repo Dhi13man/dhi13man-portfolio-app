@@ -9,7 +9,7 @@ export const projects: Project[] = [
       "Integrates 12+ classical and contemporary homeopathic repertories with 600+ remedies",
       "Built with 94.6% test coverage (779+ tests) using Vitest, ensuring production-grade reliability",
       "Provides structured responses with remedy weights, statistics, and guided symptom analysis workflows",
-      "Zero-dependency architecture with built-in caching, request deduplication, and input sanitization",
+      "Includes request caching and deduplication for optimal performance and API efficiency",
       "Compatible with Claude, OpenAI, Vercel AI SDK, and LangChain through MCP protocol",
     ],
     endDate: "Present",
