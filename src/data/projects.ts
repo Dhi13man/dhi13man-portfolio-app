@@ -28,7 +28,7 @@ export const projects: Project[] = [
       "Test Driven Development",
       "SDK Development",
     ],
-    startDate: "Nov 2024",
+    startDate: "Nov 2025",
   },
   {
     description:
