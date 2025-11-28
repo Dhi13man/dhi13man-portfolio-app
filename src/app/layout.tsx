@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import "@/styles/globals.css";
 import { Header } from "@/components/layout/Header";
 
@@ -93,13 +94,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth">
-      <head>
-        <script
+      <body className="min-h-screen bg-background font-sans antialiased">
+        {/* JSON-LD Structured Data for SEO */}
+        <Script
+          id="json-ld-person"
           type="application/ld+json"
+          strategy="beforeInteractive"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
-      </head>
-      <body className="min-h-screen bg-background font-sans antialiased">
         {/* Skip to main content link for accessibility (WCAG 2.2 Level A) */}
         <a
           href="#main-content"
