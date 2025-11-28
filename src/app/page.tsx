@@ -7,6 +7,7 @@ import { Github, Linkedin, Mail } from "lucide-react";
 import { aboutData } from "@/data/about";
 import { projects } from "@/data/projects";
 import { ventures } from "@/data/ventures";
+import { experiences } from "@/data/experiences";
 import { isDatePresent, parseStartDate } from "@/lib/date";
 import {
   fetchGitHubStats,
@@ -14,6 +15,7 @@ import {
   formatStarCount,
   formatRepoCount,
 } from "@/lib/github";
+import { findEarliestWorkExperience } from "@/lib/experience";
 import type { AboutHighlight } from "@/types/about";
 
 // Maximum number of initiatives to display per category
@@ -52,7 +54,9 @@ export default async function Home() {
   }
 
   // Calculate dynamic highlights
-  const yearsExperience = calculateYearsExperience(2019);
+  // Find the earliest work experience start date to calculate years of experience
+  const earliestWorkExperience = findEarliestWorkExperience(experiences);
+  const yearsExperience = calculateYearsExperience(earliestWorkExperience.getFullYear());
   const activeInitiatives = currentProjects.length + currentVentures.length;
 
   const highlights: AboutHighlight[] = [

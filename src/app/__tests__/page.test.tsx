@@ -4,14 +4,150 @@ import { vi, describe, it, expect, beforeEach } from 'vitest'
 import Home from '../page'
 import { fetchGitHubStats } from '@/lib/github'
 import { isDatePresent, parseStartDate } from '@/lib/date'
+import { findEarliestWorkExperience } from '@/lib/experience'
 import type { Project } from '@/types/project'
 import type { Venture } from '@/types/venture'
+import type { Experience } from '@/types/experience'
 
 // =============================================================================
 // UNIT TESTS - Business Logic
 // =============================================================================
 
 describe('Home Page - Unit Tests', () => {
+  describe('Earliest Work Experience Calculation', () => {
+    it('should find earliest start date from multiple experiences with multiple roles', () => {
+      // Arrange
+      const experiences: Experience[] = [
+        {
+          name: 'Company A',
+          about: 'Test',
+          roles: [
+            { title: 'Role 1', description: '', startDate: 'Jun 2023', endDate: 'Present', location: '' },
+            { title: 'Role 2', description: '', startDate: 'Jan 2022', endDate: 'May 2023', location: '' },
+          ],
+        },
+        {
+          name: 'Company B',
+          about: 'Test',
+          roles: [
+            { title: 'Role 3', description: '', startDate: 'May 2021', endDate: 'Dec 2021', location: '' },
+          ],
+        },
+        {
+          name: 'Company C',
+          about: 'Test',
+          roles: [
+            { title: 'Role 4', description: '', startDate: 'Oct 2020', endDate: 'Apr 2021', location: '' },
+          ],
+        },
+      ]
+
+      // Act
+      const earliestWorkExperience = findEarliestWorkExperience(experiences)
+
+      // Assert
+      expect(earliestWorkExperience.getFullYear()).toBe(2020)
+      expect(earliestWorkExperience.getMonth()).toBe(9) // October (0-indexed)
+    })
+
+    it('should handle empty experiences array by returning current date', () => {
+      // Arrange
+      const experiences: Experience[] = []
+
+      // Act
+      const earliestWorkExperience = findEarliestWorkExperience(experiences)
+
+      // Assert - should return a date close to now (within last second)
+      const now = new Date()
+      const diffMs = Math.abs(now.getTime() - earliestWorkExperience.getTime())
+      expect(diffMs).toBeLessThan(1000) // Within 1 second
+    })
+
+    it('should skip experiences with empty roles arrays', () => {
+      // Arrange
+      const experiences: Experience[] = [
+        {
+          name: 'Company A',
+          about: 'Test',
+          roles: [], // Empty roles array
+        },
+        {
+          name: 'Company B',
+          about: 'Test',
+          roles: [
+            { title: 'Role 1', description: '', startDate: 'Jan 2021', endDate: 'Present', location: '' },
+          ],
+        },
+      ]
+
+      // Act
+      const earliestWorkExperience = findEarliestWorkExperience(experiences)
+
+      // Assert - should return Jan 2021, not epoch (1970)
+      expect(earliestWorkExperience.getFullYear()).toBe(2021)
+      expect(earliestWorkExperience.getMonth()).toBe(0) // January (0-indexed)
+    })
+
+    it('should handle mix of experiences with and without roles', () => {
+      // Arrange
+      const experiences: Experience[] = [
+        {
+          name: 'Company A',
+          about: 'Test',
+          roles: [], // Empty
+        },
+        {
+          name: 'Company B',
+          about: 'Test',
+          roles: [
+            { title: 'Role 1', description: '', startDate: 'Jun 2022', endDate: 'Present', location: '' },
+          ],
+        },
+        {
+          name: 'Company C',
+          about: 'Test',
+          roles: [], // Empty
+        },
+        {
+          name: 'Company D',
+          about: 'Test',
+          roles: [
+            { title: 'Role 2', description: '', startDate: 'Mar 2021', endDate: 'May 2022', location: '' },
+          ],
+        },
+      ]
+
+      // Act
+      const earliestWorkExperience = findEarliestWorkExperience(experiences)
+
+      // Assert - should find Mar 2021
+      expect(earliestWorkExperience.getFullYear()).toBe(2021)
+      expect(earliestWorkExperience.getMonth()).toBe(2) // March (0-indexed)
+    })
+
+    it('should correctly identify earliest among roles in same experience', () => {
+      // Arrange
+      const experiences: Experience[] = [
+        {
+          name: 'Company A',
+          about: 'Test',
+          roles: [
+            { title: 'Senior', description: '', startDate: 'Jun 2023', endDate: 'Present', location: '' },
+            { title: 'Mid', description: '', startDate: 'Jan 2022', endDate: 'May 2023', location: '' },
+            { title: 'Junior', description: '', startDate: 'Apr 2021', endDate: 'Dec 2021', location: '' },
+          ],
+        },
+      ]
+
+      // Act
+      const earliestWorkExperience = findEarliestWorkExperience(experiences)
+
+      // Assert - should find Apr 2021 (Junior role)
+      expect(earliestWorkExperience.getFullYear()).toBe(2021)
+      expect(earliestWorkExperience.getMonth()).toBe(3) // April (0-indexed)
+    })
+  })
+
   describe('Initiative Filtering Logic', () => {
     it('should filter projects with endDate = Present', () => {
       // Arrange
@@ -187,6 +323,26 @@ vi.mock('@/data/ventures', () => ({
       name: 'Past Venture',
       about: 'A past venture',
       roles: [{ startDate: '2022-01-01', endDate: '2022-12-31', title: 'Former', description: 'Test' }],
+    },
+  ],
+}))
+
+vi.mock('@/data/experiences', () => ({
+  experiences: [
+    {
+      name: 'Company A',
+      about: 'Test company A',
+      roles: [
+        { startDate: 'Jul 2023', endDate: 'Present', title: 'Senior Engineer', description: 'Test', location: 'Remote' },
+        { startDate: 'Jul 2022', endDate: 'Jun 2023', title: 'Engineer', description: 'Test', location: 'Remote' },
+      ],
+    },
+    {
+      name: 'Company B',
+      about: 'Test company B',
+      roles: [
+        { startDate: 'Jan 2021', endDate: 'Jun 2022', title: 'Freelancer', description: 'Test', location: 'Remote' },
+      ],
     },
   ],
 }))
