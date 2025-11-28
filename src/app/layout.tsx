@@ -2,7 +2,11 @@ import type { Metadata } from "next";
 import "@/styles/globals.css";
 import { Header } from "@/components/layout/Header";
 
+const siteUrl = "https://dhimanseal.com";
+const siteImage = `${siteUrl}/assets/me.webp`;
+
 export const metadata: Metadata = {
+  metadataBase: new URL(siteUrl),
   title: "Dhiman Seal - Software Engineer & Entrepreneur",
   description:
     "Tech-obsessed engineer dedicated to simplifying lives through technology. Open-source creator, entrepreneur, and software wizard.",
@@ -21,10 +25,19 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
+    url: siteUrl,
     title: "Dhiman Seal - Software Engineer & Entrepreneur",
     description:
       "Tech-obsessed engineer dedicated to simplifying lives through technology. Open-source creator, entrepreneur, and software wizard.",
     siteName: "Dhiman Seal Portfolio",
+    images: [
+      {
+        url: siteImage,
+        width: 800,
+        height: 800,
+        alt: "Dhiman Seal - Software Engineer & Entrepreneur",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
@@ -32,11 +45,45 @@ export const metadata: Metadata = {
     description:
       "Tech-obsessed engineer dedicated to simplifying lives through technology.",
     creator: "@Dhi13man",
+    images: [siteImage],
   },
   robots: {
     index: true,
     follow: true,
   },
+};
+
+// JSON-LD Structured Data for SEO
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: "Dhiman Seal",
+  alternateName: "Dhi13man",
+  url: siteUrl,
+  image: siteImage,
+  jobTitle: "Software Engineer & Entrepreneur",
+  description:
+    "Tech-obsessed engineer dedicated to simplifying lives through technology. Open-source creator, entrepreneur, and software wizard.",
+  email: "dhiman.seal@hotmail.com",
+  sameAs: [
+    "https://github.com/Dhi13man",
+    "https://www.linkedin.com/in/dhi13man/",
+    "https://medium.com/@dhi13man",
+  ],
+  knowsAbout: [
+    "Java",
+    "Go",
+    "Python",
+    "Node.js",
+    "Flutter",
+    "React",
+    "Next.js",
+    "TypeScript",
+    "Kubernetes",
+    "System Design",
+    "Microservices",
+    "Open Source",
+  ],
 };
 
 export default function RootLayout({
@@ -46,6 +93,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth">
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </head>
       <body className="min-h-screen bg-background font-sans antialiased">
         {/* Skip to main content link for accessibility (WCAG 2.2 Level A) */}
         <a
