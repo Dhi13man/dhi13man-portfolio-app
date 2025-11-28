@@ -9,7 +9,7 @@ import { Menu, X } from "lucide-react";
 const navigation = [
   { name: "About", href: "/" },
   { name: "Ventures", href: "/ventures/" },
-  { name: "Experience", href: "/experience/" },
+  { name: "Experiences", href: "/experiences/" },
   { name: "Projects", href: "/projects/" },
   { name: "Achievements", href: "/achievements/" },
   { name: "Recommendations", href: "/recommendations/" },

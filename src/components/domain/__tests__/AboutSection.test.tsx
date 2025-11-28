@@ -102,12 +102,12 @@ describe('AboutSection', () => {
       const dataWithLinks = {
         ...mockAboutData,
         highlights: [
-          { value: '6+', label: 'Years Experience', link: '/experience' },
+          { value: '6+', label: 'Years Experience', link: '/experiences' },
         ],
       }
       render(<AboutSection data={dataWithLinks} />)
       const link = screen.getByRole('link')
-      expect(link).toHaveAttribute('href', '/experience')
+      expect(link).toHaveAttribute('href', '/experiences')
     })
 
     it('should render highlights with external links', () => {
