@@ -13,6 +13,9 @@ export const projects: Project[] = [
       "Compatible with Claude, OpenAI, Vercel AI SDK, and LangChain through MCP protocol",
     ],
     endDate: "Present",
+    images: {
+      primary: "/assets/projects/oorep_mcp.png"
+    },
     links: {
       primary: "https://www.npmjs.com/package/oorep-mcp",
       others: [
