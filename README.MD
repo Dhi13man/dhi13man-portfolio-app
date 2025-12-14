@@ -96,7 +96,7 @@ npm run build
 
 ## Project Structure
 
-```
+```text
 src/
 ├── app/                    # Next.js App Router pages
 │   ├── page.tsx           # Home page (async Server Component)
@@ -346,17 +346,26 @@ Test coverage target: **95%+**
 
 ### Component Patterns
 
-**UI Components** (`src/components/ui/`)
+#### UI Components
+
+`src/components/ui/`
+
 - Generic, reusable components
 - No business logic
 - Examples: Button, Timeline, Section
 
-**Domain Components** (`src/components/domain/`)
+#### Domain Components
+
+`src/components/domain/`
+
 - Business-specific components
 - Portfolio-related logic
 - Examples: ProjectCard, AboutSection
 
-**Layout Components** (`src/components/layout/`)
+#### Layout Components
+
+`src/components/layout/`
+
 - Page structure components
 - Examples: Header, Navigation
 
@@ -364,38 +373,38 @@ Test coverage target: **95%+**
 
 1. Create file in appropriate directory:
 
-```typescript
-// src/components/domain/NewCard.tsx
-interface NewCardProps {
-  title: string;
-  description: string;
-}
+    ```typescript
+    // src/components/domain/NewCard.tsx
+    interface NewCardProps {
+      title: string;
+      description: string;
+    }
 
-export function NewCard({ title, description }: NewCardProps) {
-  return (
-    <div className="p-4 border border-border rounded-lg">
-      <h3 className="text-16 font-semibold">{title}</h3>
-      <p className="text-14 text-text-secondary">{description}</p>
-    </div>
-  );
-}
-```
+    export function NewCard({ title, description }: NewCardProps) {
+      return (
+        <div className="p-4 border border-border rounded-lg">
+          <h3 className="text-16 font-semibold">{title}</h3>
+          <p className="text-14 text-text-secondary">{description}</p>
+        </div>
+      );
+    }
+    ```
 
 2. Create test file:
 
-```typescript
-// src/components/domain/__tests__/NewCard.test.tsx
-import { render, screen } from '@testing-library/react';
-import { NewCard } from '../NewCard';
+    ```typescript
+    // src/components/domain/__tests__/NewCard.test.tsx
+    import { render, screen } from '@testing-library/react';
+    import { NewCard } from '../NewCard';
 
-describe('NewCard', () => {
-  it('renders title and description', () => {
-    render(<NewCard title="Test" description="Description" />);
-    expect(screen.getByText('Test')).toBeInTheDocument();
-    expect(screen.getByText('Description')).toBeInTheDocument();
-  });
-});
-```
+    describe('NewCard', () => {
+      it('renders title and description', () => {
+        render(<NewCard title="Test" description="Description" />);
+        expect(screen.getByText('Test')).toBeInTheDocument();
+        expect(screen.getByText('Description')).toBeInTheDocument();
+      });
+    });
+    ```
 
 ## Deployment
 
@@ -406,6 +415,7 @@ npm run build
 ```
 
 This creates a static export in `/out`:
+
 1. Compiles TypeScript and React
 2. Fetches GitHub stats
 3. Generates static HTML pages
@@ -458,7 +468,7 @@ Automated checks on every push (`.github/workflows/`):
 
 ### Data Flow
 
-```
+```text
 TypeScript Data Files (src/data/)
         ↓
 Server Components (src/app/)
@@ -483,6 +493,7 @@ export default async function Home() {
 ```
 
 GitHub API features:
+
 - 24-hour cache duration
 - 10-second timeout
 - Rate limit checking
@@ -492,15 +503,18 @@ GitHub API features:
 ### Configuration
 
 **TypeScript** (`tsconfig.json`)
+
 - Target: ES2020
 - Strict mode: Enabled
 - Path alias: `@/*` → `./src/*`
 
 **Next.js** (`next.config.js`)
+
 - Output: Static export
 - Image optimization: Disabled (for static export)
 
 **Tailwind** (`tailwind.config.js`)
+
 - Custom design tokens
 - Utility-first CSS
 
@@ -528,7 +542,7 @@ This codebase is designed for safe AI agent modification.
 
 ### File Organization
 
-```
+```text
 src/
 ├── data/          ← Content changes (safe)
 ├── components/    ← UI changes (safe with tests)
@@ -539,19 +553,22 @@ src/
 
 ### Common Tasks
 
-**Add a project:**
+#### Add a Project
+
 ```typescript
 // src/data/projects.ts - Add to array
 { name: "...", description: "...", ... }
 ```
 
-**Update about section:**
+#### Update About Section
+
 ```typescript
 // src/data/about.ts - Modify fields
 tagline: "New tagline"
 ```
 
-**Add expertise area:**
+#### Add Expertise Area
+
 ```typescript
 // src/data/about.ts - Add to expertise array
 { area: "New Area", skills: ["Skill1", "Skill2"] }
@@ -577,32 +594,38 @@ if (!result.success) {
 
 ### Common Issues
 
-**"Module not found" errors**
+#### Module Not Found Errors
+
 ```bash
 rm -rf node_modules .next
 npm install
 ```
 
-**Build fails with type errors**
+#### Build Fails with Type Errors
+
 ```bash
 npx tsc --noEmit  # See all type errors
 ```
 
-**Tests failing after changes**
+#### Tests Failing After Changes
+
 ```bash
 npm run test:watch  # Run in watch mode to iterate
 ```
 
-**GitHub stats showing "—"**
+#### GitHub Stats Showing Dash
+
 - API rate limited (60 requests/hour for unauthenticated)
 - Network issues during build
 - Check build logs for error message
 
-**Images not loading**
+#### Images Not Loading
+
 - Ensure images are in `public/assets/`
 - Use absolute paths starting with `/`
 
-**Styles not applying**
+#### Styles Not Applying
+
 - Restart dev server after Tailwind config changes
 - Check for typos in class names
 
