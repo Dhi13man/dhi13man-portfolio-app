@@ -4,8 +4,6 @@
 **Version:** 2.0 (Linear Design System)
 **Tech Stack:** Next.js 15 + Tailwind CSS + TypeScript + Linear Design Aesthetic
 
----
-
 ## Table of Contents
 
 1. [Overview](#overview)
@@ -18,8 +16,6 @@
 8. [Performance Standards](#performance-standards)
 9. [Accessibility Requirements](#accessibility-requirements)
 10. [Development Guidelines](#development-guidelines)
-
----
 
 ## Overview
 
@@ -34,8 +30,6 @@ A modern, high-performance portfolio built with industry-standard technologies, 
 3. **Linear Aesthetic**: Flat, precise, minimal, no shadows, information-dense
 4. **Industry Standards**: Next.js + TypeScript + Tailwind for maximum maintainability
 5. **Static Export**: Zero server dependency, deployed to Cloudflare Pages
-
----
 
 ## Technology Stack
 
@@ -167,8 +161,6 @@ npm run build    # Production build → /out directory
 npm run lint     # ESLint check
 ```
 
----
-
 ## Design Philosophy
 
 ### Linear Aesthetic
@@ -190,8 +182,6 @@ npm run lint     # ESLint check
 - **No card shadows** - completely flat
 - **Fixed typography scale** (no fluid clamp)
 - **4px spacing base** for tight layouts
-
----
 
 ## Design Tokens
 
@@ -408,8 +398,6 @@ transitionTimingFunction: {
 }
 ```
 
----
-
 ## Components
 
 ### Panel (Replaces Card)
@@ -540,8 +528,6 @@ const Section = React.forwardRef<HTMLElement, SectionProps>(
 
 **Sizes**: `sm`, `md`, `lg`
 
----
-
 ## Layout System
 
 ### Container Widths
@@ -586,6 +572,7 @@ Between sections: Border-top divider (1px, opacity 0.08)
 ```
 
 Use this pattern when:
+
 - Displaying max 4 items as a preview/summary
 - Items use compact card variants
 - Full list is available on dedicated page
@@ -601,8 +588,6 @@ Use this pattern when:
   ))}
 </Timeline>
 ```
-
----
 
 ## Page Patterns
 
@@ -776,8 +761,6 @@ Use this pattern when:
 </div>
 ```
 
----
-
 ## Performance Standards
 
 ### Core Web Vitals Targets
@@ -816,8 +799,6 @@ All pages statically exported ✅
 - ✅ Reduced motion support
 - ✅ Hydration warning fixed (suppressHydrationWarning on footer date)
 
----
-
 ## Accessibility Requirements
 
 ### WCAG 2.2 AA Compliance
@@ -842,8 +823,6 @@ All pages statically exported ✅
 - Lighthouse Accessibility audit
 - NVDA/VoiceOver screen readers
 - Keyboard-only navigation
-
----
 
 ## Development Guidelines
 
@@ -938,8 +917,6 @@ Environment variables:
   NODE_VERSION: 18
 ```
 
----
-
 ## Troubleshooting
 
 ### Common Issues
@@ -965,8 +942,6 @@ Environment variables:
 - Check ESLint errors: `npm run lint`
 - Verify all imports are correct
 - Ensure no TypeScript errors: `npx tsc --noEmit`
-
----
 
 ## Future Enhancements
 
@@ -1009,8 +984,6 @@ This portfolio intentionally avoids common UI library components that are design
 
 **Reference**: Based on comprehensive industry research (2024-2025) showing portfolio best practices favor minimalism, with average hiring manager attention span of 30 seconds. Content quality > component quantity.
 
----
-
 ## References
 
 - **Linear Design**: <https://linear.app/>
@@ -1018,8 +991,6 @@ This portfolio intentionally avoids common UI library components that are design
 - **Tailwind Docs**: <https://tailwindcss.com/docs>
 - **Inter Font**: <https://rsms.me/inter/>
 - **WCAG 2.2**: <https://www.w3.org/TR/WCAG22/>
-
----
 
 **Document Status**: Complete ✅
 **Last Verified**: 2025-11-19
