@@ -84,7 +84,7 @@ npm run build
 ### Available Scripts
 
 | Command | Description |
-|---------|-------------|
+| ------- | ----------- |
 | `npm run dev` | Start development server with hot reload |
 | `npm run build` | Create optimized production build in `/out` |
 | `npm start` | Serve production build locally |

@@ -986,11 +986,11 @@ This portfolio intentionally avoids common UI library components that are design
 
 ## References
 
-- **Linear Design**: <https://linear.app/>
-- **Next.js Docs**: <https://nextjs.org/docs>
-- **Tailwind Docs**: <https://tailwindcss.com/docs>
-- **Inter Font**: <https://rsms.me/inter/>
-- **WCAG 2.2**: <https://www.w3.org/TR/WCAG22/>
+- [Linear Design](https://linear.app/)
+- [Next.js Docs](https://nextjs.org/docs)
+- [Tailwind Docs](https://tailwindcss.com/docs)
+- [Inter Font](https://rsms.me/inter/)
+- [WCAG 2.2](https://www.w3.org/TR/WCAG22/)
 
 **Document Status**: Complete ✅
 **Last Verified**: 2025-11-19
