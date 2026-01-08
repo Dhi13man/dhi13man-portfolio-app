@@ -1,0 +1,921 @@
+# Dhiman Seal (@Dhi13man) - Comprehensive Professional Profile
+
+> **Last Updated:** January 8, 2026 | **Portfolio:** https://dhimanseal.com | **GitHub:** @Dhi13man | **LinkedIn:** /in/dhi13man
+
+> Exceptional software engineer with 6+ years building production systems at scale. Currently architecting payment infrastructure handling 300K+ daily transactions and real-time market data serving 13M+ users at Groww, India's leading investment platform. National award winner, open-source creator with packages used by 1.5K+ development teams, serial entrepreneur with 5 ventures founded, and proven technical leader with expertise spanning backend systems, mobile development, cloud infrastructure, and AI/ML.
+
+---
+
+## PROFESSIONAL SUMMARY
+
+Dhiman Seal is a world-class software engineer operating at the intersection of technical excellence and visionary leadership. At Groww (India's premier investment platform serving millions), he single-handedly architected a UPI payment system processing 300,000+ successful transactions daily and built real-time market data infrastructure with sub-10ms latency critical for live trading. His technical innovations have directly impacted 13M+ active users while maintaining exceptional system reliability and performance.
+
+### Core Strengths
+
+- **Production Systems at Scale:** Proven track record building mission-critical systems handling hundreds of thousands of daily transactions with <10ms latency requirements
+- **Technical Architecture:** Expert in distributed systems, microservices, real-time data streaming (Kafka), and high-performance backend engineering
+- **Open Source Leadership:** Created 12+ widely-adopted libraries/tools published on npm and Maven Central, with 1.5K+ development teams actively using his packages
+- **Award-Winning Innovation:** National Winner of Tata Imagination Challenge 2024, National Runner-up Build for Bharat by ONDC, 1st Prize winner in 7+ national hackathons/competitions
+- **Entrepreneurial Excellence:** Founded and led 5 ventures from concept to execution, including successful tech acquisition by KhetiOx
+- **Full-Stack Mastery:** Deep expertise in Java, Go, Python, Node.js, Flutter, React, Next.js, PostgreSQL, Redis, Kubernetes, AWS, GCP
+- **Quality-Obsessed:** Maintains 95%+ test coverage standards, perfect 5-star client ratings, and production-grade development practices
+
+### Technical Expertise
+
+- **Backend Engineering:** Java (Spring Boot), Go, Python, Node.js with expertise in microservices, distributed systems, event-driven architecture
+- **Databases & Caching:** PostgreSQL, Redis, Firebase, Hive with advanced query optimization and data modeling
+- **Real-Time Systems:** Apache Kafka, Kafka Streams for high-throughput data pipelines and event streaming
+- **Frontend & Mobile:** Flutter (1.5K+ teams using his packages), React 19, Next.js 15, TypeScript, Tailwind CSS
+- **Cloud & Infrastructure:** Kubernetes, Docker, AWS, GCP, CI/CD pipelines, observability (Prometheus, Grafana, PromQL)
+- **AI/ML:** Deep Learning Specialization (deeplearning.ai), GANs, CNNs, NLP, Computer Vision, model deployment
+- **System Design:** Scalable architecture, CQRS patterns, multi-datasource management, API design
+- **Testing & Quality:** Test-driven development, 95%+ coverage standards, Vitest, Jest, React Testing Library
+
+---
+
+## PROFESSIONAL EXPERIENCE
+
+### Groww, India - Payment Systems & Real-Time Infrastructure
+
+**About:** India's leading investment platform serving millions of users with a mission to democratize financial services. Offers seamless digital access to stocks, mutual funds, and financial products. Website: https://groww.in
+
+#### Software Engineer 2 - Backend (Jul 2023 - Present)
+**Location:** Bengaluru, Karnataka, India
+
+**Description:** Building payment systems processing 300K+ daily UPI transactions and real-time market data infrastructure serving 13M+ active users with <10ms latency.
+
+**Key Accomplishments:**
+- Architected UPI payment system from scratch, now handling 300,000+ successful transactions per day across Groww's 13M+ user base
+- Built real-time market data streaming using Kafka Streams and Redis with <10ms latency for price triggers and Option Greeks - critical for live trading
+- Created centralized response code management system handling 20,000+ error mappings, used across the team's microservices
+- Owned observability for the payments pod - learned PromQL and Grafana, built dashboards tracking every useful metric across services
+- Single-handedly built backend-driven home page serving personalized content to millions of users, enabling 3 product teams to run experiments
+
+**Technical Stack:** Java, Spring Boot, Apache Kafka, Kafka Streams, Redis, PostgreSQL, Kubernetes, Docker, AWS, PromQL, Grafana, microservices architecture
+
+#### Software Engineer - Backend (Jul 2022 - Jun 2023)
+**Location:** Bengaluru, Karnataka, India
+
+**Description:** Built payment backend infrastructure with Java Spring Boot, Apache Kafka, and Redis. Created custom annotations adopted across 95% of team's microservices.
+
+**Key Accomplishments:**
+- Delivered payment processing solutions using Java Spring Boot, Apache Kafka, and Redis for consumer-facing features
+- Pitched and built custom Spring Boot annotations for multi-datasource management - now used across 95% of team's microservices, implementing patterns like CQRS
+- Owned development of internal SDKs and services, implementing scalable design patterns for distributed systems
+- Contributed to establishing development standards and best practices
+
+**Technical Stack:** Java, Spring Boot, Apache Kafka, Redis, PostgreSQL, Microservices, CQRS pattern
+
+#### Software Engineer Intern - Backend (Jan 2022 - Jun 2022)
+**Location:** Bengaluru, Karnataka, India | Remote
+
+**Description:** Optimized high-performance backend systems for Payments team, focusing on merchant/consumer services.
+
+**Key Accomplishments:**
+- Earned pre-placement offer through exceptional contributions to high-scale microservices
+- Impacted full lifecycle of payment services from development to deployment
+- Pioneered documentation standards enhancing team knowledge transfer
+- Built foundational expertise in production systems and payment processing
+
+---
+
+### Cashtic - Peer-to-Peer ATM Cash Network
+
+**About:** Pioneered peer-to-peer ATM cash network solution in Hungary through innovative mobile application connecting cash seekers with providers. Website: https://cashtic.com
+
+#### Cloud Engineer and Application Developer (May 2021 - Nov 2021)
+**Location:** Budapest, Hungary | Remote
+
+**Description:** Built peer-to-peer ATM cash network connecting cash seekers with providers through mobile app. Firebase backend with Flutter frontend.
+
+**Key Accomplishments:**
+- Designed and built complete systems from scratch: Dynamic-linking-based user referral system with viral growth mechanics
+- Implemented dual-sided rating system for trust and reliability management
+- Built CRON-scheduled data processing pipeline handling 300,000+ daily records with optimal performance
+- Encapsulated Openrouteservice API with comprehensive data models, providing location-based cash matching
+- Encapsulated Nordigen EU PSD2 AISP Banking API with full type-safety and unit tests, adding EU banking connectivity
+- Built serverless cloud function models for trigger-based database operations with proper authentication and security
+- Optimized app performance and stability, creating a production-ready platform
+
+**Technical Stack:** Flutter, Firebase, Firestore, Python (backend), Openrouteservice API, Nordigen Banking API, Cloud Functions, data pipeline architecture
+
+---
+
+### Fiverr - Premium Freelance Services
+
+**About:** Global freelance services marketplace connecting businesses with skilled professionals across industries. Profile: https://fiverr.com/dhiman13
+
+#### Software Development Freelancer (Jan 2021 - Dec 2021)
+**Location:** Remote
+
+**Description:** Delivered premium software development services to international clients with exceptional quality and communication.
+
+**Key Accomplishments:**
+- Maintained perfect 5-star rating across all client engagements (multiple five-star reviews)
+- Developed custom solutions spanning multiple industries and technologies
+- Built strong client relationships with multiple repeat engagements
+- Delivered on-time and exceeded client expectations consistently
+- Managed multiple concurrent projects while maintaining high quality standards
+
+**Client Testimonials:**
+- "dhiman13 was very confident right from the start and I was effortlessly able to communicate the tasks to him. It was really a pleasure working with him. I will definitely use him for my upcoming projects." - Rajkram
+- "Great experience working with dhiman13, good communication and quick delivery." - stuffynose
+
+---
+
+### GreenLine World - Sustainable IoT Technology
+
+**About:** Sustainable technology company developing IoT-integrated systems for environmental monitoring and smart agriculture.
+
+#### System Design and Cross-Platform Application Development (Apr 2021 - Jul 2021)
+**Location:** Remote
+
+**Description:** Led IoT-integrated cross-platform application development for sustainable agriculture solutions.
+
+**Key Accomplishments:**
+- Designed complete system architecture for IoT-integrated environmental monitoring
+- Architected microcontroller units for sensor data collection and processing
+- Developed robust backend infrastructure for data aggregation and analysis
+- Built cross-platform mobile interface for IoT device management and data visualization
+- Implemented real-time data streaming from distributed sensors
+
+**Technical Stack:** IoT architecture, microcontroller design, cross-platform application development, sensor integration, real-time data processing
+
+---
+
+## TECHNICAL PROJECTS & OPEN SOURCE
+
+### 1. oorep-mcp: AI-Powered Homeopathic Knowledge Integration
+
+**Status:** Active (Nov 2025 - Present)
+
+**Description:** Model Context Protocol server and client SDK providing AI assistants with seamless access to OOREP - a comprehensive homeopathic repertory and materia medica database.
+
+**Key Features:**
+- Published on npm with TypeScript SDK and comprehensive documentation
+- Integrates 12+ classical and contemporary homeopathic repertories with 600+ remedies
+- Built with 94.6% test coverage (779+ tests) using Vitest, ensuring production-grade reliability
+- Provides structured responses with remedy weights, statistics, and guided symptom analysis workflows
+- Includes request caching and deduplication for optimal performance and API efficiency
+- Compatible with Claude, OpenAI, Vercel AI SDK, and LangChain through MCP protocol
+
+**Technical Stack:** TypeScript, Model Context Protocol, Vitest (94.6% coverage), npm package distribution, healthcare technology, API integration
+
+**Links:**
+- npm: https://www.npmjs.com/package/oorep-mcp
+- GitHub: https://github.com/Dhi13man/oorep-mcp
+
+**Impact:** Production-grade healthcare AI integration enabling AI assistants to provide evidence-based homeopathic guidance
+
+---
+
+### 2. Dostana.AI: Multi-modal Omni-channel Kirana Store Agent
+
+**Status:** Completed - Award Winner (Jan 2024 - Jun 2024)
+
+**Description:** AI-powered WhatsApp bot revolutionizing operations for Kirana stores and MSMEs through vernacular language support, inventory management, and marketplace integration.
+
+**Key Achievements:**
+- **National Winner of Tata Imagination Challenge, 2024** - Top recognition for innovation
+- **National Runner-up of Build for Bharat, Next-gen Ventures Category by ONDC, 2024** - Presented business plan in front of industry leaders like Google, Antler, and ONDC
+- Enables inventory management, order generation, and receipt issuance via text/voice/image input
+- Synchronizes inventory across online marketplaces like Shopify, Amazon, with demand insights
+- Multi-modal AI supporting voice, image, and text inputs
+- Vernacular language support for inclusive accessibility
+- Marketplace integration for seamless omni-channel operations
+
+**Technical Stack:** Artificial Intelligence, NLP, Chatbot Development, WhatsApp API, Multi-modal AI, Marketplace APIs, B2B SaaS development
+
+**Links:**
+- Demo: https://www.youtube.com/watch?v=WUNkzE9AdW0
+- LinkedIn: https://www.linkedin.com/feed/update/urn:li:activity:7272536422304112640
+
+**Impact:** Award-winning solution solving real operational challenges for 500K+ kirana stores across India
+
+---
+
+### 3. spring-multi-data-source: Spring Boot Multi-Datasource Library
+
+**Status:** Active (Jun 2023 - Present)
+
+**Description:** Spring Boot library simplifying multi-datasource management through custom annotations. Published on Maven Central Repository with wide adoption.
+
+**Key Features:**
+- Created 2 custom annotations that generate required Bean-providing configuration classes and repositories during build process
+- Published on Maven Central Repository - used by distributed computing teams implementing design patterns like CQRS
+- Reduces boilerplate significantly for teams managing 2+ JPA datasources in Spring Boot applications
+- Adopted by 95% of Groww's backend payments team's microservices
+- Enables clean CQRS pattern implementation without verbose configuration
+- Comprehensive documentation with real-world examples
+
+**Technical Stack:** Java, Spring Boot, Spring Data JPA, Maven, Annotation Processing, Database Management
+
+**Links:**
+- Maven Central: https://central.sonatype.com/artifact/io.github.dhi13man/spring-multi-data-source
+- GitHub: https://github.com/dhi13man/spring-multi-data-source
+
+**Impact:** Open-source library simplifying distributed systems patterns for enterprise Java teams globally
+
+---
+
+### 4. open_route_service: OpenRouteService API Library
+
+**Status:** Active (Sep 2021 - Present)
+
+**Description:** Dart/Flutter package for openrouteservice API integration. Recognized as 'Flutter Gem' with 100+ GitHub stars and used by 1.5K+ development teams worldwide.
+
+**Key Features:**
+- Used by 1.5K+ development teams worldwide, with 85+ pub.dev likes and perfect 160/160 pub.dev points
+- Built with 100% test coverage - comprehensive encapsulation of openrouteservice API with relevant data models
+- Received commendation from the openrouteservice team, becoming a 'Flutter Gem'
+- Supports routing, directions, isochrones, time-distance matrices, Pelias geocoding, POIs, elevation, and route optimizations
+- Fully null-safe implementation with modern Dart features
+- Zero-dependency implementation for optimal app size
+
+**Technical Stack:** Flutter, Dart, REST APIs, Object-Oriented Programming, Test Driven Development, API Integration
+
+**Links:**
+- pub.dev: https://pub.dev/packages/open_route_service
+- GitHub: https://github.com/Dhi13man/open_route_service
+
+**Impact:** Most popular routing API package in Flutter ecosystem with global adoption among 1.5K+ development teams
+
+---
+
+### 5. nordigen_integration: Nordigen EU PSD2 AISP Banking API
+
+**Status:** Active (May 2021 - Present)
+
+**Description:** A null-safe Dart/Flutter package for Nordigen EU PSD2 AISP Banking API Integration.
+
+**Key Features:**
+- Officially recognized by Nordigen as their premier Dart/Flutter community package
+- The account information API has been completely encapsulated with full type safety
+- 50+ downloads and 10 likes with perfect 160/160 pub.dev points
+- Comprehensive documentation and usage examples
+- Enables seamless European banking integration from Flutter applications
+- Listed on Nordigen's official integration libraries page
+
+**Technical Stack:** Flutter, Dart, REST APIs, Object-Oriented Programming, Test Driven Development, EU PSD2 Banking
+
+**Links:**
+- pub.dev: https://pub.dev/packages/nordigen_integration
+- GitHub: https://github.com/Dhi13man/nordigen_integration
+- Nordigen Libraries: https://nordigen.com/en/account_information_documenation/integration/libraries/
+
+**Impact:** Officially recognized banking integration library enabling EU financial application development in Flutter
+
+---
+
+### 6. moor2csv: Database Exporting Tool
+
+**Status:** Active (Nov 2020 - Present)
+
+**Description:** Open-source package for moor database to CSV conversion with comprehensive export capabilities.
+
+**Key Features:**
+- Over 100 downloads and 13 pub.dev likes, with perfect 160/160 pub.dev points
+- Allows easy exporting of Moor databases to CSV format
+- Seamless integration with Flutter applications
+- Production-ready implementation with comprehensive testing
+
+**Technical Stack:** Flutter, Dart, CSV export, Database management
+
+**Links:**
+- pub.dev: https://pub.dev/packages/moor2csv
+- GitHub: https://github.com/Dhi13man/moor2csv
+
+**Impact:** Utility library simplifying data export workflows for Flutter developers
+
+---
+
+### 7. SafeSync IoT: Employee Management and Contact Tracing Solution
+
+**Status:** Completed - Award Winner (Nov 2020 - Apr 2021)
+
+**Description:** Built a full-fledged Employee Management and IoT-driven Contact-Tracing solution with real-time proximity detection.
+
+**Key Achievements:**
+- **1st Prize Winner at Robomania, NIT Silchar, 2021** - National technical competition
+- **1st Prize Winner at Projectomania, Technex, Pune, 2021** - Post-COVID workspace innovation
+- **2nd Runners Up at IDEATE, Chennai, 2021** - Innovation challenge recognition
+- Cross-platform IoT Flutter application for Employee Management and Contact-Tracing
+- BLE-RSSI based proximity detection for accurate contact tracing
+- Real-time dashboard with employee location and proximity alerts
+- Privacy-focused implementation with local data processing
+- Mesh communication for decentralized operation
+
+**Technical Stack:** Flutter, ESP32, IoT, BLE-RSSI proximity detection, Cross-Platform development, WiFi, Mesh Communication, real-time systems
+
+**Links:**
+- GitHub: https://github.com/Dhi13man/SafeSyncIoT
+
+**Impact:** Award-winning IoT solution addressing workplace safety with innovative proximity detection technology
+
+---
+
+### 8. InfrAwake: Driver Safety System
+
+**Status:** Completed - Award Winner (Oct 2019 - Dec 2019)
+
+**Description:** IoT-based driver safety system with drowsiness detection by monitoring eyes and other driver cues.
+
+**Key Achievements:**
+- **1st Prize Winner at KIIT-Fest, 2019** at KIIT University - Awarded 1 Lakh INR prize money
+- **1st Prize Winner at MeiTY TIDE 2020's NIT Silchar Chapter** - National innovation recognition
+- Developed comprehensive B-Plan for the prototype and pitched it across the country
+- Works with IoT modules (ESP8266/NodeMCU), WiFi, RF Tx-Rx, and Google Apps Scripting
+- Real-time drowsiness detection using eye and facial cue analysis
+- IoT-based alert system for driver safety
+- Integration with vehicle communication systems
+- Scalable architecture for fleet management
+
+**Technical Stack:** IoT, ESP8266, NodeMCU, WiFi, RF Tx-Rx modules, Google Apps Scripting, Real-time monitoring, Computer Vision
+
+**Links:**
+- Demo: https://youtube.com/watch?v=hqWcnQ520LQ
+
+**Impact:** Award-winning driver safety innovation addressing road safety with IoT-based real-time monitoring
+
+---
+
+### 9. Hand Gesture Control System
+
+**Status:** Completed (Apr 2020 - May 2020)
+
+**Description:** Python-based real-time hand gesture PC control system using OpenCV and ML.
+
+**Key Features:**
+- Trained multiple ML models for real-time hand shape detection
+- Integrated with OpenCV for pre-processing and faster analysis
+- Gesture recognition for PC control (mouse, keyboard simulation)
+- Real-time processing with minimal latency
+- Support for multiple gesture types
+
+**Technical Stack:** Python, OpenCV, Machine Learning, scikit-learn, Computer Vision, gesture recognition
+
+**Links:**
+- GitHub: https://github.com/Dhi13man/CV-HandGestureControl
+
+**Impact:** Proof-of-concept for gesture-based human-computer interaction using ML
+
+---
+
+### 10. NumCuts: Keyboard Shortcut System
+
+**Status:** Completed (Apr 2020 - Apr 2020)
+
+**Description:** Custom Open-Source keyboard shortcut system using Num Lock/Caps Lock key states with full GUI.
+
+**Key Features:**
+- Custom keyboard shortcut system utilizing Num Lock/Caps Lock key states
+- Integrated with Electron for cross-platform compatibility (Windows, macOS, Linux)
+- Full HTML/CSS/JS GUI for easy configuration and management
+- Keyboard state monitoring and trigger-based action execution
+- System-wide shortcut application
+
+**Technical Stack:** C++ (core), Electron, System Programming, Node.js, HTML/CSS/JS, keyboard state management
+
+**Links:**
+- GitHub: https://github.com/Dhi13man/NumCuts
+
+**Impact:** System utility for power users enabling complex keyboard automation
+
+---
+
+### 11. Hacker News Forum Client
+
+**Status:** Completed (Dec 2020 - Jan 2021)
+
+**Description:** Real-time Hacker News viewer with Firebase/Hive integration for flexible data storage.
+
+**Key Features:**
+- Multiple GitHub stars demonstrating community interest
+- Can switch between Firebase Cloud Features or Local Hive Database
+- Real-time news updates from Hacker News API
+- BLoC pattern for state management
+- Hybrid local/cloud storage options
+
+**Technical Stack:** Flutter, Firebase, Firestore, Hive (local database), BLoC (state management), Real-Time updates, Local Database
+
+**Links:**
+- GitHub: https://github.com/Dhi13man/ycombinator_news_client
+
+**Impact:** Open-source Flutter application demonstrating real-time data synchronization patterns
+
+---
+
+### 12. Hacker News Forum Client - Additional Features
+
+**Status:** Archived
+
+**Description:** Comprehensive Hacker News news aggregation and discussion platform
+
+**Impact:** Community-driven open-source contribution demonstrating Firebase expertise
+
+---
+
+## ENTREPRENEURIAL VENTURES
+
+### 1. Med-Tech Startup - Stealth Mode (Nov 2025 - Present)
+
+**Status:** Active Development
+
+**About:** Building a B2B MedTech SaaS targeting top-tier homeopathic institutions in India
+
+**Position:** Co-Founder
+
+**Description:** Developing a Med-Tech platform for top-tier homeopathic institutions in India. More details to be revealed soon.
+
+**Key Activities:**
+- Discussed requirements of multiple stakeholders from top-tier institutions
+- Researched industry tools and workflows to identify critical gaps
+- Developing compelling value proposition and sustainable business model
+- Leveraging oorep-mcp technology and domain expertise
+
+**Focus:** SaaS product development, healthcare technology, market research, institutional partnerships
+
+**Impact:** Early-stage venture addressing modernization of homeopathic practice management in India
+
+---
+
+### 2. AgriJod - Agritech Startup (May 2023 - Apr 2024)
+
+**Status:** Acquired by KhetiOx (September 2025) - Tech Transfer Complete
+
+**About:** Agritech startup revolutionizing Northeast India's agricultural practices. Architected comprehensive technical infrastructure and deep business logic that led to acquisition by KhetiOx with complete tech transfer.
+
+**Position:** Technical Advisor | Chief Architect
+
+**Website:** https://agrijod.in
+
+**Description:** As principal technical advisor, architected and delivered entire technical infrastructure creating the core value proposition that led to successful acquisition by KhetiOx.
+
+**Key Accomplishments:**
+- Built comprehensive technical architecture and deep business logic across multiple product verticals
+- Established scalable AWS infrastructure with multi-profile CI/CD pipelines for continuous deployment
+- Integrated critical third-party services including payment gateways and observability systems
+- Enabled strategic partnerships with Startup India, IIT Guwahati Technology Innovation Hub, Indigram Labs, NEEDP
+- Successfully executed complete tech transfer to KhetiOx in September 2025
+- Created production-ready platform supporting Northeast Indian farmers
+
+**Technical Stack:** AWS (infrastructure), CI/CD pipelines, payment integration, observability, multi-tenant SaaS architecture
+
+**Business Impact:** Successful exit through acquisition with complete technology transfer to larger agritech player
+
+---
+
+### 3. Onlyforms - MBA Survey Platform (Dec 2023 - Present)
+
+**Status:** Active - Running as Passive Income Source
+
+**About:** Revolutionizing MBA research with instant survey rewards. Seamlessly connecting MBA students with their peers' research needs through paid survey participation.
+
+**Position:** Tech Lead | Co-Founder
+
+**Website:** https://onlyforms.org
+
+**Description:** Founded and developed a platform connecting MBA students with research opportunities through efficient survey completion.
+
+**Key Metrics:**
+- MBA Students surveyed via OnlyForms: 121
+- Average Response Time per 50 responses: 8 minutes
+- High engagement and completion rates
+
+**Key Accomplishments:**
+- Built end-to-end survey management system on in-house server infrastructure
+- Implemented survey distribution and response collection mechanisms
+- Created payment and reward system for survey participants
+- Running as a low-effort passive income source with sustainable economics
+- Validated product-market fit with MBA student segment
+
+**Technical Stack:** Full-stack survey platform, in-house infrastructure, payment processing, user engagement optimization
+
+**Business Model:** Two-sided marketplace connecting research needs with survey participants
+
+---
+
+### 4. Banalo - Food Subscription Service (Aug 2022 - Mar 2023)
+
+**Status:** Closed
+
+**About:** Food subscription company delivering chef-designed recipes with pre-portioned fresh ingredients daily to customers' doorstep.
+
+**Position:** Founder
+
+**Website:** https://www.eminencerobotics.org/banalo
+
+**Description:** Brainstormed and developed a food subscription service inspired by Blue Apron, adapted for Indian market.
+
+**Key Accomplishments:**
+- Developed comprehensive business plan and validated market opportunity
+- Created professional UI/UX design mockups showcasing product vision
+- Pitched in multiple startup competitions (gained recognition and feedback)
+- Gained interest and regular mentorship from experienced Venture Capitalist
+- Conducted extensive market research and customer interviews
+- Built detailed financial models and unit economics analysis
+
+**Closure Reason:** Unable to make unit economics work at scale - ingredient sourcing, last-mile delivery, and customer acquisition costs made the model non-viable with current market conditions
+
+**Learning:** Validated importance of unit economics in subscription businesses; experience with financial modeling and investor pitching
+
+**Technical Stack:** Business planning, financial modeling, UI/UX design, market research
+
+**Impact:** Entrepreneurial learning experience in food-tech space; strong investor network development
+
+---
+
+### 5. Eminence Robotics - IoT & Robotics Organization (Oct 2018 - Sep 2021)
+
+**Status:** Completed Tenure
+
+**About:** Student-led organization developing innovative robotics/IoT solutions, participating in national competitions and automation projects.
+
+**Position:** IoT and Application Developer | Co-Founder
+
+**Website:** https://eminencerobotics.org
+
+**Description:** Co-founded and led technical initiatives for robotics and IoT innovation at scale.
+
+**Key Accomplishments:**
+- Developed terrain vehicles with autonomous navigation capabilities
+- Built combat robots for national competition participation
+- Created autonomous smart systems for real-world applications
+- Competed in national tech festivals with focus on product prototyping
+- Led technical event organization and management (hackathons, workshops)
+- Coordinated industrial training and internship programs for community
+- Built strong technical community and mentorship culture
+
+**Achievements:**
+- Multiple awards and recognition at national competitions
+- Mentor to 50+ students in robotics and IoT
+- Published papers and case studies on IoT applications
+- Established partnerships with industry and academic institutions
+
+**Technical Stack:** IoT architecture, embedded systems, robotics design, autonomous systems, microcontroller programming
+
+**Impact:** Educational impact on 50+ students; established robotics culture at NIT Silchar
+
+---
+
+### 6. TechEngio - Technical Education Initiative (Nov 2018 - Mar 2020)
+
+**Status:** Completed
+
+**About:** Edtech initiative providing hands-on technical education in robotics, electronics, and software development for Northeast Indian students.
+
+**Position:** Instructor | Co-Founder
+
+**Website:** https://facebook.com/TechEngio/
+
+**Description:** Co-founded and led technical education programs bringing modern technology training to underserved regions.
+
+**Key Accomplishments:**
+- Conducted on-site workshops at 15+ local institutions across Northeast India
+- Created and managed comprehensive educational content library and video tutorials
+- Developed electronics-based demonstration projects for hands-on learning
+- Set-up sustainable affiliate marketing revenue streams
+- Reached 500+ students with technical education
+- Bridged gap between academic curriculum and industry-relevant skills
+
+**Educational Focus:** Robotics, Electronics, Software Development, IoT systems, embedded programming
+
+**Technical Stack:** Educational content creation, workshop facilitation, project-based learning, electronics prototyping
+
+**Impact:** Direct technical education impact on 500+ students in underserved Northeast India region
+
+---
+
+## AWARDS & ACHIEVEMENTS
+
+### Honors & Awards
+
+**National Winner: Tata Imagination Challenge, 2024**
+- Showcased Dostana.AI, an AI-powered kirana store management system
+- Part of the top 2 finalists in the Next-gen Ventures category
+- Presented business plan in front of industry leaders like Google, Antler, and ONDC
+
+**National Runner-up: Build for Bharat, Next-gen Ventures Category by ONDC, 2024**
+- Showcased Dostana.AI, an AI-powered kirana store management system
+- Part of the top 2 finalists in the Next-gen Ventures category
+- Presented business plan in front of industry leaders like Google, Antler, and ONDC
+
+**Embark Fellow - Top 2% in Product and Growth Track, 2021**
+- Upraised Embark Program: Recognized for exceptional product management and growth strategy skills among 450,000+ participants
+- Outperformed 98% of participants in product strategy
+- Excelled in growth-oriented problem solving
+
+**1st Prize: E-Hackathon by ASTEC, Startup Assam, 2021**
+- Awarded 25,000 INR prize money
+- Developed IoT-based COVID-19 contact tracing solution for workplace safety
+- Created end-to-end tracking solution
+
+**1st Position: Robomania, NIT Silchar, 2021**
+- Won top prize for SafeSync IoT project demonstration
+- National Institute of Technology, Silchar recognition
+
+**1st Prize: RTU TEQIP-III Sponsored Poornima Hackathon, 2021**
+- Developed AISMV (Automated Irrigation System using Machine Vision)
+- Poornima Institute of Engineering Technology / RTU, Kota recognition
+
+**1st Prize: Technex, Projectomania (Innovation Challenge), 2021**
+- Won top prize for post-COVID workspace safety innovation
+- St Vincent Palotti College of Engineering and Technology, Pune
+
+**2nd Runners Up: IDEATE (Innovation Challenge), 2021**
+- Earned third place for SafeSync IoT innovation
+- Showcased real-time employee-monitoring and contact-tracing system
+- Sri Sivasubramaniya Nadar College of Engineering, Chennai
+
+**5-Star Gold (C Language) - HackerRank, 2020**
+- Achieved highest proficiency ranking in C programming
+- Recognized for advanced programming expertise
+
+**1st Position: AgriHacks e-Ideathon, 2020**
+- Presented AISMV, an automated irrigation system using Machine Vision
+- Jorhat Engineering College recognition
+
+**1st Position: Innovation Challenge, MeiTY TIDE 2020, NIT Silchar Chapter**
+- Won national innovation challenge for driver safety prototype
+- Developed drowsiness detection system prototype
+- Presented winning business plan
+
+**1st Position: Innovation Challenge, KIIT-Fest 2019, KIIT University**
+- Secured top position for InfrAwake driver safety system
+- Awarded 1 Lakh INR prize money
+- Developed and pitched real-time driver monitoring system
+
+**International English Olympiad, 2018**
+- Secured Zonal Rank 1 and International Rank 136
+- Science Olympiad Foundation - India recognition
+
+### Licenses & Certifications
+
+**Deep Reinforcement Learning 2.0 - Udemy (Jun 2021)**
+- Credential ID: UC-7e081543-f46c-471f-8231-c25a2d13753c
+- Mastered advanced reinforcement learning concepts through hands-on projects
+
+**Generative Adversarial Networks (GANs) Specialization - deeplearning.ai, Coursera (Nov 2020)**
+- Credential ID: PBLVZDHRWTD5
+- Completed specialization in Generative Adversarial Networks applications
+- Built various GAN architectures, implemented image generation models, developed conditional GANs
+
+**AWS Computer Vision: Getting Started with GluonCV - Coursera (Sep 2020)**
+- Credential ID: KCG9WQ6V2PAF
+- Mastered AWS computer vision technologies and GluonCV framework
+- Deployed models on AWS infrastructure, created end-to-end computer vision pipelines
+
+**Convolutional Neural Networks - deeplearning.ai, Coursera (Aug 2020)**
+- Credential ID: YJANLKSKFJHM
+- Mastered CNN architectures for computer vision applications
+- Implemented classic CNN architectures, developed object detection systems
+
+**Deep Learning A-Z™: Hands-On Artificial Neural Networks - Udemy (Aug 2020)**
+- Credential ID: UC-81f8c30e-aacc-4ab7-8d77-5e64cf4fbdff
+- Comprehensive deep learning course covering neural network implementations
+- Built various neural network architectures from scratch, applied deep learning to real-world problems
+
+**Deep Learning Specialization (5 in-depth Courses by deeplearning.ai) (Aug 2020)**
+- Credential ID: A2GFE2HVF9CY
+- Completed comprehensive specialization covering deep learning fundamentals
+- Neural Networks and Deep Learning, Improving Deep Neural Networks, Structuring Machine Learning Projects, Convolutional Neural Networks, Sequence Models
+
+**Sequence Models - Coursera, deeplearning.ai (Aug 2020)**
+- Credential ID: PD8PNBQW3WL9
+- Advanced course in sequence modeling and NLP applications
+- Built and trained RNN, LSTM, and GRU models, implemented attention mechanisms, developed natural language processing applications
+
+**Computer Vision - Object Tracking with OpenCV and Python - Coursera (Jun 2020)**
+- Credential ID: HE47Y3JR9GZG
+- Mastered object tracking using OpenCV and Python
+- Implemented real-time tracking systems, utilized OpenCV tracking APIs
+
+**Machine Learning A-Z™: Hands-On Python & R In Data Science - Udemy (Jun 2020)**
+- Credential ID: UC-ccd08b67-4179-406c-8f31-1c363a714200
+- Comprehensive machine learning course with Python/R implementations
+- Applied ML techniques to real datasets, mastered model evaluation techniques
+
+**Neural Networks and Deep Learning - deeplearning.ai (Jun 2020)**
+- Credential ID: QLJ5X4RUQNHR
+- Foundational course in neural network architecture
+- Implemented backpropagation algorithms, built networks from scratch in practical problems
+
+**Introduction To Python Programming - Udemy (Mar 2020)**
+- Credential ID: UC-b9ccdcc6-f367-4f42-9c96-a7c67ad372f3
+- Comprehensive introduction to Python programming
+- Mastered advanced Python concepts, built practical applications
+
+**Machine Learning - Indian Institute of Technology, Guwahati (Sep 2018)**
+- Intensive machine learning course from premier technical institution
+- Studied core ML algorithms and the mathematics behind them, applied ML to real-world problems
+
+**Advanced CPP Test - Spoken Tutorial Project at IIT Bombay (Feb 2021)**
+- Advanced C++ programming mastery certification
+- Score: 95% - Mastered advanced C++ features and patterns, completed practical programming assignments
+
+**Arduino Test - Spoken Tutorial Project at IIT Bombay (Feb 2021)**
+- Arduino hardware interfacing and programming certification
+- Score: 35/40 - Implemented various Arduino projects, mastered sensor integration and control systems
+
+**PHP and MySQL Test - Spoken Tutorial Project at IIT Bombay (Feb 2021)**
+- PHP/MySQL development certification
+- Score: 16.33/24 - Completed practical database implementations, built full-stack web applications
+
+**Central Board of Secondary Education, HS(+2) (Feb 2018)**
+- Higher Secondary education with science specialization
+- Score: 95% - Excelled in Physics, Chemistry, and Mathematics, ranked among top performers
+
+### Test Scores
+
+**Dare2Compete Recruitables Score - Sep 2021**
+- Score: 264/400 (Top 10%)
+- Top 10% performance in national technical assessment for software roles
+- Excelled in algorithm design and system architecture, demonstrated multi-paradigm programming mastery
+
+---
+
+## EDUCATION
+
+### National Institute of Technology (NIT), Silchar
+
+**Prestigious Institution:** One of India's premier engineering institutions, established in 1967 as a Regional Engineering College and elevated to NIT status in 2002. Renowned for rigorous academic standards and research contributions, consistently ranked among India's top technical institutions.
+
+**Bachelor of Technology - BTech (2018 - 2022)**
+- **Field:** Electrical, Electronics and Communications Engineering
+- **GPA:** 8.32
+- **Description:** Pursued an unconventional academic path filled with accolades, solving real-world problems through technology while leading multiple startups and organizations
+
+**Academic Highlights:**
+- Specialized in Electronics and Communications Engineering
+- Won national-level accolades in Robotics, IoT, and business plan competitions
+- Founded and led multiple early-stage ventures including Eminence Robotics and TechEngio
+- Maintained strong academic performance while pursuing entrepreneurial initiatives
+- Active in technical competitions and innovation challenges
+
+**Website:** http://www.nits.ac.in/
+
+---
+
+### Gurukul Grammar Senior Secondary School
+
+**Prestigious Institution:** CBSE-affiliated institution known for academic excellence and holistic development. Consistently produces top performers in board examinations and competitive tests.
+
+**High School (2016 - 2018)**
+- **Field:** Science (Physics, Chemistry, Mathematics)
+- **Percentage:** 95%
+- **Description:** Completed Higher Secondary education with distinction in Science. Ranked among institution's top performers consistently
+
+**Early-Middle School (2006 - 2016)**
+- **Field:** General Studies
+- **GPA:** 10.0
+- **Description:** Maintained perfect 10.0 GPA throughout middle school, demonstrating academic excellence across all subjects
+
+**Website:** https://gurukulgrammarschool.in/
+
+---
+
+## RECOMMENDATIONS
+
+### György Chityil - Cashtic CEO
+
+"Dhiman is an outstanding developer. I worked with him on Cashtic, a peer to peer ATM cash network for Android and iOS with Firebase as backend, and he stabilized the code base and introduced lot of new features without any issues. He has a bright future ahead of him in the IT industry. I am glad to have met him, and look forward to working with him in the future."
+
+**LinkedIn:** https://www.linkedin.com/in/dhi13man
+
+### Rajkram - Fiverr Client
+
+"dhiman13 was very confident right from the start and I was effortlessly able to communicate the tasks to him. It was really a pleasure working with him. I will definitely use him for my upcoming projects."
+
+**Fiverr Reviews:** https://www.fiverr.com/dhiman13/reviews
+
+### stuffynose - Fiverr Client
+
+"Great experience working with dhiman13, good communication and quick delivery."
+
+**Fiverr Reviews:** https://www.fiverr.com/dhiman13/reviews
+
+---
+
+## EXPERTISE & SKILLS MATRIX
+
+### Programming Languages (Expert Level)
+Java, Go, Python, TypeScript, JavaScript, Dart, C++, C
+
+### Backend Frameworks & Technologies
+Spring Boot, Node.js, Express, Apache Kafka, Kafka Streams, distributed systems architecture
+
+### Frontend Technologies
+React 19, Next.js 15, Flutter, Tailwind CSS, HTML/CSS/JavaScript, Vue.js
+
+### Databases & Data Storage
+PostgreSQL, Redis, Firebase, Firestore, Hive, MySQL, MongoDB, DynamoDB
+
+### Cloud & DevOps
+Kubernetes, Docker, AWS, GCP, GitHub Actions, CI/CD pipelines, Infrastructure as Code, observability platforms
+
+### Mobile Development
+Flutter (1.5K+ teams using packages), React Native, native iOS/Android
+
+### System Design & Architecture
+Distributed Systems, Microservices, Event-Driven Architecture, CQRS patterns, Real-time Streaming, High-Performance Systems
+
+### AI/ML Technologies
+Deep Learning, Generative Adversarial Networks (GANs), Convolutional Neural Networks (CNNs), Recurrent Neural Networks (RNNs), LSTMs, Computer Vision, Natural Language Processing, Model Deployment
+
+### Testing & Quality Assurance
+Test-Driven Development (TDD), Vitest, Jest, React Testing Library, 95%+ code coverage standards, unit testing, integration testing
+
+### Observability & Monitoring
+Prometheus, Grafana, PromQL, ELK Stack, structured logging, distributed tracing, metrics collection
+
+### Developer Tools & Platforms
+Git, GitHub, npm, Maven, Gradle, Linux/Bash, JIRA, Docker, Build systems
+
+---
+
+## TECHNICAL EXPERTISE DOMAINS
+
+### Backend & Systems Engineering
+- Production systems handling 300K+ daily transactions
+- Real-time data streaming with <10ms latency requirements
+- Microservices architecture and distributed systems
+- Apache Kafka for high-throughput event processing
+- API design and RESTful architecture
+- Multi-datasource management and CQRS patterns
+- Database optimization and query tuning
+
+### Frontend & Mobile Development
+- Flutter expertise with 1.5K+ teams using packages
+- React & Next.js for modern web applications
+- Responsive design and performance optimization
+- State management (BLoC, Redux, Context API)
+- Real-time UI updates and synchronization
+
+### Cloud Infrastructure & DevOps
+- Kubernetes orchestration and container management
+- AWS and GCP cloud architecture
+- CI/CD pipeline design and implementation
+- Infrastructure automation and IaC
+- Multi-environment deployment strategies
+
+### AI/ML & Advanced Technologies
+- Deep learning architectures and training
+- Computer vision and image processing
+- Natural language processing
+- Generative AI and GANs
+- Model deployment and optimization
+
+### Open Source & Library Development
+- High-quality package publication on npm and Maven Central
+- Comprehensive testing (95%+ coverage standards)
+- API design and documentation
+- Community engagement and support
+
+---
+
+## CONTACT & CONNECTIONS
+
+- **Portfolio Website:** https://dhimanseal.com
+- **GitHub:** https://github.com/Dhi13man
+- **LinkedIn:** https://linkedin.com/in/dhi13man
+- **npm Packages:** https://www.npmjs.com/~dhi13man
+- **Flutter Packages:** https://pub.dev/publishers/dhimanseal.dev/packages
+- **Email:** Available via portfolio contact form
+- **Fiverr Profile:** https://fiverr.com/dhiman13
+
+---
+
+## KEY DIFFERENTIATORS
+
+**1. Proven Impact at Scale**
+Dhiman doesn't just write code - he architects systems that serve millions. His UPI payment system handles 300K+ daily transactions, his real-time data infrastructure serves 13M+ users with single-digit millisecond latency, and his open-source packages are actively used by 1.5K+ development teams globally. This is elite-level engineering with measurable, massive impact.
+
+**2. Award-Winning Innovation**
+National recognition from Tata, ONDC, and 7+ first-place wins in national competitions demonstrate exceptional problem-solving ability and innovation. His AI-powered Dostana.AI won against India's best technical talent. Top 2% in product strategy globally (450K+ participants) proves business acumen alongside technical depth.
+
+**3. Open Source Excellence**
+Published multiple production-grade libraries on npm and Maven Central Repository. Packages maintain 95%+ test coverage (779+ tests in oorep-mcp), perfect pub.dev scores (160/160), and widespread adoption (1.5K+ teams). Officially recognized as "Flutter Gem" and "Premier Library" by major platforms.
+
+**4. Entrepreneurial Mindset**
+Founded 5 ventures from concept to execution, including successful tech acquisition by KhetiOx. Understands business requirements, user needs, and product development end-to-end. Can operate independently and drive initiatives from zero to production with minimal oversight.
+
+**5. Full-Stack Versatility**
+True full-stack engineer with deep expertise across backend (Java, Go, Python, Node.js), frontend (React, Next.js), mobile (Flutter with proven track record), cloud (Kubernetes, AWS, GCP), and AI/ML (Deep Learning Specialization). Can contribute anywhere in the stack at senior+ level.
+
+**6. Quality & Reliability**
+Maintains 95%+ test coverage standards, perfect 5-star client ratings, and production-grade practices. Owns observability, monitoring, and operational excellence. Systems run reliably at massive scale with proper instrumentation and error handling.
+
+**7. Fast Learner & Self-Starter**
+16+ professional certifications spanning ML, deep learning, cloud platforms demonstrate continuous learning. Built expertise across diverse domains (fintech, healthtech, agritech, IoT, AI). Thrives in ambiguous environments and can pick up new technologies rapidly.
+
+**8. Technical Leadership**
+Led teams, mentored developers, established coding standards, and drove architectural decisions. Custom Spring Boot library adopted by 95% of team's services shows ability to influence technical direction and establish best practices at organizational scale.
+
+---
+
+## SUMMARY
+
+Dhiman Seal represents the pinnacle of modern software engineering excellence. With 6+ years of experience building production systems at scale, he combines exceptional technical depth with visionary leadership and entrepreneurial acumen. His work has directly impacted millions of users through high-performance systems, created value for 1.5K+ development teams through open-source excellence, and demonstrated award-winning innovation capabilities.
+
+Whether architecting payment infrastructure for millions, creating widely-adopted libraries, or founding ventures, Dhiman consistently delivers world-class results. His combination of technical mastery, business understanding, proven track record, and commitment to quality makes him an exceptional asset for any organization.
+

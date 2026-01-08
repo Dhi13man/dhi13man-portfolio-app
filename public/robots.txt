@@ -1,4 +1,77 @@
+# Default policy - Allow all web crawlers
 User-agent: *
 Allow: /
 
-Sitemap: https://dhimanseal.com/data/sitemap.xml
+# Sitemap locations
+Sitemap: https://dhimanseal.com/sitemap.xml
+Sitemap: https://dhimanseal.com/llms.txt
+
+# AI Training & Search Crawlers - Explicitly Welcome
+# OpenAI Crawlers
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+# Anthropic (Claude) Crawlers
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: claude-web
+Allow: /
+
+# Google AI & Gemini
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Googlebot-Image
+Allow: /
+
+# Perplexity AI
+User-agent: PerplexityBot
+Allow: /
+
+# Common Crawl (used in LLM training)
+User-agent: CCBot
+Allow: /
+
+# Other Major AI Platforms
+User-agent: Amazonbot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+User-agent: cohere-ai
+Allow: /
+
+User-agent: Diffbot
+Allow: /
+
+User-agent: FacebookBot
+Allow: /
+
+User-agent: ImagesiftBot
+Allow: /
+
+User-agent: Omgilibot
+Allow: /
+
+User-agent: Omgili
+Allow: /
+
+User-agent: YouBot
+Allow: /
+
+# Crawl rate hint for AI crawlers
+Crawl-delay: 1

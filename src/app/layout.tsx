@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: "Dhiman Seal - Software Engineer & Entrepreneur",
   description:
-    "Tech-obsessed engineer dedicated to simplifying lives through technology. Open-source creator, entrepreneur, and software wizard.",
+    "Elite software engineer with 6+ years at scale: 300K+ daily transactions at Groww, 13M+ users served, National award winner (Tata Imagination Challenge 2024), open-source creator (1.5K+ teams using packages). Expert in Java, Go, Python, Flutter, React, Kubernetes, distributed systems.",
   keywords: [
     "Dhiman Seal",
     "Software Engineer",
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     url: siteUrl,
     title: "Dhiman Seal - Software Engineer & Entrepreneur",
     description:
-      "Tech-obsessed engineer dedicated to simplifying lives through technology. Open-source creator, entrepreneur, and software wizard.",
+      "Elite software engineer with 6+ years at scale: 300K+ daily transactions at Groww, 13M+ users served, National award winner (Tata Imagination Challenge 2024), open-source creator (1.5K+ teams using packages).",
     siteName: "Dhiman Seal Portfolio",
     images: [
       {
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Dhiman Seal - Software Engineer & Entrepreneur",
     description:
-      "Tech-obsessed engineer dedicated to simplifying lives through technology.",
+      "Elite engineer: 300K+ daily transactions, 13M+ users, National award winner, 1.5K+ teams using packages.",
     creator: "@Dhi13man",
     images: [siteImage],
   },
@@ -53,23 +53,34 @@ export const metadata: Metadata = {
   },
 };
 
-// JSON-LD Structured Data for SEO
-const jsonLd = {
+// JSON-LD Structured Data for AI Agents & SEO
+const personSchema = {
   "@context": "https://schema.org",
   "@type": "Person",
   name: "Dhiman Seal",
-  alternateName: "Dhi13man",
+  alternateName: ["Dhi13man", "@Dhi13man"],
   url: siteUrl,
   image: siteImage,
-  jobTitle: "Software Engineer & Entrepreneur",
+  jobTitle: "Software Engineer 2 - Backend",
   description:
-    "Tech-obsessed engineer dedicated to simplifying lives through technology. Open-source creator, entrepreneur, and software wizard.",
+    "Elite software engineer with 6+ years building production systems at scale. Currently architecting payment infrastructure handling 300K+ daily transactions and real-time market data serving 13M+ users at Groww. National award winner, open-source creator with packages used by 1.5K+ development teams.",
   email: "dhiman.seal@hotmail.com",
-  sameAs: [
-    "https://github.com/Dhi13man",
-    "https://www.linkedin.com/in/dhi13man/",
-    "https://medium.com/@dhi13man",
-  ],
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Bengaluru",
+    addressRegion: "Karnataka",
+    addressCountry: "IN",
+  },
+  alumniOf: {
+    "@type": "EducationalOrganization",
+    name: "National Institute of Technology Silchar",
+    url: "https://www.nits.ac.in/",
+  },
+  worksFor: {
+    "@type": "Organization",
+    name: "Groww",
+    url: "https://groww.in",
+  },
   knowsAbout: [
     "Java",
     "Go",
@@ -79,11 +90,95 @@ const jsonLd = {
     "React",
     "Next.js",
     "TypeScript",
+    "Spring Boot",
     "Kubernetes",
     "System Design",
     "Microservices",
-    "Open Source",
+    "Distributed Systems",
+    "Real-time Data Streaming",
+    "Apache Kafka",
+    "PostgreSQL",
+    "Redis",
+    "Payment Systems",
+    "Open Source Development",
+    "Cloud Architecture",
+    "AWS",
+    "GCP",
+    "Docker",
+    "CI/CD",
   ],
+  sameAs: [
+    "https://github.com/Dhi13man",
+    "https://www.linkedin.com/in/dhi13man/",
+    "https://medium.com/@dhi13man",
+    "https://twitter.com/Dhi13man",
+    "https://www.npmjs.com/~dhi13man",
+    "https://pub.dev/publishers/dhimanseal.dev/packages",
+  ],
+  hasCredential: [
+    {
+      "@type": "EducationalOccupationalCredential",
+      name: "Deep Learning Specialization",
+      credentialCategory: "certificate",
+      recognizedBy: {
+        "@type": "Organization",
+        name: "deeplearning.ai",
+      },
+    },
+    {
+      "@type": "EducationalOccupationalCredential",
+      name: "Generative Adversarial Networks (GANs) Specialization",
+      credentialCategory: "certificate",
+      recognizedBy: {
+        "@type": "Organization",
+        name: "deeplearning.ai",
+      },
+    },
+  ],
+  award: [
+    "National Winner - Tata Imagination Challenge 2024",
+    "National Runner-up - Build for Bharat by ONDC 2024",
+    "Top 2% Globally - Product Strategy (Upraised Embark Program)",
+    "1st Prize - KIIT-Fest 2019 (1 Lakh INR)",
+    "1st Prize - E-Hackathon by ASTEC, Startup Assam 2021",
+    "1st Prize - Robomania, NIT Silchar 2021",
+    "1st Prize - RTU TEQIP-III Sponsored Poornima Hackathon 2021",
+    "1st Prize - Technex Projectomania Innovation Challenge 2021",
+  ],
+};
+
+const websiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: "Dhiman Seal Portfolio",
+  alternateName: "Dhi13man Portfolio",
+  url: siteUrl,
+  description:
+    "Professional portfolio showcasing 6+ years of software engineering excellence, including payment systems handling 300K+ daily transactions, open-source projects used by 1.5K+ teams, and national award-winning innovations.",
+  author: {
+    "@type": "Person",
+    name: "Dhiman Seal",
+  },
+  inLanguage: "en-US",
+};
+
+const profilePageSchema = {
+  "@context": "https://schema.org",
+  "@type": "ProfilePage",
+  mainEntity: {
+    "@id": `${siteUrl}#person`,
+  },
+  url: siteUrl,
+  name: "Dhiman Seal - Software Engineer & Entrepreneur",
+  description:
+    "Elite software engineer with 6+ years at scale: payment systems handling 300K+ daily transactions, real-time infrastructure serving 13M+ users, open-source packages used by 1.5K+ teams, National award winner.",
+  dateModified: "2026-01-08",
+};
+
+// Combine all schemas using @graph for optimal AI parsing
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [personSchema, websiteSchema, profilePageSchema],
 };
 
 export default function RootLayout({
