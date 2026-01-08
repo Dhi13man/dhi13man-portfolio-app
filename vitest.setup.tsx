@@ -10,9 +10,9 @@ expect.extend(axeMatchers)
 vi.mock('next/image', () => ({
   default: (props: Record<string, unknown>) => {
     // Filter out Next.js specific props that cause warnings
-    // Using underscore prefix for intentionally unused variables
-    const { fill, priority, sizes: _sizes, quality: _quality, placeholder: _placeholder, blurDataURL: _blurDataURL, loader: _loader, ...imgProps } = props
-    // eslint-disable-next-line @next/next/no-img-element
+    const { fill, priority, sizes, quality, placeholder, blurDataURL, loader, ...imgProps } = props
+    // Acknowledge intentionally unused variables
+    void sizes; void quality; void placeholder; void blurDataURL; void loader;
     return React.createElement('img', {
       ...imgProps,
       alt: (props.alt as string) || '',
