@@ -1,0 +1,132 @@
+{
+  "@context": "https://a2a-protocol.org/context",
+  "@type": "AgentCard",
+  "name": "Dhiman Seal Portfolio Agent",
+  "description": "AI agent providing comprehensive information about Dhiman Seal's professional experience, technical projects, awards, skills, and capabilities. Elite software engineer with 6+ years building production systems at scale.",
+  "version": "1.0.0",
+  "lastUpdated": "2026-01-08",
+  "provider": {
+    "name": "Dhiman Seal",
+    "alternateName": ["Dhi13man", "@Dhi13man"],
+    "url": "https://dhimanseal.com",
+    "email": "dhiman.seal@hotmail.com",
+    "location": {
+      "city": "Bengaluru",
+      "region": "Karnataka",
+      "country": "India"
+    }
+  },
+  "capabilities": [
+    "portfolio-information",
+    "professional-experience-summary",
+    "technical-project-details",
+    "open-source-contribution-data",
+    "award-and-achievement-verification",
+    "skill-assessment",
+    "entrepreneurial-venture-information",
+    "education-and-certification-data",
+    "recommendation-retrieval",
+    "contact-routing"
+  ],
+  "specializations": [
+    "Backend Engineering (Java, Go, Python, Node.js)",
+    "Payment Systems (300K+ daily transactions)",
+    "Real-time Data Streaming (Kafka, <10ms latency)",
+    "Distributed Systems & Microservices",
+    "Mobile Development (Flutter, React Native)",
+    "Cloud Architecture (Kubernetes, AWS, GCP)",
+    "Open Source Development (1.5K+ teams using packages)",
+    "System Design & Scalability",
+    "Full-Stack Development",
+    "AI/ML Engineering"
+  ],
+  "endpoints": {
+    "portfolio": "https://dhimanseal.com",
+    "llms": "https://dhimanseal.com/llms.txt",
+    "llmsFull": "https://dhimanseal.com/llms-full.txt",
+    "experience": "https://dhimanseal.com/experience",
+    "projects": "https://dhimanseal.com/projects",
+    "ventures": "https://dhimanseal.com/ventures",
+    "achievements": "https://dhimanseal.com/achievements",
+    "education": "https://dhimanseal.com/education",
+    "recommendations": "https://dhimanseal.com/recommendations"
+  },
+  "metadata": {
+    "yearsOfExperience": "6+",
+    "currentRole": "Software Engineer 2 - Backend",
+    "currentCompany": "Groww",
+    "expertise": [
+      "Software Engineering",
+      "Full-Stack Development",
+      "Backend Systems",
+      "Distributed Systems",
+      "Payment Infrastructure",
+      "Real-time Data Processing",
+      "Cloud Architecture",
+      "Mobile Development",
+      "Open Source",
+      "Entrepreneurship"
+    ],
+    "languages": [
+      "Java",
+      "Go",
+      "Python",
+      "Node.js",
+      "TypeScript",
+      "Dart",
+      "C++",
+      "JavaScript"
+    ],
+    "frameworks": [
+      "Spring Boot",
+      "React",
+      "Next.js",
+      "Flutter",
+      "Kafka",
+      "Redis",
+      "Kubernetes"
+    ],
+    "achievements": {
+      "nationalAwards": [
+        "National Winner - Tata Imagination Challenge 2024",
+        "National Runner-up - Build for Bharat by ONDC 2024"
+      ],
+      "scale": {
+        "dailyTransactions": "300K+",
+        "usersServed": "13M+",
+        "teamsUsingPackages": "1.5K+",
+        "venturesFounded": 5,
+        "openSourceProjects": 11
+      },
+      "rankings": {
+        "productStrategy": "Top 2% globally (450K+ participants)",
+        "technicalAssessment": "Top 10% nationally"
+      }
+    },
+    "availability": "open-to-opportunities",
+    "preferredContactMethod": "portfolio-form-or-linkedin",
+    "responseTime": "typically within 24-48 hours"
+  },
+  "socialProfiles": {
+    "github": "https://github.com/Dhi13man",
+    "linkedin": "https://linkedin.com/in/dhi13man",
+    "medium": "https://medium.com/@dhi13man",
+    "twitter": "https://twitter.com/Dhi13man",
+    "npm": "https://www.npmjs.com/~dhi13man",
+    "pubDev": "https://pub.dev/publishers/dhimanseal.dev/packages"
+  },
+  "verificationData": {
+    "githubStars": "100+",
+    "pubDevPoints": "160/160 (perfect score)",
+    "fiverrRating": "5.0/5.0 stars",
+    "packageDownloads": "1.5K+ development teams",
+    "testCoverage": "95%+ standard",
+    "certifications": "16+ professional certifications"
+  },
+  "compliance": {
+    "dataPrivacy": "GDPR-compliant",
+    "accessibility": "WCAG 2.2 Level AA",
+    "schemaOrg": "Implemented with JSON-LD",
+    "llmsTxt": "Available at /llms.txt and /llms-full.txt"
+  }
+}

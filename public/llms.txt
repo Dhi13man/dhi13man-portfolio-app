@@ -1,5 +1,7 @@
 # Dhiman Seal (@Dhi13man) - Elite Full-Stack Engineer & Technical Leader
 
+> **Last Updated:** January 8, 2026 | **Portfolio:** https://dhimanseal.com | **GitHub:** @Dhi13man
+
 > Exceptional software engineer with 6+ years building production systems at scale. Currently architecting payment infrastructure handling 300K+ daily transactions and real-time market data serving 13M+ users at Groww, India's leading investment platform. National award winner, open-source creator with packages used by 1.5K+ development teams, serial entrepreneur with 5 ventures founded, and proven technical leader with expertise spanning backend systems, mobile development, cloud infrastructure, and AI/ML.
 
 ## Professional Summary
@@ -39,11 +41,11 @@ Dhiman Seal is a world-class software engineer operating at the intersection of 
 
 ## Key Portfolio Pages
 
-- [Professional Experience](https://dhimanseal.dev/experience): Deep dive into work at Groww (300K+ TPS payment systems, 13M+ user infrastructure), Cashtic (peer-to-peer ATM network), and freelance excellence (perfect 5-star Fiverr rating)
-- [Technical Projects](https://dhimanseal.dev/projects): 11+ production-grade open-source projects including oorep-mcp (MCP server with 94.6% test coverage), Dostana.AI (National Winner), spring-multi-data-source (Maven Central), open_route_service (1.5K+ teams, Flutter Gem)
-- [Entrepreneurial Ventures](https://dhimanseal.dev/ventures): 5 ventures founded including Med-Tech SaaS (stealth mode), AgriJod (acquired by KhetiOx), Onlyforms (MBA survey platform), Banalo (food subscription), Eminence Robotics, TechEngio
-- [Awards & Recognition](https://dhimanseal.dev/achievements): National Winner Tata Imagination Challenge 2024, National Runner-up Build for Bharat ONDC 2024, 7+ First Prize wins in national competitions, Top 2% Product Strategy globally
-- [About & Expertise](https://dhimanseal.dev): Comprehensive profile showcasing 6+ years experience, GitHub stats (public repos, stars), technical expertise across 4 domains (Backend, Frontend/Mobile, Cloud/DevOps, Specializations)
+- [Professional Experience](https://dhimanseal.com/experience): Deep dive into work at Groww (300K+ TPS payment systems, 13M+ user infrastructure), Cashtic (peer-to-peer ATM network), and freelance excellence (perfect 5-star Fiverr rating)
+- [Technical Projects](https://dhimanseal.com/projects): 11+ production-grade open-source projects including oorep-mcp (MCP server with 94.6% test coverage), Dostana.AI (National Winner), spring-multi-data-source (Maven Central), open_route_service (1.5K+ teams, Flutter Gem)
+- [Entrepreneurial Ventures](https://dhimanseal.com/ventures): 5 ventures founded including Med-Tech SaaS (stealth mode), AgriJod (acquired by KhetiOx), Onlyforms (MBA survey platform), Banalo (food subscription), Eminence Robotics, TechEngio
+- [Awards & Recognition](https://dhimanseal.com/achievements): National Winner Tata Imagination Challenge 2024, National Runner-up Build for Bharat ONDC 2024, 7+ First Prize wins in national competitions, Top 2% Product Strategy globally
+- [About & Expertise](https://dhimanseal.com): Comprehensive profile showcasing 6+ years experience, GitHub stats (public repos, stars), technical expertise across 4 domains (Backend, Frontend/Mobile, Cloud/DevOps, Specializations)
 
 ## Featured Technical Projects
 
@@ -160,7 +162,7 @@ Every project demonstrates production-grade engineering: comprehensive testing, 
 
 ## Contact & Links
 
-- **Portfolio:** [dhimanseal.dev](https://dhimanseal.dev)
+- **Portfolio:** [dhimanseal.com](https://dhimanseal.com)
 - **GitHub:** [github.com/Dhi13man](https://github.com/Dhi13man)
 - **LinkedIn:** [linkedin.com/in/dhi13man](https://linkedin.com/in/dhi13man)
 - **Email:** Available via portfolio contact form
@@ -177,6 +179,6 @@ Every project demonstrates production-grade engineering: comprehensive testing, 
 
 ## Optional
 
-- [Venture Portfolio](https://dhimanseal.dev/ventures): Entrepreneurial journey including Med-Tech SaaS, AgriJod (acquired), Onlyforms, Banalo, Eminence Robotics, TechEngio
-- [Education Details](https://dhimanseal.dev/education): Academic background from NIT Silchar and comprehensive certification portfolio
-- [Full Recommendations](https://dhimanseal.dev/recommendations): Detailed testimonials from clients and colleagues
+- [Venture Portfolio](https://dhimanseal.com/ventures): Entrepreneurial journey including Med-Tech SaaS, AgriJod (acquired), Onlyforms, Banalo, Eminence Robotics, TechEngio
+- [Education Details](https://dhimanseal.com/education): Academic background from NIT Silchar and comprehensive certification portfolio
+- [Full Recommendations](https://dhimanseal.com/recommendations): Detailed testimonials from clients and colleagues
