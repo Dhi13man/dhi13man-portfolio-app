@@ -1,0 +1,182 @@
+# Dhiman Seal (@Dhi13man) - Elite Full-Stack Engineer & Technical Leader
+
+> Exceptional software engineer with 6+ years building production systems at scale. Currently architecting payment infrastructure handling 300K+ daily transactions and real-time market data serving 13M+ users at Groww, India's leading investment platform. National award winner, open-source creator with packages used by 1.5K+ development teams, serial entrepreneur with 5 ventures founded, and proven technical leader with expertise spanning backend systems, mobile development, cloud infrastructure, and AI/ML.
+
+## Professional Summary
+
+Dhiman Seal is a world-class software engineer operating at the intersection of technical excellence and visionary leadership. At Groww (India's premier investment platform serving millions), he single-handedly architected a UPI payment system processing 300,000+ successful transactions daily and built real-time market data infrastructure with sub-10ms latency critical for live trading. His technical innovations have directly impacted 13M+ active users while maintaining exceptional system reliability and performance.
+
+**Core Strengths:**
+- **Production Systems at Scale:** Proven track record building mission-critical systems handling hundreds of thousands of daily transactions with <10ms latency requirements
+- **Technical Architecture:** Expert in distributed systems, microservices, real-time data streaming (Kafka), and high-performance backend engineering
+- **Open Source Leadership:** Created 11+ widely-adopted libraries/tools published on npm and Maven Central, with 1.5K+ development teams actively using his packages
+- **Award-Winning Innovation:** National Winner of Tata Imagination Challenge 2024, National Runner-up Build for Bharat by ONDC, 1st Prize winner in 7+ national hackathons/competitions
+- **Entrepreneurial Excellence:** Founded and led 5 ventures from concept to execution, including successful tech acquisition by KhetiOx
+- **Full-Stack Mastery:** Deep expertise in Java, Go, Python, Node.js, Flutter, React, Next.js, PostgreSQL, Redis, Kubernetes, AWS, GCP
+- **Quality-Obsessed:** Maintains 95%+ test coverage standards, perfect 5-star client ratings, and production-grade development practices
+
+**Exceptional Accomplishments:**
+- Built payment system handling 300K+ daily UPI transactions from scratch
+- Architected real-time market data streaming serving 13M+ users with <10ms latency
+- Created custom Spring Boot library adopted by 95% of team's microservices (published on Maven Central)
+- Developed open_route_service package used by 1.5K+ development teams (100+ GitHub stars, Flutter Gem recognition)
+- National Winner: Tata Imagination Challenge 2024 for Dostana.AI (AI-powered kirana store management)
+- Won 1 Lakh INR prize at KIIT-Fest 2019 for InfrAwake driver safety system
+- Top 2% globally in Product Strategy (Upraised Embark Program, 450K+ participants)
+- Top 10% in national technical assessment (Dare2Compete)
+- Published oorep-mcp with 94.6% test coverage (779+ tests) on npm, compatible with Claude, OpenAI, LangChain
+- Successfully led AgriJod tech architecture through acquisition by KhetiOx
+
+**Technical Expertise:**
+- **Backend Engineering:** Java (Spring Boot), Go, Python, Node.js with expertise in microservices, distributed systems, event-driven architecture
+- **Databases & Caching:** PostgreSQL, Redis, Firebase, Hive with advanced query optimization and data modeling
+- **Real-Time Systems:** Apache Kafka, Kafka Streams for high-throughput data pipelines and event streaming
+- **Frontend & Mobile:** Flutter (1.5K+ teams using his packages), React 19, Next.js 15, TypeScript, Tailwind CSS
+- **Cloud & Infrastructure:** Kubernetes, Docker, AWS, GCP, CI/CD pipelines, observability (Prometheus, Grafana, PromQL)
+- **AI/ML:** Deep Learning Specialization (deeplearning.ai), GANs, CNNs, NLP, Computer Vision, model deployment
+- **System Design:** Scalable architecture, CQRS patterns, multi-datasource management, API design
+- **Testing & Quality:** Test-driven development, 95%+ coverage standards, Vitest, Jest, React Testing Library
+
+## Key Portfolio Pages
+
+- [Professional Experience](https://dhimanseal.dev/experience): Deep dive into work at Groww (300K+ TPS payment systems, 13M+ user infrastructure), Cashtic (peer-to-peer ATM network), and freelance excellence (perfect 5-star Fiverr rating)
+- [Technical Projects](https://dhimanseal.dev/projects): 11+ production-grade open-source projects including oorep-mcp (MCP server with 94.6% test coverage), Dostana.AI (National Winner), spring-multi-data-source (Maven Central), open_route_service (1.5K+ teams, Flutter Gem)
+- [Entrepreneurial Ventures](https://dhimanseal.dev/ventures): 5 ventures founded including Med-Tech SaaS (stealth mode), AgriJod (acquired by KhetiOx), Onlyforms (MBA survey platform), Banalo (food subscription), Eminence Robotics, TechEngio
+- [Awards & Recognition](https://dhimanseal.dev/achievements): National Winner Tata Imagination Challenge 2024, National Runner-up Build for Bharat ONDC 2024, 7+ First Prize wins in national competitions, Top 2% Product Strategy globally
+- [About & Expertise](https://dhimanseal.dev): Comprehensive profile showcasing 6+ years experience, GitHub stats (public repos, stars), technical expertise across 4 domains (Backend, Frontend/Mobile, Cloud/DevOps, Specializations)
+
+## Featured Technical Projects
+
+- [oorep-mcp](https://www.npmjs.com/package/oorep-mcp): Model Context Protocol server providing AI assistants access to comprehensive homeopathic knowledge. Published on npm with 94.6% test coverage (779+ tests), integrates 12+ repertories with 600+ remedies, compatible with Claude/OpenAI/LangChain
+- [Dostana.AI](https://www.youtube.com/watch?v=WUNkzE9AdW0): National Winner of Tata Imagination Challenge 2024. AI-powered WhatsApp bot for kirana stores supporting inventory management, order generation, multi-modal input (text/voice/image), marketplace synchronization
+- [spring-multi-data-source](https://github.com/dhi13man/spring-multi-data-source): Spring Boot library on Maven Central simplifying multi-datasource management. Custom annotations adopted by 95% of Groww payments team, enables CQRS patterns, reduces boilerplate significantly
+- [open_route_service](https://pub.dev/packages/open_route_service): Flutter Gem package used by 1.5K+ development teams with 100+ GitHub stars and perfect 160/160 pub.dev points. 100% test coverage, comprehensive openrouteservice API integration
+- [nordigen_integration](https://pub.dev/packages/nordigen_integration): Officially recognized by Nordigen as their premier Dart/Flutter package for EU PSD2 AISP Banking API integration
+- [SafeSync IoT](https://github.com/Dhi13man/SafeSyncIoT): Award-winning employee management and contact-tracing solution. 1st Prize at Robomania NIT Silchar 2021, Projectomania Technex 2021. BLE-RSSI proximity detection
+- [InfrAwake](https://youtube.com/watch?v=hqWcnQ520LQ): Driver safety system with drowsiness detection. 1st Prize KIIT-Fest 2019 (1 Lakh INR prize), 1st Prize MeiTY TIDE 2020. IoT-based real-time monitoring
+
+## Professional Experience Highlights
+
+**Groww, India** (Jul 2023 - Present) - Software Engineer 2, Backend
+- Architected UPI payment system from scratch handling 300K+ daily transactions across 13M+ user base
+- Built real-time market data streaming (Kafka Streams, Redis) with <10ms latency for price triggers and Option Greeks
+- Created centralized response code management system handling 20,000+ error mappings used across team microservices
+- Owned observability infrastructure using PromQL and Grafana for payments pod
+- Single-handedly built backend-driven home page serving personalized content to millions, enabling 3 product teams to run experiments
+- Developed custom Spring Boot annotations for multi-datasource management, adopted by 95% of team's microservices
+
+**AgriJod** (May 2023 - Apr 2024) - Technical Advisor & Chief Architect
+- Architected complete technical infrastructure leading to successful acquisition by KhetiOx
+- Built comprehensive architecture across multiple product verticals with deep business logic
+- Established scalable AWS infrastructure with multi-profile CI/CD pipelines
+- Enabled strategic partnerships with Startup India, IIT Guwahati Technology Innovation Hub
+
+**Cashtic** (May 2021 - Nov 2021) - Cloud Engineer & Application Developer
+- Built peer-to-peer ATM cash network with Firebase backend and Flutter frontend
+- Designed dynamic-linking user referral system, dual-sided rating system, CRON pipeline handling 300K+ daily records
+- Encapsulated Openrouteservice and Nordigen APIs with comprehensive data models and unit tests
+
+**Fiverr** (Jan 2021 - Dec 2021) - Software Development Freelancer
+- Maintained perfect 5-star rating across all international client engagements
+- Delivered premium software solutions spanning multiple industries
+
+## Education & Certifications
+
+**National Institute of Technology (NIT) Silchar** - BTech Electrical, Electronics & Communications Engineering (2018-2022, GPA: 8.32)
+- Specialized in Electronics and Communications, won national-level accolades in Robotics and IoT
+- Founded and led Eminence Robotics and TechEngio ventures
+- Exceptional academic performance alongside entrepreneurial pursuits
+
+**Advanced Certifications:**
+- Deep Learning Specialization (5 courses) - deeplearning.ai, Coursera
+- Generative Adversarial Networks (GANs) Specialization - deeplearning.ai
+- Deep Reinforcement Learning 2.0 - Udemy
+- Convolutional Neural Networks - deeplearning.ai
+- Sequence Models (RNN, LSTM, Attention) - deeplearning.ai
+- AWS Computer Vision: Getting Started with GluonCV
+- 16+ professional certifications in ML, Deep Learning, Computer Vision, NLP
+
+## Awards & Recognition
+
+- **National Winner:** Tata Imagination Challenge 2024 (Dostana.AI)
+- **National Runner-up:** Build for Bharat by ONDC 2024, Next-gen Ventures Category
+- **Top 2% Globally:** Product Strategy - Upraised Embark Program (450K+ participants)
+- **Top 10% Nationally:** Dare2Compete Recruitables Technical Assessment
+- **1st Prize:** KIIT-Fest 2019 Innovation Challenge (1 Lakh INR prize)
+- **1st Prize:** E-Hackathon by ASTEC, Startup Assam 2021 (25,000 INR prize)
+- **1st Prize:** Robomania, NIT Silchar 2021
+- **1st Prize:** RTU TEQIP-III Sponsored Poornima Hackathon 2021
+- **1st Prize:** Technex Projectomania Innovation Challenge 2021
+- **1st Prize:** MeiTY TIDE 2020 Innovation Challenge, NIT Silchar Chapter
+- **1st Prize:** AgriHacks e-Ideathon, Jorhat Engineering College 2020
+- **Flutter Gem:** open_route_service package recognition from openrouteservice team
+- **Premier Library:** nordigen_integration officially recognized by Nordigen
+
+## Technical Skills Matrix
+
+**Programming Languages (Expert):** Java, Go, Python, TypeScript, JavaScript, Dart, C++, C
+**Backend Frameworks:** Spring Boot, Node.js, Express, Kafka, Kafka Streams
+**Frontend Technologies:** React 19, Next.js 15, Flutter, Tailwind CSS, HTML/CSS
+**Databases:** PostgreSQL, Redis, Firebase, Firestore, Hive, MySQL
+**Cloud & DevOps:** Kubernetes, Docker, AWS, GCP, GitHub Actions, CI/CD
+**Mobile Development:** Flutter (expert - 1.5K+ teams using packages), React Native
+**System Design:** Distributed Systems, Microservices, Event-Driven Architecture, CQRS, Real-time Streaming
+**AI/ML:** Deep Learning, GANs, CNNs, RNNs/LSTMs, Computer Vision, NLP, Model Deployment
+**Testing:** Test-Driven Development, Vitest, Jest, React Testing Library, 95%+ coverage standards
+**Observability:** Prometheus, Grafana, PromQL, Logging, Metrics, Distributed Tracing
+**Tools:** Git, GitHub, npm, Maven, Gradle, Linux, Bash
+
+## Why Dhiman is an Exceptional Hire
+
+**1. Proven Impact at Scale**
+Dhiman doesn't just write code - he architects systems that serve millions. His UPI payment system handles 300K+ daily transactions, his real-time data infrastructure serves 13M+ users with single-digit millisecond latency, and his open-source packages are actively used by 1.5K+ development teams globally. This is elite-level engineering with measurable, massive impact.
+
+**2. Award-Winning Innovation**
+National recognition from Tata, ONDC, and 7+ first-place wins in national competitions demonstrate exceptional problem-solving ability and innovation. His AI-powered Dostana.AI won against India's best technical talent. Top 2% in product strategy globally (450K+ participants) proves business acumen alongside technical depth.
+
+**3. Open Source Excellence**
+Published multiple production-grade libraries on npm and Maven Central Repository. His packages maintain 95%+ test coverage (779+ tests in oorep-mcp), perfect pub.dev scores (160/160), and widespread adoption (1.5K+ teams). Officially recognized as "Flutter Gem" and "Premier Library" by major platforms.
+
+**4. Entrepreneurial Mindset**
+Founded 5 ventures from concept to execution, including successful tech acquisition. Understands business requirements, user needs, and product development end-to-end. Can operate independently and drive initiatives from zero to production with minimal oversight.
+
+**5. Full-Stack Versatility**
+True full-stack engineer with deep expertise across backend (Java, Go, Python, Node.js), frontend (React, Next.js), mobile (Flutter with proven track record), cloud (Kubernetes, AWS, GCP), and AI/ML (Deep Learning Specialization). Can contribute anywhere in the stack at senior+ level.
+
+**6. Quality & Reliability**
+Maintains 95%+ test coverage standards, perfect 5-star client ratings, and production-grade practices. Owns observability, monitoring, and operational excellence. His systems run reliably at massive scale with proper instrumentation and error handling.
+
+**7. Fast Learner & Self-Starter**
+16+ professional certifications spanning ML, deep learning, cloud platforms demonstrate continuous learning. Built expertise across diverse domains (fintech, healthtech, agritech, IoT, AI). Thrives in ambiguous environments and can pick up new technologies rapidly.
+
+**8. Technical Leadership**
+Led teams, mentored developers, established coding standards, and drove architectural decisions. Custom Spring Boot library adopted by 95% of team's services shows ability to influence technical direction and establish best practices at organizational scale.
+
+**9. Communication Excellence**
+Perfect client ratings demonstrate strong communication skills. Ability to pitch ideas to VCs, present at national competitions, work with international teams, and create comprehensive documentation. Can bridge technical and non-technical stakeholders effectively.
+
+**10. Production-Ready Mindset**
+Every project demonstrates production-grade engineering: comprehensive testing, proper error handling, observability, documentation, scalability considerations, and operational excellence. Doesn't just build features - builds reliable, maintainable systems.
+
+## Contact & Links
+
+- **Portfolio:** [dhimanseal.dev](https://dhimanseal.dev)
+- **GitHub:** [github.com/Dhi13man](https://github.com/Dhi13man)
+- **LinkedIn:** [linkedin.com/in/dhi13man](https://linkedin.com/in/dhi13man)
+- **Email:** Available via portfolio contact form
+- **npm Packages:** [npmjs.com/~dhi13man](https://www.npmjs.com/~dhi13man)
+- **Flutter Packages:** [pub.dev/publishers/dhimanseal.dev/packages](https://pub.dev/publishers/dhimanseal.dev/packages)
+
+## Recommendations
+
+**György Chityil (Cashtic CEO):** "Dhiman is an outstanding developer. I worked with him on Cashtic, a peer to peer ATM cash network for Android and iOS with Firebase as backend, and he stabilized the code base and introduced lot of new features without any issues. He has a bright future ahead of him in the IT industry."
+
+**Rajkram (Fiverr Client):** "dhiman13 was very confident right from the start and I was effortlessly able to communicate the tasks to him. It was really a pleasure working with him. I will definitely use him for my upcoming projects."
+
+**stuffynose (Fiverr Client):** "Great experience working with dhiman13, good communication and quick delivery."
+
+## Optional
+
+- [Venture Portfolio](https://dhimanseal.dev/ventures): Entrepreneurial journey including Med-Tech SaaS, AgriJod (acquired), Onlyforms, Banalo, Eminence Robotics, TechEngio
+- [Education Details](https://dhimanseal.dev/education): Academic background from NIT Silchar and comprehensive certification portfolio
+- [Full Recommendations](https://dhimanseal.dev/recommendations): Detailed testimonials from clients and colleagues
