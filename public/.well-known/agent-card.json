@@ -88,8 +88,10 @@
     ],
     "achievements": {
       "nationalAwards": [
-        "National Winner - Tata Imagination Challenge 2024",
         "National Runner-up - Build for Bharat by ONDC 2024"
+      ],
+      "productAwards": [
+        "Dostana.AI - National Winner of Tata Imagination Challenge 2024 (product built by team)"
       ],
       "scale": {
         "dailyTransactions": "300K+",

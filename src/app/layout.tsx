@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: "Dhiman Seal - Software Engineer & Entrepreneur",
   description:
-    "Elite software engineer with 6+ years at scale: 300K+ daily transactions at Groww, 13M+ users served, National award winner (Tata Imagination Challenge 2024), open-source creator (1.5K+ teams using packages). Expert in Java, Go, Python, Flutter, React, Kubernetes, distributed systems.",
+    "Software engineer with 6+ years scaling production systems: payment infrastructure handling 300K+ daily transactions, real-time data serving 13M+ users. Open-source creator with packages used by 1.5K+ teams. National runner-up at ONDC Build for Bharat 2024. Multiple hackathon winner.",
   keywords: [
     "Dhiman Seal",
     "Software Engineer",
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     url: siteUrl,
     title: "Dhiman Seal - Software Engineer & Entrepreneur",
     description:
-      "Elite software engineer with 6+ years at scale: 300K+ daily transactions at Groww, 13M+ users served, National award winner (Tata Imagination Challenge 2024), open-source creator (1.5K+ teams using packages).",
+      "Software engineer scaling production systems: 300K+ daily transactions, 13M+ users served. Open-source packages used by 1.5K+ teams. ONDC Build for Bharat runner-up. Multiple hackathon winner.",
     siteName: "Dhiman Seal Portfolio",
     images: [
       {
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Dhiman Seal - Software Engineer & Entrepreneur",
     description:
-      "Elite engineer: 300K+ daily transactions, 13M+ users, National award winner, 1.5K+ teams using packages.",
+      "Engineer scaling production systems: 300K+ daily transactions, 13M+ users. Open-source packages used by 1.5K+ teams. ONDC runner-up.",
     creator: "@Dhi13man",
     images: [siteImage],
   },
@@ -64,7 +64,7 @@ const personSchema = {
   image: siteImage,
   jobTitle: "Software Engineer 2 - Backend",
   description:
-    "Elite software engineer with 6+ years building production systems at scale. Currently architecting payment infrastructure handling 300K+ daily transactions and real-time market data serving 13M+ users at Groww. National award winner, open-source creator with packages used by 1.5K+ development teams.",
+    "Software engineer with 6+ years building production systems at scale. Currently architecting payment infrastructure handling 300K+ daily transactions and real-time market data serving 13M+ users. Open-source creator with packages used by 1.5K+ development teams. National runner-up at ONDC Build for Bharat 2024.",
   email: "dhiman.seal@hotmail.com",
   address: {
     "@type": "PostalAddress",
@@ -137,7 +137,6 @@ const personSchema = {
     },
   ],
   award: [
-    "National Winner - Tata Imagination Challenge 2024",
     "National Runner-up - Build for Bharat by ONDC 2024",
     "Top 2% Globally - Product Strategy (Upraised Embark Program)",
     "1st Prize - KIIT-Fest 2019 (1 Lakh INR)",
@@ -155,7 +154,7 @@ const websiteSchema = {
   alternateName: "Dhi13man Portfolio",
   url: siteUrl,
   description:
-    "Professional portfolio showcasing 6+ years of software engineering excellence, including payment systems handling 300K+ daily transactions, open-source projects used by 1.5K+ teams, and national award-winning innovations.",
+    "Professional portfolio showcasing 6+ years of software engineering excellence, including payment systems handling 300K+ daily transactions, real-time data serving 13M+ users, and open-source projects used by 1.5K+ teams.",
   author: {
     "@type": "Person",
     name: "Dhiman Seal",
@@ -172,7 +171,7 @@ const profilePageSchema = {
   url: siteUrl,
   name: "Dhiman Seal - Software Engineer & Entrepreneur",
   description:
-    "Elite software engineer with 6+ years at scale: payment systems handling 300K+ daily transactions, real-time infrastructure serving 13M+ users, open-source packages used by 1.5K+ teams, National award winner.",
+    "Software engineer with 6+ years at scale: payment systems handling 300K+ daily transactions, real-time infrastructure serving 13M+ users, open-source packages used by 1.5K+ teams. ONDC Build for Bharat runner-up.",
   dateModified: new Date().toISOString(),
 };
 
