@@ -57,6 +57,7 @@ export const metadata: Metadata = {
 const personSchema = {
   "@context": "https://schema.org",
   "@type": "Person",
+  "@id": `${siteUrl}#person`,
   name: "Dhiman Seal",
   alternateName: ["Dhi13man", "@Dhi13man"],
   url: siteUrl,
@@ -172,7 +173,7 @@ const profilePageSchema = {
   name: "Dhiman Seal - Software Engineer & Entrepreneur",
   description:
     "Elite software engineer with 6+ years at scale: payment systems handling 300K+ daily transactions, real-time infrastructure serving 13M+ users, open-source packages used by 1.5K+ teams, National award winner.",
-  dateModified: "2026-01-08",
+  dateModified: new Date().toISOString(),
 };
 
 // Combine all schemas using @graph for optimal AI parsing
