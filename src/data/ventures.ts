@@ -83,7 +83,7 @@ export const ventures: Venture[] = [
       "Food subscription company delivering chef-designed recipes with pre-portioned fresh ingredients daily to customers' doorstep.",
     images: {
       others: ["/assets/ventures/banalo-ui_mockup.webp"],
-      primary: "/assets/ventures/banalo-value_proposition.png",
+      primary: "/assets/ventures/banalo-value_proposition.webp",
     },
     links: {
       primary: "https://www.eminencerobotics.org/banalo",

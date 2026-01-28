@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect, useRef, useCallback, memo } from "react";
-import Image from "next/image";
+import ExportedImage from "next-image-export-optimizer";
 import { X, ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "./button";
 
@@ -100,7 +100,7 @@ export const ImageGallery = memo(function ImageGallery({
               onKeyDown={(e) => handleThumbnailKeyDown(e, 0)}
               aria-label={`View ${alt}`}
             >
-              <Image
+              <ExportedImage
                 src={images[0]}
                 alt={alt}
                 fill
@@ -148,7 +148,7 @@ export const ImageGallery = memo(function ImageGallery({
               onKeyDown={(e) => handleThumbnailKeyDown(e, index)}
               aria-label={`View image ${index + 1} of ${images.length}`}
             >
-              <Image
+              <ExportedImage
                 src={image}
                 alt={`${alt} - Image ${index + 1}`}
                 fill
@@ -288,7 +288,7 @@ function Lightbox({
         role="img"
         aria-label={`${alt} - Image ${currentIndex + 1} of ${images.length}`}
       >
-        <Image
+        <ExportedImage
           src={images[currentIndex]}
           alt={`${alt} - Image ${currentIndex + 1}`}
           fill

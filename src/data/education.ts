@@ -21,7 +21,7 @@ export const education: Education[] = [
       },
     ],
     images: {
-      others: ["/assets/education/nits-achievements.png"],
+      others: ["/assets/education/nits-achievements.webp"],
       primary: "/assets/education/nits-banner.jpeg",
     },
     links: {
