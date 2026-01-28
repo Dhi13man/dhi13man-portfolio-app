@@ -78,6 +78,10 @@ npm-shrinkwrap.json
 /.next/
 /out/
 
+# next-image-export-optimizer generated files
+**/nextImageExportOptimizer/
+next-image-export-optimizer-hashes.json
+
 # Old source (backup)
 /src-old
 

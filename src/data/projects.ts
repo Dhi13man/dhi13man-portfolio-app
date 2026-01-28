@@ -14,7 +14,7 @@ export const projects: Project[] = [
     ],
     endDate: "Present",
     images: {
-      primary: "/assets/projects/oorep_mcp.png"
+      primary: "/assets/projects/oorep_mcp.webp"
     },
     links: {
       primary: "https://www.npmjs.com/package/oorep-mcp",
@@ -44,7 +44,7 @@ export const projects: Project[] = [
     ],
     endDate: "Jun 2024",
     images: {
-      primary: "/assets/projects/dostana_ai.png",
+      primary: "/assets/projects/dostana_ai.webp",
       others: ["/assets/projects/dostana_ai-win.jpeg"],
     },
     links: {
@@ -96,7 +96,7 @@ export const projects: Project[] = [
     ],
     endDate: "Feb 2022",
     images: {
-      primary: "/assets/projects/auto_proxy_wifi.png",
+      primary: "/assets/projects/auto_proxy_wifi.webp",
     },
     links: {
       primary: "https://github.com/Dhi13man/auto_proxy_wifi",
@@ -138,7 +138,7 @@ export const projects: Project[] = [
     endDate: "Present",
     images: {
       others: [],
-      primary: "/assets/projects/nordigen_integration.png",
+      primary: "/assets/projects/nordigen_integration.webp",
     },
     links: {
       others: [
@@ -181,7 +181,7 @@ export const projects: Project[] = [
     ],
     endDate: "Present",
     images: {
-      primary: "/assets/projects/moor2csv.png",
+      primary: "/assets/projects/moor2csv.webp",
     },
     links: {
       others: ["https://github.com/Dhi13man/moor2csv"],

@@ -62,7 +62,7 @@ export const experiences: Experience[] = [
       "Global freelance services marketplace connecting businesses with skilled professionals across industries.",
     images: {
       others: [],
-      primary: "/assets/work_experiences/fiverr-profile.png",
+      primary: "/assets/work_experiences/fiverr-profile.webp",
     },
     links: {
       primary: "https://fiverr.com/dhiman13",

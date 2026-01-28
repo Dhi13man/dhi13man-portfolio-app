@@ -189,6 +189,13 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <head>
+        {/* Preload LCP hero image for faster initial render */}
+        <link
+          rel="preload"
+          as="image"
+          href="/assets/me.webp"
+          type="image/webp"
+        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

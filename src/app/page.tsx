@@ -2,7 +2,7 @@ import { Section, SectionHeader, SectionTitle } from "@/components/ui/section";
 import { ProjectCard } from "@/components/domain/ProjectCard";
 import { VentureCard } from "@/components/domain/VentureCard";
 import { AboutSection } from "@/components/domain/AboutSection";
-import Image from "next/image";
+import ExportedImage from "next-image-export-optimizer";
 import { Github, Linkedin, Mail } from "lucide-react";
 import { aboutData } from "@/data/about";
 import { projects } from "@/data/projects";
@@ -96,7 +96,7 @@ export default async function Home() {
           {/* Profile Photo */}
           <div className="flex justify-center">
             <div className="relative w-32 h-32 rounded-full overflow-hidden border-2 border-border">
-              <Image
+              <ExportedImage
                 src="/assets/me.webp"
                 alt="Dhiman Seal"
                 fill
