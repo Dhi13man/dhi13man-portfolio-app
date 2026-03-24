@@ -82,14 +82,14 @@ export const chapters: JourneyChapter[] = [
   },
   {
     id: "ventures",
-    label: "04 - THE BUILDER IN PARALLEL",
-    title: "While the day job ran, so did the side quests",
+    label: "04 - THE VENTURES",
+    title: "Building from zero, in parallel",
     navLabel: "Ventures",
   },
   {
     id: "current",
-    label: "05 - WHAT I BUILT RECENTLY",
-    title: "Beyond the day job",
+    label: "05 - SHIPPING SOLO",
+    title: "From idea to paying customers",
     navLabel: "Recent",
   },
   {

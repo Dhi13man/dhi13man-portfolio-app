@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, type MutableRefObject } from "react";
+import { useRef, useState, useEffect, type MutableRefObject } from "react";
 import ExportedImage from "next-image-export-optimizer";
 import { gsap, ScrollTrigger, useGSAP } from "@/lib/gsap";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
@@ -18,8 +18,15 @@ export function GrowwChapter({ activeChapterRef }: GrowwChapterProps) {
   const cardsRef = useRef<HTMLDivElement>(null);
   const progressRef = useRef<HTMLDivElement>(null);
   const reducedMotion = useReducedMotion();
-  const isDesktop =
-    typeof window !== "undefined" ? window.innerWidth >= 1024 : false;
+  const [isDesktop, setIsDesktop] = useState(false);
+
+  // Detect desktop after mount (avoids SSR mismatch)
+  useEffect(() => {
+    const check = () => setIsDesktop(window.innerWidth >= 1024);
+    check();
+    window.addEventListener("resize", check);
+    return () => window.removeEventListener("resize", check);
+  }, []);
 
   useGSAP(
     () => {
@@ -38,17 +45,18 @@ export function GrowwChapter({ activeChapterRef }: GrowwChapterProps) {
         },
       });
 
-      if (reducedMotion) return;
+      if (reducedMotion || !isDesktop) return;
 
-      // Horizontal scroll only on desktop
+      // Horizontal scroll on desktop
       if (
-        isDesktop &&
         horizontalRef.current &&
         cardsRef.current &&
         progressRef.current
       ) {
         const cards = cardsRef.current;
         const totalWidth = cards.scrollWidth - window.innerWidth;
+
+        if (totalWidth <= 0) return;
 
         gsap.to(cards, {
           x: -totalWidth,
@@ -119,8 +127,8 @@ export function GrowwChapter({ activeChapterRef }: GrowwChapterProps) {
         </ScrollReveal>
       </div>
 
-      {/* Desktop: horizontal scroll */}
-      {isDesktop && !reducedMotion ? (
+      {/* Desktop: horizontal scroll (hidden on mobile via CSS) */}
+      {isDesktop && !reducedMotion && (
         <div ref={horizontalRef} className="relative min-h-svh overflow-hidden">
           {/* Timeline progress line */}
           <div className="absolute left-0 right-0 top-8 mx-auto h-[1px] max-w-[calc(100%-64px)] bg-border">
@@ -133,7 +141,10 @@ export function GrowwChapter({ activeChapterRef }: GrowwChapterProps) {
           {/* Timeline dots */}
           <div className="absolute left-0 right-0 top-8 mx-auto flex max-w-[calc(100%-64px)] justify-between px-8">
             {growwRoles.map((role, i) => (
-              <div key={role.title} className="flex flex-col items-center gap-2">
+              <div
+                key={role.title}
+                className="flex flex-col items-center gap-2"
+              >
                 <div
                   className={cn(
                     "h-3 w-3 rounded-full border-2",
@@ -143,7 +154,7 @@ export function GrowwChapter({ activeChapterRef }: GrowwChapterProps) {
                   )}
                 />
                 <span className="font-mono text-12 text-text-quaternary">
-                  {role.date.split(" – ")[0]}
+                  {role.date.split(" - ")[0]}
                 </span>
               </div>
             ))}
@@ -152,22 +163,27 @@ export function GrowwChapter({ activeChapterRef }: GrowwChapterProps) {
           {/* Cards container */}
           <div
             ref={cardsRef}
-            className="flex gap-8 px-16 pt-24"
+            className="flex items-start gap-8 px-16 pt-24"
             style={{ width: `${growwRoles.length * 512 + 128}px` }}
           >
             {growwRoles.map((role) => (
-              <RoleCard key={role.title} role={role} />
+              <RoleCard key={role.title} role={role} horizontal />
             ))}
           </div>
         </div>
-      ) : (
-        /* Mobile / reduced motion: vertical stack */
+      )}
+
+      {/* Mobile / tablet / reduced motion: vertical stack */}
+      {(!isDesktop || reducedMotion) && (
         <div className="mx-auto max-w-[1200px] px-8 pb-16">
           <div className="relative ml-1.5 border-l-2 border-border pl-6">
             {growwRoles.map((role, i) => (
               <div
                 key={role.title}
-                className={cn("relative pb-6", i === growwRoles.length - 1 && "pb-0")}
+                className={cn(
+                  "relative pb-6",
+                  i === growwRoles.length - 1 && "pb-0",
+                )}
               >
                 {/* Timeline dot */}
                 <div
@@ -188,11 +204,22 @@ export function GrowwChapter({ activeChapterRef }: GrowwChapterProps) {
   );
 }
 
-function RoleCard({ role }: { role: (typeof growwRoles)[number] }) {
+function RoleCard({
+  role,
+  horizontal,
+}: {
+  role: (typeof growwRoles)[number];
+  horizontal?: boolean;
+}) {
   return (
-    <article className="flex w-full flex-col rounded border border-border bg-background p-6 transition-all duration-fast hover:border-border-hover lg:min-w-[440px] lg:max-w-[480px]">
+    <article
+      className={cn(
+        "flex w-full flex-col rounded border border-border bg-background p-6 transition-all duration-fast hover:border-border-hover",
+        horizontal && "min-w-[440px] max-w-[480px]",
+      )}
+    >
       <div className="mb-2 flex items-baseline justify-between gap-4">
-        <h3 className="text-24 font-semibold text-text-primary">
+        <h3 className="text-20 font-semibold text-text-primary lg:text-24">
           {role.title}
         </h3>
         <span className="shrink-0 font-mono text-12 text-text-quaternary">
