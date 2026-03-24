@@ -106,8 +106,9 @@ describe('AboutSection', () => {
         ],
       }
       render(<AboutSection data={dataWithLinks} />)
-      const link = screen.getByRole('link')
-      expect(link).toHaveAttribute('href', '/experience')
+      const links = screen.getAllByRole('link')
+      const highlightLink = links.find(l => l.getAttribute('href') === '/experience')
+      expect(highlightLink).toBeDefined()
     })
 
     it('should render highlights with external links', () => {
@@ -118,10 +119,11 @@ describe('AboutSection', () => {
         ],
       }
       render(<AboutSection data={dataWithExternalLink} />)
-      const link = screen.getByRole('link')
-      expect(link).toHaveAttribute('href', 'https://github.com/test')
-      expect(link).toHaveAttribute('target', '_blank')
-      expect(link).toHaveAttribute('rel', 'noopener noreferrer')
+      const links = screen.getAllByRole('link')
+      const externalLink = links.find(l => l.getAttribute('href') === 'https://github.com/test')
+      expect(externalLink).toBeDefined()
+      expect(externalLink).toHaveAttribute('target', '_blank')
+      expect(externalLink).toHaveAttribute('rel', 'noopener noreferrer')
     })
 
     it('should render values with links', () => {

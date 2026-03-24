@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef, useEffect } from "react";
+import Link from "next/link";
 import Lenis from "lenis";
 import { gsap, ScrollTrigger, useGSAP } from "@/lib/gsap";
 import { chapters } from "@/data/journey";
@@ -68,6 +69,14 @@ export function JourneyShell() {
 
   return (
     <div ref={containerRef} className="relative">
+      {/* Home link - persistent escape hatch, mirrors Header logo */}
+      <Link
+        href="/"
+        className="fixed left-6 top-6 z-50 font-display text-20 font-bold text-text-tertiary transition-colors duration-fast hover:text-text-primary"
+        aria-label="Back to portfolio home"
+      >
+        DS
+      </Link>
       <ChapterNav
         chapters={chapters}
         activeChapterRef={activeChapterRef}

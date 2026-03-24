@@ -1,6 +1,7 @@
 import type { About } from "@/types/about";
 import { ValueIcon } from "./ValueIcon";
 import Link from "next/link";
+import { ArrowRight } from "lucide-react";
 
 interface AboutSectionProps {
   data: About;
@@ -38,6 +39,18 @@ export function AboutSection({ data }: AboutSectionProps) {
           </p>
         )}
       </header>
+
+      {/* Journey CTA */}
+      <div className="flex items-center">
+        <Link
+          href="/journey/"
+          className="group inline-flex items-center gap-2 text-14 font-medium text-accent transition-colors duration-fast hover:text-accent-hover"
+          aria-label="Read the full career story"
+        >
+          Read the full story
+          <ArrowRight className="h-4 w-4 transition-transform duration-fast group-hover:translate-x-1" />
+        </Link>
+      </div>
 
       {/* Highlights/Stats Grid */}
       {highlights.length > 0 ? (

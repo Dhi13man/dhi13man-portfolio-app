@@ -86,6 +86,12 @@ export function CTAChapter({ activeChapterRef }: CTAChapterProps) {
           >
             View experience
           </Link>
+          <Link
+            href="/"
+            className="inline-flex min-h-[48px] items-center rounded px-6 py-3 text-16 font-medium text-text-tertiary transition-all duration-fast hover:text-text-primary"
+          >
+            Explore the portfolio
+          </Link>
         </div>
 
         {/* Social links */}
