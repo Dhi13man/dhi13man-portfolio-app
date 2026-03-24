@@ -96,13 +96,23 @@ export function CurrentChapter({ activeChapterRef }: CurrentChapterProps) {
 
           {/* Right column: tech stack + OSS */}
           <ScrollReveal className="flex flex-col gap-6" delay={0.2}>
-            {/* Tech stack */}
+            {/* Professional tech stack (across all work) */}
             <div className="rounded border border-border bg-background p-6">
               <h3 className="mb-4 text-14 font-semibold uppercase tracking-wide text-text-tertiary">
-                Tech Stack
+                Core Tech Stack
               </h3>
+              <div className="mb-3 flex flex-wrap gap-2">
+                {["Java", "Spring Boot", "Apache Kafka", "Redis", "PostgreSQL", "gRPC"].map((tech) => (
+                  <span
+                    key={tech}
+                    className="rounded border border-accent/20 bg-accent/10 px-3 py-1.5 text-14 font-medium text-accent"
+                  >
+                    {tech}
+                  </span>
+                ))}
+              </div>
               <div className="flex flex-wrap gap-2">
-                {ezhomeo.techStack.map((tech) => (
+                {["Python", "Go", "TypeScript", "Node.js", "Kubernetes", "Docker", "GCP", "AWS", "Prometheus", "Grafana"].map((tech) => (
                   <span
                     key={tech}
                     className="rounded border border-border bg-surface px-3 py-1.5 text-14 text-text-secondary"
@@ -111,6 +121,9 @@ export function CurrentChapter({ activeChapterRef }: CurrentChapterProps) {
                   </span>
                 ))}
               </div>
+              <p className="mt-3 text-12 text-text-quaternary">
+                EzHomeo stack: {ezhomeo.techStack.join(", ")}
+              </p>
             </div>
 
             {/* OSS Highlights */}

@@ -139,14 +139,29 @@ function VentureCard({
           "border border-border bg-surface hover:border-border-hover hover:bg-hover-bg",
       )}
     >
-      {/* Image */}
+      {/* Image - clicks open lightbox, not the card link */}
       {venture.image && (
         <div className="relative w-full overflow-hidden">
           <div
             className={cn(
-              "relative w-full overflow-hidden",
+              "relative w-full cursor-zoom-in overflow-hidden",
               isAcquired ? "h-[200px]" : "h-[140px]",
             )}
+            onClick={(e) => {
+              e.preventDefault();
+              e.stopPropagation();
+              window.open(venture.image!, "_blank");
+            }}
+            role="button"
+            tabIndex={0}
+            aria-label={`View ${venture.name} image`}
+            onKeyDown={(e) => {
+              if (e.key === "Enter") {
+                e.preventDefault();
+                e.stopPropagation();
+                window.open(venture.image!, "_blank");
+              }
+            }}
           >
             <ExportedImage
               src={venture.image}
@@ -174,21 +189,32 @@ function VentureCard({
       )}
 
       <div className="p-6">
-        {/* Badge */}
-        <div className="mb-3 flex items-center gap-3">
-          <span
-            className={cn(
-              "rounded-sm px-3 py-1 text-12 font-semibold uppercase tracking-wide",
-              isAcquired && "bg-accent text-text-primary",
-              isClosed && "bg-surface/50 text-text-quaternary",
-              venture.status === "active" &&
-                "border border-accent/20 bg-accent/10 text-accent",
-              venture.status === "recognition" &&
-                "border border-accent/20 bg-accent/10 text-accent",
-            )}
-          >
-            {venture.badge}
-          </span>
+        {/* Badges */}
+        <div className="mb-3 flex flex-wrap items-center gap-2">
+          {venture.badges ? (
+            venture.badges.map((b) => (
+              <span
+                key={b}
+                className="rounded-sm border border-accent/20 bg-accent/10 px-3 py-1 text-12 font-semibold text-accent"
+              >
+                {b}
+              </span>
+            ))
+          ) : (
+            <span
+              className={cn(
+                "rounded-sm px-3 py-1 text-12 font-semibold uppercase tracking-wide",
+                isAcquired && "bg-accent text-text-primary",
+                isClosed && "bg-surface/50 text-text-quaternary",
+                venture.status === "active" &&
+                  "border border-accent/20 bg-accent/10 text-accent",
+                venture.status === "recognition" &&
+                  "border border-accent/20 bg-accent/10 text-accent",
+              )}
+            >
+              {venture.badge}
+            </span>
+          )}
           <span
             className={cn(
               "text-12",

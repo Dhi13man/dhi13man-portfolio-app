@@ -282,15 +282,13 @@ describe("FoundationChapter", () => {
     });
   });
 
-  describe("FoundationChapter_whenRendered_thenHasQuote", () => {
-    it("should render the pull quote", () => {
+  describe("FoundationChapter_whenRendered_thenHasNarrative", () => {
+    it("should render the foundation narrative", () => {
       render(
         <FoundationChapter activeChapterRef={mockActiveChapterRef} />,
       );
       expect(
-        screen.getByText(
-          /I didn't study engineering to get a job/i,
-        ),
+        screen.getByText(/Before I wrote my first line of production code/i),
       ).toBeInTheDocument();
     });
   });
@@ -390,8 +388,8 @@ describe("CurrentChapter", () => {
       render(
         <CurrentChapter activeChapterRef={mockActiveChapterRef} />,
       );
-      expect(screen.getByText("Google Gemini")).toBeInTheDocument();
-      expect(screen.getByText("TypeScript")).toBeInTheDocument();
+      expect(screen.getByText("Java")).toBeInTheDocument();
+      expect(screen.getByText("Spring Boot")).toBeInTheDocument();
     });
   });
 });

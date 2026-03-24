@@ -33,6 +33,7 @@ export interface VentureEntry {
   name: string;
   status: "acquired" | "closed" | "active" | "recognition";
   badge: string;
+  badges?: string[];
   subtitle: string;
   description: string;
   details?: string[];
@@ -272,12 +273,13 @@ export const ventures: VentureEntry[] = [
     image: "/assets/ventures/onlyforms-delight.webp",
   },
   {
-    name: "Dostana.AI at Build for Bharat",
+    name: "Dostana.AI",
     status: "recognition",
     badge: "National Runner-up",
-    subtitle: "ONDC, Google, Antler, Protean, PayTM - May 2024",
+    badges: ["National Runner-up, Build for Bharat (ONDC)", "National Winner, Tata Imagination Challenge"],
+    subtitle: "May 2024",
     description:
-      "AI-powered kirana store management system. Top 2 finalists in the Next-gen Ventures category, presented to Google, Antler, and ONDC leadership. Also ranked Top 2% globally in Product Strategy via the Upraised Embark Program.",
+      "AI-powered kirana store management system. Top 2 finalists in the Next-gen Ventures category at ONDC Build for Bharat, presented to Google, Antler, and ONDC leadership. Also won the Tata Imagination Challenge 2024 nationally. Ranked Top 2% globally in Product Strategy (Upraised Embark Program).",
   },
 ];
 
@@ -293,7 +295,6 @@ export const currentNarrative = {
       "775+ unit tests",
       "4-stage AI pipeline",
     ],
-    // Backend-focused ordering
     techStack: [
       "Node.js",
       "Express",
