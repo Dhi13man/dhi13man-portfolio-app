@@ -142,41 +142,43 @@ export function GrowwChapter({ activeChapterRef }: GrowwChapterProps) {
       {/* Desktop: horizontal scroll (hidden on mobile via CSS) */}
       {isDesktop && !reducedMotion && (
         <div ref={horizontalRef} className="relative min-h-svh overflow-hidden">
-          <div className="absolute left-0 right-0 top-8 mx-auto h-[1px] max-w-[calc(100%-64px)] bg-border">
+          <div className="absolute left-8 right-8 top-[14px] z-10 h-[1px] bg-transparent">
             <div
               ref={progressRef}
               className="h-full origin-left bg-accent"
               style={{ transform: "scaleX(0)" }}
             />
           </div>
-          <div className="absolute left-0 right-0 top-8 mx-auto flex max-w-[calc(100%-64px)] justify-between px-8">
-            {growwRoles.map((role, i) => (
-              <div
-                key={role.title}
-                className="flex flex-col items-center gap-2"
-              >
-                <div
-                  className={cn(
-                    "h-3 w-3 rounded-full border-2",
-                    i === growwRoles.length - 1
-                      ? "border-accent bg-accent"
-                      : "border-accent bg-background",
-                  )}
-                />
-                <span className="font-mono text-12 text-text-quaternary">
-                  {role.date.split(" - ")[0]}
-                </span>
-              </div>
-            ))}
-          </div>
 
           <div
             ref={cardsRef}
-            className="flex items-start gap-8 px-16 pt-24"
+            className="relative flex gap-8 px-16 pt-8"
             style={{ width: `${growwRoles.length * 512 + 128}px` }}
           >
-            {growwRoles.map((role) => (
-              <RoleCard key={role.title} role={role} horizontal />
+            <div
+              className="pointer-events-none absolute left-16 right-16 top-[14px] h-[1px] bg-border"
+              aria-hidden="true"
+            />
+            {growwRoles.map((role, i) => (
+              <div
+                key={role.title}
+                className="flex min-w-[440px] max-w-[480px] flex-col"
+              >
+                <div className="mb-6 flex flex-col items-start gap-2">
+                  <div
+                    className={cn(
+                      "relative z-10 h-3 w-3 rounded-full border-2",
+                      i === growwRoles.length - 1
+                        ? "border-accent bg-accent"
+                        : "border-accent bg-background",
+                    )}
+                  />
+                  <span className="font-mono text-12 text-text-quaternary">
+                    {role.date.split(" - ")[0]}
+                  </span>
+                </div>
+                <RoleCard role={role} horizontal />
+              </div>
             ))}
           </div>
         </div>
