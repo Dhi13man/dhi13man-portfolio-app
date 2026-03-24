@@ -185,11 +185,11 @@ export const growwRoles: GrowwRole[] = [
     title: "Software Engineer Intern",
     date: "Jan 2022 - Jun 2022",
     description:
-      "Optimized high-performance backend systems for the Payments team. Earned a pre-placement offer through exceptional contributions.",
+      "Optimized high-performance backend systems for the Payments team. Performance led to a pre-placement offer.",
     pills: ["Pre-placement offer", "Documentation standards"],
     details: [
-      "Impacted full lifecycle of payment microservices",
-      "Pioneered documentation standards enhancing team knowledge transfer",
+      "Worked across the full payment service lifecycle",
+      "Started the team's documentation practice",
     ],
   },
   {
@@ -239,12 +239,12 @@ export const ventures: VentureEntry[] = [
     badge: "ACQUIRED",
     subtitle: "Acquired by KhetiOx, Sep 2025",
     description:
-      "Architected the entire technical infrastructure for an agritech startup revolutionizing Northeast India's agriculture. The tech became the core value proposition that led to acquisition.",
+      "Architected the entire technical infrastructure for an agritech startup transforming agriculture in Northeast India. The tech became the core value proposition that led to acquisition.",
     details: [
-      "Comprehensive technical architecture across multiple product verticals",
+      "Built the full tech stack across all product lines",
       "Scalable AWS infrastructure with multi-profile CI/CD pipelines",
       "Strategic partnerships: Startup India, IIT Guwahati Innovation Hub, NEEDP",
-      "Complete tech transfer executed to acquiring company",
+      "Ran the complete tech transfer to KhetiOx",
     ],
     image: "/assets/work_experiences/agrijod-cover.webp",
     link: "https://agrijod.in",

@@ -108,7 +108,6 @@ export function HeroChapter({ activeChapterRef }: HeroChapterProps) {
       className="relative flex min-h-svh flex-col items-center justify-center bg-background px-8 py-16"
     >
       <div className="flex max-w-[1200px] flex-col items-center gap-6 text-center">
-        {/* Name */}
         <h1
           ref={titleRef}
           id="hero-heading"
@@ -118,7 +117,6 @@ export function HeroChapter({ activeChapterRef }: HeroChapterProps) {
           Dhiman Seal
         </h1>
 
-        {/* Subtitle */}
         <p
           ref={subtitleRef}
           className="text-20 font-medium text-text-secondary"

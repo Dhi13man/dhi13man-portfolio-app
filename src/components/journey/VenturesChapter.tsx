@@ -181,7 +181,6 @@ function VentureCard({
       )}
 
       <div className="p-6">
-        {/* Badges */}
         <div className="mb-3 flex flex-wrap items-center gap-2">
           {venture.badges ? (
             venture.badges.map((b) => (
@@ -217,7 +216,6 @@ function VentureCard({
           </span>
         </div>
 
-        {/* Name */}
         <h3
           className={cn(
             "mb-2 text-20 font-semibold",
@@ -227,7 +225,6 @@ function VentureCard({
           {venture.name}
         </h3>
 
-        {/* Description */}
         <p
           className={cn(
             "text-14",
@@ -237,7 +234,6 @@ function VentureCard({
           {venture.description}
         </p>
 
-        {/* Details */}
         {venture.details && venture.details.length > 0 && (
           <ul className="mt-3 space-y-1">
             {venture.details.map((detail) => (
