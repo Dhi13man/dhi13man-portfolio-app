@@ -180,13 +180,13 @@ export const growwRoles: GrowwRole[] = [
     title: "Software Engineer 1",
     date: "Jul 2022 - Jun 2023",
     description:
-      "Built payment infrastructure and created developer tooling adopted across 95% of the team's microservices.",
-    pills: ["95% annotation adoption", "Maven Central", "CQRS patterns", "Internal SDKs"],
+      "Identified a gap in how the team managed multiple datasources, pitched a solution, built it, got it adopted across 95% of microservices, and open-sourced it.",
+    pills: ["95% adoption", "Maven Central", "CQRS", "Internal SDKs"],
     details: [
-      "Delivered payment processing features using Java Spring Boot, Apache Kafka, and Redis",
-      "Pitched and built multi-datasource annotations, now used across 95% of team microservices for CQRS",
-      "Published spring-multi-data-source on Maven Central as open-source",
-      "Owned development of internal SDKs implementing scalable distributed system patterns",
+      "Spotted repeated boilerplate across services managing 2+ datasources, proposed custom Spring Boot annotations to eliminate it",
+      "Built and shipped multi-datasource annotations that the team adopted across 95% of microservices, enabling CQRS patterns",
+      "Published spring-multi-data-source on Maven Central, turning internal tooling into open-source used by external teams",
+      "Owned internal SDKs and payment service modules for consumer-facing features on the Payments team",
     ],
   },
   {
