@@ -64,7 +64,7 @@ export function VenturesChapter({ activeChapterRef }: VenturesChapterProps) {
 
         {/* Venture cards: AgriJod full-width, rest in 2-col grid */}
         <div className="flex flex-col gap-4">
-          {/* AgriJod — full width, special treatment */}
+          {/* AgriJod - full width, special treatment */}
           <VentureCard venture={ventures[0]} reducedMotion={reducedMotion} />
 
           {/* Remaining ventures in grid */}

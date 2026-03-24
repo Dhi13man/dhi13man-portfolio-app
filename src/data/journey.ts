@@ -61,37 +61,37 @@ export const heroMetrics: JourneyMetric[] = [
 export const chapters: JourneyChapter[] = [
   {
     id: "hero",
-    label: "01 — THE NUMBERS",
+    label: "01 - THE NUMBERS",
     title: "Dhiman Seal",
     navLabel: "The Numbers",
   },
   {
     id: "foundation",
-    label: "02 — THE FOUNDATION",
+    label: "02 - THE FOUNDATION",
     title: "Every builder has a beginning",
     navLabel: "Foundation",
   },
   {
     id: "groww",
-    label: "03 — THE GROWW YEARS",
+    label: "03 - THE GROWW YEARS",
     title: "Building at scale",
     navLabel: "Groww",
   },
   {
     id: "ventures",
-    label: "04 — THE BUILDER IN PARALLEL",
+    label: "04 - THE BUILDER IN PARALLEL",
     title: "While the day job ran, so did the side quests",
     navLabel: "Ventures",
   },
   {
     id: "current",
-    label: "05 — WHAT I'M BUILDING NOW",
+    label: "05 - WHAT I BUILT RECENTLY",
     title: "AI meets healthcare",
-    navLabel: "Now",
+    navLabel: "Recent",
   },
   {
     id: "cta",
-    label: "06 — WHAT'S NEXT",
+    label: "06 - WHAT'S NEXT",
     title: "What's next?",
     navLabel: "Next",
   },
@@ -106,9 +106,9 @@ export const heroNarrative =
 // --- Foundation Chapter ---
 
 export const foundationNarrative = {
-  lead: "Before I wrote my first line of production code, I was soldering circuits, building robots, and teaching kids how to code in Northeast India. NIT Silchar gave me the theory — but I was already building.",
+  lead: "Before I wrote my first line of production code, I was soldering circuits, building robots, and teaching kids how to code in Northeast India. NIT Silchar gave me the theory - but I was already building.",
   quote:
-    "I didn't study engineering to get a job — I studied it to build things.",
+    "I didn't study engineering to get a job - I studied it to build things.",
 };
 
 export const foundationCards: FoundationCard[] = [
@@ -188,7 +188,7 @@ export const growwRoles: GrowwRole[] = [
       "Built payment infrastructure with Java Spring Boot, Kafka, and Redis. Created custom annotations adopted across 95% of team microservices.",
     pills: ["95% adoption", "CQRS patterns", "Custom Spring annotations"],
     details: [
-      "Pitched and built multi-datasource annotations — now used across 95% of team's microservices",
+      "Pitched and built multi-datasource annotations - now used across 95% of team's microservices",
       "Owned internal SDKs implementing scalable distributed system patterns",
       "Published spring-multi-data-source on Maven Central",
     ],
@@ -205,10 +205,10 @@ export const growwRoles: GrowwRole[] = [
       "Backend-driven home page",
     ],
     details: [
-      "Architected UPI payment system from scratch — 300,000+ successful transactions per day",
+      "Architected UPI payment system from scratch - 300,000+ successful transactions per day",
       "Built real-time market data streaming with Kafka Streams and Redis at <10ms latency",
       "Created centralized response code management handling 20,000+ error mappings",
-      "Owned observability for payments pod — PromQL, Grafana, dashboards for every metric",
+      "Owned observability for payments pod - PromQL, Grafana, dashboards for every metric",
       "Single-handedly built backend-driven home page serving personalized content to millions",
     ],
   },
@@ -242,23 +242,23 @@ export const ventures: VentureEntry[] = [
     badge: "Closed",
     subtitle: "Aug 2022 – Mar 2023",
     description:
-      "I tried to build Blue Apron for India. Got VC mentorship, pitched in competitions, built the mockups. Then I did the math — unit economics didn't work for daily fresh ingredient delivery in Indian metros at our target price point. I closed it. That decision taught me more about business viability than any success.",
+      "I tried to build Blue Apron for India. Got VC mentorship, pitched in competitions, built the mockups. Then I did the math - unit economics didn't work for daily fresh ingredient delivery in Indian metros at our target price point. I closed it. That decision taught me more about business viability than any success.",
     image: "/assets/ventures/banalo-value_proposition.webp",
   },
   {
     name: "OnlyForms",
-    status: "active",
-    badge: "Running",
-    subtitle: "Dec 2023 – Present",
+    status: "closed",
+    badge: "Closed",
+    subtitle: "Dec 2023 – Aug 2025",
     description:
-      "MBA survey platform with instant rewards. 121 students surveyed, average 8-minute response time per 50 responses. Running as passive income.",
+      "MBA survey platform with instant rewards. Served 121 students with 8-minute average response time per 50 responses. Ran as a passive income experiment before winding down.",
     image: "/assets/ventures/onlyforms-delight.webp",
   },
   {
-    name: "Dostana.AI — Build for Bharat",
+    name: "Dostana.AI - Build for Bharat",
     status: "recognition",
     badge: "National Runner-up",
-    subtitle: "ONDC, Google, Antler, Protean, PayTM — May 2024",
+    subtitle: "ONDC, Google, Antler, Protean, PayTM - May 2024",
     description:
       "AI-powered kirana store management system. Presented business plan in front of industry leaders. Top 2 finalists in the Next-gen Ventures category.",
   },
@@ -267,7 +267,7 @@ export const ventures: VentureEntry[] = [
 // --- Current Chapter ---
 
 export const currentNarrative = {
-  lead: "I'm building AI-powered tools for homeopathic practitioners — audio transcription, 4-stage AI analysis pipeline, interactive case editing. Real doctors, real patients, real impact.",
+  lead: "I built AI-powered tools for homeopathic practitioners - audio transcription, a 4-stage AI analysis pipeline, and interactive case editing. Real doctors, real patients, real impact. I shipped it to 5 paying customers and proved the concept works.",
   ezhomeo: {
     name: "EzHomeo",
     metrics: [
@@ -286,7 +286,7 @@ export const currentNarrative = {
       "Pulumi",
     ],
     description:
-      "B2B SaaS for homeopathic institutions. Transcribes patient consultations, extracts symptoms, matches rubrics from OOREP (Open Online Repertory), and generates comprehensive case reports with remedy recommendations.",
+      "B2B SaaS for homeopathic institutions. Transcribed patient consultations, extracted symptoms, matched rubrics from OOREP (Open Online Repertory), and generated comprehensive case reports with remedy recommendations.",
   },
 };
 
@@ -322,7 +322,7 @@ export const ossSummary = {
 // --- CTA Chapter ---
 
 export const ctaNarrative =
-  "I've spent four years building payment infrastructure that millions depend on. In parallel, I've built companies, shipped open-source tools, and competed nationally. The next problem I want to solve is at the intersection of systems thinking and real-world impact — where the engineering is hard and the scale is large enough to be felt. If you're building something like that, I want to hear about it.";
+  "I've spent four years building payment infrastructure that millions depend on. In parallel, I've built companies, shipped open-source tools, and competed nationally. The next problem I want to solve is at the intersection of systems thinking and real-world impact - where the engineering is hard and the scale is large enough to be felt. If you're building something like that, I want to hear about it.";
 
 export const ctaLinks = {
   email: "mailto:dhiman.seal@hotmail.com",
