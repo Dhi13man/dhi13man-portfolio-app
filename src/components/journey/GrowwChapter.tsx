@@ -163,16 +163,16 @@ export function GrowwChapter({ activeChapterRef }: GrowwChapterProps) {
       ) : (
         /* Mobile / reduced motion: vertical stack */
         <div className="mx-auto max-w-[1200px] px-8 pb-16">
-          <div className="relative border-l-2 border-border pl-8">
+          <div className="relative ml-1.5 border-l-2 border-border pl-6">
             {growwRoles.map((role, i) => (
               <div
                 key={role.title}
-                className={cn("relative pb-8", i === growwRoles.length - 1 && "pb-0")}
+                className={cn("relative pb-6", i === growwRoles.length - 1 && "pb-0")}
               >
                 {/* Timeline dot */}
                 <div
                   className={cn(
-                    "absolute -left-[calc(1rem+5px)] top-1 h-3 w-3 rounded-full border-2",
+                    "absolute -left-[calc(0.75rem+5px)] top-2 h-3 w-3 rounded-full border-2",
                     i === growwRoles.length - 1
                       ? "border-accent bg-accent"
                       : "border-accent bg-background",
@@ -190,7 +190,7 @@ export function GrowwChapter({ activeChapterRef }: GrowwChapterProps) {
 
 function RoleCard({ role }: { role: (typeof growwRoles)[number] }) {
   return (
-    <article className="w-full min-w-[320px] max-w-[560px] rounded border border-border bg-background p-6 transition-all duration-fast hover:border-border-hover lg:min-w-[480px]">
+    <article className="w-full rounded border border-border bg-background p-6 transition-all duration-fast hover:border-border-hover lg:min-w-[480px] lg:max-w-[560px]">
       <div className="mb-2 flex items-baseline justify-between gap-4">
         <h3 className="text-24 font-semibold text-text-primary">
           {role.title}

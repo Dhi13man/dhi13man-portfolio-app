@@ -89,7 +89,7 @@ export const chapters: JourneyChapter[] = [
   {
     id: "current",
     label: "05 - WHAT I BUILT RECENTLY",
-    title: "AI meets healthcare",
+    title: "Beyond the day job",
     navLabel: "Recent",
   },
   {
