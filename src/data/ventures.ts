@@ -61,9 +61,6 @@ export const ventures: Venture[] = [
       others: ["/assets/ventures/onlyforms-value_proposition.webp"],
       primary: "/assets/ventures/onlyforms-delight.webp",
     },
-    links: {
-      primary: "https://onlyforms.org",
-    },
     name: "Onlyforms - Redefining MBA Surveys",
     roles: [
       {

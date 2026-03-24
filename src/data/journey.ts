@@ -250,7 +250,6 @@ export const ventures: VentureEntry[] = [
     description:
       "MBA survey platform with instant rewards. Served 121 students with 8-minute average response time per 50 responses. Ran as a passive income experiment before winding down.",
     image: "/assets/ventures/onlyforms-delight.webp",
-    link: "https://onlyforms.org",
   },
   {
     name: "Dostana.AI at Build for Bharat",
