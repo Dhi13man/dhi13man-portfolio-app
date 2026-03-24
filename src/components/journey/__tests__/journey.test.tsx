@@ -243,7 +243,7 @@ describe("HeroChapter", () => {
       render(<HeroChapter activeChapterRef={mockActiveChapterRef} />);
       expect(screen.getByText("transactions/day")).toBeInTheDocument();
       expect(screen.getByText("users served")).toBeInTheDocument();
-      expect(screen.getByText("years building")).toBeInTheDocument();
+      expect(screen.getByText("years experience")).toBeInTheDocument();
       expect(screen.getByText("startup acquired")).toBeInTheDocument();
       expect(screen.getByText("1st place wins")).toBeInTheDocument();
       expect(screen.getByText("paying customers")).toBeInTheDocument();

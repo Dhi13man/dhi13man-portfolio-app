@@ -52,7 +52,7 @@ export interface OSSProject {
 export const heroMetrics: JourneyMetric[] = [
   { value: 300, suffix: "K+", label: "transactions/day" },
   { value: 13, suffix: "M+", label: "users served" },
-  { value: 7, suffix: "+", label: "years building" },
+  { value: 4, suffix: "+", label: "years experience" },
   { value: 1, suffix: "", label: "startup acquired" },
   { value: 6, suffix: "x", label: "1st place wins" },
   { value: 5, suffix: "", label: "paying customers" },
@@ -144,13 +144,28 @@ export const foundationCards: FoundationCard[] = [
     description:
       "Won 6 national-level hackathons and innovation challenges before graduating.",
     details: [
-      "1st Prize, KIIT-Fest Innovation Challenge (Rs.1 Lakh)",
+      "1st Prize, KIIT-Fest Innovation Challenge, KIIT University (Rs.1 Lakh)",
       "1st Prize, E-Hackathon by ASTEC & Startup Assam (Rs.25K)",
+      "1st Prize, Robomania, NIT Silchar",
       "1st Prize, RTU TEQIP-III Poornima Hackathon",
       "1st Prize, Technex Projectomania",
+      "1st Position, AgriHacks e-Ideathon, Jorhat Engineering College",
     ],
     image: "/assets/ventures/eminence_robotics-accolades.jpeg",
     link: "https://eminencerobotics.org",
+  },
+  {
+    title: "Freelancing: Cashtic",
+    date: "May - Nov 2021",
+    description:
+      "Freelanced for a Hungarian fintech startup building a peer-to-peer ATM cash network. Built core systems from scratch remotely from college.",
+    details: [
+      "Dynamic-link referral system and dual-sided user rating system",
+      "CRON-scheduled data processing pipeline handling 300,000+ daily records",
+      "Encapsulated Openrouteservice and Nordigen (EU PSD2) APIs with typed models and unit tests",
+    ],
+    image: "/assets/work_experiences/cashtic.webp",
+    link: "https://cashtic.com",
   },
 ];
 
@@ -206,8 +221,8 @@ export const growwRoles: GrowwRole[] = [
       "Built real-time market data streaming with Kafka Streams and Redis at <10ms latency for price triggers and Option Greeks",
       "Stabilized credit collections platform end-to-end, built observability on Superset, reduced ticket resolution TAT by ~90%",
       "Created 48-page engineering Knowledge Base with SOPs and runbooks for the collections domain",
-      "Led 3 greenfield trading projects: Strategy Marketplace (Python + Java + Kafka), Historical Data Ingestion (~500GB), Smart Orders GTT/OCO API",
-      "Created centralized response code management handling 20,000+ error mappings across org",
+      "Led 3 greenfield trading projects: Strategy Marketplace (Python + Java + Kafka), Historical Data Ingestion (~500GB), Smart Orders GTT/OCO unifying 4 downstream APIs",
+      "Created centralized response code management handling 20,000+ error mappings across org, plus a custom gRPC wrapper adopted team-wide",
       "Single-handedly built backend-driven home page serving personalized content to millions",
       "Owned observability across multiple pods: PromQL, Grafana, Superset, Golang templating",
     ],
@@ -262,7 +277,7 @@ export const ventures: VentureEntry[] = [
     badge: "National Runner-up",
     subtitle: "ONDC, Google, Antler, Protean, PayTM - May 2024",
     description:
-      "AI-powered kirana store management system. Presented business plan in front of industry leaders. Top 2 finalists in the Next-gen Ventures category.",
+      "AI-powered kirana store management system. Top 2 finalists in the Next-gen Ventures category, presented to Google, Antler, and ONDC leadership. Also ranked Top 2% globally in Product Strategy via the Upraised Embark Program.",
   },
 ];
 
