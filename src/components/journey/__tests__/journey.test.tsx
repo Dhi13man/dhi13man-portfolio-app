@@ -814,8 +814,8 @@ describe("VenturesChapter details", () => {
       render(
         <VenturesChapter activeChapterRef={mockActiveChapterRef} />,
       );
-      expect(screen.getByText(/Comprehensive technical architecture/)).toBeInTheDocument();
-      expect(screen.getByText(/Complete tech transfer/)).toBeInTheDocument();
+      expect(screen.getByText(/Built the full tech stack/)).toBeInTheDocument();
+      expect(screen.getByText(/Ran the complete tech transfer/)).toBeInTheDocument();
     });
   });
 });
