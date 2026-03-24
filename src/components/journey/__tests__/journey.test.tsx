@@ -321,7 +321,7 @@ describe("GrowwChapter", () => {
     it("should display key metric pills", () => {
       render(<GrowwChapter activeChapterRef={mockActiveChapterRef} />);
       expect(screen.getByText("300K+ daily txns")).toBeInTheDocument();
-      expect(screen.getByText("~90% TAT reduction")).toBeInTheDocument();
+      expect(screen.getByText("95% annotation adoption")).toBeInTheDocument();
     });
   });
 });
