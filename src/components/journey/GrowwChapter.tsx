@@ -226,7 +226,7 @@ function RoleCard({
         horizontal && "min-w-[440px] max-w-[480px]",
       )}
     >
-      <div className="mb-2 flex items-baseline justify-between gap-4">
+      <div className="mb-2 flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
         <h3 className="text-20 font-semibold text-text-primary lg:text-24">
           {role.title}
         </h3>

@@ -42,7 +42,16 @@ export function HeroChapter({ activeChapterRef }: HeroChapterProps) {
         },
       });
 
-      if (reducedMotion) return;
+      // Guard with both React state AND live media query. During hydration,
+      // getServerSnapshot returns false — the first useGSAP run sees
+      // reducedMotion=false before useSyncExternalStore forces a re-render.
+      // gsap.from(immediateRender:true) would mutate inline styles before
+      // GSAP context revert can clean them up, leaving text at opacity 0.
+      if (
+        reducedMotion ||
+        window.matchMedia("(prefers-reduced-motion: reduce)").matches
+      )
+        return;
 
       // SplitText kinetic typography
       if (titleRef.current) {
