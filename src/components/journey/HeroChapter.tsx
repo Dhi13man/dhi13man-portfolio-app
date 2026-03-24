@@ -11,6 +11,8 @@ import {
 } from "@/data/journey";
 import { ChevronDown } from "lucide-react";
 
+const TEXT_WRAP_BALANCE: React.CSSProperties = { textWrap: "balance" } as React.CSSProperties;
+
 interface HeroChapterProps {
   activeChapterRef: MutableRefObject<number>;
 }
@@ -112,7 +114,7 @@ export function HeroChapter({ activeChapterRef }: HeroChapterProps) {
           ref={titleRef}
           id="hero-heading"
           className="font-display text-48 font-bold text-text-primary md:text-64"
-          style={{ textWrap: "balance" } as React.CSSProperties}
+          style={TEXT_WRAP_BALANCE}
         >
           Dhiman Seal
         </h1>
@@ -126,7 +128,6 @@ export function HeroChapter({ activeChapterRef }: HeroChapterProps) {
           <span className="text-text-quaternary">/</span> Builder
         </p>
 
-        {/* Narrative hook */}
         <p
           ref={narrativeRef}
           className="max-w-[640px] text-16 text-text-tertiary"
@@ -134,7 +135,6 @@ export function HeroChapter({ activeChapterRef }: HeroChapterProps) {
           {heroNarrative}
         </p>
 
-        {/* Metric ticker strip */}
         <div className="mt-8 grid grid-cols-2 gap-6 md:grid-cols-3 lg:grid-cols-6">
           {heroMetrics.map((metric) => (
             <MetricCounter

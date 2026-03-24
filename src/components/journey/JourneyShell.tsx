@@ -47,12 +47,14 @@ export function JourneyShell() {
       document.body.classList.remove("journey-immersive");
       document.documentElement.classList.remove("lenis-active");
       // Kill only ScrollTriggers whose trigger lives inside our container
-      ScrollTrigger.getAll().forEach((t) => {
-        const trigger = t.trigger as Element | undefined;
-        if (!trigger || !container || container.contains(trigger)) {
-          t.kill();
-        }
-      });
+      if (container) {
+        ScrollTrigger.getAll().forEach((t) => {
+          const trigger = t.trigger as Element | undefined;
+          if (!trigger || container.contains(trigger)) {
+            t.kill();
+          }
+        });
+      }
     };
   }, []);
 

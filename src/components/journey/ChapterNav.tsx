@@ -47,7 +47,6 @@ export function ChapterNav({
           const isActive = activeIndex === i;
           return (
             <div key={chapter.id} className="relative flex items-center">
-              {/* Tooltip */}
               {hoveredIndex === i && (
                 <span className="absolute right-8 whitespace-nowrap rounded bg-surface/90 px-3 py-1 text-12 text-text-secondary backdrop-blur-sm">
                   {chapter.navLabel}
@@ -64,14 +63,12 @@ export function ChapterNav({
                 onFocus={() => setHoveredIndex(i)}
                 onBlur={() => setHoveredIndex(null)}
               >
-                {/* Pulse ring for active dot */}
                 {isActive && (
                   <span
                     className="absolute h-5 w-5 rounded-full border border-accent/30"
                     aria-hidden="true"
                   />
                 )}
-                {/* Dot */}
                 <span
                   className={cn(
                     "relative h-3 w-3 rounded-full border transition-all duration-fast",

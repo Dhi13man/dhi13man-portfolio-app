@@ -18,6 +18,8 @@ import {
 } from "@/data/journey";
 import { X } from "lucide-react";
 
+const TEXT_WRAP_BALANCE: React.CSSProperties = { textWrap: "balance" } as React.CSSProperties;
+
 interface FoundationChapterProps {
   activeChapterRef: MutableRefObject<number>;
 }
@@ -104,7 +106,6 @@ export function FoundationChapter({
       className="bg-surface py-16 md:py-24"
     >
       <div ref={contentRef} className="mx-auto max-w-[1200px] px-8">
-        {/* Header row: label + title + quote */}
         <ScrollReveal className="mb-8 flex flex-col gap-4">
           <span className="text-12 uppercase tracking-widest text-text-quaternary">
             {chapter.label}
@@ -112,7 +113,7 @@ export function FoundationChapter({
           <h2
             id="foundation-heading"
             className="font-display text-32 font-bold text-text-primary"
-            style={{ textWrap: "balance" } as React.CSSProperties}
+            style={TEXT_WRAP_BALANCE}
           >
             {chapter.title}
           </h2>
@@ -121,7 +122,6 @@ export function FoundationChapter({
           </p>
         </ScrollReveal>
 
-        {/* 2x2 bento grid of cards */}
         <div
           ref={cardsRef}
           className="grid grid-cols-1 gap-4 md:grid-cols-2"

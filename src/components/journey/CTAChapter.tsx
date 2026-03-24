@@ -8,6 +8,17 @@ import { chapters, ctaNarrative, ctaLinks } from "@/data/journey";
 import { Github, Linkedin, Mail, Pen, Twitter } from "lucide-react";
 import Link from "next/link";
 
+const socialLinks = [
+  { href: ctaLinks.github, icon: Github, label: "GitHub" },
+  { href: ctaLinks.linkedin, icon: Linkedin, label: "LinkedIn" },
+  { href: ctaLinks.medium, icon: Pen, label: "Medium" },
+  { href: ctaLinks.twitter, icon: Twitter, label: "Twitter" },
+  { href: ctaLinks.email, icon: Mail, label: "Email" },
+];
+
+const TEXT_WRAP_BALANCE: React.CSSProperties = { textWrap: "balance" } as React.CSSProperties;
+const TEXT_WRAP_PRETTY: React.CSSProperties = { textWrap: "pretty" } as React.CSSProperties;
+
 interface CTAChapterProps {
   activeChapterRef: MutableRefObject<number>;
 }
@@ -36,14 +47,6 @@ export function CTAChapter({ activeChapterRef }: CTAChapterProps) {
 
   const chapter = chapters[5];
 
-  const socialLinks = [
-    { href: ctaLinks.github, icon: Github, label: "GitHub" },
-    { href: ctaLinks.linkedin, icon: Linkedin, label: "LinkedIn" },
-    { href: ctaLinks.medium, icon: Pen, label: "Medium" },
-    { href: ctaLinks.twitter, icon: Twitter, label: "Twitter" },
-    { href: ctaLinks.email, icon: Mail, label: "Email" },
-  ];
-
   return (
     <section
       ref={sectionRef}
@@ -60,19 +63,18 @@ export function CTAChapter({ activeChapterRef }: CTAChapterProps) {
         <h2
           id="cta-heading"
           className="font-display text-32 font-bold text-text-primary"
-          style={{ textWrap: "balance" } as React.CSSProperties}
+          style={TEXT_WRAP_BALANCE}
         >
           {chapter.title}
         </h2>
 
         <p
           className="text-16 leading-relaxed text-text-secondary"
-          style={{ textWrap: "pretty" } as React.CSSProperties}
+          style={TEXT_WRAP_PRETTY}
         >
           {ctaNarrative}
         </p>
 
-        {/* CTA Buttons */}
         <div className="flex flex-col items-center gap-3 sm:flex-row">
           <a
             href={ctaLinks.email}
@@ -94,7 +96,6 @@ export function CTAChapter({ activeChapterRef }: CTAChapterProps) {
           </Link>
         </div>
 
-        {/* Social links */}
         <div className="flex items-center gap-4">
           {socialLinks.map(({ href, icon: Icon, label }) => (
             <a
@@ -110,7 +111,6 @@ export function CTAChapter({ activeChapterRef }: CTAChapterProps) {
           ))}
         </div>
 
-        {/* Copyright */}
         <p
           className="mt-8 text-14 text-text-quaternary"
           suppressHydrationWarning

@@ -26,8 +26,7 @@ export function MetricCounter({
       if (reducedMotion || !numberRef.current) return;
 
       const proxy = { val: 0 };
-      // Snap to reasonable increments based on value magnitude
-      const snapTo = value >= 100 ? 1 : value >= 10 ? 1 : 0.1;
+      const snapTo = value >= 10 ? 1 : 0.1;
 
       gsap.to(proxy, {
         val: value,

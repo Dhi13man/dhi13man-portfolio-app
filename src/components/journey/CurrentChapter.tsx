@@ -7,9 +7,12 @@ import { ScrollReveal } from "./ScrollReveal";
 import {
   chapters,
   currentNarrative,
+  coreTechStack,
   ossHighlights,
   ossSummary,
 } from "@/data/journey";
+
+const TEXT_WRAP_BALANCE: React.CSSProperties = { textWrap: "balance" } as React.CSSProperties;
 
 interface CurrentChapterProps {
   activeChapterRef: MutableRefObject<number>;
@@ -50,7 +53,6 @@ export function CurrentChapter({ activeChapterRef }: CurrentChapterProps) {
     >
       <div className="mx-auto max-w-[1200px] px-8">
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-2">
-          {/* Narrative */}
           <ScrollReveal className="flex flex-col gap-6">
             <span className="text-12 uppercase tracking-widest text-text-quaternary">
               {chapter.label}
@@ -58,7 +60,7 @@ export function CurrentChapter({ activeChapterRef }: CurrentChapterProps) {
             <h2
               id="current-heading"
               className="font-display text-32 font-bold text-text-primary"
-              style={{ textWrap: "balance" } as React.CSSProperties}
+              style={TEXT_WRAP_BALANCE}
             >
               {chapter.title}
             </h2>
@@ -66,7 +68,6 @@ export function CurrentChapter({ activeChapterRef }: CurrentChapterProps) {
               {currentNarrative.lead}
             </p>
 
-            {/* EzHomeo details */}
             <div className="rounded border border-border bg-background p-6">
               <h3 className="mb-2 text-20 font-semibold text-text-primary">
                 <a
@@ -94,15 +95,13 @@ export function CurrentChapter({ activeChapterRef }: CurrentChapterProps) {
             </div>
           </ScrollReveal>
 
-          {/* Right column: tech stack + OSS */}
           <ScrollReveal className="flex flex-col gap-6" delay={0.2}>
-            {/* Professional tech stack (across all work) */}
             <div className="rounded border border-border bg-background p-6">
               <h3 className="mb-4 text-14 font-semibold uppercase tracking-wide text-text-tertiary">
                 Core Tech Stack
               </h3>
               <div className="mb-3 flex flex-wrap gap-2">
-                {["Java", "Spring Boot", "Apache Kafka", "Redis", "PostgreSQL", "gRPC"].map((tech) => (
+                {coreTechStack.primary.map((tech) => (
                   <span
                     key={tech}
                     className="rounded border border-accent/20 bg-accent/10 px-3 py-1.5 text-14 font-medium text-accent"
@@ -112,7 +111,7 @@ export function CurrentChapter({ activeChapterRef }: CurrentChapterProps) {
                 ))}
               </div>
               <div className="flex flex-wrap gap-2">
-                {["Python", "Go", "TypeScript", "Node.js", "Kubernetes", "Docker", "GCP", "AWS", "Prometheus", "Grafana"].map((tech) => (
+                {coreTechStack.secondary.map((tech) => (
                   <span
                     key={tech}
                     className="rounded border border-border bg-surface px-3 py-1.5 text-14 text-text-secondary"
@@ -126,7 +125,6 @@ export function CurrentChapter({ activeChapterRef }: CurrentChapterProps) {
               </p>
             </div>
 
-            {/* OSS Highlights */}
             <div className="rounded border border-border bg-background p-6">
               <h3 className="mb-4 text-14 font-semibold uppercase tracking-wide text-text-tertiary">
                 Open Source

@@ -3,7 +3,6 @@
 import { useRef, type ReactNode } from "react";
 import { gsap, useGSAP } from "@/lib/gsap";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
-import { cn } from "@/lib/utils";
 
 interface ScrollRevealProps {
   children: ReactNode;
@@ -53,7 +52,7 @@ export function ScrollReveal({
   );
 
   return (
-    <Tag ref={ref as React.RefObject<HTMLDivElement>} className={cn(className)}>
+    <Tag ref={ref as React.RefObject<HTMLDivElement>} className={className}>
       {children}
     </Tag>
   );

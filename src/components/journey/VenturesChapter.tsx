@@ -9,6 +9,8 @@ import { chapters, venturesNarrative, ventures } from "@/data/journey";
 import { cn } from "@/lib/utils";
 import type { VentureEntry } from "@/data/journey";
 
+const TEXT_WRAP_BALANCE: React.CSSProperties = { textWrap: "balance" } as React.CSSProperties;
+
 interface VenturesChapterProps {
   activeChapterRef: MutableRefObject<number>;
 }
@@ -54,7 +56,7 @@ export function VenturesChapter({ activeChapterRef }: VenturesChapterProps) {
           <h2
             id="ventures-heading"
             className="font-display text-32 font-bold text-text-primary"
-            style={{ textWrap: "balance" } as React.CSSProperties}
+            style={TEXT_WRAP_BALANCE}
           >
             {chapter.title}
           </h2>
@@ -63,12 +65,9 @@ export function VenturesChapter({ activeChapterRef }: VenturesChapterProps) {
           </p>
         </ScrollReveal>
 
-        {/* Venture cards: AgriJod full-width, rest in 2-col grid */}
         <div className="flex flex-col gap-4">
-          {/* AgriJod - full width, special treatment */}
           <VentureCard venture={ventures[0]} reducedMotion={reducedMotion} />
 
-          {/* Remaining ventures in grid */}
           <ScrollReveal
             stagger={0.08}
             className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3"
@@ -139,7 +138,6 @@ function VentureCard({
           "border border-border bg-surface hover:border-border-hover hover:bg-hover-bg",
       )}
     >
-      {/* Image - clicks open in new tab, not the card link */}
       {venture.image && (
         <div className="relative w-full overflow-hidden">
           <button

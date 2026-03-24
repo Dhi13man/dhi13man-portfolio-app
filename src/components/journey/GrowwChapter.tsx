@@ -8,6 +8,7 @@ import { ScrollReveal } from "./ScrollReveal";
 import { chapters, growwNarrative, growwRoles } from "@/data/journey";
 import { cn } from "@/lib/utils";
 
+const TEXT_WRAP_BALANCE: React.CSSProperties = { textWrap: "balance" } as React.CSSProperties;
 const DESKTOP_QUERY = "(min-width: 1024px)";
 
 function subscribeDesktop(callback: () => void): () => void {
@@ -102,7 +103,6 @@ export function GrowwChapter({ activeChapterRef }: GrowwChapterProps) {
       aria-labelledby="groww-heading"
       className="bg-surface"
     >
-      {/* Intro */}
       <div className="mx-auto max-w-[1200px] px-8 py-16 md:py-24">
         <ScrollReveal className="flex flex-col gap-6">
           <span className="text-12 uppercase tracking-widest text-text-quaternary">
@@ -128,7 +128,7 @@ export function GrowwChapter({ activeChapterRef }: GrowwChapterProps) {
             <h2
               id="groww-heading"
               className="font-display text-32 font-bold text-text-primary"
-              style={{ textWrap: "balance" } as React.CSSProperties}
+              style={TEXT_WRAP_BALANCE}
             >
               {chapter.title}
             </h2>
@@ -142,7 +142,6 @@ export function GrowwChapter({ activeChapterRef }: GrowwChapterProps) {
       {/* Desktop: horizontal scroll (hidden on mobile via CSS) */}
       {isDesktop && !reducedMotion && (
         <div ref={horizontalRef} className="relative min-h-svh overflow-hidden">
-          {/* Timeline progress line */}
           <div className="absolute left-0 right-0 top-8 mx-auto h-[1px] max-w-[calc(100%-64px)] bg-border">
             <div
               ref={progressRef}
@@ -150,7 +149,6 @@ export function GrowwChapter({ activeChapterRef }: GrowwChapterProps) {
               style={{ transform: "scaleX(0)" }}
             />
           </div>
-          {/* Timeline dots */}
           <div className="absolute left-0 right-0 top-8 mx-auto flex max-w-[calc(100%-64px)] justify-between px-8">
             {growwRoles.map((role, i) => (
               <div
@@ -172,7 +170,6 @@ export function GrowwChapter({ activeChapterRef }: GrowwChapterProps) {
             ))}
           </div>
 
-          {/* Cards container */}
           <div
             ref={cardsRef}
             className="flex items-start gap-8 px-16 pt-24"
@@ -197,7 +194,6 @@ export function GrowwChapter({ activeChapterRef }: GrowwChapterProps) {
                   i === growwRoles.length - 1 && "pb-0",
                 )}
               >
-                {/* Timeline dot */}
                 <div
                   className={cn(
                     "absolute -left-[calc(0.75rem+5px)] top-2 h-3 w-3 rounded-full border-2",
@@ -240,7 +236,6 @@ function RoleCard({
       </div>
       <p className="mb-4 text-14 text-text-secondary">{role.description}</p>
 
-      {/* Metric pills */}
       <div className="mb-4 flex flex-wrap gap-2">
         {role.pills.map((pill) => (
           <span
@@ -252,7 +247,6 @@ function RoleCard({
         ))}
       </div>
 
-      {/* Detail bullets */}
       <ul className="space-y-2">
         {role.details.map((detail) => (
           <li

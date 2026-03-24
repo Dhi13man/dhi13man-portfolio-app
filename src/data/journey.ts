@@ -279,6 +279,11 @@ export const ventures: VentureEntry[] = [
   },
 ];
 
+export const coreTechStack = {
+  primary: ["Java", "Spring Boot", "Apache Kafka", "Redis", "PostgreSQL", "gRPC"],
+  secondary: ["Python", "Go", "TypeScript", "Node.js", "Kubernetes", "Docker", "GCP", "AWS", "Prometheus", "Grafana"],
+};
+
 // --- Current Chapter ---
 
 export const currentNarrative = {
