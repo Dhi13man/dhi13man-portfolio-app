@@ -18,6 +18,7 @@ export interface FoundationCard {
   description: string;
   details?: string[];
   image?: string;
+  link?: string;
 }
 
 export interface GrowwRole {
@@ -36,6 +37,7 @@ export interface VentureEntry {
   description: string;
   details?: string[];
   image?: string;
+  link?: string;
 }
 
 export interface OSSProject {
@@ -53,7 +55,7 @@ export const heroMetrics: JourneyMetric[] = [
   { value: 7, suffix: "+", label: "years building" },
   { value: 1, suffix: "", label: "startup acquired" },
   { value: 6, suffix: "x", label: "1st place wins" },
-  { value: 95, suffix: "%", label: "team adoption" },
+  { value: 5, suffix: "", label: "paying customers" },
 ];
 
 // --- Chapters ---
@@ -106,15 +108,15 @@ export const heroNarrative =
 // --- Foundation Chapter ---
 
 export const foundationNarrative = {
-  lead: "Before I wrote my first line of production code, I was soldering circuits, building robots, and teaching kids how to code in Northeast India. NIT Silchar gave me the theory - but I was already building.",
+  lead: "Before I wrote my first line of production code, I was soldering circuits, building robots, and teaching kids how to code in Northeast India. NIT Silchar gave me the theory, but I was already building.",
   quote:
-    "I didn't study engineering to get a job - I studied it to build things.",
+    "I didn't study engineering to get a job. I studied it to build things.",
 };
 
 export const foundationCards: FoundationCard[] = [
   {
     title: "NIT Silchar",
-    date: "2018 – 2022",
+    date: "2018 - 2022",
     description:
       "B.Tech in Electronics & Communication Engineering. CGPA 8.32/10.",
     details: [
@@ -122,42 +124,33 @@ export const foundationCards: FoundationCard[] = [
       "GAN Specialization (deeplearning.ai)",
       "Machine Learning course at IIT Guwahati",
     ],
+    link: "https://www.nits.ac.in/",
   },
   {
-    title: "Eminence Robotics",
-    date: "2018 – 2021",
+    title: "Volunteering: TechEngio",
+    date: "2018 - 2020",
     description:
-      "Co-founded a student robotics org. Built terrain vehicles, combat robots, and autonomous systems. Competed nationally.",
-    details: [
-      "Led technical event organization",
-      "Developed IoT and autonomous smart systems",
-      "Multiple national tech festival entries",
-    ],
-    image: "/assets/ventures/eminence_robotics-accolades.jpeg",
-  },
-  {
-    title: "TechEngio",
-    date: "2018 – 2020",
-    description:
-      "Co-founded an edtech initiative delivering hands-on robotics and coding workshops across Northeast India.",
+      "Volunteered to teach robotics and coding workshops across Northeast India. Reached students who had never seen a microcontroller before.",
     details: [
       "On-site workshops at local institutions",
-      "Educational content and video creation",
-      "Affiliate marketing revenue streams",
+      "Created educational content and demo projects",
     ],
     image: "/assets/ventures/techengio-workshop.jpeg",
+    link: "https://facebook.com/TechEngio/",
   },
   {
     title: "Early Hackathon Wins",
-    date: "2019 – 2021",
+    date: "2019 - 2021",
     description:
       "Won 6 national-level hackathons and innovation challenges before graduating.",
     details: [
-      "1st Prize, KIIT-Fest Innovation Challenge (₹1 Lakh)",
-      "1st Prize, E-Hackathon by ASTEC & Startup Assam (₹25K)",
+      "1st Prize, KIIT-Fest Innovation Challenge (Rs.1 Lakh)",
+      "1st Prize, E-Hackathon by ASTEC & Startup Assam (Rs.25K)",
       "1st Prize, RTU TEQIP-III Poornima Hackathon",
       "1st Prize, Technex Projectomania",
     ],
+    image: "/assets/ventures/eminence_robotics-accolades.jpeg",
+    link: "https://eminencerobotics.org",
   },
 ];
 
@@ -167,12 +160,14 @@ export const growwNarrative = {
   lead: "I joined Groww as an intern in January 2022. Within six months I had a pre-placement offer. Within eighteen months I was building payment systems handling 300K+ daily transactions for 13M+ users.",
   companyAbout:
     "India's leading investment platform, democratizing financial services for millions.",
+  logo: "/assets/work_experiences/growwin-logo.png",
+  link: "https://groww.in",
 };
 
 export const growwRoles: GrowwRole[] = [
   {
     title: "Software Engineer Intern",
-    date: "Jan 2022 – Jun 2022",
+    date: "Jan 2022 - Jun 2022",
     description:
       "Optimized high-performance backend systems for the Payments team. Earned a pre-placement offer through exceptional contributions.",
     pills: ["Pre-placement offer", "Documentation standards"],
@@ -183,19 +178,19 @@ export const growwRoles: GrowwRole[] = [
   },
   {
     title: "Software Engineer 1",
-    date: "Jul 2022 – Jun 2023",
+    date: "Jul 2022 - Jun 2023",
     description:
       "Built payment infrastructure with Java Spring Boot, Kafka, and Redis. Created custom annotations adopted across 95% of team microservices.",
-    pills: ["95% adoption", "CQRS patterns", "Custom Spring annotations"],
+    pills: ["95% adoption", "CQRS patterns", "Maven Central"],
     details: [
-      "Pitched and built multi-datasource annotations - now used across 95% of team's microservices",
+      "Pitched and built multi-datasource annotations, now used across 95% of team microservices",
       "Owned internal SDKs implementing scalable distributed system patterns",
       "Published spring-multi-data-source on Maven Central",
     ],
   },
   {
     title: "Software Engineer 2",
-    date: "Jul 2023 – Present",
+    date: "Jul 2023 - Present",
     description:
       "Architecting UPI payment systems processing 300K+ daily transactions and real-time market data infrastructure serving 13M+ users.",
     pills: [
@@ -205,10 +200,10 @@ export const growwRoles: GrowwRole[] = [
       "Backend-driven home page",
     ],
     details: [
-      "Architected UPI payment system from scratch - 300,000+ successful transactions per day",
+      "Architected UPI payment system from scratch, 300,000+ successful transactions per day",
       "Built real-time market data streaming with Kafka Streams and Redis at <10ms latency",
       "Created centralized response code management handling 20,000+ error mappings",
-      "Owned observability for payments pod - PromQL, Grafana, dashboards for every metric",
+      "Owned observability for payments pod: PromQL, Grafana, dashboards for every metric",
       "Single-handedly built backend-driven home page serving personalized content to millions",
     ],
   },
@@ -235,27 +230,30 @@ export const ventures: VentureEntry[] = [
       "Complete tech transfer executed to acquiring company",
     ],
     image: "/assets/work_experiences/agrijod-cover.webp",
+    link: "https://agrijod.in",
   },
   {
     name: "Banalo",
     status: "closed",
     badge: "Closed",
-    subtitle: "Aug 2022 – Mar 2023",
+    subtitle: "Aug 2022 - Mar 2023",
     description:
-      "I tried to build Blue Apron for India. Got VC mentorship, pitched in competitions, built the mockups. Then I did the math - unit economics didn't work for daily fresh ingredient delivery in Indian metros at our target price point. I closed it. That decision taught me more about business viability than any success.",
+      "I tried to build Blue Apron for India. Got VC mentorship, pitched in competitions, built the mockups. Then I did the math: unit economics didn't work for daily fresh ingredient delivery in Indian metros at our target price point. I closed it. That decision taught me more about business viability than any success.",
     image: "/assets/ventures/banalo-value_proposition.webp",
+    link: "https://www.eminencerobotics.org/banalo",
   },
   {
     name: "OnlyForms",
     status: "closed",
     badge: "Closed",
-    subtitle: "Dec 2023 – Aug 2025",
+    subtitle: "Dec 2023 - Aug 2025",
     description:
       "MBA survey platform with instant rewards. Served 121 students with 8-minute average response time per 50 responses. Ran as a passive income experiment before winding down.",
     image: "/assets/ventures/onlyforms-delight.webp",
+    link: "https://onlyforms.org",
   },
   {
-    name: "Dostana.AI - Build for Bharat",
+    name: "Dostana.AI at Build for Bharat",
     status: "recognition",
     badge: "National Runner-up",
     subtitle: "ONDC, Google, Antler, Protean, PayTM - May 2024",
@@ -267,23 +265,26 @@ export const ventures: VentureEntry[] = [
 // --- Current Chapter ---
 
 export const currentNarrative = {
-  lead: "I built AI-powered tools for homeopathic practitioners - audio transcription, a 4-stage AI analysis pipeline, and interactive case editing. Real doctors, real patients, real impact. I shipped it to 5 paying customers and proved the concept works.",
+  lead: "I built AI-powered tools for homeopathic practitioners: audio transcription, a 4-stage AI analysis pipeline, and interactive case editing. Real doctors, real patients, real impact. I shipped it to 5 paying customers and proved the concept works.",
   ezhomeo: {
     name: "EzHomeo",
+    link: "https://www.ezhomeo.com",
     metrics: [
       "5 paying customers",
       "775+ unit tests",
       "4-stage AI pipeline",
     ],
+    // Backend-focused ordering
     techStack: [
-      "React 19",
       "Node.js",
+      "Express",
       "TypeScript",
-      "Google Gemini",
       "PostgreSQL",
+      "Google Gemini",
       "Supabase",
       "Google Cloud Run",
       "Pulumi",
+      "OpenTelemetry",
     ],
     description:
       "B2B SaaS for homeopathic institutions. Transcribed patient consultations, extracted symptoms, matched rubrics from OOREP (Open Online Repertory), and generated comprehensive case reports with remedy recommendations.",
@@ -322,7 +323,7 @@ export const ossSummary = {
 // --- CTA Chapter ---
 
 export const ctaNarrative =
-  "I've spent four years building payment infrastructure that millions depend on. In parallel, I've built companies, shipped open-source tools, and competed nationally. The next problem I want to solve is at the intersection of systems thinking and real-world impact - where the engineering is hard and the scale is large enough to be felt. If you're building something like that, I want to hear about it.";
+  "I've spent four years building payment infrastructure that millions depend on. In parallel, I've built companies, shipped open-source tools, and competed nationally. The next problem I want to solve is at the intersection of systems thinking and real-world impact, where the engineering is hard and the scale is large enough to be felt. If you're building something like that, I want to hear about it.";
 
 export const ctaLinks = {
   email: "mailto:dhiman.seal@hotmail.com",

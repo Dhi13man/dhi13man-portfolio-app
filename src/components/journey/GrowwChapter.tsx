@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef, type MutableRefObject } from "react";
+import ExportedImage from "next-image-export-optimizer";
 import { gsap, ScrollTrigger, useGSAP } from "@/lib/gsap";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
 import { ScrollReveal } from "./ScrollReveal";
@@ -87,13 +88,31 @@ export function GrowwChapter({ activeChapterRef }: GrowwChapterProps) {
           <span className="text-12 uppercase tracking-widest text-text-quaternary">
             {chapter.label}
           </span>
-          <h2
-            id="groww-heading"
-            className="font-display text-32 font-bold text-text-primary"
-            style={{ textWrap: "balance" } as React.CSSProperties}
-          >
-            {chapter.title}
-          </h2>
+          <div className="flex items-center gap-4">
+            {growwNarrative.logo && (
+              <a
+                href={growwNarrative.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="shrink-0"
+              >
+                <ExportedImage
+                  src={growwNarrative.logo}
+                  alt="Groww"
+                  width={48}
+                  height={48}
+                  className="rounded"
+                />
+              </a>
+            )}
+            <h2
+              id="groww-heading"
+              className="font-display text-32 font-bold text-text-primary"
+              style={{ textWrap: "balance" } as React.CSSProperties}
+            >
+              {chapter.title}
+            </h2>
+          </div>
           <p className="max-w-[640px] text-20 leading-relaxed text-text-secondary">
             {growwNarrative.lead}
           </p>

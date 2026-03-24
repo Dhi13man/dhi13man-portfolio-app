@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef, type MutableRefObject } from "react";
+import ExportedImage from "next-image-export-optimizer";
 import { gsap, ScrollTrigger, useGSAP } from "@/lib/gsap";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
 import { ScrollReveal } from "./ScrollReveal";
@@ -92,40 +93,58 @@ export function FoundationChapter({
 
         {/* Cards column */}
         <div ref={cardsRef} className="flex flex-col gap-4">
-          {foundationCards.map((card) => (
-            <article
-              key={card.title}
-              className="rounded border border-border bg-surface p-6 transition-all duration-fast hover:border-border-hover hover:bg-hover-bg"
-            >
-              <div className="mb-2 flex items-baseline justify-between gap-4">
-                <h3 className="text-20 font-semibold text-text-primary">
-                  {card.title}
-                </h3>
-                <span className="shrink-0 font-mono text-12 text-text-quaternary">
-                  {card.date}
-                </span>
-              </div>
-              <p className="text-14 text-text-secondary">{card.description}</p>
-              {card.details && card.details.length > 0 && (
-                <ul className="mt-3 space-y-1">
-                  {card.details.map((detail) => (
-                    <li
-                      key={detail}
-                      className="flex items-start gap-2 text-14 text-text-tertiary"
-                    >
-                      <span
-                        className="shrink-0 font-bold text-accent"
-                        aria-hidden="true"
+          {foundationCards.map((card) => {
+            const CardWrapper = card.link ? "a" : "div";
+            const wrapperProps = card.link
+              ? { href: card.link, target: "_blank" as const, rel: "noopener noreferrer" as const }
+              : {};
+            return (
+              <CardWrapper
+                key={card.title}
+                {...wrapperProps}
+                className="block rounded border border-border bg-surface p-6 transition-all duration-fast hover:border-border-hover hover:bg-hover-bg"
+              >
+                {card.image && (
+                  <div className="relative mb-4 h-40 w-full overflow-hidden rounded-sm">
+                    <ExportedImage
+                      src={card.image}
+                      alt={card.title}
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 768px) 100vw, 50vw"
+                    />
+                  </div>
+                )}
+                <div className="mb-2 flex items-baseline justify-between gap-4">
+                  <h3 className="text-20 font-semibold text-text-primary">
+                    {card.title}
+                  </h3>
+                  <span className="shrink-0 font-mono text-12 text-text-quaternary">
+                    {card.date}
+                  </span>
+                </div>
+                <p className="text-14 text-text-secondary">{card.description}</p>
+                {card.details && card.details.length > 0 && (
+                  <ul className="mt-3 space-y-1">
+                    {card.details.map((detail) => (
+                      <li
+                        key={detail}
+                        className="flex items-start gap-2 text-14 text-text-tertiary"
                       >
-                        &rarr;
-                      </span>
-                      {detail}
-                    </li>
-                  ))}
-                </ul>
-              )}
-            </article>
-          ))}
+                        <span
+                          className="shrink-0 font-bold text-accent"
+                          aria-hidden="true"
+                        >
+                          &rarr;
+                        </span>
+                        {detail}
+                      </li>
+                    ))}
+                  </ul>
+                )}
+              </CardWrapper>
+            );
+          })}
         </div>
       </div>
     </section>

@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef, type MutableRefObject } from "react";
+import ExportedImage from "next-image-export-optimizer";
 import { gsap, ScrollTrigger, useGSAP } from "@/lib/gsap";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
 import { ScrollReveal } from "./ScrollReveal";
@@ -123,13 +124,12 @@ function VentureCard({
   const isAcquired = venture.status === "acquired";
   const isClosed = venture.status === "closed";
 
-  return (
+  const content = (
     <article
       ref={cardRef}
       className={cn(
-        "rounded p-6 transition-all duration-fast",
-        isAcquired &&
-          "border border-accent bg-background",
+        "block overflow-hidden rounded transition-all duration-fast",
+        isAcquired && "border border-accent bg-background",
         isAcquired &&
           reducedMotion &&
           "shadow-[0_0_20px_rgba(139,92,246,0.15),0_0_40px_rgba(139,92,246,0.05)]",
@@ -139,78 +139,98 @@ function VentureCard({
           "border border-border bg-surface hover:border-border-hover hover:bg-hover-bg",
       )}
     >
-      {/* Badge */}
-      <div className="mb-3 flex items-center gap-3">
-        <span
+      {/* Image */}
+      {venture.image && (
+        <div className="relative h-44 w-full overflow-hidden">
+          <ExportedImage
+            src={venture.image}
+            alt={venture.name}
+            fill
+            className={cn(
+              "object-cover",
+              isClosed && "opacity-60",
+            )}
+            sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+          />
+        </div>
+      )}
+
+      <div className="p-6">
+        {/* Badge */}
+        <div className="mb-3 flex items-center gap-3">
+          <span
+            className={cn(
+              "rounded-sm px-3 py-1 text-12 font-semibold uppercase tracking-wide",
+              isAcquired && "bg-accent text-text-primary",
+              isClosed && "bg-surface/50 text-text-quaternary",
+              venture.status === "active" &&
+                "border border-accent/20 bg-accent/10 text-accent",
+              venture.status === "recognition" &&
+                "border border-accent/20 bg-accent/10 text-accent",
+            )}
+          >
+            {venture.badge}
+          </span>
+          <span
+            className={cn(
+              "text-12",
+              isAcquired ? "text-accent" : "text-text-quaternary",
+            )}
+          >
+            {venture.subtitle}
+          </span>
+        </div>
+
+        {/* Name */}
+        <h3
           className={cn(
-            "rounded-sm px-3 py-1 text-12 font-semibold uppercase tracking-wide",
-            isAcquired && "bg-accent text-text-primary",
-            isClosed && "bg-surface/50 text-text-quaternary",
-            venture.status === "active" &&
-              "border border-accent/20 bg-accent/10 text-accent",
-            venture.status === "recognition" &&
-              "border border-accent/20 bg-accent/10 text-accent",
+            "mb-2 text-20 font-semibold",
+            isClosed ? "text-text-tertiary" : "text-text-primary",
           )}
         >
-          {venture.badge}
-        </span>
-        <span
+          {venture.name}
+        </h3>
+
+        {/* Description */}
+        <p
           className={cn(
-            "text-12",
-            isAcquired ? "text-accent" : "text-text-quaternary",
+            "text-14",
+            isClosed ? "text-text-tertiary italic" : "text-text-secondary",
           )}
         >
-          {venture.subtitle}
-        </span>
-      </div>
+          {venture.description}
+        </p>
 
-      {/* Name */}
-      <h3
-        className={cn(
-          "mb-2 text-20 font-semibold",
-          isClosed ? "text-text-tertiary" : "text-text-primary",
-        )}
-      >
-        {venture.name}
-      </h3>
-
-      {/* Description */}
-      <p
-        className={cn(
-          "text-14",
-          isClosed ? "text-text-tertiary italic" : "text-text-secondary",
-        )}
-      >
-        {venture.description}
-      </p>
-
-      {/* Details */}
-      {venture.details && venture.details.length > 0 && (
-        <ul className="mt-3 space-y-1">
-          {venture.details.map((detail) => (
-            <li
-              key={detail}
-              className="flex items-start gap-2 text-14 text-text-tertiary"
-            >
-              <span
-                className="shrink-0 font-bold text-accent"
-                aria-hidden="true"
+        {/* Details */}
+        {venture.details && venture.details.length > 0 && (
+          <ul className="mt-3 space-y-1">
+            {venture.details.map((detail) => (
+              <li
+                key={detail}
+                className="flex items-start gap-2 text-14 text-text-tertiary"
               >
-                &rarr;
-              </span>
-              {detail}
-            </li>
-          ))}
-        </ul>
-      )}
-
-      {/* Active venture left border indicator */}
-      {venture.status === "active" && (
-        <div
-          className="absolute left-0 top-4 bottom-4 w-0.5 rounded bg-accent"
-          aria-hidden="true"
-        />
-      )}
+                <span
+                  className="shrink-0 font-bold text-accent"
+                  aria-hidden="true"
+                >
+                  &rarr;
+                </span>
+                {detail}
+              </li>
+            ))}
+          </ul>
+        )}
+      </div>
     </article>
   );
+
+  if (venture.link) {
+    return (
+      <a href={venture.link} target="_blank" rel="noopener noreferrer">
+        {content}
+      </a>
+    );
+  }
+
+  return content;
 }

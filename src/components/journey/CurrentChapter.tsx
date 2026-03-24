@@ -69,7 +69,14 @@ export function CurrentChapter({ activeChapterRef }: CurrentChapterProps) {
             {/* EzHomeo details */}
             <div className="rounded border border-border bg-background p-6">
               <h3 className="mb-2 text-20 font-semibold text-text-primary">
-                {ezhomeo.name}
+                <a
+                  href={ezhomeo.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-accent hover:text-accent-hover"
+                >
+                  {ezhomeo.name}
+                </a>
               </h3>
               <p className="mb-4 text-14 text-text-secondary">
                 {ezhomeo.description}

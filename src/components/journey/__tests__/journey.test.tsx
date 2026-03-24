@@ -246,7 +246,7 @@ describe("HeroChapter", () => {
       expect(screen.getByText("years building")).toBeInTheDocument();
       expect(screen.getByText("startup acquired")).toBeInTheDocument();
       expect(screen.getByText("1st place wins")).toBeInTheDocument();
-      expect(screen.getByText("team adoption")).toBeInTheDocument();
+      expect(screen.getByText("paying customers")).toBeInTheDocument();
     });
   });
 
@@ -273,11 +273,12 @@ describe("FoundationChapter", () => {
   });
 
   describe("FoundationChapter_whenRendered_thenDisplaysCards", () => {
-    it("should render NIT Silchar card", () => {
+    it("should render NIT Silchar and TechEngio cards", () => {
       render(
         <FoundationChapter activeChapterRef={mockActiveChapterRef} />,
       );
       expect(screen.getByText("NIT Silchar")).toBeInTheDocument();
+      expect(screen.getByText(/TechEngio/)).toBeInTheDocument();
     });
   });
 
@@ -515,7 +516,7 @@ describe("ReducedMotion", () => {
         <FoundationChapter activeChapterRef={mockActiveChapterRef} />,
       );
       expect(screen.getByText("NIT Silchar")).toBeInTheDocument();
-      expect(screen.getByText("Eminence Robotics")).toBeInTheDocument();
+      expect(screen.getByText(/TechEngio/)).toBeInTheDocument();
     });
   });
 

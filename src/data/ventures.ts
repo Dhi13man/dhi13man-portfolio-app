@@ -6,7 +6,7 @@ export const ventures: Venture[] = [
       "Built a B2B MedTech SaaS for homeopathic institutions in India. AI-powered audio transcription and case analysis platform with 5 paying customers",
     name: "EzHomeo",
     links: {
-      primary: "https://github.com/Dhi13man/oorep-mcp",
+      primary: "https://www.ezhomeo.com",
     },
     roles: [
       {
