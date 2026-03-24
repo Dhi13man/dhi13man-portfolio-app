@@ -45,6 +45,12 @@ Update BOTH files when any of these change:
   - `llms-full.txt`: Ventures section with complete timeline
   - Update count: "5 ventures" → "6 ventures"
 
+- [ ] **New Portfolio Page** → Update:
+  - `public/sitemap.xml`: Add `<url>` entry with appropriate priority
+  - `llms.txt`: Add to "Key Portfolio Pages" section
+  - `public/.well-known/agent-card.json`: Add to `endpoints` object
+  - `src/components/layout/Header.tsx`: Add to navigation links if user-facing
+
 ### 📅 MEDIUM PRIORITY (Update Quarterly)
 
 Update every 3 months or when accumulated:
