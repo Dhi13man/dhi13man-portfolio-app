@@ -108,10 +108,16 @@ export default async function Home() {
           </div>
 
           <div className="space-y-4">
-            <h1 className="text-64 font-display font-bold text-text-primary">
+            <h1
+              className="text-64 font-display font-bold text-text-primary"
+              style={{ textWrap: "balance" } as React.CSSProperties}
+            >
               Dhiman Seal
             </h1>
-            <p className="text-20 text-text-secondary font-medium">
+            <p
+              className="text-20 text-text-secondary font-medium"
+              style={{ textWrap: "pretty" } as React.CSSProperties}
+            >
               {aboutData.tagline}
             </p>
             {/* Social Links */}
@@ -163,18 +169,24 @@ export default async function Home() {
         </div>
       </Section>
 
-      {/* About Section - Enhanced with stats, skills, and values */}
+      {/* About Section */}
       <Section>
         <SectionHeader>
+          <span className="text-12 uppercase tracking-widest text-text-quaternary">
+            WHO I AM
+          </span>
           <SectionTitle>About</SectionTitle>
         </SectionHeader>
         <AboutSection data={aboutDataWithHighlights} />
       </Section>
 
-      {/* Current Initiatives Section - using domain components for consistency and images */}
+      {/* Current Initiatives Section */}
       {(currentProjects.length > 0 || currentVentures.length > 0) && (
         <Section id="current-initiatives">
           <SectionHeader>
+            <span className="text-12 uppercase tracking-widest text-text-quaternary">
+              WHAT I AM WORKING ON
+            </span>
             <SectionTitle>Current Initiatives</SectionTitle>
           </SectionHeader>
 

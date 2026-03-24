@@ -1,6 +1,7 @@
 import type { About } from "@/types/about";
 import { ValueIcon } from "./ValueIcon";
 import Link from "next/link";
+import { ArrowRight } from "lucide-react";
 
 interface AboutSectionProps {
   data: About;
@@ -38,6 +39,18 @@ export function AboutSection({ data }: AboutSectionProps) {
           </p>
         )}
       </header>
+
+      {/* Journey CTA */}
+      <div className="flex items-center">
+        <Link
+          href="/journey/"
+          className="group inline-flex items-center gap-2 text-14 font-medium text-accent transition-colors duration-fast hover:text-accent-hover"
+          aria-label="Read the full career story"
+        >
+          Read the full story
+          <ArrowRight className="h-4 w-4 transition-transform duration-fast group-hover:translate-x-1" />
+        </Link>
+      </div>
 
       {/* Highlights/Stats Grid */}
       {highlights.length > 0 ? (
@@ -110,23 +123,31 @@ export function AboutSection({ data }: AboutSectionProps) {
             Expertise
           </h4>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {expertise.map((area, areaIndex) => (
-              <div key={`expertise-${areaIndex}-${area.area}`} className="space-y-2">
-                <div className="text-14 text-text-tertiary">{area.area}</div>
-                <div className="flex flex-wrap gap-2" role="list" aria-label={`${area.area} skills`}>
-                  {Array.isArray(area.skills) && area.skills.map((skill, skillIndex) => (
-                    <span
-                      key={`skill-${areaIndex}-${skillIndex}`}
-                      role="listitem"
-                      className="px-3 py-1 text-12 rounded border border-border bg-surface/30 text-text-secondary hover:border-border-hover hover:text-accent transition-colors duration-fast"
-                      title={skill}
-                    >
-                      {skill}
-                    </span>
-                  ))}
+            {expertise.map((area, areaIndex) => {
+              // First expertise area (Backend & Systems) gets accent-tinted pills
+              const isPrimary = areaIndex === 0;
+              return (
+                <div key={`expertise-${areaIndex}-${area.area}`} className="space-y-2">
+                  <div className="text-14 text-text-tertiary">{area.area}</div>
+                  <div className="flex flex-wrap gap-2" role="list" aria-label={`${area.area} skills`}>
+                    {Array.isArray(area.skills) && area.skills.map((skill, skillIndex) => (
+                      <span
+                        key={`skill-${areaIndex}-${skillIndex}`}
+                        role="listitem"
+                        className={
+                          isPrimary
+                            ? "px-3 py-1 text-12 rounded border border-accent/20 bg-accent/10 text-accent transition-colors duration-fast"
+                            : "px-3 py-1 text-12 rounded border border-border bg-surface/30 text-text-secondary hover:border-border-hover hover:text-accent transition-colors duration-fast"
+                        }
+                        title={skill}
+                      >
+                        {skill}
+                      </span>
+                    ))}
+                  </div>
                 </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </section>
       )}

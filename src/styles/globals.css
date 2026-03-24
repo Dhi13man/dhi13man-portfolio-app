@@ -7,8 +7,15 @@
     @apply border-border;
   }
 
-  html {
+  html:not(.lenis-active) {
     scroll-behavior: smooth;
+  }
+
+  /* Journey page immersive mode: hide header and footer */
+  body.journey-immersive > header,
+  body.journey-immersive > main > footer,
+  body.journey-immersive > footer {
+    display: none !important;
   }
 
   body {

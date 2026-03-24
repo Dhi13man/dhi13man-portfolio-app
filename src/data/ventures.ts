@@ -3,18 +3,22 @@ import type { Venture } from "@/types";
 export const ventures: Venture[] = [
   {
     about:
-      "Building a B2B MedTech SaaS targeting top-tier homeopathic institutions in India",
-    name: "Med-Tech Startup - Stealth Mode",
+      "Built a B2B MedTech SaaS for homeopathic institutions in India. AI-powered audio transcription and case analysis platform with 5 paying customers",
+    name: "EzHomeo",
+    links: {
+      primary: "https://www.ezhomeo.com",
+    },
     roles: [
       {
         description:
-          "Developing a Med-Tech platform for top-tier homeopathic institutions in India. More details to be revealed soon.",
+          "Built an AI-powered platform for homeopathic practitioners: audio transcription, 4-stage AI analysis pipeline, interactive rubric editing, and structured PDF reports. Shipped to 5 paying customers.",
         details: [
-          "Discussed requirements of multiple stakeholders from top-tier institutions",
-          "Researched industry tools and workflows to identify gaps",
-          "Developing value proposition and business model",
+          "4-stage AI pipeline: transcription, symptom extraction, rubric matching, report generation",
+          "Direct PostgreSQL integration with OOREP (Open Online Repertory) via VPC",
+          "775+ unit tests, full infrastructure-as-code with Pulumi on Google Cloud Run",
+          "5 paying customers from top-tier homeopathic institutions",
         ],
-        endDate: "Present",
+        endDate: "Mar 2026",
         location: "India",
         startDate: "Nov 2025",
         title: "Co-Founder",
@@ -57,9 +61,6 @@ export const ventures: Venture[] = [
       others: ["/assets/ventures/onlyforms-value_proposition.webp"],
       primary: "/assets/ventures/onlyforms-delight.webp",
     },
-    links: {
-      primary: "https://onlyforms.org",
-    },
     name: "Onlyforms - Redefining MBA Surveys",
     roles: [
       {
@@ -69,9 +70,9 @@ export const ventures: Venture[] = [
           "MBA Students surveyed via OnlyForms: 121",
           "Average Response Time per 50 responses: 8-mins",
           "End-to-end survey management system built on a in-house server",
-          "Running as a low-effort passive income source",
+          "Ran as a low-effort passive income experiment before winding down",
         ],
-        endDate: "Present",
+        endDate: "Aug 2025",
         location: "India",
         startDate: "Dec 2023",
         title: "Tech Lead | Co-Founder",
