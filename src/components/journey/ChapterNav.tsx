@@ -20,18 +20,21 @@ export function ChapterNav({
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
   const navRef = useRef<HTMLElement>(null);
 
-  // Poll GSAP ticker to sync displayed state with the ref (avoids setState on every scroll pixel)
+  // Sync displayed state with the ref via GSAP ticker (avoids setState on every scroll pixel)
   useEffect(() => {
+    let lastSeen = -1;
     const callback = () => {
-      if (activeChapterRef.current !== activeIndex) {
-        setActiveIndex(activeChapterRef.current);
+      const current = activeChapterRef.current;
+      if (current !== lastSeen) {
+        lastSeen = current;
+        setActiveIndex(current);
       }
     };
     gsap.ticker.add(callback);
     return () => {
       gsap.ticker.remove(callback);
     };
-  }, [activeChapterRef, activeIndex]);
+  }, [activeChapterRef]);
 
   return (
     <nav
@@ -58,6 +61,8 @@ export function ChapterNav({
                 onClick={() => onNavigate(i)}
                 onMouseEnter={() => setHoveredIndex(i)}
                 onMouseLeave={() => setHoveredIndex(null)}
+                onFocus={() => setHoveredIndex(i)}
+                onBlur={() => setHoveredIndex(null)}
               >
                 {/* Pulse ring for active dot */}
                 {isActive && (

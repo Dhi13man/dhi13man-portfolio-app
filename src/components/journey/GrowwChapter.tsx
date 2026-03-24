@@ -1,12 +1,28 @@
 "use client";
 
-import { useRef, useState, useEffect, type MutableRefObject } from "react";
+import { useRef, useSyncExternalStore, type MutableRefObject } from "react";
 import ExportedImage from "next-image-export-optimizer";
 import { gsap, ScrollTrigger, useGSAP } from "@/lib/gsap";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
 import { ScrollReveal } from "./ScrollReveal";
 import { chapters, growwNarrative, growwRoles } from "@/data/journey";
 import { cn } from "@/lib/utils";
+
+const DESKTOP_QUERY = "(min-width: 1024px)";
+
+function subscribeDesktop(callback: () => void): () => void {
+  const mql = window.matchMedia(DESKTOP_QUERY);
+  mql.addEventListener("change", callback);
+  return () => mql.removeEventListener("change", callback);
+}
+
+function getDesktopSnapshot(): boolean {
+  return window.matchMedia(DESKTOP_QUERY).matches;
+}
+
+function getDesktopServerSnapshot(): boolean {
+  return false;
+}
 
 interface GrowwChapterProps {
   activeChapterRef: MutableRefObject<number>;
@@ -18,15 +34,11 @@ export function GrowwChapter({ activeChapterRef }: GrowwChapterProps) {
   const cardsRef = useRef<HTMLDivElement>(null);
   const progressRef = useRef<HTMLDivElement>(null);
   const reducedMotion = useReducedMotion();
-  const [isDesktop, setIsDesktop] = useState(false);
-
-  // Detect desktop after mount (avoids SSR mismatch)
-  useEffect(() => {
-    const check = () => setIsDesktop(window.innerWidth >= 1024);
-    check();
-    window.addEventListener("resize", check);
-    return () => window.removeEventListener("resize", check);
-  }, []);
+  const isDesktop = useSyncExternalStore(
+    subscribeDesktop,
+    getDesktopSnapshot,
+    getDesktopServerSnapshot,
+  );
 
   useGSAP(
     () => {

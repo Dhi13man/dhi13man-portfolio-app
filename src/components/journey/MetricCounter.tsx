@@ -9,8 +9,6 @@ interface MetricCounterProps {
   prefix?: string;
   suffix: string;
   label: string;
-  /** If true, animation is driven externally (e.g., by a parent ScrollTrigger scrub) */
-  scrubProxy?: { progress: number };
 }
 
 export function MetricCounter({
@@ -62,7 +60,7 @@ export function MetricCounter({
         <span
           ref={numberRef}
           className="text-20 font-display font-bold text-accent md:text-32"
-          aria-hidden={!reducedMotion}
+          aria-hidden="true"
         >
           {reducedMotion ? formatNumber(value, value) : "0"}
         </span>

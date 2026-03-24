@@ -37,14 +37,22 @@ export function JourneyShell() {
     gsap.ticker.add(tickerCallback);
     gsap.ticker.lagSmoothing(0);
 
+    // Capture ref value for cleanup (React hooks/exhaustive-deps)
+    const container = containerRef.current;
+
     return () => {
       gsap.ticker.remove(tickerCallback);
       lenis.destroy();
       lenisRef.current = null;
       document.body.classList.remove("journey-immersive");
       document.documentElement.classList.remove("lenis-active");
-      // Belt-and-suspenders cleanup for any lingering ScrollTriggers
-      ScrollTrigger.getAll().forEach((t) => t.kill());
+      // Kill only ScrollTriggers whose trigger lives inside our container
+      ScrollTrigger.getAll().forEach((t) => {
+        const trigger = t.trigger as Element | undefined;
+        if (!trigger || !container || container.contains(trigger)) {
+          t.kill();
+        }
+      });
     };
   }, []);
 
@@ -69,6 +77,13 @@ export function JourneyShell() {
 
   return (
     <div ref={containerRef} className="relative">
+      {/* Skip link — compensates for hidden site header */}
+      <a
+        href="#chapter-hero"
+        className="sr-only focus:not-sr-only focus:fixed focus:left-1/2 focus:top-4 focus:z-[60] focus:-translate-x-1/2 focus:rounded focus:bg-accent focus:px-4 focus:py-2 focus:text-text-primary"
+      >
+        Skip to content
+      </a>
       {/* Home link - persistent escape hatch, mirrors Header logo */}
       <Link
         href="/"

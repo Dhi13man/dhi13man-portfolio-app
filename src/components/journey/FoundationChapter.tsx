@@ -1,6 +1,12 @@
 "use client";
 
-import { useRef, useState, type MutableRefObject } from "react";
+import {
+  useRef,
+  useState,
+  useEffect,
+  useCallback,
+  type MutableRefObject,
+} from "react";
 import ExportedImage from "next-image-export-optimizer";
 import { gsap, ScrollTrigger, useGSAP } from "@/lib/gsap";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
@@ -10,6 +16,7 @@ import {
   foundationNarrative,
   foundationCards,
 } from "@/data/journey";
+import { X } from "lucide-react";
 
 interface FoundationChapterProps {
   activeChapterRef: MutableRefObject<number>;
@@ -20,8 +27,35 @@ export function FoundationChapter({
 }: FoundationChapterProps) {
   const sectionRef = useRef<HTMLElement>(null);
   const cardsRef = useRef<HTMLDivElement>(null);
+  const contentRef = useRef<HTMLDivElement>(null);
   const reducedMotion = useReducedMotion();
   const [lightboxSrc, setLightboxSrc] = useState<string | null>(null);
+  const lightboxTriggerRef = useRef<HTMLButtonElement | null>(null);
+  const lightboxCloseRef = useRef<HTMLButtonElement>(null);
+
+  // Lightbox focus management + inert background
+  useEffect(() => {
+    if (lightboxSrc) {
+      contentRef.current?.setAttribute("inert", "");
+      lightboxCloseRef.current?.focus();
+    } else {
+      contentRef.current?.removeAttribute("inert");
+      lightboxTriggerRef.current?.focus();
+      lightboxTriggerRef.current = null;
+    }
+  }, [lightboxSrc]);
+
+  const openLightbox = useCallback(
+    (src: string, trigger: HTMLButtonElement) => {
+      lightboxTriggerRef.current = trigger;
+      setLightboxSrc(src);
+    },
+    [],
+  );
+
+  const closeLightbox = useCallback(() => {
+    setLightboxSrc(null);
+  }, []);
 
   useGSAP(
     () => {
@@ -69,7 +103,7 @@ export function FoundationChapter({
       aria-labelledby="foundation-heading"
       className="bg-surface py-16 md:py-24"
     >
-      <div className="mx-auto max-w-[1200px] px-8">
+      <div ref={contentRef} className="mx-auto max-w-[1200px] px-8">
         {/* Header row: label + title + quote */}
         <ScrollReveal className="mb-8 flex flex-col gap-4">
           <span className="text-12 uppercase tracking-widest text-text-quaternary">
@@ -93,21 +127,16 @@ export function FoundationChapter({
           className="grid grid-cols-1 gap-4 md:grid-cols-2"
         >
           {foundationCards.map((card) => (
-            <a
+            <div
               key={card.title}
-              href={card.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="block overflow-hidden rounded border border-border bg-background transition-all duration-fast hover:border-border-hover hover:bg-hover-bg"
+              className="overflow-hidden rounded border border-border bg-background transition-all duration-fast hover:border-border-hover hover:bg-hover-bg"
             >
               {card.image && (
                 <button
                   type="button"
                   className="relative h-36 w-full cursor-zoom-in overflow-hidden"
                   onClick={(e) => {
-                    e.preventDefault();
-                    e.stopPropagation();
-                    setLightboxSrc(card.image!);
+                    openLightbox(card.image!, e.currentTarget);
                   }}
                   aria-label={`View ${card.title} image`}
                 >
@@ -124,7 +153,18 @@ export function FoundationChapter({
               <div className="p-4">
                 <div className="mb-1 flex items-baseline justify-between gap-3">
                   <h3 className="text-16 font-semibold text-text-primary">
-                    {card.title}
+                    {card.link ? (
+                      <a
+                        href={card.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="transition-colors duration-fast hover:text-accent"
+                      >
+                        {card.title}
+                      </a>
+                    ) : (
+                      card.title
+                    )}
                   </h3>
                   <span className="shrink-0 font-mono text-12 text-text-quaternary">
                     {card.date}
@@ -157,7 +197,7 @@ export function FoundationChapter({
                   </ul>
                 )}
               </div>
-            </a>
+            </div>
           ))}
         </div>
       </div>
@@ -166,13 +206,25 @@ export function FoundationChapter({
       {lightboxSrc && (
         <div
           className="fixed inset-0 z-50 flex items-center justify-center bg-background/90 backdrop-blur-sm"
-          onClick={() => setLightboxSrc(null)}
-          onKeyDown={(e) => e.key === "Escape" && setLightboxSrc(null)}
+          onClick={closeLightbox}
+          onKeyDown={(e) => e.key === "Escape" && closeLightbox()}
           role="dialog"
           aria-modal="true"
           aria-label="Image preview"
-          tabIndex={0}
+          tabIndex={-1}
         >
+          <button
+            ref={lightboxCloseRef}
+            type="button"
+            onClick={(e) => {
+              e.stopPropagation();
+              closeLightbox();
+            }}
+            className="absolute right-6 top-6 rounded p-2 text-text-tertiary transition-colors hover:text-text-primary focus-visible:ring-2 focus-visible:ring-accent"
+            aria-label="Close image preview"
+          >
+            <X className="h-6 w-6" />
+          </button>
           <div className="relative max-h-[90vh] max-w-[90vw]">
             <ExportedImage
               src={lightboxSrc}

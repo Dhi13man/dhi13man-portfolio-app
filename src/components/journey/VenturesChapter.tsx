@@ -139,10 +139,11 @@ function VentureCard({
           "border border-border bg-surface hover:border-border-hover hover:bg-hover-bg",
       )}
     >
-      {/* Image - clicks open lightbox, not the card link */}
+      {/* Image - clicks open in new tab, not the card link */}
       {venture.image && (
         <div className="relative w-full overflow-hidden">
-          <div
+          <button
+            type="button"
             className={cn(
               "relative w-full cursor-zoom-in overflow-hidden",
               isAcquired ? "h-[200px]" : "h-[140px]",
@@ -152,16 +153,7 @@ function VentureCard({
               e.stopPropagation();
               window.open(venture.image!, "_blank");
             }}
-            role="button"
-            tabIndex={0}
             aria-label={`View ${venture.name} image`}
-            onKeyDown={(e) => {
-              if (e.key === "Enter") {
-                e.preventDefault();
-                e.stopPropagation();
-                window.open(venture.image!, "_blank");
-              }
-            }}
           >
             <ExportedImage
               src={venture.image}
@@ -179,7 +171,7 @@ function VentureCard({
               }
               loading="lazy"
             />
-          </div>
+          </button>
           {isClosed && venture.name === "OnlyForms" && (
             <span className="block px-6 pt-1 text-12 text-text-quaternary">
               Customer delight
