@@ -4,6 +4,14 @@ export const achievements: Achievements = {
   honorsAndAwards: [
     {
       description:
+        "Won the Tata Imagination Challenge 2024 with Dostana.AI, an AI-powered kirana store management system.",
+      issuer: "Tata Group",
+      startDate: "2024",
+      title: "National Winner, Tata Imagination Challenge, 2024",
+      endDate: "2024",
+    },
+    {
+      description:
         "Showcased Dostana.AI, an AI-powered kirana store management system.",
       details: [
         "Part of the top 2 finalists in the Next-gen Ventures category",

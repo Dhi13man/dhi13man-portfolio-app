@@ -16,12 +16,14 @@ export const experiences: Experience[] = [
     roles: [
       {
         description:
-          "Building payment systems processing 300K+ daily UPI transactions and real-time market data infrastructure serving 13M+ active users with <10ms latency.",
+          "Built payment systems processing 300K+ daily UPI transactions, real-time market data infrastructure (<10ms latency), and 3 greenfield trading platform projects.",
         details: [
           "Architected UPI payment system from scratch, now handling 300,000+ successful transactions per day across Groww's 13M+ user base",
-          "Built real-time market data streaming using Kafka Streams and Redis with <10ms latency for price triggers and Option Greeks - critical for live trading",
-          "Created centralized response code management system handling 20,000+ error mappings, used across the team's microservices",
-          "Owned observability for the payments pod - learned PromQL and Grafana, built dashboards tracking every useful metric across services",
+          "Built real-time market data streaming using Kafka Streams and Redis with <10ms latency for price triggers and Option Greeks",
+          "Shipped 3 greenfield API Trading projects: Strategy Marketplace (Python + Java + Kafka), Historical Data Ingestion (~500GB), Smart Orders GTT/OCO unifying 4 downstream APIs",
+          "Stabilized Credit Collections platform end-to-end; built observability on Superset, wrote 48-page engineering KB with SOPs, reduced ticket resolution TAT by ~90%",
+          "Created centralized response code management system handling 20,000+ error mappings across the org",
+          "Owned observability across multiple pods: PromQL, Grafana, Superset dashboards and alerts",
           "Single-handedly built backend-driven home page serving personalized content to millions of users, enabling 3 product teams to run experiments",
         ],
         endDate: "Present",
