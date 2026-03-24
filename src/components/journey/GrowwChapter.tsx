@@ -101,7 +101,7 @@ export function GrowwChapter({ activeChapterRef }: GrowwChapterProps) {
                   alt="Groww"
                   width={48}
                   height={48}
-                  className="rounded"
+                  className="rounded-lg bg-white p-1"
                 />
               </a>
             )}

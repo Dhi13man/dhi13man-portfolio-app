@@ -141,17 +141,35 @@ function VentureCard({
     >
       {/* Image */}
       {venture.image && (
-        <div className="relative h-44 w-full overflow-hidden">
-          <ExportedImage
-            src={venture.image}
-            alt={venture.name}
-            fill
+        <div className="relative w-full overflow-hidden">
+          <div
             className={cn(
-              "object-cover",
-              isClosed && "opacity-60",
+              "relative w-full overflow-hidden",
+              isAcquired ? "h-[200px]" : "h-[140px]",
             )}
-            sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-          />
+          >
+            <ExportedImage
+              src={venture.image}
+              alt={venture.name}
+              fill
+              className={cn(
+                "object-cover",
+                isAcquired && "object-top",
+                isClosed && "opacity-[0.85]",
+              )}
+              sizes={
+                isAcquired
+                  ? "(max-width: 768px) calc(100vw - 64px), 1136px"
+                  : "(max-width: 768px) calc(100vw - 64px), 360px"
+              }
+              loading="lazy"
+            />
+          </div>
+          {isClosed && venture.name === "OnlyForms" && (
+            <span className="block px-6 pt-1 text-12 text-text-quaternary">
+              Customer delight
+            </span>
+          )}
         </div>
       )}
 
