@@ -153,7 +153,7 @@ export function GrowwChapter({ activeChapterRef }: GrowwChapterProps) {
           <div
             ref={cardsRef}
             className="flex gap-8 px-16 pt-24"
-            style={{ width: `${growwRoles.length * 560 + 128}px` }}
+            style={{ width: `${growwRoles.length * 512 + 128}px` }}
           >
             {growwRoles.map((role) => (
               <RoleCard key={role.title} role={role} />
@@ -190,7 +190,7 @@ export function GrowwChapter({ activeChapterRef }: GrowwChapterProps) {
 
 function RoleCard({ role }: { role: (typeof growwRoles)[number] }) {
   return (
-    <article className="w-full rounded border border-border bg-background p-6 transition-all duration-fast hover:border-border-hover lg:min-w-[480px] lg:max-w-[560px]">
+    <article className="flex w-full flex-col rounded border border-border bg-background p-6 transition-all duration-fast hover:border-border-hover lg:min-w-[440px] lg:max-w-[480px]">
       <div className="mb-2 flex items-baseline justify-between gap-4">
         <h3 className="text-24 font-semibold text-text-primary">
           {role.title}
