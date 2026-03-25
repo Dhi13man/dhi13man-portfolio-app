@@ -128,7 +128,7 @@ export const foundationCards: FoundationCard[] = [
     link: "https://www.nits.ac.in/",
   },
   {
-    title: "Volunteering: TechEngio",
+    title: "Founded TechEngio: Volunteering Tech Education",
     date: "2018 - 2020",
     description:
       "Volunteered to teach robotics and coding workshops across Northeast India. Reached students who had never seen a microcontroller before.",
@@ -344,7 +344,7 @@ export const ossSummary = {
 // --- CTA Chapter ---
 
 export const ctaNarrative =
-  "I've spent four years building payment infrastructure that millions depend on. In parallel, I've built companies, shipped open-source tools, and competed nationally. The next problem I want to solve is at the intersection of systems thinking and real-world impact, where the engineering is hard and the scale is large enough to be felt. If you're building something like that, I want to hear about it.";
+  "I've spent four years building payment infrastructure that millions depend on. In parallel, I've built companies, shipped open-source tools, and competed nationally. If you're building the next big thing, I want to hear about it.";
 
 export const ctaLinks = {
   email: "mailto:dhiman.seal@hotmail.com",
