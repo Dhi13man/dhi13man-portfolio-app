@@ -237,14 +237,14 @@ export const ventures: VentureEntry[] = [
     name: "AgriJod",
     status: "acquired",
     badge: "ACQUIRED",
-    subtitle: "Acquired by KhetiOx, Sep 2025",
+    subtitle: "Acquired by another Assam-based agritech, Sep 2025",
     description:
       "Architected the entire technical infrastructure for an agritech startup transforming agriculture in Northeast India. The tech became the core value proposition that led to acquisition.",
     details: [
       "Built the full tech stack across all product lines",
       "Scalable AWS infrastructure with multi-profile CI/CD pipelines",
       "Strategic partnerships: Startup India, IIT Guwahati Innovation Hub, NEEDP",
-      "Ran the complete tech transfer to KhetiOx",
+      "Ran the tech transfer to the acquirer",
     ],
     image: "/assets/work_experiences/agrijod-cover.webp",
     link: "https://agrijod.in",
