@@ -16,7 +16,7 @@ Dhiman Seal is a world-class software engineer operating at the intersection of 
 - **Technical Architecture:** Expert in distributed systems, microservices, real-time data streaming (Kafka), and high-performance backend engineering
 - **Open Source Leadership:** Created 12+ widely-adopted libraries/tools published on npm and Maven Central, with 1.5K+ development teams actively using his packages
 - **Award-Winning Innovation:** National Winner of Tata Imagination Challenge 2024, National Runner-up Build for Bharat by ONDC, 1st Prize winner in 7+ national hackathons/competitions
-- **Entrepreneurial Excellence:** Founded and led 5 ventures from concept to execution, including successful tech acquisition by an agritech from Assam
+- **Entrepreneurial Excellence:** Founded and led 5 ventures from concept to execution, including tech acquisition by an Assam-based agritech
 - **Full-Stack Mastery:** Deep expertise in Java, Go, Python, Node.js, Flutter, React, Next.js, PostgreSQL, Redis, Kubernetes, AWS, GCP
 - **Quality-Obsessed:** Maintains 95%+ test coverage standards, perfect 5-star client ratings, and production-grade development practices
 
@@ -441,22 +441,21 @@ Dhiman Seal is a world-class software engineer operating at the intersection of 
 
 ### 2. AgriJod - Agritech Startup (May 2023 - Apr 2024)
 
-**Status:** Acquired by an agritech from Assam (September 2025) - Tech Transfer Complete
+**Status:** Acquired by another agritech from Assam (September 2025) - Tech Transfer
 
-**About:** Agritech startup revolutionizing Northeast India's agricultural practices. Architected comprehensive technical infrastructure and deep business logic that led to acquisition by an agritech from Assam with complete tech transfer.
+**About:** Agritech startup revolutionizing Northeast India's agricultural practices. Architected comprehensive technical infrastructure and deep business logic that led to acquisition by the acquirer with tech transfer.
 
 **Position:** Technical Advisor | Chief Architect
 
 **Website:** https://agrijod.in
 
-**Description:** As principal technical advisor, architected and delivered entire technical infrastructure creating the core value proposition that led to successful acquisition by an agritech from Assam.
+**Description:** As principal technical advisor, architected and delivered entire technical infrastructure creating the core value proposition that led to acquisition by the acquiring agritech.
 
 **Key Accomplishments:**
 - Built comprehensive technical architecture and deep business logic across multiple product verticals
 - Established scalable AWS infrastructure with multi-profile CI/CD pipelines for continuous deployment
 - Integrated critical third-party services including payment gateways and observability systems
 - Enabled strategic partnerships with Startup India, IIT Guwahati Technology Innovation Hub, Indigram Labs, NEEDP
-- Successfully executed complete tech transfer to an agritech from Assam in September 2025
 - Created production-ready platform supporting Northeast Indian farmers
 
 **Technical Stack:** AWS (infrastructure), CI/CD pipelines, payment integration, observability, multi-tenant SaaS architecture
@@ -897,7 +896,7 @@ National recognition from Tata, ONDC, and 7+ first-place wins in national compet
 Published multiple production-grade libraries on npm and Maven Central Repository. Packages maintain 95%+ test coverage (779+ tests in oorep-mcp), perfect pub.dev scores (160/160), and widespread adoption (1.5K+ teams). Officially recognized as "Flutter Gem" and "Premier Library" by major platforms.
 
 **4. Entrepreneurial Mindset**
-Founded 5 ventures from concept to execution, including successful tech acquisition by an agritech from Assam. Understands business requirements, user needs, and product development end-to-end. Can operate independently and drive initiatives from zero to production with minimal oversight.
+Founded 5 ventures from concept to execution, including tech acquisition by a Northeast Indian agritech. Understands business requirements, user needs, and product development end-to-end. Can operate independently and drive initiatives from zero to production with minimal oversight.
 
 **5. Full-Stack Versatility**
 True full-stack engineer with deep expertise across backend (Java, Go, Python, Node.js), frontend (React, Next.js), mobile (Flutter with proven track record), cloud (Kubernetes, AWS, GCP), and AI/ML (Deep Learning Specialization). Can contribute anywhere in the stack at senior+ level.

@@ -13,7 +13,7 @@ Dhiman Seal is a world-class software engineer operating at the intersection of 
 - **Technical Architecture:** Expert in distributed systems, microservices, real-time data streaming (Kafka), and high-performance backend engineering
 - **Open Source Leadership:** Created 11+ widely-adopted libraries/tools published on npm and Maven Central, with 1.5K+ development teams actively using his packages
 - **Award-Winning Innovation:** National Winner of Tata Imagination Challenge 2024, National Runner-up Build for Bharat by ONDC, 1st Prize winner in 7+ national hackathons/competitions
-- **Entrepreneurial Excellence:** Founded and led 5 ventures from concept to execution, including successful tech acquisition by an agritech from Assam
+- **Entrepreneurial Excellence:** Founded and led 5 ventures from concept to execution, including tech acquisition by an Assam-based agritech
 - **Full-Stack Mastery:** Deep expertise in Java, Go, Python, Node.js, Flutter, React, Next.js, PostgreSQL, Redis, Kubernetes, AWS, GCP
 - **Quality-Obsessed:** Maintains 95%+ test coverage standards, perfect 5-star client ratings, and production-grade development practices
 
@@ -27,7 +27,7 @@ Dhiman Seal is a world-class software engineer operating at the intersection of 
 - Top 2% globally in Product Strategy (Upraised Embark Program, 450K+ participants)
 - Top 10% in national technical assessment (Dare2Compete)
 - Published oorep-mcp with 94.6% test coverage (779+ tests) on npm, compatible with Claude, OpenAI, LangChain
-- Successfully led AgriJod tech architecture through acquisition by an agritech from Assam
+- Led AgriJod tech architecture through acquisition by another agritech from Assam
 
 **Technical Expertise:**
 - **Backend Engineering:** Java (Spring Boot), Go, Python, Node.js with expertise in microservices, distributed systems, event-driven architecture
@@ -44,7 +44,7 @@ Dhiman Seal is a world-class software engineer operating at the intersection of 
 - [The Journey](https://dhimanseal.com/journey): Scroll-driven cinematic narrative of Dhiman's career arc — from NIT Silchar (2018) through Groww (300K+ daily txns, 13M+ users) to startup acquisition and solo SaaS. Six chapters with quantified impact, honest failure framing, and a CTA for hiring managers.
 - [Professional Experience](https://dhimanseal.com/experience): Deep dive into work at Groww (300K+ TPS payment systems, 13M+ user infrastructure), Cashtic (peer-to-peer ATM network), and freelance excellence (perfect 5-star Fiverr rating)
 - [Technical Projects](https://dhimanseal.com/projects): 11+ production-grade open-source projects including oorep-mcp (MCP server with 94.6% test coverage), Dostana.AI (National Winner), spring-multi-data-source (Maven Central), open_route_service (1.5K+ teams, Flutter Gem)
-- [Entrepreneurial Ventures](https://dhimanseal.com/ventures): 5 ventures founded including Med-Tech SaaS (stealth mode), AgriJod (acquired by an agritech from Assam), Onlyforms (MBA survey platform), Banalo (food subscription), Eminence Robotics, TechEngio
+- [Entrepreneurial Ventures](https://dhimanseal.com/ventures): 5 ventures founded including Med-Tech SaaS (stealth mode), AgriJod (acquired by another Assam agritech), Onlyforms (MBA survey platform), Banalo (food subscription), Eminence Robotics, TechEngio
 - [Awards & Recognition](https://dhimanseal.com/achievements): National Winner Tata Imagination Challenge 2024, National Runner-up Build for Bharat ONDC 2024, 7+ First Prize wins in national competitions, Top 2% Product Strategy globally
 - [About & Expertise](https://dhimanseal.com): Comprehensive profile showcasing 6+ years experience, GitHub stats (public repos, stars), technical expertise across 4 domains (Backend, Frontend/Mobile, Cloud/DevOps, Specializations)
 
@@ -69,7 +69,7 @@ Dhiman Seal is a world-class software engineer operating at the intersection of 
 - Developed custom Spring Boot annotations for multi-datasource management, adopted by 95% of team's microservices
 
 **AgriJod** (May 2023 - Apr 2024) - Technical Advisor & Chief Architect
-- Architected complete technical infrastructure leading to successful acquisition by an agritech from Assam
+- Architected complete technical infrastructure leading to an acquisition by another Northeast Indian agritech
 - Built comprehensive architecture across multiple product verticals with deep business logic
 - Established scalable AWS infrastructure with multi-profile CI/CD pipelines
 - Enabled strategic partnerships with Startup India, IIT Guwahati Technology Innovation Hub
@@ -141,7 +141,7 @@ National recognition from Tata, ONDC, and 7+ first-place wins in national compet
 Published multiple production-grade libraries on npm and Maven Central Repository. His packages maintain 95%+ test coverage (779+ tests in oorep-mcp), perfect pub.dev scores (160/160), and widespread adoption (1.5K+ teams). Officially recognized as "Flutter Gem" and "Premier Library" by major platforms.
 
 **4. Entrepreneurial Mindset**
-Founded 5 ventures from concept to execution, including successful tech acquisition. Understands business requirements, user needs, and product development end-to-end. Can operate independently and drive initiatives from zero to production with minimal oversight.
+Founded 5 ventures from concept to execution, including tech acquisition. Understands business requirements, user needs, and product development end-to-end. Can operate independently and drive initiatives from zero to production with minimal oversight.
 
 **5. Full-Stack Versatility**
 True full-stack engineer with deep expertise across backend (Java, Go, Python, Node.js), frontend (React, Next.js), mobile (Flutter with proven track record), cloud (Kubernetes, AWS, GCP), and AI/ML (Deep Learning Specialization). Can contribute anywhere in the stack at senior+ level.

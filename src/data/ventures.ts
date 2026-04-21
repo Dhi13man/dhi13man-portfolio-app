@@ -27,7 +27,7 @@ export const ventures: Venture[] = [
   },
   {
     about:
-      "Agritech startup revolutionizing Northeast India's agricultural practices. Architected comprehensive technical infrastructure and deep business logic that led to acquisition by an agritech from Assam with complete tech transfer in September 2025.",
+      "Agritech startup revolutionizing Northeast India's agricultural practices. Architected comprehensive technical infrastructure and deep business logic that led to acquisition by another Assam-based agritech with complete tech transfer in September 2025.",
     images: {
       others: [],
       primary: "/assets/work_experiences/agrijod-cover.webp",
@@ -39,13 +39,12 @@ export const ventures: Venture[] = [
     roles: [
       {
         description:
-          "Architected and delivered entire technical infrastructure as principal technical advisor, creating the core value proposition that led to successful acquisition by an agritech from Assam.",
+          "Architected and delivered entire technical infrastructure as principal technical advisor, creating the core value proposition that led to an acquisition by another agritech from Assam.",
         details: [
           "Built comprehensive technical architecture and deep business logic across multiple product verticals",
           "Established scalable AWS infrastructure with multi-profile CI/CD pipelines",
           "Integrated critical third-party services including payment gateways and observability systems",
-          "Enabled strategic partnerships with Startup India, IIT Guwahati Technology Innovation Hub, Indigram Labs, NEEDP",
-          "Successfully executed complete tech transfer to an agritech from Assam in September 2025",
+          "Enabled strategic partnerships with Startup India, IIT Guwahati Technology Innovation Hub, Indigram Labs, NEEDP"
         ],
         endDate: "Apr 2024",
         location: "Guwahati, Assam, India | Remote",
