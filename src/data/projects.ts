@@ -3,6 +3,36 @@ import type { Project } from "@/types";
 export const projects: Project[] = [
   {
     description:
+      "Open-source CLI and web tool for high-volume bulk API data migrations. Streams, transforms, and dispatches millions of API requests from local files.",
+    details: [
+      "Processes 54,000 requests/second with zero failures across 1M-request benchmarks",
+      "Parses CSV, JSON, Excel, and Parquet sources via streaming parsers that avoid loading full files into memory",
+      "Reshapes records into REST, gRPC, and GraphQL requests using JSONata and GoTemplate expressions",
+      "Concurrent batch processing with goroutines, client-side round-robin/random load balancing, retries, and real-time job progress tracking",
+      "Ships both a CLI and a web UI, operational in under 5 minutes, MIT licensed",
+    ],
+    endDate: "Mar 2026",
+    images: {
+      primary: "/assets/projects/bombardment.webp",
+    },
+    links: {
+      others: ["https://github.com/Dhi13man/bombardment-runner"],
+      primary: "https://bombardment.dhimanseal.com",
+    },
+    name: "Bombardment: Bulk API Migration Tool",
+    skills: [
+      "Go",
+      "CLI Automation",
+      "REST APIs",
+      "gRPC",
+      "GraphQL",
+      "Concurrency",
+      "Data Migration",
+    ],
+    startDate: "Mar 2026",
+  },
+  {
+    description:
       "Model Context Protocol server and client SDK providing AI assistants with seamless access to OOREP - a comprehensive homeopathic repertory and materia medica database.",
     details: [
       "Published on npm with TypeScript SDK and comprehensive documentation",
