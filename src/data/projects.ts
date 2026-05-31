@@ -12,6 +12,9 @@ export const projects: Project[] = [
       "Ships both a CLI and a web UI, operational in under 5 minutes, MIT licensed",
     ],
     endDate: "Present",
+    images: {
+      primary: "/assets/projects/bombardment.webp",
+    },
     links: {
       others: ["https://github.com/Dhi13man/bombardment-runner"],
       primary: "https://bombardment.dhimanseal.com",
