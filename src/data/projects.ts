@@ -11,7 +11,7 @@ export const projects: Project[] = [
       "Concurrent batch processing with goroutines, client-side round-robin/random load balancing, retries, and real-time job progress tracking",
       "Ships both a CLI and a web UI, operational in under 5 minutes, MIT licensed",
     ],
-    endDate: "Present",
+    endDate: "Mar 2026",
     images: {
       primary: "/assets/projects/bombardment.webp",
     },
