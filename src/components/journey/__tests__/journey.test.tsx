@@ -83,6 +83,7 @@ import { FoundationChapter } from "../FoundationChapter";
 import { GrowwChapter } from "../GrowwChapter";
 import { VenturesChapter } from "../VenturesChapter";
 import { CurrentChapter } from "../CurrentChapter";
+import { RipplingChapter } from "../RipplingChapter";
 import { CTAChapter } from "../CTAChapter";
 import { ChapterNav } from "../ChapterNav";
 import { JourneyShell } from "../JourneyShell";
@@ -410,6 +411,48 @@ describe("CurrentChapter", () => {
   });
 });
 
+// --- RipplingChapter ---
+
+describe("RipplingChapter", () => {
+  describe("RipplingChapter_whenRendered_thenDisplaysTitle", () => {
+    it("should render the chapter title", () => {
+      render(<RipplingChapter activeChapterRef={mockActiveChapterRef} />);
+      expect(
+        screen.getByRole("heading", { name: /a new chapter at rippling/i }),
+      ).toBeInTheDocument();
+    });
+  });
+
+  describe("RipplingChapter_whenRendered_thenDisplaysCompanyLink", () => {
+    it("should render Rippling as a link with correct href", () => {
+      render(<RipplingChapter activeChapterRef={mockActiveChapterRef} />);
+      const link = screen.getByRole("link", { name: "Rippling" });
+      expect(link).toHaveAttribute("href", "https://www.rippling.com");
+      expect(link).toHaveAttribute("target", "_blank");
+    });
+  });
+
+  describe("RipplingChapter_whenRendered_thenDisplaysNarrative", () => {
+    it("should render the next-chapter narrative", () => {
+      render(<RipplingChapter activeChapterRef={mockActiveChapterRef} />);
+      expect(
+        screen.getByText(/after four amazing years at groww/i),
+      ).toBeInTheDocument();
+    });
+  });
+
+  describe("RipplingChapter_whenRendered_thenHasDataChapter", () => {
+    it("should have data-chapter='rippling' for scroll targeting", () => {
+      const { container } = render(
+        <RipplingChapter activeChapterRef={mockActiveChapterRef} />,
+      );
+      expect(
+        container.querySelector('[data-chapter="rippling"]'),
+      ).toBeInTheDocument();
+    });
+  });
+});
+
 // --- CTAChapter ---
 
 describe("CTAChapter", () => {
@@ -461,10 +504,10 @@ describe("CTAChapter", () => {
 
 describe("JourneyShell", () => {
   describe("JourneyShell_whenRendered_thenMountsAllChapters", () => {
-    it("should render all 6 chapter sections", () => {
+    it("should render all 7 chapter sections", () => {
       const { container } = render(<JourneyShell />);
       const sections = container.querySelectorAll("[data-chapter]");
-      expect(sections.length).toBe(6);
+      expect(sections.length).toBe(7);
     });
   });
 
@@ -982,6 +1025,7 @@ describe("JourneyShell details", () => {
         "chapter-groww",
         "chapter-ventures",
         "chapter-current",
+        "chapter-rippling",
         "chapter-cta",
       ];
       expectedIds.forEach((id) => {

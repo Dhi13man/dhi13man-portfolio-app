@@ -93,8 +93,14 @@ export const chapters: JourneyChapter[] = [
     navLabel: "Recent",
   },
   {
+    id: "rippling",
+    label: "06 - THE NEXT CHAPTER",
+    title: "A new chapter at Rippling",
+    navLabel: "Rippling",
+  },
+  {
     id: "cta",
-    label: "06 - WHAT'S NEXT",
+    label: "07 - WHAT'S NEXT",
     title: "What's next?",
     navLabel: "Next",
   },
@@ -173,7 +179,7 @@ export const foundationCards: FoundationCard[] = [
 // --- Groww Chapter ---
 
 export const growwNarrative = {
-  lead: "I joined Groww as an intern in January 2022. Within six months I had a pre-placement offer. Within eighteen months I was building payment systems handling 300K+ daily transactions for 13M+ users.",
+  lead: "I joined Groww as an intern in January 2022. Within six months I had a pre-placement offer. Within eighteen months I was building payment systems handling 300K+ daily transactions for 13M+ users. Four incredible years later, I wrapped up my last day on 20 May 2026.",
   companyAbout:
     "India's leading investment platform, democratizing financial services for millions.",
   logo: "/assets/work_experiences/growwin-logo.png",
@@ -207,9 +213,9 @@ export const growwRoles: GrowwRole[] = [
   },
   {
     title: "Software Engineer 2",
-    date: "Jul 2023 - Present",
+    date: "Jul 2023 - May 2026",
     description:
-      "Architecting UPI payments (300K+ daily txns), real-time market data (<10ms), and 3 greenfield trading platform projects.",
+      "Architected UPI payments (300K+ daily txns), real-time market data (<10ms), and 3 greenfield trading platform projects.",
     pills: [
       "300K+ daily txns",
       "< 10ms latency",
@@ -339,6 +345,23 @@ export const ossSummary = {
   projects: "45+",
   stars: "150+",
   label: "open-source projects with combined GitHub stars",
+};
+
+// --- Rippling Chapter ---
+
+export const ripplingNarrative = {
+  lead: "After four amazing years at Groww - from intern to Software Engineer 2 building payments at scale - I closed that chapter on 20 May 2026. Five days later, on 25 May 2026, the next one began: I joined Rippling as a Software Engineer 2.",
+  company: {
+    name: "Rippling",
+    about:
+      "The all-in-one workforce platform unifying HR, IT, and finance - payroll, benefits, device management, and app provisioning in a single system.",
+    link: "https://www.rippling.com",
+    role: "Software Engineer 2",
+    date: "May 2026 - Present",
+  },
+  pills: ["Software Engineer 2", "Backend", "Joined 25 May 2026"],
+  closing:
+    "Same obsession with systems that scale. New canvas. The story continues.",
 };
 
 // --- CTA Chapter ---

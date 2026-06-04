@@ -11,6 +11,7 @@ import { FoundationChapter } from "./FoundationChapter";
 import { GrowwChapter } from "./GrowwChapter";
 import { VenturesChapter } from "./VenturesChapter";
 import { CurrentChapter } from "./CurrentChapter";
+import { RipplingChapter } from "./RipplingChapter";
 import { CTAChapter } from "./CTAChapter";
 
 export function JourneyShell() {
@@ -104,6 +105,7 @@ export function JourneyShell() {
       <GrowwChapter activeChapterRef={activeChapterRef} />
       <VenturesChapter activeChapterRef={activeChapterRef} />
       <CurrentChapter activeChapterRef={activeChapterRef} />
+      <RipplingChapter activeChapterRef={activeChapterRef} />
       <CTAChapter activeChapterRef={activeChapterRef} />
     </div>
   );

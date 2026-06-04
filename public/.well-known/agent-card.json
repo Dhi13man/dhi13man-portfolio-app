@@ -4,7 +4,7 @@
   "name": "Dhiman Seal Portfolio Agent",
   "description": "AI agent providing comprehensive information about Dhiman Seal's professional experience, technical projects, awards, skills, and capabilities. Elite software engineer with 6+ years building production systems at scale.",
   "version": "1.0.0",
-  "lastUpdated": "2026-01-08",
+  "lastUpdated": "2026-06-04",
   "provider": {
     "name": "Dhiman Seal",
     "alternateName": ["Dhi13man", "@Dhi13man"],
@@ -54,8 +54,9 @@
   },
   "metadata": {
     "yearsOfExperience": "6+",
-    "currentRole": "Software Engineer 2 - Backend",
-    "currentCompany": "Groww",
+    "currentRole": "Software Engineer 2",
+    "currentCompany": "Rippling",
+    "previousCompany": "Groww (4 years, Jan 2022 - May 2026)",
     "expertise": [
       "Software Engineering",
       "Full-Stack Development",

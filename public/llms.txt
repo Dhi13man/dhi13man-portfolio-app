@@ -1,8 +1,8 @@
 # Dhiman Seal (@Dhi13man) - Elite Full-Stack Engineer & Technical Leader
 
-> **Last Updated:** January 8, 2026 | **Portfolio:** https://dhimanseal.com | **GitHub:** @Dhi13man
+> **Last Updated:** June 4, 2026 | **Portfolio:** https://dhimanseal.com | **GitHub:** @Dhi13man
 
-> Exceptional software engineer with 6+ years building production systems at scale. Currently architecting payment infrastructure handling 300K+ daily transactions and real-time market data serving 13M+ users at Groww, India's leading investment platform. National award winner, open-source creator with packages used by 1.5K+ development teams, serial entrepreneur with 5 ventures founded, and proven technical leader with expertise spanning backend systems, mobile development, cloud infrastructure, and AI/ML.
+> Exceptional software engineer with 6+ years building production systems at scale. Software Engineer 2 at Rippling, the all-in-one workforce platform. Previously spent four years at Groww (India's leading investment platform), architecting payment infrastructure handling 300K+ daily transactions and real-time market data serving 13M+ users. National award winner, open-source creator with packages used by 1.5K+ development teams, serial entrepreneur with 5 ventures founded, and proven technical leader with expertise spanning backend systems, mobile development, cloud infrastructure, and AI/ML.
 
 ## Professional Summary
 
@@ -60,7 +60,10 @@ Dhiman Seal is a world-class software engineer operating at the intersection of 
 
 ## Professional Experience Highlights
 
-**Groww, India** (Jul 2023 - Present) - Software Engineer 2, Backend
+**Rippling** (May 2026 - Present) - Software Engineer 2
+- Joined Rippling's engineering team to build backend systems for the all-in-one workforce management platform (HR, IT, and finance)
+
+**Groww, India** (Jul 2023 - May 2026) - Software Engineer 2, Backend
 - Architected UPI payment system from scratch handling 300K+ daily transactions across 13M+ user base
 - Built real-time market data streaming (Kafka Streams, Redis) with <10ms latency for price triggers and Option Greeks
 - Created centralized response code management system handling 20,000+ error mappings used across team microservices
