@@ -62,9 +62,9 @@ const personSchema = {
   alternateName: ["Dhi13man", "@Dhi13man"],
   url: siteUrl,
   image: siteImage,
-  jobTitle: "Software Engineer 2",
+  jobTitle: "Software Engineer 2 (Full-Stack)",
   description:
-    "Software engineer with 6+ years building production systems at scale. Software Engineer 2 at Rippling, the all-in-one workforce platform. Previously spent four years at Groww architecting payment infrastructure handling 300K+ daily transactions and real-time market data serving 13M+ users. Open-source creator with packages used by 1.5K+ development teams. National runner-up at ONDC Build for Bharat 2024.",
+    "Software engineer with 6+ years building production systems at scale. Full-stack Software Engineer 2 at Rippling on the PEO (B2B HR Services) team, improving Underwriting and Workers' Compensation flows. Previously spent four years at Groww architecting payment infrastructure handling 300K+ daily transactions and real-time market data serving 13M+ users. Open-source creator with packages used by 1.5K+ development teams. National runner-up at ONDC Build for Bharat 2024.",
   email: "dhiman.seal@hotmail.com",
   address: {
     "@type": "PostalAddress",

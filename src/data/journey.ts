@@ -356,10 +356,14 @@ export const ripplingNarrative = {
     about:
       "The all-in-one workforce platform unifying HR, IT, and finance - payroll, benefits, device management, and app provisioning in a single system.",
     link: "https://www.rippling.com",
-    role: "Software Engineer 2",
+    role: "Full-Stack Software Engineer (SE2)",
     date: "May 2026 - Present",
   },
-  pills: ["Software Engineer 2", "Backend", "Joined 25 May 2026"],
+  pills: ["Full-Stack", "PEO Team", "Underwriting", "Workers' Comp"],
+  details: [
+    "Full-stack engineer on the PEO (Professional Employer Organization) team within B2B HR Services",
+    "Improving Underwriting and Workers' Compensation flows end-to-end",
+  ],
   closing:
     "Same obsession with systems that scale. New canvas. The story continues.",
 };

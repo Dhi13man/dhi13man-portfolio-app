@@ -79,6 +79,9 @@ export function RipplingChapter({ activeChapterRef }: RipplingChapterProps) {
                 {company.date}
               </span>
             </div>
+            <p className="text-12 font-medium uppercase tracking-wide text-text-tertiary">
+              {company.role}
+            </p>
             <p className="text-14 text-text-secondary">{company.about}</p>
 
             <div className="flex flex-wrap gap-2">
@@ -91,6 +94,23 @@ export function RipplingChapter({ activeChapterRef }: RipplingChapterProps) {
                 </span>
               ))}
             </div>
+
+            <ul className="space-y-2">
+              {ripplingNarrative.details.map((detail) => (
+                <li
+                  key={detail}
+                  className="flex items-start gap-2 text-14 text-text-tertiary"
+                >
+                  <span
+                    className="shrink-0 font-bold text-accent"
+                    aria-hidden="true"
+                  >
+                    &rarr;
+                  </span>
+                  {detail}
+                </li>
+              ))}
+            </ul>
           </article>
         </ScrollReveal>
 

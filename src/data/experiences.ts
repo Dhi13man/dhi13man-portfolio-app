@@ -12,7 +12,11 @@ export const experiences: Experience[] = [
     roles: [
       {
         description:
-          "Joined Rippling's engineering team as a Software Engineer 2 to build backend systems for the all-in-one workforce management platform.",
+          "Full-stack engineer on the PEO (Professional Employer Organization) team within Rippling's B2B HR Services, improving Underwriting and Workers' Compensation flows.",
+        details: [
+          "Building full-stack features for the PEO product under B2B HR Services",
+          "Improving Underwriting and Workers' Compensation flows end-to-end",
+        ],
         endDate: "Present",
         location: "Bengaluru, Karnataka, India",
         startDate: "May 2026",

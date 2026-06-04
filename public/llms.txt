@@ -2,7 +2,7 @@
 
 > **Last Updated:** June 4, 2026 | **Portfolio:** https://dhimanseal.com | **GitHub:** @Dhi13man
 
-> Exceptional software engineer with 6+ years building production systems at scale. Software Engineer 2 at Rippling, the all-in-one workforce platform. Previously spent four years at Groww (India's leading investment platform), architecting payment infrastructure handling 300K+ daily transactions and real-time market data serving 13M+ users. National award winner, open-source creator with packages used by 1.5K+ development teams, serial entrepreneur with 5 ventures founded, and proven technical leader with expertise spanning backend systems, mobile development, cloud infrastructure, and AI/ML.
+> Exceptional software engineer with 6+ years building production systems at scale. Full-stack Software Engineer 2 at Rippling on the PEO (B2B HR Services) team, improving Underwriting and Workers' Compensation flows. Previously spent four years at Groww (India's leading investment platform), architecting payment infrastructure handling 300K+ daily transactions and real-time market data serving 13M+ users. National award winner, open-source creator with packages used by 1.5K+ development teams, serial entrepreneur with 5 ventures founded, and proven technical leader with expertise spanning backend systems, mobile development, cloud infrastructure, and AI/ML.
 
 ## Professional Summary
 
@@ -60,8 +60,9 @@ Dhiman Seal is a world-class software engineer operating at the intersection of 
 
 ## Professional Experience Highlights
 
-**Rippling** (May 2026 - Present) - Software Engineer 2
-- Joined Rippling's engineering team to build backend systems for the all-in-one workforce management platform (HR, IT, and finance)
+**Rippling** (May 2026 - Present) - Software Engineer 2 (Full-Stack)
+- Full-stack engineer on the PEO (Professional Employer Organization) team within Rippling's B2B HR Services
+- Improving Underwriting and Workers' Compensation flows end-to-end
 
 **Groww, India** (Jul 2023 - May 2026) - Software Engineer 2, Backend
 - Architected UPI payment system from scratch handling 300K+ daily transactions across 13M+ user base
