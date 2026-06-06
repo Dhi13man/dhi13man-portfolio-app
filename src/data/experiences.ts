@@ -20,7 +20,7 @@ export const experiences: Experience[] = [
         endDate: "Present",
         location: "Bengaluru, Karnataka, India",
         startDate: "May 2026",
-        title: "Software Engineer 2",
+        title: "Software Engineer 2 - Full-Stack",
       },
     ],
   },
