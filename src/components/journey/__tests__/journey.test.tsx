@@ -451,6 +451,47 @@ describe("RipplingChapter", () => {
       ).toBeInTheDocument();
     });
   });
+
+  describe("RipplingChapter_whenRendered_thenDisplaysRoleAndDate", () => {
+    it("should render the full-stack role label and tenure", () => {
+      render(<RipplingChapter activeChapterRef={mockActiveChapterRef} />);
+      expect(
+        screen.getByText("Full-Stack Software Engineer (SE2)"),
+      ).toBeInTheDocument();
+      expect(screen.getByText("May 2026 - Present")).toBeInTheDocument();
+    });
+  });
+
+  describe("RipplingChapter_whenRendered_thenDisplaysPills", () => {
+    it("should render the focus-area pills", () => {
+      render(<RipplingChapter activeChapterRef={mockActiveChapterRef} />);
+      expect(screen.getByText("PEO Team")).toBeInTheDocument();
+      expect(screen.getByText("Workers' Comp")).toBeInTheDocument();
+    });
+  });
+
+  describe("RipplingChapter_whenRendered_thenDisplaysDetailBullets", () => {
+    it("should render the PEO and Underwriting detail bullets", () => {
+      render(<RipplingChapter activeChapterRef={mockActiveChapterRef} />);
+      expect(
+        screen.getByText(/Full-stack engineer on the PEO/i),
+      ).toBeInTheDocument();
+      expect(
+        screen.getByText(
+          /Improving Underwriting and Workers' Compensation flows/i,
+        ),
+      ).toBeInTheDocument();
+    });
+  });
+
+  describe("RipplingChapter_whenRendered_thenDisplaysClosing", () => {
+    it("should render the closing line", () => {
+      render(<RipplingChapter activeChapterRef={mockActiveChapterRef} />);
+      expect(
+        screen.getByText(/Same obsession with systems that scale/i),
+      ).toBeInTheDocument();
+    });
+  });
 });
 
 // --- CTAChapter ---
@@ -593,6 +634,20 @@ describe("ReducedMotion", () => {
       );
       expect(screen.getByText("AgriJod")).toBeInTheDocument();
       expect(screen.getByText("Banalo")).toBeInTheDocument();
+    });
+  });
+
+  describe("RipplingChapter_whenReducedMotion_thenStillRendersContent", () => {
+    it("should render the Rippling card and details without animation", () => {
+      render(<RipplingChapter activeChapterRef={mockActiveChapterRef} />);
+      expect(
+        screen.getByRole("link", { name: "Rippling" }),
+      ).toBeInTheDocument();
+      expect(
+        screen.getByText(
+          /Improving Underwriting and Workers' Compensation flows/i,
+        ),
+      ).toBeInTheDocument();
     });
   });
 });
