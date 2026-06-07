@@ -1,6 +1,7 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
+import { axe } from "vitest-axe";
 
 // Mock GSAP and its plugins before any component imports
 vi.mock("@/lib/gsap", () => {
@@ -416,7 +417,10 @@ describe("CurrentChapter", () => {
 describe("RipplingChapter", () => {
   describe("RipplingChapter_whenRendered_thenDisplaysTitle", () => {
     it("should render the chapter title", () => {
+      // Arrange & Act
       render(<RipplingChapter activeChapterRef={mockActiveChapterRef} />);
+
+      // Assert
       expect(
         screen.getByRole("heading", { name: /a new chapter at rippling/i }),
       ).toBeInTheDocument();
@@ -424,17 +428,37 @@ describe("RipplingChapter", () => {
   });
 
   describe("RipplingChapter_whenRendered_thenDisplaysCompanyLink", () => {
-    it("should render Rippling as a link with correct href", () => {
+    it("should render Rippling as a link with safe href, target, and rel", () => {
+      // Arrange & Act
       render(<RipplingChapter activeChapterRef={mockActiveChapterRef} />);
+
+      // Assert
       const link = screen.getByRole("link", { name: "Rippling" });
       expect(link).toHaveAttribute("href", "https://www.rippling.com");
       expect(link).toHaveAttribute("target", "_blank");
+      // rel guards against reverse tabnabbing on target="_blank"
+      expect(link).toHaveAttribute("rel", "noopener noreferrer");
+    });
+  });
+
+  describe("RipplingChapter_whenRendered_thenDisplaysCompanyAbout", () => {
+    it("should render the company description", () => {
+      // Arrange & Act
+      render(<RipplingChapter activeChapterRef={mockActiveChapterRef} />);
+
+      // Assert
+      expect(
+        screen.getByText(/all-in-one workforce platform/i),
+      ).toBeInTheDocument();
     });
   });
 
   describe("RipplingChapter_whenRendered_thenDisplaysNarrative", () => {
     it("should render the next-chapter narrative", () => {
+      // Arrange & Act
       render(<RipplingChapter activeChapterRef={mockActiveChapterRef} />);
+
+      // Assert
       expect(
         screen.getByText(/after four amazing years at groww/i),
       ).toBeInTheDocument();
@@ -443,9 +467,12 @@ describe("RipplingChapter", () => {
 
   describe("RipplingChapter_whenRendered_thenHasDataChapter", () => {
     it("should have data-chapter='rippling' for scroll targeting", () => {
+      // Arrange & Act
       const { container } = render(
         <RipplingChapter activeChapterRef={mockActiveChapterRef} />,
       );
+
+      // Assert
       expect(
         container.querySelector('[data-chapter="rippling"]'),
       ).toBeInTheDocument();
@@ -454,7 +481,10 @@ describe("RipplingChapter", () => {
 
   describe("RipplingChapter_whenRendered_thenDisplaysRoleAndDate", () => {
     it("should render the full-stack role label and tenure", () => {
+      // Arrange & Act
       render(<RipplingChapter activeChapterRef={mockActiveChapterRef} />);
+
+      // Assert
       expect(
         screen.getByText("Full-Stack Software Engineer (SE2)"),
       ).toBeInTheDocument();
@@ -464,15 +494,23 @@ describe("RipplingChapter", () => {
 
   describe("RipplingChapter_whenRendered_thenDisplaysPills", () => {
     it("should render the focus-area pills", () => {
+      // Arrange & Act
       render(<RipplingChapter activeChapterRef={mockActiveChapterRef} />);
+
+      // Assert
+      expect(screen.getByText("Full-Stack")).toBeInTheDocument();
       expect(screen.getByText("PEO Team")).toBeInTheDocument();
+      expect(screen.getByText("Underwriting")).toBeInTheDocument();
       expect(screen.getByText("Workers' Comp")).toBeInTheDocument();
     });
   });
 
   describe("RipplingChapter_whenRendered_thenDisplaysDetailBullets", () => {
     it("should render the PEO and Underwriting detail bullets", () => {
+      // Arrange & Act
       render(<RipplingChapter activeChapterRef={mockActiveChapterRef} />);
+
+      // Assert
       expect(
         screen.getByText(/Full-stack engineer on the PEO/i),
       ).toBeInTheDocument();
@@ -486,10 +524,25 @@ describe("RipplingChapter", () => {
 
   describe("RipplingChapter_whenRendered_thenDisplaysClosing", () => {
     it("should render the closing line", () => {
+      // Arrange & Act
       render(<RipplingChapter activeChapterRef={mockActiveChapterRef} />);
+
+      // Assert
       expect(
         screen.getByText(/Same obsession with systems that scale/i),
       ).toBeInTheDocument();
+    });
+  });
+
+  describe("RipplingChapter_whenRendered_thenHasNoAccessibilityViolations", () => {
+    it("should have no axe accessibility violations", async () => {
+      // Arrange & Act
+      const { container } = render(
+        <RipplingChapter activeChapterRef={mockActiveChapterRef} />,
+      );
+
+      // Assert
+      expect(await axe(container)).toHaveNoViolations();
     });
   });
 });
@@ -639,7 +692,10 @@ describe("ReducedMotion", () => {
 
   describe("RipplingChapter_whenReducedMotion_thenStillRendersContent", () => {
     it("should render the Rippling card and details without animation", () => {
+      // Arrange & Act (reduced motion enabled via the block's beforeEach)
       render(<RipplingChapter activeChapterRef={mockActiveChapterRef} />);
+
+      // Assert
       expect(
         screen.getByRole("link", { name: "Rippling" }),
       ).toBeInTheDocument();
