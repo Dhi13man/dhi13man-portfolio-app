@@ -486,7 +486,7 @@ describe("RipplingChapter", () => {
 
       // Assert
       expect(
-        screen.getByText("Full-Stack Software Engineer (SE2)"),
+        screen.getByText("Software Engineer 2 - Full-Stack"),
       ).toBeInTheDocument();
       expect(screen.getByText("May 2026 - Present")).toBeInTheDocument();
     });

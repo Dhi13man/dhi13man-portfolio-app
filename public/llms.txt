@@ -60,7 +60,7 @@ Dhiman Seal is a world-class software engineer operating at the intersection of 
 
 ## Professional Experience Highlights
 
-**Rippling** (May 2026 - Present) - Software Engineer 2 (Full-Stack)
+**Rippling** (May 2026 - Present) - Software Engineer 2 - Full-Stack
 - Full-stack engineer on the PEO (Professional Employer Organization) team within Rippling's B2B HR Services
 - Improving Underwriting and Workers' Compensation flows end-to-end
 

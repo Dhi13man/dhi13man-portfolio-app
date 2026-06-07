@@ -356,7 +356,7 @@ export const ripplingNarrative = {
     about:
       "The all-in-one workforce platform unifying HR, IT, and finance - payroll, benefits, device management, and app provisioning in a single system.",
     link: "https://www.rippling.com",
-    role: "Full-Stack Software Engineer (SE2)",
+    role: "Software Engineer 2 - Full-Stack",
     date: "May 2026 - Present",
   },
   pills: ["Full-Stack", "PEO Team", "Underwriting", "Workers' Comp"],
