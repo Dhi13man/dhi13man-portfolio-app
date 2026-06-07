@@ -1,8 +1,8 @@
 # Dhiman Seal (@Dhi13man) - Comprehensive Professional Profile
 
-> **Last Updated:** January 8, 2026 | **Portfolio:** https://dhimanseal.com | **GitHub:** @Dhi13man | **LinkedIn:** /in/dhi13man
+> **Last Updated:** June 4, 2026 | **Portfolio:** https://dhimanseal.com | **GitHub:** @Dhi13man | **LinkedIn:** /in/dhi13man
 
-> Exceptional software engineer with 6+ years building production systems at scale. Currently architecting payment infrastructure handling 300K+ daily transactions and real-time market data serving 13M+ users at Groww, India's leading investment platform. National award winner, open-source creator with packages used by 1.5K+ development teams, serial entrepreneur with 5 ventures founded, and proven technical leader with expertise spanning backend systems, mobile development, cloud infrastructure, and AI/ML.
+> Exceptional software engineer with 6+ years building production systems at scale. Full-stack Software Engineer 2 at Rippling on the PEO (B2B HR Services) team, improving Underwriting and Workers' Compensation flows. Previously spent four years at Groww (India's leading investment platform), architecting payment infrastructure handling 300K+ daily transactions and real-time market data serving 13M+ users. National award winner, open-source creator with packages used by 1.5K+ development teams, serial entrepreneur with 5 ventures founded, and proven technical leader with expertise spanning backend systems, mobile development, cloud infrastructure, and AI/ML.
 
 ---
 
@@ -35,14 +35,29 @@ Dhiman Seal is a world-class software engineer operating at the intersection of 
 
 ## PROFESSIONAL EXPERIENCE
 
+### Rippling - All-in-One Workforce Platform
+
+**About:** The all-in-one workforce platform unifying HR, IT, and finance - payroll, benefits, device management, and app provisioning in a single system. Website: https://www.rippling.com
+
+#### Software Engineer 2 - Full-Stack (May 2026 - Present)
+**Location:** Bengaluru, Karnataka, India
+
+**Description:** Joined Rippling's engineering team on 25 May 2026 as a full-stack software engineer on the PEO (Professional Employer Organization) team within B2B HR Services.
+
+**Key Focus Areas:**
+- Building full-stack features for the PEO product under Rippling's B2B HR Services
+- Improving Underwriting and Workers' Compensation flows end-to-end
+
+---
+
 ### Groww, India - Payment Systems & Real-Time Infrastructure
 
 **About:** India's leading investment platform serving millions of users with a mission to democratize financial services. Offers seamless digital access to stocks, mutual funds, and financial products. Website: https://groww.in
 
-#### Software Engineer 2 - Backend (Jul 2023 - Present)
+#### Software Engineer 2 - Backend (Jul 2023 - May 2026)
 **Location:** Bengaluru, Karnataka, India
 
-**Description:** Building payment systems processing 300K+ daily UPI transactions and real-time market data infrastructure serving 13M+ active users with <10ms latency.
+**Description:** Built payment systems processing 300K+ daily UPI transactions and real-time market data infrastructure serving 13M+ active users with <10ms latency over four years at Groww.
 
 **Key Accomplishments:**
 - Architected UPI payment system from scratch, now handling 300,000+ successful transactions per day across Groww's 13M+ user base

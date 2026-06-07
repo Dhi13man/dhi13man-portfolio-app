@@ -35,17 +35,17 @@ export function CTAChapter({ activeChapterRef }: CTAChapterProps) {
         start: "top center",
         end: "bottom center",
         onEnter: () => {
-          activeChapterRef.current = 5;
+          activeChapterRef.current = 6;
         },
         onEnterBack: () => {
-          activeChapterRef.current = 5;
+          activeChapterRef.current = 6;
         },
       });
     },
     { scope: sectionRef, dependencies: [reducedMotion] },
   );
 
-  const chapter = chapters[5];
+  const chapter = chapters[6];
 
   return (
     <section

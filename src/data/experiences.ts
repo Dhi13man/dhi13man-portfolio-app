@@ -3,6 +3,29 @@ import type { Experience } from "@/types";
 export const experiences: Experience[] = [
   {
     about:
+      "The all-in-one workforce platform unifying HR, IT, and finance - payroll, benefits, device management, and app provisioning in a single system.",
+    links: {
+      others: ["https://linkedin.com/company/rippling"],
+      primary: "https://www.rippling.com",
+    },
+    name: "Rippling",
+    roles: [
+      {
+        description:
+          "Full-stack engineer on the PEO (Professional Employer Organization) team within Rippling's B2B HR Services, improving Underwriting and Workers' Compensation flows.",
+        details: [
+          "Building full-stack features for the PEO product under B2B HR Services",
+          "Improving Underwriting and Workers' Compensation flows end-to-end",
+        ],
+        endDate: "Present",
+        location: "Bengaluru, Karnataka, India",
+        startDate: "May 2026",
+        title: "Software Engineer 2 - Full-Stack",
+      },
+    ],
+  },
+  {
+    about:
       "India's leading investment platform serving millions of users with a mission to democratize financial services. Offers seamless digital access to stocks, mutual funds, and financial products.",
     images: {
       others: ["/assets/work_experiences/growwin-cert.jpg"],
@@ -26,7 +49,7 @@ export const experiences: Experience[] = [
           "Owned observability across multiple pods: PromQL, Grafana, Superset dashboards and alerts",
           "Single-handedly built backend-driven home page serving personalized content to millions of users, enabling 3 product teams to run experiments",
         ],
-        endDate: "Present",
+        endDate: "May 2026",
         location: "Bengaluru, Karnataka, India",
         startDate: "Jul 2023",
         title: "Software Engineer 2 - Backend",
