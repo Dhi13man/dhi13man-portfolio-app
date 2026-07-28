@@ -1,5 +1,6 @@
 import React from 'react'
 import { render, screen } from '@testing-library/react'
+import { axe } from 'vitest-axe'
 import ExperiencePage from '../experience/page'
 
 // Mock the data module with comprehensive test data
@@ -183,11 +184,8 @@ describe('Experience Page', () => {
       render(<ExperiencePage />)
 
       // Assert
-      const links = screen.getAllByRole('link')
-      const primaryLinks = links.filter(link =>
-        link.getAttribute('href') === 'https://techcompany.com'
-      )
-      expect(primaryLinks.length).toBeGreaterThanOrEqual(1)
+      const primaryLink = screen.getByRole('link', { name: 'View Tech Company' })
+      expect(primaryLink).toHaveAttribute('href', 'https://techcompany.com')
     })
 
     it('should render other links with correct labels', () => {
@@ -261,6 +259,20 @@ describe('Experience Page', () => {
 
       // Assert
       expect(container.querySelector('section')).toBeInTheDocument()
+    })
+  })
+
+  describe('ExperiencePage_whenCheckedForAccessibility_thenHasNoViolations', () => {
+    it('ExperiencePage_whenAllLinkAndListVariantsRender_thenPassesAutomatedAccessibilityChecks', async () => {
+      // Arrange
+      const page = <ExperiencePage />
+
+      // Act
+      const { container } = render(page)
+      const result = await axe(container)
+
+      // Assert
+      expect(result).toHaveNoViolations()
     })
   })
 })

@@ -1,5 +1,6 @@
 import React from 'react'
 import { render, screen } from '@testing-library/react'
+import { axe } from 'vitest-axe'
 import { ProjectCard } from '../ProjectCard'
 import type { Project } from '@/types/project'
 
@@ -129,7 +130,7 @@ describe('ProjectCard', () => {
       render(<ProjectCard project={project} />)
 
       // Assert
-      const link = screen.getByRole('link')
+      const link = screen.getByRole('link', { name: 'View Test Project' })
       expect(link).toHaveAttribute('href', 'https://example.com')
       expect(link).toHaveAttribute('target', '_blank')
     })
@@ -164,6 +165,40 @@ describe('ProjectCard', () => {
       // Assert
       expect(screen.queryByRole('link')).not.toBeInTheDocument()
     })
+  })
+
+  describe('ProjectCard_whenCheckedForAccessibility_thenHasNoViolations', () => {
+    const accessibilityCases: Array<{
+      caseName: string
+      links: Project['links']
+    }> = [
+      {
+        caseName: 'PrimaryLinkExists',
+        links: { primary: 'https://example.com' },
+      },
+      {
+        caseName: 'SecondaryLinksExist',
+        links: {
+          others: ['https://github.com/repo', 'https://linkedin.com/post'],
+        },
+      },
+      { caseName: 'LinksAreAbsent', links: undefined },
+    ]
+
+    it.each(accessibilityCases)(
+      'ProjectCard_when$caseName_thenPassesAutomatedAccessibilityChecks',
+      async ({ links }) => {
+        // Arrange
+        const project = createMockProject({ links })
+
+        // Act
+        const { container } = render(<ProjectCard project={project} />)
+        const result = await axe(container)
+
+        // Assert
+        expect(result).toHaveNoViolations()
+      }
+    )
   })
 
   describe('ProjectCard_whenDetails_thenRendersDetailsList', () => {

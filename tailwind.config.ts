@@ -26,7 +26,7 @@ const config: Config = {
           primary: 'rgba(255, 255, 255, 1.0)',
           secondary: 'rgba(255, 255, 255, 0.7)',
           tertiary: 'rgba(255, 255, 255, 0.5)',
-          quaternary: 'rgba(255, 255, 255, 0.3)',
+          quaternary: 'rgba(255, 255, 255, 0.48)',
         },
 
         // Accent colors - minimal use

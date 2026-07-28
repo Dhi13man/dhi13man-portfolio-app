@@ -45,6 +45,7 @@ export function VentureCard({ venture }: VentureCardProps) {
             target="_blank"
             rel="noopener noreferrer"
             className="shrink-0 text-accent hover:text-accent-hover transition-colors duration-fast"
+            aria-label={`View ${venture.name}`}
           >
             <ExternalLink className="w-4 h-4" />
           </Link>

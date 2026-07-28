@@ -89,6 +89,7 @@ export default function ExperiencePage() {
                             href={experience.links.primary}
                             target="_blank"
                             rel="noopener noreferrer"
+                            aria-label={`View ${experience.name}`}
                           >
                             <ExternalLink className="w-4 h-4" />
                           </Link>
