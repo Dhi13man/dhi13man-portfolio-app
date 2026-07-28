@@ -1,5 +1,6 @@
 import React from 'react'
 import { render, screen } from '@testing-library/react'
+import { axe } from 'vitest-axe'
 import { AboutSection } from '../AboutSection'
 import type { About } from '@/types/about'
 
@@ -62,6 +63,18 @@ describe('AboutSection', () => {
       expect(screen.getByText('GitHub Stars')).toBeInTheDocument()
       expect(screen.getByText('Monthly Downloads')).toBeInTheDocument()
     })
+
+    it('AboutSection_whenHighlightsRendered_thenUsesListSemantics', () => {
+      // Arrange
+      render(<AboutSection data={mockAboutData} />)
+
+      // Act
+      const highlight = screen.getByText('Years Experience')
+
+      // Assert
+      expect(highlight.closest('ul')).toBeInTheDocument()
+      expect(highlight.closest('li')).toBeInTheDocument()
+    })
   })
 
   describe('AboutSection_whenRendered_thenDisplaysExpertise', () => {
@@ -106,9 +119,8 @@ describe('AboutSection', () => {
         ],
       }
       render(<AboutSection data={dataWithLinks} />)
-      const links = screen.getAllByRole('link')
-      const highlightLink = links.find(l => l.getAttribute('href') === '/experience')
-      expect(highlightLink).toBeDefined()
+      const highlightLink = screen.getByRole('link', { name: /Years Experience\s*6\+/ })
+      expect(highlightLink).toHaveAttribute('href', '/experience')
     })
 
     it('should render highlights with external links', () => {
@@ -163,6 +175,40 @@ describe('AboutSection', () => {
       const valueText = screen.getByText('No Link Value')
       expect(valueText.closest('a')).toBeNull()
     })
+  })
+
+  describe('AboutSection_whenCheckedForAccessibility_thenHasNoViolations', () => {
+    it.each([
+      {
+        caseName: 'Unlinked',
+        highlight: { value: '6+', label: 'Years Experience' },
+      },
+      {
+        caseName: 'InternalLink',
+        highlight: { value: '6+', label: 'Years Experience', link: '/experience' },
+      },
+      {
+        caseName: 'ExternalLink',
+        highlight: {
+          value: '100+',
+          label: 'GitHub Stars',
+          link: 'https://github.com/test',
+        },
+      },
+    ])(
+      'AboutSection_when$caseNameHighlightRendered_thenPassesAutomatedAccessibilityChecks',
+      async ({ highlight }) => {
+        // Arrange
+        const data = { ...mockAboutData, highlights: [highlight] }
+
+        // Act
+        const { container } = render(<AboutSection data={data} />)
+        const result = await axe(container)
+
+        // Assert
+        expect(result).toHaveNoViolations()
+      }
+    )
   })
 
   describe('AboutSection_whenEmptyData_thenHandlesGracefully', () => {

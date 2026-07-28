@@ -1,5 +1,6 @@
 import React from 'react'
 import { render, screen } from '@testing-library/react'
+import { axe } from 'vitest-axe'
 import { VentureCard } from '../VentureCard'
 import type { Venture } from '@/types/venture'
 
@@ -166,7 +167,7 @@ describe('VentureCard', () => {
       render(<VentureCard venture={venture} />)
 
       // Assert
-      const link = screen.getByRole('link')
+      const link = screen.getByRole('link', { name: 'View Test Venture' })
       expect(link).toHaveAttribute('href', 'https://example.com')
       expect(link).toHaveAttribute('target', '_blank')
       expect(link).toHaveAttribute('rel', 'noopener noreferrer')
@@ -198,6 +199,34 @@ describe('VentureCard', () => {
       // Assert
       expect(screen.queryByRole('link')).not.toBeInTheDocument()
     })
+  })
+
+  describe('VentureCard_whenCheckedForAccessibility_thenHasNoViolations', () => {
+    const accessibilityCases: Array<{
+      caseName: string
+      links: Venture['links']
+    }> = [
+      {
+        caseName: 'PrimaryLinkExists',
+        links: { primary: 'https://example.com' },
+      },
+      { caseName: 'LinksAreAbsent', links: undefined },
+    ]
+
+    it.each(accessibilityCases)(
+      'VentureCard_when$caseName_thenPassesAutomatedAccessibilityChecks',
+      async ({ links }) => {
+        // Arrange
+        const venture = createMockVenture({ links })
+
+        // Act
+        const { container } = render(<VentureCard venture={venture} />)
+        const result = await axe(container)
+
+        // Assert
+        expect(result).toHaveNoViolations()
+      }
+    )
   })
 
   describe('VentureCard_whenLongAbout_thenTruncatesWithLineClamp', () => {

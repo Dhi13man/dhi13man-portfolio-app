@@ -63,6 +63,7 @@ export function ProjectCard({ project, compact = false }: ProjectCardProps) {
                     href={project.links.primary}
                     target="_blank"
                     rel="noopener noreferrer"
+                    aria-label={`View ${project.name}`}
                   >
                     <ExternalLink className="w-4 h-4" />
                   </Link>

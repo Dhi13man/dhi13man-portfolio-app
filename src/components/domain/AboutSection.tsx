@@ -54,16 +54,16 @@ export function AboutSection({ data }: AboutSectionProps) {
 
       {/* Highlights/Stats Grid */}
       {highlights.length > 0 ? (
-        <dl className="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <ul className="grid grid-cols-2 md:grid-cols-4 gap-4">
           {highlights.map((highlight, index) => {
             const cardContent = (
               <div className="flex flex-col-reverse">
-                <dt className="text-12 text-text-tertiary uppercase tracking-wide mt-1">
+                <span className="text-12 text-text-tertiary uppercase tracking-wide mt-1">
                   {highlight.label}
-                </dt>
-                <dd className="text-32 font-display font-bold text-accent">
+                </span>
+                <span className="text-32 font-display font-bold text-accent">
                   {highlight.value}
-                </dd>
+                </span>
               </div>
             );
 
@@ -74,39 +74,40 @@ export function AboutSection({ data }: AboutSectionProps) {
 
               if (isExternal) {
                 return (
-                  <a
-                    key={`highlight-${index}-${highlight.label}`}
-                    href={highlight.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={cardClassName}
-                  >
-                    {cardContent}
-                  </a>
+                  <li key={`highlight-${index}-${highlight.label}`}>
+                    <a
+                      href={highlight.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={cardClassName}
+                    >
+                      {cardContent}
+                    </a>
+                  </li>
                 );
               }
 
               return (
-                <Link
-                  key={`highlight-${index}-${highlight.label}`}
-                  href={highlight.link}
-                  className={cardClassName}
-                >
-                  {cardContent}
-                </Link>
+                <li key={`highlight-${index}-${highlight.label}`}>
+                  <Link
+                    href={highlight.link}
+                    className={cardClassName}
+                  >
+                    {cardContent}
+                  </Link>
+                </li>
               );
             }
 
             return (
-              <div
-                key={`highlight-${index}-${highlight.label}`}
-                className="p-4 rounded-lg border border-border bg-surface/50 hover:border-border-hover transition-colors duration-fast"
-              >
-                {cardContent}
-              </div>
+              <li key={`highlight-${index}-${highlight.label}`}>
+                <div className="p-4 rounded-lg border border-border bg-surface/50 hover:border-border-hover transition-colors duration-fast">
+                  {cardContent}
+                </div>
+              </li>
             );
           })}
-        </dl>
+        </ul>
       ) : (
         <div className="text-text-tertiary text-14">
           No statistics available
@@ -136,7 +137,7 @@ export function AboutSection({ data }: AboutSectionProps) {
                         role="listitem"
                         className={
                           isPrimary
-                            ? "px-3 py-1 text-12 rounded border border-accent/20 bg-accent/10 text-accent transition-colors duration-fast"
+                            ? "px-3 py-1 text-12 rounded border border-accent/20 bg-accent/10 text-accent-hover transition-colors duration-fast"
                             : "px-3 py-1 text-12 rounded border border-border bg-surface/30 text-text-secondary hover:border-border-hover hover:text-accent transition-colors duration-fast"
                         }
                         title={skill}
