@@ -16,10 +16,25 @@ import {
   formatRepoCount,
 } from "@/lib/github";
 import { findEarliestWorkExperience } from "@/lib/experience";
+import { PAGE_SEO, SITE_URL } from "@/lib/seo";
 import type { AboutHighlight } from "@/types/about";
 
 // Maximum number of initiatives to display per category
 const MAX_INITIATIVES_PER_CATEGORY = 4;
+
+export const metadata = PAGE_SEO.home.metadata;
+
+const profilePageSchema = {
+  "@context": "https://schema.org",
+  "@type": "ProfilePage",
+  mainEntity: {
+    "@id": `${SITE_URL}/#person`,
+  },
+  url: `${SITE_URL}/`,
+  name: "Dhiman Seal - Software Engineer & Entrepreneur",
+  description:
+    "Software engineer with 6+ years at scale: payment systems handling 300K+ daily transactions, real-time infrastructure serving 13M+ users, open-source packages used by 1.5K+ teams. ONDC Build for Bharat runner-up.",
+};
 
 export default async function Home() {
   // Get current initiatives (ongoing projects and ventures)
@@ -90,6 +105,9 @@ export default async function Home() {
 
   return (
     <>
+      <script type="application/ld+json">
+        {JSON.stringify(profilePageSchema)}
+      </script>
       {/* Hero Section - Linear style: Large display, minimal */}
       <Section noDivider className="py-16">
         <div className="max-w-3xl mx-auto text-center space-y-6">

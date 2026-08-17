@@ -10,12 +10,9 @@ import {
   TestScoreCard,
 } from "@/components/domain/AchievementCard";
 import { achievements } from "@/data/achievements";
+import { PAGE_SEO } from "@/lib/seo";
 
-export const metadata = {
-  title: "Achievements - Dhiman Seal",
-  description:
-    "Explore my achievements, awards, certifications, and test scores from various competitions and programs.",
-};
+export const metadata = PAGE_SEO.achievements.metadata;
 
 export default function AchievementsPage() {
   return (
