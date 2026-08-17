@@ -27,7 +27,9 @@ describe('Section', () => {
       const testId = 'test-section'
 
       // Act
-      const { container } = render(<Section data-testid={testId}>Content</Section>)
+      const { container } = render(
+        <Section data-testid={testId}>Content</Section>,
+      )
 
       // Assert
       expect(container.querySelector('section')).toBeInTheDocument()
@@ -61,7 +63,9 @@ describe('Section', () => {
       const customClass = 'custom-section'
 
       // Act
-      const { container } = render(<Section className={customClass}>Content</Section>)
+      const { container } = render(
+        <Section className={customClass}>Content</Section>,
+      )
 
       // Assert
       expect(container.firstChild).toHaveClass(customClass)
@@ -150,7 +154,24 @@ describe('SectionTitle', () => {
       render(<SectionTitle>{title}</SectionTitle>)
 
       // Assert
-      expect(screen.getByRole('heading', { level: 2, name: title })).toBeInTheDocument()
+      expect(
+        screen.getByRole('heading', { level: 2, name: title }),
+      ).toBeInTheDocument()
+    })
+  })
+
+  describe('SectionTitle_whenRenderedAsH1_thenDisplaysAsH1', () => {
+    it('SectionTitle_whenRenderedAsH1_thenDisplaysAsH1', () => {
+      // Arrange
+      const title = 'Page Title'
+
+      // Act
+      render(<SectionTitle as="h1">{title}</SectionTitle>)
+
+      // Assert
+      expect(
+        screen.getByRole('heading', { level: 1, name: title }),
+      ).toBeInTheDocument()
     })
   })
 
@@ -246,11 +267,13 @@ describe('Section composition', () => {
             <SectionDescription>{descriptionText}</SectionDescription>
           </SectionHeader>
           <div>{contentText}</div>
-        </Section>
+        </Section>,
       )
 
       // Assert
-      expect(screen.getByRole('heading', { level: 2, name: titleText })).toBeInTheDocument()
+      expect(
+        screen.getByRole('heading', { level: 2, name: titleText }),
+      ).toBeInTheDocument()
       expect(screen.getByText(descriptionText)).toBeInTheDocument()
       expect(screen.getByText(contentText)).toBeInTheDocument()
     })

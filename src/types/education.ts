@@ -1,6 +1,6 @@
 import type { Links, Images, DateRange } from "./common";
 
-export interface Course extends DateRange {
+interface Course extends DateRange {
   degree: string;
   field: string;
   gpa?: string;

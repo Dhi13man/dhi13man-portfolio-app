@@ -45,7 +45,8 @@ This change removes misleading legacy discovery artifacts, fixes verified render
 - Add accessible names to icon-only education and venture links.
 - Repair the journey animation lifecycle at the responsive breakpoint.
 - Remove the invalid A2A agent card.
-- Correct factual drift in `llms.txt` and `llms-full.txt`.
+- Correct factual drift in `llms.txt` and remove the manually maintained
+  `llms-full.txt` duplicate.
 - Replace the stale AI-maintenance guide with a concise source-of-truth workflow.
 - Simplify `robots.txt` to its effective standards-compatible policy.
 - Remove custom caching for mutable, non-fingerprinted public files.

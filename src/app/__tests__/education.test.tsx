@@ -105,13 +105,20 @@ vi.mock('@/components/ui/image-gallery', () => ({
 
 describe('Education Page', () => {
   describe('EducationPage_whenRendered_thenDisplaysPageTitle', () => {
-    it('should render page title and description', () => {
-      // Arrange & Act
+    it('EducationPage_whenRendered_thenDisplaysPageTitle', () => {
+      // Arrange
+      const expectedTitle = 'Education'
+
+      // Act
       render(<EducationPage />)
 
       // Assert
-      expect(screen.getByRole('heading', { level: 2, name: 'Education' })).toBeInTheDocument()
-      expect(screen.getByText(/My academic journey through premier institutions/)).toBeInTheDocument()
+      expect(
+        screen.getByRole('heading', { level: 1, name: expectedTitle }),
+      ).toBeInTheDocument()
+      expect(
+        screen.getByText(/My academic journey through premier institutions/),
+      ).toBeInTheDocument()
     })
   })
 
@@ -131,7 +138,9 @@ describe('Education Page', () => {
       render(<EducationPage />)
 
       // Assert
-      expect(screen.getByText('Premier institution description')).toBeInTheDocument()
+      expect(
+        screen.getByText('Premier institution description'),
+      ).toBeInTheDocument()
       expect(screen.getByText('High school description')).toBeInTheDocument()
       expect(screen.getByText('Minimal description')).toBeInTheDocument()
     })
@@ -196,14 +205,17 @@ describe('Education Page', () => {
   })
 
   describe('EducationPage_whenLinksProvided_thenRendersLinks', () => {
-    it('should render primary link button', () => {
-      // Arrange & Act
+    it('EducationPage_whenPrimaryLinkExists_thenNamesLinkForInstitution', () => {
+      // Arrange
+      const expectedAccessibleName = 'View Test University'
+
+      // Act
       render(<EducationPage />)
 
       // Assert
-      const links = screen.getAllByRole('link')
-      const primaryLinks = links.filter(link => link.getAttribute('href') === 'https://test.edu')
-      expect(primaryLinks.length).toBeGreaterThanOrEqual(1)
+      expect(
+        screen.getByRole('link', { name: expectedAccessibleName }),
+      ).toHaveAttribute('href', 'https://test.edu')
     })
 
     it('should render other links with correct labels', () => {
@@ -211,12 +223,15 @@ describe('Education Page', () => {
       render(<EducationPage />)
 
       // Assert
-      const linkedinLinks = screen.getAllByRole('link').filter(link => {
+      const linkedinLinks = screen.getAllByRole('link').filter((link) => {
         const href = link.getAttribute('href')
         if (!href) return false
         try {
           const url = new URL(href)
-          return url.hostname === 'linkedin.com' || url.hostname.endsWith('.linkedin.com')
+          return (
+            url.hostname === 'linkedin.com' ||
+            url.hostname.endsWith('.linkedin.com')
+          )
         } catch {
           return false
         }
@@ -254,20 +269,30 @@ describe('Education Page', () => {
       expect(screen.getByText('High School')).toBeInTheDocument()
     })
 
-    it('should render course without field', () => {
-      // Arrange & Act
+    it('EducationPage_whenCourseHasNoField_thenRendersDegreeHeading', () => {
+      // Arrange
+      const expectedDegree = 'High School Diploma'
+
+      // Act
       render(<EducationPage />)
 
       // Assert
-      expect(screen.getByRole('heading', { level: 4, name: 'High School Diploma' })).toBeInTheDocument()
+      expect(
+        screen.getByRole('heading', { level: 3, name: expectedDegree }),
+      ).toBeInTheDocument()
     })
 
-    it('should render course without gpa/percentage', () => {
-      // Arrange & Act
+    it('EducationPage_whenCourseHasNoScore_thenRendersDegreeHeading', () => {
+      // Arrange
+      const expectedDegree = 'Certificate'
+
+      // Act
       render(<EducationPage />)
 
       // Assert
-      expect(screen.getByRole('heading', { level: 4, name: 'Certificate' })).toBeInTheDocument()
+      expect(
+        screen.getByRole('heading', { level: 3, name: expectedDegree }),
+      ).toBeInTheDocument()
     })
   })
 

@@ -38,12 +38,17 @@ vi.mock('@/data/achievements', () => ({
 
 describe('Achievements Page', () => {
   describe('AchievementsPage_whenRendered_thenDisplaysPageTitle', () => {
-    it('should render page title', () => {
-      // Arrange & Act
+    it('AchievementsPage_whenRendered_thenDisplaysPageTitle', () => {
+      // Arrange
+      const expectedTitle = 'Achievements'
+
+      // Act
       render(<AchievementsPage />)
 
       // Assert
-      expect(screen.getByRole('heading', { level: 2, name: 'Achievements' })).toBeInTheDocument()
+      expect(
+        screen.getByRole('heading', { level: 1, name: expectedTitle }),
+      ).toBeInTheDocument()
     })
   })
 

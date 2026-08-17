@@ -19,7 +19,7 @@ export default function AchievementsPage() {
     <>
       <Section noDivider className="py-16">
         <SectionHeader>
-          <SectionTitle>Achievements</SectionTitle>
+          <SectionTitle as="h1">Achievements</SectionTitle>
           <SectionDescription>
             A collection of awards, certifications, and test scores showcasing
             my continuous learning and excellence.
@@ -58,7 +58,10 @@ export default function AchievementsPage() {
         </div>
         <div className="space-y-3">
           {achievements.licensesAndCertifications.map((cert) => (
-            <CertificationCard key={cert.credentialId ?? cert.title} certification={cert} />
+            <CertificationCard
+              key={cert.credentialId ?? cert.title}
+              certification={cert}
+            />
           ))}
         </div>
       </Section>

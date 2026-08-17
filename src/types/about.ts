@@ -13,7 +13,7 @@ export interface AboutHighlight {
 /**
  * Expertise area with associated skills
  */
-export interface AboutExpertise {
+interface AboutExpertise {
   area: string;
   skills: string[];
 }
@@ -21,7 +21,7 @@ export interface AboutExpertise {
 /**
  * Core value/principle with icon
  */
-export interface AboutValue {
+interface AboutValue {
   number: number;
   title: string;
   description: string;

@@ -1,18 +1,8 @@
 import type { Metadata } from "next";
+import { SITE_ROUTES, type CanonicalPath, type PageKey } from "@/lib/routes";
 
 export const SITE_URL = "https://www.dhimanseal.com";
 export const SITE_IMAGE = `${SITE_URL}/assets/me.webp`;
-
-type CanonicalPath = "/" | `/${string}/`;
-type PageKey =
-  | "home"
-  | "journey"
-  | "experience"
-  | "projects"
-  | "ventures"
-  | "achievements"
-  | "recommendations"
-  | "education";
 
 interface PageMetadataOptions {
   readonly title: string;
@@ -75,7 +65,7 @@ export const PAGE_SEO = {
     title: "Dhiman Seal - Software Engineer & Entrepreneur",
     description:
       "Software engineer with 6+ years scaling production systems: payment infrastructure handling 300K+ daily transactions, real-time data serving 13M+ users. Open-source creator with packages used by 1.5K+ teams. National runner-up at ONDC Build for Bharat 2024. Multiple hackathon winner.",
-    path: "/",
+    path: SITE_ROUTES.home.path,
     socialDescription:
       "Software engineer scaling production systems: 300K+ daily transactions, 13M+ users served. Open-source packages used by 1.5K+ teams. ONDC Build for Bharat runner-up. Multiple hackathon winner.",
   }),
@@ -83,7 +73,7 @@ export const PAGE_SEO = {
     title: "The Journey - Dhiman Seal",
     description:
       "4+ years building payment systems at Groww (300K+ daily transactions, 13M+ users). Startup founder (1 acquisition). Open-source creator (150+ GitHub stars). The full story.",
-    path: "/journey/",
+    path: SITE_ROUTES.journey.path,
     socialDescription:
       "From college robotics to 300K+ daily UPI transactions. The career story of a builder.",
   }),
@@ -91,36 +81,36 @@ export const PAGE_SEO = {
     title: "Experience - Dhiman Seal",
     description:
       "Explore my professional journey and work experience across various companies and roles.",
-    path: "/experience/",
+    path: SITE_ROUTES.experience.path,
   }),
   projects: definePageSeo({
     title: "Projects - Dhiman Seal",
     description:
       "Explore my portfolio of open-source projects and technical work.",
-    path: "/projects/",
+    path: SITE_ROUTES.projects.path,
   }),
   ventures: definePageSeo({
     title: "Ventures - Dhiman Seal",
     description:
       "Explore my entrepreneurial journey through various startups and ventures I have founded and contributed to.",
-    path: "/ventures/",
+    path: SITE_ROUTES.ventures.path,
   }),
   achievements: definePageSeo({
     title: "Achievements - Dhiman Seal",
     description:
       "Explore my achievements, awards, certifications, and test scores from various competitions and programs.",
-    path: "/achievements/",
+    path: SITE_ROUTES.achievements.path,
   }),
   recommendations: definePageSeo({
     title: "Recommendations - Dhiman Seal",
     description:
       "Read testimonials and recommendations from clients, colleagues, and partners I have worked with.",
-    path: "/recommendations/",
+    path: SITE_ROUTES.recommendations.path,
   }),
   education: definePageSeo({
     title: "Education - Dhiman Seal",
     description:
       "Explore my educational background, academic achievements, and the institutions that shaped my learning journey.",
-    path: "/education/",
+    path: SITE_ROUTES.education.path,
   }),
 } satisfies Readonly<Record<PageKey, PageSeo>>;

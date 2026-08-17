@@ -8,7 +8,9 @@ import { ScrollReveal } from "./ScrollReveal";
 import { chapters, growwNarrative, growwRoles } from "@/data/journey";
 import { cn } from "@/lib/utils";
 
-const TEXT_WRAP_BALANCE: React.CSSProperties = { textWrap: "balance" } as React.CSSProperties;
+const TEXT_WRAP_BALANCE: React.CSSProperties = {
+  textWrap: "balance",
+} as React.CSSProperties;
 const DESKTOP_QUERY = "(min-width: 1024px)";
 
 function subscribeDesktop(callback: () => void): () => void {
@@ -61,11 +63,7 @@ export function GrowwChapter({ activeChapterRef }: GrowwChapterProps) {
       if (reducedMotion || !isDesktop) return;
 
       // Horizontal scroll on desktop
-      if (
-        horizontalRef.current &&
-        cardsRef.current &&
-        progressRef.current
-      ) {
+      if (horizontalRef.current && cardsRef.current && progressRef.current) {
         const cards = cardsRef.current;
         const totalWidth = cards.scrollWidth - window.innerWidth;
 
@@ -90,7 +88,11 @@ export function GrowwChapter({ activeChapterRef }: GrowwChapterProps) {
         });
       }
     },
-    { scope: sectionRef, dependencies: [reducedMotion, isDesktop] },
+    {
+      scope: sectionRef,
+      dependencies: [reducedMotion, isDesktop],
+      revertOnUpdate: true,
+    },
   );
 
   const chapter = chapters[2];
@@ -140,76 +142,81 @@ export function GrowwChapter({ activeChapterRef }: GrowwChapterProps) {
       </div>
 
       {/* Desktop: horizontal scroll (hidden on mobile via CSS) */}
-      {isDesktop && !reducedMotion && (
-        <div ref={horizontalRef} className="relative min-h-svh overflow-hidden">
-          <div className="absolute left-8 right-8 top-[14px] z-10 h-[1px] bg-transparent">
-            <div
-              ref={progressRef}
-              className="h-full origin-left bg-accent"
-              style={{ transform: "scaleX(0)" }}
-            />
-          </div>
-
+      <div
+        ref={horizontalRef}
+        data-journey-layout="horizontal"
+        hidden={!isDesktop || reducedMotion}
+        className="relative min-h-svh overflow-hidden"
+      >
+        <div className="absolute left-8 right-8 top-[14px] z-10 h-[1px] bg-transparent">
           <div
-            ref={cardsRef}
-            className="relative flex gap-8 px-16 pt-8"
-            style={{ width: `${growwRoles.length * 512 + 128}px` }}
-          >
-            <div
-              className="pointer-events-none absolute left-16 right-16 top-[14px] h-[1px] bg-border"
-              aria-hidden="true"
-            />
-            {growwRoles.map((role, i) => (
-              <div
-                key={role.title}
-                className="flex min-w-[440px] max-w-[480px] flex-col"
-              >
-                <div className="mb-6 flex flex-col items-start gap-2">
-                  <div
-                    className={cn(
-                      "relative z-10 h-3 w-3 rounded-full border-2",
-                      i === growwRoles.length - 1
-                        ? "border-accent bg-accent"
-                        : "border-accent bg-background",
-                    )}
-                  />
-                  <span className="font-mono text-12 text-text-quaternary">
-                    {role.date.split(" - ")[0]}
-                  </span>
-                </div>
-                <RoleCard role={role} horizontal />
-              </div>
-            ))}
-          </div>
+            ref={progressRef}
+            className="h-full origin-left bg-accent"
+            style={{ transform: "scaleX(0)" }}
+          />
         </div>
-      )}
 
-      {/* Mobile / tablet / reduced motion: vertical stack */}
-      {(!isDesktop || reducedMotion) && (
-        <div className="mx-auto max-w-[1200px] px-8 pb-16">
-          <div className="relative ml-1.5 border-l-2 border-border pl-6">
-            {growwRoles.map((role, i) => (
-              <div
-                key={role.title}
-                className={cn(
-                  "relative pb-6",
-                  i === growwRoles.length - 1 && "pb-0",
-                )}
-              >
+        <div
+          ref={cardsRef}
+          className="relative flex gap-8 px-16 pt-8"
+          style={{ width: `${growwRoles.length * 512 + 128}px` }}
+        >
+          <div
+            className="pointer-events-none absolute left-16 right-16 top-[14px] h-[1px] bg-border"
+            aria-hidden="true"
+          />
+          {growwRoles.map((role, i) => (
+            <div
+              key={role.title}
+              className="flex min-w-[440px] max-w-[480px] flex-col"
+            >
+              <div className="mb-6 flex flex-col items-start gap-2">
                 <div
                   className={cn(
-                    "absolute -left-[calc(0.75rem+5px)] top-2 h-3 w-3 rounded-full border-2",
+                    "relative z-10 h-3 w-3 rounded-full border-2",
                     i === growwRoles.length - 1
                       ? "border-accent bg-accent"
                       : "border-accent bg-background",
                   )}
                 />
-                <RoleCard role={role} />
+                <span className="font-mono text-12 text-text-quaternary">
+                  {role.date.split(" - ")[0]}
+                </span>
               </div>
-            ))}
-          </div>
+              <RoleCard role={role} horizontal />
+            </div>
+          ))}
         </div>
-      )}
+      </div>
+
+      {/* Mobile / tablet / reduced motion: vertical stack */}
+      <div
+        data-journey-layout="vertical"
+        hidden={isDesktop && !reducedMotion}
+        className="mx-auto max-w-[1200px] px-8 pb-16"
+      >
+        <div className="relative ml-1.5 border-l-2 border-border pl-6">
+          {growwRoles.map((role, i) => (
+            <div
+              key={role.title}
+              className={cn(
+                "relative pb-6",
+                i === growwRoles.length - 1 && "pb-0",
+              )}
+            >
+              <div
+                className={cn(
+                  "absolute -left-[calc(0.75rem+5px)] top-2 h-3 w-3 rounded-full border-2",
+                  i === growwRoles.length - 1
+                    ? "border-accent bg-accent"
+                    : "border-accent bg-background",
+                )}
+              />
+              <RoleCard role={role} />
+            </div>
+          ))}
+        </div>
+      </div>
     </section>
   );
 }
@@ -242,7 +249,7 @@ function RoleCard({
         {role.pills.map((pill) => (
           <span
             key={pill}
-            className="rounded-full border border-accent/20 bg-accent/10 px-3 py-1 text-12 text-accent"
+            className="rounded-full border border-accent/20 bg-accent/10 px-3 py-1 text-12 text-accent-hover"
           >
             {pill}
           </span>
@@ -255,10 +262,7 @@ function RoleCard({
             key={detail}
             className="flex items-start gap-2 text-14 text-text-tertiary"
           >
-            <span
-              className="shrink-0 font-bold text-accent"
-              aria-hidden="true"
-            >
+            <span className="shrink-0 font-bold text-accent" aria-hidden="true">
               &rarr;
             </span>
             {detail}
