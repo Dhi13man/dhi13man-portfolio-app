@@ -47,7 +47,7 @@ const TimelineTitle = React.forwardRef<
   HTMLHeadingElement,
   React.HTMLAttributes<HTMLHeadingElement>
 >(({ className, ...props }, ref) => (
-  <h4
+  <h3
     ref={ref}
     className={cn("text-20 font-semibold text-text-primary", className)}
     {...props}

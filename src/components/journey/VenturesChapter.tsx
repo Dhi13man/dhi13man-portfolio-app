@@ -9,7 +9,9 @@ import { chapters, venturesNarrative, ventures } from "@/data/journey";
 import { cn } from "@/lib/utils";
 import type { VentureEntry } from "@/data/journey";
 
-const TEXT_WRAP_BALANCE: React.CSSProperties = { textWrap: "balance" } as React.CSSProperties;
+const TEXT_WRAP_BALANCE: React.CSSProperties = {
+  textWrap: "balance",
+} as React.CSSProperties;
 
 interface VenturesChapterProps {
   activeChapterRef: MutableRefObject<number>;
@@ -103,7 +105,10 @@ function VentureCard({
       // Glow animates in after card is visible
       gsap.fromTo(
         cardRef.current,
-        { boxShadow: "0 0 0px rgba(139, 92, 246, 0), 0 0 0px rgba(139, 92, 246, 0)" },
+        {
+          boxShadow:
+            "0 0 0px rgba(139, 92, 246, 0), 0 0 0px rgba(139, 92, 246, 0)",
+        },
         {
           boxShadow:
             "0 0 20px rgba(139, 92, 246, 0.15), 0 0 40px rgba(139, 92, 246, 0.05)",
@@ -193,7 +198,7 @@ function VentureCard({
             <span
               className={cn(
                 "rounded-sm px-3 py-1 text-12 font-semibold uppercase tracking-wide",
-                isAcquired && "bg-accent text-text-primary",
+                isAcquired && "bg-accent text-background",
                 isClosed && "bg-surface/50 text-text-quaternary",
                 venture.status === "active" &&
                   "border border-accent/20 bg-accent/10 text-accent",

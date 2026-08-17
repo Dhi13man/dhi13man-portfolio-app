@@ -35,12 +35,17 @@ vi.mock('@/components/ui/image-gallery', () => ({
 
 describe('Projects Page', () => {
   describe('ProjectsPage_whenRendered_thenDisplaysPageTitle', () => {
-    it('should render page title', () => {
-      // Arrange & Act
+    it('ProjectsPage_whenRendered_thenDisplaysPageTitle', () => {
+      // Arrange
+      const expectedTitle = 'Projects'
+
+      // Act
       render(<ProjectsPage />)
 
       // Assert
-      expect(screen.getByRole('heading', { level: 2, name: 'Projects' })).toBeInTheDocument()
+      expect(
+        screen.getByRole('heading', { level: 1, name: expectedTitle }),
+      ).toBeInTheDocument()
     })
   })
 

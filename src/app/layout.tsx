@@ -80,7 +80,7 @@ const personSchema = {
     "https://medium.com/@dhi13man",
     "https://twitter.com/Dhi13man",
     "https://www.npmjs.com/~dhi13man",
-    "https://pub.dev/publishers/dhimanseal.dev/packages",
+    "https://pub.dev/publishers/dhi13man.com/packages",
   ],
   hasCredential: [
     {

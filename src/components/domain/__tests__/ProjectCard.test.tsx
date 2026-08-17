@@ -7,7 +7,11 @@ import type { Project } from '@/types/project'
 // Mock ImageGallery to avoid complex state testing
 vi.mock('@/components/ui/image-gallery', () => ({
   ImageGallery: ({ images, alt }: { images: string[]; alt: string }) => (
-    <div data-testid="image-gallery" data-images={images.length} data-alt={alt} />
+    <div
+      data-testid="image-gallery"
+      data-images={images.length}
+      data-alt={alt}
+    />
   ),
 }))
 
@@ -32,7 +36,9 @@ describe('ProjectCard', () => {
       render(<ProjectCard project={project} />)
 
       // Assert
-      expect(screen.getByRole('heading', { level: 3, name: 'My Project' })).toBeInTheDocument()
+      expect(
+        screen.getByRole('heading', { level: 3, name: 'My Project' }),
+      ).toBeInTheDocument()
       expect(screen.getByText('Project description here')).toBeInTheDocument()
     })
 
@@ -48,6 +54,21 @@ describe('ProjectCard', () => {
 
       // Assert
       expect(screen.getByText('Jan 2023 - Dec 2023')).toBeInTheDocument()
+    })
+  })
+
+  describe('ProjectCard_whenHeadingLevelIsProvided_thenUsesRequestedLevel', () => {
+    it('ProjectCard_whenHeadingLevelIsProvided_thenUsesRequestedLevel', () => {
+      // Arrange
+      const project = createMockProject({ name: 'Discoverable Project' })
+
+      // Act
+      render(<ProjectCard project={project} headingLevel={2} />)
+
+      // Assert
+      expect(
+        screen.getByRole('heading', { level: 2, name: project.name }),
+      ).toBeInTheDocument()
     })
   })
 
@@ -197,7 +218,7 @@ describe('ProjectCard', () => {
 
         // Assert
         expect(result).toHaveNoViolations()
-      }
+      },
     )
   })
 

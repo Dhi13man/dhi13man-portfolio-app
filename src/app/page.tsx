@@ -41,12 +41,18 @@ export default async function Home() {
   // Filter for active, sort by descending start date, limit to max 4
   const currentProjects = projects
     .filter((p) => isDatePresent(p.endDate))
-    .sort((a, b) => parseStartDate(b.startDate).getTime() - parseStartDate(a.startDate).getTime())
+    .sort(
+      (a, b) =>
+        parseStartDate(b.startDate).getTime() -
+        parseStartDate(a.startDate).getTime(),
+    )
     .slice(0, MAX_INITIATIVES_PER_CATEGORY);
 
   const currentVentures = ventures
-    .filter((v) =>
-      Array.isArray(v.roles) && v.roles.some((r) => isDatePresent(r?.endDate)),
+    .filter(
+      (v) =>
+        Array.isArray(v.roles) &&
+        v.roles.some((r) => isDatePresent(r?.endDate)),
     )
     .sort((a, b) => {
       // Get the start date of the most recent active role for sorting
@@ -54,7 +60,10 @@ export default async function Home() {
         const activeRole = venture.roles.find((r) => isDatePresent(r?.endDate));
         return activeRole ? parseStartDate(activeRole.startDate) : new Date(0);
       };
-      return getActiveRoleStartDate(b).getTime() - getActiveRoleStartDate(a).getTime();
+      return (
+        getActiveRoleStartDate(b).getTime() -
+        getActiveRoleStartDate(a).getTime()
+      );
     })
     .slice(0, MAX_INITIATIVES_PER_CATEGORY);
 
@@ -64,14 +73,16 @@ export default async function Home() {
   // Log error if GitHub fetch failed (visible in build logs)
   if (githubStats.isError && process.env.NODE_ENV === "development") {
     console.warn(
-      `GitHub stats fetch failed: ${githubStats.errorMessage}. Using fallback display.`
+      `GitHub stats fetch failed: ${githubStats.errorMessage}. Using fallback display.`,
     );
   }
 
   // Calculate dynamic highlights
   // Find the earliest work experience start date to calculate years of experience
   const earliestWorkExperience = findEarliestWorkExperience(experiences);
-  const yearsExperience = calculateYearsExperience(earliestWorkExperience.getFullYear());
+  const yearsExperience = calculateYearsExperience(
+    earliestWorkExperience.getFullYear(),
+  );
   const activeInitiatives = currentProjects.length + currentVentures.length;
 
   const highlights: AboutHighlight[] = [
@@ -215,7 +226,12 @@ export default async function Home() {
               </h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                 {currentProjects.map((project) => (
-                  <ProjectCard key={project.name} project={project} compact />
+                  <ProjectCard
+                    key={project.name}
+                    project={project}
+                    headingLevel={4}
+                    compact
+                  />
                 ))}
               </div>
             </div>

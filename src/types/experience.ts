@@ -1,6 +1,6 @@
 import type { Links, Images, DateRange } from "./common";
 
-export interface Role extends DateRange {
+interface Role extends DateRange {
   title: string;
   location?: string;
   description: string;

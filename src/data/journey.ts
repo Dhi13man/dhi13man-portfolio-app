@@ -108,7 +108,6 @@ export const chapters: JourneyChapter[] = [
 
 // --- Hero ---
 
-export const heroSubtitle = "Software Engineer  /  Entrepreneur  /  Builder";
 export const heroNarrative =
   "I build systems that scale. Sometimes they succeed. Sometimes they teach. Here's the story.";
 
@@ -278,7 +277,10 @@ export const ventures: VentureEntry[] = [
     name: "Dostana.AI",
     status: "recognition",
     badge: "National Runner-up",
-    badges: ["National Runner-up, Build for Bharat (ONDC)", "National Winner, Tata Imagination Challenge"],
+    badges: [
+      "National Runner-up, Build for Bharat (ONDC)",
+      "National Winner, Tata Imagination Challenge",
+    ],
     subtitle: "May 2024",
     description:
       "AI-powered kirana store management system. Top 2 finalists in the Next-gen Ventures category at ONDC Build for Bharat, presented to Google, Antler, and ONDC leadership. Also won the Tata Imagination Challenge 2024 nationally. Ranked Top 2% globally in Product Strategy (Upraised Embark Program).",
@@ -286,8 +288,26 @@ export const ventures: VentureEntry[] = [
 ];
 
 export const coreTechStack = {
-  primary: ["Java", "Spring Boot", "Apache Kafka", "Redis", "PostgreSQL", "gRPC"],
-  secondary: ["Python", "Go", "TypeScript", "Node.js", "Kubernetes", "Docker", "GCP", "AWS", "Prometheus", "Grafana"],
+  primary: [
+    "Java",
+    "Spring Boot",
+    "Apache Kafka",
+    "Redis",
+    "PostgreSQL",
+    "gRPC",
+  ],
+  secondary: [
+    "Python",
+    "Go",
+    "TypeScript",
+    "Node.js",
+    "Kubernetes",
+    "Docker",
+    "GCP",
+    "AWS",
+    "Prometheus",
+    "Grafana",
+  ],
 };
 
 // --- Current Chapter ---
@@ -297,11 +317,7 @@ export const currentNarrative = {
   ezhomeo: {
     name: "EzHomeo",
     link: "https://www.ezhomeo.com",
-    metrics: [
-      "5 paying customers",
-      "775+ unit tests",
-      "4-stage AI pipeline",
-    ],
+    metrics: ["5 paying customers", "775+ unit tests", "4-stage AI pipeline"],
     techStack: [
       "Node.js",
       "Express",

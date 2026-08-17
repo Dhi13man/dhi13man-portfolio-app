@@ -43,7 +43,9 @@ describe('Timeline', () => {
       const customClass = 'custom-timeline'
 
       // Act
-      const { container } = render(<Timeline className={customClass}>Content</Timeline>)
+      const { container } = render(
+        <Timeline className={customClass}>Content</Timeline>,
+      )
 
       // Assert
       expect(container.firstChild).toHaveClass(customClass)
@@ -147,8 +149,8 @@ describe('TimelineHeader', () => {
 })
 
 describe('TimelineTitle', () => {
-  describe('TimelineTitle_whenRendered_thenDisplaysAsH4', () => {
-    it('should render as h4 heading', () => {
+  describe('TimelineTitle_whenRendered_thenDisplaysAsH3', () => {
+    it('TimelineTitle_whenRendered_thenDisplaysAsH3', () => {
       // Arrange
       const title = 'Timeline Title'
 
@@ -156,12 +158,14 @@ describe('TimelineTitle', () => {
       render(<TimelineTitle>{title}</TimelineTitle>)
 
       // Assert
-      expect(screen.getByRole('heading', { level: 4, name: title })).toBeInTheDocument()
+      expect(
+        screen.getByRole('heading', { level: 3, name: title }),
+      ).toBeInTheDocument()
     })
   })
 
   describe('TimelineTitle_whenRendered_thenHasTypographyStyles', () => {
-    it('should have correct typography styles', () => {
+    it('TimelineTitle_whenRendered_thenHasTypographyStyles', () => {
       // Arrange
       const title = 'Title'
 
@@ -169,7 +173,7 @@ describe('TimelineTitle', () => {
       render(<TimelineTitle>{title}</TimelineTitle>)
 
       // Assert
-      const heading = screen.getByRole('heading', { level: 4 })
+      const heading = screen.getByRole('heading', { level: 3 })
       expect(heading).toHaveClass('font-semibold')
       expect(heading).toHaveClass('text-text-primary')
     })
@@ -348,7 +352,7 @@ describe('TimelineDescription', () => {
 
 describe('Timeline composition', () => {
   describe('Timeline_whenCompoundComponents_thenRendersTogether', () => {
-    it('should render all compound components together', () => {
+    it('Timeline_whenCompoundComponentsAreRendered_thenDisplaysAllContent', () => {
       // Arrange
       const titleText = 'Job Title'
       const dateText = 'Jan 2023 - Present'
@@ -370,11 +374,13 @@ describe('Timeline composition', () => {
               <TimelineDescription>{descriptionText}</TimelineDescription>
             </TimelineContent>
           </TimelineItem>
-        </Timeline>
+        </Timeline>,
       )
 
       // Assert
-      expect(screen.getByRole('heading', { level: 4, name: titleText })).toBeInTheDocument()
+      expect(
+        screen.getByRole('heading', { level: 3, name: titleText }),
+      ).toBeInTheDocument()
       expect(screen.getByText(dateText)).toBeInTheDocument()
       expect(screen.getByText(locationText)).toBeInTheDocument()
       expect(screen.getByText(descriptionText)).toBeInTheDocument()
@@ -382,7 +388,7 @@ describe('Timeline composition', () => {
   })
 
   describe('Timeline_whenMultipleItems_thenRendersCorrectly', () => {
-    it('should render multiple timeline items with correct isLast handling', () => {
+    it('Timeline_whenMultipleItemsAreRendered_thenDisplaysEveryHeadingAndTwoLines', () => {
       // Arrange
       const item1 = 'First Item'
       const item2 = 'Second Item'
@@ -400,15 +406,20 @@ describe('Timeline composition', () => {
           <TimelineItem isLast>
             <TimelineTitle>{item3}</TimelineTitle>
           </TimelineItem>
-        </Timeline>
+        </Timeline>,
       )
 
       // Assert
-      expect(screen.getByRole('heading', { level: 4, name: item1 })).toBeInTheDocument()
-      expect(screen.getByRole('heading', { level: 4, name: item2 })).toBeInTheDocument()
-      expect(screen.getByRole('heading', { level: 4, name: item3 })).toBeInTheDocument()
+      expect(
+        screen.getByRole('heading', { level: 3, name: item1 }),
+      ).toBeInTheDocument()
+      expect(
+        screen.getByRole('heading', { level: 3, name: item2 }),
+      ).toBeInTheDocument()
+      expect(
+        screen.getByRole('heading', { level: 3, name: item3 }),
+      ).toBeInTheDocument()
 
-      // First two items should have lines, last should not
       const lines = container.querySelectorAll('.bg-border.absolute')
       expect(lines.length).toBe(2)
     })
