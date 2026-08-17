@@ -14,7 +14,7 @@ export default function RecommendationsPage() {
   return (
     <Section noDivider className="py-16">
       <SectionHeader>
-        <SectionTitle>Recommendations</SectionTitle>
+        <SectionTitle as="h1">Recommendations</SectionTitle>
         <SectionDescription>
           Testimonials and endorsements from clients, colleagues, and partners
           who have worked with me.
@@ -23,7 +23,10 @@ export default function RecommendationsPage() {
 
       <div className="space-y-4 mt-8">
         {recommendations.map((recommendation) => (
-          <RecommendationCard key={recommendation.from} recommendation={recommendation} />
+          <RecommendationCard
+            key={recommendation.from}
+            recommendation={recommendation}
+          />
         ))}
       </div>
     </Section>

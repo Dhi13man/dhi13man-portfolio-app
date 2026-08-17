@@ -93,13 +93,20 @@ vi.mock('@/components/ui/image-gallery', () => ({
 
 describe('Experience Page', () => {
   describe('ExperiencePage_whenRendered_thenDisplaysPageTitle', () => {
-    it('should render page title and description', () => {
-      // Arrange & Act
+    it('ExperiencePage_whenRendered_thenDisplaysPageTitle', () => {
+      // Arrange
+      const expectedTitle = 'Experience'
+
+      // Act
       render(<ExperiencePage />)
 
       // Assert
-      expect(screen.getByRole('heading', { level: 2, name: 'Experience' })).toBeInTheDocument()
-      expect(screen.getByText(/A journey through my professional career/)).toBeInTheDocument()
+      expect(
+        screen.getByRole('heading', { level: 1, name: expectedTitle }),
+      ).toBeInTheDocument()
+      expect(
+        screen.getByText(/A journey through my professional career/),
+      ).toBeInTheDocument()
     })
   })
 
@@ -119,21 +126,34 @@ describe('Experience Page', () => {
       render(<ExperiencePage />)
 
       // Assert
-      expect(screen.getByText('Leading tech company description')).toBeInTheDocument()
-      expect(screen.getByText('Innovative startup description')).toBeInTheDocument()
+      expect(
+        screen.getByText('Leading tech company description'),
+      ).toBeInTheDocument()
+      expect(
+        screen.getByText('Innovative startup description'),
+      ).toBeInTheDocument()
       expect(screen.getByText('Independent consulting')).toBeInTheDocument()
     })
   })
 
   describe('ExperiencePage_whenRolesProvided_thenDisplaysRoleDetails', () => {
-    it('should render role titles', () => {
-      // Arrange & Act
+    it('ExperiencePage_whenRolesAreProvided_thenDisplaysRoleHeadings', () => {
+      // Arrange
+      const expectedRoleTitles = [
+        'Senior Engineer',
+        'Software Engineer',
+        'Full Stack Developer',
+      ]
+
+      // Act
       render(<ExperiencePage />)
 
       // Assert
-      expect(screen.getByRole('heading', { level: 4, name: 'Senior Engineer' })).toBeInTheDocument()
-      expect(screen.getByRole('heading', { level: 4, name: 'Software Engineer' })).toBeInTheDocument()
-      expect(screen.getByRole('heading', { level: 4, name: 'Full Stack Developer' })).toBeInTheDocument()
+      expectedRoleTitles.forEach((title) => {
+        expect(
+          screen.getByRole('heading', { level: 3, name: title }),
+        ).toBeInTheDocument()
+      })
     })
 
     it('should render role descriptions', () => {
@@ -141,9 +161,13 @@ describe('Experience Page', () => {
       render(<ExperiencePage />)
 
       // Assert
-      expect(screen.getByText('Leading backend initiatives')).toBeInTheDocument()
+      expect(
+        screen.getByText('Leading backend initiatives'),
+      ).toBeInTheDocument()
       expect(screen.getByText('Built core features')).toBeInTheDocument()
-      expect(screen.getByText('Developed full stack solutions')).toBeInTheDocument()
+      expect(
+        screen.getByText('Developed full stack solutions'),
+      ).toBeInTheDocument()
     })
 
     it('should render role details list when provided', () => {
@@ -184,7 +208,9 @@ describe('Experience Page', () => {
       render(<ExperiencePage />)
 
       // Assert
-      const primaryLink = screen.getByRole('link', { name: 'View Tech Company' })
+      const primaryLink = screen.getByRole('link', {
+        name: 'View Tech Company',
+      })
       expect(primaryLink).toHaveAttribute('href', 'https://techcompany.com')
     })
 
@@ -193,12 +219,15 @@ describe('Experience Page', () => {
       render(<ExperiencePage />)
 
       // Assert
-      const linkedinLinks = screen.getAllByRole('link').filter(link => {
+      const linkedinLinks = screen.getAllByRole('link').filter((link) => {
         const href = link.getAttribute('href')
         if (!href) return false
         try {
           const url = new URL(href)
-          return url.hostname === 'linkedin.com' || url.hostname.endsWith('.linkedin.com')
+          return (
+            url.hostname === 'linkedin.com' ||
+            url.hostname.endsWith('.linkedin.com')
+          )
         } catch {
           return false
         }
@@ -208,13 +237,19 @@ describe('Experience Page', () => {
   })
 
   describe('ExperiencePage_whenMultipleRoles_thenRendersAll', () => {
-    it('should render multiple roles under same company', () => {
-      // Arrange & Act
+    it('ExperiencePage_whenCompanyHasMultipleRoles_thenRendersEveryRole', () => {
+      // Arrange
+      const expectedRoleTitles = ['Senior Engineer', 'Software Engineer']
+
+      // Act
       render(<ExperiencePage />)
 
-      // Assert - Tech Company has 2 roles
-      expect(screen.getByRole('heading', { level: 4, name: 'Senior Engineer' })).toBeInTheDocument()
-      expect(screen.getByRole('heading', { level: 4, name: 'Software Engineer' })).toBeInTheDocument()
+      // Assert
+      expectedRoleTitles.forEach((title) => {
+        expect(
+          screen.getByRole('heading', { level: 3, name: title }),
+        ).toBeInTheDocument()
+      })
     })
   })
 
@@ -235,20 +270,30 @@ describe('Experience Page', () => {
       expect(screen.getByText('Startup Inc')).toBeInTheDocument()
     })
 
-    it('should render role without location', () => {
-      // Arrange & Act
+    it('ExperiencePage_whenRoleHasNoLocation_thenRendersRoleHeading', () => {
+      // Arrange
+      const expectedRoleTitle = 'Full Stack Developer'
+
+      // Act
       render(<ExperiencePage />)
 
       // Assert
-      expect(screen.getByRole('heading', { level: 4, name: 'Full Stack Developer' })).toBeInTheDocument()
+      expect(
+        screen.getByRole('heading', { level: 3, name: expectedRoleTitle }),
+      ).toBeInTheDocument()
     })
 
-    it('should render role without details', () => {
-      // Arrange & Act
+    it('ExperiencePage_whenRoleHasNoDetails_thenRendersRoleHeading', () => {
+      // Arrange
+      const expectedRoleTitle = 'Consultant'
+
+      // Act
       render(<ExperiencePage />)
 
       // Assert
-      expect(screen.getByRole('heading', { level: 4, name: 'Consultant' })).toBeInTheDocument()
+      expect(
+        screen.getByRole('heading', { level: 3, name: expectedRoleTitle }),
+      ).toBeInTheDocument()
     })
   })
 

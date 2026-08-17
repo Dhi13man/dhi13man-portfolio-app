@@ -30,7 +30,7 @@ export default function EducationPage() {
   return (
     <Section noDivider className="py-16">
       <SectionHeader>
-        <SectionTitle>Education</SectionTitle>
+        <SectionTitle as="h1">Education</SectionTitle>
         <SectionDescription>
           My academic journey through premier institutions, from early education
           to advanced technical training.
@@ -65,9 +65,9 @@ export default function EducationPage() {
               <div className="mb-4">
                 <div className="flex items-start justify-between gap-2 mb-2">
                   <div className="flex-1 min-w-0">
-                    <h3 className="text-20 font-semibold text-text-primary">
+                    <h2 className="text-20 font-semibold text-text-primary">
                       {edu.name}
-                    </h3>
+                    </h2>
                     <p className="text-12 font-mono text-text-quaternary mt-1">
                       {totalTime}
                     </p>
@@ -84,6 +84,7 @@ export default function EducationPage() {
                             href={edu.links.primary}
                             target="_blank"
                             rel="noopener noreferrer"
+                            aria-label={`View ${edu.name}`}
                           >
                             <ExternalLink className="w-4 h-4" />
                           </Link>

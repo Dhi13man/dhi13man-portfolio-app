@@ -10,19 +10,26 @@ import type { Project } from "@/types/project";
 
 export interface ProjectCardProps {
   project: Project;
+  headingLevel?: 2 | 3 | 4;
   /**
    * Compact mode for home page - shows less detail
    */
   compact?: boolean;
 }
 
-export function ProjectCard({ project, compact = false }: ProjectCardProps) {
+export function ProjectCard({
+  project,
+  headingLevel = 3,
+  compact = false,
+}: ProjectCardProps) {
   // Gather all images (primary + others)
   const allImages = project.images
     ? ([project.images.primary, ...(project.images.others || [])].filter(
         Boolean,
       ) as string[])
     : [];
+
+  const Heading = `h${headingLevel}` as const;
 
   return (
     <Panel hoverable>
@@ -41,7 +48,7 @@ export function ProjectCard({ project, compact = false }: ProjectCardProps) {
       <div className="space-y-2">
         <div className="flex items-start justify-between gap-2">
           <div>
-            <h3
+            <Heading
               className={
                 compact
                   ? "text-16 font-semibold text-text-primary"
@@ -49,7 +56,7 @@ export function ProjectCard({ project, compact = false }: ProjectCardProps) {
               }
             >
               {project.name}
-            </h3>
+            </Heading>
             <time className="text-12 font-mono text-text-quaternary">
               {formatDateRange(project.startDate, project.endDate)}
             </time>

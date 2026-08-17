@@ -19,12 +19,17 @@ vi.mock('@/data/recommendations', () => ({
 
 describe('Recommendations Page', () => {
   describe('RecommendationsPage_whenRendered_thenDisplaysPageTitle', () => {
-    it('should render page title', () => {
-      // Arrange & Act
+    it('RecommendationsPage_whenRendered_thenDisplaysPageTitle', () => {
+      // Arrange
+      const expectedTitle = 'Recommendations'
+
+      // Act
       render(<RecommendationsPage />)
 
       // Assert
-      expect(screen.getByRole('heading', { level: 2, name: 'Recommendations' })).toBeInTheDocument()
+      expect(
+        screen.getByRole('heading', { level: 1, name: expectedTitle }),
+      ).toBeInTheDocument()
     })
   })
 
@@ -43,8 +48,12 @@ describe('Recommendations Page', () => {
       render(<RecommendationsPage />)
 
       // Assert
-      expect(screen.getByText('Great developer and team player.')).toBeInTheDocument()
-      expect(screen.getByText('Excellent problem-solving skills.')).toBeInTheDocument()
+      expect(
+        screen.getByText('Great developer and team player.'),
+      ).toBeInTheDocument()
+      expect(
+        screen.getByText('Excellent problem-solving skills.'),
+      ).toBeInTheDocument()
     })
   })
 

@@ -14,7 +14,7 @@ export default function ProjectsPage() {
   return (
     <Section noDivider className="py-16">
       <SectionHeader>
-        <SectionTitle>Projects</SectionTitle>
+        <SectionTitle as="h1">Projects</SectionTitle>
         <SectionDescription>
           A collection of open-source projects and technical work spanning
           various domains and technologies.
@@ -23,7 +23,7 @@ export default function ProjectsPage() {
 
       <div className="space-y-3 mt-8">
         {projects.map((project) => (
-          <ProjectCard key={project.name} project={project} />
+          <ProjectCard key={project.name} project={project} headingLevel={2} />
         ))}
       </div>
     </Section>

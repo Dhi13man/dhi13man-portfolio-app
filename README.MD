@@ -1,8 +1,9 @@
 # dhi13man-portfolio
 
-A modern, production-ready portfolio website built with Next.js 15, React 19, and TypeScript. Designed for both human developers and AI agent integration.
+A modern, production-ready portfolio website built with Next.js 15, React 19,
+and TypeScript. Designed for both human developers and AI agent integration.
 
-**Live demo:** [dhimanseal.dev](https://dhimanseal.dev)
+**Live demo:** [www.dhimanseal.com](https://www.dhimanseal.com)
 
 ## Table of Contents
 
@@ -21,7 +22,9 @@ A modern, production-ready portfolio website built with Next.js 15, React 19, an
 
 ## Overview
 
-This portfolio showcases professional achievements, work experiences, technical projects, recommendations, and entrepreneurial ventures. Built with modern web technologies for optimal performance, accessibility, and maintainability.
+This portfolio showcases professional achievements, work experiences, technical
+projects, recommendations, and entrepreneurial ventures. Built with modern web
+technologies for optimal performance, accessibility, and maintainability.
 
 ### Features
 

@@ -30,7 +30,7 @@ export default function ExperiencePage() {
   return (
     <Section noDivider className="py-16">
       <SectionHeader>
-        <SectionTitle>Experience</SectionTitle>
+        <SectionTitle as="h1">Experience</SectionTitle>
         <SectionDescription>
           A journey through my professional career, showcasing the companies
           I&apos;ve worked with and the impact I&apos;ve made.
@@ -66,9 +66,9 @@ export default function ExperiencePage() {
               <div className="mb-4">
                 <div className="flex items-start justify-between gap-2 mb-2">
                   <div className="flex-1 min-w-0">
-                    <h3 className="text-20 font-semibold text-text-primary">
+                    <h2 className="text-20 font-semibold text-text-primary">
                       {experience.name}
-                    </h3>
+                    </h2>
                     <p className="text-12 font-mono text-text-quaternary mt-1">
                       {totalTenure}
                     </p>

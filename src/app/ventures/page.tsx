@@ -52,7 +52,7 @@ export default function VenturesPage() {
   return (
     <Section noDivider className="py-16">
       <SectionHeader>
-        <SectionTitle>Ventures</SectionTitle>
+        <SectionTitle as="h1">Ventures</SectionTitle>
         <SectionDescription>
           My entrepreneurial journey through founding and leading various
           startups and innovative ventures.
@@ -76,9 +76,9 @@ export default function VenturesPage() {
                     <div className="flex-1 min-w-0">
                       <div className="flex items-start justify-between gap-2">
                         <div>
-                          <h3 className="text-20 font-semibold text-text-primary">
+                          <h2 className="text-20 font-semibold text-text-primary">
                             {role.ventureName}
-                          </h3>
+                          </h2>
                           <p className="text-14 text-text-tertiary mt-1">
                             {role.ventureAbout}
                           </p>
@@ -93,6 +93,7 @@ export default function VenturesPage() {
                                   href={role.ventureLink}
                                   target="_blank"
                                   rel="noopener noreferrer"
+                                  aria-label={`View ${role.ventureName}`}
                                 >
                                   <ExternalLink className="w-4 h-4" />
                                 </Link>

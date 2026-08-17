@@ -5,17 +5,7 @@ import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
-
-const navigation = [
-  { name: "About", href: "/" },
-  { name: "Journey", href: "/journey/" },
-  { name: "Ventures", href: "/ventures/" },
-  { name: "Experience", href: "/experience/" },
-  { name: "Projects", href: "/projects/" },
-  { name: "Achievements", href: "/achievements/" },
-  { name: "Recommendations", href: "/recommendations/" },
-  { name: "Education", href: "/education/" },
-];
+import { INDEXABLE_ROUTES } from "@/lib/routes";
 
 export function Header() {
   const pathname = usePathname();
@@ -39,12 +29,12 @@ export function Header() {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-1">
-            {navigation.map((item) => {
-              const isActive = pathname === item.href;
+            {INDEXABLE_ROUTES.map(({ navigationLabel, path }) => {
+              const isActive = pathname === path;
               return (
                 <Link
-                  key={item.name}
-                  href={item.href}
+                  key={path}
+                  href={path}
                   aria-current={isActive ? "page" : undefined}
                   className={cn(
                     "px-3 py-2 rounded text-14 font-medium transition-all duration-fast relative",
@@ -53,7 +43,7 @@ export function Header() {
                       : "text-text-tertiary hover:text-text-primary hover:bg-hover-bg",
                   )}
                 >
-                  {item.name}
+                  {navigationLabel}
                   {isActive && (
                     <span
                       className="absolute bottom-1 left-1/2 -translate-x-1/2 w-1 h-1 rounded-full bg-accent"
@@ -89,12 +79,12 @@ export function Header() {
             className="md:hidden pb-4 border-t border-border mt-4 pt-4"
           >
             <div className="flex flex-col gap-1">
-              {navigation.map((item) => {
-                const isActive = pathname === item.href;
+              {INDEXABLE_ROUTES.map(({ navigationLabel, path }) => {
+                const isActive = pathname === path;
                 return (
                   <Link
-                    key={item.name}
-                    href={item.href}
+                    key={path}
+                    href={path}
                     aria-current={isActive ? "page" : undefined}
                     className={cn(
                       "px-3 py-2 rounded text-14 font-medium transition-all duration-fast",
@@ -104,7 +94,7 @@ export function Header() {
                     )}
                     onClick={() => setMobileMenuOpen(false)}
                   >
-                    {item.name}
+                    {navigationLabel}
                   </Link>
                 );
               })}

@@ -48,7 +48,9 @@ vi.mock("@/lib/gsap", () => {
 
 // Mock Lenis as a class constructor
 vi.mock("lenis", () => {
-  const LenisMock = vi.fn().mockImplementation(function(this: Record<string, unknown>) {
+  const LenisMock = vi.fn().mockImplementation(function (
+    this: Record<string, unknown>,
+  ) {
     this.raf = vi.fn();
     this.destroy = vi.fn();
     this.scrollTo = vi.fn();
@@ -98,11 +100,7 @@ describe("MetricCounter", () => {
     it("should display the metric label", () => {
       // Arrange & Act
       render(
-        <MetricCounter
-          value={300}
-          suffix="K+"
-          label="transactions/day"
-        />,
+        <MetricCounter value={300} suffix="K+" label="transactions/day" />,
       );
 
       // Assert
@@ -126,12 +124,7 @@ describe("MetricCounter", () => {
     it("should display prefix when provided", () => {
       // Arrange & Act
       render(
-        <MetricCounter
-          value={10}
-          prefix="<"
-          suffix="ms"
-          label="latency"
-        />,
+        <MetricCounter value={10} prefix="<" suffix="ms" label="latency" />,
       );
 
       // Assert
@@ -203,7 +196,12 @@ describe("ScrollReveal", () => {
 describe("ChapterNav", () => {
   const mockChapters = [
     { id: "hero", label: "01", title: "Hero", navLabel: "Numbers" },
-    { id: "foundation", label: "02", title: "Foundation", navLabel: "Foundation" },
+    {
+      id: "foundation",
+      label: "02",
+      title: "Foundation",
+      navLabel: "Foundation",
+    },
   ];
 
   describe("ChapterNav_whenRendered_thenHasNavElement", () => {
@@ -336,9 +334,7 @@ describe("FoundationChapter", () => {
   describe("FoundationChapter_whenRendered_thenDisplaysTitle", () => {
     it("should render the chapter title", () => {
       // Arrange & Act
-      render(
-        <FoundationChapter activeChapterRef={mockActiveChapterRef} />,
-      );
+      render(<FoundationChapter activeChapterRef={mockActiveChapterRef} />);
 
       // Assert
       expect(
@@ -350,9 +346,7 @@ describe("FoundationChapter", () => {
   describe("FoundationChapter_whenRendered_thenDisplaysCards", () => {
     it("should render NIT Silchar and TechEngio cards", () => {
       // Arrange & Act
-      render(
-        <FoundationChapter activeChapterRef={mockActiveChapterRef} />,
-      );
+      render(<FoundationChapter activeChapterRef={mockActiveChapterRef} />);
 
       // Assert
       expect(screen.getByText("NIT Silchar")).toBeInTheDocument();
@@ -363,9 +357,7 @@ describe("FoundationChapter", () => {
   describe("FoundationChapter_whenRendered_thenHasNarrative", () => {
     it("should render the foundation narrative", () => {
       // Arrange & Act
-      render(
-        <FoundationChapter activeChapterRef={mockActiveChapterRef} />,
-      );
+      render(<FoundationChapter activeChapterRef={mockActiveChapterRef} />);
 
       // Assert
       expect(
@@ -391,37 +383,99 @@ describe("FoundationChapter", () => {
 
 describe("GrowwChapter", () => {
   describe("GrowwChapter_whenRendered_thenDisplaysTitle", () => {
-    it("should render the chapter title", () => {
-      // Arrange & Act
+    it("GrowwChapter_whenRendered_thenDisplaysTitle", () => {
+      // Arrange
+      const expectedTitle = /building at scale/i;
+
+      // Act
       render(<GrowwChapter activeChapterRef={mockActiveChapterRef} />);
 
       // Assert
       expect(
-        screen.getByRole("heading", { name: /building at scale/i }),
+        screen.getByRole("heading", { name: expectedTitle }),
       ).toBeInTheDocument();
     });
   });
 
   describe("GrowwChapter_whenRendered_thenDisplaysRoles", () => {
-    it("should render all 3 Groww roles", () => {
-      // Arrange & Act
+    it("GrowwChapter_whenRendered_thenDisplaysEveryVisibleRole", () => {
+      // Arrange
+      const expectedRoleTitles = [
+        "Software Engineer Intern",
+        "Software Engineer 1",
+        "Software Engineer 2",
+      ];
+
+      // Act
       render(<GrowwChapter activeChapterRef={mockActiveChapterRef} />);
 
       // Assert
-      expect(screen.getByText("Software Engineer Intern")).toBeInTheDocument();
-      expect(screen.getByText("Software Engineer 1")).toBeInTheDocument();
-      expect(screen.getByText("Software Engineer 2")).toBeInTheDocument();
+      expectedRoleTitles.forEach((title) => {
+        expect(
+          screen.getByRole("heading", { level: 3, name: title }),
+        ).toBeInTheDocument();
+      });
+    });
+  });
+
+  describe("GrowwChapter_whenRendered_thenKeepsResponsiveLayoutsMounted", () => {
+    it("GrowwChapter_whenRendered_thenKeepsResponsiveLayoutsMounted", () => {
+      // Arrange
+      const expectedLayouts = ["horizontal", "vertical"];
+
+      // Act
+      const { container } = render(
+        <GrowwChapter activeChapterRef={mockActiveChapterRef} />,
+      );
+
+      // Assert
+      const actualLayouts = Array.from(
+        container.querySelectorAll("[data-journey-layout]"),
+        (element) => element.getAttribute("data-journey-layout"),
+      );
+      expect(actualLayouts).toEqual(expectedLayouts);
+      expect(
+        container.querySelector('[data-journey-layout="horizontal"]'),
+      ).toHaveAttribute("hidden");
+      expect(
+        container.querySelector('[data-journey-layout="vertical"]'),
+      ).not.toHaveAttribute("hidden");
     });
   });
 
   describe("GrowwChapter_whenRendered_thenDisplaysMetricPills", () => {
-    it("should display key metric pills", () => {
-      // Arrange & Act
+    it("GrowwChapter_whenRendered_thenDisplaysVisibleMetricPills", () => {
+      // Arrange
+      const expectedMetrics = ["300K+ daily txns", "3 greenfield projects"];
+
+      // Act
       render(<GrowwChapter activeChapterRef={mockActiveChapterRef} />);
 
       // Assert
-      expect(screen.getByText("300K+ daily txns")).toBeInTheDocument();
-      expect(screen.getByText("3 greenfield projects")).toBeInTheDocument();
+      expectedMetrics.forEach((metric) => {
+        expect(
+          screen
+            .getAllByText(metric)
+            .some((element) => element.closest("[hidden]") === null),
+        ).toBe(true);
+      });
+    });
+  });
+
+  describe("GrowwChapter_whenMetricPillsRender_thenUsesAccessibleTextColor", () => {
+    it("GrowwChapter_whenMetricPillsRender_thenUsesAccessibleTextColor", () => {
+      // Arrange
+      const expectedTextClass = "text-accent-hover";
+
+      // Act
+      render(<GrowwChapter activeChapterRef={mockActiveChapterRef} />);
+      const metricPills = screen.getAllByText("Pre-placement offer");
+
+      // Assert
+      expect(metricPills).not.toHaveLength(0);
+      metricPills.forEach((metricPill) => {
+        expect(metricPill).toHaveClass(expectedTextClass);
+      });
     });
   });
 
@@ -444,9 +498,7 @@ describe("VenturesChapter", () => {
   describe("VenturesChapter_whenRendered_thenDisplaysAgriJod", () => {
     it("should render AgriJod with ACQUIRED badge", () => {
       // Arrange & Act
-      render(
-        <VenturesChapter activeChapterRef={mockActiveChapterRef} />,
-      );
+      render(<VenturesChapter activeChapterRef={mockActiveChapterRef} />);
 
       // Assert
       expect(screen.getByText("AgriJod")).toBeInTheDocument();
@@ -457,9 +509,7 @@ describe("VenturesChapter", () => {
   describe("VenturesChapter_whenRendered_thenDisplaysBanalo", () => {
     it("should render Banalo with Closed badge", () => {
       // Arrange & Act
-      render(
-        <VenturesChapter activeChapterRef={mockActiveChapterRef} />,
-      );
+      render(<VenturesChapter activeChapterRef={mockActiveChapterRef} />);
 
       // Assert
       expect(screen.getByText("Banalo")).toBeInTheDocument();
@@ -471,14 +521,26 @@ describe("VenturesChapter", () => {
   describe("VenturesChapter_whenRendered_thenDisplaysNarrative", () => {
     it("should render the parallel builder narrative", () => {
       // Arrange & Act
-      render(
-        <VenturesChapter activeChapterRef={mockActiveChapterRef} />,
-      );
+      render(<VenturesChapter activeChapterRef={mockActiveChapterRef} />);
 
       // Assert
       expect(
         screen.getByText(/while building at scale during the day/i),
       ).toBeInTheDocument();
+    });
+  });
+
+  describe("VenturesChapter_whenAcquiredBadgeRenders_thenUsesAccessibleTextColor", () => {
+    it("VenturesChapter_whenAcquiredBadgeRenders_thenUsesAccessibleTextColor", () => {
+      // Arrange
+      const expectedTextClass = "text-background";
+
+      // Act
+      render(<VenturesChapter activeChapterRef={mockActiveChapterRef} />);
+      const acquiredBadge = screen.getByText("ACQUIRED");
+
+      // Assert
+      expect(acquiredBadge).toHaveClass(expectedTextClass);
     });
   });
 
@@ -501,9 +563,7 @@ describe("CurrentChapter", () => {
   describe("CurrentChapter_whenRendered_thenDisplaysEzHomeo", () => {
     it("should render EzHomeo details", () => {
       // Arrange & Act
-      render(
-        <CurrentChapter activeChapterRef={mockActiveChapterRef} />,
-      );
+      render(<CurrentChapter activeChapterRef={mockActiveChapterRef} />);
 
       // Assert
       expect(screen.getByText("EzHomeo")).toBeInTheDocument();
@@ -514,9 +574,7 @@ describe("CurrentChapter", () => {
   describe("CurrentChapter_whenRendered_thenDisplaysOSS", () => {
     it("should render open source highlights", () => {
       // Arrange & Act
-      render(
-        <CurrentChapter activeChapterRef={mockActiveChapterRef} />,
-      );
+      render(<CurrentChapter activeChapterRef={mockActiveChapterRef} />);
 
       // Assert
       expect(screen.getByText("spring-multi-data-source")).toBeInTheDocument();
@@ -527,9 +585,7 @@ describe("CurrentChapter", () => {
   describe("CurrentChapter_whenRendered_thenDisplaysTechStack", () => {
     it("should render tech stack pills", () => {
       // Arrange & Act
-      render(
-        <CurrentChapter activeChapterRef={mockActiveChapterRef} />,
-      );
+      render(<CurrentChapter activeChapterRef={mockActiveChapterRef} />);
 
       // Assert
       expect(screen.getByText("Java")).toBeInTheDocument();
@@ -736,10 +792,7 @@ describe("CTAChapter", () => {
 
       // Assert
       const ctaLink = screen.getByRole("link", { name: /let's talk/i });
-      expect(ctaLink).toHaveAttribute(
-        "href",
-        "mailto:dhiman.seal@hotmail.com",
-      );
+      expect(ctaLink).toHaveAttribute("href", "mailto:dhiman.seal@hotmail.com");
     });
   });
 
@@ -846,9 +899,7 @@ describe("ReducedMotion", () => {
   describe("FoundationChapter_whenReducedMotion_thenStillRendersCards", () => {
     it("should render all cards without stagger animation", () => {
       // Arrange & Act
-      render(
-        <FoundationChapter activeChapterRef={mockActiveChapterRef} />,
-      );
+      render(<FoundationChapter activeChapterRef={mockActiveChapterRef} />);
 
       // Assert
       expect(screen.getByText("NIT Silchar")).toBeInTheDocument();
@@ -857,23 +908,30 @@ describe("ReducedMotion", () => {
   });
 
   describe("GrowwChapter_whenReducedMotion_thenRendersVerticalStack", () => {
-    it("should render all roles in vertical layout", () => {
-      // Arrange & Act
+    it("GrowwChapter_whenReducedMotionIsEnabled_thenRendersEveryVisibleRole", () => {
+      // Arrange
+      const expectedRoleTitles = [
+        "Software Engineer 2",
+        "Software Engineer 1",
+        "Software Engineer Intern",
+      ];
+
+      // Act
       render(<GrowwChapter activeChapterRef={mockActiveChapterRef} />);
 
       // Assert
-      expect(screen.getByText("Software Engineer 2")).toBeInTheDocument();
-      expect(screen.getByText("Software Engineer 1")).toBeInTheDocument();
-      expect(screen.getByText("Software Engineer Intern")).toBeInTheDocument();
+      expectedRoleTitles.forEach((title) => {
+        expect(
+          screen.getByRole("heading", { level: 3, name: title }),
+        ).toBeInTheDocument();
+      });
     });
   });
 
   describe("VenturesChapter_whenReducedMotion_thenStillShowsGlow", () => {
     it("should still render AgriJod and Banalo correctly", () => {
       // Arrange & Act
-      render(
-        <VenturesChapter activeChapterRef={mockActiveChapterRef} />,
-      );
+      render(<VenturesChapter activeChapterRef={mockActiveChapterRef} />);
 
       // Assert
       expect(screen.getByText("AgriJod")).toBeInTheDocument();
@@ -976,7 +1034,12 @@ describe("MetricCounter formatNumber branches", () => {
 describe("ChapterNav interactions", () => {
   const mockChapters = [
     { id: "hero", label: "01", title: "Hero", navLabel: "Numbers" },
-    { id: "foundation", label: "02", title: "Foundation", navLabel: "Foundation" },
+    {
+      id: "foundation",
+      label: "02",
+      title: "Foundation",
+      navLabel: "Foundation",
+    },
     { id: "groww", label: "03", title: "Groww", navLabel: "Groww" },
   ];
 
@@ -995,7 +1058,9 @@ describe("ChapterNav interactions", () => {
       );
 
       // Act
-      const foundationBtn = screen.getByRole("button", { name: "Navigate to: Foundation" });
+      const foundationBtn = screen.getByRole("button", {
+        name: "Navigate to: Foundation",
+      });
       await user.click(foundationBtn);
 
       // Assert
@@ -1021,10 +1086,14 @@ describe("ChapterNav interactions", () => {
       );
 
       // Assert
-      const firstButton = screen.getByRole("button", { name: "Navigate to: Numbers" });
+      const firstButton = screen.getByRole("button", {
+        name: "Navigate to: Numbers",
+      });
       expect(firstButton).toHaveAttribute("aria-current", "step");
 
-      const secondButton = screen.getByRole("button", { name: "Navigate to: Foundation" });
+      const secondButton = screen.getByRole("button", {
+        name: "Navigate to: Foundation",
+      });
       expect(secondButton).not.toHaveAttribute("aria-current");
     });
   });
@@ -1036,9 +1105,7 @@ describe("FoundationChapter details", () => {
   describe("FoundationChapter_whenCardHasLink_thenRendersExternalLink", () => {
     it("should render card titles as links when link is provided", () => {
       // Arrange & Act
-      render(
-        <FoundationChapter activeChapterRef={mockActiveChapterRef} />,
-      );
+      render(<FoundationChapter activeChapterRef={mockActiveChapterRef} />);
 
       // Assert
       // NIT Silchar has link: "https://www.nits.ac.in/"
@@ -1052,13 +1119,13 @@ describe("FoundationChapter details", () => {
   describe("FoundationChapter_whenCardHasImage_thenRendersImageButton", () => {
     it("should render image buttons with accessible labels", () => {
       // Arrange & Act
-      render(
-        <FoundationChapter activeChapterRef={mockActiveChapterRef} />,
-      );
+      render(<FoundationChapter activeChapterRef={mockActiveChapterRef} />);
 
       // Assert
       // TechEngio card has an image
-      const imgButton = screen.getByRole("button", { name: /View.*TechEngio.*image/i });
+      const imgButton = screen.getByRole("button", {
+        name: /View.*TechEngio.*image/i,
+      });
       expect(imgButton).toBeInTheDocument();
     });
   });
@@ -1066,9 +1133,7 @@ describe("FoundationChapter details", () => {
   describe("FoundationChapter_whenCardHasMoreThan3Details_thenShowsTruncation", () => {
     it("should show '+X more' for cards with more than 3 details", () => {
       // Arrange & Act
-      render(
-        <FoundationChapter activeChapterRef={mockActiveChapterRef} />,
-      );
+      render(<FoundationChapter activeChapterRef={mockActiveChapterRef} />);
 
       // Assert
       // Early Hackathon Wins has 6 details, shows 3 + "+3 more"
@@ -1080,12 +1145,12 @@ describe("FoundationChapter details", () => {
     it("should open lightbox dialog when image button is clicked", async () => {
       // Arrange
       const user = userEvent.setup();
-      render(
-        <FoundationChapter activeChapterRef={mockActiveChapterRef} />,
-      );
+      render(<FoundationChapter activeChapterRef={mockActiveChapterRef} />);
 
       // Act
-      const imgButton = screen.getByRole("button", { name: /View.*TechEngio.*image/i });
+      const imgButton = screen.getByRole("button", {
+        name: /View.*TechEngio.*image/i,
+      });
       await user.click(imgButton);
 
       // Assert
@@ -1098,18 +1163,20 @@ describe("FoundationChapter details", () => {
     it("should close lightbox when close button is clicked", async () => {
       // Arrange
       const user = userEvent.setup();
-      render(
-        <FoundationChapter activeChapterRef={mockActiveChapterRef} />,
-      );
+      render(<FoundationChapter activeChapterRef={mockActiveChapterRef} />);
 
       // Open lightbox
-      const imgButton = screen.getByRole("button", { name: /View.*TechEngio.*image/i });
+      const imgButton = screen.getByRole("button", {
+        name: /View.*TechEngio.*image/i,
+      });
       await user.click(imgButton);
       expect(screen.getByRole("dialog")).toBeInTheDocument();
 
       // Act
       // Close lightbox
-      const closeButton = screen.getByRole("button", { name: "Close image preview" });
+      const closeButton = screen.getByRole("button", {
+        name: "Close image preview",
+      });
       await user.click(closeButton);
 
       // Assert
@@ -1121,12 +1188,12 @@ describe("FoundationChapter details", () => {
     it("should close lightbox when Escape key is pressed", async () => {
       // Arrange
       const user = userEvent.setup();
-      render(
-        <FoundationChapter activeChapterRef={mockActiveChapterRef} />,
-      );
+      render(<FoundationChapter activeChapterRef={mockActiveChapterRef} />);
 
       // Open lightbox
-      const imgButton = screen.getByRole("button", { name: /View.*TechEngio.*image/i });
+      const imgButton = screen.getByRole("button", {
+        name: /View.*TechEngio.*image/i,
+      });
       await user.click(imgButton);
       expect(screen.getByRole("dialog")).toBeInTheDocument();
 
@@ -1142,9 +1209,7 @@ describe("FoundationChapter details", () => {
   describe("FoundationChapter_whenRendered_thenDisplaysCardDates", () => {
     it("should display dates for each card", () => {
       // Arrange & Act
-      render(
-        <FoundationChapter activeChapterRef={mockActiveChapterRef} />,
-      );
+      render(<FoundationChapter activeChapterRef={mockActiveChapterRef} />);
 
       // Assert
       expect(screen.getByText("2018 - 2022")).toBeInTheDocument();
@@ -1159,9 +1224,7 @@ describe("VenturesChapter details", () => {
   describe("VenturesChapter_whenVentureHasLink_thenWrapsInAnchor", () => {
     it("should wrap AgriJod in an external link", () => {
       // Arrange & Act
-      render(
-        <VenturesChapter activeChapterRef={mockActiveChapterRef} />,
-      );
+      render(<VenturesChapter activeChapterRef={mockActiveChapterRef} />);
 
       // Assert
       // AgriJod has link: "https://agrijod.in"
@@ -1174,9 +1237,7 @@ describe("VenturesChapter details", () => {
   describe("VenturesChapter_whenVentureHasNoLink_thenNoAnchorWrapper", () => {
     it("should render Dostana.AI without link wrapper", () => {
       // Arrange & Act
-      render(
-        <VenturesChapter activeChapterRef={mockActiveChapterRef} />,
-      );
+      render(<VenturesChapter activeChapterRef={mockActiveChapterRef} />);
 
       // Assert
       const dostanaHeading = screen.getByText("Dostana.AI");
@@ -1188,9 +1249,7 @@ describe("VenturesChapter details", () => {
   describe("VenturesChapter_whenRendered_thenDisplaysOnlyForms", () => {
     it("should render OnlyForms venture", () => {
       // Arrange & Act
-      render(
-        <VenturesChapter activeChapterRef={mockActiveChapterRef} />,
-      );
+      render(<VenturesChapter activeChapterRef={mockActiveChapterRef} />);
 
       // Assert
       expect(screen.getByText("OnlyForms")).toBeInTheDocument();
@@ -1200,22 +1259,22 @@ describe("VenturesChapter details", () => {
   describe("VenturesChapter_whenVentureHasMultipleBadges_thenRendersAll", () => {
     it("should render multiple badges for Dostana.AI", () => {
       // Arrange & Act
-      render(
-        <VenturesChapter activeChapterRef={mockActiveChapterRef} />,
-      );
+      render(<VenturesChapter activeChapterRef={mockActiveChapterRef} />);
 
       // Assert
-      expect(screen.getByText(/National Runner-up, Build for Bharat/)).toBeInTheDocument();
-      expect(screen.getByText(/National Winner, Tata Imagination/)).toBeInTheDocument();
+      expect(
+        screen.getByText(/National Runner-up, Build for Bharat/),
+      ).toBeInTheDocument();
+      expect(
+        screen.getByText(/National Winner, Tata Imagination/),
+      ).toBeInTheDocument();
     });
   });
 
   describe("VenturesChapter_whenVentureHasDetails_thenRendersDetailBullets", () => {
     it("should render AgriJod detail bullets", () => {
       // Arrange & Act
-      render(
-        <VenturesChapter activeChapterRef={mockActiveChapterRef} />,
-      );
+      render(<VenturesChapter activeChapterRef={mockActiveChapterRef} />);
 
       // Assert
       expect(screen.getByText(/Built the full tech stack/)).toBeInTheDocument();
@@ -1230,9 +1289,7 @@ describe("CurrentChapter details", () => {
   describe("CurrentChapter_whenRendered_thenEzHomeoLinkCorrect", () => {
     it("should render EzHomeo as a link with correct href", () => {
       // Arrange & Act
-      render(
-        <CurrentChapter activeChapterRef={mockActiveChapterRef} />,
-      );
+      render(<CurrentChapter activeChapterRef={mockActiveChapterRef} />);
 
       // Assert
       const ezHomeoLink = screen.getByRole("link", { name: "EzHomeo" });
@@ -1244,12 +1301,12 @@ describe("CurrentChapter details", () => {
   describe("CurrentChapter_whenRendered_thenOSSProjectLinksCorrect", () => {
     it("should render OSS project links with correct hrefs", () => {
       // Arrange & Act
-      render(
-        <CurrentChapter activeChapterRef={mockActiveChapterRef} />,
-      );
+      render(<CurrentChapter activeChapterRef={mockActiveChapterRef} />);
 
       // Assert
-      const springLink = screen.getByRole("link", { name: "spring-multi-data-source" });
+      const springLink = screen.getByRole("link", {
+        name: "spring-multi-data-source",
+      });
       expect(springLink).toHaveAttribute(
         "href",
         "https://github.com/Dhi13man/spring-multi-data-source",
@@ -1266,9 +1323,7 @@ describe("CurrentChapter details", () => {
   describe("CurrentChapter_whenRendered_thenDisplaysOSSSummary", () => {
     it("should display project count and star count", () => {
       // Arrange & Act
-      render(
-        <CurrentChapter activeChapterRef={mockActiveChapterRef} />,
-      );
+      render(<CurrentChapter activeChapterRef={mockActiveChapterRef} />);
 
       // Assert
       expect(screen.getByText("45+")).toBeInTheDocument();
@@ -1279,9 +1334,7 @@ describe("CurrentChapter details", () => {
   describe("CurrentChapter_whenRendered_thenDisplaysEzHomeoTechStack", () => {
     it("should render EzHomeo tech stack info", () => {
       // Arrange & Act
-      render(
-        <CurrentChapter activeChapterRef={mockActiveChapterRef} />,
-      );
+      render(<CurrentChapter activeChapterRef={mockActiveChapterRef} />);
 
       // Assert
       expect(screen.getByText(/EzHomeo stack:/)).toBeInTheDocument();
@@ -1291,9 +1344,7 @@ describe("CurrentChapter details", () => {
   describe("CurrentChapter_whenRendered_thenDisplaysOSSMetrics", () => {
     it("should render metrics for OSS projects", () => {
       // Arrange & Act
-      render(
-        <CurrentChapter activeChapterRef={mockActiveChapterRef} />,
-      );
+      render(<CurrentChapter activeChapterRef={mockActiveChapterRef} />);
 
       // Assert
       expect(screen.getByText("95% team adoption")).toBeInTheDocument();
@@ -1363,7 +1414,9 @@ describe("CTAChapter details", () => {
       );
 
       // Assert
-      expect(container.querySelector('[data-chapter="cta"]')).toBeInTheDocument();
+      expect(
+        container.querySelector('[data-chapter="cta"]'),
+      ).toBeInTheDocument();
     });
   });
 });
@@ -1388,7 +1441,9 @@ describe("JourneyShell details", () => {
       render(<JourneyShell />);
 
       // Assert
-      const homeLink = screen.getByRole("link", { name: "Back to portfolio home" });
+      const homeLink = screen.getByRole("link", {
+        name: "Back to portfolio home",
+      });
       expect(homeLink).toHaveAttribute("href", "/");
       expect(homeLink).toHaveTextContent("DS");
     });
@@ -1400,9 +1455,9 @@ describe("JourneyShell details", () => {
       render(<JourneyShell />);
 
       // Assert
-      expect(
-        document.documentElement.classList.contains("lenis-active"),
-      ).toBe(true);
+      expect(document.documentElement.classList.contains("lenis-active")).toBe(
+        true,
+      );
     });
   });
 
@@ -1415,9 +1470,9 @@ describe("JourneyShell details", () => {
       unmount();
 
       // Assert
-      expect(
-        document.documentElement.classList.contains("lenis-active"),
-      ).toBe(false);
+      expect(document.documentElement.classList.contains("lenis-active")).toBe(
+        false,
+      );
     });
   });
 

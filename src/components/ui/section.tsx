@@ -32,19 +32,22 @@ const SectionHeader = React.forwardRef<
 ));
 SectionHeader.displayName = "SectionHeader";
 
-const SectionTitle = React.forwardRef<
-  HTMLHeadingElement,
-  React.HTMLAttributes<HTMLHeadingElement>
->(({ className, ...props }, ref) => (
-  <h2
-    ref={ref}
-    className={cn(
-      "text-32 font-display font-bold text-text-primary",
-      className,
-    )}
-    {...props}
-  />
-));
+interface SectionTitleProps extends React.HTMLAttributes<HTMLHeadingElement> {
+  as?: "h1" | "h2";
+}
+
+const SectionTitle = React.forwardRef<HTMLHeadingElement, SectionTitleProps>(
+  ({ as: Heading = "h2", className, ...props }, ref) => (
+    <Heading
+      ref={ref}
+      className={cn(
+        "text-32 font-display font-bold text-text-primary",
+        className,
+      )}
+      {...props}
+    />
+  ),
+);
 SectionTitle.displayName = "SectionTitle";
 
 const SectionDescription = React.forwardRef<
