@@ -3,8 +3,7 @@ User-agent: *
 Allow: /
 
 # Sitemap locations
-Sitemap: https://dhimanseal.com/sitemap.xml
-Sitemap: https://dhimanseal.com/llms.txt
+Sitemap: https://www.dhimanseal.com/sitemap.xml
 
 # AI Training & Search Crawlers - Explicitly Welcome
 # OpenAI Crawlers

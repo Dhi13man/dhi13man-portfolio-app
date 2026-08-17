@@ -1,15 +1,10 @@
 import type { Metadata } from "next";
 import "@/styles/globals.css";
 import { Header } from "@/components/layout/Header";
-
-const siteUrl = "https://dhimanseal.com";
-const siteImage = `${siteUrl}/assets/me.webp`;
+import { SITE_IMAGE, SITE_URL } from "@/lib/seo";
 
 export const metadata: Metadata = {
-  metadataBase: new URL(siteUrl),
-  title: "Dhiman Seal - Software Engineer & Entrepreneur",
-  description:
-    "Software engineer with 6+ years scaling production systems: payment infrastructure handling 300K+ daily transactions, real-time data serving 13M+ users. Open-source creator with packages used by 1.5K+ teams. National runner-up at ONDC Build for Bharat 2024. Multiple hackathon winner.",
+  metadataBase: new URL(SITE_URL),
   keywords: [
     "Dhiman Seal",
     "Software Engineer",
@@ -22,46 +17,17 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "Dhiman Seal" }],
   creator: "Dhiman Seal",
-  openGraph: {
-    type: "website",
-    locale: "en_US",
-    url: siteUrl,
-    title: "Dhiman Seal - Software Engineer & Entrepreneur",
-    description:
-      "Software engineer scaling production systems: 300K+ daily transactions, 13M+ users served. Open-source packages used by 1.5K+ teams. ONDC Build for Bharat runner-up. Multiple hackathon winner.",
-    siteName: "Dhiman Seal Portfolio",
-    images: [
-      {
-        url: siteImage,
-        width: 800,
-        height: 800,
-        alt: "Dhiman Seal - Software Engineer & Entrepreneur",
-      },
-    ],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Dhiman Seal - Software Engineer & Entrepreneur",
-    description:
-      "Engineer scaling production systems: 300K+ daily transactions, 13M+ users. Open-source packages used by 1.5K+ teams. ONDC runner-up.",
-    creator: "@Dhi13man",
-    images: [siteImage],
-  },
-  robots: {
-    index: true,
-    follow: true,
-  },
 };
 
 // JSON-LD Structured Data for AI Agents & SEO
 const personSchema = {
   "@context": "https://schema.org",
   "@type": "Person",
-  "@id": `${siteUrl}#person`,
+  "@id": `${SITE_URL}/#person`,
   name: "Dhiman Seal",
   alternateName: ["Dhi13man", "@Dhi13man"],
-  url: siteUrl,
-  image: siteImage,
+  url: `${SITE_URL}/`,
+  image: SITE_IMAGE,
   jobTitle: "Software Engineer 2 - Full-Stack",
   description:
     "Software engineer with 6+ years building production systems at scale. Full-stack Software Engineer 2 at Rippling on the PEO (B2B HR Services) team, improving Underwriting and Workers' Compensation flows. Previously spent four years at Groww architecting payment infrastructure handling 300K+ daily transactions and real-time market data serving 13M+ users. Open-source creator with packages used by 1.5K+ development teams. National runner-up at ONDC Build for Bharat 2024.",
@@ -152,33 +118,19 @@ const websiteSchema = {
   "@type": "WebSite",
   name: "Dhiman Seal Portfolio",
   alternateName: "Dhi13man Portfolio",
-  url: siteUrl,
+  url: `${SITE_URL}/`,
   description:
     "Professional portfolio showcasing 6+ years of software engineering excellence, including payment systems handling 300K+ daily transactions, real-time data serving 13M+ users, and open-source projects used by 1.5K+ teams.",
   author: {
-    "@type": "Person",
-    name: "Dhiman Seal",
+    "@id": `${SITE_URL}/#person`,
   },
   inLanguage: "en-US",
 };
 
-const profilePageSchema = {
-  "@context": "https://schema.org",
-  "@type": "ProfilePage",
-  mainEntity: {
-    "@id": `${siteUrl}#person`,
-  },
-  url: siteUrl,
-  name: "Dhiman Seal - Software Engineer & Entrepreneur",
-  description:
-    "Software engineer with 6+ years at scale: payment systems handling 300K+ daily transactions, real-time infrastructure serving 13M+ users, open-source packages used by 1.5K+ teams. ONDC Build for Bharat runner-up.",
-  dateModified: new Date().toISOString(),
-};
-
-// Combine all schemas using @graph for optimal AI parsing
+// Site-wide identity schemas. Route-specific markup lives with its page.
 const jsonLd = {
   "@context": "https://schema.org",
-  "@graph": [personSchema, websiteSchema, profilePageSchema],
+  "@graph": [personSchema, websiteSchema],
 };
 
 export default function RootLayout({

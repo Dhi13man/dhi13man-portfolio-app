@@ -6,12 +6,9 @@ import {
 } from "@/components/ui/section";
 import { ProjectCard } from "@/components/domain/ProjectCard";
 import { projects } from "@/data/projects";
+import { PAGE_SEO } from "@/lib/seo";
 
-export const metadata = {
-  title: "Projects - Dhiman Seal",
-  description:
-    "Explore my portfolio of open-source projects and technical work.",
-};
+export const metadata = PAGE_SEO.projects.metadata;
 
 export default function ProjectsPage() {
   return (

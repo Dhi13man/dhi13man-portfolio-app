@@ -22,12 +22,9 @@ import { ventures } from "@/data/ventures";
 import { formatDateRange } from "@/lib/date";
 import { getLinkType, getLinkLabel, LinkIcon } from "@/lib/link-utils";
 import { ExternalLink } from "lucide-react";
+import { PAGE_SEO } from "@/lib/seo";
 
-export const metadata = {
-  title: "Ventures - Dhiman Seal",
-  description:
-    "Explore my entrepreneurial journey through various startups and ventures I have founded and contributed to.",
-};
+export const metadata = PAGE_SEO.ventures.metadata;
 
 export default function VenturesPage() {
   // Flatten all roles with venture info for timeline

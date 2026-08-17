@@ -1,6 +1,6 @@
 # Dhiman Seal (@Dhi13man) - Comprehensive Professional Profile
 
-> **Last Updated:** June 4, 2026 | **Portfolio:** https://dhimanseal.com | **GitHub:** @Dhi13man | **LinkedIn:** /in/dhi13man
+> **Last Updated:** June 4, 2026 | **Portfolio:** https://www.dhimanseal.com/ | **GitHub:** @Dhi13man | **LinkedIn:** /in/dhi13man
 
 > Exceptional software engineer with 6+ years building production systems at scale. Full-stack Software Engineer 2 at Rippling on the PEO (B2B HR Services) team, improving Underwriting and Workers' Compensation flows. Previously spent four years at Groww (India's leading investment platform), architecting payment infrastructure handling 300K+ daily transactions and real-time market data serving 13M+ users. National award winner, open-source creator with packages used by 1.5K+ development teams, serial entrepreneur with 5 ventures founded, and proven technical leader with expertise spanning backend systems, mobile development, cloud infrastructure, and AI/ML.
 
@@ -889,7 +889,7 @@ Git, GitHub, npm, Maven, Gradle, Linux/Bash, JIRA, Docker, Build systems
 
 ## CONTACT & CONNECTIONS
 
-- **Portfolio Website:** https://dhimanseal.com
+- **Portfolio Website:** https://www.dhimanseal.com/
 - **GitHub:** https://github.com/Dhi13man
 - **LinkedIn:** https://linkedin.com/in/dhi13man
 - **npm Packages:** https://www.npmjs.com/~dhi13man
@@ -932,4 +932,3 @@ Led teams, mentored developers, established coding standards, and drove architec
 Dhiman Seal represents the pinnacle of modern software engineering excellence. With 6+ years of experience building production systems at scale, he combines exceptional technical depth with visionary leadership and entrepreneurial acumen. His work has directly impacted millions of users through high-performance systems, created value for 1.5K+ development teams through open-source excellence, and demonstrated award-winning innovation capabilities.
 
 Whether architecting payment infrastructure for millions, creating widely-adopted libraries, or founding ventures, Dhiman consistently delivers world-class results. His combination of technical mastery, business understanding, proven track record, and commitment to quality makes him an exceptional asset for any organization.
-

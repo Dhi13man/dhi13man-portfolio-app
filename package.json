@@ -8,14 +8,15 @@
   },
   "scripts": {
     "dev": "next dev",
-    "build": "next build && next-image-export-optimizer --nextConfigPath ./next.config.js",
+    "build": "next build && next-image-export-optimizer --nextConfigPath ./next.config.js && npm run verify:indexing",
     "start": "next start",
     "lint": "eslint .",
     "format": "prettier --write \"src/**/*.{ts,tsx,css,md}\"",
     "test": "vitest run",
     "test:watch": "vitest",
     "test:coverage": "vitest run --coverage",
-    "test:ui": "vitest --ui"
+    "test:ui": "vitest --ui",
+    "verify:indexing": "node scripts/verify-indexing.mjs"
   },
   "dependencies": {
     "@gsap/react": "^2.1.2",

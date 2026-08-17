@@ -8,7 +8,7 @@
   "provider": {
     "name": "Dhiman Seal",
     "alternateName": ["Dhi13man", "@Dhi13man"],
-    "url": "https://dhimanseal.com",
+    "url": "https://www.dhimanseal.com/",
     "email": "dhiman.seal@hotmail.com",
     "location": {
       "city": "Bengaluru",
@@ -41,16 +41,16 @@
     "AI/ML Engineering"
   ],
   "endpoints": {
-    "portfolio": "https://dhimanseal.com",
-    "llms": "https://dhimanseal.com/llms.txt",
-    "llmsFull": "https://dhimanseal.com/llms-full.txt",
-    "journey": "https://dhimanseal.com/journey",
-    "experience": "https://dhimanseal.com/experience",
-    "projects": "https://dhimanseal.com/projects",
-    "ventures": "https://dhimanseal.com/ventures",
-    "achievements": "https://dhimanseal.com/achievements",
-    "education": "https://dhimanseal.com/education",
-    "recommendations": "https://dhimanseal.com/recommendations"
+    "portfolio": "https://www.dhimanseal.com/",
+    "llms": "https://www.dhimanseal.com/llms.txt",
+    "llmsFull": "https://www.dhimanseal.com/llms-full.txt",
+    "journey": "https://www.dhimanseal.com/journey/",
+    "experience": "https://www.dhimanseal.com/experience/",
+    "projects": "https://www.dhimanseal.com/projects/",
+    "ventures": "https://www.dhimanseal.com/ventures/",
+    "achievements": "https://www.dhimanseal.com/achievements/",
+    "education": "https://www.dhimanseal.com/education/",
+    "recommendations": "https://www.dhimanseal.com/recommendations/"
   },
   "metadata": {
     "yearsOfExperience": "6+",

@@ -6,12 +6,9 @@ import {
 } from "@/components/ui/section";
 import { RecommendationCard } from "@/components/domain/RecommendationCard";
 import { recommendations } from "@/data/recommendations";
+import { PAGE_SEO } from "@/lib/seo";
 
-export const metadata = {
-  title: "Recommendations - Dhiman Seal",
-  description:
-    "Read testimonials and recommendations from clients, colleagues, and partners I have worked with.",
-};
+export const metadata = PAGE_SEO.recommendations.metadata;
 
 export default function RecommendationsPage() {
   return (

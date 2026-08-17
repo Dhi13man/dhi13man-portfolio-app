@@ -22,12 +22,9 @@ import { education } from "@/data/education";
 import { formatDateRange } from "@/lib/date";
 import { getLinkType, getLinkLabel, LinkIcon } from "@/lib/link-utils";
 import { ExternalLink } from "lucide-react";
+import { PAGE_SEO } from "@/lib/seo";
 
-export const metadata = {
-  title: "Education - Dhiman Seal",
-  description:
-    "Explore my educational background, academic achievements, and the institutions that shaped my learning journey.",
-};
+export const metadata = PAGE_SEO.education.metadata;
 
 export default function EducationPage() {
   return (

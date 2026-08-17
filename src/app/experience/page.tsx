@@ -22,12 +22,9 @@ import { experiences } from "@/data/experiences";
 import { formatDateRange } from "@/lib/date";
 import { getLinkType, getLinkLabel, LinkIcon } from "@/lib/link-utils";
 import { ExternalLink } from "lucide-react";
+import { PAGE_SEO } from "@/lib/seo";
 
-export const metadata = {
-  title: "Experience - Dhiman Seal",
-  description:
-    "Explore my professional journey and work experience across various companies and roles.",
-};
+export const metadata = PAGE_SEO.experience.metadata;
 
 export default function ExperiencePage() {
   return (
