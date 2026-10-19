@@ -201,9 +201,12 @@ export default async function Home() {
       {/* About Section */}
       <Section>
         <SectionHeader>
-          <span className="text-12 uppercase tracking-widest text-text-quaternary">
-            WHO I AM
-          </span>
+          {/* Wrapper keeps the eyebrow on its own line box so space-y applies (Tailwind v4 space-y targets the preceding sibling). */}
+          <div>
+            <span className="text-12 uppercase tracking-widest text-text-quaternary">
+              WHO I AM
+            </span>
+          </div>
           <SectionTitle>About</SectionTitle>
         </SectionHeader>
         <AboutSection data={aboutDataWithHighlights} />
@@ -213,9 +216,11 @@ export default async function Home() {
       {(currentProjects.length > 0 || currentVentures.length > 0) && (
         <Section id="current-initiatives">
           <SectionHeader>
-            <span className="text-12 uppercase tracking-widest text-text-quaternary">
-              WHAT I AM WORKING ON
-            </span>
+            <div>
+              <span className="text-12 uppercase tracking-widest text-text-quaternary">
+                WHAT I AM WORKING ON
+              </span>
+            </div>
             <SectionTitle>Current Initiatives</SectionTitle>
           </SectionHeader>
 

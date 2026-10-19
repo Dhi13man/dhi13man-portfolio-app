@@ -181,6 +181,17 @@
   }
 }
 
+/*
+ * Next.js' built-in not-found page (out/404.html) inlines an unlayered
+ * `body { background: #fff }` rule. Unlayered CSS beats every Tailwind v4
+ * cascade layer, so `bg-background` on <body> would lose to it (in v3 the
+ * class selector won on specificity). Re-assert the page background outside
+ * the layers with a slightly higher specificity.
+ */
+html body {
+  background-color: var(--color-background);
+}
+
 /* Linear panel component */
 @utility panel {
   @apply rounded border border-border bg-surface p-4;

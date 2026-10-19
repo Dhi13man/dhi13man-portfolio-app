@@ -54,7 +54,7 @@ A modern, high-performance portfolio built with industry-standard technologies, 
 #### Styling
 
 ```plain
-- Tailwind CSS 3.4.14 (utility-first)
+- Tailwind CSS 4.3 (utility-first, CSS-first config)
 - Inter font family (from Google Fonts CDN)
 ```
 
@@ -130,7 +130,7 @@ portfolio/
 │       ├── work_experiences/
 │       └── ...
 │
-├── tailwind.config.ts          # Linear design tokens
+├── postcss.config.js           # @tailwindcss/postcss (Tailwind v4)
 ├── next.config.js              # Static export config
 └── tsconfig.json               # TypeScript config
 ```
@@ -184,6 +184,11 @@ npm run lint     # ESLint check
 - **4px spacing base** for tight layouts
 
 ## Design Tokens
+
+> Tailwind CSS v4 uses CSS-first configuration: these tokens are declared as
+> CSS variables in the `@theme` block of `src/styles/globals.css` (e.g.
+> `--color-accent`, `--text-16`, `--radius`). The JavaScript snippets below
+> show the token values; there is no `tailwind.config.ts` any more.
 
 ### Colors (Tailwind Config)
 
@@ -304,9 +309,13 @@ transitionTimingFunction: {
 #### src/styles/globals.css
 
 ```css
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss" source(none);
+@source "../app";
+@source "../components";
+
+@theme {
+  /* design tokens (see Design Tokens above) */
+}
 
 @layer base {
   * {
@@ -845,7 +854,7 @@ All pages statically exported ✅
 **DO**:
 
 - Use Tailwind utilities
-- Use design tokens from tailwind.config.ts
+- Use design tokens from the `@theme` block in src/styles/globals.css
 - Keep layouts flat (no nested cards)
 - Use opacity for text hierarchy
 - Use 4px spacing scale
