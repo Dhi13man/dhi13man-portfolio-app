@@ -48,7 +48,7 @@ export function ChapterNav({
           return (
             <div key={chapter.id} className="relative flex items-center">
               {hoveredIndex === i && (
-                <span className="absolute right-8 whitespace-nowrap rounded bg-surface/90 px-3 py-1 text-12 text-text-secondary backdrop-blur-sm">
+                <span className="absolute right-8 whitespace-nowrap rounded bg-surface/90 px-3 py-1 text-12 text-text-secondary backdrop-blur-xs">
                   {chapter.navLabel}
                 </span>
               )}

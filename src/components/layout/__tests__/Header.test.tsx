@@ -193,7 +193,7 @@ describe('Header', () => {
 
       // Assert
       const header = container.querySelector('header')
-      expect(header).toHaveClass('backdrop-blur-sm')
+      expect(header).toHaveClass('backdrop-blur-xs')
     })
   })
 

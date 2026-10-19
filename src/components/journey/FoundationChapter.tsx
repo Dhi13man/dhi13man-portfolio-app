@@ -205,7 +205,7 @@ export function FoundationChapter({
       {/* Lightbox */}
       {lightboxSrc && (
         <div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-background/90 backdrop-blur-sm"
+          className="fixed inset-0 z-50 flex items-center justify-center bg-background/90 backdrop-blur-xs"
           onClick={closeLightbox}
           onKeyDown={(e) => e.key === "Escape" && closeLightbox()}
           role="dialog"
