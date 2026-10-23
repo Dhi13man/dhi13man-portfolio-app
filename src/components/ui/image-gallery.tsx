@@ -157,7 +157,7 @@ export const ImageGallery = memo(function ImageGallery({
                 onError={() => handleImageError(index)}
               />
               {index === 0 && images.length > 1 && (
-                <div className="absolute top-1 right-1 px-1.5 py-0.5 bg-background/80 backdrop-blur-sm text-12 font-mono text-text-tertiary rounded">
+                <div className="absolute top-1 right-1 px-1.5 py-0.5 bg-background/80 backdrop-blur-xs text-12 font-mono text-text-tertiary rounded">
                   +{images.length - 1}
                 </div>
               )}
@@ -244,7 +244,7 @@ function Lightbox({
   return (
     <div
       ref={dialogRef}
-      className="fixed inset-0 z-50 bg-background/95 backdrop-blur-sm flex items-center justify-center p-4 animate-fade-in"
+      className="fixed inset-0 z-50 bg-background/95 backdrop-blur-xs flex items-center justify-center p-4 animate-fade-in"
       onClick={onClose}
       onKeyDown={onKeyDown}
       tabIndex={-1}
@@ -316,7 +316,7 @@ function Lightbox({
       {/* Counter */}
       {images.length > 1 && (
         <div
-          className="absolute bottom-4 left-1/2 -translate-x-1/2 px-3 py-1.5 bg-surface/80 backdrop-blur-sm border border-border rounded text-14 font-mono text-text-secondary"
+          className="absolute bottom-4 left-1/2 -translate-x-1/2 px-3 py-1.5 bg-surface/80 backdrop-blur-xs border border-border rounded text-14 font-mono text-text-secondary"
           aria-live="polite"
           aria-atomic="true"
         >

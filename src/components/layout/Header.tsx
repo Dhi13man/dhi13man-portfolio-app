@@ -12,7 +12,7 @@ export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 bg-background/80 backdrop-blur-sm border-b border-border">
+    <header className="sticky top-0 z-50 bg-background/80 backdrop-blur-xs border-b border-border">
       <div className="max-w-[1200px] mx-auto px-8">
         <nav
           className="flex items-center justify-between py-4"

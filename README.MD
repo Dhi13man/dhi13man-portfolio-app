@@ -516,9 +516,10 @@ GitHub API features:
 - Output: Static export
 - Image optimization: Disabled (for static export)
 
-**Tailwind** (`tailwind.config.js`)
+**Tailwind CSS v4** (`src/styles/globals.css`, `postcss.config.js`)
 
-- Custom design tokens
+- CSS-first config: custom design tokens in the `@theme` block
+- Compiled via `@tailwindcss/postcss`
 - Utility-first CSS
 
 ## AI Agent Integration
@@ -629,7 +630,7 @@ npm run test:watch  # Run in watch mode to iterate
 
 #### Styles Not Applying
 
-- Restart dev server after Tailwind config changes
+- Restart dev server after changing the `@theme` tokens in `globals.css`
 - Check for typos in class names
 
 ### Debug Commands
